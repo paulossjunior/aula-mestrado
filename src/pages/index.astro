@@ -79,8 +79,9 @@ const estiloFiltro = (i: number, ativo: boolean) =>
       Tópico Especial em Inteligência Artificial · Mestrado em Computação Aplicada · IFES Serra ·
       2026.2
     </div>
+    {/* mínimo em 36px e hífen automático: "Desenvolvimento" a 44px estoura 375px de tela */}
     <h1
-      style="font-family: var(--font-heading); font-weight: 900; font-size: clamp(44px, 7vw, 92px); line-height: 0.94; letter-spacing: -0.035em; margin: 20px 0 0; max-width: 17ch; text-wrap: balance"
+      style="font-family: var(--font-heading); font-weight: 900; font-size: clamp(36px, 7vw, 92px); line-height: 0.94; letter-spacing: -0.035em; margin: 20px 0 0; max-width: 17ch; text-wrap: balance; hyphens: auto"
     >
       Desenvolvimento de Software Suportado por IA
     </h1>
@@ -339,7 +340,7 @@ const estiloFiltro = (i: number, ativo: boolean) =>
         </p>
       </div>
       <div
-        style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2px; background: var(--color-divider); border: 2px solid var(--color-text)"
+        style="display: grid; grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr)); gap: 2px; background: var(--color-divider); border: 2px solid var(--color-text)"
       >
         {
           artigos.map((t) => (

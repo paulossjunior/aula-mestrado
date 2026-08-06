@@ -2,8 +2,8 @@
 
 **Branch**: `001-site-estatico-astro` · **Spec**: [spec.md](./spec.md) · **Plan**: [plan.md](./plan.md)
 
-Estado: todas as tarefas abaixo estão concluídas nesta branch. O build gera 22
-páginas. Falta apenas o deploy, bloqueado pelo incidente de Actions do GitHub.
+Estado: **concluída**. O site está no ar em
+<https://paulossjunior.github.io/aula-mestrado/> com as 22 páginas.
 
 ## Fase 1 — Fundação
 
@@ -44,7 +44,7 @@ páginas. Falta apenas o deploy, bloqueado pelo incidente de Actions do GitHub.
 
 - [X] T024 `.github/workflows/deploy.yml`: `npm ci` → `npm run build` → publica `dist/`
 - [X] T025 Verificar o build: 22 páginas, links com `base`, assets em `dist/`
-- [ ] T026 Deploy efetivo no GitHub Pages — **bloqueado**: incidente de Actions do GitHub (jobs não adquirem runner hospedado)
+- [X] T026 Deploy efetivo no GitHub Pages (run 31127295960, 1m03s, após o incidente de Actions do GitHub se resolver)
 
 ## Verificação
 
@@ -53,4 +53,19 @@ páginas. Falta apenas o deploy, bloqueado pelo incidente de Actions do GitHub.
 - [X] V003 Todos os links internos da home saem com o prefixo `/aula-mestrado`
 - [X] V004 `dist/` contém `.nojekyll`, `_ds/`, `uploads/` e `fichamento.tex`
 - [X] V005 Cada uma das seis páginas tem `<title>` próprio
-- [ ] V006 Conferência visual lado a lado com o protótipo em 375px e 1280px
+- [X] V006 Conferência visual lado a lado com o protótipo, por captura automatizada
+      (Playwright + Chrome) em 320, 375, 390, 768, 1280 e 1440px. Home, aula 01,
+      codebook e avaliação saem idênticas ao protótipo em 1280px.
+
+## Correções que a verificação visual encontrou
+
+O protótipo tinha rolagem horizontal na home em telas estreitas; a porta inicial a
+reproduziu fielmente. Como o princípio III proíbe rolagem horizontal, foram
+corrigidas na versão Astro:
+
+- [X] C001 `<h1>` do hero: `clamp(44px, …)` → `clamp(36px, …)` mais `hyphens: auto`.
+      "Desenvolvimento" a 44px mede 409px e vazava numa tela de 375px.
+- [X] C002 Grade da bibliografia: `minmax(300px, 1fr)` → `minmax(min(300px, 100%), 1fr)`.
+      A 320px de tela sobravam 280px de espaço útil e o cartão forçava 300px.
+
+Resultado: `scrollWidth == viewport` em todas as sete rotas medidas, de 320 a 1440px.
