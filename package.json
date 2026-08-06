@@ -1,0 +1,16 @@
+{
+  "name": "aula-mestrado",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Site da disciplina Tópico Especial em IA: Desenvolvimento de Software Suportado por IA — PPCOMP/IFES Serra 2026.2",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "extrair": "node scripts/extrair-conteudo.mjs"
+  },
+  "dependencies": {
+    "astro": "^5.14.1"
+  }
+}

@@ -1,0 +1,17 @@
+[
+  {
+    "romano": "I",
+    "nome": "Fundamentos",
+    "descricao": "Como um modelo de linguagem se comporta diante de código: o que ele garante, o que ele apenas parece garantir e como medir a diferença."
+  },
+  {
+    "romano": "II",
+    "nome": "Agentes",
+    "descricao": "Da especificação ao agente que age sobre um repositório — arquiteturas, ferramentas, critérios de parada e colaboração entre agentes."
+  },
+  {
+    "romano": "III",
+    "nome": "Avaliação",
+    "descricao": "Método: como avaliar assistentes e agentes com desenho experimental defensável, e as obrigações éticas e legais do código gerado."
+  }
+]

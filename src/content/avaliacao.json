@@ -1,0 +1,119 @@
+{
+  "pesos": [
+    {
+      "peso": "20%",
+      "titulo": "Apresentações e debate",
+      "texto": "No último encontro de cada mês cada dupla apresenta o andamento do seu trabalho e argui o dos colegas. Conta a apresentação e a qualidade da arguição.",
+      "resumo": "Último encontro de cada mês: apresentação do andamento do trabalho e arguição dos colegas."
+    },
+    {
+      "peso": "30%",
+      "titulo": "Laboratórios",
+      "texto": "Quatro práticas, todas sobre o tema da sua pesquisa, entregues como repositório executável.",
+      "resumo": "Quatro práticas entregues como repositório: prompt, SDD, agente e avaliação."
+    },
+    {
+      "peso": "50%",
+      "titulo": "Artigo final",
+      "texto": "Estudo experimental de oito páginas no formato SBC, derivado da sua questão de pesquisa, com dados e código abertos.",
+      "resumo": "Estudo experimental de 8 páginas no formato SBC, com dados e código abertos."
+    }
+  ],
+  "trilha": [
+    {
+      "marco": "Encontro 02",
+      "texto": "Você declara o tema da sua pesquisa e o artefato de software que vai usar como campo: repositório, dataset, protótipo ou ferramenta."
+    },
+    {
+      "marco": "Laboratórios 1 a 4",
+      "texto": "Cada prática aplica a técnica da unidade a esse mesmo objeto e é apresentada no último encontro do mês, seguida de debate com a turma."
+    },
+    {
+      "marco": "Artigo final",
+      "texto": "O artigo consolida os quatro laboratórios em um estudo submetível, alinhado à sua dissertação."
+    }
+  ],
+  "fichamento": [
+    { "campo": "Referência", "texto": "Autor, título, ano e link." },
+    { "campo": "Tema", "texto": "Assunto principal do texto." },
+    { "campo": "Objetivo", "texto": "O que o autor pretende discutir ou demonstrar." },
+    { "campo": "Resumo", "texto": "Síntese das principais ideias, com suas próprias palavras." },
+    { "campo": "Citação importante", "texto": "“Trecho relevante do texto.” (p. XX)" },
+    { "campo": "Comentário", "texto": "Sua avaliação sobre o texto e como ele pode ser útil para sua pesquisa." }
+  ],
+  "labs": [
+    {
+      "n": "01",
+      "prazo": "Encontro 04",
+      "titulo": "Engenharia de prompt aplicada ao seu domínio",
+      "descricao": "Construir e versionar um conjunto de prompts para uma tarefa de código recorrente, com critério explícito de acerto e registro de falhas.",
+      "noSeuTema": "a tarefa escolhida vem do software da sua pesquisa — o pipeline de dados, o simulador, o serviço que você está construindo."
+    },
+    {
+      "n": "02",
+      "prazo": "Encontro 07",
+      "titulo": "Especificação executável (SDD) de um componente seu",
+      "descricao": "Escrever a especificação de um componente e conduzir o modelo a implementá-lo a partir dela, com testes derivados da própria especificação.",
+      "noSeuTema": "o componente é um módulo real da sua dissertação, não um exemplo de aula."
+    },
+    {
+      "n": "03",
+      "prazo": "Encontro 12",
+      "titulo": "Agente sobre o seu repositório",
+      "descricao": "Colocar um agente com ferramentas de leitura, edição e execução de testes para fechar uma issue verdadeira, medindo intervenções humanas.",
+      "noSeuTema": "o repositório é o do seu trabalho; as issues são as que você já tem em aberto."
+    },
+    {
+      "n": "04",
+      "prazo": "Encontro 16",
+      "titulo": "Avaliação empírica do que você construiu",
+      "descricao": "Desenhar e executar um experimento pequeno mas completo: hipótese, tratamento, medida, amostra e dados brutos publicados.",
+      "noSeuTema": "a variável de interesse é uma que importa para a sua pesquisa, e o resultado entra no artigo final."
+    }
+  ],
+  "rubrica": [
+    {
+      "criterio": "Ligação com a pesquisa",
+      "peso": "25%",
+      "espera": "A pergunta do artigo decorre do seu tema de pesquisa e o texto explicita o que muda na dissertação."
+    },
+    {
+      "criterio": "Método",
+      "peso": "25%",
+      "espera": "Desenho experimental claro: hipótese, tratamento, medida, amostra e ameaças à validade."
+    },
+    {
+      "criterio": "Evidência",
+      "peso": "20%",
+      "espera": "Resultados sustentados por dados, com incerteza declarada — não por impressão de uso."
+    },
+    {
+      "criterio": "Reprodutibilidade",
+      "peso": "20%",
+      "espera": "Repositório executável: seed, versão do modelo, dados brutos e instruções."
+    },
+    {
+      "criterio": "Escrita",
+      "peso": "10%",
+      "espera": "Formato SBC respeitado, argumento em ordem, oito páginas sem enchimento."
+    }
+  ],
+  "regras": [
+    {
+      "titulo": "Aderência ao tema.",
+      "texto": "Entrega que não se liga à sua pesquisa é devolvida para refazer — não vale nota parcial."
+    },
+    {
+      "titulo": "Reprodutibilidade.",
+      "texto": "Toda entrega inclui repositório com <em>seed</em>, versão do modelo e instruções de execução."
+    },
+    {
+      "titulo": "Uso de IA.",
+      "texto": "Encorajado e obrigatoriamente declarado: ferramenta, versão, o que foi gerado e como foi verificado."
+    },
+    {
+      "titulo": "Atrasos.",
+      "texto": "Desconto de 10% por dia corrido; após cinco dias a entrega não é aceita."
+    }
+  ]
+}

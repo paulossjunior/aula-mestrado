@@ -1,0 +1,133 @@
+---
+import Base from "../layouts/Base.astro";
+import { rota } from "../lib/url";
+import { todasAulas } from "../lib/aulas";
+import unidades from "../content/unidades.json";
+
+const aulas = await todasAulas();
+const porUnidade = unidades.map((u) => ({
+  ...u,
+  aulas: aulas.filter((a) => a.unidade === u.romano),
+}));
+---
+
+<Base
+  titulo="Conteúdo das aulas — Dev. de Software com IA"
+  descricao="O que se estuda em cada um dos 17 encontros da disciplina, organizado nas três unidades: fundamentos, agentes e avaliação."
+>
+  <article>
+    <section class="om-pad" style="max-width: 1200px; margin: 0 auto; padding: 36px 32px 0">
+      <a
+        href={rota("/")}
+        style="font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase"
+        >← Início</a
+      >
+      <div
+        style="font-size: 13px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700); margin-top: 28px"
+      >
+        Programa · 17 encontros · três unidades
+      </div>
+      <h1
+        style="font-family: var(--font-heading); font-weight: 900; font-size: clamp(38px, 8vw, 84px); line-height: 0.95; letter-spacing: -0.035em; margin: 14px 0 0; max-width: 18ch; text-wrap: balance"
+      >
+        Conteúdo das aulas
+      </h1>
+      <p style="font-size: 18px; line-height: 1.55; max-width: 60ch; margin: 24px 0 20px; text-wrap: pretty">
+        O que se estuda em cada encontro, na ordem em que acontece. Cada aula tem página própria com
+        roteiro, leitura obrigatória e entrega.
+      </p>
+      <div
+        style="border: 2px solid var(--color-text); padding: 20px; max-width: 62ch; margin-bottom: 36px; background: var(--color-neutral-100)"
+      >
+        <div
+          style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-accent-700)"
+        >
+          Estado do programa
+        </div>
+        <p style="font-size: 15px; line-height: 1.6; margin: 10px 0 0; text-wrap: pretty">
+          Por ora, apenas o primeiro encontro está fechado; os demais aparecem como <strong
+            >a definir</strong
+          > e serão publicados aqui à medida que o semestre avança. Já está fixado, porém, que o <strong
+            >último encontro de cada mês é apresentação de trabalho e debate</strong
+          > — 27 ago, 24 set, 29 out, 26 nov e 3 dez.
+        </p>
+      </div>
+    </section>
+
+    {
+      porUnidade.map((u) => (
+        <section style="border-top: 2px solid var(--color-text)">
+          <div class="om-pad om-sec" style="max-width: 1200px; margin: 0 auto; padding: 56px 32px">
+            <div style="display: flex; align-items: baseline; gap: 16px; flex-wrap: wrap">
+              <span style="font-family: var(--font-heading); font-weight: 900; font-size: 44px; line-height: 0.9; letter-spacing: -0.04em; color: var(--color-accent)">
+                {u.romano}
+              </span>
+              <h2 style="font-family: var(--font-heading); font-weight: 900; font-size: clamp(28px, 5vw, 44px); letter-spacing: -0.025em; margin: 0">
+                {u.nome}
+              </h2>
+            </div>
+            <p style="font-size: 16px; line-height: 1.6; max-width: 58ch; margin: 14px 0 0; opacity: 0.8; text-wrap: pretty">
+              {u.descricao}
+            </p>
+
+            <div style="margin-top: 36px; border-top: 2px solid var(--color-text)">
+              {u.aulas.map((a) => (
+                <div style="padding: 24px 0; border-bottom: 2px solid var(--color-divider)">
+                  <div style="display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap">
+                    <span style="font-family: var(--font-heading); font-weight: 900; font-size: 20px; letter-spacing: -0.02em; color: var(--color-accent)">
+                      {a.n}
+                    </span>
+                    <span style="font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.6">
+                      {a.data}
+                    </span>
+                    {a.rotulo && (
+                      <span style="font-family: var(--font-heading); font-weight: 700; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; padding: 4px 8px; background: var(--color-text); color: var(--color-bg)">
+                        {a.rotulo}
+                      </span>
+                    )}
+                  </div>
+                  <h3 style="font-family: var(--font-heading); font-weight: 800; font-size: clamp(20px, 3.2vw, 26px); line-height: 1.2; letter-spacing: -0.02em; margin: 8px 0 0; max-width: 30ch; text-wrap: balance">
+                    {a.titulo}
+                  </h3>
+                  <p style="font-size: 16px; line-height: 1.6; margin: 12px 0 0; max-width: 62ch; text-wrap: pretty">
+                    {a.resumo}
+                  </p>
+                  {a.detalhada && (
+                    <ul style="margin: 18px 0 0; padding: 0; list-style: none; display: grid; gap: 8px">
+                      {a.objetivos.map((o) => (
+                        <li style="display: grid; grid-template-columns: 20px minmax(0, 1fr); gap: 10px; font-size: 15px; line-height: 1.5">
+                          <span style="font-family: var(--font-heading); font-weight: 800; color: var(--color-accent)">
+                            ·
+                          </span>
+                          <span>{o}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                  <div style="display: flex; gap: 16px; flex-wrap: wrap; align-items: baseline; margin-top: 18px">
+                    <a
+                      href={rota(`/aulas/${a.n}`)}
+                      style="font-family: var(--font-heading); font-size: 13px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase"
+                    >
+                      Página da aula →
+                    </a>
+                    <span style="font-size: 14px; opacity: 0.65">{a.leitura}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      ))
+    }
+
+    <section style="border-top: 2px solid var(--color-text); background: var(--color-neutral-100)">
+      <div class="om-pad om-sec" style="max-width: 1200px; margin: 0 auto; padding: 48px 32px">
+        <div style="display: flex; gap: 12px; flex-wrap: wrap">
+          <a class="btn btn-primary" href={rota("/#cronograma")}>Cronograma com datas</a>
+          <a class="btn btn-secondary" href={rota("/avaliacao")}>Como é avaliado</a>
+        </div>
+      </div>
+    </section>
+  </article>
+</Base>

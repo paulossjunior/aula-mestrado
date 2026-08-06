@@ -1,0 +1,227 @@
+---
+import Base from "../layouts/Base.astro";
+import { rota } from "../lib/url";
+import avaliacao from "../content/avaliacao.json";
+// O bloco de código e o arquivo para download são a mesma fonte.
+import tex from "../../public/fichamento.tex?raw";
+---
+
+<Base
+  titulo="Avaliação — Dev. de Software com IA"
+  descricao="Critérios, entregas e rubrica da disciplina: apresentações e debate (20%), quatro laboratórios (30%) e o artigo final no formato SBC (50%)."
+>
+  <article>
+    <section class="om-pad" style="max-width: 1200px; margin: 0 auto; padding: 36px 32px 0">
+      <a
+        href={rota("/")}
+        style="font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase"
+        >← Início</a
+      >
+      <div
+        style="font-size: 13px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700); margin-top: 28px"
+      >
+        Critérios e entregas · 2026.2
+      </div>
+      <h1
+        style="font-family: var(--font-heading); font-weight: 900; font-size: clamp(38px, 8vw, 84px); line-height: 0.95; letter-spacing: -0.035em; margin: 14px 0 0; max-width: 16ch; text-wrap: balance"
+      >
+        Avaliação
+      </h1>
+      <p style="font-size: 19px; line-height: 1.55; max-width: 60ch; margin: 24px 0 36px; text-wrap: pretty">
+        Nada aqui é exercício genérico. <strong
+          >Os laboratórios e os artigos devem tratar do tema do trabalho de pesquisa do aluno</strong
+        > — a dissertação, o projeto ou a linha de investigação que você já conduz.
+      </p>
+    </section>
+
+    <section style="border-top: 2px solid var(--color-text); background: var(--color-accent); color: #fff">
+      <div class="om-pad om-sec" style="max-width: 1200px; margin: 0 auto; padding: 56px 32px">
+        <h2
+          style="font-family: var(--font-heading); font-weight: 900; font-size: clamp(30px, 6vw, 60px); line-height: 1; letter-spacing: -0.035em; margin: 0; max-width: 24ch; text-wrap: balance"
+        >
+          Um objeto de estudo, do primeiro laboratório ao artigo final.
+        </h2>
+        <div
+          style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0 40px; margin-top: 40px"
+        >
+          {
+            avaliacao.trilha.map((t) => (
+              <div style="padding: 20px 0; border-top: 2px solid rgba(255,255,255,0.45)">
+                <div style="font-size: 12px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.85">
+                  {t.marco}
+                </div>
+                <p style="font-size: 16px; line-height: 1.55; margin: 10px 0 0">{t.texto}</p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section style="border-top: 2px solid var(--color-text)">
+      <div class="om-pad om-sec" style="max-width: 1200px; margin: 0 auto; padding: 64px 32px">
+        <h2 style="font-family: var(--font-heading); font-weight: 900; font-size: clamp(28px, 5vw, 44px); letter-spacing: -0.025em; margin: 0 0 28px">
+          Composição da nota
+        </h2>
+        <div
+          style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 2px; background: var(--color-divider); border: 2px solid var(--color-text)"
+        >
+          {
+            avaliacao.pesos.map((p) => (
+              <div style="background: var(--color-bg); padding: 24px">
+                <div style="font-family: var(--font-heading); font-weight: 900; font-size: 52px; line-height: 1; letter-spacing: -0.04em; color: var(--color-accent)">
+                  {p.peso}
+                </div>
+                <div style="font-family: var(--font-heading); font-weight: 800; font-size: 19px; margin-top: 12px">
+                  {p.titulo}
+                </div>
+                <p style="font-size: 15px; line-height: 1.55; margin: 8px 0 0; opacity: 0.8">{p.texto}</p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section id="fichamento" style="border-top: 2px solid var(--color-text)">
+      <div class="om-pad om-sec" style="max-width: 1200px; margin: 0 auto; padding: 64px 32px">
+        <h2 style="font-family: var(--font-heading); font-weight: 900; font-size: clamp(28px, 5vw, 44px); letter-spacing: -0.025em; margin: 0 0 10px">
+          Modelo de fichamento
+        </h2>
+        <p style="font-size: 16px; line-height: 1.6; max-width: 62ch; margin: 0 0 28px; text-wrap: pretty">
+          Uma página por artigo, nesta estrutura. O comentário final é a parte que mais pesa: é onde o
+          artigo encontra a sua pesquisa.
+        </p>
+        <div style="border: 2px solid var(--color-text); max-width: 74ch">
+          {
+            avaliacao.fichamento.map((f) => (
+              <div
+                class="om-lab"
+                style="display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 0 28px; padding: 18px 24px; border-bottom: 2px solid var(--color-divider)"
+              >
+                <div style="font-family: var(--font-heading); font-weight: 800; font-size: 16px; letter-spacing: -0.01em; padding-bottom: 6px">
+                  {f.campo}
+                </div>
+                <p style="font-size: 16px; line-height: 1.55; margin: 0; opacity: 0.8; text-wrap: pretty">
+                  {f.texto}
+                </p>
+              </div>
+            ))
+          }
+        </div>
+
+        <h3 style="font-family: var(--font-heading); font-weight: 900; font-size: 24px; letter-spacing: -0.02em; margin: 40px 0 10px">
+          Modelo em LaTeX
+        </h3>
+        <p style="font-size: 16px; line-height: 1.6; max-width: 62ch; margin: 0 0 18px; text-wrap: pretty">
+          Mesma estrutura, pronta para compilar com <code>pdflatex</code>. Baixe o arquivo ou copie o
+          preâmbulo abaixo.
+        </p>
+        <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 20px">
+          <a class="btn btn-primary" href={rota("/fichamento.tex")} download="fichamento.tex"
+            >Baixar fichamento.tex</a
+          >
+        </div>
+        <pre
+          style="border: 2px solid var(--color-text); background: var(--color-neutral-100); padding: 20px; overflow-x: auto; font-size: 13px; line-height: 1.55; margin: 0; max-width: 100%"><code>{tex}</code></pre>
+      </div>
+    </section>
+
+    <section style="border-top: 2px solid var(--color-text); background: var(--color-neutral-100)">
+      <div class="om-pad om-sec" style="max-width: 1200px; margin: 0 auto; padding: 64px 32px">
+        <h2 style="font-family: var(--font-heading); font-weight: 900; font-size: clamp(28px, 5vw, 44px); letter-spacing: -0.025em; margin: 0 0 10px">
+          Os quatro laboratórios
+        </h2>
+        <p style="font-size: 16px; line-height: 1.6; max-width: 60ch; margin: 0 0 32px; opacity: 0.85; text-wrap: pretty">
+          O enunciado é o mesmo para a turma; o campo de aplicação é o seu. Se o seu tema não é
+          engenharia de software, o objeto passa a ser o software que a sua pesquisa produz ou
+          consome.
+        </p>
+        <div style="border-top: 2px solid var(--color-text)">
+          {
+            avaliacao.labs.map((l) => (
+              <div
+                class="om-lab"
+                style="display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: 0 32px; padding: 24px 0; border-bottom: 2px solid var(--color-divider)"
+              >
+                <div style="padding-bottom: 12px">
+                  <div style="font-family: var(--font-heading); font-weight: 900; font-size: 30px; letter-spacing: -0.03em; color: var(--color-accent)">
+                    {l.n}
+                  </div>
+                  <div style="font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.6; margin-top: 4px">
+                    {l.prazo}
+                  </div>
+                </div>
+                <div style="padding-top: 12px">
+                  <h3 style="font-family: var(--font-heading); font-weight: 800; font-size: clamp(19px, 3vw, 24px); line-height: 1.2; letter-spacing: -0.015em; margin: 0; max-width: 32ch">
+                    {l.titulo}
+                  </h3>
+                  <p style="font-size: 16px; line-height: 1.6; margin: 10px 0 0; max-width: 62ch; text-wrap: pretty">
+                    {l.descricao}
+                  </p>
+                  <p style="font-size: 15px; line-height: 1.6; margin: 12px 0 0; max-width: 62ch">
+                    <strong style="font-family: var(--font-heading); font-weight: 800">No seu tema:</strong>{" "}
+                    {l.noSeuTema}
+                  </p>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section style="border-top: 2px solid var(--color-text)">
+      <div class="om-pad om-sec" style="max-width: 1200px; margin: 0 auto; padding: 64px 32px">
+        <h2 style="font-family: var(--font-heading); font-weight: 900; font-size: clamp(28px, 5vw, 44px); letter-spacing: -0.025em; margin: 0 0 10px">
+          Artigo final
+        </h2>
+        <p style="font-size: 16px; line-height: 1.6; max-width: 62ch; margin: 0 0 32px; text-wrap: pretty">
+          Oito páginas, formato SBC, escrito em dupla ou individualmente. A pergunta do artigo tem de
+          sair da sua pesquisa: o que o uso de IA no desenvolvimento muda no problema que você já
+          estuda.
+        </p>
+        <div class="om-scroll" style="border: 2px solid var(--color-text)">
+          <table class="table" style="width: 100%; border-collapse: collapse">
+            <thead>
+              <tr>
+                <th style="text-align: left">Critério</th>
+                <th style="text-align: left">Peso</th>
+                <th style="text-align: left">O que se espera</th>
+              </tr>
+            </thead>
+            <tbody>
+              {
+                avaliacao.rubrica.map((r) => (
+                  <tr>
+                    <td style="font-family: var(--font-heading); font-weight: 800">{r.criterio}</td>
+                    <td style="font-family: var(--font-heading); font-weight: 800; color: var(--color-accent)">
+                      {r.peso}
+                    </td>
+                    <td style="line-height: 1.55">{r.espera}</td>
+                  </tr>
+                ))
+              }
+            </tbody>
+          </table>
+        </div>
+        <div
+          style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 28px; margin-top: 36px; font-size: 15px; line-height: 1.6"
+        >
+          {
+            avaliacao.regras.map((r) => (
+              <p style="margin: 0">
+                <strong style="font-family: var(--font-heading); font-weight: 800">{r.titulo}</strong>{" "}
+                <span set:html={r.texto} />
+              </p>
+            ))
+          }
+        </div>
+        <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 40px">
+          <a class="btn btn-primary" href={rota("/conteudo")}>Conteúdo das aulas</a>
+          <a class="btn btn-secondary" href={rota("/#cronograma")}>Cronograma</a>
+        </div>
+      </div>
+    </section>
+  </article>
+</Base>

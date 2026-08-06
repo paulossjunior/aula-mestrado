@@ -1,0 +1,30 @@
+[
+  {
+    "par": "F7",
+    "texto": "O código que mais gera erro, em duas direções. Superatribuição: framework multiagente que declara cobrir o ciclo mas avalia uma fase só — o critério é a avaliação, não a declaração. Subatribuição: artigos de infraestrutura que parecem pertencer à fase em que foram demonstrados. Com F10 e F11, surgiu um terceiro erro: mandar para F7 um artigo de coordenação ou de conhecimento por falta de código melhor. Verifique F10 e F11 antes de recorrer a F7."
+  },
+  {
+    "par": "F9 · F1",
+    "texto": "Depende de existir requisito. Compreender um sistema legado para descobrir que regra de negócio ele implementa é F9; escrever a especificação dessa regra para reimplementá-la é F1."
+  },
+  {
+    "par": "F4 · F5",
+    "texto": "Depende de haver um defeito concreto como ponto de partida. Detecção de vulnerabilidade é F4; correção de vulnerabilidade reportada é F5. Quem detecta e corrige na mesma abordagem vai para F5, porque a correção é o desfecho medido."
+  },
+  {
+    "par": "F5 · F6",
+    "texto": "Depende da motivação. Patch motivado por relato de defeito é F5; alteração motivada por mudança de plataforma, dependência ou dívida é F6 — mesmo com mecanismo técnico idêntico."
+  },
+  {
+    "par": "F5 · F10",
+    "texto": "Separa resolver de organizar. Triar, classificar e atribuir uma issue é F10; resolvê-la é F5. Quem faz as duas coisas vai para aquela em que a avaliação se concentra."
+  },
+  {
+    "par": "F3 · F11",
+    "texto": "É de ciclo de vida do artefato. Documentação gerada e avaliada como texto produzido é F3; documentação mantida, versionada e consultada ao longo do projeto é F11. Benchmark que usa documentação como entrada para gerar código é F3, porque o desfecho medido é o código."
+  },
+  {
+    "par": "F7 · F11",
+    "texto": "Separa a memória da máquina da memória da equipe. Arquitetura de memória de agente, janela de contexto e compactação são F7; arquivos de convenção, registros de decisão e base de conhecimento consultável são F11, mesmo quando o consumidor é um agente."
+  }
+]

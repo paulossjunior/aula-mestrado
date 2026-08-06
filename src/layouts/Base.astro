@@ -1,0 +1,127 @@
+---
+import { rota } from "../lib/url";
+
+interface Props {
+  titulo: string;
+  descricao: string;
+}
+
+const { titulo, descricao } = Astro.props;
+
+const nav = [
+  { texto: "Ementa", href: rota("/#ementa") },
+  { texto: "Fases", href: rota("/codebook") },
+  { texto: "Cronograma", href: rota("/#cronograma") },
+  { texto: "Conteúdo", href: rota("/conteudo") },
+  { texto: "Leituras", href: rota("/#leituras") },
+  { texto: "Avaliação", href: rota("/avaliacao") },
+  { texto: "Contato", href: rota("/#contato") },
+];
+---
+
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{titulo}</title>
+    <meta name="description" content={descricao} />
+    <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site)} />
+    <link
+      rel="stylesheet"
+      href={rota("/_ds/modernist-a03d4a61-8041-48c5-a776-4257fca7a731/styles.css")}
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <style is:global>
+      body {
+        margin: 0;
+        background: var(--color-bg);
+        color: var(--color-text);
+        font-family: var(--font-body);
+      }
+      a { color: var(--color-accent-700); text-decoration: none; }
+      a:hover { color: var(--color-accent-600); text-decoration: underline; }
+      * { box-sizing: border-box; }
+      :focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+      html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+      /* mobile first: estas são as regras base */
+      .om-pad { padding-left: 20px !important; padding-right: 20px !important; }
+      .om-sec { padding-top: 44px !important; padding-bottom: 44px !important; }
+      .om-2col { grid-template-columns: minmax(0, 1fr) !important; gap: 32px !important; }
+      .om-row { grid-template-columns: 46px minmax(0, 1fr) 24px !important; gap: 6px 12px !important; }
+      .om-row-num { grid-area: 1 / 1 / 4 / 2; }
+      .om-row-data { grid-area: 1 / 2 / 2 / 3; }
+      .om-row-title { grid-area: 2 / 2 / 3 / 3; }
+      .om-row-unit { grid-area: 3 / 2 / 4 / 3; }
+      .om-row-sign { grid-area: 1 / 3 / 2 / 4; }
+      .om-nav { gap: 8px 14px !important; font-size: 12px !important; flex-wrap: wrap; margin-left: 0 !important; width: 100%; }
+      .om-filter { flex-wrap: wrap; }
+      .om-filter button { padding: 8px 12px !important; font-size: 12px !important; }
+      .om-aula-grid { grid-template-columns: minmax(0, 1fr) !important; gap: 36px !important; }
+      .om-roteiro { grid-template-columns: 78px minmax(0, 1fr) !important; }
+      .om-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+      .om-scroll table { min-width: 620px; }
+      .om-lab { grid-template-columns: minmax(0, 1fr) !important; }
+      .om-lab > * + * { border-top: 2px solid var(--color-divider); }
+
+      @media (min-width: 861px) {
+        .om-pad { padding-left: 32px !important; padding-right: 32px !important; }
+        .om-sec { padding-top: 72px !important; padding-bottom: 72px !important; }
+        .om-2col { grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr) !important; gap: 64px !important; }
+        .om-row { grid-template-columns: 78px 96px minmax(0, 1fr) 150px 28px !important; gap: 20px !important; }
+        .om-row-num, .om-row-data, .om-row-title, .om-row-unit, .om-row-sign { grid-area: auto; }
+        .om-nav { gap: 24px !important; font-size: 13px !important; margin-left: auto !important; width: auto; }
+        .om-aula-grid { grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr) !important; gap: 64px !important; }
+        .om-roteiro { grid-template-columns: 120px minmax(0, 1fr) !important; }
+        .om-lab { grid-template-columns: 120px minmax(0, 1fr) !important; }
+        .om-lab > * + * { border-top: 0; }
+      }
+
+      /* hovers que no protótipo vinham do atributo style-hover */
+      .om-hover:hover { background: var(--color-accent-100); }
+      .om-filter button:hover, .om-corpus-filtro button:hover { background: var(--color-accent-200); }
+    </style>
+  </head>
+  <body>
+    <div style="font-family: var(--font-body); background: var(--color-bg); min-height: 100vh">
+      <header
+        style="position: sticky; top: 0; z-index: 20; background: var(--color-bg); border-bottom: 2px solid var(--color-text)"
+      >
+        <div
+          class="om-pad"
+          style="max-width: 1200px; margin: 0 auto; padding: 14px 32px; display: flex; align-items: baseline; gap: 32px; flex-wrap: wrap"
+        >
+          <a
+            href={rota("/")}
+            style="font-family: var(--font-heading); font-weight: 900; font-size: 17px; letter-spacing: -0.02em; text-transform: uppercase; color: var(--color-text)"
+            >IFES Serra <span style="color: var(--color-accent)">/</span> Dev. de Software com IA</a
+          >
+          <nav
+            class="om-nav"
+            style="display: flex; gap: 24px; margin-left: auto; font-size: 13px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase"
+          >
+            {nav.map((i) => <a href={i.href} style="color: var(--color-text)">{i.texto}</a>)}
+          </nav>
+        </div>
+      </header>
+
+      <slot />
+
+      <footer style="border-top: 2px solid var(--color-text); background: var(--color-bg)">
+        <div
+          class="om-pad"
+          style="max-width: 1200px; margin: 0 auto; padding: 28px 32px; display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; opacity: 0.7"
+        >
+          <span>IFES Câmpus Serra · Mestrado em Computação Aplicada</span>
+          <span>Plano de ensino atualizado em agosto de 2026</span>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

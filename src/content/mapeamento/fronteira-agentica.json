@@ -1,0 +1,82 @@
+[
+  {
+    "id": "2601.11655",
+    "url": "https://arxiv.org/abs/2601.11655",
+    "ano": "2026",
+    "fase": "Depuração e reparo",
+    "titulo": "Advances and Frontiers of LLM-based Issue Resolution in Software Engineering",
+    "foco": "Agentes de código autônomos para resolução de issues"
+  },
+  {
+    "id": "2605.15245",
+    "url": "https://arxiv.org/abs/2605.15245",
+    "ano": "2026",
+    "fase": "Processo transversal",
+    "titulo": "Assistance to Autonomy: A Systematic Literature Review of Agentic AI across the SDLC",
+    "foco": "Agentes autônomos em todo o ciclo de vida"
+  },
+  {
+    "id": "2606.04967",
+    "url": "https://arxiv.org/abs/2606.04967",
+    "ano": "2026",
+    "fase": "Processo transversal",
+    "titulo": "From Prompt to Process: a Process Taxonomy and Comparative Assessment of Frameworks",
+    "foco": "Taxonomia de processos para frameworks agênticos"
+  },
+  {
+    "id": "2602.06052",
+    "url": "https://arxiv.org/abs/2602.06052",
+    "ano": "2026",
+    "fase": "Processo transversal",
+    "titulo": "A Survey of Agent Memory in the Second Half",
+    "foco": "Memória de agentes para tarefas longas"
+  },
+  {
+    "id": "2606.13175",
+    "url": "https://arxiv.org/abs/2606.13175",
+    "ano": "2026",
+    "fase": "Verificação",
+    "titulo": "The End of Code Review: Coding Agents Supersede Human Inspection",
+    "foco": "Agentes substituindo revisão humana"
+  },
+  {
+    "id": "2608.01001",
+    "url": "https://arxiv.org/abs/2608.01001",
+    "ano": "2026",
+    "fase": "Manutenção",
+    "titulo": "From AI Technical Debt to Agentic Technical Debt: A Systematic Mapping",
+    "foco": "Dívida técnica em sistemas agênticos"
+  },
+  {
+    "id": "2608.03392",
+    "url": "https://arxiv.org/abs/2608.03392",
+    "ano": "2026",
+    "fase": "Processo transversal",
+    "titulo": "Self-Evolving Coding Agents",
+    "foco": "Agentes de codificação que evoluem com feedback"
+  },
+  {
+    "id": "2510.09721",
+    "url": "https://arxiv.org/abs/2510.09721",
+    "ano": "2025",
+    "fase": "Processo transversal",
+    "titulo": "A Comprehensive Survey on Benchmarks and Solutions in SE of LLM-Empowered Agentic System",
+    "foco": "Benchmarks e soluções agênticas"
+  },
+  {
+    "id": "2512.22256",
+    "url": "https://arxiv.org/abs/2512.22256",
+    "ano": "2025",
+    "fase": "Depuração e reparo",
+    "titulo": "Agentic Software Issue Resolution with Large Language Models: A Survey",
+    "foco": "Resolução automática de issues"
+  },
+  {
+    "id": "2508.17692",
+    "url": "https://arxiv.org/abs/2508.17692",
+    "ano": "2025",
+    "fase": "Processo transversal",
+    "titulo": "LLM-based Agentic Reasoning Frameworks: A Survey from Methods to Scenarios",
+    "foco": "Frameworks de raciocínio agêntico"
+  }
+]
