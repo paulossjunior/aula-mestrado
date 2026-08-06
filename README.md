@@ -1,53 +1,125 @@
-# Site da disciplina — Desenvolvimento de Software Suportado por IA
+# Desenvolvimento de Software Suportado por IA
 
-Site de **Tópico Especial em Inteligência Artificial: Desenvolvimento de Software
-Suportado por IA** — Mestrado em Computação Aplicada, IFES Serra, 2026.2.
-Prof. Paulo Sérgio dos Santos Júnior.
+Site da disciplina **Tópico Especial em Inteligência Artificial: Desenvolvimento de
+Software Suportado por IA** — Mestrado em Computação Aplicada (PPCOMP), IFES Câmpus
+Serra, 2026.2. Prof. Paulo Sérgio dos Santos Júnior.
 
-No ar em <https://paulossjunior.github.io/aula-mestrado/>.
+**No ar:** <https://paulossjunior.github.io/aula-mestrado/>
 
-## Publicar o roteiro de uma aula
+Site estático em [Astro](https://astro.build), publicado no GitHub Pages a cada
+push na `main`. O conteúdo — aulas, codebook, bibliografia, avaliação — vive em
+arquivos de texto, fora do código: publicar o roteiro de uma aula não exige abrir
+nenhum arquivo de programação.
 
-Sem tocar em código. Abra o arquivo do encontro em `src/content/aulas/` — `02.md`
-é o encontro 02 —, edite o texto e troque a linha do estado:
+---
+
+## O que o site tem
+
+| Rota | Conteúdo |
+| --- | --- |
+| `/` | Ementa, objetivos, cronograma dos 17 encontros, bibliografia, resumo da avaliação e contato |
+| `/conteudo` | O programa completo, agrupado nas três unidades |
+| `/avaliacao` | Composição da nota, os quatro laboratórios, rubrica do artigo final e o modelo de fichamento |
+| `/codebook` | As onze fases do processo de software: escopo, inclusão, exclusão, teste de decisão e exemplos |
+| `/codebook/mapeamento` | O mapeamento do campo: seis tabelas, duas figuras e o corpus navegável |
+| `/aulas/01` … `/aulas/17` | Uma página por encontro: roteiro, objetivos, atividade, entrega, leitura e material |
+
+São 22 páginas HTML estáticas. Só duas coisas usam JavaScript — o filtro de unidade
+no cronograma e o navegador de corpus. Todo o resto funciona com o JS desligado.
+
+---
+
+## Para o professor: publicar o roteiro de um encontro
+
+Cada encontro é um arquivo em [`src/content/aulas/`](src/content/aulas/). O `02.md` é
+o encontro 02. Edite o texto e troque uma linha:
 
 ```yaml
-estado: definir     # antes: o site mostra "A definir"
-estado: fechada     # depois: o site publica o roteiro
+estado: definir     # o site mostra "A definir"
+estado: fechada     # o site publica o roteiro
 ```
 
-Commit na `main`. O GitHub Actions reconstrói e republica sozinho.
+Commit na `main` → o site se republica sozinho em ~1 minuto.
 
-Os três estados possíveis:
+Os três estados:
 
-| `estado` | O que o site mostra |
+| `estado` | O que aparece no site |
 | --- | --- |
 | `fechada` | O roteiro completo do encontro |
 | `apresentacao` | Último encontro do mês: apresentação de trabalho e debate |
 | `definir` | "A definir" — o conteúdo do arquivo fica invisível até você fechá-lo |
 
-Os encontros 02 a 17 já têm um **rascunho** de título, roteiro e leitura no próprio
-arquivo. Ele não aparece no site enquanto o estado for `definir`: serve de ponto de
-partida para você revisar. Nos encontros de apresentação o plano original está sob a
-chave `rascunho`.
+**Nada se perde.** Os encontros 02 a 17 já têm um rascunho de título, roteiro,
+leitura e entrega dentro do próprio arquivo. Ele não vai para o ar enquanto o estado
+for `definir` — serve de ponto de partida para você revisar. Nos encontros de
+apresentação, o plano original está guardado na chave `rascunho`.
 
-## Onde fica cada conteúdo
+### Anatomia de um arquivo de aula
+
+```yaml
+---
+n: "02"                      # número do encontro, dois dígitos
+data: "13 ago"               # como aparece no cronograma
+dataLonga: "Quinta, 13 de agosto de 2026"
+unidade: "I"                 # I, II ou III
+estado: "definir"            # fechada | apresentacao | definir
+titulo: "..."
+leitura: "..."               # a linha curta que aparece no cronograma
+resumo: "..."                # o parágrafo de abertura da página
+objetivos: [...]             # lista
+roteiro:                     # os blocos das três horas
+  - hora: "19h00–19h50"
+    texto: "..."
+atividade: "..."
+entrega: "..."
+prazo: "..."
+leituras:                    # bibliografia do encontro
+  - titulo: "..."
+    autor: "..."
+    fonte: "..."
+    tag: "Obrigatória"       # "Obrigatória" e "Núcleo" saem em vermelho
+    href: "https://..."      # opcional
+materiais:
+  - texto: "..."
+    href: "/codebook"        # opcional; interno ou externo
+---
+```
+
+Campo obrigatório faltando ou com o tipo errado **quebra o build** e a mensagem
+aponta o arquivo e o campo. O contrato está em
+[`src/content.config.ts`](src/content.config.ts) — é a garantia de que uma aula
+malformada nunca chega ao ar.
+
+---
+
+## Onde fica cada coisa
 
 ```
-src/content/aulas/NN.md          um arquivo por encontro (17)
-src/content/codebook/            as onze fases e as sete fronteiras
-src/content/mapeamento/          as seis tabelas do mapeamento
-src/content/bibliografia.json    ids do arXiv + rótulo (Núcleo / Fronteira)
-src/content/avaliacao.json       pesos, laboratórios, rubrica e fichamento
-src/content/unidades.json        as três unidades
-src/data/corpus.js               os dois corpora (157 secundários + 106 em sedes)
-public/uploads/                  as figuras do mapeamento
-public/fichamento.tex            o modelo em LaTeX (é o mesmo texto exibido no site)
-public/_ds/modernist-…/          o design system: styles.css e guia
+src/content/aulas/NN.md         um arquivo por encontro (17)
+src/content/codebook/           as onze fases e as sete fronteiras de classificação
+src/content/mapeamento/         as seis tabelas do mapeamento do campo
+src/content/bibliografia.json   ids do arXiv + rótulo (Núcleo / Fronteira)
+src/content/avaliacao.json      pesos, laboratórios, rubrica e modelo de fichamento
+src/content/unidades.json       as três unidades e suas descrições
+src/data/corpus.js              os dois corpora (157 secundários + 106 em sedes)
+
+src/layouts/Base.astro          head, header, footer e os estilos globais
+src/pages/                      as rotas (veja a tabela acima)
+src/lib/url.ts                  resolve links sob o subcaminho do GitHub Pages
+src/lib/aulas.ts                traduz `estado` no que a página renderiza
+
+public/_ds/modernist-…/         o design system: styles.css, guia e tokens
+public/uploads/                 as figuras do mapeamento
+public/fichamento.tex           o modelo em LaTeX (é o mesmo texto exibido no site)
+public/.nojekyll                obrigatório — veja "Deploy"
+
+fontes/                         material de origem: codebook, mapeamento e os CSV
+Disciplina.dc.html, support.js  o protótipo original, guardado como registro
+scripts/extrair-conteudo.mjs    o script que migrou os dados do protótipo
+specs/                          a especificação que guiou a construção
 ```
 
-Um campo obrigatório ausente ou com tipo errado faz o build falhar apontando o
-arquivo — o schema está em `src/content.config.ts`.
+---
 
 ## Rodar localmente
 
@@ -58,44 +130,82 @@ npm run build    # gera dist/
 npm run preview  # serve dist/
 ```
 
-## Rotas
+Node 20 ou superior.
 
-`/` · `/conteudo` · `/avaliacao` · `/codebook` · `/codebook/mapeamento` ·
-`/aulas/01` … `/aulas/17`
-
-## Estado do conteúdo
-
-- **Real:** codebook das 11 fases, corpus (arXiv + OpenAlex), bibliografia, figuras,
-  calendário (quintas 19h–22h, 06 ago a 03 dez, sem aula em 10 set por causa do
-  SBES 2026), modelo de fichamento.
-- **Definido:** só a **Aula 01**. As demais aparecem como *a definir*.
-- **Fixo:** o **último encontro de cada mês** (27 ago, 24 set, 29 out, 26 nov,
-  03 dez) é apresentação de trabalho e debate.
-- **Provisório, a substituir pelo plano de ensino real:** pesos da avaliação
-  (20/30/50), enunciados dos quatro laboratórios, títulos das aulas 02–17.
-- **Defasado:** `/codebook/mapeamento` ainda usa o recorte de 157/106 sob o esquema
-  de 8 fases. O codebook já está em 11 fases, 171/129. Há um aviso visível na própria
-  página; atualizar quando os novos CSV existirem.
-
-## Como este repositório foi construído
-
-Especificação antes do código, com o [spec-kit](https://github.com/github/spec-kit):
-
-```
-.specify/memory/constitution.md              os princípios do projeto
-specs/001-site-estatico-astro/spec.md        o que o site tem de fazer
-specs/001-site-estatico-astro/plan.md        como foi construído
-specs/001-site-estatico-astro/tasks.md       as tarefas, e o que falta
-```
-
-O protótipo de origem continua no repositório (`Disciplina.dc.html`, `support.js`)
-como registro. `scripts/extrair-conteudo.mjs` foi o que transportou os dados dele
-para `src/content/` — roda de novo se a fonte mudar.
+---
 
 ## Deploy
 
-GitHub Actions, em `.github/workflows/deploy.yml`: push na `main` → `npm ci` →
-`npm run build` → publica `dist/` no GitHub Pages.
+[`.github/workflows/deploy.yml`](.github/workflows/deploy.yml): push na `main` →
+`npm ci` → `npm run build` → publica `dist/` no GitHub Pages.
 
-`public/.nojekyll` é obrigatório: sem ele o Pages ignora `_ds/` e `_astro/`, que
-começam com underscore, e o site sobe sem CSS nem JavaScript.
+Dois detalhes que não são óbvios:
+
+- **`public/.nojekyll` é obrigatório.** Sem ele o GitHub Pages roda o Jekyll, que
+  ignora diretórios começados por underscore — e o site subiria sem `_ds/` (o CSS)
+  e sem `_astro/` (o JavaScript).
+- **`base` tem de bater com o nome do repositório.** Está em
+  [`astro.config.mjs`](astro.config.mjs) como `/aula-mestrado`. Renomear o
+  repositório sem atualizar isso quebra todos os links. Nenhum link é escrito à mão:
+  todos passam por `rota()`, que lê esse valor.
+
+---
+
+## Estado do conteúdo
+
+- **Real:** codebook das 11 fases, os dois corpora (arXiv + OpenAlex), bibliografia,
+  figuras, calendário (quintas 19h–22h, 06 ago a 03 dez, sem aula em 10 set por causa
+  do SBES 2026) e o modelo de fichamento.
+- **Fechado:** só a **Aula 01**. As demais aparecem como *a definir*.
+- **Fixo:** o **último encontro de cada mês** (27 ago, 24 set, 29 out, 26 nov e
+  03 dez) é apresentação de trabalho e debate.
+- **Provisório, a substituir pelo plano de ensino real:** pesos da avaliação
+  (20/30/50), enunciados dos quatro laboratórios e os títulos das aulas 02–17.
+- **Defasado:** `/codebook/mapeamento` ainda usa o recorte de 157/106 sob o esquema
+  de 8 fases; o codebook já está em 11 fases, 171/129. Há um aviso visível na própria
+  página. Atualizar quando os novos CSV existirem em `fontes/`.
+
+---
+
+## Como este repositório foi construído
+
+O site nasceu de um protótipo de arquivo único (`Disciplina.dc.html`, 1.890 linhas)
+com navegação por hash e as 17 aulas embutidas num `<script>`. A reconstrução seguiu
+o [spec-kit](https://github.com/github/spec-kit) — especificação antes do código:
+
+```
+.specify/memory/constitution.md            os princípios que o projeto não viola
+specs/001-site-estatico-astro/spec.md      o que o site tem de fazer, e como testar
+specs/001-site-estatico-astro/plan.md      as decisões de projeto e o porquê
+specs/001-site-estatico-astro/tasks.md     as tarefas e a verificação
+```
+
+Os seis princípios, em resumo: conteúdo separado de código; fidelidade ao design
+system Modernist; mobile first com um único ponto de quebra; saída estática sem
+runtime; **não inventar conteúdo**; rotas reais em vez de hash.
+
+O protótipo continua no repositório e ainda abre no navegador.
+[`scripts/extrair-conteudo.mjs`](scripts/extrair-conteudo.mjs) foi o que transportou
+os dados dele para `src/content/` — roda de novo se a fonte mudar.
+
+### Decisões que valem registro
+
+1. **Sem framework de UI.** As duas interações são ilhas em JavaScript nativo. React
+   ou Vue custariam mais que a interação que entregariam.
+2. **Estado por arquivo, não por lista no código.** O protótipo decidia o que
+   mostrar com duas listas embutidas no script. Agora cada aula declara o próprio
+   `estado`.
+3. **`fichamento.tex` é fonte única.** A página de avaliação importa o arquivo com
+   `?raw`, então o bloco de código exibido e o arquivo baixado nunca divergem.
+4. **A conferência visual encontrou um defeito herdado.** A home do protótipo rolava
+   na horizontal em telas estreitas — o título a 44px media 409px numa tela de 375px.
+   A porta reproduzia o defeito fielmente; foi corrigido na versão Astro. Registro em
+   [`tasks.md`](specs/001-site-estatico-astro/tasks.md).
+
+---
+
+## Licença e crédito
+
+Material didático do PPCOMP/IFES Serra. O design system Modernist está em
+`public/_ds/` com seu próprio guia. O corpus vem do arXiv e do OpenAlex, ambos de
+acesso aberto.
