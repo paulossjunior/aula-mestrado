@@ -1,0 +1,66 @@
+name: CI
+
+# Roda em toda mudança que não seja a main — pull request ou push em branch.
+# A main tem seu próprio fluxo, que verifica e publica (deploy.yml).
+on:
+  pull_request:
+  push:
+    branches-ignore: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verificar:
+    name: Verificar conteúdo e build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      # Valida o frontmatter das aulas contra o schema e os tipos do projeto.
+      # Um campo faltando ou com tipo errado quebra aqui, não em produção.
+      - name: Checagem de tipos e de schema
+        run: npm run check
+
+      - name: Build
+        run: npm run build
+
+      # As 22 páginas têm de existir; se uma sumir, o site publicaria com 404.
+      - name: Conferir as páginas geradas
+        run: |
+          total=$(find dist -name index.html | wc -l | tr -d ' ')
+          echo "páginas geradas: $total"
+          test "$total" -eq 22 || { echo "esperava 22 páginas, encontrei $total"; exit 1; }
+          for p in dist/index.html dist/conteudo/index.html dist/avaliacao/index.html \
+                   dist/codebook/index.html dist/codebook/mapeamento/index.html; do
+            test -f "$p" || { echo "faltou $p"; exit 1; }
+          done
+          for n in 01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 16 17; do
+            test -f "dist/aulas/$n/index.html" || { echo "faltou a aula $n"; exit 1; }
+          done
+
+      # Sem .nojekyll o GitHub Pages ignora _ds/ e _astro/, e o site sobe sem
+      # CSS nem JavaScript. É o erro mais silencioso que este projeto pode ter.
+      - name: Conferir os assets obrigatórios
+        run: |
+          for a in dist/.nojekyll dist/fichamento.tex \
+                   dist/uploads/mapa_secundarios_fase_ano.png \
+                   dist/uploads/sedes_fase_heatmap.png \
+                   dist/_ds/modernist-a03d4a61-8041-48c5-a776-4257fca7a731/styles.css; do
+            test -f "$a" || { echo "faltou $a"; exit 1; }
+          done
+
+      # Todo link interno tem de sair com o prefixo do GitHub Pages.
+      - name: Conferir o caminho base
+        run: |
+          grep -q 'href="/aula-mestrado/' dist/index.html \
+            || { echo "a home não usa o base /aula-mestrado"; exit 1; }

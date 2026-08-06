@@ -1,5 +1,7 @@
 name: Deploy no GitHub Pages
 
+# Toda mudança que chega na main vai para o ar.
+# `workflow_dispatch` fica como escape: republicar sem precisar de um commit novo.
 on:
   push:
     branches: [main]
@@ -16,21 +18,41 @@ concurrency:
 
 jobs:
   build:
+    name: Verificar e construir
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
+
       - uses: actions/setup-node@v4
         with:
           node-version: 22
           cache: npm
+
       - run: npm ci
-      - run: npm run build
+
+      # Mesma checagem do CI: conteúdo malformado não chega ao ar.
+      - name: Checagem de tipos e de schema
+        run: npm run check
+
       - uses: actions/configure-pages@v5
+
+      - run: npm run build
+
+      - name: Conferir o que vai ser publicado
+        run: |
+          total=$(find dist -name index.html | wc -l | tr -d ' ')
+          echo "páginas geradas: $total"
+          test "$total" -eq 22 || { echo "esperava 22 páginas, encontrei $total"; exit 1; }
+          test -f dist/.nojekyll || { echo "faltou .nojekyll: o Pages ignoraria _ds/ e _astro/"; exit 1; }
+          grep -q 'href="/aula-mestrado/' dist/index.html \
+            || { echo "a home não usa o base /aula-mestrado"; exit 1; }
+
       - uses: actions/upload-pages-artifact@v4
         with:
           path: dist
 
   deploy:
+    name: Publicar
     needs: build
     runs-on: ubuntu-latest
     environment:

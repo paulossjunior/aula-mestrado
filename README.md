@@ -134,10 +134,35 @@ Node 20 ou superior.
 
 ---
 
-## Deploy
+## CI/CD
 
-[`.github/workflows/deploy.yml`](.github/workflows/deploy.yml): push na `main` →
-`npm ci` → `npm run build` → publica `dist/` no GitHub Pages.
+Duas esteiras, ambas em GitHub Actions:
+
+| Workflow | Quando roda | O que faz |
+| --- | --- | --- |
+| [`ci.yml`](.github/workflows/ci.yml) | pull request e push em qualquer branch que não seja a `main` | verifica e constrói, **sem publicar** |
+| [`deploy.yml`](.github/workflows/deploy.yml) | push na `main` | verifica, constrói e **publica** no GitHub Pages |
+
+As duas rodam a mesma bateria de verificação antes de deixar qualquer coisa passar:
+
+1. `npm run check` — tipos e o schema do frontmatter das aulas. Um campo faltando
+   ou com o tipo errado reprova aqui.
+2. `npm run build` — o site tem de construir.
+3. **22 páginas** — conta os `index.html` e confere um a um: as cinco páginas fixas
+   e as 17 aulas. Se uma sumir, reprova em vez de publicar um 404.
+4. **Assets obrigatórios** — `.nojekyll`, `fichamento.tex`, as duas figuras e a
+   folha do design system.
+5. **Caminho base** — a home tem de sair com links `/aula-mestrado/`.
+
+Na prática: você edita uma aula, faz commit na `main`, e em ~1 minuto o site está
+atualizado. Se o arquivo estiver malformado, o workflow falha e **o site no ar
+continua intacto** — nunca sobe uma versão quebrada.
+
+Para republicar sem commit novo:
+
+```sh
+gh workflow run "Deploy no GitHub Pages" -R paulossjunior/aula-mestrado
+```
 
 Dois detalhes que não são óbvios:
 
