@@ -1,0 +1,1890 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="_ds/modernist-a03d4a61-8041-48c5-a776-4257fca7a731/styles.css">
+<script src="_ds/modernist-a03d4a61-8041-48c5-a776-4257fca7a731/_ds_bundle.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  body { margin: 0; background: var(--color-bg); color: var(--color-text); font-family: var(--font-body); }
+  a { color: var(--color-accent-700); text-decoration: none; }
+  a:hover { color: var(--color-accent-600); text-decoration: underline; }
+  * { box-sizing: border-box; }
+  :focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+  /* mobile first: estas são as regras base */
+  .om-pad { padding-left: 20px !important; padding-right: 20px !important; }
+  .om-sec { padding-top: 44px !important; padding-bottom: 44px !important; }
+  .om-2col { grid-template-columns: minmax(0, 1fr) !important; gap: 32px !important; }
+  .om-row { grid-template-columns: 46px minmax(0, 1fr) 24px !important; gap: 6px 12px !important; }
+  .om-row-num { grid-area: 1 / 1 / 4 / 2; }
+  .om-row-data { grid-area: 1 / 2 / 2 / 3; }
+  .om-row-title { grid-area: 2 / 2 / 3 / 3; }
+  .om-row-unit { grid-area: 3 / 2 / 4 / 3; }
+  .om-row-sign { grid-area: 1 / 3 / 2 / 4; }
+  .om-nav { gap: 8px 14px !important; font-size: 12px !important; flex-wrap: wrap; margin-left: 0 !important; width: 100%; }
+  .om-filter { flex-wrap: wrap; }
+  .om-filter button { padding: 8px 12px !important; font-size: 12px !important; }
+  .om-aula-grid { grid-template-columns: minmax(0, 1fr) !important; gap: 36px !important; }
+  .om-roteiro { grid-template-columns: 78px minmax(0, 1fr) !important; }
+  .om-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .om-scroll table { min-width: 620px; }
+  .om-lab { grid-template-columns: minmax(0, 1fr) !important; }
+  .om-lab > * + * { border-top: 2px solid var(--color-divider); }
+
+  @media (min-width: 861px) {
+    .om-pad { padding-left: 32px !important; padding-right: 32px !important; }
+    .om-sec { padding-top: 72px !important; padding-bottom: 72px !important; }
+    .om-2col { grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr) !important; gap: 64px !important; }
+    .om-row { grid-template-columns: 78px 96px minmax(0, 1fr) 150px 28px !important; gap: 20px !important; }
+    .om-row-num, .om-row-data, .om-row-title, .om-row-unit, .om-row-sign { grid-area: auto; }
+    .om-nav { gap: 24px !important; font-size: 13px !important; margin-left: auto !important; width: auto; }
+    .om-aula-grid { grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr) !important; gap: 64px !important; }
+    .om-roteiro { grid-template-columns: 120px minmax(0, 1fr) !important; }
+    .om-lab { grid-template-columns: 120px minmax(0, 1fr) !important; }
+    .om-lab > * + * { border-top: 0; }
+  }
+</style>
+</helmet>
+
+<template id="__bundler_thumbnail" data-bg-color="#f3f2f2">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#f3f2f2"></rect>
+    <rect x="360" y="300" width="480" height="14" fill="#201e1d"></rect>
+    <text x="360" y="270" font-family="Archivo, system-ui, sans-serif" font-size="120" font-weight="900" fill="#201e1d" letter-spacing="-6">IA</text>
+    <text x="360" y="400" font-family="Archivo, system-ui, sans-serif" font-size="52" font-weight="800" fill="#ec3013">IFES</text>
+    <rect x="360" y="470" width="480" height="14" fill="#ec3013"></rect>
+  </svg>
+</template>
+<div style="font-family: var(--font-body); background: var(--color-bg); min-height: 100vh">
+
+  <header style="position: sticky; top: 0; z-index: 20; background: var(--color-bg); border-bottom: 2px solid var(--color-text)">
+    <div class="om-pad" style="max-width: 1200px; margin: 0 auto; padding: 14px 32px; display: flex; align-items: baseline; gap: 32px; flex-wrap: wrap">
+      <a href="#" style="font-family: var(--font-heading); font-weight: 900; font-size: 17px; letter-spacing: -0.02em; text-transform: uppercase; color: var(--color-text)">IFES Serra <span style="color: var(--color-accent)">/</span> Dev. de Software com IA</a>
+      <nav class="om-nav" style="display: flex; gap: 24px; margin-left: auto; font-size: 13px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase">
+        <a href="#ementa" style="color: var(--color-text)">Ementa</a>
+        <a href="#fases" style="color: var(--color-text)">Fases</a>
+        <a href="#cronograma" style="color: var(--color-text)">Cronograma</a>
+        <a href="#conteudo" style="color: var(--color-text)">Conteúdo</a>
+        <a href="#leituras" style="color: var(--color-text)">Leituras</a>
+        <a href="#avaliacao" style="color: var(--color-text)">Avaliação</a>
+        <a href="#contato" style="color: var(--color-text)">Contato</a>
+      </nav>
+    </div>
+  </header>
+
+  <sc-if value="{{ ehAula }}" hint-placeholder-val="{{ false }}">
+    <article>
+      <section class="om-pad" style="max-width: 1200px; margin: 0 auto; padding: 40px 32px 0">
+        <a href="#cronograma" style="font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase">← Voltar ao cronograma</a>
+        <div style="display: flex; gap: 20px; align-items: baseline; flex-wrap: wrap; margin-top: 32px">
+          <span style="font-family: var(--font-heading); font-weight: 900; font-size: clamp(64px, 11vw, 140px); line-height: 0.8; letter-spacing: -0.05em; color: var(--color-accent)">{{ aula.n }}</span>
+          <div>
+            <div style="font-size: 13px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700)">{{ aula.dataLonga }} · 19h–22h · {{ aula.unidade }}</div>
+            <sc-if value="{{ aula.temRotulo }}" hint-placeholder-val="{{ false }}">
+              <div style="display: inline-block; margin-top: 12px; font-family: var(--font-heading); font-weight: 700; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; padding: 5px 9px; background: var(--color-text); color: var(--color-bg)">{{ aula.rotulo }}</div>
+            </sc-if>
+            <h1 style="font-family: var(--font-heading); font-weight: 900; font-size: clamp(32px, 5vw, 60px); line-height: 1; letter-spacing: -0.03em; margin: 12px 0 0; max-width: 20ch; text-wrap: balance">{{ aula.titulo }}</h1>
+          </div>
+        </div>
+        <p style="font-size: 20px; line-height: 1.55; max-width: 62ch; margin: 32px 0 48px; text-wrap: pretty">{{ aula.resumo }}</p>
+      </section>
+
+      <sc-if value="{{ aula.aDefinir }}" hint-placeholder-val="{{ false }}">
+        <section style="border-top: 2px solid var(--color-text); background: var(--color-neutral-100)">
+          <div class="om-pad om-sec" style="max-width: 1200px; margin: 0 auto; padding: 56px 32px">
+            <div style="border: 2px solid var(--color-text); padding: 24px; background: var(--color-bg); max-width: 62ch">
+              <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-accent-700)">Em preparação</div>
+              <h2 style="font-family: var(--font-heading); font-weight: 900; font-size: clamp(22px, 4vw, 30px); letter-spacing: -0.02em; margin: 10px 0 0">Roteiro publicado antes da aula</h2>
+              <p style="font-size: 16px; line-height: 1.6; margin: 14px 0 0; text-wrap: pretty">O programa está sendo construído encontro por encontro. Quando este for definido, aparecem aqui o roteiro das três horas, a leitura obrigatória, a atividade prática e a entrega.</p>
+              <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 24px">
+                <a class="btn btn-secondary" href="#conteudo">Ver o que já está definido</a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </sc-if>
+
+      <sc-if value="{{ aula.detalhada }}" hint-placeholder-val="{{ true }}">
+      <section style="border-top: 2px solid var(--color-text)">
+        <div class="om-pad om-aula-grid" style="max-width: 1200px; margin: 0 auto; padding: 56px 32px; display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: 64px; align-items: start">
+          <div>
+            <h2 style="font-family: var(--font-heading); font-weight: 900; font-size: 28px; letter-spacing: -0.02em; margin: 0 0 20px">Roteiro do encontro</h2>
+            <div style="border-top: 2px solid var(--color-text)">
+              <sc-for list="{{ aula.roteiro }}" as="r" hint-placeholder-count="3">
+                <div class="om-roteiro" style="display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: 20px; padding: 18px 0; border-bottom: 2px solid var(--color-divider)">
+                  <div style="font-family: var(--font-heading); font-weight: 800; font-size: 15px; letter-spacing: 0.04em">{{ r.hora }}</div>
+                  <div style="font-size: 16px; line-height: 1.55">{{ r.texto }}</div>
+                </div>
+              </sc-for>
+            </div>
+
+            <h2 style="font-family: var(--font-heading); font-weight: 900; font-size: 28px; letter-spacing: -0.02em; margin: 48px 0 20px">Atividade prática</h2>
+            <p style="font-size: 17px; line-height: 1.65; margin: 0; max-width: 62ch; text-wrap: pretty">{{ aula.atividade }}</p>
+
+            <h2 style="font-family: var(--font-heading); font-weight: 900; font-size: 28px; letter-spacing: -0.02em; margin: 48px 0 20px">Objetivos do encontro</h2>
+            <ul style="margin: 0; padding: 0; list-style: none; border-top: 2px solid var(--color-divider)">
+              <sc-for list="{{ aula.objetivos }}" as="o" hint-placeholder-count="3">
+                <li style="display: grid; grid-template-columns: 24px minmax(0, 1fr); gap: 14px; padding: 14px 0; border-bottom: 2px solid var(--color-divider); font-size: 16px; line-height: 1.5">
+                  <span style="font-family: var(--font-heading); font-weight: 800; color: var(--color-accent)">→</span>
+                  <span>{{ o.texto }}</span>
+                </li>
+              </sc-for>
+            </ul>
+          </div>
+
+          <aside>
+            <div style="border: 2px solid var(--color-text); padding: 24px; background: var(--color-neutral-100)">
+              <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.6">Entrega</div>
+              <div style="font-family: var(--font-heading); font-weight: 800; font-size: 24px; line-height: 1.15; margin-top: 8px">{{ aula.entrega }}</div>
+              <div style="font-size: 14px; margin-top: 10px; opacity: 0.75">{{ aula.prazo }}</div>
+            </div>
+
+            <h3 style="font-family: var(--font-heading); font-weight: 900; font-size: 20px; letter-spacing: -0.015em; margin: 40px 0 14px">Leitura</h3>
+            <div style="border-top: 2px solid var(--color-text)">
+              <sc-for list="{{ aula.leituras }}" as="l" hint-placeholder-count="2">
+                <div style="padding: 16px 0; border-bottom: 2px solid var(--color-divider)">
+                  <span style="{{ l.tagStyle }}">{{ l.tag }}</span>
+                  <sc-if value="{{ l.temLink }}" hint-placeholder-val="{{ true }}">
+                    <a href="{{ l.href }}" target="_blank" rel="noopener" style="display: block; font-family: var(--font-heading); font-weight: 700; font-size: 17px; line-height: 1.25; margin-top: 10px; text-wrap: pretty">{{ l.titulo }}</a>
+                  </sc-if>
+                  <sc-if value="{{ l.semLink }}" hint-placeholder-val="{{ false }}">
+                    <div style="font-family: var(--font-heading); font-weight: 700; font-size: 17px; line-height: 1.25; margin-top: 10px; text-wrap: pretty">{{ l.titulo }}</div>
+                  </sc-if>
+                  <div style="font-size: 14px; opacity: 0.7; margin-top: 4px">{{ l.autor }} · {{ l.fonte }}</div>
+                </div>
+              </sc-for>
+            </div>
+
+            <h3 style="font-family: var(--font-heading); font-weight: 900; font-size: 20px; letter-spacing: -0.015em; margin: 40px 0 14px">Material de apoio</h3>
+            <ul style="margin: 0; padding: 0; list-style: none; border-top: 2px solid var(--color-divider)">
+              <sc-for list="{{ aula.materiais }}" as="m" hint-placeholder-count="2">
+                <li style="padding: 12px 0; border-bottom: 2px solid var(--color-divider); font-size: 15px; line-height: 1.45">
+                  <sc-if value="{{ m.temLink }}" hint-placeholder-val="{{ false }}">
+                    <a href="{{ m.href }}" style="font-family: var(--font-heading); font-weight: 700">{{ m.texto }} →</a>
+                  </sc-if>
+                  <sc-if value="{{ m.semLink }}" hint-placeholder-val="{{ true }}">
+                    <span>{{ m.texto }}</span>
+                  </sc-if>
+                </li>
+              </sc-for>
+            </ul>
+          </aside>
+        </div>
+      </section>
+      </sc-if>
+
+      <section style="border-top: 2px solid var(--color-text)">
+        <div class="om-pad" style="max-width: 1200px; margin: 0 auto; padding: 0 32px; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr))">
+          <a href="{{ aula.hrefAnterior }}" style="padding: 28px 24px 28px 0; border-right: 2px solid var(--color-divider); display: block; color: var(--color-text)" style-hover="background: var(--color-accent-100)">
+            <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.6">← Anterior</div>
+            <div style="font-family: var(--font-heading); font-weight: 800; font-size: 20px; margin-top: 8px; line-height: 1.2">{{ aula.tituloAnterior }}</div>
+          </a>
+          <a href="{{ aula.hrefProxima }}" style="padding: 28px 0 28px 24px; display: block; color: var(--color-text)" style-hover="background: var(--color-accent-100)">
+            <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.6">Próxima →</div>
+            <div style="font-family: var(--font-heading); font-weight: 800; font-size: 20px; margin-top: 8px; line-height: 1.2">{{ aula.tituloProxima }}</div>
+          </a>
+        </div>
+      </section>
+    </article>
+  </sc-if>
+
+  <sc-if value="{{ ehConteudo }}" hint-placeholder-val="{{ false }}">
+    <article>
+      <section class="om-pad" style="max-width: 1200px; margin: 0 auto; padding: 36px 32px 0">
+        <a href="#topo" style="font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase">← Início</a>
+        <div style="font-size: 13px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700); margin-top: 28px">Programa · 17 encontros · três unidades</div>
+        <h1 style="font-family: var(--font-heading); font-weight: 900; font-size: clamp(38px, 8vw, 84px); line-height: 0.95; letter-spacing: -0.035em; margin: 14px 0 0; max-width: 18ch; text-wrap: balance">Conteúdo das aulas</h1>
+        <p style="font-size: 18px; line-height: 1.55; max-width: 60ch; margin: 24px 0 20px; text-wrap: pretty">O que se estuda em cada encontro, na ordem em que acontece. Cada aula tem página própria com roteiro, leitura obrigatória e entrega.</p>
+        <div style="border: 2px solid var(--color-text); padding: 20px; max-width: 62ch; margin-bottom: 36px; background: var(--color-neutral-100)">
+          <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-accent-700)">Estado do programa</div>
+          <p style="font-size: 15px; line-height: 1.6; margin: 10px 0 0; text-wrap: pretty">Por ora, apenas o primeiro encontro está fechado; os demais aparecem como <strong>a definir</strong> e serão publicados aqui à medida que o semestre avança. Já está fixado, porém, que o <strong>último encontro de cada mês é apresentação de trabalho e debate</strong> — 27 ago, 24 set, 29 out, 26 nov e 3 dez.</p>
+        </div>
+      </section>
+
+      <sc-for list="{{ unidadesConteudo }}" as="u" hint-placeholder-count="3">
+        <section style="border-top: 2px solid var(--color-text)">
+          <div class="om-pad om-sec" style="max-width: 1200px; margin: 0 auto; padding: 56px 32px">
+            <div style="display: flex; align-items: baseline; gap: 16px; flex-wrap: wrap">
+              <span style="font-family: var(--font-heading); font-weight: 900; font-size: 44px; line-height: 0.9; letter-spacing: -0.04em; color: var(--color-accent)">{{ u.romano }}</span>
+              <h2 style="font-family: var(--font-heading); font-weight: 900; font-size: clamp(28px, 5vw, 44px); letter-spacing: -0.025em; margin: 0">{{ u.nome }}</h2>
+            </div>
+            <p style="font-size: 16px; line-height: 1.6; max-width: 58ch; margin: 14px 0 0; opacity: 0.8; text-wrap: pretty">{{ u.descricao }}</p>
+
+            <div style="margin-top: 36px; border-top: 2px solid var(--color-text)">
+              <sc-for list="{{ u.aulas }}" as="a" hint-placeholder-count="5">
+                <div style="padding: 24px 0; border-bottom: 2px solid var(--color-divider)">
+                  <div style="display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap">
+                    <span style="font-family: var(--font-heading); font-weight: 900; font-size: 20px; letter-spacing: -0.02em; color: var(--color-accent)">{{ a.n }}</span>
+                    <span style="font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.6">{{ a.data }}</span>
+                    <sc-if value="{{ a.temRotulo }}" hint-placeholder-val="{{ false }}">
+                      <span style="font-family: var(--font-heading); font-weight: 700; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; padding: 4px 8px; background: var(--color-text); color: var(--color-bg)">{{ a.rotulo }}</span>
+                    </sc-if>
+                  </div>
+                  <h3 style="font-family: var(--font-heading); font-weight: 800; font-size: clamp(20px, 3.2vw, 26px); line-height: 1.2; letter-spacing: -0.02em; margin: 8px 0 0; max-width: 30ch; text-wrap: balance">{{ a.titulo }}</h3>
+                  <p style="font-size: 16px; line-height: 1.6; margin: 12px 0 0; max-width: 62ch; text-wrap: pretty">{{ a.resumo }}</p>
+                  <ul style="margin: 18px 0 0; padding: 0; list-style: none; display: grid; gap: 8px">
+                    <sc-for list="{{ a.topicos }}" as="t" hint-placeholder-count="3">
+                      <li style="display: grid; grid-template-columns: 20px minmax(0, 1fr); gap: 10px; font-size: 15px; line-height: 1.5">
+                        <span style="font-family: var(--font-heading); font-weight: 800; color: var(--color-accent)">·</span>
+                        <span>{{ t.texto }}</span>
+                      </li>
+                    </sc-for>
+                  </ul>
+                  <div style="display: flex; gap: 16px; flex-wrap: wrap; align-items: baseline; margin-top: 18px">
+                    <a href="{{ a.href }}" style="font-family: var(--font-heading); font-size: 13px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase">Página da aula →</a>
+                    <span style="font-size: 14px; opacity: 0.65">{{ a.leitura }}</span>
+                  </div>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+        </section>
+      </sc-for>
+
+      <section style="border-top: 2px solid var(--color-text); background: var(--color-neutral-100)">
+        <div class="om-pad om-sec" style="max-width: 1200px; margin: 0 auto; padding: 48px 32px">
+          <div style="display: flex; gap: 12px; flex-wrap: wrap">
+            <a class="btn btn-primary" href="#cronograma">Cronograma com datas</a>
+            <a class="btn btn-secondary" href="#avaliacao">Como é avaliado</a>
+          </div>
+        </div>
+      </section>
+    </article>
+  </sc-if>
+
+  <sc-if value="{{ ehAvaliacao }}" hint-placeholder-val="{{ false }}">
+    <article>
+      <section class="om-pad" style="max-width: 1200px; margin: 0 auto; padding: 36px 32px 0">
+        <a href="#topo" style="font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase">← Início</a>
+        <div style="font-size: 13px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700); margin-top: 28px">Critérios e entregas · 2026.2</div>
+        <h1 style="font-family: var(--font-heading); font-weight: 900; font-size: clamp(38px, 8vw, 84px); line-height: 0.95; letter-spacing: -0.035em; margin: 14px 0 0; max-width: 16ch; text-wrap: balance">Avaliação</h1>
+        <p style="font-size: 19px; line-height: 1.55; max-width: 60ch; margin: 24px 0 36px; text-wrap: pretty">Nada aqui é exercício genérico. <strong>Os laboratórios e os artigos devem tratar do tema do trabalho de pesquisa do aluno</strong> — a dissertação, o projeto ou a linha de investigação que você já conduz.</p>
+      </section>
+
+      <section style="border-top: 2px solid var(--color-text); background: var(--color-accent); color: #fff">
+        <div class="om-pad om-sec" style="max-width: 1200px; margin: 0 auto; padding: 56px 32px">
+          <h2 style="font-family: var(--font-heading); font-weight: 900; font-size: clamp(30px, 6vw, 60px); line-height: 1; letter-spacing: -0.035em; margin: 0; max-width: 24ch; text-wrap: balance">Um objeto de estudo, do primeiro laboratório ao artigo final.</h2>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0 40px; margin-top: 40px">
+            <div style="padding: 20px 0; border-top: 2px solid rgba(255,255,255,0.45)">
+              <div style="font-size: 12px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.85">Encontro 02</div>
+              <p style="font-size: 16px; line-height: 1.55; margin: 10px 0 0">Você declara o tema da sua pesquisa e o artefato de software que vai usar como campo: repositório, dataset, protótipo ou ferramenta.</p>
+            </div>
+            <div style="padding: 20px 0; border-top: 2px solid rgba(255,255,255,0.45)">
+              <div style="font-size: 12px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.85">Laboratórios 1 a 4</div>
+              <p style="font-size: 16px; line-height: 1.55; margin: 10px 0 0">Cada prática aplica a técnica da unidade a esse mesmo objeto e é apresentada no último encontro do mês, seguida de debate com a turma.</p>
+            </div>
+            <div style="padding: 20px 0; border-top: 2px solid rgba(255,255,255,0.45)">
+              <div style="font-size: 12px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.85">Artigo final</div>
+              <p style="font-size: 16px; line-height: 1.55; margin: 10px 0 0">O artigo consolida os quatro laboratórios em um estudo submetível, alinhado à sua dissertação.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section style="border-top: 2px solid var(--color-text)">
+        <div class="om-pad om-sec" style="max-width: 1200px; margin: 0 auto; padding: 64px 32px">
+          <h2 style="font-family: var(--font-heading); font-weight: 900; font-size: clamp(28px, 5vw, 44px); letter-spacing: -0.025em; margin: 0 0 28px">Composição da nota</h2>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 2px; background: var(--color-divider); border: 2px solid var(--color-text)">
+            <div style="background: var(--color-bg); padding: 24px">
+              <div style="font-family: var(--font-heading); font-weight: 900; font-size: 52px; line-height: 1; letter-spacing: -0.04em; color: var(--color-accent)">20%</div>
+              <div style="font-family: var(--font-heading); font-weight: 800; font-size: 19px; margin-top: 12px">Apresentações e debate</div>
+              <p style="font-size: 15px; line-height: 1.55; margin: 8px 0 0; opacity: 0.8">No último encontro de cada mês cada dupla apresenta o andamento do seu trabalho e argui o dos colegas. Conta a apresentação e a qualidade da arguição.</p>
+            </div>
+            <div style="background: var(--color-bg); padding: 24px">
+              <div style="font-family: var(--font-heading); font-weight: 900; font-size: 52px; line-height: 1; letter-spacing: -0.04em; color: var(--color-accent)">30%</div>
+              <div style="font-family: var(--font-heading); font-weight: 800; font-size: 19px; margin-top: 12px">Laboratórios</div>
+              <p style="font-size: 15px; line-height: 1.55; margin: 8px 0 0; opacity: 0.8">Quatro práticas, todas sobre o tema da sua pesquisa, entregues como repositório executável.</p>
+            </div>
+            <div style="background: var(--color-bg); padding: 24px">
+              <div style="font-family: var(--font-heading); font-weight: 900; font-size: 52px; line-height: 1; letter-spacing: -0.04em; color: var(--color-accent)">50%</div>
+              <div style="font-family: var(--font-heading); font-weight: 800; font-size: 19px; margin-top: 12px">Artigo final</div>
+              <p style="font-size: 15px; line-height: 1.55; margin: 8px 0 0; opacity: 0.8">Estudo experimental de oito páginas no formato SBC, derivado da sua questão de pesquisa, com dados e código abertos.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="fichamento" style="border-top: 2px solid var(--color-text)">
+        <div class="om-pad om-sec" style="max-width: 1200px; margin: 0 auto; padding: 64px 32px">
+          <h2 style="font-family: var(--font-heading); font-weight: 900; font-size: clamp(28px, 5vw, 44px); letter-spacing: -0.025em; margin: 0 0 10px">Modelo de fichamento</h2>
+          <p style="font-size: 16px; line-height: 1.6; max-width: 62ch; margin: 0 0 28px; text-wrap: pretty">Uma página por artigo, nesta estrutura. O comentário final é a parte que mais pesa: é onde o artigo encontra a sua pesquisa.</p>
+          <div style="border: 2px solid var(--color-text); max-width: 74ch">
+            <sc-for list="{{ fichamento }}" as="fi" hint-placeholder-count="6">
+              <div class="om-lab" style="display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 0 28px; padding: 18px 24px; border-bottom: 2px solid var(--color-divider)">
+                <div style="font-family: var(--font-heading); font-weight: 800; font-size: 16px; letter-spacing: -0.01em; padding-bottom: 6px">{{ fi.campo }}</div>
+                <p style="font-size: 16px; line-height: 1.55; margin: 0; opacity: 0.8; text-wrap: pretty">{{ fi.texto }}</p>
+              </div>
+            </sc-for>
+          </div>
+
+          <h3 style="font-family: var(--font-heading); font-weight: 900; font-size: 24px; letter-spacing: -0.02em; margin: 40px 0 10px">Modelo em LaTeX</h3>
+          <p style="font-size: 16px; line-height: 1.6; max-width: 62ch; margin: 0 0 18px; text-wrap: pretty">Mesma estrutura, pronta para compilar com <code>pdflatex</code>. Baixe o arquivo ou copie o preâmbulo abaixo.</p>
+          <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 20px">
+            <a class="btn btn-primary" href="fichamento.tex" download="fichamento.tex">Baixar fichamento.tex</a>
+          </div>
+          <pre style="border: 2px solid var(--color-text); background: var(--color-neutral-100); padding: 20px; overflow-x: auto; font-size: 13px; line-height: 1.55; margin: 0; max-width: 100%"><code>\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{hyperref}
+\usepackage{titlesec}
+\usepackage{parskip}
+\usepackage{csquotes}
+
+\hypersetup{colorlinks=true, urlcolor=black, linkcolor=black}
+\titleformat{\section}{\bfseries\large}{}{0pt}{}
+\titlespacing*{\section}{0pt}{12pt}{2pt}
+\pagestyle{empty}
+
+\newcommand{\aluno}{Nome do aluno}
+
+\begin{document}
+
+{\Large\bfseries Fichamento}\\[2pt]
+{\small \aluno{} \quad·\quad \today}
+
+\hrule\vspace{6pt}
+
+\section*{Referência}
+Autor, título, ano e link.
+
+\section*{Tema}
+Assunto principal do texto.
+
+\section*{Objetivo}
+O que o autor pretende discutir ou demonstrar.
+
+\section*{Resumo}
+Síntese das principais ideias, com suas próprias palavras.
+
+\section*{Citação importante}
+\begin{quote}
+\enquote{Trecho relevante do texto.} (p.~XX)
+\end{quote}
+
+\section*{Comentário}
+Sua avaliação sobre o texto e como ele pode ser útil para sua pesquisa.
+
+\end{document}</code></pre>
+        </div>
+      </section>
+
+      <section style="border-top: 2px solid var(--color-text); background: var(--color-neutral-100)">
+        <div class="om-pad om-sec" style="max-width: 1200px; margin: 0 auto; padding: 64px 32px">
+          <h2 style="font-family: var(--font-heading); font-weight: 900; font-size: clamp(28px, 5vw, 44px); letter-spacing: -0.025em; margin: 0 0 10px">Os quatro laboratórios</h2>
+          <p style="font-size: 16px; line-height: 1.6; max-width: 60ch; margin: 0 0 32px; opacity: 0.85; text-wrap: pretty">O enunciado é o mesmo para a turma; o campo de aplicação é o seu. Se o seu tema não é engenharia de software, o objeto passa a ser o software que a sua pesquisa produz ou consome.</p>
+          <div style="border-top: 2px solid var(--color-text)">
+            <sc-for list="{{ labs }}" as="l" hint-placeholder-count="4">
+              <div class="om-lab" style="display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: 0 32px; padding: 24px 0; border-bottom: 2px solid var(--color-divider)">
+                <div style="padding-bottom: 12px">
+                  <div style="font-family: var(--font-heading); font-weight: 900; font-size: 30px; letter-spacing: -0.03em; color: var(--color-accent)">{{ l.n }}</div>
+                  <div style="font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.6; margin-top: 4px">{{ l.prazo }}</div>
+                </div>
+                <div style="padding-top: 12px">
+                  <h3 style="font-family: var(--font-heading); font-weight: 800; font-size: clamp(19px, 3vw, 24px); line-height: 1.2; letter-spacing: -0.015em; margin: 0; max-width: 32ch">{{ l.titulo }}</h3>
+                  <p style="font-size: 16px; line-height: 1.6; margin: 10px 0 0; max-width: 62ch; text-wrap: pretty">{{ l.descricao }}</p>
+                  <p style="font-size: 15px; line-height: 1.6; margin: 12px 0 0; max-width: 62ch"><strong style="font-family: var(--font-heading); font-weight: 800">No seu tema:</strong> {{ l.noSeuTema }}</p>
+                </div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </section>
+
+      <section style="border-top: 2px solid var(--color-text)">
+        <div class="om-pad om-sec" style="max-width: 1200px; margin: 0 auto; padding: 64px 32px">
+          <h2 style="font-family: var(--font-heading); font-weight: 900; font-size: clamp(28px, 5vw, 44px); letter-spacing: -0.025em; margin: 0 0 10px">Artigo final</h2>
+          <p style="font-size: 16px; line-height: 1.6; max-width: 62ch; margin: 0 0 32px; text-wrap: pretty">Oito páginas, formato SBC, escrito em dupla ou individualmente. A pergunta do artigo tem de sair da sua pesquisa: o que o uso de IA no desenvolvimento muda no problema que você já estuda.</p>
+          <div class="om-scroll" style="border: 2px solid var(--color-text)">
+            <table class="table" style="width: 100%; border-collapse: collapse">
+              <thead>
+                <tr>
+                  <th style="text-align: left">Critério</th>
+                  <th style="text-align: left">Peso</th>
+                  <th style="text-align: left">O que se espera</th>
+                </tr>
+              </thead>
+              <tbody>
+                <sc-for list="{{ rubrica }}" as="r" hint-placeholder-count="5">
+                  <tr>
+                    <td style="font-family: var(--font-heading); font-weight: 800">{{ r.criterio }}</td>
+                    <td style="font-family: var(--font-heading); font-weight: 800; color: var(--color-accent)">{{ r.peso }}</td>
+                    <td style="line-height: 1.55">{{ r.espera }}</td>
+                  </tr>
+                </sc-for>
+              </tbody>
+            </table>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 28px; margin-top: 36px; font-size: 15px; line-height: 1.6">
+            <p style="margin: 0"><strong style="font-family: var(--font-heading); font-weight: 800">Aderência ao tema.</strong> Entrega que não se liga à sua pesquisa é devolvida para refazer — não vale nota parcial.</p>
+            <p style="margin: 0"><strong style="font-family: var(--font-heading); font-weight: 800">Reprodutibilidade.</strong> Toda entrega inclui repositório com <em>seed</em>, versão do modelo e instruções de execução.</p>
+            <p style="margin: 0"><strong style="font-family: var(--font-heading); font-weight: 800">Uso de IA.</strong> Encorajado e obrigatoriamente declarado: ferramenta, versão, o que foi gerado e como foi verificado.</p>
+            <p style="margin: 0"><strong style="font-family: var(--font-heading); font-weight: 800">Atrasos.</strong> Desconto de 10% por dia corrido; após cinco dias a entrega não é aceita.</p>
+          </div>
+          <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 40px">
+            <a class="btn btn-primary" href="#conteudo">Conteúdo das aulas</a>
+            <a class="btn btn-secondary" href="#cronograma">Cronograma</a>
+          </div>
+        </div>
+      </section>
+    </article>
+  </sc-if>
+
+  <sc-if value="{{ ehFases }}" hint-placeholder-val="{{ false }}">
+    <article>
+      <sc-if value="{{ ehSoCodebook }}" hint-placeholder-val="{{ true }}">
+      <section class="om-pad" style="max-width: 1200px; margin: 0 auto; padding: 36px 32px 0">
+        <a href="#aula-01" style="font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase">← Aula 01</a>
+        <div style="font-size: 13px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700); margin-top: 28px">Material da Aula 01 · Codebook · parte 1 de 2</div>
+        <h1 style="font-family: var(--font-heading); font-weight: 900; font-size: clamp(36px, 7vw, 76px); line-height: 0.96; letter-spacing: -0.035em; margin: 14px 0 0; max-width: 20ch; text-wrap: balance">As onze fases do processo de software</h1>
+        <p style="font-size: 18px; line-height: 1.6; max-width: 64ch; margin: 24px 0 0; text-wrap: pretty">Definição operacional dos onze códigos de fase usados para classificar os dois corpora do projeto: 171 estudos secundários e 129 artigos com sede de publicação confirmada. Cada código traz escopo, critérios de inclusão e exclusão, um teste de decisão de uma pergunta e exemplos reais retirados dos corpora.</p>
+        <p style="font-size: 17px; line-height: 1.6; max-width: 64ch; margin: 16px 0 0; text-wrap: pretty">O esquema começa antes do requisito, em F9, percorre a ordem canônica do ciclo de vida de F1 a F6, acrescenta duas fases de sustentação que atravessam o ciclo sem se dissolver nele — F10 para a coordenação do trabalho e F11 para o conhecimento do projeto — e fecha com F7 para o que é genuinamente transversal e F8 para formação. Um artigo recebe exatamente um código, o da fase predominante; quando cobre várias fases de forma genuína, vai para F7 — e é justamente isso que F7 significa.</p>
+        <p style="font-size: 16px; line-height: 1.6; max-width: 64ch; margin: 16px 0 28px; opacity: 0.8; text-wrap: pretty">Três códigos foram acrescentados na revisão mais recente. <strong>F9</strong> separa o entendimento do problema do seu registro formal, antes ambos em F1. <strong>F10</strong> extrai de F7 a coordenação operacional do trabalho. <strong>F11</strong> extrai de F3 e de F7 o conhecimento do projeto tratado como artefato mantido.</p>
+        <div style="display: flex; gap: 12px; flex-wrap: wrap; padding-bottom: 40px">
+          <a class="btn btn-primary" href="#mapeamento">Parte 2 · O mapeamento</a>
+        </div>
+      </section>
+
+      <section style="border-top: 2px solid var(--color-text)">
+        <div class="om-pad om-sec" style="max-width: 1200px; margin: 0 auto; padding: 56px 32px">
+          <h2 style="font-family: var(--font-heading); font-weight: 900; font-size: clamp(26px, 4vw, 40px); letter-spacing: -0.025em; margin: 0 0 24px">Resumo quantitativo</h2>
+          <div class="om-scroll" style="border: 2px solid var(--color-text)">
+            <table class="table" style="width: 100%; border-collapse: collapse">
+              <thead>
+                <tr>
+                  <th style="text-align: left">Código</th>
+                  <th style="text-align: left">Fase</th>
+                  <th style="text-align: left">Estudos secundários</th>
+                  <th style="text-align: left">Artigos em sedes</th>
+                </tr>
+              </thead>
+              <tbody>
+                <sc-for list="{{ fases }}" as="f" hint-placeholder-count="11">
+                  <tr>
+                    <td style="font-family: var(--font-heading); font-weight: 800; color: var(--color-accent)">{{ f.cod }}</td>
+                    <td style="font-family: var(--font-heading); font-weight: 700">{{ f.nome }}</td>
+                    <td>{{ f.sec }}</td>
+                    <td>{{ f.sedes }}</td>
+                  </tr>
+                </sc-for>
+                <tr>
+                  <td style="font-family: var(--font-heading); font-weight: 800">—</td>
+                  <td style="font-family: var(--font-heading); font-weight: 800">Total</td>
+                  <td style="font-family: var(--font-heading); font-weight: 800">171</td>
+                  <td style="font-family: var(--font-heading); font-weight: 800">129</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p style="font-size: 16px; line-height: 1.65; max-width: 68ch; margin: 24px 0 0; text-wrap: pretty">A tabela também é um resultado, não só uma legenda. <strong>Verificação e qualidade concentra 50 estudos secundários e 32 artigos primários</strong>, e processo transversal vem logo atrás com 48 e 28. As três fases acrescentadas nesta revisão somam 9 estudos secundários e 18 artigos primários entre 300 obras classificadas — números que só apareceram depois de duas rodadas de varredura dedicada. Antes delas somavam 3 e 6, e a conclusão precipitada de que a lacuna era real precisou ser revista duas vezes.</p>
+        </div>
+      </section>
+
+      <section style="border-top: 2px solid var(--color-text); background: var(--color-neutral-100)">
+        <div class="om-pad om-sec" style="max-width: 1200px; margin: 0 auto; padding: 56px 32px">
+          <h2 style="font-family: var(--font-heading); font-weight: 900; font-size: clamp(26px, 4vw, 40px); letter-spacing: -0.025em; margin: 0 0 24px">Os onze códigos</h2>
+          <div style="display: grid; gap: 2px; background: var(--color-divider); border: 2px solid var(--color-text)">
+            <sc-for list="{{ fases }}" as="f" hint-placeholder-count="11">
+              <div style="background: var(--color-bg); padding: 28px 24px">
+                <div style="display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap">
+                  <span style="font-family: var(--font-heading); font-weight: 900; font-size: 32px; letter-spacing: -0.03em; color: var(--color-accent)">{{ f.cod }}</span>
+                  <h3 style="font-family: var(--font-heading); font-weight: 800; font-size: 22px; line-height: 1.15; letter-spacing: -0.015em; margin: 0">{{ f.nome }}</h3>
+                  <span style="font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.55">{{ f.sec }} secundários · {{ f.sedes }} em sedes</span>
+                </div>
+                <p style="font-size: 16px; line-height: 1.6; margin: 14px 0 0; max-width: 74ch; text-wrap: pretty">{{ f.escopo }}</p>
+                <div class="om-2col" style="display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 28px; margin-top: 20px">
+                  <div>
+                    <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-accent-700)">Inclui</div>
+                    <p style="font-size: 15px; line-height: 1.55; margin: 6px 0 0; text-wrap: pretty">{{ f.inclui }}</p>
+                  </div>
+                  <div>
+                    <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.55">Não inclui</div>
+                    <p style="font-size: 15px; line-height: 1.55; margin: 6px 0 0; text-wrap: pretty">{{ f.naoInclui }}</p>
+                  </div>
+                </div>
+                <div style="margin-top: 18px; padding: 14px 16px; background: var(--color-neutral-100); border-left: 0; box-shadow: inset 0 0 0 2px var(--color-divider)">
+                  <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.6">Teste de decisão</div>
+                  <p style="font-size: 16px; line-height: 1.5; margin: 6px 0 0; font-style: italic; max-width: 70ch">{{ f.teste }}</p>
+                </div>
+                <div style="margin-top: 18px">
+                  <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.6">Exemplos do corpus</div>
+                  <ul style="margin: 8px 0 0; padding: 0; list-style: none; display: grid; gap: 8px">
+                    <sc-for list="{{ f.exemplos }}" as="e" hint-placeholder-count="3">
+                      <li style="font-size: 15px; line-height: 1.45">
+                        <a href="{{ e.url }}" target="_blank" rel="noopener">{{ e.t }}</a>
+                        <span style="opacity: 0.6"> — {{ e.meta }}</span>
+                      </li>
+                    </sc-for>
+                  </ul>
+                </div>
+                <sc-if value="{{ f.nota }}" hint-placeholder-val="{{ false }}">
+                  <p style="font-size: 14px; line-height: 1.6; margin: 16px 0 0; max-width: 74ch; opacity: 0.7; text-wrap: pretty"><strong style="font-family: var(--font-heading); font-weight: 800; opacity: 1">Nota de lacuna, revisada.</strong> {{ f.nota }}</p>
+                </sc-if>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </section>
+
+      </sc-if>
+
+      <sc-if value="{{ ehMapeamento }}" hint-placeholder-val="{{ false }}">
+      <section class="om-pad" style="max-width: 1200px; margin: 0 auto; padding: 36px 32px 40px">
+        <a href="#fases" style="font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase">← Codebook das fases</a>
+        <div style="font-size: 13px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700); margin-top: 28px">Material da Aula 01 · Codebook · parte 2 de 2</div>
+        <h1 style="font-family: var(--font-heading); font-weight: 900; font-size: clamp(36px, 7vw, 76px); line-height: 0.96; letter-spacing: -0.035em; margin: 14px 0 0; max-width: 20ch; text-wrap: balance">O mapeamento do campo</h1>
+        <p style="font-size: 18px; line-height: 1.6; max-width: 64ch; margin: 24px 0 0; text-wrap: pretty">Aplicação dos códigos aos dois corpora: onde o campo já se revisou, que tipo de síntese produz, o que acumulou impacto e o que ainda não foi feito.</p>
+        <div style="border: 2px solid var(--color-text); padding: 18px 20px; max-width: 64ch; margin: 24px 0 0; background: var(--color-neutral-100)">
+          <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-accent-700)">Versão dos dados</div>
+          <p style="font-size: 15px; line-height: 1.6; margin: 8px 0 0; text-wrap: pretty">As tabelas, figuras e o corpus navegável desta página refletem o recorte anterior — 157 estudos secundários e 106 artigos em sedes, sob o esquema de oito fases. O codebook já foi revisado para onze fases, 171 e 129; esta parte será atualizada quando os novos CSV forem publicados.</p>
+        </div>
+      </section>
+
+      <section style="border-top: 2px solid var(--color-text)">
+        <div class="om-pad om-sec" style="max-width: 1200px; margin: 0 auto; padding: 56px 32px">
+          <div style="font-size: 13px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700)">Mapeamento sistemático · arXiv · jan 2023 a ago 2026</div>
+          <h2 style="font-family: var(--font-heading); font-weight: 900; font-size: clamp(26px, 4vw, 40px); line-height: 1.02; letter-spacing: -0.025em; margin: 10px 0 0; max-width: 26ch; text-wrap: balance">Onde o campo já se revisou</h2>
+          <p style="font-size: 17px; line-height: 1.65; max-width: 64ch; margin: 20px 0 0; text-wrap: pretty">O objeto não são as técnicas primárias, e sim a literatura de segunda ordem que já tentou organizar o campo: quem revisou o quê, com que protocolo, e onde a síntese ainda não chegou. Setenta e quatro consultas ao arXiv produziram 1.172 registros únicos; o filtro de segunda ordem e a triagem manual deixaram <strong>157 estudos secundários</strong>, cada um com rótulo de fase, tipo de estudo e grau de foco em <em>Agentic</em>.</p>
+          <p style="font-size: 15px; line-height: 1.6; max-width: 64ch; margin: 14px 0 0; opacity: 0.75; text-wrap: pretty">Métricas de citação vindas do OpenAlex, casadas por similaridade de título ≥ 0,85. Apenas 45 dos 157 têm registro casado e 18 têm FWCI — preprints recentes raramente têm referências indexadas. As citações servem para separar clássicos consolidados de trabalhos sem rastro bibliométrico, não para ranquear qualidade.</p>
+
+          <figure style="margin: 40px 0 0; border: 2px solid var(--color-text)">
+            <img src="uploads/mapa_secundarios_fase_ano.png" alt="Distribuição dos 157 estudos secundários por fase do processo e ano de submissão no arXiv" style="display: block; width: 100%; height: auto">
+            <figcaption style="font-size: 13px; line-height: 1.5; padding: 12px 16px; border-top: 2px solid var(--color-text); background: var(--color-neutral-100)">Área do círculo ∝ número de revisões; cor indica a fração com agentes autônomos como objeto central. n = 157.</figcaption>
+          </figure>
+
+          <div class="om-scroll" style="border: 2px solid var(--color-text); margin-top: 36px">
+            <table class="table" style="width: 100%; border-collapse: collapse">
+              <thead>
+                <tr>
+                  <th style="text-align: left">Fase do processo</th>
+                  <th style="text-align: left">2023</th>
+                  <th style="text-align: left">2024</th>
+                  <th style="text-align: left">2025</th>
+                  <th style="text-align: left">2026</th>
+                  <th style="text-align: left">Total</th>
+                </tr>
+              </thead>
+              <tbody>
+                <sc-for list="{{ distFase }}" as="d" hint-placeholder-count="8">
+                  <tr>
+                    <td style="font-family: var(--font-heading); font-weight: 700">{{ d.fase }}</td>
+                    <td>{{ d.a23 }}</td>
+                    <td>{{ d.a24 }}</td>
+                    <td>{{ d.a25 }}</td>
+                    <td>{{ d.a26 }}</td>
+                    <td style="font-family: var(--font-heading); font-weight: 800; color: var(--color-accent)">{{ d.total }}</td>
+                  </tr>
+                </sc-for>
+              </tbody>
+            </table>
+          </div>
+          <p style="font-size: 16px; line-height: 1.65; max-width: 68ch; margin: 22px 0 0; text-wrap: pretty">A distribuição é fortemente desequilibrada. Implementação e verificação juntas concentram <strong>83 dos 157 estudos</strong>, mais da metade do corpus, enquanto requisitos tem 13, arquitetura 7, manutenção 9 e formação 4. Reproduz-se na literatura de segunda ordem o mesmo viés dos estudos primários: a atividade que o modelo executa bem e cujo resultado é fácil de medir com um benchmark é também a que mais atrai revisões.</p>
+
+          <h3 style="font-family: var(--font-heading); font-weight: 900; font-size: 24px; letter-spacing: -0.02em; margin: 40px 0 16px">Quanto de <em>Agentic</em> há em cada fase</h3>
+          <div class="om-scroll" style="border: 2px solid var(--color-text)">
+            <table class="table" style="width: 100%; border-collapse: collapse">
+              <thead>
+                <tr>
+                  <th style="text-align: left">Fase do processo</th>
+                  <th style="text-align: left"><em>Agentic</em> como objeto central</th>
+                  <th style="text-align: left"><em>Agentic</em> como seção</th>
+                  <th style="text-align: left">Sem foco em <em>Agentic</em></th>
+                </tr>
+              </thead>
+              <tbody>
+                <sc-for list="{{ distAgencia }}" as="d" hint-placeholder-count="8">
+                  <tr>
+                    <td style="font-family: var(--font-heading); font-weight: 700">{{ d.fase }}</td>
+                    <td style="font-family: var(--font-heading); font-weight: 800; color: var(--color-accent)">{{ d.central }}</td>
+                    <td>{{ d.secao }}</td>
+                    <td>{{ d.sem }}</td>
+                  </tr>
+                </sc-for>
+              </tbody>
+            </table>
+          </div>
+          <p style="font-size: 16px; line-height: 1.65; max-width: 68ch; margin: 22px 0 0; text-wrap: pretty">Vinte e um dos 33 estudos de processo transversal têm agentes autônomos como objeto central, contra 8 em implementação e 8 em verificação. Quando a revisão sobe da tarefa para o processo, ela necessariamente encontra <em>Agentic</em>: é no nível do processo que a autonomia se manifesta como escolha da próxima ação, e não como qualidade de um trecho gerado.</p>
+
+          <h3 style="font-family: var(--font-heading); font-weight: 900; font-size: 24px; letter-spacing: -0.02em; margin: 40px 0 16px">Que tipo de síntese está sendo produzida</h3>
+          <div class="om-scroll" style="border: 2px solid var(--color-text)">
+            <table class="table" style="width: 100%; border-collapse: collapse">
+              <thead>
+                <tr>
+                  <th style="text-align: left">Tipo de estudo secundário</th>
+                  <th style="text-align: left">2023</th>
+                  <th style="text-align: left">2024</th>
+                  <th style="text-align: left">2025</th>
+                  <th style="text-align: left">2026</th>
+                  <th style="text-align: left">Total</th>
+                </tr>
+              </thead>
+              <tbody>
+                <sc-for list="{{ tiposEstudo }}" as="t" hint-placeholder-count="6">
+                  <tr>
+                    <td style="font-family: var(--font-heading); font-weight: 700">{{ t.tipo }}</td>
+                    <td>{{ t.a23 }}</td>
+                    <td>{{ t.a24 }}</td>
+                    <td>{{ t.a25 }}</td>
+                    <td>{{ t.a26 }}</td>
+                    <td style="font-family: var(--font-heading); font-weight: 800; color: var(--color-accent)">{{ t.total }}</td>
+                  </tr>
+                </sc-for>
+              </tbody>
+            </table>
+          </div>
+          <p style="font-size: 16px; line-height: 1.65; max-width: 68ch; margin: 22px 0 0; text-wrap: pretty">Metade do corpus são surveys narrativos. Revisões com protocolo explícito somam 60, e a proporção melhorou: 7 de 18 em 2023, 14 de 36 em 2026. O aparecimento de 15 estudos que combinam revisão da literatura com dados primários de praticantes é o sinal metodológico mais interessante do período — é a única linha que confronta a literatura com o que equipes de fato fazem. Há <strong>exatamente um estudo terciário</strong> e três taxonomias: para um campo com 157 revisões em quatro anos, é pouco.</p>
+        </div>
+      </section>
+
+      <section style="border-top: 2px solid var(--color-text); background: var(--color-neutral-100)">
+        <div class="om-pad om-sec" style="max-width: 1200px; margin: 0 auto; padding: 56px 32px">
+          <h2 style="font-family: var(--font-heading); font-weight: 900; font-size: clamp(26px, 4vw, 40px); letter-spacing: -0.025em; margin: 0 0 18px">O que já acumulou impacto</h2>
+          <div class="om-scroll" style="border: 2px solid var(--color-text)">
+            <table class="table" style="width: 100%; border-collapse: collapse">
+              <thead>
+                <tr>
+                  <th style="text-align: left">arXiv</th>
+                  <th style="text-align: left">Ano</th>
+                  <th style="text-align: left">Fase</th>
+                  <th style="text-align: left">Tipo</th>
+                  <th style="text-align: left">Citações</th>
+                  <th style="text-align: left">FWCI</th>
+                  <th style="text-align: left">Título</th>
+                </tr>
+              </thead>
+              <tbody>
+                <sc-for list="{{ maisCitados }}" as="c" hint-placeholder-count="10">
+                  <tr>
+                    <td><a href="{{ c.url }}" target="_blank" rel="noopener" style="font-family: var(--font-heading); font-weight: 700">{{ c.id }}</a></td>
+                    <td>{{ c.ano }}</td>
+                    <td style="font-family: var(--font-heading); font-weight: 800; color: var(--color-accent)">{{ c.fase }}</td>
+                    <td>{{ c.tipo }}</td>
+                    <td style="font-family: var(--font-heading); font-weight: 800">{{ c.cit }}</td>
+                    <td>{{ c.fwci }}</td>
+                    <td style="line-height: 1.45">{{ c.titulo }}</td>
+                  </tr>
+                </sc-for>
+              </tbody>
+            </table>
+          </div>
+          <p style="font-size: 16px; line-height: 1.65; max-width: 68ch; margin: 22px 0 0; text-wrap: pretty">Os três trabalhos do topo são de 2023 e definiram o vocabulário que os demais usam: a revisão sistemática que organiza a literatura por tarefa, o survey que fez o mesmo recorte para teste, e o survey que percorre o espectro completo de atividades — o mais próximo de uma visão de processo entre os fundadores, cuja tese central é que técnicas híbridas são indispensáveis para filtrar soluções incorretas. Da safra de 2024 em diante nenhuma revisão passou de 110 citações, e as revisões agênticas de 2025–2026 estão quase todas abaixo de dez: parte é atraso de indexação, parte é real — o campo agêntico ainda não elegeu sua revisão canônica.</p>
+        </div>
+      </section>
+
+      <section style="border-top: 2px solid var(--color-text)">
+        <div class="om-pad om-sec" style="max-width: 1200px; margin: 0 auto; padding: 56px 32px">
+          <h2 style="font-family: var(--font-heading); font-weight: 900; font-size: clamp(26px, 4vw, 40px); line-height: 1.02; letter-spacing: -0.025em; margin: 0; max-width: 30ch; text-wrap: balance">A fronteira agêntica: 43 revisões com agentes como objeto central, 32 delas de 2025 em diante</h2>
+          <div class="om-scroll" style="border: 2px solid var(--color-text); margin-top: 28px">
+            <table class="table" style="width: 100%; border-collapse: collapse">
+              <thead>
+                <tr>
+                  <th style="text-align: left">arXiv</th>
+                  <th style="text-align: left">Ano</th>
+                  <th style="text-align: left">Fase</th>
+                  <th style="text-align: left">Título</th>
+                  <th style="text-align: left">Foco declarado</th>
+                </tr>
+              </thead>
+              <tbody>
+                <sc-for list="{{ fronteiraAgentica }}" as="f" hint-placeholder-count="10">
+                  <tr>
+                    <td><a href="{{ f.url }}" target="_blank" rel="noopener" style="font-family: var(--font-heading); font-weight: 700">{{ f.id }}</a></td>
+                    <td>{{ f.ano }}</td>
+                    <td style="font-family: var(--font-heading); font-weight: 800; color: var(--color-accent)">{{ f.fase }}</td>
+                    <td style="line-height: 1.45">{{ f.titulo }}</td>
+                    <td style="line-height: 1.45; opacity: 0.8">{{ f.foco }}</td>
+                  </tr>
+                </sc-for>
+              </tbody>
+            </table>
+          </div>
+          <p style="font-size: 16px; line-height: 1.65; max-width: 68ch; margin: 22px 0 0; text-wrap: pretty">Três padrões atravessam essa camada. O primeiro é o deslocamento do benchmark de tarefa isolada para o <strong>benchmark de trajetória</strong>, que avalia o caminho percorrido pelo agente e não só o artefato final. O segundo é o tratamento de <strong>memória e contexto como componentes de primeira classe</strong> do processo. O terceiro é a emergência da <strong>verificação como gargalo declarado</strong>: várias revisões de 2026 apontam que a produção de código por agentes ultrapassou a capacidade humana de revisá-lo.</p>
+
+          <h3 style="font-family: var(--font-heading); font-weight: 900; font-size: 24px; letter-spacing: -0.02em; margin: 44px 0 16px">Onde o trabalho primário está sendo publicado</h3>
+          <figure style="margin: 0; border: 2px solid var(--color-text)">
+            <img src="uploads/sedes_fase_heatmap.png" alt="Mapa de calor dos 106 artigos com sede confirmada, por sede de publicação e fase do processo" style="display: block; width: 100%; height: auto">
+            <figcaption style="font-size: 13px; line-height: 1.5; padding: 12px 16px; border-top: 2px solid var(--color-text); background: var(--color-neutral-100)">106 artigos com sede confirmada no campo de comentário do arXiv (2023–2026); total por sede entre parênteses. Conferências acima, periódicos TSE e TOSEM abaixo.</figcaption>
+          </figure>
+          <p style="font-size: 16px; line-height: 1.65; max-width: 68ch; margin: 22px 0 0; text-wrap: pretty">Nas sedes principais, verificação e geração de código dominam; requisitos, arquitetura e manutenção quase não aparecem. ICSE concentra 33 artigos, com 10 em geração de código e 10 em verificação; ASE puxa para verificação (8) e processo transversal (5).</p>
+        </div>
+      </section>
+
+      <section id="corpus" style="border-top: 2px solid var(--color-text); background: var(--color-neutral-100)">
+        <div class="om-pad om-sec" style="max-width: 1200px; margin: 0 auto; padding: 56px 32px">
+          <div style="font-size: 13px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700)">Corpus completo · navegável</div>
+          <h2 style="font-family: var(--font-heading); font-weight: 900; font-size: clamp(26px, 4vw, 40px); letter-spacing: -0.025em; margin: 10px 0 0">Os dois corpora, artigo por artigo</h2>
+          <p style="font-size: 16px; line-height: 1.6; max-width: 62ch; margin: 16px 0 28px; text-wrap: pretty">Escolha o corpus e a fase. Cada registro traz autor, ano, foco declarado e o link para o arXiv.</p>
+
+          <div style="display: flex; gap: 16px; flex-wrap: wrap; align-items: flex-start">
+            <div style="display: flex; border: 2px solid var(--color-text)">
+              <sc-for list="{{ corpusTabs }}" as="t" hint-placeholder-count="2">
+                <button type="button" onClick="{{ t.select }}" style="{{ t.style }}" style-hover="background: var(--color-accent-200)">{{ t.label }}</button>
+              </sc-for>
+            </div>
+            <div style="display: flex; flex-wrap: wrap; border: 2px solid var(--color-text)">
+              <sc-for list="{{ corpusFases }}" as="f" hint-placeholder-count="9">
+                <button type="button" onClick="{{ f.select }}" style="{{ f.style }}" style-hover="background: var(--color-accent-200)">{{ f.label }}</button>
+              </sc-for>
+            </div>
+          </div>
+
+          <div style="font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.6; margin: 20px 0 0">Mostrando {{ corpusMostrando }} de {{ corpusTotal }}</div>
+
+          <sc-if value="{{ corpusVazio }}" hint-placeholder-val="{{ true }}">
+            <p style="font-size: 15px; opacity: 0.6; margin: 18px 0 0">Carregando o corpus…</p>
+          </sc-if>
+
+          <div style="border-top: 2px solid var(--color-text); margin-top: 16px">
+            <sc-for list="{{ corpusRows }}" as="r" hint-placeholder-count="8">
+              <div style="display: grid; grid-template-columns: minmax(0, 1fr); gap: 6px; padding: 18px 0; border-bottom: 2px solid var(--color-divider)">
+                <div style="display: flex; gap: 12px; flex-wrap: wrap; align-items: baseline">
+                  <span style="font-family: var(--font-heading); font-weight: 900; font-size: 16px; color: var(--color-accent)">{{ r.fase }}</span>
+                  <span style="font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.6">{{ r.faseNome }} · {{ r.ano }}</span>
+                </div>
+                <a href="{{ r.url }}" target="_blank" rel="noopener" style="font-family: var(--font-heading); font-weight: 700; font-size: 18px; line-height: 1.3; letter-spacing: -0.01em; max-width: 74ch">{{ r.titulo }}</a>
+                <div style="font-size: 14px; line-height: 1.5; opacity: 0.8">{{ r.autor }} · {{ r.meta }}</div>
+                <div style="font-size: 14px; line-height: 1.5; max-width: 74ch">{{ r.foco }}</div>
+              </div>
+            </sc-for>
+          </div>
+
+          <sc-if value="{{ temMais }}" hint-placeholder-val="{{ true }}">
+            <div style="margin-top: 24px">
+              <button type="button" class="btn btn-secondary" onClick="{{ verMais }}">Mostrar mais 50</button>
+            </div>
+          </sc-if>
+        </div>
+      </section>
+
+      <section style="border-top: 2px solid var(--color-text); background: var(--color-accent); color: #fff">
+        <div class="om-pad om-sec" style="max-width: 1200px; margin: 0 auto; padding: 56px 32px">
+          <h2 style="font-family: var(--font-heading); font-weight: 900; font-size: clamp(28px, 5vw, 48px); line-height: 1; letter-spacing: -0.03em; margin: 0; max-width: 26ch; text-wrap: balance">Cinco lacunas que nenhuma das 157 revisões cobre</h2>
+          <p style="font-size: 17px; line-height: 1.6; max-width: 60ch; margin: 18px 0 0">Cada uma é um tema de artigo disponível — e um bom ponto de partida para o trabalho de pesquisa da disciplina.</p>
+          <div style="display: grid; gap: 0; margin-top: 36px; border-top: 2px solid rgba(255,255,255,0.45)">
+            <sc-for list="{{ lacunas }}" as="l" hint-placeholder-count="5">
+              <div class="om-lab" style="display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 0 32px; padding: 20px 0; border-bottom: 2px solid rgba(255,255,255,0.45)">
+                <h3 style="font-family: var(--font-heading); font-weight: 800; font-size: 19px; line-height: 1.2; letter-spacing: -0.015em; margin: 0">{{ l.titulo }}</h3>
+                <p style="font-size: 16px; line-height: 1.6; margin: 0; max-width: 62ch; text-wrap: pretty">{{ l.texto }}</p>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </section>
+
+      <section style="border-top: 2px solid var(--color-text)">
+        <div class="om-pad om-sec" style="max-width: 1200px; margin: 0 auto; padding: 40px 32px">
+          <div style="display: flex; gap: 12px; flex-wrap: wrap">
+            <a class="btn btn-primary" href="#fases">Voltar ao codebook</a>
+            <a class="btn btn-secondary" href="#aula-01">Aula 01</a>
+          </div>
+        </div>
+      </section>
+      </sc-if>
+
+      <sc-if value="{{ ehSoCodebook }}" hint-placeholder-val="{{ true }}">
+      <section style="border-top: 2px solid var(--color-text)">
+        <div class="om-pad om-sec" style="max-width: 1200px; margin: 0 auto; padding: 56px 32px">
+          <h2 style="font-family: var(--font-heading); font-weight: 900; font-size: clamp(26px, 4vw, 40px); letter-spacing: -0.025em; margin: 0 0 18px" data-anchor-fronteiras="1">Fronteiras que geram erro de classificação</h2>
+          <div style="border-top: 2px solid var(--color-text)">
+            <sc-for list="{{ fronteiras }}" as="fr" hint-placeholder-count="3">
+              <div class="om-lab" style="display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: 0 32px; padding: 18px 0; border-bottom: 2px solid var(--color-divider)">
+                <div style="font-family: var(--font-heading); font-weight: 800; font-size: 17px; letter-spacing: 0.02em; color: var(--color-accent); padding-bottom: 8px">{{ fr.par }}</div>
+                <p style="font-size: 15px; line-height: 1.6; margin: 0; max-width: 64ch; padding-top: 2px; text-wrap: pretty">{{ fr.texto }}</p>
+              </div>
+            </sc-for>
+          </div>
+          <h3 style="font-family: var(--font-heading); font-weight: 900; font-size: 24px; letter-spacing: -0.02em; margin: 40px 0 12px">Procedimento de classificação</h3>
+          <p style="font-size: 15px; line-height: 1.65; max-width: 70ch; margin: 0 0 12px; text-wrap: pretty">Triagem automática sobre título e resumo, seguida de segunda passada obrigatória sobre tudo o que foi atribuído a F9, F10 e F11 e sobre os casos de baixa confiança, com justificativa escrita. Cada linha dos CSV carrega <em>fase</em>, <em>confiança</em> e <em>justificativa</em>, o que permite refazer a auditoria sem repetir a classificação.</p>
+          <p style="font-size: 15px; line-height: 1.65; max-width: 70ch; margin: 0 0 12px; text-wrap: pretty">A verificação das fases com contagem baixa teve três etapas e a conclusão mudou duas vezes. A triagem lexical reversa sobre o material já recuperado detecta rótulo errado, mas não falha de recuperação — e levou à conclusão precipitada de que as lacunas eram reais. A varredura dedicada ao arXiv, com 27 consultas no vocabulário próprio de F9, F10 e F11, recuperou 355 registros novos, dos quais 23 com sede confirmada. A terceira etapa estendeu a varredura ao nível secundário. Saldo: o corpus de sedes passou de 106 para 129 artigos e o de secundários de 157 para 171.</p>
+          <p style="font-size: 15px; line-height: 1.65; max-width: 70ch; margin: 0; text-wrap: pretty"><strong style="font-family: var(--font-heading); font-weight: 800">A lição metodológica.</strong> Uma lacuna medida com o vocabulário errado é lacuna de busca, não de campo. Contagem baixa em qualquer código deste esquema é hipótese a testar com consultas dedicadas, nunca resultado. Casos de fronteira remanescentes devem ser verificados antes de citar as contagens em publicação.</p>
+          <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 36px">
+            <a class="btn btn-primary" href="#mapeamento">Parte 2 · O mapeamento</a>
+            <a class="btn btn-secondary" href="#aula-01">Voltar para a Aula 01</a>
+          </div>
+        </div>
+      </section>
+      </sc-if>
+    </article>
+  </sc-if>
+
+  <sc-if value="{{ ehHome }}" hint-placeholder-val="{{ true }}">
+  <div>
+  <section id="topo" class="om-pad" style="max-width: 1200px; margin: 0 auto; padding: 72px 32px 0">
+    <div style="font-size: 13px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700)">Tópico Especial em Inteligência Artificial · Mestrado em Computação Aplicada · IFES Serra · 2026.2</div>
+    <h1 style="font-family: var(--font-heading); font-weight: 900; font-size: clamp(44px, 7vw, 92px); line-height: 0.94; letter-spacing: -0.035em; margin: 20px 0 0; max-width: 17ch; text-wrap: balance">Desenvolvimento de Software Suportado por IA</h1>
+    <p style="font-size: 20px; line-height: 1.5; max-width: 60ch; margin: 28px 0 40px; text-wrap: pretty">Como modelos de linguagem e agentes autônomos estão reescrevendo o ciclo de vida do software — e como avaliar isso com rigor empírico. Um semestre entre leitura de artigos, experimentação com ferramentas e um estudo próprio publicável.</p>
+    <div style="display: flex; gap: 12px; flex-wrap: wrap; padding-bottom: 48px">
+      <a class="btn btn-primary" href="#cronograma">Ver cronograma</a>
+      <a class="btn btn-secondary" href="#leituras">Bibliografia</a>
+    </div>
+  </section>
+
+  <section style="border-top: 2px solid var(--color-text); border-bottom: 2px solid var(--color-text)">
+    <div class="om-pad" style="max-width: 1200px; margin: 0 auto; padding: 0 32px; display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr))">
+      <div style="padding: 24px 24px 24px 0; border-right: 2px solid var(--color-divider)">
+        <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.6">Programa</div>
+        <div style="font-family: var(--font-heading); font-weight: 800; font-size: 26px; margin-top: 6px">PPCOMP · Mestrado</div>
+      </div>
+      <div style="padding: 24px; border-right: 2px solid var(--color-divider)">
+        <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.6">Carga horária</div>
+        <div style="font-family: var(--font-heading); font-weight: 800; font-size: 26px; margin-top: 6px">45h</div>
+      </div>
+      <div style="padding: 24px; border-right: 2px solid var(--color-divider)">
+        <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.6">Encontros</div>
+        <div style="font-family: var(--font-heading); font-weight: 800; font-size: 26px; margin-top: 6px">Qui · 19h–22h</div>
+      </div>
+      <div style="padding: 24px 0 24px 24px">
+        <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.6">Local</div>
+        <div style="font-family: var(--font-heading); font-weight: 800; font-size: 26px; margin-top: 6px">Câmpus Serra · Lab. de Software</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="ementa" class="om-pad" style="max-width: 1200px; margin: 0 auto; padding: 72px 32px">
+    <div class="om-2col" style="display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 64px; align-items: start">
+      <div>
+        <h2 style="font-family: var(--font-heading); font-weight: 900; font-size: 34px; letter-spacing: -0.02em; margin: 0 0 20px">Ementa</h2>
+        <p style="font-size: 17px; line-height: 1.65; margin: 0 0 16px; text-wrap: pretty">Fundamentos de modelos de linguagem aplicados a código: tokenização, contexto, geração e limites. Engenharia de prompt e de contexto para tarefas de programação. Assistentes de codificação e o efeito medido sobre produtividade e qualidade.</p>
+        <p style="font-size: 17px; line-height: 1.65; margin: 0 0 16px; text-wrap: pretty">Desenvolvimento orientado a especificação (SDD). Agentes de engenharia de software: arquiteturas, ferramentas, execução em repositórios reais e <em>benchmarks</em> (SWE-bench e sucessores). Agentes evolutivos e auto-aperfeiçoáveis.</p>
+        <p style="font-size: 17px; line-height: 1.65; margin: 0; text-wrap: pretty">Teste, revisão, verificação e segurança de código gerado por IA. Método experimental para avaliar assistentes e agentes. Licenciamento, proveniência e ética.</p>
+      </div>
+      <div>
+        <h2 style="font-family: var(--font-heading); font-weight: 900; font-size: 34px; letter-spacing: -0.02em; margin: 0 0 20px">Ao final, você deve</h2>
+        <ol style="margin: 0; padding: 0; list-style: none; display: grid; gap: 0">
+          <li style="display: grid; grid-template-columns: 40px 1fr; gap: 16px; padding: 16px 0; border-top: 2px solid var(--color-divider); font-size: 16px; line-height: 1.5">
+            <span style="font-family: var(--font-heading); font-weight: 800; color: var(--color-accent)">01</span>
+            <span>Explicar o que um LLM pode e não pode garantir em tarefas de engenharia de software.</span>
+          </li>
+          <li style="display: grid; grid-template-columns: 40px 1fr; gap: 16px; padding: 16px 0; border-top: 2px solid var(--color-divider); font-size: 16px; line-height: 1.5">
+            <span style="font-family: var(--font-heading); font-weight: 800; color: var(--color-accent)">02</span>
+            <span>Projetar e executar um agente de software sobre um repositório real, com ferramentas e critério de parada.</span>
+          </li>
+          <li style="display: grid; grid-template-columns: 40px 1fr; gap: 16px; padding: 16px 0; border-top: 2px solid var(--color-divider); font-size: 16px; line-height: 1.5">
+            <span style="font-family: var(--font-heading); font-weight: 800; color: var(--color-accent)">03</span>
+            <span>Avaliar assistentes e agentes com métricas defensáveis, além do <em>pass@k</em>.</span>
+          </li>
+          <li style="display: grid; grid-template-columns: 40px 1fr; gap: 16px; padding: 16px 0; border-top: 2px solid var(--color-divider); border-bottom: 2px solid var(--color-divider); font-size: 16px; line-height: 1.5">
+            <span style="font-family: var(--font-heading); font-weight: 800; color: var(--color-accent)">04</span>
+            <span>Redigir um artigo curto, no formato SBC/IEEE, com um experimento reprodutível.</span>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section id="fases-teaser" style="border-top: 2px solid var(--color-text)">
+    <div class="om-pad om-sec" style="max-width: 1200px; margin: 0 auto; padding: 72px 32px">
+      <div class="om-2col" style="display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 64px; align-items: start">
+        <div>
+          <div style="font-size: 13px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700)">Material da Aula 01 · Codebook</div>
+          <h2 style="font-family: var(--font-heading); font-weight: 900; font-size: clamp(30px, 4vw, 46px); line-height: 1.02; letter-spacing: -0.025em; margin: 10px 0 0; max-width: 24ch; text-wrap: balance">As oito fases do processo de software</h2>
+          <p style="font-size: 17px; line-height: 1.65; max-width: 60ch; margin: 20px 0 0; text-wrap: pretty">O mapa que organiza a disciplina: oito códigos que classificam a literatura de engenharia de software com IA, com escopo, teste de decisão e as contagens de 157 estudos secundários e 106 artigos em sedes revisadas por pares.</p>
+          <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 28px">
+            <a class="btn btn-primary" href="#fases">Abrir o codebook</a>
+            <a class="btn btn-secondary" href="#mapeamento">Ver o mapeamento</a>
+          </div>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 2px; background: var(--color-divider); border: 2px solid var(--color-text)">
+          <sc-for list="{{ fases }}" as="f" hint-placeholder-count="8">
+            <a href="#fases" style="background: var(--color-bg); padding: 16px; display: block; color: var(--color-text)" style-hover="background: var(--color-accent-100)">
+              <div style="font-family: var(--font-heading); font-weight: 900; font-size: 22px; letter-spacing: -0.03em; color: var(--color-accent)">{{ f.cod }}</div>
+              <div style="font-family: var(--font-heading); font-weight: 700; font-size: 14px; line-height: 1.2; margin-top: 6px">{{ f.nome }}</div>
+            </a>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="cronograma" style="border-top: 2px solid var(--color-text); background: var(--color-neutral-100)">
+    <div class="om-pad" style="max-width: 1200px; margin: 0 auto; padding: 72px 32px">
+      <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; flex-wrap: wrap; margin-bottom: 28px">
+        <div>
+          <div style="font-size: 13px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700)">17 encontros · quintas, 6 ago a 3 dez</div>
+          <h2 style="font-family: var(--font-heading); font-weight: 900; font-size: clamp(34px, 4vw, 52px); letter-spacing: -0.025em; margin: 10px 0 0">Cronograma</h2>
+        </div>
+        <div class="om-filter" style="display: flex; gap: 0; border: 2px solid var(--color-text)">
+          <sc-for list="{{ unidades }}" as="u" hint-placeholder-count="4">
+            <button type="button" onClick="{{ u.select }}" style="{{ u.style }}" style-hover="background: var(--color-accent-200)">{{ u.label }}</button>
+          </sc-for>
+        </div>
+      </div>
+
+      <div style="border-top: 2px solid var(--color-text)">
+        <sc-for list="{{ aulas }}" as="a" hint-placeholder-count="8">
+          <sc-if value="{{ a.ehPausa }}" hint-placeholder-val="{{ false }}">
+            <div class="om-row" style="display: grid; grid-template-columns: 78px 96px minmax(0, 1fr) 150px 28px; gap: 20px; align-items: baseline; padding: 18px 12px 18px 0; border-bottom: 2px solid var(--color-divider); background: repeating-linear-gradient(135deg, transparent, transparent 8px, var(--color-neutral-200) 8px, var(--color-neutral-200) 9px)">
+              <div class="om-row-num" style="font-family: var(--font-heading); font-weight: 900; font-size: 22px; letter-spacing: -0.02em; opacity: 0.4">—</div>
+              <div class="om-row-data" style="font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; opacity: 0.65">10 set</div>
+              <div class="om-row-title">
+                <div style="font-family: var(--font-heading); font-weight: 700; font-size: 19px; line-height: 1.25; letter-spacing: -0.01em; opacity: 0.7">Sem aula — SBES 2026</div>
+                <div style="font-size: 14px; margin-top: 5px; opacity: 0.6">O professor estará no Simpósio Brasileiro de Engenharia de Software.</div>
+              </div>
+              <div class="om-row-unit" style="font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.5">Recesso</div>
+              <div class="om-row-sign"></div>
+            </div>
+          </sc-if>
+          <sc-if value="{{ a.ehAula }}" hint-placeholder-val="{{ true }}">
+          <a href="{{ a.href }}" style="display: block; color: var(--color-text); border-bottom: 2px solid var(--color-divider); transition: background 120ms" style-hover="background: var(--color-accent-100)">
+            <div class="om-row" style="display: grid; grid-template-columns: 78px 96px minmax(0, 1fr) 150px 28px; gap: 20px; align-items: baseline; padding: 18px 12px 18px 0">
+              <div class="om-row-num" style="font-family: var(--font-heading); font-weight: 900; font-size: 22px; letter-spacing: -0.02em">{{ a.n }}</div>
+              <div class="om-row-data" style="font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; opacity: 0.65">{{ a.data }}</div>
+              <div class="om-row-title">
+                <div style="font-family: var(--font-heading); font-weight: 700; font-size: 19px; line-height: 1.25; letter-spacing: -0.01em">{{ a.titulo }}</div>
+                <div style="font-size: 14px; margin-top: 5px; opacity: 0.7">{{ a.leitura }}</div>
+              </div>
+              <div class="om-row-unit" style="font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-accent-700)">{{ a.unidade }}</div>
+              <div class="om-row-sign" style="font-family: var(--font-heading); font-weight: 800; font-size: 18px; text-align: right; color: var(--color-accent)">→</div>
+            </div>
+          </a>
+          </sc-if>
+        </sc-for>
+      </div>
+      <p style="font-size: 14px; opacity: 0.6; margin: 18px 0 0">Cada encontro tem página própria. Por ora só o primeiro está fechado; o último encontro de cada mês é sempre apresentação de trabalho e debate.</p>
+    </div>
+  </section>
+
+  <section id="leituras" style="border-top: 2px solid var(--color-text)">
+    <div class="om-pad" style="max-width: 1200px; margin: 0 auto; padding: 72px 32px">
+      <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; flex-wrap: wrap; margin-bottom: 32px">
+        <div>
+          <div style="font-size: 13px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700)">Bibliografia</div>
+          <h2 style="font-family: var(--font-heading); font-weight: 900; font-size: clamp(34px, 4vw, 52px); letter-spacing: -0.025em; margin: 10px 0 0">Artigos</h2>
+        </div>
+        <p style="font-size: 15px; max-width: 44ch; margin: 0; opacity: 0.75">Todos vêm do corpus mapeado na Aula 01. Em vermelho, o núcleo já consolidado por citação; em contorno, a fronteira <em>Agentic</em> de 2025–2026. Todos no arXiv, de acesso aberto.</p>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2px; background: var(--color-divider); border: 2px solid var(--color-text)">
+        <sc-for list="{{ artigos }}" as="t" hint-placeholder-count="6">
+          <article style="background: var(--color-bg); padding: 24px; display: flex; flex-direction: column; gap: 10px; min-height: 210px">
+            <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap">
+              <span style="{{ t.tagStyle }}">{{ t.tag }}</span>
+              <span style="font-family: var(--font-heading); font-weight: 800; font-size: 13px; letter-spacing: 0.06em; color: var(--color-accent)">{{ t.fase }}</span>
+              <span style="font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.6">{{ t.faseNome }}</span>
+            </div>
+            <a href="{{ t.href }}" target="_blank" rel="noopener" style="font-family: var(--font-heading); font-weight: 800; font-size: 20px; line-height: 1.2; letter-spacing: -0.015em; margin: 4px 0 0; text-wrap: pretty">{{ t.titulo }}</a>
+            <div style="font-size: 15px; opacity: 0.75; line-height: 1.45">{{ t.autor }} · {{ t.cit }}</div>
+            <div style="margin-top: auto; padding-top: 14px; border-top: 2px solid var(--color-divider); font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase">{{ t.fonte }}</div>
+          </article>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section id="avaliacao-resumo" style="border-top: 2px solid var(--color-text); background: var(--color-neutral-100)">
+    <div class="om-pad om-sec" style="max-width: 1200px; margin: 0 auto; padding: 72px 32px">
+      <h2 style="font-family: var(--font-heading); font-weight: 900; font-size: clamp(34px, 4vw, 52px); letter-spacing: -0.025em; margin: 0 0 14px">Avaliação</h2>
+      <p style="font-size: 17px; line-height: 1.6; max-width: 60ch; margin: 0 0 28px; text-wrap: pretty">Os laboratórios e o artigo final são feitos <strong>sobre o tema da sua pesquisa</strong> — não sobre um exercício genérico da disciplina.</p>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 2px; background: var(--color-divider); border: 2px solid var(--color-text)">
+        <div style="background: var(--color-bg); padding: 28px">
+          <div style="font-family: var(--font-heading); font-weight: 900; font-size: 56px; line-height: 1; letter-spacing: -0.04em; color: var(--color-accent)">20%</div>
+          <div style="font-family: var(--font-heading); font-weight: 800; font-size: 19px; margin-top: 14px">Apresentações e debate</div>
+          <p style="font-size: 15px; line-height: 1.55; margin: 8px 0 0; opacity: 0.8">Último encontro de cada mês: apresentação do andamento do trabalho e arguição dos colegas.</p>
+        </div>
+        <div style="background: var(--color-bg); padding: 28px">
+          <div style="font-family: var(--font-heading); font-weight: 900; font-size: 56px; line-height: 1; letter-spacing: -0.04em; color: var(--color-accent)">30%</div>
+          <div style="font-family: var(--font-heading); font-weight: 800; font-size: 19px; margin-top: 14px">Laboratórios</div>
+          <p style="font-size: 15px; line-height: 1.55; margin: 8px 0 0; opacity: 0.8">Quatro práticas entregues como repositório: prompt, SDD, agente e avaliação.</p>
+        </div>
+        <div style="background: var(--color-bg); padding: 28px">
+          <div style="font-family: var(--font-heading); font-weight: 900; font-size: 56px; line-height: 1; letter-spacing: -0.04em; color: var(--color-accent)">50%</div>
+          <div style="font-family: var(--font-heading); font-weight: 800; font-size: 19px; margin-top: 14px">Artigo final</div>
+          <p style="font-size: 15px; line-height: 1.55; margin: 8px 0 0; opacity: 0.8">Estudo experimental de 8 páginas no formato SBC, com dados e código abertos.</p>
+        </div>
+      </div>
+      <div style="margin-top: 28px; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 32px; font-size: 15px; line-height: 1.6">
+        <p style="margin: 0"><strong style="font-family: var(--font-heading); font-weight: 800">Reprodutibilidade.</strong> Toda entrega inclui repositório com <em>seed</em>, versão do modelo e instruções de execução.</p>
+        <p style="margin: 0"><strong style="font-family: var(--font-heading); font-weight: 800">Uso de IA.</strong> Encorajado e obrigatoriamente declarado: registre ferramenta, versão e o que foi gerado.</p>
+        <p style="margin: 0"><strong style="font-family: var(--font-heading); font-weight: 800">Atrasos.</strong> Desconto de 10% por dia corrido; após cinco dias a entrega não é aceita.</p>
+      </div>
+      <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 32px">
+        <a class="btn btn-primary" href="#avaliacao">Critérios completos</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contato" style="border-top: 2px solid var(--color-text); background: var(--color-accent); color: #fff">
+    <div class="om-pad" style="max-width: 1200px; margin: 0 auto; padding: 80px 32px">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 48px; align-items: start">
+        <div>
+          <h2 style="font-family: var(--font-heading); font-weight: 900; font-size: clamp(38px, 5vw, 68px); line-height: 0.98; letter-spacing: -0.035em; margin: 0; text-wrap: balance">A ferramenta muda todo mês. O método, não.</h2>
+        </div>
+        <div style="display: grid; gap: 0; font-size: 17px">
+          <div style="padding: 16px 0; border-top: 2px solid rgba(255,255,255,0.45)">
+            <div style="font-size: 12px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.8">Professor</div>
+            <div style="font-family: var(--font-heading); font-weight: 800; font-size: 22px; margin-top: 4px">Paulo Sérgio dos Santos Júnior</div>
+          </div>
+          <div style="padding: 16px 0; border-top: 2px solid rgba(255,255,255,0.45)">
+            <div style="font-size: 12px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.8">E-mail</div>
+            <div style="font-family: var(--font-heading); font-weight: 800; font-size: 22px; margin-top: 4px">paulo.junior@ifes.edu.br</div>
+          </div>
+          <div style="padding: 16px 0; border-top: 2px solid rgba(255,255,255,0.45); border-bottom: 2px solid rgba(255,255,255,0.45)">
+            <div style="font-size: 12px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.8">Atendimento</div>
+            <div style="font-family: var(--font-heading); font-weight: 800; font-size: 22px; margin-top: 4px">A combinar por e-mail</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  </div>
+  </sc-if>
+
+  <footer style="border-top: 2px solid var(--color-text); background: var(--color-bg)">
+    <div class="om-pad" style="max-width: 1200px; margin: 0 auto; padding: 28px 32px; display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; opacity: 0.7">
+      <span>IFES Câmpus Serra · Mestrado em Computação Aplicada</span>
+      <span>Plano de ensino atualizado em agosto de 2026</span>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+const NOMES_U = { I: "Fundamentos", II: "Agentes", III: "Avaliação" };
+
+const AULAS = [
+  {
+    n: "01", data: "06 ago", dataLonga: "Quinta, 6 de agosto de 2026", u: "I",
+    titulo: "Codebook das fases do processo de software",
+    leitura: "Codebook e corpus da disciplina",
+    resumo: "Abertura da disciplina. Um mapa do que efetivamente mudou na prática de desenvolvimento desde os primeiros assistentes de código, separando o que já é evidência empírica do que ainda é promessa de fornecedor.",
+    objetivos: ["Situar a disciplina no debate atual de engenharia de software com IA.", "Ler o mapa do campo pelas oito fases do processo e localizar nele o próprio tema de pesquisa.", "Escolher, do corpus, um ou mais artigos para fichar e discutir no próximo encontro."],
+    roteiro: [["19h00–19h40", "Apresentação do plano de ensino, da avaliação e do formato dos encontros."], ["19h40–20h40", "Exposição: o codebook das oito fases e o mapeamento dos dois corpora."], ["20h50–22h00", "Escolha dos artigos: cada aluno seleciona no corpus os artigos da sua fase de interesse e justifica a escolha diante da turma."]],
+    leituras: [["Large Language Models for Software Engineering: Survey and Open Problems", "Angela Fan et al. (7 autores)", "ICSE-FoSE 2023 · arXiv:2310.03533", "Panorama", "https://arxiv.org/abs/2310.03533"]],
+    atividade: "Percorrer o corpus navegável, filtrar pela fase mais próxima do seu tema de pesquisa e escolher um ou mais artigos para fichar.",
+    entrega: "Fichamento dos artigos escolhidos", prazo: "Até 23h59 da quarta anterior ao encontro 02 — a discussão da próxima aula parte dos fichamentos.",
+    materiais: ["Codebook das fases do processo|#fases", "Mapeamento do campo e corpus navegável|#mapeamento", "Modelo de fichamento|#avaliacao"]
+  },
+  {
+    n: "02", data: "13 ago", dataLonga: "Quinta, 13 de agosto de 2026", u: "I",
+    titulo: "Discussão dos artigos fichados",
+    leitura: "Chen et al. (2021), Codex",
+    resumo: "O que há dentro de um modelo de código: tokenização, janela de contexto, decodificação e amostragem. Por que o mesmo prompt gera respostas diferentes e o que isso implica para reprodutibilidade.",
+    objetivos: ["Explicar geração autorregressiva e o papel de temperatura e amostragem.", "Interpretar corretamente a métrica pass@k.", "Reconhecer os modos típicos de falha: alucinação de API, contexto perdido, código plausível e errado."],
+    roteiro: [["19h00–19h50", "Discussão dirigida do artigo do Codex, conduzida por uma dupla."], ["19h50–20h40", "Exposição: arquitetura, treino em código, contexto e limites."], ["20h50–22h00", "Laboratório: reprodução de pass@1 e pass@10 em um subconjunto do HumanEval."]],
+    leituras: [["Evaluating Large Language Models Trained on Code", "Chen et al. (OpenAI)", "arXiv:2107.03374 · 2021", "Obrigatória"]],
+    atividade: "Rodar o subconjunto do HumanEval fornecido com duas temperaturas diferentes e comparar pass@1. Anotar quantas soluções passam nos testes mas seriam rejeitadas em revisão humana.",
+    entrega: "Fichamento 1", prazo: "Até 23h59 da quarta anterior ao próximo encontro.",
+    materiais: ["Notebook de partida do HumanEval", "Chaves de API da turma", "Modelo de fichamento (1 página)"]
+  },
+  {
+    n: "03", data: "20 ago", dataLonga: "Quinta, 20 de agosto de 2026", u: "I",
+    titulo: "Engenharia de prompt e de contexto",
+    leitura: "White et al. (2023), padrões de prompt",
+    resumo: "Prompt como artefato de engenharia: versionado, testado e comparável. O que muda quando o problema deixa de ser \"escrever um prompt\" e passa a ser \"montar o contexto certo\".",
+    objetivos: ["Aplicar padrões de prompt a tarefas de implementação e refatoração.", "Montar contexto a partir de repositório: quais arquivos, em que ordem, com qual recorte.", "Comparar estratégias com um protocolo mínimo de medição."],
+    roteiro: [["19h00–19h40", "Seminário de dupla sobre padrões de prompt."], ["19h40–20h30", "Exposição: contexto, recuperação de trechos, instruções de sistema e restrições."], ["20h40–22h00", "Laboratório 1: mesma tarefa sob quatro estratégias de prompt, com medição."]],
+    leituras: [["A Prompt Pattern Catalog to Enhance Prompt Engineering with ChatGPT", "White, Fu, Hays et al.", "arXiv:2302.11382 · 2023", "Obrigatória"]],
+    atividade: "Implementar a mesma funcionalidade quatro vezes — prompt direto, prompt com exemplos, prompt com contexto do repositório e prompt com critérios de aceite — e registrar acertos, retrabalho e tempo.",
+    entrega: "Lab 1 — Prompt", prazo: "Repositório entregue até a véspera do encontro 06.",
+    materiais: ["Repositório-base do laboratório", "Planilha de registro das execuções", "Catálogo de padrões de prompt"]
+  },
+  {
+    n: "04", data: "27 ago", dataLonga: "Quinta, 27 de agosto de 2026", u: "I",
+    titulo: "Assistentes de codificação e produtividade",
+    leitura: "Peng et al. (2023)",
+    resumo: "O estudo mais citado sobre produtividade com assistentes de código, lido como objeto metodológico: o que foi medido, em que população, com qual tarefa e o que não pode ser concluído dali.",
+    objetivos: ["Identificar variável dependente, tratamento e ameaças à validade em um experimento real.", "Diferenciar velocidade de conclusão de qualidade entregue.", "Formular perguntas de pesquisa que o estudo original deixou em aberto."],
+    roteiro: [["19h00–19h50", "Seminário de dupla sobre o estudo do Copilot."], ["19h50–20h40", "Exposição: desenhos experimentais em engenharia de software com humanos."], ["20h50–22h00", "Oficina de crítica: cada grupo escreve uma ameaça à validade e propõe o desenho corrigido."]],
+    leituras: [["The Impact of AI on Developer Productivity: Evidence from GitHub Copilot", "Peng, Kalliamvakou, Cihon, Demirer", "arXiv:2302.06590 · 2023", "Obrigatória"]],
+    atividade: "Redesenhar o experimento para uma população de desenvolvedores seniores em base de código legada: definir tarefa, métrica e controle.",
+    entrega: "Fichamento 2", prazo: "Até 23h59 da quarta anterior ao próximo encontro.",
+    materiais: ["Roteiro de crítica metodológica", "Slides do encontro"]
+  },
+  {
+    n: "05", data: "03 set", dataLonga: "Quinta, 3 de setembro de 2026", u: "I",
+    titulo: "Qualidade e segurança do código gerado",
+    leitura: "Perry et al. (2023)",
+    resumo: "O que acontece com a segurança do código quando o assistente entra no fluxo — e por que a confiança do desenvolvedor cresce mais rápido que a qualidade real do que ele aceita.",
+    objetivos: ["Reconhecer classes de vulnerabilidade recorrentes em código gerado.", "Avaliar o efeito de excesso de confiança na revisão.", "Aplicar uma checklist de revisão específica para trechos gerados por IA."],
+    roteiro: [["19h00–19h40", "Seminário de dupla."], ["19h40–20h30", "Exposição: superfícies de risco, dependências sugeridas e segredos vazados em prompts."], ["20h40–22h00", "Auditoria em dupla de um repositório com vulnerabilidades plantadas."]],
+    leituras: [["Do Users Write More Insecure Code with AI Assistants?", "Perry, Srivastava, Kumar, Boneh", "ACM CCS 2023", "Obrigatória"]],
+    atividade: "Encontrar, em 60 minutos, o maior número possível das dez vulnerabilidades plantadas no repositório — metade da turma com assistente, metade sem. Comparar os resultados em plenária.",
+    entrega: "Lab 1 — Prompt (entrega)", prazo: "Repositório do Lab 1 até 23h59 do dia anterior.",
+    materiais: ["Repositório de auditoria", "Checklist de revisão de código gerado", "Referência CWE Top 25"]
+  },
+  {
+    n: "06", data: "17 set", dataLonga: "Quinta, 17 de setembro de 2026", u: "II",
+    titulo: "Desenvolvimento orientado a especificação (SDD)",
+    leitura: "Documentação de ferramentas de SDD",
+    resumo: "Inverter a ordem: escrever a especificação executável primeiro e deixar o modelo implementar a partir dela. O que a especificação precisa conter para que a implementação seja verificável.",
+    objetivos: ["Escrever uma especificação suficientemente precisa para gerar código.", "Derivar critérios de aceite testáveis a partir da especificação.", "Comparar SDD com codificação assistida ad hoc."],
+    roteiro: [["19h00–19h40", "Abertura: por que a especificação voltou ao centro."], ["19h40–20h30", "Demonstração de um fluxo de SDD ponta a ponta."], ["20h40–22h00", "Laboratório 2: especificar e gerar um módulo completo a partir da especificação."]],
+    leituras: [["Spec-driven development: documentação e guias de referência", "Comunidade de ferramentas de SDD", "Documentação online", "Obrigatória"]],
+    atividade: "Escrever a especificação de um módulo de importação de dados, gerar a implementação a partir dela e verificar quantos critérios de aceite passam sem intervenção manual.",
+    entrega: "Lab 2 — SDD", prazo: "Repositório entregue até a véspera do encontro 09.",
+    materiais: ["Modelo de especificação", "Repositório-base do Lab 2"]
+  },
+  {
+    n: "07", data: "24 set", dataLonga: "Quinta, 24 de setembro de 2026", u: "II",
+    titulo: "Testes, revisão e verificação com IA",
+    leitura: "Wang et al. (2024), survey de testes",
+    resumo: "Geração de testes, oráculos e o problema de validar quem valida. Cobertura e mutação como contrapeso ao teste gerado que apenas confirma o comportamento existente.",
+    objetivos: ["Gerar suítes de teste para código legado sem oráculo explícito.", "Medir a qualidade da suíte por cobertura e escore de mutação.", "Identificar testes tautológicos produzidos por modelos."],
+    roteiro: [["19h00–19h40", "Seminário de dupla sobre o survey."], ["19h40–20h30", "Exposição: oráculos, mutação e testes de regressão gerados."], ["20h40–22h00", "Laboratório: gerar testes para um módulo legado e rodar análise de mutação."]],
+    leituras: [["Software Testing with Large Language Models: Survey, Landscape and Vision", "Wang, Huang, Chen et al.", "IEEE TSE 2024", "Obrigatória"]],
+    atividade: "Elevar o escore de mutação do módulo dado acima de 60% usando testes gerados, sem reescrever o código de produção.",
+    entrega: "Fichamento 3", prazo: "Até 23h59 da quarta anterior ao próximo encontro.",
+    materiais: ["Módulo legado do laboratório", "Ferramenta de mutação configurada"]
+  },
+  {
+    n: "08", data: "01 out", dataLonga: "Quinta, 1º de outubro de 2026", u: "II",
+    titulo: "Arquiteturas de agentes: ReAct, ferramentas e memória",
+    leitura: "Yao et al. (2023), ReAct",
+    resumo: "O laço que transforma um modelo em agente: raciocinar, agir, observar, repetir. Ferramentas, memória de trabalho e — o que mais se ignora — critério de parada.",
+    objetivos: ["Descrever o laço ReAct e suas variações.", "Projetar o conjunto mínimo de ferramentas para uma tarefa de código.", "Definir critérios de parada e orçamento de execução."],
+    roteiro: [["19h00–19h50", "Seminário de dupla sobre ReAct."], ["19h50–20h40", "Exposição: anatomia de um agente de código, do laço às ferramentas."], ["20h50–22h00", "Construção de um agente mínimo, do zero, com três ferramentas."]],
+    leituras: [["ReAct: Synergizing Reasoning and Acting in Language Models", "Yao, Zhao, Yu et al.", "ICLR 2023", "Obrigatória"]],
+    atividade: "Implementar um agente com as ferramentas ler_arquivo, editar_arquivo e rodar_testes, capaz de fechar uma issue simples sem intervenção.",
+    entrega: "Proposta do artigo final", prazo: "Uma página: pergunta, método e forma de avaliação.",
+    materiais: ["Esqueleto do agente mínimo", "Modelo de proposta do artigo"]
+  },
+  {
+    n: "09", data: "08 out", dataLonga: "Quinta, 8 de outubro de 2026", u: "II",
+    titulo: "Agentes em repositórios reais",
+    leitura: "Yang et al. (2024), SWE-agent",
+    resumo: "Do brinquedo ao repositório de verdade. A interface entre agente e computador — como o ambiente é apresentado ao modelo — importa tanto quanto o modelo.",
+    objetivos: ["Explicar por que a interface agente-computador domina o desempenho.", "Executar um agente sobre issues reais e ler seus rastros.", "Diagnosticar falhas por localização, edição ou verificação."],
+    roteiro: [["19h00–19h50", "Seminário de dupla sobre SWE-agent."], ["19h50–20h30", "Exposição: navegação de repositório, edição de arquivos e feedback de execução."], ["20h40–22h00", "Laboratório 3: rodar o agente sobre issues reais de um projeto aberto."]],
+    leituras: [["SWE-agent: Agent-Computer Interfaces Enable Automated Software Engineering", "Yang, Jimenez, Wettig et al.", "NeurIPS 2024", "Obrigatória"]],
+    atividade: "Selecionar cinco issues fechadas de um projeto aberto, rodar o agente e classificar cada resultado como resolvido, parcial ou falho — com a causa da falha.",
+    entrega: "Lab 3 — Agente", prazo: "Repositório com rastros de execução até a véspera do encontro 12.",
+    materiais: ["Ambiente conteinerizado do agente", "Lista de repositórios candidatos", "Planilha de classificação de resultados"]
+  },
+  {
+    n: "10", data: "15 out", dataLonga: "Quinta, 15 de outubro de 2026", u: "II",
+    titulo: "Contexto em escala: repositórios grandes e recuperação",
+    leitura: "Literatura sobre RAG aplicado a código",
+    resumo: "O gargalo deixa de ser o modelo e passa a ser o que cabe na janela. Estratégias de recuperação, indexação de repositório e compressão de contexto quando o projeto tem centenas de milhares de linhas.",
+    objetivos: ["Explicar por que o desempenho degrada em bases de código grandes.", "Comparar recuperação por embeddings, por grafo de dependências e por busca simbólica.", "Medir o efeito do recorte de contexto sobre a taxa de acerto."],
+    roteiro: [["19h00–19h40", "Seminário de dupla sobre recuperação aplicada a código."], ["19h40–20h30", "Exposição: indexação de repositório, chunking e compressão de contexto."], ["20h40–22h00", "Laboratório: mesma issue com três estratégias de montagem de contexto."]],
+    leituras: [["Retrieval-augmented generation aplicada a código: seleção de leituras", "Seleção do professor", "Repositório da turma", "Obrigatória"]],
+    atividade: "Rodar o agente do Lab 3 sobre um repositório grande com três estratégias de contexto — arquivo aberto, busca por embeddings e grafo de dependências — e comparar acerto e custo em tokens.",
+    entrega: "Sem entrega", prazo: "Resultados trazidos para discussão no encontro 11.",
+    materiais: ["Repositório grande de referência", "Índice pré-computado", "Planilha de comparação de estratégias"]
+  },
+  {
+    n: "11", data: "22 out", dataLonga: "Quinta, 22 de outubro de 2026", u: "II",
+    titulo: "Benchmarks: SWE-bench e seus limites",
+    leitura: "Jimenez et al. (2024)",
+    resumo: "Como se mede um agente de software hoje, e o que a medida esconde: contaminação de treino, vazamento pela issue, tarefas não representativas e o teto imposto pelos testes existentes.",
+    objetivos: ["Descrever a construção do SWE-bench e de suas variantes.", "Identificar fontes de contaminação e vazamento.", "Propor uma métrica complementar ao percentual de issues resolvidas."],
+    roteiro: [["19h00–19h50", "Seminário de dupla sobre SWE-bench."], ["19h50–20h40", "Exposição: contaminação, vazamento e validade de construto em benchmarks."], ["20h50–22h00", "Oficina: desenhar uma tarefa de benchmark que o SWE-bench não cobre."]],
+    leituras: [["SWE-bench: Can Language Models Resolve Real-World GitHub Issues?", "Jimenez, Yang, Wettig et al.", "ICLR 2024", "Obrigatória"]],
+    atividade: "Analisar os rastros do Lab 3 procurando indícios de que o modelo já conhecia a solução, e discutir como isolar esse efeito.",
+    entrega: "Fichamento 4", prazo: "Até 23h59 da quarta anterior ao próximo encontro.",
+    materiais: ["Amostra anotada do SWE-bench", "Roteiro da oficina de benchmark"]
+  },
+  {
+    n: "12", data: "29 out", dataLonga: "Quinta, 29 de outubro de 2026", u: "III",
+    titulo: "Multiagentes e orquestração",
+    leitura: "Hong et al. (2024), MetaGPT",
+    resumo: "Dividir o trabalho entre papéis — arquiteto, implementador, revisor — ajuda ou só multiplica o custo? Quando a orquestração paga e quando um agente único bem instrumentado ganha.",
+    objetivos: ["Comparar arquiteturas de agente único e de múltiplos agentes.", "Estimar custo por tarefa resolvida em cada arquitetura.", "Reconhecer falhas de coordenação e laços improdutivos."],
+    roteiro: [["19h00–19h40", "Seminário de dupla sobre MetaGPT."], ["19h40–20h30", "Exposição: papéis, protocolos de mensagem e memória compartilhada."], ["20h40–22h00", "Comparação prática: agente único versus pipeline de três papéis na mesma tarefa."]],
+    leituras: [["MetaGPT: Meta Programming for Multi-Agent Collaborative Framework", "Hong, Zhuge, Chen et al.", "ICLR 2024", "Complementar"]],
+    atividade: "Executar a mesma tarefa nas duas arquiteturas e comparar tokens consumidos, tempo e qualidade do resultado.",
+    entrega: "Lab 3 — Agente (entrega)", prazo: "Repositório do Lab 3 até 23h59 do dia anterior.",
+    materiais: ["Configuração dos dois pipelines", "Planilha de custo por tarefa"]
+  },
+  {
+    n: "13", data: "05 nov", dataLonga: "Quinta, 5 de novembro de 2026", u: "III",
+    titulo: "Agentes auto-aperfeiçoáveis e busca evolutiva",
+    leitura: "Zhang et al. (2025), Darwin Gödel Machine",
+    resumo: "Agentes que reescrevem o próprio código e mantêm um arquivo de variantes. O que é ganho real de capacidade e o que é sobreajuste ao benchmark que serviu de função de aptidão.",
+    objetivos: ["Descrever o laço de auto-modificação e o papel do arquivo de variantes.", "Discutir função de aptidão, diversidade e estagnação.", "Avaliar riscos de segurança da auto-modificação."],
+    roteiro: [["19h00–19h50", "Seminário de dupla sobre a Darwin Gödel Machine."], ["19h50–20h40", "Exposição: busca aberta, arquivos de soluções e critérios de aptidão."], ["20h50–22h00", "Debate estruturado: evolução genuína ou sobreajuste ao benchmark?"]],
+    leituras: [["Darwin Gödel Machine: Open-Ended Evolution of Self-Improving Agents", "Zhang, Hu, Lu, Lange, Clune", "arXiv:2505.22954 · 2025", "Obrigatória"]],
+    atividade: "Propor, no papel, uma função de aptidão para agentes de software que não seja simplesmente o percentual de issues resolvidas — e apontar como ela poderia ser burlada.",
+    entrega: "Fichamento 5", prazo: "Até 23h59 da quarta anterior ao próximo encontro.",
+    materiais: ["Slides do encontro", "Roteiro do debate"]
+  },
+  {
+    n: "14", data: "12 nov", dataLonga: "Quinta, 12 de novembro de 2026", u: "III",
+    titulo: "Método experimental para avaliar assistentes",
+    leitura: "Guias de estudos empíricos em engenharia de software",
+    resumo: "O encontro em que cada dupla transforma sua proposta em protocolo: hipótese, tratamento, medida, tamanho de amostra e o que será publicado junto com o artigo.",
+    objetivos: ["Formular hipóteses operacionalizáveis.", "Escolher desenho e medidas adequadas à pergunta.", "Antecipar ameaças à validade e registrar decisões antes de coletar dados."],
+    roteiro: [["19h00–19h40", "Exposição: desenhos experimentais, quase-experimentos e estudos de caso."], ["19h40–20h40", "Escrita do protocolo em dupla, com atendimento individual."], ["20h50–22h00", "Revisão cruzada: cada dupla critica o protocolo de outra."]],
+    leituras: [["Experimentation in Software Engineering", "Wohlin, Runeson, Höst et al.", "Springer, 2012 — capítulos selecionados", "Obrigatória"]],
+    atividade: "Fechar o protocolo experimental do artigo final, incluindo plano de análise escrito antes da coleta.",
+    entrega: "Protocolo experimental", prazo: "Versão revisada até 23h59 do domingo seguinte.",
+    materiais: ["Modelo de protocolo", "Roteiro de revisão cruzada"]
+  },
+  {
+    n: "15", data: "19 nov", dataLonga: "Quinta, 19 de novembro de 2026", u: "III",
+    titulo: "Licenciamento, proveniência e ética",
+    leitura: "Literatura sobre proveniência de código gerado",
+    resumo: "De quem é o código que o modelo escreveu. Licenças de treino, obrigações de atribuição, política institucional e o que declarar em um artigo ou em uma entrega de trabalho.",
+    objetivos: ["Reconhecer riscos de licença em código gerado.", "Registrar proveniência de forma auditável.", "Redigir uma declaração de uso de IA para trabalhos acadêmicos."],
+    roteiro: [["19h00–19h40", "Exposição: licenças, atribuição e casos em litígio."], ["19h40–20h30", "Debate: responsabilidade por defeito em código gerado."], ["20h40–22h00", "Laboratório 4: fechar a avaliação do artigo final e a declaração de uso de IA."]],
+    leituras: [["Literatura selecionada sobre proveniência e licenciamento de código gerado", "Seleção do professor", "Disponibilizada no repositório da turma", "Complementar"]],
+    atividade: "Escrever a declaração de uso de IA que acompanhará o artigo final: ferramenta, versão, o que foi gerado e como foi verificado.",
+    entrega: "Lab 4 — Avaliação", prazo: "Resultados e dados brutos até a véspera do encontro 17.",
+    materiais: ["Modelo de declaração de uso de IA", "Política institucional do IFES"]
+  },
+  {
+    n: "16", data: "26 nov", dataLonga: "Quinta, 26 de novembro de 2026", u: "III",
+    titulo: "Oficina de escrita: prévia dos artigos",
+    leitura: "Rascunhos da turma",
+    resumo: "Última rodada antes do seminário. Cada dupla apresenta o rascunho em cinco minutos e recebe crítica dirigida à estrutura do argumento, à apresentação dos resultados e às ameaças à validade.",
+    objetivos: ["Estruturar o artigo de modo que o resultado apareça já no resumo.", "Apresentar dados de forma legível em tabela e gráfico.", "Incorporar crítica de pares antes da versão final."],
+    roteiro: [["19h00–19h30", "Exposição: anatomia de um artigo empírico curto."], ["19h30–21h00", "Prévias de cinco minutos, com crítica imediata."], ["21h00–22h00", "Escrita assistida em sala, com atendimento por dupla."]],
+    leituras: [["Rascunhos das duplas", "Turma 2026.2", "Repositório da disciplina", "Obrigatória"]],
+    atividade: "Revisar o próprio artigo a partir da crítica recebida e registrar, em uma lista, o que foi alterado.",
+    entrega: "Rascunho do artigo", prazo: "Rascunho circulado até 23h59 da terça anterior.",
+    materiais: ["Template SBC", "Roteiro de crítica de rascunho", "Exemplos de artigos curtos bem estruturados"]
+  },
+  {
+    n: "17", data: "03 dez", dataLonga: "Quinta, 3 de dezembro de 2026", u: "III",
+    titulo: "Seminário de encerramento",
+    leitura: "Artigos da turma",
+    resumo: "Apresentação dos artigos em formato de sessão de conferência: 15 minutos de exposição e 10 de arguição por pares, com devolutiva escrita do professor.",
+    objetivos: ["Apresentar um resultado empírico em tempo de conferência.", "Arguir o trabalho de colegas com crítica construtiva e específica.", "Consolidar a agenda de pesquisa que a disciplina abriu."],
+    roteiro: [["19h00–20h30", "Sessão A: apresentações e arguição."], ["20h40–21h40", "Sessão B: apresentações e arguição."], ["21h40–22h00", "Fechamento e encaminhamentos para submissão."]],
+    leituras: [["Artigos finais das duplas", "Turma 2026.2", "Repositório da disciplina", "Obrigatória"]],
+    atividade: "Apresentar o artigo e arguir formalmente o trabalho de outra dupla, com duas perguntas preparadas por escrito.",
+    entrega: "Artigo final", prazo: "PDF e repositório até 23h59 do dia anterior ao seminário.",
+    materiais: ["Template SBC", "Ordem das apresentações", "Ficha de arguição"]
+  }
+];
+
+// Bibliografia: ids selecionados do corpus (corpus.js) + rótulo curatorial.
+const ARTIGOS = [
+  ["2308.10620", "Núcleo"], ["2307.07221", "Núcleo"], ["2310.03533", "Núcleo"],
+  ["2406.00515", "Núcleo"], ["2409.09030", "Núcleo"], ["2405.01466", "Núcleo"],
+  ["2605.15245", "Fronteira"], ["2601.11655", "Fronteira"], ["2606.04967", "Fronteira"],
+  ["2602.06052", "Fronteira"], ["2606.13175", "Fronteira"], ["2608.01001", "Fronteira"]
+];
+
+// Últimos encontros de cada mês: apresentação de trabalho e debate.
+const APRESENTACAO = ["04", "07", "12", "16", "17"];
+// Encontros já desenvolvidos; os demais entram como "a definir".
+const DESENVOLVIDAS = ["01"];
+
+function conteudoApresentacao(a) {
+  const fim = a.n === "17";
+  return {
+    titulo: fim ? "Apresentação final e debate de encerramento" : "Apresentação de trabalho e debate",
+    leitura: "Trabalhos em andamento da turma",
+    resumo: fim
+      ? "Último encontro do semestre: cada dupla apresenta o artigo final e o defende diante da turma, fechando o percurso que começou no primeiro laboratório."
+      : "Último encontro do mês: cada dupla apresenta o estado do seu trabalho sobre o tema da própria pesquisa e a turma debate método, evidência e próximos passos.",
+    objetivos: [
+      "Apresentar resultado parcial do trabalho de pesquisa com evidência, não com impressão de uso.",
+      "Arguir o trabalho dos colegas por critério de método.",
+      "Registrar decisões de rumo para o período seguinte."
+    ],
+    roteiro: [
+      ["19h00–20h20", "Apresentações: 12 minutos por dupla e 8 minutos de arguição."],
+      ["20h30–21h30", "Debate dirigido: o que a evidência apresentada sustenta e o que ela não sustenta."],
+      ["21h30–22h00", "Fechamento: ajustes de rumo e combinações para o mês seguinte."]
+    ],
+    atividade: "Slides de no máximo oito telas e repositório atualizado. A apresentação trata do tema da sua pesquisa.",
+    leituras: [["Trabalhos em andamento da turma", "Duplas", "Repositório da turma", "Apresentação"]],
+    materiais: ["Roteiro de apresentação (8 telas)", "Formulário de arguição entre pares"]
+  };
+}
+
+function resolveAula(a) {
+  const ehApres = APRESENTACAO.indexOf(a.n) >= 0;
+  if (ehApres) {
+    const c = conteudoApresentacao(a);
+    return Object.assign({}, a, c, { tipo: "apresentacao", detalhada: true, aDefinir: false, rotulo: "Apresentação e debate" });
+  }
+  if (DESENVOLVIDAS.indexOf(a.n) >= 0) {
+    return Object.assign({}, a, { tipo: "aula", detalhada: true, aDefinir: false, rotulo: "" });
+  }
+  return Object.assign({}, a, {
+    tipo: "definir", detalhada: false, aDefinir: true, rotulo: "",
+    titulo: "A definir",
+    leitura: "Encontro em preparação",
+    resumo: "Este encontro ainda está em preparação. Tema, roteiro, leitura obrigatória e entrega serão publicados aqui antes da aula."
+  });
+}
+
+const FASES = [
+  {
+    "cod": "F9",
+    "nome": "Descoberta de produto e entendimento do problema",
+    "sec": "4",
+    "sedes": "5",
+    "escopo": "A fase anterior ao requisito. Antes de escrever o que o sistema deve fazer, alguém precisa entender que problema existe, para quem, e o que o produto atual já faz. Responde por que construir isto, e não como — tanto a descoberta voltada ao futuro quanto a arqueologia do legado, porque muitas vezes a única documentação viva da regra de negócio é o código que a implementa.",
+    "inclui": "Pesquisa de usuário e de mercado; ideação e validação de hipótese de produto; análise de feedback, avaliações de loja e tíquetes de suporte; compreensão de código legado para recuperar intenção e regra de negócio; onboarding em base desconhecida.",
+    "naoInclui": "Registrar formalmente o que foi descoberto (F1). Ler código para alterá-lo — para corrigir é F5, para migrar é F6. Documentar o conhecimento recuperado como artefato mantido (F11).",
+    "teste": "O artigo trata de descobrir ou compreender o problema e o produto, antes de existir um requisito escrito para atender?",
+    "nota": "As varreduras dedicadas elevaram a contagem para 5 artigos em sedes e 4 estudos secundários. Aparecem assistentes de onboarding, compreensão personalizada de código na IDE e extração de requisitos de avaliações de aplicativo. A descoberta de produto no sentido estrito permanece rara — cai no vão entre engenharia de software e pesquisa em gestão de produto.",
+    "exemplos": [
+      {
+        "t": "Empowering Business Transformation: Generative AI in Software Product Management — A Systematic Literature Review",
+        "url": "https://arxiv.org/abs/2306.04605",
+        "meta": "2023 · estudo secundário"
+      },
+      {
+        "t": "TARS: A Theory-of-Mind Agent for Personalized In-IDE Code Comprehension",
+        "url": "https://arxiv.org/abs/2607.15948",
+        "meta": "2026 · ICSME, trilha principal"
+      },
+      {
+        "t": "A Multi-agent Onboarding Assistant based on Large Language Models, RAG and Chain-of-Thought",
+        "url": "https://arxiv.org/abs/2503.23421",
+        "meta": "2025 · FSE, trilha principal"
+      }
+    ]
+  },
+  {
+    "cod": "F1",
+    "nome": "Requisitos e especificação",
+    "sec": "7",
+    "sedes": "7",
+    "escopo": "Uma vez entendido o problema em F9, esta é a fase que o registra formalmente. Tudo que ocorre antes de existir uma decisão de estrutura: descobrir, negociar, registrar e validar o que o software deve fazer — incluindo desenvolvimento dirigido por especificação, em que a especificação executável governa a execução do agente.",
+    "inclui": "Elicitação e classificação de requisitos; geração e melhoria de histórias de usuário; extração de intenção a partir de issues; rastreabilidade requisito-para-código; especificação formal ou semiformal como entrada de geração; conformidade legal ou normativa.",
+    "naoInclui": "Geração de código a partir de requisito já fixado (F3). Especificação de teste derivada de código existente (F4). Ensino de levantamento de requisitos (F8). Descoberta do problema antes de haver requisito (F9).",
+    "teste": "A pergunta central do artigo é o que o sistema deve fazer, e não como fazê-lo?",
+    "exemplos": [
+      {
+        "t": "Large Language Models for Requirements Engineering: A Systematic Literature Review",
+        "url": "https://arxiv.org/abs/2509.11446",
+        "meta": "2025 · estudo secundário"
+      },
+      {
+        "t": "TraceDev: A Traceability-Driven Multi-agent Framework for Requirement-to-Code Development",
+        "url": "https://arxiv.org/abs/2607.18886",
+        "meta": "2026 · ISSTA, trilha principal"
+      },
+      {
+        "t": "From Bugs to Benefits: Improving User Stories by Leveraging Crowd Knowledge with CrUISE-AC",
+        "url": "https://arxiv.org/abs/2501.15181",
+        "meta": "2025 · ICSE, trilha principal"
+      }
+    ]
+  },
+  {
+    "cod": "F2",
+    "nome": "Projeto e arquitetura",
+    "sec": "11",
+    "sedes": "3",
+    "escopo": "A decisão de estrutura: como o sistema se decompõe em partes, que responsabilidades cada parte carrega e que restrições de qualidade a decomposição precisa honrar. Cobre decisão arquitetural, modelagem estrutural e comportamental, padrões de projeto e reestruturação em nível de componente.",
+    "inclui": "Recomendação ou avaliação de decisão arquitetural; geração de diagramas UML e ER; decomposição em microsserviços; escolha de padrão de projeto; avaliação de conhecimento arquitetural de modelos; documentação de arquitetura.",
+    "naoInclui": "Refatoração local que não altera a estrutura de componentes (F6). Geração de esqueleto de código a partir de arquitetura já definida (F3).",
+    "teste": "O artefato produzido ou avaliado é uma estrutura de componentes e suas relações, e não código executável nem um requisito?",
+    "exemplos": [
+      {
+        "t": "Software Architecture Meets LLMs: A Systematic Literature Review",
+        "url": "https://arxiv.org/abs/2505.16697",
+        "meta": "2025 · estudo secundário"
+      },
+      {
+        "t": "MicroAgent: Context-Augmented Multi-Agent Framework for Automatic Microservice Decomposition",
+        "url": "https://arxiv.org/abs/2606.29742",
+        "meta": "2026 · ASE, trilha principal"
+      },
+      {
+        "t": "From Requirements to Architecture: An AI-Based Journey to Semi-Automatically Generate Software Architectures",
+        "url": "https://arxiv.org/abs/2401.14079",
+        "meta": "2024 · ICSE, trilha satélite"
+      }
+    ]
+  },
+  {
+    "cod": "F3",
+    "nome": "Implementação e geração de código",
+    "sec": "28",
+    "sedes": "19",
+    "escopo": "A produção do código em si e as transformações que preservam ou traduzem sua intenção. A saída avaliada é código-fonte executável ou uma representação direta dele.",
+    "inclui": "Geração a partir de linguagem natural; completação; geração em nível de repositório com recuperação de contexto; tradução entre linguagens; otimização de desempenho; sumarização e documentação de código; mensagens de commit.",
+    "naoInclui": "Geração de código de teste (F4). Patch para corrigir defeito conhecido (F5). Migração de sistema legado inteiro (F6). Documentação mantida como base de conhecimento consultável (F11).",
+    "teste": "A saída avaliada é código de produção novo ou transformado, e não um teste nem uma correção de defeito?",
+    "exemplos": [
+      {
+        "t": "A Survey on Large Language Models for Code Generation",
+        "url": "https://arxiv.org/abs/2406.00515",
+        "meta": "2024 · estudo secundário"
+      },
+      {
+        "t": "A Survey on Code Generation with LLM-based Agents",
+        "url": "https://arxiv.org/abs/2508.00083",
+        "meta": "2025 · estudo secundário"
+      },
+      {
+        "t": "Towards Reliable C-to-Rust Translation with Rule-Guided Reasoning and Reinforcement Learning",
+        "url": "https://arxiv.org/abs/2607.19966",
+        "meta": "2026 · ASE, trilha principal"
+      }
+    ]
+  },
+  {
+    "cod": "F4",
+    "nome": "Verificação e qualidade",
+    "sec": "50",
+    "sedes": "32",
+    "escopo": "Tudo que julga se o código está adequado, sem necessariamente consertá-lo. Reúne as atividades de detecção: teste, revisão, análise e medição. Existe separada de F5 porque encontrar um problema e corrigi-lo têm literaturas, métricas e gargalos distintos.",
+    "inclui": "Geração e manutenção de testes; teste metamórfico e baseado em propriedades; revisão de código, humana ou agêntica; análise estática; detecção de vulnerabilidade e de mau cheiro; avaliação de qualidade de código gerado.",
+    "naoInclui": "Localização de falha seguida de correção (F5). Benchmark cujo objeto é a capacidade geral de um agente, e não a qualidade de um artefato (em geral F7).",
+    "teste": "O artigo produz um julgamento sobre o código, e não uma alteração nele?",
+    "exemplos": [
+      {
+        "t": "Large Language Models for Unit Test Generation: Achievements, Challenges, and Opportunities",
+        "url": "https://arxiv.org/abs/2511.21382",
+        "meta": "2025 · estudo secundário"
+      },
+      {
+        "t": "AgenticSCR: An Autonomous Agentic Secure Code Review for Immature Vulnerabilities Detection",
+        "url": "https://arxiv.org/abs/2601.19138",
+        "meta": "2026 · ASE, trilha principal"
+      },
+      {
+        "t": "More Code, Less Reuse: Code Quality and Reviewer Sentiment towards AI-generated Pull Requests",
+        "url": "https://arxiv.org/abs/2601.21276",
+        "meta": "2026 · MSR, trilha principal"
+      }
+    ]
+  },
+  {
+    "cod": "F5",
+    "nome": "Depuração e reparo",
+    "sec": "8",
+    "sedes": "11",
+    "escopo": "O ciclo que parte de um defeito observado e termina em uma correção: reproduzir, localizar a causa, gerar o patch. É onde vive a resolução autônoma de issues, o gênero mais ativo da engenharia de software agêntica.",
+    "inclui": "Localização de falha; reprodução automática de bug e de crash; reparo automatizado de programa; resolução agêntica de issue; depuração interativa assistida; raciocínio causal sobre defeito.",
+    "naoInclui": "Detecção de vulnerabilidade sem correção (F4). Correção de dívida técnica planejada em vez de reativa (F6).",
+    "teste": "Existe um defeito concreto como ponto de partida, e uma correção como ponto de chegada?",
+    "exemplos": [
+      {
+        "t": "A Survey of LLM-based Automated Program Repair: Taxonomies, Design Paradigms, and Applications",
+        "url": "https://arxiv.org/abs/2506.23749",
+        "meta": "2025 · estudo secundário"
+      },
+      {
+        "t": "Advances and Frontiers of LLM-based Issue Resolution in Software Engineering: A Comprehensive Survey",
+        "url": "https://arxiv.org/abs/2601.11655",
+        "meta": "2026 · estudo secundário"
+      },
+      {
+        "t": "Empowering Autonomous Debugging Agents with Efficient Dynamic Analysis",
+        "url": "https://arxiv.org/abs/2604.24212",
+        "meta": "2026 · FSE, trilha principal"
+      }
+    ]
+  },
+  {
+    "cod": "F6",
+    "nome": "Manutenção, evolução e operação",
+    "sec": "6",
+    "sedes": "7",
+    "escopo": "O que acontece depois que o software existe e funciona: adaptá-lo, movê-lo, mantê-lo saudável e operá-lo em produção. Distingue-se de F5 porque a motivação não é um defeito, e sim mudança de contexto, acúmulo de custo ou necessidade operacional.",
+    "inclui": "Migração de legado e de biblioteca; atualização de dependência; refatoração planejada; dívida técnica; evolvabilidade e manutenibilidade; operação assistida por agente e análise de causa raiz; sistemas de build; conformidade de licença.",
+    "naoInclui": "Reparo de defeito reportado (F5). Reestruturação que redefine a arquitetura de componentes (F2). Planejamento e orquestração de release (F10) — a operação contínua da implantação permanece aqui.",
+    "teste": "O software já está em uso, e o artigo trata de mantê-lo viável ao longo do tempo?",
+    "exemplos": [
+      {
+        "t": "A Survey on LLM Impact on Software Evolvability and Maintainability",
+        "url": "https://arxiv.org/abs/2601.20879",
+        "meta": "2026 · estudo secundário"
+      },
+      {
+        "t": "From AI Technical Debt to Agentic Technical Debt: A Systematic Mapping",
+        "url": "https://arxiv.org/abs/2608.01001",
+        "meta": "2026 · estudo secundário"
+      },
+      {
+        "t": "When AI Agents Touch CI/CD Configurations: Frequency and Success",
+        "url": "https://arxiv.org/abs/2601.17413",
+        "meta": "2026 · MSR, trilha principal"
+      }
+    ]
+  },
+  {
+    "cod": "F10",
+    "nome": "Planejamento, gestão de projeto e releases",
+    "sec": "3",
+    "sedes": "6",
+    "escopo": "A coordenação do trabalho, não a produção do artefato. Enquanto F1 a F6 tratam do que se constrói, esta fase trata de quem faz o quê, quando, em que ordem, e como o resultado chega às pessoas usuárias. A entrada de agentes tornou-a mais relevante: alocar tarefa a agente, estimar o custo de uma execução autônoma e decidir o que entra numa release montada com contribuição de agentes são problemas de gestão.",
+    "inclui": "Estimativa de esforço, custo e prazo; priorização e planejamento de sprint e backlog; triagem, rotulagem e atribuição de issues; alocação de pessoas e agentes; acompanhamento e previsão de entrega; risco de projeto; release, versionamento, changelog, feature flags, implantação e reversão; métricas DORA.",
+    "naoInclui": "Resolver a issue triada (F5). Executar a implantação como operação contínua (F6). Produtividade de equipe como fenômeno de colaboração humano-IA sem coordenação de trabalho (F7).",
+    "teste": "A contribuição incide sobre a organização e a sequência do trabalho, e não sobre o artefato de software produzido?",
+    "nota": "Duas rodadas de verificação com conclusões diferentes. A triagem lexical inicial só detectava rótulo errado, não recuperação falha, e concluiu prematuramente que a lacuna era real. Varreduras com vocabulário próprio da fase elevaram a contagem para 6 artigos em sedes e 3 estudos secundários. Permanece verdadeira a assimetria: o dobro de trabalho primário em relação à síntese.",
+    "exemplos": [
+      {
+        "t": "Automatic techniques for issue report classification: A systematic mapping study",
+        "url": "https://arxiv.org/abs/2505.01469",
+        "meta": "2025 · estudo secundário"
+      },
+      {
+        "t": "Toward Agentic Software Project Management: A Vision and Roadmap",
+        "url": "https://arxiv.org/abs/2601.16392",
+        "meta": "2026 · ICSE, trilha satélite"
+      },
+      {
+        "t": "Past, Present, and Future of Bug Tracking in the Generative AI Era",
+        "url": "https://arxiv.org/abs/2510.08005",
+        "meta": "2025 · TOSEM, trilha principal"
+      }
+    ]
+  },
+  {
+    "cod": "F11",
+    "nome": "Gestão de conhecimento e documentação viva",
+    "sec": "2",
+    "sedes": "7",
+    "escopo": "O conhecimento do projeto tratado como artefato de primeira classe: produzido, versionado, mantido sincronizado e consultado. Gerar um comentário de função é sumarização de código; manter um registro de decisão arquitetural que continua verdadeiro depois de trinta commits é gestão de conhecimento. Ganhou peso próprio porque agentes consomem documentação como contexto de execução.",
+    "inclui": "Documentação técnica, README, registros de decisão arquitetural, wiki e runbook; documentação viva em sincronia com o código; base de conhecimento da equipe; memória organizacional diante de rotatividade; arquivos de convenção consumidos por agentes; proveniência de decisões; sumarização de discussões de issue e PR.",
+    "naoInclui": "Sumarização de código avaliada pela qualidade do texto (F3). Memória de agente como mecanismo de arquitetura (F7) — a distinção é entre a memória da máquina e a memória da equipe. Recuperar conhecimento de legado para entender o produto (F9).",
+    "teste": "O artefato central é conhecimento do projeto destinado a ser mantido e consultado ao longo do tempo, e não código nem um mecanismo interno de agente?",
+    "nota": "Revisada duas vezes. A primeira rodada concluiu que não existia survey de documentação na era agêntica; a varredura dedicada mostrou o contrário — há uma revisão de 2026 sobre modelos de linguagem em documentação e modelagem, e uma pesquisa de indústria de 2023 sobre conhecimento arquitetural. O que faltava era vocabulário: as consultas procuravam agentes e modelos, e essa literatura fala em artefato, modelagem e conhecimento arquitetural.",
+    "exemplos": [
+      {
+        "t": "Who Writes the Docs in SE 3.0? Agent vs. Human Documentation Pull Requests",
+        "url": "https://arxiv.org/abs/2601.20171",
+        "meta": "2026 · MSR, trilha principal"
+      },
+      {
+        "t": "The Illusion of Agentic Complexity in README.md Generation",
+        "url": "https://arxiv.org/abs/2606.30524",
+        "meta": "2026 · ICSME, trilha principal"
+      },
+      {
+        "t": "What's Inside a GitHub Repository? An Empirical Study on the Contents of 10K Projects",
+        "url": "https://arxiv.org/abs/2605.16701",
+        "meta": "2026 · ICSME, trilha principal"
+      }
+    ]
+  },
+  {
+    "cod": "F7",
+    "nome": "Processo transversal e ciclo completo",
+    "sec": "48",
+    "sedes": "28",
+    "escopo": "Não é resíduo. Um artigo entra aqui quando a unidade de análise não é uma atividade do ciclo de vida, e sim o arranjo entre atividades, entre agentes ou entre agentes e pessoas: cobertura de ciclo completo, infraestrutura de agência (memória, contexto, orquestração, avaliação de trajetória) e organização do trabalho como colaboração e governança.",
+    "inclui": "Frameworks multiagente que cobrem múltiplas fases; arquiteturas de memória e engenharia de contexto; orquestração e protocolos de ferramenta; avaliação de agentes e trajetórias; benchmarks agênticos de propósito geral; produtividade, confiança e adoção em equipes; visão, roadmap e governança.",
+    "naoInclui": "Framework multiagente avaliado inteiramente em uma fase — a cobertura tem de ser real, não declarada. Ensino da disciplina (F8). Survey de uma única fase. Coordenação operacional do trabalho (F10). Documentação e base de conhecimento (F11).",
+    "teste": "Se eu retirasse deste artigo toda referência a uma fase específica do ciclo de vida, sobraria uma contribuição? Se sim, é F7.",
+    "exemplos": [
+      {
+        "t": "From LLMs to LLM-based Agents for Software Engineering: A Survey",
+        "url": "https://arxiv.org/abs/2408.02479",
+        "meta": "2024 · estudo secundário"
+      },
+      {
+        "t": "A Comprehensive Survey on Benchmarks and Solutions in SE of LLM-Empowered Agentic Systems",
+        "url": "https://arxiv.org/abs/2510.09721",
+        "meta": "2025 · estudo secundário"
+      },
+      {
+        "t": "PAIChecker: Uncovering and Checking PR-Issue Misalignment in SWE-Bench-Like Benchmarks",
+        "url": "https://arxiv.org/abs/2607.28587",
+        "meta": "2026 · ASE, trilha principal"
+      }
+    ]
+  },
+  {
+    "cod": "F8",
+    "nome": "Formação e educação",
+    "sec": "4",
+    "sedes": "4",
+    "escopo": "A transmissão da prática, não a prática. Entra aqui o artigo cujo sujeito é quem aprende — estudante, desenvolvedor novato, currículo, avaliação pedagógica — em vez do software produzido.",
+    "inclui": "Modelos de linguagem em disciplinas de programação e engenharia de software; feedback automatizado; tutores agênticos; currículo para engenharia de software agêntica; percepções e adoção por novatos e estudantes.",
+    "naoInclui": "Estudo com profissionais experientes sobre produtividade (F7). Geração de código para exercícios avaliada pela qualidade do código, e não pelo aprendizado (F3).",
+    "teste": "O desfecho medido é aprendizado ou formação de pessoas, e não propriedade de um artefato de software?",
+    "exemplos": [
+      {
+        "t": "Novice Developers' Perspectives on Adopting LLMs for Software Development: A Systematic Literature Review",
+        "url": "https://arxiv.org/abs/2503.07556",
+        "meta": "2025 · estudo secundário"
+      },
+      {
+        "t": "Large Language Models for Software Testing Education: an Experience Report",
+        "url": "https://arxiv.org/abs/2603.26329",
+        "meta": "2026 · FSE, trilha principal"
+      },
+      {
+        "t": "ASE-26: a curriculum for agentic software engineering as a discipline",
+        "url": "https://arxiv.org/abs/2606.01152",
+        "meta": "2026 · ASE, trilha satélite"
+      }
+    ]
+  }
+];
+
+const FRONTEIRAS = [["F7","O código que mais gera erro, em duas direções. Superatribuição: framework multiagente que declara cobrir o ciclo mas avalia uma fase só — o critério é a avaliação, não a declaração. Subatribuição: artigos de infraestrutura que parecem pertencer à fase em que foram demonstrados. Com F10 e F11, surgiu um terceiro erro: mandar para F7 um artigo de coordenação ou de conhecimento por falta de código melhor. Verifique F10 e F11 antes de recorrer a F7."],["F9 · F1","Depende de existir requisito. Compreender um sistema legado para descobrir que regra de negócio ele implementa é F9; escrever a especificação dessa regra para reimplementá-la é F1."],["F4 · F5","Depende de haver um defeito concreto como ponto de partida. Detecção de vulnerabilidade é F4; correção de vulnerabilidade reportada é F5. Quem detecta e corrige na mesma abordagem vai para F5, porque a correção é o desfecho medido."],["F5 · F6","Depende da motivação. Patch motivado por relato de defeito é F5; alteração motivada por mudança de plataforma, dependência ou dívida é F6 — mesmo com mecanismo técnico idêntico."],["F5 · F10","Separa resolver de organizar. Triar, classificar e atribuir uma issue é F10; resolvê-la é F5. Quem faz as duas coisas vai para aquela em que a avaliação se concentra."],["F3 · F11","É de ciclo de vida do artefato. Documentação gerada e avaliada como texto produzido é F3; documentação mantida, versionada e consultada ao longo do projeto é F11. Benchmark que usa documentação como entrada para gerar código é F3, porque o desfecho medido é o código."],["F7 · F11","Separa a memória da máquina da memória da equipe. Arquitetura de memória de agente, janela de contexto e compactação são F7; arquivos de convenção, registros de decisão e base de conhecimento consultável são F11, mesmo quando o consumidor é um agente."]].map(f => ({ par: f[0], texto: f[1] }));
+
+const NOME_FASE = {
+  F1: "Requisitos", F2: "Arquitetura", F3: "Geração de código", F4: "Verificação",
+  F5: "Depuração e reparo", F6: "Manutenção", F7: "Processo transversal",
+  F8: "Formação", F9: "Descoberta de produto", F10: "Gestão de projeto", F11: "Conhecimento"
+};
+
+const DIST_FASE = [
+  ["F1 Requisitos e especificação", "4", "3", "5", "1", "13"],
+  ["F2 Projeto e arquitetura", "1", "1", "3", "2", "7"],
+  ["F3 Implementação e geração de código", "3", "12", "19", "9", "43"],
+  ["F4 Verificação e qualidade", "3", "8", "18", "11", "40"],
+  ["F5 Depuração e reparo", "2", "1", "3", "2", "8"],
+  ["F6 Manutenção, evolução e operação", "1", "2", "2", "4", "9"],
+  ["F7 Processo transversal e ciclo completo", "4", "8", "15", "6", "33"],
+  ["F8 Formação e educação", "–", "1", "2", "1", "4"]
+].map(r => ({ fase: r[0], a23: r[1], a24: r[2], a25: r[3], a26: r[4], total: r[5] }));
+
+const DIST_AGENCIA = [
+  ["F1 Requisitos e especificação", "–", "8", "5"],
+  ["F2 Projeto e arquitetura", "1", "3", "3"],
+  ["F3 Implementação e geração de código", "8", "21", "14"],
+  ["F4 Verificação e qualidade", "8", "19", "13"],
+  ["F5 Depuração e reparo", "2", "5", "1"],
+  ["F6 Manutenção, evolução e operação", "3", "5", "1"],
+  ["F7 Processo transversal e ciclo completo", "21", "8", "4"],
+  ["F8 Formação e educação", "–", "3", "1"]
+].map(r => ({ fase: r[0], central: r[1], secao: r[2], sem: r[3] }));
+
+const TIPOS_ESTUDO = [
+  ["T1 Revisão sistemática (SLR)", "3", "10", "18", "12", "43"],
+  ["T2 Mapeamento sistemático", "4", "4", "7", "2", "17"],
+  ["T3 Survey narrativo", "9", "19", "36", "14", "78"],
+  ["T4 Taxonomia/framework", "1", "–", "1", "1", "3"],
+  ["T5 Estudo terciário/meta-análise", "–", "–", "–", "1", "1"],
+  ["T6 Survey com praticantes + revisão", "1", "3", "5", "6", "15"]
+].map(r => ({ tipo: r[0], a23: r[1], a24: r[2], a25: r[3], a26: r[4], total: r[5] }));
+
+const MAIS_CITADOS = [
+  ["2308.10620", "2023", "F7", "T1", "795", "115.8", "Large Language Models for Software Engineering: A Systematic Literature Review"],
+  ["2307.07221", "2023", "F4", "T3", "430", "196.7", "Software Testing with Large Language Models: Survey, Landscape, and Vision"],
+  ["2310.03533", "2023", "F7", "T3", "386", "206.5", "Large Language Models for Software Engineering: Survey and Open Problems"],
+  ["2406.00515", "2024", "F3", "T3", "107", "33.7", "A Survey on Large Language Models for Code Generation"],
+  ["2401.10034", "2024", "F3", "T3", "101", "24.1", "Evolutionary Computation in the Era of Large Language Model: Survey and Roadmap"],
+  ["2410.03981", "2024", "F3", "T3", "41", "46.9", "A Survey on LLM-based Code Generation for Low-Resource and Domain-Specific Programming Languages"],
+  ["2409.09030", "2024", "F7", "T3", "22", "26.8", "Agents in Software Engineering: Survey, Landscape, and Vision"],
+  ["2408.02479", "2024", "F7", "T3", "20", "–", "From LLMs to LLM-based Agents for Software Engineering: A Survey of Current, Challenges and Future"],
+  ["2303.18184", "2023", "F5", "T3", "20", "–", "A Survey on Automated Program Repair Techniques"],
+  ["2405.01466", "2024", "F5", "T1", "16", "–", "A Systematic Literature Review on Large Language Models for Automated Program Repair"]
+].map(r => ({ id: r[0], url: "https://arxiv.org/abs/" + r[0], ano: r[1], fase: NOME_FASE[r[2]], tipo: r[3], cit: r[4], fwci: r[5], titulo: r[6] }));
+
+const FRONTEIRA_AGENTICA = [
+  ["2601.11655", "2026", "F5", "Advances and Frontiers of LLM-based Issue Resolution in Software Engineering", "Agentes de código autônomos para resolução de issues"],
+  ["2605.15245", "2026", "F7", "Assistance to Autonomy: A Systematic Literature Review of Agentic AI across the SDLC", "Agentes autônomos em todo o ciclo de vida"],
+  ["2606.04967", "2026", "F7", "From Prompt to Process: a Process Taxonomy and Comparative Assessment of Frameworks", "Taxonomia de processos para frameworks agênticos"],
+  ["2602.06052", "2026", "F7", "A Survey of Agent Memory in the Second Half", "Memória de agentes para tarefas longas"],
+  ["2606.13175", "2026", "F4", "The End of Code Review: Coding Agents Supersede Human Inspection", "Agentes substituindo revisão humana"],
+  ["2608.01001", "2026", "F6", "From AI Technical Debt to Agentic Technical Debt: A Systematic Mapping", "Dívida técnica em sistemas agênticos"],
+  ["2608.03392", "2026", "F7", "Self-Evolving Coding Agents", "Agentes de codificação que evoluem com feedback"],
+  ["2510.09721", "2025", "F7", "A Comprehensive Survey on Benchmarks and Solutions in SE of LLM-Empowered Agentic System", "Benchmarks e soluções agênticas"],
+  ["2512.22256", "2025", "F5", "Agentic Software Issue Resolution with Large Language Models: A Survey", "Resolução automática de issues"],
+  ["2508.17692", "2025", "F7", "LLM-based Agentic Reasoning Frameworks: A Survey from Methods to Scenarios", "Frameworks de raciocínio agêntico"]
+].map(r => ({ id: r[0], url: "https://arxiv.org/abs/" + r[0], ano: r[1], fase: NOME_FASE[r[2]], titulo: r[3], foco: r[4] }));
+
+const LACUNAS = [
+  ["Nenhum estudo terciário", "Com 43 revisões sistemáticas e 17 mapeamentos publicados, há material para uma revisão de revisões que consolide as taxonomias concorrentes e mostre onde elas discordam. É o trabalho de maior retorno imediato disponível."],
+  ["Especificação executável (SDD)", "O termo aparece em poucas revisões e nenhuma o toma como objeto, apesar de ser exatamente a costura entre requisitos e implementação nos fluxos agênticos atuais."],
+  ["Projeto e arquitetura", "Onze revisões, a maioria de 2025 em diante, e nenhuma que trate decisão arquitetural feita por agente como fenômeno de processo em vez de tarefa de geração de diagrama."],
+  ["Manutenção e operação", "Seis revisões para a fase em que o custo real do software se concentra. Migração de legado, dívida técnica de código gerado e operação assistida aparecem isolados, sem articulação."],
+  ["Processo agêntico × equipes reais", "Os estudos que coletam dados de praticantes raramente dialogam com os de processo transversal — as propostas de fluxo agêntico ficam sem contraparte de evidência sobre adoção."]
+].map(l => ({ titulo: l[0], texto: l[1] }));
+
+function tagStyle(tag) {
+  return "font-family: var(--font-heading); font-weight: 700; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; padding: 4px 8px; display: inline-block; " +
+    (tag === "Obrigatória" || tag === "Núcleo"
+      ? "background: var(--color-accent); color: #fff"
+      : "background: transparent; color: var(--color-text); box-shadow: inset 0 0 0 2px var(--color-divider)");
+}
+
+class Component extends DCLogic {
+  state = { unidade: "Todas", rota: "", corpusSec: null, corpusSedes: null, corpo: "sec", faseSel: "Todas", limite: 25 };
+
+  corpusInit() {
+    if (this._corpusLoaded) return;
+    this._corpusLoaded = true;
+    import("./corpus.js").then(m => this.setState({ corpusSec: m.SECUNDARIOS, corpusSedes: m.SEDES }));
+  }
+
+  componentDidMount() {
+    this.sync = () => {
+      const r = (window.location.hash || "").replace(/^#/, "");
+      this.setState({ rota: r });
+      if (r.indexOf("aula-") === 0 || r === "" || r === "conteudo" || r === "avaliacao" || r === "fases" || r === "mapeamento" || r === "topo") { window.scrollTo(0, 0); return; }
+    };
+    this.sync();
+    window.addEventListener("hashchange", this.sync);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("hashchange", this.sync);
+  }
+
+  renderVals() {
+    const { unidade, rota } = this.state;
+    const AULAS_R = AULAS.map(resolveAula);
+    const idx = AULAS.findIndex(a => "aula-" + a.n === rota);
+    const ehAula = idx >= 0;
+    const ehConteudo = rota === "conteudo";
+    const ehAvaliacao = rota === "avaliacao";
+    const ehMapeamento = rota === "mapeamento";
+    const ehFases = rota === "fases" || ehMapeamento;
+    const ehSoCodebook = rota === "fases";
+    this.corpusInit();
+
+    const { corpo, faseSel, limite } = this.state;
+    const base = corpo === "sec" ? (this.state.corpusSec || []) : (this.state.corpusSedes || []);
+    const filtrado = base.filter(r => faseSel === "Todas" || r.f === faseSel);
+    const AG = { alto: "Agentic central", medio: "Agentic em seção", baixo: "Sem foco em Agentic" };
+    const corpusRows = filtrado.slice(0, limite).map(r => ({
+      id: r.id, url: r.url, titulo: r.t, ano: r.ano, fase: r.f, faseNome: r.fn,
+      autor: r.a, foco: r.foco,
+      meta: corpo === "sec"
+        ? [r.tpn, AG[r.ag], r.cit ? r.cit + (r.cit === "1" ? " citação" : " citações") : ""].filter(Boolean).join(" · ")
+        : [r.sede + (r.trilha === "aceito" ? " · trilha principal" : " · workshop"), r.cn, AG[r.ag]].filter(Boolean).join(" · ")
+    }));
+    const corpusVazio = base.length === 0;
+    const corpusTotal = String(filtrado.length);
+    const corpusMostrando = String(corpusRows.length);
+    const temMais = corpusRows.length < filtrado.length;
+    const verMais = () => this.setState({ limite: limite + 50 });
+    const btn = (ativo) => [
+      "font-family: var(--font-heading)", "font-weight: 700", "font-size: 12px",
+      "letter-spacing: 0.08em", "text-transform: uppercase", "padding: 9px 13px",
+      "border: 0", "cursor: pointer", "text-align: left",
+      ativo ? "background: var(--color-accent)" : "background: transparent",
+      ativo ? "color: #fff" : "color: var(--color-text)"
+    ].join(";");
+    const corpusTabs = [["sec", "157 estudos secundários"], ["sedes", "106 artigos em sedes"]].map(t => ({
+      label: t[1], style: btn(corpo === t[0]),
+      select: () => this.setState({ corpo: t[0], limite: 25 })
+    }));
+    const corpusFases = ["Todas", "F1", "F2", "F3", "F4", "F5", "F6", "F7", "F8"].map(f => ({
+      label: f === "Todas" ? "Todas" : f, style: btn(faseSel === f),
+      select: () => this.setState({ faseSel: f, limite: 25 })
+    }));
+
+    const DESC_U = {
+      I: "Como um modelo de linguagem se comporta diante de código: o que ele garante, o que ele apenas parece garantir e como medir a diferença.",
+      II: "Da especificação ao agente que age sobre um repositório — arquiteturas, ferramentas, critérios de parada e colaboração entre agentes.",
+      III: "Método: como avaliar assistentes e agentes com desenho experimental defensável, e as obrigações éticas e legais do código gerado."
+    };
+    const unidadesConteudo = ["I", "II", "III"].map(u => ({
+      romano: u, nome: NOMES_U[u], descricao: DESC_U[u],
+      aulas: AULAS_R.filter(a => a.u === u).map(a => ({
+        n: a.n, data: a.data, titulo: a.titulo, resumo: a.resumo,
+        leitura: a.leitura, href: "#aula-" + a.n,
+        rotulo: a.rotulo, temRotulo: !!a.rotulo, detalhada: a.detalhada,
+        topicos: a.detalhada ? a.objetivos.map(t => ({ texto: t })) : []
+      }))
+    }));
+
+    const labs = [
+      { n: "01", prazo: "Encontro 04", titulo: "Engenharia de prompt aplicada ao seu domínio",
+        descricao: "Construir e versionar um conjunto de prompts para uma tarefa de código recorrente, com critério explícito de acerto e registro de falhas.",
+        noSeuTema: "a tarefa escolhida vem do software da sua pesquisa — o pipeline de dados, o simulador, o serviço que você está construindo." },
+      { n: "02", prazo: "Encontro 07", titulo: "Especificação executável (SDD) de um componente seu",
+        descricao: "Escrever a especificação de um componente e conduzir o modelo a implementá-lo a partir dela, com testes derivados da própria especificação.",
+        noSeuTema: "o componente é um módulo real da sua dissertação, não um exemplo de aula." },
+      { n: "03", prazo: "Encontro 12", titulo: "Agente sobre o seu repositório",
+        descricao: "Colocar um agente com ferramentas de leitura, edição e execução de testes para fechar uma issue verdadeira, medindo intervenções humanas.",
+        noSeuTema: "o repositório é o do seu trabalho; as issues são as que você já tem em aberto." },
+      { n: "04", prazo: "Encontro 16", titulo: "Avaliação empírica do que você construiu",
+        descricao: "Desenhar e executar um experimento pequeno mas completo: hipótese, tratamento, medida, amostra e dados brutos publicados.",
+        noSeuTema: "a variável de interesse é uma que importa para a sua pesquisa, e o resultado entra no artigo final." }
+    ];
+
+    const fichamento = [
+      ["Referência", "Autor, título, ano e link."],
+      ["Tema", "Assunto principal do texto."],
+      ["Objetivo", "O que o autor pretende discutir ou demonstrar."],
+      ["Resumo", "Síntese das principais ideias, com suas próprias palavras."],
+      ["Citação importante", "“Trecho relevante do texto.” (p. XX)"],
+      ["Comentário", "Sua avaliação sobre o texto e como ele pode ser útil para sua pesquisa."]
+    ].map(f => ({ campo: f[0], texto: f[1] }));
+
+    const rubrica = [
+      { criterio: "Ligação com a pesquisa", peso: "25%", espera: "A pergunta do artigo decorre do seu tema de pesquisa e o texto explicita o que muda na dissertação." },
+      { criterio: "Método", peso: "25%", espera: "Desenho experimental claro: hipótese, tratamento, medida, amostra e ameaças à validade." },
+      { criterio: "Evidência", peso: "20%", espera: "Resultados sustentados por dados, com incerteza declarada — não por impressão de uso." },
+      { criterio: "Reprodutibilidade", peso: "20%", espera: "Repositório executável: seed, versão do modelo, dados brutos e instruções." },
+      { criterio: "Escrita", peso: "10%", espera: "Formato SBC respeitado, argumento em ordem, oito páginas sem enchimento." }
+    ];
+
+    const opts = ["Todas", "I", "II", "III"];
+    const unidades = opts.map((u, i) => ({
+      label: u === "Todas" ? "Tudo" : NOMES_U[u],
+      select: () => this.setState({ unidade: u }),
+      style: [
+        "font-family: var(--font-heading)", "font-weight: 700", "font-size: 13px",
+        "letter-spacing: 0.06em", "text-transform: uppercase", "padding: 10px 18px",
+        "border: 0", "cursor: pointer",
+        i > 0 ? "border-left: 2px solid var(--color-text)" : "",
+        unidade === u ? "background: var(--color-text); color: var(--color-bg)"
+                      : "background: transparent; color: var(--color-text)"
+      ].filter(Boolean).join("; ")
+    }));
+
+    const aulas = [];
+    AULAS_R.filter(a => unidade === "Todas" || a.u === unidade).forEach(a => {
+      if (a.n === "06" && unidade === "Todas") {
+        aulas.push({
+          ehPausa: true, ehAula: false, n: "—", data: "10 set",
+          titulo: "Sem aula — SBES 2026",
+          leitura: "O professor estará no Simpósio Brasileiro de Engenharia de Software.",
+          unidade: "Recesso", href: "#cronograma"
+        });
+      }
+      aulas.push({
+        ehPausa: false, ehAula: true, n: a.n, data: a.data, titulo: a.titulo,
+        leitura: a.leitura, unidade: a.tipo === "apresentacao" ? "Apresentação" : NOMES_U[a.u],
+        href: "#aula-" + a.n,
+        tituloStyle: "font-family: var(--font-heading); font-weight: 700; font-size: 19px; line-height: 1.25; letter-spacing: -0.01em" + (a.aDefinir ? "; opacity: 0.55" : "")
+      });
+    });
+
+    const porId = {};
+    (this.state.corpusSec || []).forEach(r => porId[r.id] = r);
+    const artigos = ARTIGOS.map(t => {
+      const r = porId[t[0]] || {};
+      const nAut = r.na && Number(r.na) > 1 ? r.a + " et al. (" + r.na + " autores)" : (r.a || "");
+      return {
+      titulo: r.t || "", autor: nAut, fase: r.f || "", faseNome: r.fn || "",
+      fonte: (r.tpn || "") + " · arXiv:" + t[0], tag: t[1],
+      cit: r.cit ? r.cit + (r.cit === "1" ? " citação" : " citações") : "Sem citações indexadas",
+      href: "https://arxiv.org/abs/" + t[0], tagStyle: tagStyle(t[1])
+    }; }).filter(a => a.titulo);
+
+    let aula = null;
+    if (ehAula) {
+      const a = AULAS_R[idx];
+      const ant = AULAS_R[idx - 1], prox = AULAS_R[idx + 1];
+      aula = {
+        detalhada: a.detalhada, aDefinir: a.aDefinir, rotulo: a.rotulo, temRotulo: !!a.rotulo,
+        n: a.n, dataLonga: a.dataLonga, titulo: a.titulo, resumo: a.resumo,
+        unidade: NOMES_U[a.u], entrega: a.entrega, prazo: a.prazo, atividade: a.atividade,
+        objetivos: a.objetivos.map(t => ({ texto: t })),
+        roteiro: a.roteiro.map(r => ({ hora: r[0], texto: r[1] })),
+        materiais: a.materiais.map(t => {
+          const p = t.split("|");
+          return { texto: p[0], href: p[1] || "", temLink: !!p[1], semLink: !p[1] };
+        }),
+        leituras: a.leituras.map(l => ({ titulo: l[0], autor: l[1], fonte: l[2], tag: l[3], tagStyle: tagStyle(l[3]), href: l[4] || "", temLink: !!l[4], semLink: !l[4] })),
+        hrefAnterior: ant ? "#aula-" + ant.n : "#cronograma",
+        tituloAnterior: ant ? ant.n + " · " + ant.titulo : "Voltar ao cronograma",
+        hrefProxima: prox ? "#aula-" + prox.n : "#cronograma",
+        tituloProxima: prox ? prox.n + " · " + prox.titulo : "Voltar ao cronograma"
+      };
+    }
+
+    return {
+      ehAula, ehConteudo, ehAvaliacao, ehFases, ehMapeamento, ehSoCodebook,
+      ehHome: !ehAula && !ehConteudo && !ehAvaliacao && !ehFases,
+      unidades, aulas, artigos, aula, unidadesConteudo, labs, rubrica, fichamento,
+      fases: FASES, fronteiras: FRONTEIRAS,
+      distFase: DIST_FASE, distAgencia: DIST_AGENCIA, tiposEstudo: TIPOS_ESTUDO,
+      maisCitados: MAIS_CITADOS, fronteiraAgentica: FRONTEIRA_AGENTICA, lacunas: LACUNAS,
+      corpusRows, corpusTabs, corpusFases, corpusTotal, corpusMostrando, temMais, verMais, corpusVazio
+    };
+  }
+}
+</script>
+</body>
+</html>
