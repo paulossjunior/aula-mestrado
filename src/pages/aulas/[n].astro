@@ -1,0 +1,230 @@
+---
+import Base from "../../layouts/Base.astro";
+import { rota, link } from "../../lib/url";
+import { todasAulas, NOMES_U, estiloTag } from "../../lib/aulas";
+
+export async function getStaticPaths() {
+  const aulas = await todasAulas();
+  return aulas.map((aula, i) => ({
+    params: { n: aula.n },
+    props: { aula, anterior: aulas[i - 1] ?? null, proxima: aulas[i + 1] ?? null },
+  }));
+}
+
+const { aula, anterior, proxima } = Astro.props;
+
+const hrefAnterior = anterior ? rota(`/aulas/${anterior.n}`) : rota("/#cronograma");
+const tituloAnterior = anterior ? `${anterior.n} · ${anterior.titulo}` : "Voltar ao cronograma";
+const hrefProxima = proxima ? rota(`/aulas/${proxima.n}`) : rota("/#cronograma");
+const tituloProxima = proxima ? `${proxima.n} · ${proxima.titulo}` : "Voltar ao cronograma";
+---
+
+<Base
+  titulo={`${aula.n} · ${aula.titulo} — Dev. de Software com IA`}
+  descricao={aula.resumo}
+>
+  <article>
+    <section class="om-pad" style="max-width: 1200px; margin: 0 auto; padding: 40px 32px 0">
+      <a
+        href={rota("/#cronograma")}
+        style="font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase"
+        >← Voltar ao cronograma</a
+      >
+      <div style="display: flex; gap: 20px; align-items: baseline; flex-wrap: wrap; margin-top: 32px">
+        <span
+          style="font-family: var(--font-heading); font-weight: 900; font-size: clamp(64px, 11vw, 140px); line-height: 0.8; letter-spacing: -0.05em; color: var(--color-accent)"
+          >{aula.n}</span
+        >
+        <div>
+          <div
+            style="font-size: 13px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700)"
+          >
+            {aula.dataLonga} · 19h–22h · {NOMES_U[aula.unidade]}
+          </div>
+          {
+            aula.rotulo && (
+              <div style="display: inline-block; margin-top: 12px; font-family: var(--font-heading); font-weight: 700; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; padding: 5px 9px; background: var(--color-text); color: var(--color-bg)">
+                {aula.rotulo}
+              </div>
+            )
+          }
+          <h1
+            style="font-family: var(--font-heading); font-weight: 900; font-size: clamp(32px, 5vw, 60px); line-height: 1; letter-spacing: -0.03em; margin: 12px 0 0; max-width: 20ch; text-wrap: balance"
+          >
+            {aula.titulo}
+          </h1>
+        </div>
+      </div>
+      <p style="font-size: 20px; line-height: 1.55; max-width: 62ch; margin: 32px 0 48px; text-wrap: pretty">
+        {aula.resumo}
+      </p>
+    </section>
+
+    {
+      aula.aDefinir && (
+        <section style="border-top: 2px solid var(--color-text); background: var(--color-neutral-100)">
+          <div class="om-pad om-sec" style="max-width: 1200px; margin: 0 auto; padding: 56px 32px">
+            <div style="border: 2px solid var(--color-text); padding: 24px; background: var(--color-bg); max-width: 62ch">
+              <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-accent-700)">
+                Em preparação
+              </div>
+              <h2 style="font-family: var(--font-heading); font-weight: 900; font-size: clamp(22px, 4vw, 30px); letter-spacing: -0.02em; margin: 10px 0 0">
+                Roteiro publicado antes da aula
+              </h2>
+              <p style="font-size: 16px; line-height: 1.6; margin: 14px 0 0; text-wrap: pretty">
+                O programa está sendo construído encontro por encontro. Quando este for definido,
+                aparecem aqui o roteiro das três horas, a leitura obrigatória, a atividade prática e a
+                entrega.
+              </p>
+              <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 24px">
+                <a class="btn btn-secondary" href={rota("/conteudo")}>
+                  Ver o que já está definido
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+      )
+    }
+
+    {
+      aula.detalhada && (
+        <section style="border-top: 2px solid var(--color-text)">
+          <div
+            class="om-pad om-aula-grid"
+            style="max-width: 1200px; margin: 0 auto; padding: 56px 32px; display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: 64px; align-items: start"
+          >
+            <div>
+              <h2 style="font-family: var(--font-heading); font-weight: 900; font-size: 28px; letter-spacing: -0.02em; margin: 0 0 20px">
+                Roteiro do encontro
+              </h2>
+              <div style="border-top: 2px solid var(--color-text)">
+                {aula.roteiro.map((r) => (
+                  <div
+                    class="om-roteiro"
+                    style="display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: 20px; padding: 18px 0; border-bottom: 2px solid var(--color-divider)"
+                  >
+                    <div style="font-family: var(--font-heading); font-weight: 800; font-size: 15px; letter-spacing: 0.04em">
+                      {r.hora}
+                    </div>
+                    <div style="font-size: 16px; line-height: 1.55">{r.texto}</div>
+                  </div>
+                ))}
+              </div>
+
+              <h2 style="font-family: var(--font-heading); font-weight: 900; font-size: 28px; letter-spacing: -0.02em; margin: 48px 0 20px">
+                Atividade prática
+              </h2>
+              <p style="font-size: 17px; line-height: 1.65; margin: 0; max-width: 62ch; text-wrap: pretty">
+                {aula.atividade}
+              </p>
+
+              <h2 style="font-family: var(--font-heading); font-weight: 900; font-size: 28px; letter-spacing: -0.02em; margin: 48px 0 20px">
+                Objetivos do encontro
+              </h2>
+              <ul style="margin: 0; padding: 0; list-style: none; border-top: 2px solid var(--color-divider)">
+                {aula.objetivos.map((o) => (
+                  <li style="display: grid; grid-template-columns: 24px minmax(0, 1fr); gap: 14px; padding: 14px 0; border-bottom: 2px solid var(--color-divider); font-size: 16px; line-height: 1.5">
+                    <span style="font-family: var(--font-heading); font-weight: 800; color: var(--color-accent)">
+                      →
+                    </span>
+                    <span>{o}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <aside>
+              <div style="border: 2px solid var(--color-text); padding: 24px; background: var(--color-neutral-100)">
+                <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.6">
+                  Entrega
+                </div>
+                <div style="font-family: var(--font-heading); font-weight: 800; font-size: 24px; line-height: 1.15; margin-top: 8px">
+                  {aula.entrega}
+                </div>
+                <div style="font-size: 14px; margin-top: 10px; opacity: 0.75">{aula.prazo}</div>
+              </div>
+
+              <h3 style="font-family: var(--font-heading); font-weight: 900; font-size: 20px; letter-spacing: -0.015em; margin: 40px 0 14px">
+                Leitura
+              </h3>
+              <div style="border-top: 2px solid var(--color-text)">
+                {aula.leituras.map((l) => (
+                  <div style="padding: 16px 0; border-bottom: 2px solid var(--color-divider)">
+                    <span style={estiloTag(l.tag)}>{l.tag}</span>
+                    {l.href ? (
+                      <a
+                        href={l.href}
+                        target="_blank"
+                        rel="noopener"
+                        style="display: block; font-family: var(--font-heading); font-weight: 700; font-size: 17px; line-height: 1.25; margin-top: 10px; text-wrap: pretty"
+                      >
+                        {l.titulo}
+                      </a>
+                    ) : (
+                      <div style="font-family: var(--font-heading); font-weight: 700; font-size: 17px; line-height: 1.25; margin-top: 10px; text-wrap: pretty">
+                        {l.titulo}
+                      </div>
+                    )}
+                    <div style="font-size: 14px; opacity: 0.7; margin-top: 4px">
+                      {l.autor} · {l.fonte}
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <h3 style="font-family: var(--font-heading); font-weight: 900; font-size: 20px; letter-spacing: -0.015em; margin: 40px 0 14px">
+                Material de apoio
+              </h3>
+              <ul style="margin: 0; padding: 0; list-style: none; border-top: 2px solid var(--color-divider)">
+                {aula.materiais.map((m) => (
+                  <li style="padding: 12px 0; border-bottom: 2px solid var(--color-divider); font-size: 15px; line-height: 1.45">
+                    {m.href ? (
+                      <a href={link(m.href)} style="font-family: var(--font-heading); font-weight: 700">
+                        {m.texto} →
+                      </a>
+                    ) : (
+                      <span>{m.texto}</span>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </aside>
+          </div>
+        </section>
+      )
+    }
+
+    <section style="border-top: 2px solid var(--color-text)">
+      <div
+        class="om-pad"
+        style="max-width: 1200px; margin: 0 auto; padding: 0 32px; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr))"
+      >
+        <a
+          class="om-hover"
+          href={hrefAnterior}
+          style="padding: 28px 24px 28px 0; border-right: 2px solid var(--color-divider); display: block; color: var(--color-text)"
+        >
+          <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.6">
+            ← Anterior
+          </div>
+          <div style="font-family: var(--font-heading); font-weight: 800; font-size: 20px; margin-top: 8px; line-height: 1.2">
+            {tituloAnterior}
+          </div>
+        </a>
+        <a
+          class="om-hover"
+          href={hrefProxima}
+          style="padding: 28px 0 28px 24px; display: block; color: var(--color-text)"
+        >
+          <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.6">
+            Próxima →
+          </div>
+          <div style="font-family: var(--font-heading); font-weight: 800; font-size: 20px; margin-top: 8px; line-height: 1.2">
+            {tituloProxima}
+          </div>
+        </a>
+      </div>
+    </section>
+  </article>
+</Base>

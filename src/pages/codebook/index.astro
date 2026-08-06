@@ -1,0 +1,237 @@
+---
+import Base from "../../layouts/Base.astro";
+import { rota } from "../../lib/url";
+import fases from "../../content/codebook/fases.json";
+import fronteiras from "../../content/codebook/fronteiras.json";
+---
+
+<Base
+  titulo="Codebook das onze fases do processo de software — Dev. de Software com IA"
+  descricao="Definição operacional dos onze códigos de fase usados para classificar 171 estudos secundários e 129 artigos em sedes: escopo, inclusão, exclusão, teste de decisão e exemplos."
+>
+  <article>
+    <section class="om-pad" style="max-width: 1200px; margin: 0 auto; padding: 36px 32px 0">
+      <a
+        href={rota("/aulas/01")}
+        style="font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase"
+        >← Aula 01</a
+      >
+      <div
+        style="font-size: 13px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700); margin-top: 28px"
+      >
+        Material da Aula 01 · Codebook · parte 1 de 2
+      </div>
+      <h1
+        style="font-family: var(--font-heading); font-weight: 900; font-size: clamp(36px, 7vw, 76px); line-height: 0.96; letter-spacing: -0.035em; margin: 14px 0 0; max-width: 20ch; text-wrap: balance"
+      >
+        As onze fases do processo de software
+      </h1>
+      <p style="font-size: 18px; line-height: 1.6; max-width: 64ch; margin: 24px 0 0; text-wrap: pretty">
+        Definição operacional dos onze códigos de fase usados para classificar os dois corpora do
+        projeto: 171 estudos secundários e 129 artigos com sede de publicação confirmada. Cada código
+        traz escopo, critérios de inclusão e exclusão, um teste de decisão de uma pergunta e exemplos
+        reais retirados dos corpora.
+      </p>
+      <p style="font-size: 17px; line-height: 1.6; max-width: 64ch; margin: 16px 0 0; text-wrap: pretty">
+        O esquema começa antes do requisito, em F9, percorre a ordem canônica do ciclo de vida de F1 a
+        F6, acrescenta duas fases de sustentação que atravessam o ciclo sem se dissolver nele — F10
+        para a coordenação do trabalho e F11 para o conhecimento do projeto — e fecha com F7 para o
+        que é genuinamente transversal e F8 para formação. Um artigo recebe exatamente um código, o da
+        fase predominante; quando cobre várias fases de forma genuína, vai para F7 — e é justamente
+        isso que F7 significa.
+      </p>
+      <p style="font-size: 16px; line-height: 1.6; max-width: 64ch; margin: 16px 0 28px; opacity: 0.8; text-wrap: pretty">
+        Três códigos foram acrescentados na revisão mais recente. <strong>F9</strong> separa o
+        entendimento do problema do seu registro formal, antes ambos em F1. <strong>F10</strong> extrai
+        de F7 a coordenação operacional do trabalho. <strong>F11</strong> extrai de F3 e de F7 o
+        conhecimento do projeto tratado como artefato mantido.
+      </p>
+      <div style="display: flex; gap: 12px; flex-wrap: wrap; padding-bottom: 40px">
+        <a class="btn btn-primary" href={rota("/codebook/mapeamento")}>Parte 2 · O mapeamento</a>
+      </div>
+    </section>
+
+    <section style="border-top: 2px solid var(--color-text)">
+      <div class="om-pad om-sec" style="max-width: 1200px; margin: 0 auto; padding: 56px 32px">
+        <h2 style="font-family: var(--font-heading); font-weight: 900; font-size: clamp(26px, 4vw, 40px); letter-spacing: -0.025em; margin: 0 0 24px">
+          Resumo quantitativo
+        </h2>
+        <div class="om-scroll" style="border: 2px solid var(--color-text)">
+          <table class="table" style="width: 100%; border-collapse: collapse">
+            <thead>
+              <tr>
+                <th style="text-align: left">Código</th>
+                <th style="text-align: left">Fase</th>
+                <th style="text-align: left">Estudos secundários</th>
+                <th style="text-align: left">Artigos em sedes</th>
+              </tr>
+            </thead>
+            <tbody>
+              {
+                fases.map((f) => (
+                  <tr>
+                    <td style="font-family: var(--font-heading); font-weight: 800; color: var(--color-accent)">
+                      {f.cod}
+                    </td>
+                    <td style="font-family: var(--font-heading); font-weight: 700">{f.nome}</td>
+                    <td>{f.sec}</td>
+                    <td>{f.sedes}</td>
+                  </tr>
+                ))
+              }
+              <tr>
+                <td style="font-family: var(--font-heading); font-weight: 800">—</td>
+                <td style="font-family: var(--font-heading); font-weight: 800">Total</td>
+                <td style="font-family: var(--font-heading); font-weight: 800">171</td>
+                <td style="font-family: var(--font-heading); font-weight: 800">129</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="font-size: 16px; line-height: 1.65; max-width: 68ch; margin: 24px 0 0; text-wrap: pretty">
+          A tabela também é um resultado, não só uma legenda. <strong
+            >Verificação e qualidade concentra 50 estudos secundários e 32 artigos primários</strong
+          >, e processo transversal vem logo atrás com 48 e 28. As três fases acrescentadas nesta
+          revisão somam 9 estudos secundários e 18 artigos primários entre 300 obras classificadas —
+          números que só apareceram depois de duas rodadas de varredura dedicada. Antes delas somavam
+          3 e 6, e a conclusão precipitada de que a lacuna era real precisou ser revista duas vezes.
+        </p>
+      </div>
+    </section>
+
+    <section style="border-top: 2px solid var(--color-text); background: var(--color-neutral-100)">
+      <div class="om-pad om-sec" style="max-width: 1200px; margin: 0 auto; padding: 56px 32px">
+        <h2 style="font-family: var(--font-heading); font-weight: 900; font-size: clamp(26px, 4vw, 40px); letter-spacing: -0.025em; margin: 0 0 24px">
+          Os onze códigos
+        </h2>
+        <div style="display: grid; gap: 2px; background: var(--color-divider); border: 2px solid var(--color-text)">
+          {
+            fases.map((f) => (
+              <div style="background: var(--color-bg); padding: 28px 24px">
+                <div style="display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap">
+                  <span style="font-family: var(--font-heading); font-weight: 900; font-size: 32px; letter-spacing: -0.03em; color: var(--color-accent)">
+                    {f.cod}
+                  </span>
+                  <h3 style="font-family: var(--font-heading); font-weight: 800; font-size: 22px; line-height: 1.15; letter-spacing: -0.015em; margin: 0">
+                    {f.nome}
+                  </h3>
+                  <span style="font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.55">
+                    {f.sec} secundários · {f.sedes} em sedes
+                  </span>
+                </div>
+                <p style="font-size: 16px; line-height: 1.6; margin: 14px 0 0; max-width: 74ch; text-wrap: pretty">
+                  {f.escopo}
+                </p>
+                <div
+                  class="om-2col"
+                  style="display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 28px; margin-top: 20px"
+                >
+                  <div>
+                    <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-accent-700)">
+                      Inclui
+                    </div>
+                    <p style="font-size: 15px; line-height: 1.55; margin: 6px 0 0; text-wrap: pretty">
+                      {f.inclui}
+                    </p>
+                  </div>
+                  <div>
+                    <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.55">
+                      Não inclui
+                    </div>
+                    <p style="font-size: 15px; line-height: 1.55; margin: 6px 0 0; text-wrap: pretty">
+                      {f.naoInclui}
+                    </p>
+                  </div>
+                </div>
+                <div style="margin-top: 18px; padding: 14px 16px; background: var(--color-neutral-100); border-left: 0; box-shadow: inset 0 0 0 2px var(--color-divider)">
+                  <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.6">
+                    Teste de decisão
+                  </div>
+                  <p style="font-size: 16px; line-height: 1.5; margin: 6px 0 0; font-style: italic; max-width: 70ch">
+                    {f.teste}
+                  </p>
+                </div>
+                <div style="margin-top: 18px">
+                  <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.6">
+                    Exemplos do corpus
+                  </div>
+                  <ul style="margin: 8px 0 0; padding: 0; list-style: none; display: grid; gap: 8px">
+                    {f.exemplos.map((e) => (
+                      <li style="font-size: 15px; line-height: 1.45">
+                        <a href={e.url} target="_blank" rel="noopener">
+                          {e.t}
+                        </a>
+                        <span style="opacity: 0.6"> — {e.meta}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                {"nota" in f && f.nota && (
+                  <p style="font-size: 14px; line-height: 1.6; margin: 16px 0 0; max-width: 74ch; opacity: 0.7; text-wrap: pretty">
+                    <strong style="font-family: var(--font-heading); font-weight: 800; opacity: 1">
+                      Nota de lacuna, revisada.
+                    </strong>{" "}
+                    {f.nota}
+                  </p>
+                )}
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section style="border-top: 2px solid var(--color-text)">
+      <div class="om-pad om-sec" style="max-width: 1200px; margin: 0 auto; padding: 56px 32px">
+        <h2 style="font-family: var(--font-heading); font-weight: 900; font-size: clamp(26px, 4vw, 40px); letter-spacing: -0.025em; margin: 0 0 18px">
+          Fronteiras que geram erro de classificação
+        </h2>
+        <div style="border-top: 2px solid var(--color-text)">
+          {
+            fronteiras.map((fr) => (
+              <div
+                class="om-lab"
+                style="display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: 0 32px; padding: 18px 0; border-bottom: 2px solid var(--color-divider)"
+              >
+                <div style="font-family: var(--font-heading); font-weight: 800; font-size: 17px; letter-spacing: 0.02em; color: var(--color-accent); padding-bottom: 8px">
+                  {fr.par}
+                </div>
+                <p style="font-size: 15px; line-height: 1.6; margin: 0; max-width: 64ch; padding-top: 2px; text-wrap: pretty">
+                  {fr.texto}
+                </p>
+              </div>
+            ))
+          }
+        </div>
+        <h3 style="font-family: var(--font-heading); font-weight: 900; font-size: 24px; letter-spacing: -0.02em; margin: 40px 0 12px">
+          Procedimento de classificação
+        </h3>
+        <p style="font-size: 15px; line-height: 1.65; max-width: 70ch; margin: 0 0 12px; text-wrap: pretty">
+          Triagem automática sobre título e resumo, seguida de segunda passada obrigatória sobre tudo
+          o que foi atribuído a F9, F10 e F11 e sobre os casos de baixa confiança, com justificativa
+          escrita. Cada linha dos CSV carrega <em>fase</em>, <em>confiança</em> e <em>justificativa</em
+          >, o que permite refazer a auditoria sem repetir a classificação.
+        </p>
+        <p style="font-size: 15px; line-height: 1.65; max-width: 70ch; margin: 0 0 12px; text-wrap: pretty">
+          A verificação das fases com contagem baixa teve três etapas e a conclusão mudou duas vezes.
+          A triagem lexical reversa sobre o material já recuperado detecta rótulo errado, mas não
+          falha de recuperação — e levou à conclusão precipitada de que as lacunas eram reais. A
+          varredura dedicada ao arXiv, com 27 consultas no vocabulário próprio de F9, F10 e F11,
+          recuperou 355 registros novos, dos quais 23 com sede confirmada. A terceira etapa estendeu a
+          varredura ao nível secundário. Saldo: o corpus de sedes passou de 106 para 129 artigos e o
+          de secundários de 157 para 171.
+        </p>
+        <p style="font-size: 15px; line-height: 1.65; max-width: 70ch; margin: 0; text-wrap: pretty">
+          <strong style="font-family: var(--font-heading); font-weight: 800">A lição metodológica.</strong
+          > Uma lacuna medida com o vocabulário errado é lacuna de busca, não de campo. Contagem baixa
+          em qualquer código deste esquema é hipótese a testar com consultas dedicadas, nunca resultado.
+          Casos de fronteira remanescentes devem ser verificados antes de citar as contagens em publicação.
+        </p>
+        <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 36px">
+          <a class="btn btn-primary" href={rota("/codebook/mapeamento")}>Parte 2 · O mapeamento</a>
+          <a class="btn btn-secondary" href={rota("/aulas/01")}>Voltar para a Aula 01</a>
+        </div>
+      </div>
+    </section>
+  </article>
+</Base>

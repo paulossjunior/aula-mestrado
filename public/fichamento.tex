@@ -1,0 +1,57 @@
+% Fichamento — Desenvolvimento de Software Suportado por IA
+% Mestrado em Computação Aplicada · IFES Serra · 2026.2
+% Uma página por artigo. Compile com pdflatex.
+
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{hyperref}
+\usepackage{titlesec}
+\usepackage{parskip}
+\usepackage{csquotes}
+
+\hypersetup{colorlinks=true, urlcolor=black, linkcolor=black}
+\titleformat{\section}{\bfseries\large}{}{0pt}{}
+\titlespacing*{\section}{0pt}{12pt}{2pt}
+\pagestyle{empty}
+
+% ---------------------------------------------------------------
+% Preencha os campos abaixo
+% ---------------------------------------------------------------
+\newcommand{\aluno}{Nome do aluno}
+\newcommand{\datafichamento}{\today}
+
+\begin{document}
+
+{\Large\bfseries Fichamento}\\[2pt]
+{\small \aluno{} \quad·\quad \datafichamento}
+
+\hrule\vspace{6pt}
+
+\section*{Referência}
+Autor, título, ano e link.\\
+Ex.: FAN, A. et al. \emph{Large Language Models for Software Engineering:
+Survey and Open Problems}. ICSE-FoSE, 2023.
+Disponível em: \url{https://arxiv.org/abs/2310.03533}.
+
+\section*{Tema}
+Assunto principal do texto.
+
+\section*{Objetivo}
+O que o autor pretende discutir ou demonstrar.
+
+\section*{Resumo}
+Síntese das principais ideias, com suas próprias palavras.
+
+\section*{Citação importante}
+\begin{quote}
+\enquote{Trecho relevante do texto.} (p.~XX)
+\end{quote}
+
+\section*{Comentário}
+Sua avaliação sobre o texto e como ele pode ser útil para sua pesquisa.
+
+\end{document}

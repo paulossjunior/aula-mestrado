@@ -1,0 +1,600 @@
+---
+import Base from "../../layouts/Base.astro";
+import { rota } from "../../lib/url";
+import distFase from "../../content/mapeamento/distribuicao-fase.json";
+import distAgencia from "../../content/mapeamento/distribuicao-agencia.json";
+import tiposEstudo from "../../content/mapeamento/tipos-estudo.json";
+import maisCitados from "../../content/mapeamento/mais-citados.json";
+import fronteiraAgentica from "../../content/mapeamento/fronteira-agentica.json";
+import lacunas from "../../content/mapeamento/lacunas.json";
+
+const abasCorpus = [
+  { chave: "sec", label: "157 estudos secundários" },
+  { chave: "sedes", label: "106 artigos em sedes" },
+];
+const fasesCorpus = ["Todas", "F1", "F2", "F3", "F4", "F5", "F6", "F7", "F8"];
+
+const estiloBotao = (ativo: boolean) =>
+  [
+    "font-family: var(--font-heading)",
+    "font-weight: 700",
+    "font-size: 12px",
+    "letter-spacing: 0.08em",
+    "text-transform: uppercase",
+    "padding: 9px 13px",
+    "border: 0",
+    "cursor: pointer",
+    "text-align: left",
+    ativo ? "background: var(--color-accent)" : "background: transparent",
+    ativo ? "color: #fff" : "color: var(--color-text)",
+  ].join(";");
+---
+
+<Base
+  titulo="O mapeamento do campo — Dev. de Software com IA"
+  descricao="Aplicação do codebook aos dois corpora: onde o campo já se revisou, que tipo de síntese produz, o que acumulou impacto e as cinco lacunas abertas."
+>
+  <article>
+    <section class="om-pad" style="max-width: 1200px; margin: 0 auto; padding: 36px 32px 40px">
+      <a
+        href={rota("/codebook")}
+        style="font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase"
+        >← Codebook das fases</a
+      >
+      <div
+        style="font-size: 13px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700); margin-top: 28px"
+      >
+        Material da Aula 01 · Codebook · parte 2 de 2
+      </div>
+      <h1
+        style="font-family: var(--font-heading); font-weight: 900; font-size: clamp(36px, 7vw, 76px); line-height: 0.96; letter-spacing: -0.035em; margin: 14px 0 0; max-width: 20ch; text-wrap: balance"
+      >
+        O mapeamento do campo
+      </h1>
+      <p style="font-size: 18px; line-height: 1.6; max-width: 64ch; margin: 24px 0 0; text-wrap: pretty">
+        Aplicação dos códigos aos dois corpora: onde o campo já se revisou, que tipo de síntese
+        produz, o que acumulou impacto e o que ainda não foi feito.
+      </p>
+      <div
+        style="border: 2px solid var(--color-text); padding: 18px 20px; max-width: 64ch; margin: 24px 0 0; background: var(--color-neutral-100)"
+      >
+        <div
+          style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-accent-700)"
+        >
+          Versão dos dados
+        </div>
+        <p style="font-size: 15px; line-height: 1.6; margin: 8px 0 0; text-wrap: pretty">
+          As tabelas, figuras e o corpus navegável desta página refletem o recorte anterior — 157
+          estudos secundários e 106 artigos em sedes, sob o esquema de oito fases. O codebook já foi
+          revisado para onze fases, 171 e 129; esta parte será atualizada quando os novos CSV forem
+          publicados.
+        </p>
+      </div>
+    </section>
+
+    <section style="border-top: 2px solid var(--color-text)">
+      <div class="om-pad om-sec" style="max-width: 1200px; margin: 0 auto; padding: 56px 32px">
+        <div
+          style="font-size: 13px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700)"
+        >
+          Mapeamento sistemático · arXiv · jan 2023 a ago 2026
+        </div>
+        <h2
+          style="font-family: var(--font-heading); font-weight: 900; font-size: clamp(26px, 4vw, 40px); line-height: 1.02; letter-spacing: -0.025em; margin: 10px 0 0; max-width: 26ch; text-wrap: balance"
+        >
+          Onde o campo já se revisou
+        </h2>
+        <p style="font-size: 17px; line-height: 1.65; max-width: 64ch; margin: 20px 0 0; text-wrap: pretty">
+          O objeto não são as técnicas primárias, e sim a literatura de segunda ordem que já tentou
+          organizar o campo: quem revisou o quê, com que protocolo, e onde a síntese ainda não chegou.
+          Setenta e quatro consultas ao arXiv produziram 1.172 registros únicos; o filtro de segunda
+          ordem e a triagem manual deixaram <strong>157 estudos secundários</strong>, cada um com
+          rótulo de fase, tipo de estudo e grau de foco em <em>Agentic</em>.
+        </p>
+        <p style="font-size: 15px; line-height: 1.6; max-width: 64ch; margin: 14px 0 0; opacity: 0.75; text-wrap: pretty">
+          Métricas de citação vindas do OpenAlex, casadas por similaridade de título ≥ 0,85. Apenas 45
+          dos 157 têm registro casado e 18 têm FWCI — preprints recentes raramente têm referências
+          indexadas. As citações servem para separar clássicos consolidados de trabalhos sem rastro
+          bibliométrico, não para ranquear qualidade.
+        </p>
+
+        <figure style="margin: 40px 0 0; border: 2px solid var(--color-text)">
+          <img
+            src={rota("/uploads/mapa_secundarios_fase_ano.png")}
+            alt="Distribuição dos 157 estudos secundários por fase do processo e ano de submissão no arXiv"
+            style="display: block; width: 100%; height: auto"
+            loading="lazy"
+          />
+          <figcaption
+            style="font-size: 13px; line-height: 1.5; padding: 12px 16px; border-top: 2px solid var(--color-text); background: var(--color-neutral-100)"
+          >
+            Área do círculo ∝ número de revisões; cor indica a fração com agentes autônomos como
+            objeto central. n = 157.
+          </figcaption>
+        </figure>
+
+        <div class="om-scroll" style="border: 2px solid var(--color-text); margin-top: 36px">
+          <table class="table" style="width: 100%; border-collapse: collapse">
+            <thead>
+              <tr>
+                <th style="text-align: left">Fase do processo</th>
+                <th style="text-align: left">2023</th>
+                <th style="text-align: left">2024</th>
+                <th style="text-align: left">2025</th>
+                <th style="text-align: left">2026</th>
+                <th style="text-align: left">Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              {
+                distFase.map((d) => (
+                  <tr>
+                    <td style="font-family: var(--font-heading); font-weight: 700">{d.fase}</td>
+                    <td>{d.a23}</td>
+                    <td>{d.a24}</td>
+                    <td>{d.a25}</td>
+                    <td>{d.a26}</td>
+                    <td style="font-family: var(--font-heading); font-weight: 800; color: var(--color-accent)">
+                      {d.total}
+                    </td>
+                  </tr>
+                ))
+              }
+            </tbody>
+          </table>
+        </div>
+        <p style="font-size: 16px; line-height: 1.65; max-width: 68ch; margin: 22px 0 0; text-wrap: pretty">
+          A distribuição é fortemente desequilibrada. Implementação e verificação juntas concentram
+          <strong>83 dos 157 estudos</strong>, mais da metade do corpus, enquanto requisitos tem 13,
+          arquitetura 7, manutenção 9 e formação 4. Reproduz-se na literatura de segunda ordem o mesmo
+          viés dos estudos primários: a atividade que o modelo executa bem e cujo resultado é fácil de
+          medir com um benchmark é também a que mais atrai revisões.
+        </p>
+
+        <h3 style="font-family: var(--font-heading); font-weight: 900; font-size: 24px; letter-spacing: -0.02em; margin: 40px 0 16px">
+          Quanto de <em>Agentic</em> há em cada fase
+        </h3>
+        <div class="om-scroll" style="border: 2px solid var(--color-text)">
+          <table class="table" style="width: 100%; border-collapse: collapse">
+            <thead>
+              <tr>
+                <th style="text-align: left">Fase do processo</th>
+                <th style="text-align: left"><em>Agentic</em> como objeto central</th>
+                <th style="text-align: left"><em>Agentic</em> como seção</th>
+                <th style="text-align: left">Sem foco em <em>Agentic</em></th>
+              </tr>
+            </thead>
+            <tbody>
+              {
+                distAgencia.map((d) => (
+                  <tr>
+                    <td style="font-family: var(--font-heading); font-weight: 700">{d.fase}</td>
+                    <td style="font-family: var(--font-heading); font-weight: 800; color: var(--color-accent)">
+                      {d.central}
+                    </td>
+                    <td>{d.secao}</td>
+                    <td>{d.sem}</td>
+                  </tr>
+                ))
+              }
+            </tbody>
+          </table>
+        </div>
+        <p style="font-size: 16px; line-height: 1.65; max-width: 68ch; margin: 22px 0 0; text-wrap: pretty">
+          Vinte e um dos 33 estudos de processo transversal têm agentes autônomos como objeto central,
+          contra 8 em implementação e 8 em verificação. Quando a revisão sobe da tarefa para o
+          processo, ela necessariamente encontra <em>Agentic</em>: é no nível do processo que a
+          autonomia se manifesta como escolha da próxima ação, e não como qualidade de um trecho
+          gerado.
+        </p>
+
+        <h3 style="font-family: var(--font-heading); font-weight: 900; font-size: 24px; letter-spacing: -0.02em; margin: 40px 0 16px">
+          Que tipo de síntese está sendo produzida
+        </h3>
+        <div class="om-scroll" style="border: 2px solid var(--color-text)">
+          <table class="table" style="width: 100%; border-collapse: collapse">
+            <thead>
+              <tr>
+                <th style="text-align: left">Tipo de estudo secundário</th>
+                <th style="text-align: left">2023</th>
+                <th style="text-align: left">2024</th>
+                <th style="text-align: left">2025</th>
+                <th style="text-align: left">2026</th>
+                <th style="text-align: left">Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              {
+                tiposEstudo.map((t) => (
+                  <tr>
+                    <td style="font-family: var(--font-heading); font-weight: 700">{t.tipo}</td>
+                    <td>{t.a23}</td>
+                    <td>{t.a24}</td>
+                    <td>{t.a25}</td>
+                    <td>{t.a26}</td>
+                    <td style="font-family: var(--font-heading); font-weight: 800; color: var(--color-accent)">
+                      {t.total}
+                    </td>
+                  </tr>
+                ))
+              }
+            </tbody>
+          </table>
+        </div>
+        <p style="font-size: 16px; line-height: 1.65; max-width: 68ch; margin: 22px 0 0; text-wrap: pretty">
+          Metade do corpus são surveys narrativos. Revisões com protocolo explícito somam 60, e a
+          proporção melhorou: 7 de 18 em 2023, 14 de 36 em 2026. O aparecimento de 15 estudos que
+          combinam revisão da literatura com dados primários de praticantes é o sinal metodológico
+          mais interessante do período — é a única linha que confronta a literatura com o que equipes
+          de fato fazem. Há <strong>exatamente um estudo terciário</strong> e três taxonomias: para um
+          campo com 157 revisões em quatro anos, é pouco.
+        </p>
+      </div>
+    </section>
+
+    <section style="border-top: 2px solid var(--color-text); background: var(--color-neutral-100)">
+      <div class="om-pad om-sec" style="max-width: 1200px; margin: 0 auto; padding: 56px 32px">
+        <h2 style="font-family: var(--font-heading); font-weight: 900; font-size: clamp(26px, 4vw, 40px); letter-spacing: -0.025em; margin: 0 0 18px">
+          O que já acumulou impacto
+        </h2>
+        <div class="om-scroll" style="border: 2px solid var(--color-text)">
+          <table class="table" style="width: 100%; border-collapse: collapse">
+            <thead>
+              <tr>
+                <th style="text-align: left">arXiv</th>
+                <th style="text-align: left">Ano</th>
+                <th style="text-align: left">Fase</th>
+                <th style="text-align: left">Tipo</th>
+                <th style="text-align: left">Citações</th>
+                <th style="text-align: left">FWCI</th>
+                <th style="text-align: left">Título</th>
+              </tr>
+            </thead>
+            <tbody>
+              {
+                maisCitados.map((c) => (
+                  <tr>
+                    <td>
+                      <a
+                        href={c.url}
+                        target="_blank"
+                        rel="noopener"
+                        style="font-family: var(--font-heading); font-weight: 700"
+                      >
+                        {c.id}
+                      </a>
+                    </td>
+                    <td>{c.ano}</td>
+                    <td style="font-family: var(--font-heading); font-weight: 800; color: var(--color-accent)">
+                      {c.fase}
+                    </td>
+                    <td>{c.tipo}</td>
+                    <td style="font-family: var(--font-heading); font-weight: 800">{c.cit}</td>
+                    <td>{c.fwci}</td>
+                    <td style="line-height: 1.45">{c.titulo}</td>
+                  </tr>
+                ))
+              }
+            </tbody>
+          </table>
+        </div>
+        <p style="font-size: 16px; line-height: 1.65; max-width: 68ch; margin: 22px 0 0; text-wrap: pretty">
+          Os três trabalhos do topo são de 2023 e definiram o vocabulário que os demais usam: a
+          revisão sistemática que organiza a literatura por tarefa, o survey que fez o mesmo recorte
+          para teste, e o survey que percorre o espectro completo de atividades — o mais próximo de
+          uma visão de processo entre os fundadores, cuja tese central é que técnicas híbridas são
+          indispensáveis para filtrar soluções incorretas. Da safra de 2024 em diante nenhuma revisão
+          passou de 110 citações, e as revisões agênticas de 2025–2026 estão quase todas abaixo de
+          dez: parte é atraso de indexação, parte é real — o campo agêntico ainda não elegeu sua
+          revisão canônica.
+        </p>
+      </div>
+    </section>
+
+    <section style="border-top: 2px solid var(--color-text)">
+      <div class="om-pad om-sec" style="max-width: 1200px; margin: 0 auto; padding: 56px 32px">
+        <h2
+          style="font-family: var(--font-heading); font-weight: 900; font-size: clamp(26px, 4vw, 40px); line-height: 1.02; letter-spacing: -0.025em; margin: 0; max-width: 30ch; text-wrap: balance"
+        >
+          A fronteira agêntica: 43 revisões com agentes como objeto central, 32 delas de 2025 em
+          diante
+        </h2>
+        <div class="om-scroll" style="border: 2px solid var(--color-text); margin-top: 28px">
+          <table class="table" style="width: 100%; border-collapse: collapse">
+            <thead>
+              <tr>
+                <th style="text-align: left">arXiv</th>
+                <th style="text-align: left">Ano</th>
+                <th style="text-align: left">Fase</th>
+                <th style="text-align: left">Título</th>
+                <th style="text-align: left">Foco declarado</th>
+              </tr>
+            </thead>
+            <tbody>
+              {
+                fronteiraAgentica.map((f) => (
+                  <tr>
+                    <td>
+                      <a
+                        href={f.url}
+                        target="_blank"
+                        rel="noopener"
+                        style="font-family: var(--font-heading); font-weight: 700"
+                      >
+                        {f.id}
+                      </a>
+                    </td>
+                    <td>{f.ano}</td>
+                    <td style="font-family: var(--font-heading); font-weight: 800; color: var(--color-accent)">
+                      {f.fase}
+                    </td>
+                    <td style="line-height: 1.45">{f.titulo}</td>
+                    <td style="line-height: 1.45; opacity: 0.8">{f.foco}</td>
+                  </tr>
+                ))
+              }
+            </tbody>
+          </table>
+        </div>
+        <p style="font-size: 16px; line-height: 1.65; max-width: 68ch; margin: 22px 0 0; text-wrap: pretty">
+          Três padrões atravessam essa camada. O primeiro é o deslocamento do benchmark de tarefa
+          isolada para o <strong>benchmark de trajetória</strong>, que avalia o caminho percorrido
+          pelo agente e não só o artefato final. O segundo é o tratamento de <strong
+            >memória e contexto como componentes de primeira classe</strong
+          > do processo. O terceiro é a emergência da <strong>verificação como gargalo declarado</strong
+          >: várias revisões de 2026 apontam que a produção de código por agentes ultrapassou a
+          capacidade humana de revisá-lo.
+        </p>
+
+        <h3 style="font-family: var(--font-heading); font-weight: 900; font-size: 24px; letter-spacing: -0.02em; margin: 44px 0 16px">
+          Onde o trabalho primário está sendo publicado
+        </h3>
+        <figure style="margin: 0; border: 2px solid var(--color-text)">
+          <img
+            src={rota("/uploads/sedes_fase_heatmap.png")}
+            alt="Mapa de calor dos 106 artigos com sede confirmada, por sede de publicação e fase do processo"
+            style="display: block; width: 100%; height: auto"
+            loading="lazy"
+          />
+          <figcaption
+            style="font-size: 13px; line-height: 1.5; padding: 12px 16px; border-top: 2px solid var(--color-text); background: var(--color-neutral-100)"
+          >
+            106 artigos com sede confirmada no campo de comentário do arXiv (2023–2026); total por
+            sede entre parênteses. Conferências acima, periódicos TSE e TOSEM abaixo.
+          </figcaption>
+        </figure>
+        <p style="font-size: 16px; line-height: 1.65; max-width: 68ch; margin: 22px 0 0; text-wrap: pretty">
+          Nas sedes principais, verificação e geração de código dominam; requisitos, arquitetura e
+          manutenção quase não aparecem. ICSE concentra 33 artigos, com 10 em geração de código e 10
+          em verificação; ASE puxa para verificação (8) e processo transversal (5).
+        </p>
+      </div>
+    </section>
+
+    <section id="corpus" style="border-top: 2px solid var(--color-text); background: var(--color-neutral-100)">
+      <div class="om-pad om-sec" style="max-width: 1200px; margin: 0 auto; padding: 56px 32px">
+        <div
+          style="font-size: 13px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700)"
+        >
+          Corpus completo · navegável
+        </div>
+        <h2 style="font-family: var(--font-heading); font-weight: 900; font-size: clamp(26px, 4vw, 40px); letter-spacing: -0.025em; margin: 10px 0 0">
+          Os dois corpora, artigo por artigo
+        </h2>
+        <p style="font-size: 16px; line-height: 1.6; max-width: 62ch; margin: 16px 0 28px; text-wrap: pretty">
+          Escolha o corpus e a fase. Cada registro traz autor, ano, foco declarado e o link para o
+          arXiv.
+        </p>
+
+        <div style="display: flex; gap: 16px; flex-wrap: wrap; align-items: flex-start">
+          <div id="corpus-abas" class="om-corpus-filtro" style="display: flex; border: 2px solid var(--color-text)">
+            {
+              abasCorpus.map((t, i) => (
+                <button type="button" data-corpo={t.chave} style={estiloBotao(i === 0)}>
+                  {t.label}
+                </button>
+              ))
+            }
+          </div>
+          <div
+            id="corpus-fases"
+            class="om-corpus-filtro"
+            style="display: flex; flex-wrap: wrap; border: 2px solid var(--color-text)"
+          >
+            {
+              fasesCorpus.map((f, i) => (
+                <button type="button" data-fase={f} style={estiloBotao(i === 0)}>
+                  {f}
+                </button>
+              ))
+            }
+          </div>
+        </div>
+
+        <div
+          id="corpus-contagem"
+          style="font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.6; margin: 20px 0 0"
+        >
+          Mostrando 0 de 0
+        </div>
+
+        <p id="corpus-vazio" style="font-size: 15px; opacity: 0.6; margin: 18px 0 0">
+          Carregando o corpus…
+        </p>
+
+        <div id="corpus-lista" style="border-top: 2px solid var(--color-text); margin-top: 16px"></div>
+
+        <div id="corpus-mais" style="margin-top: 24px; display: none">
+          <button type="button" class="btn btn-secondary">Mostrar mais 50</button>
+        </div>
+      </div>
+    </section>
+
+    <section style="border-top: 2px solid var(--color-text); background: var(--color-accent); color: #fff">
+      <div class="om-pad om-sec" style="max-width: 1200px; margin: 0 auto; padding: 56px 32px">
+        <h2
+          style="font-family: var(--font-heading); font-weight: 900; font-size: clamp(28px, 5vw, 48px); line-height: 1; letter-spacing: -0.03em; margin: 0; max-width: 26ch; text-wrap: balance"
+        >
+          Cinco lacunas que nenhuma das 157 revisões cobre
+        </h2>
+        <p style="font-size: 17px; line-height: 1.6; max-width: 60ch; margin: 18px 0 0">
+          Cada uma é um tema de artigo disponível — e um bom ponto de partida para o trabalho de
+          pesquisa da disciplina.
+        </p>
+        <div style="display: grid; gap: 0; margin-top: 36px; border-top: 2px solid rgba(255,255,255,0.45)">
+          {
+            lacunas.map((l) => (
+              <div
+                class="om-lab"
+                style="display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 0 32px; padding: 20px 0; border-bottom: 2px solid rgba(255,255,255,0.45)"
+              >
+                <h3 style="font-family: var(--font-heading); font-weight: 800; font-size: 19px; line-height: 1.2; letter-spacing: -0.015em; margin: 0">
+                  {l.titulo}
+                </h3>
+                <p style="font-size: 16px; line-height: 1.6; margin: 0; max-width: 62ch; text-wrap: pretty">
+                  {l.texto}
+                </p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section style="border-top: 2px solid var(--color-text)">
+      <div class="om-pad om-sec" style="max-width: 1200px; margin: 0 auto; padding: 40px 32px">
+        <div style="display: flex; gap: 12px; flex-wrap: wrap">
+          <a class="btn btn-primary" href={rota("/codebook")}>Voltar ao codebook</a>
+          <a class="btn btn-secondary" href={rota("/aulas/01")}>Aula 01</a>
+        </div>
+      </div>
+    </section>
+  </article>
+</Base>
+
+<script>
+  // Navegador de corpus: única parte da página que depende de JavaScript.
+  // Sem ele, tabelas, figuras e texto continuam legíveis.
+  import { SECUNDARIOS, SEDES } from "../../data/corpus.js";
+
+  const AGENCIA: Record<string, string> = {
+    alto: "Agentic central",
+    medio: "Agentic em seção",
+    baixo: "Sem foco em Agentic",
+  };
+
+  const lista = document.getElementById("corpus-lista")!;
+  const contagem = document.getElementById("corpus-contagem")!;
+  const vazio = document.getElementById("corpus-vazio")!;
+  const mais = document.getElementById("corpus-mais")!;
+  const abas = document.getElementById("corpus-abas")!;
+  const filtrosFase = document.getElementById("corpus-fases")!;
+
+  let corpo: "sec" | "sedes" = "sec";
+  let fase = "Todas";
+  let limite = 25;
+
+  const pintar = (grupo: HTMLElement, atributo: string, valor: string) => {
+    grupo.querySelectorAll<HTMLButtonElement>("button").forEach((b) => {
+      const ligado = b.dataset[atributo] === valor;
+      b.style.background = ligado ? "var(--color-accent)" : "transparent";
+      b.style.color = ligado ? "#fff" : "var(--color-text)";
+    });
+  };
+
+  const meta = (r: any) =>
+    corpo === "sec"
+      ? [r.tpn, AGENCIA[r.ag], r.cit ? `${r.cit} ${r.cit === "1" ? "citação" : "citações"}` : ""]
+          .filter(Boolean)
+          .join(" · ")
+      : [
+          `${r.sede} · ${r.trilha === "aceito" ? "trilha principal" : "workshop"}`,
+          r.cn,
+          AGENCIA[r.ag],
+        ]
+          .filter(Boolean)
+          .join(" · ");
+
+  const texto = (pai: HTMLElement, tag: string, estilo: string, conteudo: string) => {
+    const el = document.createElement(tag);
+    el.setAttribute("style", estilo);
+    el.textContent = conteudo;
+    pai.appendChild(el);
+    return el;
+  };
+
+  const desenhar = () => {
+    const base: any[] = corpo === "sec" ? SECUNDARIOS : SEDES;
+    const filtrado = base.filter((r) => fase === "Todas" || r.f === fase);
+    const mostrados = filtrado.slice(0, limite);
+
+    lista.textContent = "";
+    for (const r of mostrados) {
+      const linha = document.createElement("div");
+      linha.setAttribute(
+        "style",
+        "display: grid; grid-template-columns: minmax(0, 1fr); gap: 6px; padding: 18px 0; border-bottom: 2px solid var(--color-divider)"
+      );
+
+      const cabecalho = document.createElement("div");
+      cabecalho.setAttribute("style", "display: flex; gap: 12px; flex-wrap: wrap; align-items: baseline");
+      texto(
+        cabecalho,
+        "span",
+        "font-family: var(--font-heading); font-weight: 900; font-size: 16px; color: var(--color-accent)",
+        r.f
+      );
+      texto(
+        cabecalho,
+        "span",
+        "font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.6",
+        `${r.fn} · ${r.ano}`
+      );
+      linha.appendChild(cabecalho);
+
+      const titulo = texto(
+        linha,
+        "a",
+        "font-family: var(--font-heading); font-weight: 700; font-size: 18px; line-height: 1.3; letter-spacing: -0.01em; max-width: 74ch",
+        r.t
+      ) as HTMLAnchorElement;
+      titulo.href = r.url;
+      titulo.target = "_blank";
+      titulo.rel = "noopener";
+
+      texto(linha, "div", "font-size: 14px; line-height: 1.5; opacity: 0.8", `${r.a} · ${meta(r)}`);
+      texto(linha, "div", "font-size: 14px; line-height: 1.5; max-width: 74ch", r.foco ?? "");
+
+      lista.appendChild(linha);
+    }
+
+    contagem.textContent = `Mostrando ${mostrados.length} de ${filtrado.length}`;
+    vazio.style.display = base.length === 0 ? "" : "none";
+    mais.style.display = mostrados.length < filtrado.length ? "" : "none";
+  };
+
+  abas.addEventListener("click", (ev) => {
+    const alvo = (ev.target as HTMLElement).closest("button");
+    if (!alvo) return;
+    corpo = alvo.dataset.corpo as "sec" | "sedes";
+    limite = 25;
+    pintar(abas, "corpo", corpo);
+    desenhar();
+  });
+
+  filtrosFase.addEventListener("click", (ev) => {
+    const alvo = (ev.target as HTMLElement).closest("button");
+    if (!alvo) return;
+    fase = alvo.dataset.fase!;
+    limite = 25;
+    pintar(filtrosFase, "fase", fase);
+    desenhar();
+  });
+
+  mais.addEventListener("click", () => {
+    limite += 50;
+    desenhar();
+  });
+
+  desenhar();
+</script>
