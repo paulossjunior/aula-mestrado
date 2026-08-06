@@ -1,48 +1,48 @@
 [
   {
-    "fase": "F1 Requisitos e especificação",
+    "fase": "Requisitos e especificação",
     "central": "–",
     "secao": "8",
     "sem": "5"
   },
   {
-    "fase": "F2 Projeto e arquitetura",
+    "fase": "Projeto e arquitetura",
     "central": "1",
     "secao": "3",
     "sem": "3"
   },
   {
-    "fase": "F3 Implementação e geração de código",
+    "fase": "Implementação e geração de código",
     "central": "8",
     "secao": "21",
     "sem": "14"
   },
   {
-    "fase": "F4 Verificação e qualidade",
+    "fase": "Verificação e qualidade",
     "central": "8",
     "secao": "19",
     "sem": "13"
   },
   {
-    "fase": "F5 Depuração e reparo",
+    "fase": "Depuração e reparo",
     "central": "2",
     "secao": "5",
     "sem": "1"
   },
   {
-    "fase": "F6 Manutenção, evolução e operação",
+    "fase": "Manutenção, evolução e operação",
     "central": "3",
     "secao": "5",
     "sem": "1"
   },
   {
-    "fase": "F7 Processo transversal e ciclo completo",
+    "fase": "Processo transversal e ciclo completo",
     "central": "21",
     "secao": "8",
     "sem": "4"
   },
   {
-    "fase": "F8 Formação e educação",
+    "fase": "Formação e educação",
     "central": "–",
     "secao": "3",
     "sem": "1"

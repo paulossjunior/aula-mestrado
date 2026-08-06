@@ -7,12 +7,25 @@ import tiposEstudo from "../../content/mapeamento/tipos-estudo.json";
 import maisCitados from "../../content/mapeamento/mais-citados.json";
 import fronteiraAgentica from "../../content/mapeamento/fronteira-agentica.json";
 import lacunas from "../../content/mapeamento/lacunas.json";
+import nomesFase from "../../content/nomes-fase.json";
 
 const abasCorpus = [
   { chave: "sec", label: "157 estudos secundários" },
   { chave: "sedes", label: "106 artigos em sedes" },
 ];
-const fasesCorpus = ["Todas", "F1", "F2", "F3", "F4", "F5", "F6", "F7", "F8"];
+// O corpus guarda a fase como código; o botão mostra o nome.
+// Só F1–F8 porque este recorte é anterior à revisão que criou as três novas fases.
+const fasesCorpus = [
+  { chave: "Todas", label: "Todas" },
+  { chave: "F1", label: nomesFase.F1 },
+  { chave: "F2", label: nomesFase.F2 },
+  { chave: "F3", label: nomesFase.F3 },
+  { chave: "F4", label: nomesFase.F4 },
+  { chave: "F5", label: nomesFase.F5 },
+  { chave: "F6", label: nomesFase.F6 },
+  { chave: "F7", label: nomesFase.F7 },
+  { chave: "F8", label: nomesFase.F8 },
+];
 
 const estiloBotao = (ativo: boolean) =>
   [
@@ -403,8 +416,8 @@ const estiloBotao = (ativo: boolean) =>
           >
             {
               fasesCorpus.map((f, i) => (
-                <button type="button" data-fase={f} style={estiloBotao(i === 0)}>
-                  {f}
+                <button type="button" data-fase={f.chave} style={estiloBotao(i === 0)}>
+                  {f.label}
                 </button>
               ))
             }
@@ -542,13 +555,13 @@ const estiloBotao = (ativo: boolean) =>
         cabecalho,
         "span",
         "font-family: var(--font-heading); font-weight: 900; font-size: 16px; color: var(--color-accent)",
-        r.f
+        r.fn
       );
       texto(
         cabecalho,
         "span",
         "font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.6",
-        `${r.fn} · ${r.ano}`
+        r.ano
       );
       linha.appendChild(cabecalho);
 

@@ -1,6 +1,6 @@
 [
   {
-    "fase": "F1 Requisitos e especificação",
+    "fase": "Requisitos e especificação",
     "a23": "4",
     "a24": "3",
     "a25": "5",
@@ -8,7 +8,7 @@
     "total": "13"
   },
   {
-    "fase": "F2 Projeto e arquitetura",
+    "fase": "Projeto e arquitetura",
     "a23": "1",
     "a24": "1",
     "a25": "3",
@@ -16,7 +16,7 @@
     "total": "7"
   },
   {
-    "fase": "F3 Implementação e geração de código",
+    "fase": "Implementação e geração de código",
     "a23": "3",
     "a24": "12",
     "a25": "19",
@@ -24,7 +24,7 @@
     "total": "43"
   },
   {
-    "fase": "F4 Verificação e qualidade",
+    "fase": "Verificação e qualidade",
     "a23": "3",
     "a24": "8",
     "a25": "18",
@@ -32,7 +32,7 @@
     "total": "40"
   },
   {
-    "fase": "F5 Depuração e reparo",
+    "fase": "Depuração e reparo",
     "a23": "2",
     "a24": "1",
     "a25": "3",
@@ -40,7 +40,7 @@
     "total": "8"
   },
   {
-    "fase": "F6 Manutenção, evolução e operação",
+    "fase": "Manutenção, evolução e operação",
     "a23": "1",
     "a24": "2",
     "a25": "2",
@@ -48,7 +48,7 @@
     "total": "9"
   },
   {
-    "fase": "F7 Processo transversal e ciclo completo",
+    "fase": "Processo transversal e ciclo completo",
     "a23": "4",
     "a24": "8",
     "a25": "15",
@@ -56,7 +56,7 @@
     "total": "33"
   },
   {
-    "fase": "F8 Formação e educação",
+    "fase": "Formação e educação",
     "a23": "–",
     "a24": "1",
     "a25": "2",

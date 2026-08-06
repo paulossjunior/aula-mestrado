@@ -7,7 +7,7 @@ import fronteiras from "../../content/codebook/fronteiras.json";
 
 <Base
   titulo="Codebook das onze fases do processo de software — Dev. de Software com IA"
-  descricao="Definição operacional dos onze códigos de fase usados para classificar 171 estudos secundários e 129 artigos em sedes: escopo, inclusão, exclusão, teste de decisão e exemplos."
+  descricao="Definição operacional das onze fases do processo usadas para classificar 171 estudos secundários e 129 artigos em sedes: escopo, inclusão, exclusão, teste de decisão e exemplos."
 >
   <article>
     <section class="om-pad" style="max-width: 1200px; margin: 0 auto; padding: 36px 32px 0">
@@ -27,8 +27,8 @@ import fronteiras from "../../content/codebook/fronteiras.json";
         As onze fases do processo de software
       </h1>
       <p style="font-size: 18px; line-height: 1.6; max-width: 64ch; margin: 24px 0 0; text-wrap: pretty">
-        Definição operacional dos onze códigos de fase usados para classificar os dois corpora do
-        projeto: 171 estudos secundários e 129 artigos com sede de publicação confirmada. Cada código
+        Definição operacional das onze fases do processo usadas para classificar os dois corpora do
+        projeto: 171 estudos secundários e 129 artigos com sede de publicação confirmada. Cada fase
         traz escopo, critérios de inclusão e exclusão, um teste de decisão de uma pergunta e exemplos
         reais retirados dos corpora.
       </p>
@@ -41,15 +41,18 @@ import fronteiras from "../../content/codebook/fronteiras.json";
         sem se dissolver nele — <strong>gestão de projeto</strong>, para a coordenação do trabalho, e <strong
           >gestão de conhecimento</strong
         >, para o conhecimento do projeto — e fecha com <strong>processo transversal</strong>, para o
-        que é genuinamente transversal, e <strong>formação</strong>. Um artigo recebe exatamente um
-        código, o da fase predominante; quando cobre várias fases de forma genuína, vai para processo
+        que é genuinamente transversal, e <strong>formação</strong>. Um artigo recebe exatamente uma
+        fase, a predominante; quando cobre várias fases de forma genuína, vai para processo
         transversal — e é justamente isso que processo transversal significa.
       </p>
       <p style="font-size: 16px; line-height: 1.6; max-width: 64ch; margin: 16px 0 28px; opacity: 0.8; text-wrap: pretty">
-        Três códigos foram acrescentados na revisão mais recente. <strong>F9</strong> separa o
-        entendimento do problema do seu registro formal, antes ambos em F1. <strong>F10</strong> extrai
-        de F7 a coordenação operacional do trabalho. <strong>F11</strong> extrai de F3 e de F7 o
-        conhecimento do projeto tratado como artefato mantido.
+        Três fases foram acrescentadas na revisão mais recente. <strong>Descoberta de produto</strong>
+        separa o entendimento do problema do seu registro formal, antes ambos em requisitos. <strong
+          >Gestão de projeto</strong
+        > extrai de processo transversal a coordenação operacional do trabalho. <strong
+          >Gestão de conhecimento</strong
+        > extrai de geração de código e de processo transversal o conhecimento do projeto tratado como
+        artefato mantido.
       </p>
       <div style="display: flex; gap: 12px; flex-wrap: wrap; padding-bottom: 40px">
         <a class="btn btn-primary" href={rota("/codebook/mapeamento")}>Parte 2 · O mapeamento</a>
@@ -65,7 +68,6 @@ import fronteiras from "../../content/codebook/fronteiras.json";
           <table class="table" style="width: 100%; border-collapse: collapse">
             <thead>
               <tr>
-                <th style="text-align: left">Código</th>
                 <th style="text-align: left">Fase</th>
                 <th style="text-align: left">Estudos secundários</th>
                 <th style="text-align: left">Artigos em sedes</th>
@@ -75,9 +77,6 @@ import fronteiras from "../../content/codebook/fronteiras.json";
               {
                 fases.map((f) => (
                   <tr>
-                    <td style="font-family: var(--font-heading); font-weight: 800; color: var(--color-accent)">
-                      {f.cod}
-                    </td>
                     <td style="font-family: var(--font-heading); font-weight: 700">{f.nome}</td>
                     <td>{f.sec}</td>
                     <td>{f.sedes}</td>
@@ -85,7 +84,6 @@ import fronteiras from "../../content/codebook/fronteiras.json";
                 ))
               }
               <tr>
-                <td style="font-family: var(--font-heading); font-weight: 800">—</td>
                 <td style="font-family: var(--font-heading); font-weight: 800">Total</td>
                 <td style="font-family: var(--font-heading); font-weight: 800">171</td>
                 <td style="font-family: var(--font-heading); font-weight: 800">129</td>
@@ -107,17 +105,14 @@ import fronteiras from "../../content/codebook/fronteiras.json";
     <section style="border-top: 2px solid var(--color-text); background: var(--color-neutral-100)">
       <div class="om-pad om-sec" style="max-width: 1200px; margin: 0 auto; padding: 56px 32px">
         <h2 style="font-family: var(--font-heading); font-weight: 900; font-size: clamp(26px, 4vw, 40px); letter-spacing: -0.025em; margin: 0 0 24px">
-          Os onze códigos
+          As onze fases
         </h2>
         <div style="display: grid; gap: 2px; background: var(--color-divider); border: 2px solid var(--color-text)">
           {
             fases.map((f) => (
               <div style="background: var(--color-bg); padding: 28px 24px">
                 <div style="display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap">
-                  <span style="font-family: var(--font-heading); font-weight: 900; font-size: 32px; letter-spacing: -0.03em; color: var(--color-accent)">
-                    {f.cod}
-                  </span>
-                  <h3 style="font-family: var(--font-heading); font-weight: 800; font-size: 22px; line-height: 1.15; letter-spacing: -0.015em; margin: 0">
+                  <h3 style="font-family: var(--font-heading); font-weight: 900; font-size: 28px; line-height: 1.1; letter-spacing: -0.03em; margin: 0; color: var(--color-accent)">
                     {f.nome}
                   </h3>
                   <span style="font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.55">
@@ -213,7 +208,8 @@ import fronteiras from "../../content/codebook/fronteiras.json";
         </h3>
         <p style="font-size: 15px; line-height: 1.65; max-width: 70ch; margin: 0 0 12px; text-wrap: pretty">
           Triagem automática sobre título e resumo, seguida de segunda passada obrigatória sobre tudo
-          o que foi atribuído a F9, F10 e F11 e sobre os casos de baixa confiança, com justificativa
+          o que foi atribuído a descoberta de produto, gestão de projeto e gestão de
+          conhecimento e sobre os casos de baixa confiança, com justificativa
           escrita. Cada linha dos CSV carrega <em>fase</em>, <em>confiança</em> e <em>justificativa</em
           >, o que permite refazer a auditoria sem repetir a classificação.
         </p>
@@ -221,7 +217,7 @@ import fronteiras from "../../content/codebook/fronteiras.json";
           A verificação das fases com contagem baixa teve três etapas e a conclusão mudou duas vezes.
           A triagem lexical reversa sobre o material já recuperado detecta rótulo errado, mas não
           falha de recuperação — e levou à conclusão precipitada de que as lacunas eram reais. A
-          varredura dedicada ao arXiv, com 27 consultas no vocabulário próprio de F9, F10 e F11,
+          varredura dedicada ao arXiv, com 27 consultas no vocabulário próprio dessas três fases,
           recuperou 355 registros novos, dos quais 23 com sede confirmada. A terceira etapa estendeu a
           varredura ao nível secundário. Saldo: o corpus de sedes passou de 106 para 129 artigos e o
           de secundários de 157 para 171.
@@ -229,7 +225,7 @@ import fronteiras from "../../content/codebook/fronteiras.json";
         <p style="font-size: 15px; line-height: 1.65; max-width: 70ch; margin: 0; text-wrap: pretty">
           <strong style="font-family: var(--font-heading); font-weight: 800">A lição metodológica.</strong
           > Uma lacuna medida com o vocabulário errado é lacuna de busca, não de campo. Contagem baixa
-          em qualquer código deste esquema é hipótese a testar com consultas dedicadas, nunca resultado.
+          em qualquer fase deste esquema é hipótese a testar com consultas dedicadas, nunca resultado.
           Casos de fronteira remanescentes devem ser verificados antes de citar as contagens em publicação.
         </p>
         <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 36px">
