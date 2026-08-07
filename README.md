@@ -69,7 +69,7 @@ leitura: "..."               # a linha curta que aparece no cronograma
 resumo: "..."                # o parágrafo de abertura da página
 objetivos: [...]             # lista
 roteiro:                     # os blocos das três horas
-  - hora: "19h00–19h50"
+  - hora: "19h20–20h10"
     texto: "..."
 atividade: "..."
 entrega: "..."
@@ -183,7 +183,7 @@ Dois detalhes que não são óbvios:
 ## Estado do conteúdo
 
 - **Real:** codebook das 11 fases, os dois corpora (arXiv + OpenAlex), bibliografia,
-  figuras, calendário (quintas 19h–22h, 06 ago a 03 dez, sem aula em 10 set por causa
+  figuras, calendário (quintas 19h20–22h, 06 ago a 03 dez, sem aula em 10 set por causa
   do SBES 2026) e o modelo de fichamento.
 - **Fechado:** só a **Aula 01**. As demais aparecem como *a definir*.
 - **Fixo:** o **último encontro de cada mês** (27 ago, 24 set, 29 out, 26 nov e
