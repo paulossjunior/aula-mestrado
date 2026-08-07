@@ -190,8 +190,19 @@ Dois detalhes que não são óbvios:
   03 dez) é apresentação de trabalho e debate.
 - **Provisório, a substituir pelo plano de ensino real:** pesos da avaliação
   (20/30/50), enunciados dos quatro laboratórios e os títulos das aulas 02–17.
-- **Parcialmente defasado:** o codebook e as **tabelas** do mapeamento já estão no
-  recorte atual — 11 fases, 171 estudos secundários e 321 artigos em sedes. Ainda
+- **Três recortes convivendo, todos rotulados na própria página:**
+  - **233 estudos secundários + 321 em sedes** — o corpus corrente. É o que a
+    [base de leituras](src/content/leituras-base.json) usa e o que as páginas
+    declaram como tamanho dos corpora.
+  - **171 + 321** — o último recorte com distribuição por fase e ano publicada.
+    É o que sustenta as tabelas do codebook e do mapeamento, e as duas figuras.
+    A repartição dos 62 estudos novos entre as fases ainda não saiu.
+  - **157 + 106, sob 8 fases** — o corpus navegável no fim do mapeamento, preso
+    aos CSV em `fontes/`.
+
+  Nenhum número aparece sem o recorte a que pertence. Quando a distribuição de 233
+  for publicada, atualizar `src/content/mapeamento/*.json` e o campo `sec` de
+  `src/content/codebook/fases.json` — as somas têm de fechar em 233. Ainda
   vem do recorte anterior (157/106, 8 fases) apenas o **corpus navegável**, porque
   depende dos CSV em `fontes/`, que continuam na versão antiga. A própria página marca
   isso. Para atualizar: substitua `fontes/corpus_secundarios_es_ia.csv` e
