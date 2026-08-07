@@ -44,8 +44,11 @@ const nav = [
         color: var(--color-text);
         font-family: var(--font-body);
       }
-      a { color: var(--color-accent-700); text-decoration: none; }
-      a:hover { color: var(--color-accent-600); text-decoration: underline; }
+      /* O botão fica de fora: `a:hover` tem especificidade maior que `.btn-primary`
+         e sobrescrevia o texto branco com o mesmo vermelho que o design system usa
+         no fundo do hover — o rótulo sumia. */
+      a:not(.btn) { color: var(--color-accent-700); text-decoration: none; }
+      a:not(.btn):hover { color: var(--color-accent-600); text-decoration: underline; }
       * { box-sizing: border-box; }
       :focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
       html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
