@@ -4,13 +4,14 @@
       "titulo": "Large Language Models for Software Engineering: A Systematic Literature Review",
       "url": "https://arxiv.org/abs/2308.10620",
       "arxiv": "2308.10620",
-      "sede": "arXiv",
-      "trilha": "preprint",
+      "sede": "TOSEM 2024",
+      "trilha": "trilha principal",
       "tipo": "Revisão sistemática (SLR)",
       "cit": "795 citações",
       "fwci": "FWCI 116",
       "momentum": "platô",
-      "foco": "LLMs em tarefas de engenharia de software: aplicações, métodos, avaliação"
+      "foco": "LLMs em tarefas de engenharia de software: aplicações, métodos, avaliação",
+      "notaSede": "sede fora do corpus, a confirmar"
     },
     {
       "titulo": "Software Testing with Large Language Models: Survey, Landscape, and Vision",
@@ -52,13 +53,14 @@
       "titulo": "LLM-Based Multi-Agent Systems for Software Engineering: Literature Review, Vision and the Road Ahead",
       "url": "https://arxiv.org/abs/2404.04834",
       "arxiv": "2404.04834",
-      "sede": "arXiv",
-      "trilha": "preprint",
+      "sede": "TOSEM 2025",
+      "trilha": "trilha principal",
       "tipo": "Revisão sistemática (SLR)",
       "cit": "154 citações",
       "fwci": "FWCI 292",
       "momentum": "acelerando",
-      "foco": "Sistemas multi-agente LLM para engenharia de software, ciclo de vida completo"
+      "foco": "Sistemas multi-agente LLM para engenharia de software, ciclo de vida completo",
+      "notaSede": "sede fora do corpus, a confirmar"
     }
   ],
   "fases": [
@@ -553,13 +555,14 @@
           "titulo": "Large Language Models for Software Engineering: A Systematic Literature Review",
           "url": "https://arxiv.org/abs/2308.10620",
           "arxiv": "2308.10620",
-          "sede": "arXiv",
-          "trilha": "preprint",
+          "sede": "TOSEM 2024",
+          "trilha": "trilha principal",
           "tipo": "Revisão sistemática (SLR)",
           "cit": "795 citações",
           "fwci": "FWCI 116",
           "momentum": "platô",
-          "foco": "LLMs em tarefas de engenharia de software: aplicações, métodos, avaliação"
+          "foco": "LLMs em tarefas de engenharia de software: aplicações, métodos, avaliação",
+          "notaSede": "sede fora do corpus, a confirmar"
         },
         {
           "titulo": "Large Language Models for Software Engineering: Survey and Open Problems",

@@ -89,7 +89,10 @@ const totalObras =
           > em vermelho é conferência ou periódico revisado por pares — ICSE, FSE, ASE, ISSTA, MSR,
           ICSME, SANER, TSE, TOSEM. <span style={etiquetaSede("arXiv")}>arXiv</span> em contorno é
           preprint sem sede confirmada no corpus, o que vale para boa parte dos estudos secundários.
-          Dos {totalObras} trabalhos, {comSede} saíram em sede revisada por pares.
+          Dos {totalObras} trabalhos, {comSede} saíram em sede revisada por pares — inclusive
+          <strong>todos os cinco do tronco</strong>. Onde se lê <em>sede fora do corpus, a confirmar</em>,
+          a sede foi preenchida a partir de registro externo e ainda não passou pela verificação do
+          corpus.
         </p>
       </div>
       <div style="display: flex; gap: 12px; flex-wrap: wrap; margin: 28px 0 40px">
@@ -140,6 +143,7 @@ const totalObras =
                   </div>
                   <div style="font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; margin-top: 10px; opacity: 0.8">
                     arXiv:{o.arxiv} · {metrica(o)}
+                    {"notaSede" in o && o.notaSede ? ` · ${o.notaSede}` : ""}
                   </div>
                 </div>
               </div>
@@ -230,6 +234,7 @@ const totalObras =
                         </div>
                         <div style="font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-top: 8px; opacity: 0.6">
                           arXiv:{o.arxiv} · {metrica(o)}
+                          {"notaSede" in o && o.notaSede ? ` · ${o.notaSede}` : ""}
                         </div>
                       </div>
                     ))}
