@@ -52,42 +52,72 @@
       "comando": "/speckit.converge",
       "etapa": "Reconciliação com o código existente",
       "oQue": "Avalia o código contra a especificação, o plano e as tarefas, e acrescenta o que falta como tarefas novas.",
-      "naPratica": "É a auditoria que responde \"o que a gente disse que ia fazer e não fez?\". Serve quando a implementação andou fora do fluxo, quando código legado precisa ser trazido para dentro da especificação, ou antes de declarar uma entrega pronta. O que ela encontra volta para o backlog em vez de virar comentário perdido em reunião.",
+      "naPratica": "É a auditoria que responde \"o que a gente disse que ia fazer e não fez?\". Compara o código que existe contra a especificação, o plano e as tarefas, e o que estiver faltando volta para o backlog como tarefa nova — não como observação em ata. Serve em três situações: quando a implementação andou fora do fluxo e o código passou à frente da especificação; quando se traz código legado para dentro do processo pela primeira vez; e antes de declarar uma entrega pronta, que é quando a diferença entre o prometido e o entregue ainda pode ser corrigida de graça.",
       "produz": "Tarefas novas em tasks.md",
-      "papel": "Revisão de entrega"
+      "papel": "Revisão de entrega",
+      "semEle": "A funcionalidade é dada como pronta com metade dos critérios de aceite sem cobertura, e ninguém percebe até o cliente usar. O débito vira invisível porque não existe registro de que ele foi contraído."
     }
   ],
   "opcionais": [
     {
       "comando": "/speckit.clarify",
       "etapa": "Refinamento de requisitos",
-      "oQue": "Identifica áreas mal especificadas e faz até cinco perguntas dirigidas, gravando as respostas de volta na especificação.",
-      "naPratica": "É a reunião de refinamento com o cliente, antes de a arquitetura ser decidida. Existe porque requisito ambíguo não falha na especificação — falha três semanas depois, no código. Rodar antes do plano é mais barato que descobrir depois.",
-      "produz": "spec.md revisado",
-      "quando": "Antes de /speckit.plan"
+      "papel": "Analista com o cliente",
+      "oQue": "Localiza os pontos mal especificados e faz até cinco perguntas dirigidas, gravando as respostas de volta na própria especificação.",
+      "naPratica": "É a reunião de refinamento, aquela em que se descobre que \"o usuário edita a tarefa\" não diz se ele pode editar a tarefa de outra pessoa, o que acontece com uma tarefa concluída, nem se a edição é auditada. São perguntas que ninguém faz porque parecem óbvias — e cuja resposta cada pessoa da equipe assume diferente. O ganho não é perguntar: é a resposta voltar para o texto do requisito, em vez de ficar na memória de quem estava na sala.",
+      "exemplo": "\"O usuário pode marcar a tarefa como concluída.\" Pode desmarcar? Alguém além do dono pode? Some da lista ou fica riscada? Três perguntas, três comportamentos diferentes de produto.",
+      "semEle": "A ambiguidade não falha na especificação. Falha três semanas depois, no código, quando refazer custa dez vezes mais — e vira discussão sobre quem entendeu errado.",
+      "quando": "Antes de /speckit.plan",
+      "produz": "spec.md revisado, com as respostas incorporadas"
     },
     {
       "comando": "/speckit.analyze",
       "etapa": "Rastreabilidade e revisão cruzada",
-      "oQue": "Analisa consistência e cobertura entre especificação, plano e tarefas.",
-      "naPratica": "É a matriz de rastreabilidade que ninguém gosta de manter à mão: todo requisito tem tarefa? Toda tarefa serve a algum requisito? Existe decisão no plano que a especificação não pediu? Aponta o requisito órfão e a tarefa que não responde a ninguém.",
-      "produz": "Relatório de inconsistências",
-      "quando": "Depois de /speckit.tasks, antes de /speckit.implement"
+      "papel": "Revisão técnica antes de codificar",
+      "oQue": "Analisa consistência e cobertura entre os três artefatos: especificação, plano e tarefas.",
+      "naPratica": "É a matriz de rastreabilidade que todo processo sério exige e que ninguém mantém à mão, porque à mão ela envelhece em uma semana. Responde a três perguntas cruzadas: todo requisito tem pelo menos uma tarefa que o realiza? Toda tarefa serve a algum requisito? Existe decisão no plano que a especificação não pediu? A primeira encontra requisito órfão, que ninguém vai implementar. A segunda encontra trabalho que ninguém pediu. A terceira encontra arquitetura decidida por gosto.",
+      "exemplo": "Requisito de exportar a lista em CSV, sem nenhuma tarefa correspondente. Ou uma tarefa de configurar cache que nenhum requisito de desempenho justifica.",
+      "semEle": "Descobre-se na revisão final que um requisito inteiro ficou de fora — quando o cronograma já não tem folga para ele.",
+      "quando": "Depois de /speckit.tasks, antes de /speckit.implement",
+      "produz": "Relatório de inconsistências e lacunas"
     },
     {
       "comando": "/speckit.checklist",
-      "etapa": "Critérios de qualidade da especificação",
-      "oQue": "Gera listas de verificação que validam se os requisitos estão completos, claros e consistentes.",
-      "naPratica": "O README chama isso de \"testes unitários para o inglês\", e a analogia é exata: assim como o teste verifica o código, a checklist verifica o texto do requisito. É a definição de pronto aplicada à especificação, não à entrega.",
-      "produz": "Checklist por funcionalidade",
-      "quando": "Junto da especificação"
+      "etapa": "Qualidade da especificação",
+      "papel": "Quem escreve e quem revisa o requisito",
+      "oQue": "Gera listas de verificação sob medida, que testam se os requisitos estão completos, claros e consistentes.",
+      "naPratica": "O repositório chama isso de \"testes unitários para o inglês\", e a analogia é exata: assim como o teste unitário verifica o código, a checklist verifica o texto do requisito. Ela pergunta se cada história tem critério de aceite verificável, se os casos de erro estão descritos, se existe requisito que contradiz outro, se algum termo é usado com dois sentidos. É a definição de pronto aplicada à especificação — antes de existir código para aplicá-la à entrega.",
+      "exemplo": "Critério de aceite escrito como \"a interface deve ser rápida\" não passa: não é verificável. \"A lista carrega em menos de 300 ms com 100 tarefas\" passa.",
+      "semEle": "Requisito vago atravessa o fluxo inteiro e só é confrontado com a realidade na demonstração, diante do cliente.",
+      "quando": "Junto da especificação",
+      "produz": "Checklist por funcionalidade, versionada com a spec"
     }
   ],
   "correspondencia": [
-    { "dsr": "Explicitar o problema", "sdd": "constitution + specify", "nota": "O problema de campo e as regras sob as quais ele será atacado." },
-    { "dsr": "Definir requisitos", "sdd": "specify + clarify", "nota": "Requisitos do artefato, com critério de aceite verificável." },
-    { "dsr": "Projetar e desenvolver", "sdd": "plan + tasks + implement", "nota": "Da decisão de arquitetura ao código que a realiza." },
-    { "dsr": "Demonstrar", "sdd": "implement + publicação", "nota": "O artefato existindo e sendo usado — não rodando só na máquina de quem escreveu." },
-    { "dsr": "Avaliar", "sdd": "analyze + checklist + converge", "nota": "Confronto entre o que foi prometido e o que existe." }
+    {
+      "dsr": "Explicitar o problema",
+      "sdd": "constitution + specify",
+      "nota": "O problema de campo e as regras sob as quais ele será atacado."
+    },
+    {
+      "dsr": "Definir requisitos",
+      "sdd": "specify + clarify",
+      "nota": "Requisitos do artefato, com critério de aceite verificável."
+    },
+    {
+      "dsr": "Projetar e desenvolver",
+      "sdd": "plan + tasks + implement",
+      "nota": "Da decisão de arquitetura ao código que a realiza."
+    },
+    {
+      "dsr": "Demonstrar",
+      "sdd": "implement + publicação",
+      "nota": "O artefato existindo e sendo usado — não rodando só na máquina de quem escreveu."
+    },
+    {
+      "dsr": "Avaliar",
+      "sdd": "analyze + checklist + converge",
+      "nota": "Confronto entre o que foi prometido e o que existe."
+    }
   ]
 }

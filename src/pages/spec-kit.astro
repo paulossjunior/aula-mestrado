@@ -89,6 +89,12 @@ const codigo =
                 <p style="font-size: 17px; line-height: 1.65; margin: 14px 0 0; max-width: 66ch; text-wrap: pretty">
                   {c.naPratica}
                 </p>
+                {"semEle" in c && c.semEle && (
+                  <p style="font-size: 15px; line-height: 1.6; margin: 14px 0 0; max-width: 66ch; padding-left: 16px; box-shadow: inset 2px 0 0 var(--color-accent); text-wrap: pretty">
+                    <strong style="font-family: var(--font-heading); font-weight: 800">Sem essa etapa.</strong>{" "}
+                    {c.semEle}
+                  </p>
+                )}
               </div>
               <aside>
                 <div style="border-top: 2px solid var(--color-text); padding-top: 14px">
@@ -126,24 +132,56 @@ const codigo =
         <div style="border-top: 2px solid var(--color-text)">
           {
             dados.opcionais.map((c) => (
-              <div style="padding: 24px 0; border-bottom: 2px solid var(--color-divider)">
-                <div style="display: flex; gap: 12px; align-items: baseline; flex-wrap: wrap">
-                  <code style={codigo + " color: var(--color-accent-700)"}>{c.comando}</code>
-                  <span style={etiqueta + "background: transparent; color: var(--color-text); box-shadow: inset 0 0 0 2px var(--color-divider)"}>
-                    {c.quando}
-                  </span>
-                </div>
-                <h3 style="font-family: var(--font-heading); font-weight: 800; font-size: 21px; line-height: 1.2; letter-spacing: -0.015em; margin: 10px 0 0">
-                  {c.etapa}
-                </h3>
-                <p style="font-size: 15px; line-height: 1.55; margin: 8px 0 0; max-width: 66ch; opacity: 0.8">
-                  {c.oQue}
-                </p>
-                <p style="font-size: 16px; line-height: 1.6; margin: 10px 0 0; max-width: 66ch; text-wrap: pretty">
-                  {c.naPratica}
-                </p>
-                <div style="font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.55; margin-top: 10px">
-                  Produz: {c.produz}
+              <div style="padding: 28px 0; border-bottom: 2px solid var(--color-divider)">
+                <div
+                  class="om-aula-grid"
+                  style="display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: 48px; align-items: start"
+                >
+                  <div>
+                    <div style="display: flex; gap: 12px; align-items: baseline; flex-wrap: wrap">
+                      <code style={codigo + " color: var(--color-accent-700)"}>{c.comando}</code>
+                      <span style={etiqueta + "background: transparent; color: var(--color-text); box-shadow: inset 0 0 0 2px var(--color-divider)"}>
+                        {c.quando}
+                      </span>
+                    </div>
+                    <h3 style="font-family: var(--font-heading); font-weight: 900; font-size: clamp(21px, 3vw, 27px); line-height: 1.15; letter-spacing: -0.02em; margin: 10px 0 0">
+                      {c.etapa}
+                    </h3>
+                    <p style="font-size: 16px; line-height: 1.6; margin: 12px 0 0; max-width: 66ch; opacity: 0.85">
+                      {c.oQue}
+                    </p>
+                    <p style="font-size: 17px; line-height: 1.65; margin: 12px 0 0; max-width: 66ch; text-wrap: pretty">
+                      {c.naPratica}
+                    </p>
+                    <p style="font-size: 15px; line-height: 1.6; margin: 14px 0 0; max-width: 66ch; padding-left: 16px; box-shadow: inset 2px 0 0 var(--color-accent); text-wrap: pretty">
+                      <strong style="font-family: var(--font-heading); font-weight: 800">Sem essa etapa.</strong>{" "}
+                      {c.semEle}
+                    </p>
+                  </div>
+                  <aside>
+                    <div style="border-top: 2px solid var(--color-text); padding-top: 14px">
+                      <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.6">
+                        Quem conduz
+                      </div>
+                      <div style="font-family: var(--font-heading); font-weight: 800; font-size: 17px; margin-top: 4px">
+                        {c.papel}
+                      </div>
+                    </div>
+                    <div style="border-top: 2px solid var(--color-divider); padding-top: 14px; margin-top: 18px">
+                      <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.6">
+                        Exemplo concreto
+                      </div>
+                      <p style="font-size: 15px; line-height: 1.55; margin: 6px 0 0">{c.exemplo}</p>
+                    </div>
+                    <div style="border-top: 2px solid var(--color-divider); padding-top: 14px; margin-top: 18px">
+                      <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.6">
+                        O que fica versionado
+                      </div>
+                      <code style={codigo + " display: block; margin-top: 6px; font-size: 14px; line-height: 1.4; word-break: break-word"}>
+                        {c.produz}
+                      </code>
+                    </div>
+                  </aside>
                 </div>
               </div>
             ))
