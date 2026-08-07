@@ -42,6 +42,16 @@ export async function todasAulas(): Promise<AulaResolvida[]> {
     .map(resolver);
 }
 
+// A janela do encontro sai do próprio roteiro: primeiro começo, último fim. Para
+// encontro ainda não publicado devolve a janela padrão — ler o roteiro do rascunho
+// vazaria informação que o site não deve mostrar.
+export function janela(a: AulaResolvida): string {
+  if (!a.detalhada || a.roteiro.length === 0) return "19h20–22h";
+  const [inicio] = a.roteiro[0].hora.split("–");
+  const fim = a.roteiro[a.roteiro.length - 1].hora.split("–")[1];
+  return `${inicio}–${fim}`;
+}
+
 // Tag de leitura: acento sólido para o que é obrigatório, contorno para o resto.
 export function estiloTag(tag: string): string {
   const base =
