@@ -1,50 +1,13 @@
 [
-  {
-    "fase": "Requisitos e especificação",
-    "central": "–",
-    "secao": "8",
-    "sem": "5"
-  },
-  {
-    "fase": "Projeto e arquitetura",
-    "central": "1",
-    "secao": "3",
-    "sem": "3"
-  },
-  {
-    "fase": "Implementação e geração de código",
-    "central": "8",
-    "secao": "21",
-    "sem": "14"
-  },
-  {
-    "fase": "Verificação e qualidade",
-    "central": "8",
-    "secao": "19",
-    "sem": "13"
-  },
-  {
-    "fase": "Depuração e reparo",
-    "central": "2",
-    "secao": "5",
-    "sem": "1"
-  },
-  {
-    "fase": "Manutenção, evolução e operação",
-    "central": "3",
-    "secao": "5",
-    "sem": "1"
-  },
-  {
-    "fase": "Processo transversal e ciclo completo",
-    "central": "21",
-    "secao": "8",
-    "sem": "4"
-  },
-  {
-    "fase": "Formação e educação",
-    "central": "–",
-    "secao": "3",
-    "sem": "1"
-  }
+  { "fase": "Descoberta de produto e entendimento do problema", "central": "–", "secao": "–", "sem": "4" },
+  { "fase": "Requisitos e especificação", "central": "–", "secao": "4", "sem": "3" },
+  { "fase": "Projeto e arquitetura", "central": "1", "secao": "5", "sem": "5" },
+  { "fase": "Implementação e geração de código", "central": "7", "secao": "11", "sem": "10" },
+  { "fase": "Verificação e qualidade", "central": "8", "secao": "25", "sem": "17" },
+  { "fase": "Depuração e reparo", "central": "1", "secao": "5", "sem": "2" },
+  { "fase": "Manutenção, evolução e operação", "central": "2", "secao": "3", "sem": "1" },
+  { "fase": "Planejamento, gestão de projeto e releases", "central": "–", "secao": "1", "sem": "2" },
+  { "fase": "Gestão de conhecimento e documentação viva", "central": "–", "secao": "–", "sem": "2" },
+  { "fase": "Processo transversal e ciclo completo", "central": "24", "secao": "18", "sem": "6" },
+  { "fase": "Formação e educação em engenharia de software", "central": "–", "secao": "3", "sem": "1" }
 ]

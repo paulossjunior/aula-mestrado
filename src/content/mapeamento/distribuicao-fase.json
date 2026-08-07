@@ -1,62 +1,86 @@
 [
   {
-    "fase": "Requisitos e especificação",
-    "a23": "4",
-    "a24": "3",
-    "a25": "5",
-    "a26": "1",
-    "total": "13"
+    "fase": "Descoberta de produto e entendimento do problema",
+    "a23": "2",
+    "a24": "2",
+    "a25": "–",
+    "a26": "–",
+    "total": "4"
   },
   {
-    "fase": "Projeto e arquitetura",
-    "a23": "1",
+    "fase": "Requisitos e especificação",
+    "a23": "3",
     "a24": "1",
-    "a25": "3",
-    "a26": "2",
+    "a25": "2",
+    "a26": "1",
     "total": "7"
   },
   {
-    "fase": "Implementação e geração de código",
+    "fase": "Projeto e arquitetura",
     "a23": "3",
-    "a24": "12",
-    "a25": "19",
-    "a26": "9",
-    "total": "43"
+    "a24": "1",
+    "a25": "4",
+    "a26": "3",
+    "total": "11"
+  },
+  {
+    "fase": "Implementação e geração de código",
+    "a23": "2",
+    "a24": "10",
+    "a25": "11",
+    "a26": "5",
+    "total": "28"
   },
   {
     "fase": "Verificação e qualidade",
-    "a23": "3",
-    "a24": "8",
-    "a25": "18",
+    "a23": "5",
+    "a24": "10",
+    "a25": "24",
     "a26": "11",
-    "total": "40"
+    "total": "50"
   },
   {
     "fase": "Depuração e reparo",
     "a23": "2",
-    "a24": "1",
-    "a25": "3",
+    "a24": "2",
+    "a25": "2",
     "a26": "2",
     "total": "8"
   },
   {
     "fase": "Manutenção, evolução e operação",
-    "a23": "1",
-    "a24": "2",
+    "a23": "–",
+    "a24": "1",
     "a25": "2",
-    "a26": "4",
-    "total": "9"
+    "a26": "3",
+    "total": "6"
+  },
+  {
+    "fase": "Planejamento, gestão de projeto e releases",
+    "a23": "–",
+    "a24": "1",
+    "a25": "1",
+    "a26": "1",
+    "total": "3"
+  },
+  {
+    "fase": "Gestão de conhecimento e documentação viva",
+    "a23": "1",
+    "a24": "–",
+    "a25": "–",
+    "a26": "1",
+    "total": "2"
   },
   {
     "fase": "Processo transversal e ciclo completo",
     "a23": "4",
-    "a24": "8",
-    "a25": "15",
-    "a26": "6",
-    "total": "33"
+    "a24": "11",
+    "a25": "22",
+    "a26": "11",
+    "total": "48"
   },
   {
-    "fase": "Formação e educação",
+    "fase": "Formação e educação em engenharia de software",
     "a23": "–",
     "a24": "1",
     "a25": "2",

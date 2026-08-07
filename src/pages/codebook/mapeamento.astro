@@ -77,10 +77,11 @@ const estiloBotao = (ativo: boolean) =>
           Versão dos dados
         </div>
         <p style="font-size: 15px; line-height: 1.6; margin: 8px 0 0; text-wrap: pretty">
-          As tabelas, figuras e o corpus navegável desta página refletem o recorte anterior — 157
-          estudos secundários e 106 artigos em sedes, sob o esquema de oito fases. O codebook já foi
-          revisado para onze fases, 171 e 129; esta parte será atualizada quando os novos CSV forem
-          publicados.
+          As tabelas desta página já refletem o recorte atual: <strong>171 estudos secundários</strong>
+          sob o esquema de onze fases. O <strong>corpus navegável</strong> ao final e as <strong
+            >duas figuras</strong
+          > ainda mostram o recorte anterior — 157 estudos secundários e 106 artigos em sedes, sob oito
+          fases —, e serão trocados quando os novos CSV forem publicados. As legendas dizem qual é qual.
         </p>
       </div>
     </section>
@@ -101,15 +102,38 @@ const estiloBotao = (ativo: boolean) =>
           O objeto não são as técnicas primárias, e sim a literatura de segunda ordem que já tentou
           organizar o campo: quem revisou o quê, com que protocolo, e onde a síntese ainda não chegou.
           Setenta e quatro consultas ao arXiv produziram 1.172 registros únicos; o filtro de segunda
-          ordem e a triagem manual deixaram <strong>157 estudos secundários</strong>, cada um com
-          rótulo de fase, tipo de estudo e grau de foco em <em>Agentic</em>.
+          ordem e a triagem manual deixaram 157, e uma varredura complementar com o vocabulário das
+          fases periféricas somou outros 14 — <strong>171 estudos secundários</strong> ao todo, cada um
+          com rótulo de fase, tipo de estudo e grau de foco em <em>Agentic</em>.
         </p>
         <p style="font-size: 15px; line-height: 1.6; max-width: 64ch; margin: 14px 0 0; opacity: 0.75; text-wrap: pretty">
-          Métricas de citação vindas do OpenAlex, casadas por similaridade de título ≥ 0,85. Apenas 45
-          dos 157 têm registro casado e 18 têm FWCI — preprints recentes raramente têm referências
+          Métricas de citação vindas do OpenAlex, casadas por similaridade de título ≥ 0,85. Apenas 104
+          dos 171 têm registro casado e 53 têm FWCI — preprints recentes raramente têm referências
           indexadas. As citações servem para separar clássicos consolidados de trabalhos sem rastro
           bibliométrico, não para ranquear qualidade.
         </p>
+
+        <div style="margin: 32px 0 0; padding: 20px 24px; background: var(--color-neutral-100); box-shadow: inset 0 0 0 2px var(--color-divider); max-width: 74ch">
+          <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.6">
+            Protocolo
+          </div>
+          <p style="font-size: 15px; line-height: 1.6; margin: 8px 0 0; text-wrap: pretty">
+            A varredura original combinou <strong>74 consultas ao arXiv</strong> em quatro blocos:
+            consultas dedicadas a estudos secundários, consultas por fase do ciclo de vida, consultas
+            por mecanismo agêntico e consultas sobre o lado humano e empírico do processo. Cada uma
+            retornou até 40 registros por relevância, consolidados por identificador arXiv —
+            <strong>1.172 registros únicos</strong>.
+          </p>
+          <p style="font-size: 15px; line-height: 1.6; margin: 12px 0 0; text-wrap: pretty">
+            O filtro de segunda ordem operou sobre título e resumo. Dos 300 candidatos, 188 tinham
+            escopo de engenharia de software; a triagem por modelo descartou mais 31 cujo objeto
+            central era outro domínio, deixando 157. Uma varredura complementar, com 14 consultas no
+            vocabulário das fases periféricas — documentação, conhecimento arquitetural, estimativa de
+            esforço, triagem de issues, compreensão de programa, descoberta de produto —, recuperou 18
+            candidatos, dos quais 14 entraram e 4 foram descartados por tratarem de metodologia de
+            revisão e não do processo de desenvolvimento. Corpus final: <strong>171</strong>.
+          </p>
+        </div>
 
         <figure style="margin: 40px 0 0; border: 2px solid var(--color-text)">
           <img
@@ -121,8 +145,9 @@ const estiloBotao = (ativo: boolean) =>
           <figcaption
             style="font-size: 13px; line-height: 1.5; padding: 12px 16px; border-top: 2px solid var(--color-text); background: var(--color-neutral-100)"
           >
-            Área do círculo ∝ número de revisões; cor indica a fração com agentes autônomos como
-            objeto central. n = 157.
+            <strong>Recorte anterior.</strong> Área do círculo ∝ número de revisões; cor indica a
+            fração com agentes autônomos como objeto central. n = 157, sob o esquema de oito fases —
+            as tabelas acima e abaixo já usam o recorte de 171 e onze fases.
           </figcaption>
         </figure>
 
@@ -158,8 +183,8 @@ const estiloBotao = (ativo: boolean) =>
         </div>
         <p style="font-size: 16px; line-height: 1.65; max-width: 68ch; margin: 22px 0 0; text-wrap: pretty">
           A distribuição é fortemente desequilibrada. Implementação e verificação juntas concentram
-          <strong>83 dos 157 estudos</strong>, mais da metade do corpus, enquanto requisitos tem 13,
-          arquitetura 7, manutenção 9 e formação 4. Reproduz-se na literatura de segunda ordem o mesmo
+          <strong>78 dos 171 estudos</strong>, quase metade do corpus, enquanto requisitos tem 7,
+          arquitetura 11, manutenção 6, gestão de projeto 3 e gestão de conhecimento 2. Reproduz-se na literatura de segunda ordem o mesmo
           viés dos estudos primários: a atividade que o modelo executa bem e cujo resultado é fácil de
           medir com um benchmark é também a que mais atrai revisões.
         </p>
@@ -194,8 +219,8 @@ const estiloBotao = (ativo: boolean) =>
           </table>
         </div>
         <p style="font-size: 16px; line-height: 1.65; max-width: 68ch; margin: 22px 0 0; text-wrap: pretty">
-          Vinte e um dos 33 estudos de processo transversal têm agentes autônomos como objeto central,
-          contra 8 em implementação e 8 em verificação. Quando a revisão sobe da tarefa para o
+          Vinte e quatro dos 48 estudos de processo transversal têm agentes autônomos como objeto
+          central, contra 7 em implementação e 8 em verificação. Quando a revisão sobe da tarefa para o
           processo, ela necessariamente encontra <em>Agentic</em>: é no nível do processo que a
           autonomia se manifesta como escolha da próxima ação, e não como qualidade de um trecho
           gerado.
@@ -235,12 +260,14 @@ const estiloBotao = (ativo: boolean) =>
           </table>
         </div>
         <p style="font-size: 16px; line-height: 1.65; max-width: 68ch; margin: 22px 0 0; text-wrap: pretty">
-          Metade do corpus são surveys narrativos. Revisões com protocolo explícito somam 60, e a
-          proporção melhorou: 7 de 18 em 2023, 14 de 36 em 2026. O aparecimento de 15 estudos que
-          combinam revisão da literatura com dados primários de praticantes é o sinal metodológico
-          mais interessante do período — é a única linha que confronta a literatura com o que equipes
-          de fato fazem. Há <strong>exatamente um estudo terciário</strong> e três taxonomias: para um
-          campo com 157 revisões em quatro anos, é pouco.
+          Quase metade do corpus são surveys narrativos, 81 ao todo. Revisões com protocolo explícito
+          somam 64, e a proporção melhorou de forma visível: 9 de 22 em 2023, 15 de 39 em 2026. O
+          aparecimento de 19 estudos que combinam revisão da literatura com dados primários de
+          praticantes é o sinal metodológico mais interessante do período — é a única linha que
+          confronta a literatura com o que equipes de fato fazem. Há <strong
+            >exatamente um estudo terciário</strong
+          >, e de escopo restrito a geração de código, mais seis taxonomias: para um campo com 171
+          revisões em quatro anos, é pouco.
         </p>
       </div>
     </section>
@@ -319,6 +346,7 @@ const estiloBotao = (ativo: boolean) =>
                 <th style="text-align: left">arXiv</th>
                 <th style="text-align: left">Ano</th>
                 <th style="text-align: left">Fase</th>
+                <th style="text-align: left">Tipo</th>
                 <th style="text-align: left">Título</th>
                 <th style="text-align: left">Foco declarado</th>
               </tr>
@@ -341,6 +369,7 @@ const estiloBotao = (ativo: boolean) =>
                     <td style="font-family: var(--font-heading); font-weight: 800; color: var(--color-accent)">
                       {f.fase}
                     </td>
+                    <td>{f.tipo}</td>
                     <td style="line-height: 1.45">{f.titulo}</td>
                     <td style="line-height: 1.45; opacity: 0.8">{f.foco}</td>
                   </tr>
@@ -372,8 +401,9 @@ const estiloBotao = (ativo: boolean) =>
           <figcaption
             style="font-size: 13px; line-height: 1.5; padding: 12px 16px; border-top: 2px solid var(--color-text); background: var(--color-neutral-100)"
           >
-            106 artigos com sede confirmada no campo de comentário do arXiv (2023–2026); total por
-            sede entre parênteses. Conferências acima, periódicos TSE e TOSEM abaixo.
+            <strong>Recorte anterior.</strong> 106 artigos com sede confirmada no campo de comentário
+            do arXiv (2023–2026); total por sede entre parênteses. Conferências acima, periódicos TSE e
+            TOSEM abaixo. A varredura dedicada elevou esse corpus para 129 artigos.
           </figcaption>
         </figure>
         <p style="font-size: 16px; line-height: 1.65; max-width: 68ch; margin: 22px 0 0; text-wrap: pretty">
@@ -396,7 +426,8 @@ const estiloBotao = (ativo: boolean) =>
         </h2>
         <p style="font-size: 16px; line-height: 1.6; max-width: 62ch; margin: 16px 0 28px; text-wrap: pretty">
           Escolha o corpus e a fase. Cada registro traz autor, ano, foco declarado e o link para o
-          arXiv.
+          arXiv. Atenção: esta lista ainda é o recorte anterior — 157 estudos secundários e 106 artigos
+          em sedes, sob oito fases. As tabelas acima já são as de 171.
         </p>
 
         <div style="display: flex; gap: 16px; flex-wrap: wrap; align-items: flex-start">
@@ -448,11 +479,19 @@ const estiloBotao = (ativo: boolean) =>
         <h2
           style="font-family: var(--font-heading); font-weight: 900; font-size: clamp(28px, 5vw, 48px); line-height: 1; letter-spacing: -0.03em; margin: 0; max-width: 26ch; text-wrap: balance"
         >
-          Cinco lacunas que nenhuma das 157 revisões cobre
+          Cinco lacunas que nenhuma das 171 revisões cobre
         </h2>
         <p style="font-size: 17px; line-height: 1.6; max-width: 60ch; margin: 18px 0 0">
           Cada uma é um tema de artigo disponível — e um bom ponto de partida para o trabalho de
           pesquisa da disciplina.
+        </p>
+        <p style="font-size: 15px; line-height: 1.6; max-width: 62ch; margin: 14px 0 0; opacity: 0.9">
+          Uma advertência antes da lista. As lacunas de versões anteriores foram medidas com o
+          vocabulário das consultas originais, que privilegiavam agentes, modelos de linguagem e as
+          fases centrais do ciclo. Varreduras dedicadas mostraram que parte do que parecia vazio era
+          falha de recuperação — o corpus passou de 157 para 171, e a afirmação de que não existia
+          revisão sobre documentação viva estava simplesmente errada. Leia o que segue como hipótese a
+          testar, não como resultado fechado.
         </p>
         <div style="display: grid; gap: 0; margin-top: 36px; border-top: 2px solid rgba(255,255,255,0.45)">
           {

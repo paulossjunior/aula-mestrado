@@ -60,6 +60,16 @@
     "titulo": "A Survey on LLM-based Code Generation for Low-Resource and Domain-Specific Programming Languages"
   },
   {
+    "id": "2311.10372",
+    "url": "https://arxiv.org/abs/2311.10372",
+    "ano": "2023",
+    "fase": "Geração de código",
+    "tipo": "T3",
+    "cit": "23",
+    "fwci": "–",
+    "titulo": "A Survey of Large Language Models for Code: Evolution, Benchmarking, and Future Trends"
+  },
+  {
     "id": "2409.09030",
     "url": "https://arxiv.org/abs/2409.09030",
     "ano": "2024",
@@ -68,6 +78,16 @@
     "cit": "22",
     "fwci": "26.8",
     "titulo": "Agents in Software Engineering: Survey, Landscape, and Vision"
+  },
+  {
+    "id": "2312.15223",
+    "url": "https://arxiv.org/abs/2312.15223",
+    "ano": "2023",
+    "fase": "Processo transversal",
+    "tipo": "T3",
+    "cit": "21",
+    "fwci": "–",
+    "titulo": "A Survey on Large Language Models for Software Engineering"
   },
   {
     "id": "2408.02479",
@@ -90,6 +110,16 @@
     "titulo": "A Survey on Automated Program Repair Techniques"
   },
   {
+    "id": "2311.07989",
+    "url": "https://arxiv.org/abs/2311.07989",
+    "ano": "2023",
+    "fase": "Processo transversal",
+    "tipo": "T3",
+    "cit": "18",
+    "fwci": "–",
+    "titulo": "Unifying the Perspectives of NLP and Software Engineering: A Survey on Language Models for Code"
+  },
+  {
     "id": "2405.01466",
     "url": "https://arxiv.org/abs/2405.01466",
     "ano": "2024",
@@ -98,5 +128,25 @@
     "cit": "16",
     "fwci": "–",
     "titulo": "A Systematic Literature Review on Large Language Models for Automated Program Repair"
+  },
+  {
+    "id": "2409.02977",
+    "url": "https://arxiv.org/abs/2409.02977",
+    "ano": "2024",
+    "fase": "Processo transversal",
+    "tipo": "T3",
+    "cit": "15",
+    "fwci": "–",
+    "titulo": "Large Language Model-Based Agents for Software Engineering: A Survey"
+  },
+  {
+    "id": "2401.00812",
+    "url": "https://arxiv.org/abs/2401.00812",
+    "ano": "2024",
+    "fase": "Geração de código",
+    "tipo": "T3",
+    "cit": "14",
+    "fwci": "–",
+    "titulo": "If LLM Is the Wizard, Then Code Is the Wand: A Survey on How Code Empowers Large Language Models to Serve as Intelligent Agents"
   }
 ]

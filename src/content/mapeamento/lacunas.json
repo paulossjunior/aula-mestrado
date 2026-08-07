@@ -1,22 +1,22 @@
 [
   {
-    "titulo": "Nenhum estudo terciário",
-    "texto": "Com 43 revisões sistemáticas e 17 mapeamentos publicados, há material para uma revisão de revisões que consolide as taxonomias concorrentes e mostre onde elas discordam. É o trabalho de maior retorno imediato disponível."
+    "titulo": "Nenhum terciário sobre o processo",
+    "texto": "Existe um único estudo terciário no corpus, e o escopo dele é uma fase isolada — geração de código, 2026. Com 45 revisões sistemáticas e 19 mapeamentos já publicados, há material de sobra para uma revisão de revisões que consolide as taxonomias concorrentes e mostre onde elas discordam. É o trabalho de maior retorno imediato disponível."
   },
   {
     "titulo": "Especificação executável (SDD)",
-    "texto": "O termo aparece em poucas revisões e nenhuma o toma como objeto, apesar de ser exatamente a costura entre requisitos e implementação nos fluxos agênticos atuais."
+    "texto": "O termo aparece em poucas revisões e nenhuma o toma como objeto. Não há síntese do que se sabe sobre especificação executável como interface entre intenção humana e execução agêntica — apesar de ser exatamente a costura entre requisitos e implementação nos fluxos atuais."
   },
   {
     "titulo": "Projeto e arquitetura",
-    "texto": "Onze revisões, a maioria de 2025 em diante, e nenhuma que trate decisão arquitetural feita por agente como fenômeno de processo em vez de tarefa de geração de diagrama."
+    "texto": "Onze revisões, sete delas de 2025 em diante, e nenhuma que trate decisão arquitetural feita por agente como fenômeno de processo em vez de tarefa de geração de diagrama."
   },
   {
-    "titulo": "Manutenção e operação",
-    "texto": "Seis revisões para a fase em que o custo real do software se concentra. Migração de legado, dívida técnica de código gerado e operação assistida aparecem isolados, sem articulação."
+    "titulo": "Conhecimento e coordenação",
+    "texto": "Gestão de conhecimento tem 2 revisões e planejamento e gestão de projeto tem 3 — as duas fases com menos síntese em todo o esquema, apesar de o corpus de sedes ter 7 e 6 artigos primários em cada uma. Manutenção e operação, com 6 revisões, segue sendo a fase onde o custo real do software se concentra e uma das que menos síntese recebeu: migração de legado, dívida técnica de código gerado e operação assistida aparecem isolados, sem articulação."
   },
   {
     "titulo": "Processo agêntico × equipes reais",
-    "texto": "Os estudos que coletam dados de praticantes raramente dialogam com os de processo transversal — as propostas de fluxo agêntico ficam sem contraparte de evidência sobre adoção."
+    "texto": "Os 19 estudos que coletam dados de praticantes raramente dialogam com os 48 de processo transversal. As propostas de fluxo agêntico ficam sem contraparte de evidência sobre adoção."
   }
 ]
