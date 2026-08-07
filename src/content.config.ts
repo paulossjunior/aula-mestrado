@@ -3,7 +3,8 @@ import { glob } from "astro/loaders";
 
 const leitura = z.object({
   titulo: z.string(),
-  autor: z.string(),
+  // Opcional: apresentação de sistema em operação pode não ter autoria a declarar.
+  autor: z.string().optional(),
   fonte: z.string(),
   tag: z.string(),
   href: z.string().optional(),

@@ -167,7 +167,7 @@ const tituloProxima = proxima ? `${proxima.n} · ${proxima.titulo}` : "Voltar ao
                       </div>
                     )}
                     <div style="font-size: 14px; opacity: 0.7; margin-top: 4px">
-                      {l.autor} · {l.fonte}
+                      {l.autor ? `${l.autor} · ${l.fonte}` : l.fonte}
                     </div>
                   </div>
                 ))}
