@@ -109,13 +109,15 @@ src/lib/url.ts                  resolve links sob o subcaminho do GitHub Pages
 src/lib/aulas.ts                traduz `estado` no que a página renderiza
 
 public/_ds/modernist-…/         o design system: styles.css, guia e tokens
-public/uploads/                 as figuras do mapeamento
+public/uploads/                 as duas figuras do mapeamento, geradas em SVG
 public/fichamento.tex           o modelo em LaTeX (é o mesmo texto exibido no site)
 public/.nojekyll                obrigatório — veja "Deploy"
 
 fontes/                         material de origem: codebook, mapeamento e os CSV
 Disciplina.dc.html, support.js  o protótipo original, guardado como registro
 scripts/extrair-conteudo.mjs    o script que migrou os dados do protótipo
+scripts/gerar-figuras.mjs       regera as duas figuras a partir das tabelas
+scripts/nomear-fases.mjs        trocou os códigos F pelos nomes das fases
 specs/                          a especificação que guiou a construção
 ```
 
@@ -187,12 +189,14 @@ Dois detalhes que não são óbvios:
 - **Provisório, a substituir pelo plano de ensino real:** pesos da avaliação
   (20/30/50), enunciados dos quatro laboratórios e os títulos das aulas 02–17.
 - **Parcialmente defasado:** o codebook e as **tabelas** do mapeamento já estão no
-  recorte atual — 11 fases, 171 estudos secundários e 129 artigos em sedes. Ainda
-  vêm do recorte anterior (157/106, 8 fases) as **duas figuras PNG** e o **corpus
-  navegável**, porque dependem dos CSV em `fontes/`, que continuam na versão antiga.
-  A própria página marca o que é o quê. Para atualizar: substitua
-  `fontes/corpus_secundarios_es_ia.csv` e `fontes/corpus_sedes_es.csv`, regere
-  `src/data/corpus.js` a partir deles e troque as figuras em `public/uploads/`.
+  recorte atual — 11 fases, 171 estudos secundários e 321 artigos em sedes. Ainda
+  vem do recorte anterior (157/106, 8 fases) apenas o **corpus navegável**, porque
+  depende dos CSV em `fontes/`, que continuam na versão antiga. A própria página marca
+  isso. Para atualizar: substitua `fontes/corpus_secundarios_es_ia.csv` e
+  `fontes/corpus_sedes_es.csv` e regere `src/data/corpus.js` a partir deles.
+
+  As **figuras** não dependem mais de arquivo externo: `node scripts/gerar-figuras.mjs`
+  as regera em SVG a partir das tabelas em `src/content/mapeamento/`.
 
 ---
 

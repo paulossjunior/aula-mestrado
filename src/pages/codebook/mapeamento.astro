@@ -77,11 +77,12 @@ const estiloBotao = (ativo: boolean) =>
           Versão dos dados
         </div>
         <p style="font-size: 15px; line-height: 1.6; margin: 8px 0 0; text-wrap: pretty">
-          As tabelas desta página já refletem o recorte atual: <strong>171 estudos secundários</strong>
-          sob o esquema de onze fases. O <strong>corpus navegável</strong> ao final e as <strong
-            >duas figuras</strong
-          > ainda mostram o recorte anterior — 157 estudos secundários e 106 artigos em sedes, sob oito
-          fases —, e serão trocados quando os novos CSV forem publicados. As legendas dizem qual é qual.
+          As tabelas e as duas figuras desta página já refletem o recorte atual: <strong
+            >171 estudos secundários</strong
+          > e <strong>321 artigos em sedes</strong>, sob o esquema de onze fases. Só o <strong
+            >corpus navegável</strong
+          > ao final continua no recorte anterior — 157 e 106, sob oito fases —, porque depende dos CSV,
+          que ainda não foram republicados.
         </p>
       </div>
     </section>
@@ -137,17 +138,16 @@ const estiloBotao = (ativo: boolean) =>
 
         <figure style="margin: 40px 0 0; border: 2px solid var(--color-text)">
           <img
-            src={rota("/uploads/mapa_secundarios_fase_ano.png")}
-            alt="Distribuição dos 157 estudos secundários por fase do processo e ano de submissão no arXiv"
+            src={rota("/uploads/mapa_secundarios_fase_ano.svg")}
+            alt="Distribuição dos 171 estudos secundários por fase do processo e ano de submissão no arXiv"
             style="display: block; width: 100%; height: auto"
             loading="lazy"
           />
           <figcaption
             style="font-size: 13px; line-height: 1.5; padding: 12px 16px; border-top: 2px solid var(--color-text); background: var(--color-neutral-100)"
           >
-            <strong>Recorte anterior.</strong> Área do círculo ∝ número de revisões; cor indica a
-            fração com agentes autônomos como objeto central. n = 157, sob o esquema de oito fases —
-            as tabelas acima e abaixo já usam o recorte de 171 e onze fases.
+            Área do círculo ∝ número de revisões; a intensidade da cor indica a fração da fase com
+            agentes autônomos como objeto central. n = 171, sob as onze fases.
           </figcaption>
         </figure>
 
@@ -393,23 +393,24 @@ const estiloBotao = (ativo: boolean) =>
         </h3>
         <figure style="margin: 0; border: 2px solid var(--color-text)">
           <img
-            src={rota("/uploads/sedes_fase_heatmap.png")}
-            alt="Mapa de calor dos 106 artigos com sede confirmada, por sede de publicação e fase do processo"
+            src={rota("/uploads/sedes_fase_heatmap.svg")}
+            alt="Mapa de calor dos 321 artigos com sede confirmada, por sede de publicação e fase do processo"
             style="display: block; width: 100%; height: auto"
             loading="lazy"
           />
           <figcaption
             style="font-size: 13px; line-height: 1.5; padding: 12px 16px; border-top: 2px solid var(--color-text); background: var(--color-neutral-100)"
           >
-            <strong>Recorte anterior.</strong> 106 artigos com sede confirmada no campo de comentário
-            do arXiv (2023–2026); total por sede entre parênteses. Conferências acima, periódicos TSE e
-            TOSEM abaixo. A varredura dedicada elevou esse corpus para 129 artigos.
+            321 artigos com sede confirmada no campo de comentário do arXiv (2023–2026); total por
+            sede à esquerda. Conferências acima, periódicos TSE e TOSEM abaixo.
           </figcaption>
         </figure>
         <p style="font-size: 16px; line-height: 1.65; max-width: 68ch; margin: 22px 0 0; text-wrap: pretty">
-          Nas sedes principais, verificação e geração de código dominam; requisitos, arquitetura e
-          manutenção quase não aparecem. ICSE concentra 33 artigos, com 10 em geração de código e 10
-          em verificação; ASE puxa para verificação (8) e processo transversal (5).
+          <strong>Verificação e qualidade concentra 125 dos 321 artigos</strong> das sedes principais;
+          planejamento, conhecimento e descoberta somam 21 entre as três. ICSE é a maior sede com 125
+          artigos, 47 deles em verificação e 26 em geração de código; ASE tem 71, com 32 em verificação
+          e 12 em processo transversal; FSE tem 67, com 29 em verificação. O desequilíbrio do trabalho
+          primário é ainda mais acentuado que o da literatura de segunda ordem.
         </p>
       </div>
     </section>

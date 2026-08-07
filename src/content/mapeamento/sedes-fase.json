@@ -1,0 +1,28 @@
+{
+  "total": 321,
+  "legenda": "321 artigos com sede confirmada no campo de comentário do arXiv (2023–2026). Total por sede entre parênteses; conferências acima, periódicos TSE e TOSEM abaixo.",
+  "fases": [
+    "Descoberta de produto",
+    "Requisitos",
+    "Arquitetura",
+    "Geração de código",
+    "Verificação",
+    "Reparo",
+    "Manutenção",
+    "Planejamento & releases",
+    "Conhecimento & docs",
+    "Processo transversal",
+    "Formação"
+  ],
+  "sedes": [
+    { "sede": "ICSE", "tipo": "conferência", "total": 125, "valores": [2, 5, 5, 26, 47, 11, 9, 1, 2, 16, 1] },
+    { "sede": "FSE", "tipo": "conferência", "total": 67, "valores": [1, 1, 1, 12, 29, 10, 5, 1, 0, 5, 2] },
+    { "sede": "ASE", "tipo": "conferência", "total": 71, "valores": [1, 1, 2, 9, 32, 9, 2, 1, 0, 12, 2] },
+    { "sede": "ISSTA", "tipo": "conferência", "total": 13, "valores": [1, 1, 0, 2, 4, 4, 0, 0, 0, 1, 0] },
+    { "sede": "MSR", "tipo": "conferência", "total": 9, "valores": [0, 0, 0, 0, 3, 0, 3, 0, 2, 1, 0] },
+    { "sede": "ICSME", "tipo": "conferência", "total": 11, "valores": [1, 0, 1, 2, 4, 1, 0, 0, 2, 0, 0] },
+    { "sede": "SANER", "tipo": "conferência", "total": 3, "valores": [0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0] },
+    { "sede": "TSE", "tipo": "periódico", "total": 4, "valores": [1, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0] },
+    { "sede": "TOSEM", "tipo": "periódico", "total": 18, "valores": [0, 2, 0, 3, 4, 1, 1, 2, 1, 4, 0] }
+  ]
+}

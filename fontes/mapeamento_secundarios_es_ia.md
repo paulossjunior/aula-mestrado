@@ -131,3 +131,26 @@ Projeto e arquitetura estão sub-revisados em relação ao seu peso no processo:
 A gestão de conhecimento e a documentação viva, com 2 revisões, e o planejamento e gestão de projeto, com 3, são as fases com menos síntese em todo o esquema, apesar de o corpus de sedes ter 7 e 6 artigos primários em cada uma. A manutenção e a operação, com 6 revisões, seguem sendo a fase em que o custo real do software se concentra e uma das que menos síntese recebeu. Migração de sistemas legados, dívida técnica introduzida por código gerado e operação assistida por agentes aparecem em revisões isoladas sem articulação entre si.
 
 Falta articulação entre a literatura de processo agêntico e a literatura empírica sobre equipes. Os 19 estudos que coletam dados de praticantes raramente dialogam com os 48 estudos de processo transversal, o que deixa as propostas de fluxo agêntico sem contraparte de evidência sobre adoção.
+
+## Corpus de sedes: o mapa de calor
+
+A varredura das sedes foi refeita e o corpus de artigos primários com sede confirmada
+no campo de comentário do arXiv passou para **321 artigos** (2023–2026). A matriz sede
+× fase está em `src/content/mapeamento/sedes-fase.json` no repositório do site, e a
+figura correspondente é gerada por `scripts/gerar-figuras.mjs`.
+
+| Sede | Total |
+|---|---|
+| ICSE | 125 |
+| ASE | 71 |
+| FSE | 67 |
+| TOSEM | 18 |
+| ISSTA | 13 |
+| ICSME | 11 |
+| MSR | 9 |
+| TSE | 4 |
+| SANER | 3 |
+
+Verificação e qualidade concentra 125 dos 321 artigos. Planejamento e releases (6),
+gestão de conhecimento (8) e descoberta de produto (7) somam 21 entre as três — o
+mesmo desequilíbrio da literatura de segunda ordem, e mais acentuado.
