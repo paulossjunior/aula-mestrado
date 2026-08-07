@@ -49,6 +49,16 @@ const nav = [
          no fundo do hover — o rótulo sumia. */
       a:not(.btn) { color: var(--color-accent-700); text-decoration: none; }
       a:not(.btn):hover { color: var(--color-accent-600); text-decoration: underline; }
+
+      /* Hover do botão primário: do acento para a tinta. Fica nas duas cores do
+         design system, em vez de escurecer o vermelho sobre si mesmo, e o contraste
+         do rótulo sobe de 4,2:1 para cerca de 15:1. O seletor inclui `a` para vencer
+         o `.btn-primary:hover` da folha do design system em qualquer ordem de carga. */
+      a.btn-primary:hover,
+      a.btn-primary:focus-visible {
+        background: var(--color-text);
+        color: var(--color-bg);
+      }
       * { box-sizing: border-box; }
       :focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
       html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
