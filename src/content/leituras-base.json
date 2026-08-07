@@ -1,0 +1,518 @@
+{
+  "tronco": [
+    {
+      "titulo": "Large Language Models for Software Engineering: A Systematic Literature Review",
+      "url": "https://arxiv.org/abs/2308.10620",
+      "origem": "estudo secundário, Revisão sistemática (SLR)",
+      "cit": "795 citações",
+      "fwci": "FWCI 116",
+      "momentum": "platô",
+      "foco": "LLMs em tarefas de engenharia de software: aplicações, métodos, avaliação"
+    },
+    {
+      "titulo": "Software Testing with Large Language Models: Survey, Landscape, and Vision",
+      "url": "https://arxiv.org/abs/2307.07221",
+      "origem": "estudo secundário, Survey narrativo · também em TSE 2023, trilha principal",
+      "cit": "430 citações",
+      "fwci": "FWCI 197",
+      "momentum": "desacelerando",
+      "foco": "Uso de LLMs em testes de software, casos de teste e reparo de programas"
+    },
+    {
+      "titulo": "Large Language Models for Software Engineering: Survey and Open Problems",
+      "url": "https://arxiv.org/abs/2310.03533",
+      "origem": "estudo secundário, Survey narrativo",
+      "cit": "386 citações",
+      "fwci": "FWCI 206",
+      "momentum": "desacelerando",
+      "foco": "LLMs em engenharia de software: aplicações transversais e desafios técnicos"
+    },
+    {
+      "titulo": "Self-collaboration Code Generation via ChatGPT",
+      "url": "https://arxiv.org/abs/2304.07590",
+      "origem": "TOSEM 2023, trilha principal, Ferramenta/sistema",
+      "cit": "203 citações",
+      "fwci": "FWCI 47",
+      "momentum": "platô",
+      "foco": "Framework multi-agente para geração colaborativa de código com LLMs"
+    },
+    {
+      "titulo": "LLM-Based Multi-Agent Systems for Software Engineering: Literature Review, Vision and the Road Ahead",
+      "url": "https://arxiv.org/abs/2404.04834",
+      "origem": "estudo secundário, Revisão sistemática (SLR)",
+      "cit": "154 citações",
+      "fwci": "FWCI 292",
+      "momentum": "acelerando",
+      "foco": "Sistemas multi-agente LLM para engenharia de software, ciclo de vida completo"
+    }
+  ],
+  "fases": [
+    {
+      "cod": "F9",
+      "curto": "Descoberta de produto",
+      "nome": "Descoberta de produto e entendimento do problema",
+      "secundarios": [
+        {
+          "titulo": "Empowering Business Transformation: The Positive Impact and Ethical Considerations of Generative AI in Software Product Management — A Systematic Literature Review",
+          "url": "https://arxiv.org/abs/2306.04605",
+          "origem": "Revisão sistemática (SLR)",
+          "cit": "20 citações",
+          "foco": "Generative AI em engenharia de requisitos e desenvolvimento de software"
+        },
+        {
+          "titulo": "Leveraging Encoder-only Large Language Models for Mobile App Review Feature Extraction",
+          "url": "https://arxiv.org/abs/2408.01063",
+          "origem": "Taxonomia/framework",
+          "cit": "6 citações",
+          "fwci": "FWCI 11",
+          "momentum": "acelerando",
+          "foco": "Extração de features de reviews de apps móveis com LLMs encoder-only"
+        }
+      ],
+      "primarios": [
+        {
+          "titulo": "Augmenting Smart Contract Decompiler Output through Fine-grained Dependency Analysis and LLM-facilitated Semantic Recovery",
+          "url": "https://arxiv.org/abs/2501.08670",
+          "origem": "TSE 2025, trilha principal, Ferramenta/sistema",
+          "cit": "4 citações",
+          "fwci": "FWCI 21",
+          "momentum": "platô",
+          "foco": "Decompilação de smart contracts com análise estática e recuperação semântica por LLM"
+        },
+        {
+          "titulo": "A Multi-agent Onboarding Assistant based on Large Language Models, Retrieval Augmented Generation, and Chain-of-Thought",
+          "url": "https://arxiv.org/abs/2503.23421",
+          "origem": "FSE 2025, trilha principal, Ferramenta/sistema",
+          "cit": "5 citações",
+          "fwci": "FWCI 8",
+          "momentum": "desacelerando",
+          "foco": "Assistente multiagente para onboarding com RAG e chain-of-thought"
+        }
+      ]
+    },
+    {
+      "cod": "F1",
+      "curto": "Requisitos",
+      "nome": "Requisitos e especificação",
+      "secundarios": [
+        {
+          "titulo": "Generative AI for Requirements Engineering: A Systematic Literature Review",
+          "url": "https://arxiv.org/abs/2409.06741",
+          "origem": "Revisão sistemática (SLR)",
+          "cit": "26 citações",
+          "fwci": "FWCI 11",
+          "momentum": "acelerando",
+          "foco": "Generative AI aplicada a Engenharia de Requisitos"
+        },
+        {
+          "titulo": "Emotions in Requirements Engineering: A Systematic Mapping Study",
+          "url": "https://arxiv.org/abs/2305.16091",
+          "origem": "Mapeamento sistemático",
+          "cit": "18 citações",
+          "fwci": "FWCI 6",
+          "momentum": "platô",
+          "foco": "Requisitos emocionais em engenharia de requisitos, mapeamento sistemático"
+        }
+      ],
+      "primarios": [
+        {
+          "titulo": "SpecRover: Code Intent Extraction via LLMs",
+          "url": "https://arxiv.org/abs/2408.02232",
+          "origem": "ICSE 2024, trilha principal, Ferramenta/sistema",
+          "cit": "18 citações",
+          "fwci": "FWCI 30",
+          "momentum": "acelerando",
+          "foco": "Agente LLM autônomo para inferência de especificação e reparo de código"
+        },
+        {
+          "titulo": "Empowering Agile-Based Generative Software Development through Human-AI Teamwork",
+          "url": "https://arxiv.org/abs/2407.15568",
+          "origem": "TOSEM 2024, trilha principal, Ferramenta/sistema",
+          "cit": "16 citações",
+          "fwci": "FWCI 32",
+          "momentum": "acelerando",
+          "foco": "Desenvolvimento ágil com requisitos testáveis e colaboração humano-IA"
+        }
+      ]
+    },
+    {
+      "cod": "F2",
+      "curto": "Arquitetura",
+      "nome": "Projeto e arquitetura",
+      "secundarios": [
+        {
+          "titulo": "A Taxonomy of Foundation Model based Systems through the Lens of Software Architecture",
+          "url": "https://arxiv.org/abs/2305.05352",
+          "origem": "Taxonomia/framework",
+          "cit": "9 citações",
+          "fwci": "FWCI 3",
+          "momentum": "acelerando",
+          "foco": "Taxonomia de arquitetura de sistemas baseados em foundation models"
+        },
+        {
+          "titulo": "Domain-Driven Design in Software Development: A Systematic Literature Review on Implementation, Challenges, and Effectiveness",
+          "url": "https://arxiv.org/abs/2310.01905",
+          "origem": "Revisão sistemática (SLR)",
+          "cit": "5 citações",
+          "fwci": "FWCI 3",
+          "momentum": "acelerando",
+          "foco": "Domain-Driven Design aplicado a arquitetura de software e microsserviços"
+        }
+      ],
+      "primarios": [
+        {
+          "titulo": "From Requirements to Architecture: An AI-Based Journey to Semi-Automatically Generate Software Architectures",
+          "url": "https://arxiv.org/abs/2401.14079",
+          "origem": "ICSE 2024, workshop/satélite, Técnica/abordagem",
+          "cit": "18 citações",
+          "fwci": "FWCI 10",
+          "momentum": "desacelerando",
+          "foco": "Geração semi-automática de arquiteturas de software a partir de requisitos"
+        },
+        {
+          "titulo": "Assessing LLMs for Front-end Software Architecture Knowledge",
+          "url": "https://arxiv.org/abs/2502.19518",
+          "origem": "ICSE 2025, workshop/satélite, Benchmark/avaliação",
+          "cit": "5 citações",
+          "fwci": "FWCI 10",
+          "momentum": "acelerando",
+          "foco": "Avaliação de LLMs em compreensão de arquitetura de software"
+        }
+      ]
+    },
+    {
+      "cod": "F3",
+      "curto": "Geração de código",
+      "nome": "Implementação e geração de código",
+      "secundarios": [
+        {
+          "titulo": "A Survey on Large Language Models for Code Generation",
+          "url": "https://arxiv.org/abs/2406.00515",
+          "origem": "Survey narrativo",
+          "cit": "107 citações",
+          "fwci": "FWCI 34",
+          "momentum": "acelerando",
+          "foco": "Geração de código com LLMs: dados, desempenho, aplicações"
+        },
+        {
+          "titulo": "Natural Language Generation and Understanding of Big Code for AI-Assisted Programming: A Review",
+          "url": "https://arxiv.org/abs/2307.02503",
+          "origem": "Survey narrativo",
+          "cit": "123 citações",
+          "fwci": "FWCI 54",
+          "momentum": "desacelerando",
+          "foco": "Geração e compleção de código com LLMs baseados em Big Code"
+        }
+      ],
+      "primarios": [
+        {
+          "titulo": "Large Language Models are Few-Shot Summarizers: Multi-Intent Comment Generation via In-Context Learning",
+          "url": "https://arxiv.org/abs/2304.11384",
+          "origem": "ICSE 2023, trilha principal, Técnica/abordagem",
+          "cit": "135 citações",
+          "fwci": "FWCI 69",
+          "momentum": "desacelerando",
+          "foco": "Geração multi-intenção de comentários de código via LLMs com in-context learning"
+        },
+        {
+          "titulo": "A Survey on LLM-based Code Generation for Low-Resource and Domain-Specific Programming Languages",
+          "url": "https://arxiv.org/abs/2410.03981",
+          "origem": "TOSEM 2024, trilha principal, Estudo secundário",
+          "cit": "41 citações",
+          "fwci": "FWCI 47",
+          "momentum": "acelerando",
+          "foco": "Geração de código com LLMs para linguagens de baixo recurso e domínio-específicas"
+        }
+      ]
+    },
+    {
+      "cod": "F4",
+      "curto": "Verificação",
+      "nome": "Verificação e qualidade",
+      "secundarios": [
+        {
+          "titulo": "Software Testing with Large Language Models: Survey, Landscape, and Vision",
+          "url": "https://arxiv.org/abs/2307.07221",
+          "origem": "Survey narrativo",
+          "cit": "430 citações",
+          "fwci": "FWCI 197",
+          "momentum": "desacelerando",
+          "foco": "Uso de LLMs em testes de software, casos de teste e reparo de programas"
+        },
+        {
+          "titulo": "A Large-Scale Survey on the Usability of AI Programming Assistants: Successes and Challenges",
+          "url": "https://arxiv.org/abs/2303.17125",
+          "origem": "Survey com praticantes + revisão",
+          "cit": "143 citações",
+          "fwci": "FWCI 74",
+          "momentum": "desacelerando",
+          "foco": "Usabilidade de assistentes de programação com IA para desenvolvedores"
+        }
+      ],
+      "primarios": [
+        {
+          "titulo": "Large Language Models for Cyber Security: A Systematic Literature Review",
+          "url": "https://arxiv.org/abs/2405.04760",
+          "origem": "TOSEM 2024, trilha principal, Estudo secundário",
+          "cit": "94 citações",
+          "fwci": "FWCI 12",
+          "momentum": "acelerando",
+          "foco": "Aplicação de LLMs em tarefas de cibersegurança: detecção, análise e resposta"
+        }
+      ]
+    },
+    {
+      "cod": "F5",
+      "curto": "Depuração e reparo",
+      "nome": "Depuração e reparo",
+      "secundarios": [
+        {
+          "titulo": "A Critical Review of Large Language Model on Software Engineering: An Example from ChatGPT and Automated Program Repair",
+          "url": "https://arxiv.org/abs/2310.08879",
+          "origem": "Survey narrativo",
+          "cit": "31 citações",
+          "momentum": "desacelerando",
+          "foco": "Capacidades de ChatGPT em reparo automático de programas"
+        },
+        {
+          "titulo": "A Survey on Automated Program Repair Techniques",
+          "url": "https://arxiv.org/abs/2303.18184",
+          "origem": "Survey narrativo",
+          "cit": "20 citações",
+          "momentum": "desacelerando",
+          "foco": "Técnicas de reparo automático de programas com foco em aprendizado profundo"
+        }
+      ],
+      "primarios": [
+        {
+          "titulo": "Prompting Is All You Need: Automated Android Bug Replay with Large Language Models",
+          "url": "https://arxiv.org/abs/2306.01987",
+          "origem": "ICSE 2023, trilha principal, Ferramenta/sistema",
+          "cit": "154 citações",
+          "fwci": "FWCI 79",
+          "momentum": "crescendo",
+          "foco": "Reprodução automatizada de bugs Android via prompting de LLMs"
+        },
+        {
+          "titulo": "AutoCodeRover: Autonomous Program Improvement",
+          "url": "https://arxiv.org/abs/2404.05427",
+          "origem": "ISSTA 2024, trilha principal, Ferramenta/sistema",
+          "cit": "132 citações",
+          "fwci": "FWCI 37",
+          "momentum": "crescendo",
+          "foco": "Agente LLM com busca de código e localização de falhas para reparo"
+        }
+      ]
+    },
+    {
+      "cod": "F6",
+      "curto": "Manutenção",
+      "nome": "Manutenção, evolução e operação",
+      "secundarios": [
+        {
+          "titulo": "AgentOps: Enabling Observability of LLM Agents",
+          "url": "https://arxiv.org/abs/2411.05285",
+          "origem": "Mapeamento sistemático",
+          "cit": "2 citações",
+          "foco": "Observabilidade e monitoramento de agentes LLM em produção"
+        },
+        {
+          "titulo": "A Survey on Large Language Model Impact on Software Evolvability and Maintainability: the Good, the Bad, the Ugly, and the Remedy",
+          "url": "https://arxiv.org/abs/2601.20879",
+          "origem": "Revisão sistemática (SLR)",
+          "cit": "0 citações",
+          "foco": "Impacto de LLMs na manutenção e evolução de software"
+        }
+      ],
+      "primarios": [
+        {
+          "titulo": "Reducing Cost of LLM Agents with Trajectory Reduction",
+          "url": "https://arxiv.org/abs/2509.23586",
+          "origem": "FSE 2025, trilha principal, Técnica/abordagem",
+          "cit": "1 citação",
+          "fwci": "FWCI 9",
+          "foco": "Redução de trajetória para baixar o custo de agentes de codificação"
+        },
+        {
+          "titulo": "Build Code Needs Maintenance Too: A Study on Refactoring and Technical Debt in Build Systems",
+          "url": "https://arxiv.org/abs/2504.01907",
+          "origem": "MSR 2025, trilha principal, Estudo empírico",
+          "cit": "3 citações",
+          "fwci": "FWCI 6",
+          "foco": "Refatoração e dívida técnica em sistemas de build"
+        }
+      ]
+    },
+    {
+      "cod": "F10",
+      "curto": "Gestão de projeto",
+      "nome": "Planejamento, gestão de projeto e releases",
+      "secundarios": [
+        {
+          "titulo": "RSMM: A Framework to Assess Maturity of Research Software Project",
+          "url": "https://arxiv.org/abs/2406.01788",
+          "origem": "Survey com praticantes + revisão",
+          "cit": "2 citações",
+          "foco": "Framework de maturidade para práticas de sustentabilidade de software de pesquisa"
+        },
+        {
+          "titulo": "A Framework of Critical Success Factors for Agile Software Development",
+          "url": "https://arxiv.org/abs/2602.04467",
+          "origem": "Revisão sistemática (SLR)",
+          "cit": "sem métrica indexada",
+          "foco": "Fatores críticos de sucesso em projetos de desenvolvimento ágil"
+        }
+      ],
+      "primarios": [
+        {
+          "titulo": "Toward Agentic Software Project Management: A Vision and Roadmap",
+          "url": "https://arxiv.org/abs/2601.16392",
+          "origem": "ICSE 2026, workshop/satélite, Visão/posição/roadmap",
+          "cit": "1 citação",
+          "fwci": "FWCI 26",
+          "foco": "Visão e roadmap para gestão ágil de projetos com sistemas multiagentes"
+        },
+        {
+          "titulo": "A Comparative Study of Transformer-based Neural Text Representation Techniques on Bug Triaging",
+          "url": "https://arxiv.org/abs/2310.06913",
+          "origem": "ASE 2023, trilha principal, Estudo empírico",
+          "cit": "11 citações",
+          "fwci": "FWCI 4",
+          "momentum": "platô",
+          "foco": "Triagem automática de bugs com representações textuais transformer"
+        }
+      ]
+    },
+    {
+      "cod": "F11",
+      "curto": "Conhecimento",
+      "nome": "Gestão de conhecimento e documentação viva",
+      "secundarios": [
+        {
+          "titulo": "Large Language Models in Software Documentation and Modeling: A Literature Review and Findings",
+          "url": "https://arxiv.org/abs/2602.04938",
+          "origem": "Survey narrativo",
+          "cit": "sem métrica indexada",
+          "foco": "LLMs para documentação de software e modelagem de sistemas"
+        },
+        {
+          "titulo": "Architecture Knowledge Representation and Communication Industry Survey",
+          "url": "https://arxiv.org/abs/2309.11572",
+          "origem": "Survey com praticantes + revisão",
+          "cit": "sem métrica indexada",
+          "foco": "Representação e comunicação de conhecimento arquitetural"
+        }
+      ],
+      "primarios": [
+        {
+          "titulo": "Using LLMs in Generating Design Rationale for Software Architecture Decisions",
+          "url": "https://arxiv.org/abs/2504.20781",
+          "origem": "TOSEM 2025, trilha principal, Estudo empírico",
+          "cit": "3 citações",
+          "fwci": "FWCI 6",
+          "momentum": "acelerando",
+          "foco": "Geração de design rationale documentado para decisões arquiteturais"
+        },
+        {
+          "titulo": "Towards identifying and minimizing customer-facing documentation debt",
+          "url": "https://arxiv.org/abs/2402.11048",
+          "origem": "ICSE 2024, trilha principal, Estudo empírico",
+          "cit": "4 citações",
+          "fwci": "FWCI 1",
+          "momentum": "platô",
+          "foco": "Identificar defeitos e dívida de documentação voltada ao cliente"
+        }
+      ]
+    },
+    {
+      "cod": "F7",
+      "curto": "Processo transversal",
+      "nome": "Processo transversal e ciclo completo",
+      "secundarios": [
+        {
+          "titulo": "Large Language Models for Software Engineering: A Systematic Literature Review",
+          "url": "https://arxiv.org/abs/2308.10620",
+          "origem": "Revisão sistemática (SLR)",
+          "cit": "795 citações",
+          "fwci": "FWCI 116",
+          "momentum": "platô",
+          "foco": "LLMs em tarefas de engenharia de software: aplicações, métodos, avaliação"
+        },
+        {
+          "titulo": "Large Language Models for Software Engineering: Survey and Open Problems",
+          "url": "https://arxiv.org/abs/2310.03533",
+          "origem": "Survey narrativo",
+          "cit": "386 citações",
+          "fwci": "FWCI 206",
+          "momentum": "desacelerando",
+          "foco": "LLMs em engenharia de software: aplicações transversais e desafios técnicos"
+        }
+      ],
+      "primarios": [
+        {
+          "titulo": "Self-collaboration Code Generation via ChatGPT",
+          "url": "https://arxiv.org/abs/2304.07590",
+          "origem": "TOSEM 2023, trilha principal, Ferramenta/sistema",
+          "cit": "203 citações",
+          "fwci": "FWCI 47",
+          "momentum": "platô",
+          "foco": "Framework multi-agente para geração colaborativa de código com LLMs"
+        }
+      ]
+    },
+    {
+      "cod": "F8",
+      "curto": "Formação",
+      "nome": "Formação e educação em engenharia de software",
+      "secundarios": [
+        {
+          "titulo": "Large Language Models in Computer Science Education: A Systematic Literature Review",
+          "url": "https://arxiv.org/abs/2410.16349",
+          "origem": "Revisão sistemática (SLR)",
+          "cit": "64 citações",
+          "fwci": "FWCI 23",
+          "momentum": "acelerando",
+          "foco": "LLMs para geração e depuração de código em educação em computação"
+        },
+        {
+          "titulo": "Novice Developers' Perspectives on Adopting LLMs for Software Development: A Systematic Literature Review",
+          "url": "https://arxiv.org/abs/2503.07556",
+          "origem": "Revisão sistemática (SLR)",
+          "cit": "2 citações",
+          "fwci": "FWCI 17",
+          "foco": "Adoção de LLMs por desenvolvedores novatos em engenharia de software"
+        }
+      ],
+      "primarios": [
+        {
+          "titulo": "ASE-26: a curriculum for agentic software engineering as a discipline",
+          "url": "https://arxiv.org/abs/2606.01152",
+          "origem": "ASE 2026, workshop/satélite, Visão/posição/roadmap",
+          "cit": "0 citações",
+          "foco": "Currículo para engenharia de software agêntica como disciplina acadêmica"
+        },
+        {
+          "titulo": "Prompt Coach: An Empirical Evaluation of an Agentic Tutor for Learning Prompt Engineering in Software Development",
+          "url": "https://arxiv.org/abs/2607.06074",
+          "origem": "ASE 2026, trilha principal, Ferramenta/sistema",
+          "cit": "sem métrica indexada",
+          "foco": "Tutor agêntico para aprendizado de engenharia de prompts"
+        }
+      ]
+    }
+  ],
+  "caminhos": [
+    {
+      "titulo": "Visão geral rápida",
+      "texto": "Leia o tronco e depois só os estudos secundários de geração de código, verificação e processo transversal — as fases onde está a maior parte da literatura. São treze artigos e cobrem o essencial."
+    },
+    {
+      "titulo": "Escrever trabalho relacionado",
+      "texto": "Leia o estudo secundário da sua fase, seguido dos dois primários dela, e depois o estudo secundário de processo transversal para situar a fase no todo. Descoberta de produto, gestão de projeto e gestão de conhecimento têm pouca síntese disponível: nelas, vá direto aos primários."
+    },
+    {
+      "titulo": "Identificar oportunidade de pesquisa",
+      "texto": "Comece pelas fases com poucos estudos secundários e vários primários: descoberta de produto, planejamento e releases, gestão de conhecimento. A assimetria entre praticar e sintetizar é a oportunidade."
+    }
+  ]
+}

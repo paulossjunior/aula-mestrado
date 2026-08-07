@@ -334,10 +334,17 @@ const estiloFiltro = (i: number, ativo: boolean) =>
             Artigos
           </h2>
         </div>
-        <p style="font-size: 15px; max-width: 44ch; margin: 0; opacity: 0.75">
-          Todos vêm do corpus mapeado na Aula 01. Em vermelho, o núcleo já consolidado por citação;
-          em contorno, a fronteira <em>Agentic</em> de 2025–2026. Todos no arXiv, de acesso aberto.
-        </p>
+        <div>
+          <p style="font-size: 15px; max-width: 44ch; margin: 0; opacity: 0.75">
+            Todos vêm do corpus mapeado na Aula 01. Em vermelho, o núcleo já consolidado por citação;
+            em contorno, a fronteira <em>Agentic</em> de 2025–2026. Todos no arXiv, de acesso aberto.
+          </p>
+          <a
+            href={rota("/leituras")}
+            style="display: inline-block; margin-top: 12px; font-family: var(--font-heading); font-size: 13px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase"
+            >Base de leituras por fase →</a
+          >
+        </div>
       </div>
       <div
         style="display: grid; grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr)); gap: 2px; background: var(--color-divider); border: 2px solid var(--color-text)"

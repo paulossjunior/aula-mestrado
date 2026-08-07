@@ -22,9 +22,10 @@ nenhum arquivo de programação.
 | `/avaliacao` | Composição da nota, os quatro laboratórios, rubrica do artigo final e o modelo de fichamento |
 | `/codebook` | As onze fases do processo de software: escopo, inclusão, exclusão, teste de decisão e exemplos |
 | `/codebook/mapeamento` | O mapeamento do campo: seis tabelas, duas figuras e o corpus navegável |
+| `/leituras` | Base de leituras: o tronco do campo e, por fase, o que ler para entrar nela |
 | `/aulas/01` … `/aulas/17` | Uma página por encontro: roteiro, objetivos, atividade, entrega, leitura e material |
 
-São 22 páginas HTML estáticas. Só duas coisas usam JavaScript — o filtro de unidade
+São 23 páginas HTML estáticas. Só duas coisas usam JavaScript — o filtro de unidade
 no cronograma e o navegador de corpus. Todo o resto funciona com o JS desligado.
 
 ---
@@ -100,6 +101,7 @@ src/content/codebook/           as onze fases e as sete fronteiras de classifica
 src/content/mapeamento/         as seis tabelas do mapeamento do campo
 src/content/bibliografia.json   ids do arXiv + rótulo (Núcleo / Fronteira)
 src/content/avaliacao.json      pesos, laboratórios, rubrica e modelo de fichamento
+src/content/leituras-base.json  a base de leituras: tronco e leituras por fase
 src/content/unidades.json       as três unidades e suas descrições
 src/data/corpus.js              os dois corpora (157 secundários + 106 em sedes)
 
@@ -150,7 +152,7 @@ As duas rodam a mesma bateria de verificação antes de deixar qualquer coisa pa
 1. `npm run check` — tipos e o schema do frontmatter das aulas. Um campo faltando
    ou com o tipo errado reprova aqui.
 2. `npm run build` — o site tem de construir.
-3. **22 páginas** — conta os `index.html` e confere um a um: as cinco páginas fixas
+3. **23 páginas** — conta os `index.html` e confere um a um: as seis páginas fixas
    e as 17 aulas. Se uma sumir, reprova em vez de publicar um 404.
 4. **Assets obrigatórios** — `.nojekyll`, `fichamento.tex`, as duas figuras e a
    folha do design system.

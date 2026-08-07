@@ -1,0 +1,224 @@
+---
+import Base from "../layouts/Base.astro";
+import { rota } from "../lib/url";
+import dados from "../content/leituras-base.json";
+
+// A métrica de cada obra vira uma linha só: citações · FWCI · momentum.
+const metrica = (o: { cit?: string; fwci?: string; momentum?: string }) =>
+  [o.cit, o.fwci, o.momentum].filter(Boolean).join(" · ");
+
+const totalObras =
+  dados.tronco.length +
+  dados.fases.reduce((s, f) => s + f.secundarios.length + f.primarios.length, 0);
+---
+
+<Base
+  titulo="Base de leituras — Dev. de Software com IA"
+  descricao="Ponto de partida de leitura extraído dos dois corpora: o tronco do campo e, para cada uma das onze fases do processo, os estudos secundários que dão o mapa e os trabalhos primários que mostram a prática."
+>
+  <article>
+    <section class="om-pad" style="max-width: 1200px; margin: 0 auto; padding: 36px 32px 0">
+      <a
+        href={rota("/aulas/01")}
+        style="font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase"
+        >← Aula 01</a
+      >
+      <div
+        style="font-size: 13px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700); margin-top: 28px"
+      >
+        Material da Aula 01 · Base de leituras
+      </div>
+      <h1
+        style="font-family: var(--font-heading); font-weight: 900; font-size: clamp(36px, 7vw, 76px); line-height: 0.96; letter-spacing: -0.035em; margin: 14px 0 0; max-width: 18ch; text-wrap: balance"
+      >
+        Por onde começar a ler
+      </h1>
+      <p style="font-size: 18px; line-height: 1.6; max-width: 64ch; margin: 24px 0 0; text-wrap: pretty">
+        Ponto de partida extraído dos dois corpora do projeto: 171 estudos secundários e 321 artigos
+        publicados em sedes de referência. Para cada uma das onze fases do processo, até dois estudos
+        secundários — que dão o mapa da fase — e até dois trabalhos primários — que mostram como ela é
+        praticada.
+      </p>
+      <p style="font-size: 16px; line-height: 1.6; max-width: 64ch; margin: 16px 0 0; opacity: 0.8; text-wrap: pretty">
+        <strong>Isto não é um ranking de qualidade.</strong> O critério combina citações acumuladas,
+        FWCI e aceleração recente, com peso maior para impacto acumulado. As métricas vêm do OpenAlex
+        e faltam para boa parte dos preprints de 2025 e 2026, que ainda não têm indexação madura. Onde
+        se lê <em>sem métrica indexada</em>, isso não significa pouco impacto — significa ausência de
+        registro.
+      </p>
+      <div style="display: flex; gap: 12px; flex-wrap: wrap; margin: 28px 0 40px">
+        <a class="btn btn-primary" href="#fases">Ir para as fases</a>
+        <a class="btn btn-secondary" href={rota("/codebook")}>O codebook das fases</a>
+      </div>
+    </section>
+
+    <!-- O tronco: os de maior impacto acumulado nos dois corpora somados. -->
+    <section style="border-top: 2px solid var(--color-text); background: var(--color-accent); color: #fff">
+      <div class="om-pad om-sec" style="max-width: 1200px; margin: 0 auto; padding: 56px 32px">
+        <h2
+          style="font-family: var(--font-heading); font-weight: 900; font-size: clamp(28px, 5vw, 52px); line-height: 1; letter-spacing: -0.03em; margin: 0; max-width: 24ch; text-wrap: balance"
+        >
+          Se a leitura precisar começar por cinco artigos e nada mais
+        </h2>
+        <p style="font-size: 17px; line-height: 1.6; max-width: 60ch; margin: 18px 0 0">
+          São os trabalhos com maior impacto acumulado nos dois corpora somados. O vocabulário que
+          eles fixaram é usado por quase todo o resto da literatura.
+        </p>
+        <div style="display: grid; gap: 0; margin-top: 36px; border-top: 2px solid rgba(255,255,255,0.45)">
+          {
+            dados.tronco.map((o, i) => (
+              <div
+                class="om-lab"
+                style="display: grid; grid-template-columns: 64px minmax(0, 1fr); gap: 0 28px; padding: 22px 0; border-bottom: 2px solid rgba(255,255,255,0.45)"
+              >
+                <div style="font-family: var(--font-heading); font-weight: 900; font-size: 30px; line-height: 1; letter-spacing: -0.03em; opacity: 0.75">
+                  {String(i + 1).padStart(2, "0")}
+                </div>
+                <div>
+                  <a
+                    href={o.url}
+                    target="_blank"
+                    rel="noopener"
+                    style="font-family: var(--font-heading); font-weight: 800; font-size: clamp(18px, 2.6vw, 23px); line-height: 1.2; letter-spacing: -0.015em; color: #fff; text-wrap: pretty"
+                  >
+                    {o.titulo}
+                  </a>
+                  <div style="font-size: 15px; line-height: 1.5; margin-top: 8px; opacity: 0.9">
+                    {o.foco}
+                  </div>
+                  <div style="font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; margin-top: 10px; opacity: 0.8">
+                    {o.origem} · {metrica(o)}
+                  </div>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- Índice: pular direto para a fase de interesse. -->
+    <section id="fases" style="border-top: 2px solid var(--color-text)">
+      <div class="om-pad om-sec" style="max-width: 1200px; margin: 0 auto; padding: 48px 32px">
+        <h2 style="font-family: var(--font-heading); font-weight: 900; font-size: clamp(26px, 4vw, 40px); letter-spacing: -0.025em; margin: 0 0 8px">
+          Por fase do processo
+        </h2>
+        <p style="font-size: 16px; line-height: 1.6; max-width: 64ch; margin: 0 0 24px; text-wrap: pretty">
+          A ordem segue o ciclo de vida: descoberta do problema, requisitos, arquitetura,
+          implementação, verificação, reparo, manutenção, depois as fases de sustentação e as
+          transversais. Ler na sequência dá a passagem de uma fase à seguinte — que é justamente o que
+          o processo agêntico está reorganizando.
+        </p>
+        <div
+          style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 2px; background: var(--color-divider); border: 2px solid var(--color-text)"
+        >
+          {
+            dados.fases.map((f) => (
+              <a
+                class="om-hover"
+                href={`#${f.cod.toLowerCase()}`}
+                style="background: var(--color-bg); padding: 14px 16px; display: block; color: var(--color-text)"
+              >
+                <div style="font-family: var(--font-heading); font-weight: 800; font-size: 15px; line-height: 1.2; color: var(--color-accent)">
+                  {f.curto}
+                </div>
+                <div style="font-size: 12px; margin-top: 4px; opacity: 0.7">
+                  {f.secundarios.length + f.primarios.length} leituras
+                </div>
+              </a>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    {
+      dados.fases.map((f, iFase) => (
+        <section
+          id={f.cod.toLowerCase()}
+          style={`border-top: 2px solid var(--color-text)${iFase % 2 === 1 ? "; background: var(--color-neutral-100)" : ""}`}
+        >
+          <div class="om-pad om-sec" style="max-width: 1200px; margin: 0 auto; padding: 48px 32px">
+            <h3 style="font-family: var(--font-heading); font-weight: 900; font-size: clamp(24px, 4vw, 34px); line-height: 1.1; letter-spacing: -0.03em; margin: 0; color: var(--color-accent); max-width: 26ch; text-wrap: balance">
+              {f.nome}
+            </h3>
+
+            <div
+              class="om-2col"
+              style="display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 48px; margin-top: 28px; align-items: start"
+            >
+              {[
+                { rotulo: "Para entrar na fase", nota: "estudos secundários — o mapa", itens: f.secundarios },
+                { rotulo: "Trabalho primário de referência", nota: "como a fase é praticada", itens: f.primarios },
+              ].map((bloco) => (
+                <div>
+                  <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-accent-700)">
+                    {bloco.rotulo}
+                  </div>
+                  <div style="font-size: 13px; opacity: 0.6; margin-top: 2px">{bloco.nota}</div>
+                  <div style="border-top: 2px solid var(--color-text); margin-top: 12px">
+                    {bloco.itens.map((o) => (
+                      <div style="padding: 16px 0; border-bottom: 2px solid var(--color-divider)">
+                        <a
+                          href={o.url}
+                          target="_blank"
+                          rel="noopener"
+                          style="font-family: var(--font-heading); font-weight: 700; font-size: 17px; line-height: 1.25; letter-spacing: -0.01em; text-wrap: pretty"
+                        >
+                          {o.titulo}
+                        </a>
+                        <div style="font-size: 15px; line-height: 1.5; margin-top: 6px; opacity: 0.85">
+                          {o.foco}
+                        </div>
+                        <div style="font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-top: 8px; opacity: 0.6">
+                          {o.origem} · {metrica(o)}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      ))
+    }
+
+    <section style="border-top: 2px solid var(--color-text)">
+      <div class="om-pad om-sec" style="max-width: 1200px; margin: 0 auto; padding: 56px 32px">
+        <h2 style="font-family: var(--font-heading); font-weight: 900; font-size: clamp(26px, 4vw, 40px); letter-spacing: -0.025em; margin: 0 0 10px">
+          Como usar esta lista
+        </h2>
+        <p style="font-size: 16px; line-height: 1.6; max-width: 62ch; margin: 0 0 28px; text-wrap: pretty">
+          Três caminhos, dependendo do que você quer fazer com a leitura.
+        </p>
+        <div style="border-top: 2px solid var(--color-text)">
+          {
+            dados.caminhos.map((c) => (
+              <div
+                class="om-lab"
+                style="display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 0 32px; padding: 22px 0; border-bottom: 2px solid var(--color-divider)"
+              >
+                <h3 style="font-family: var(--font-heading); font-weight: 800; font-size: 19px; line-height: 1.2; letter-spacing: -0.015em; margin: 0">
+                  {c.titulo}
+                </h3>
+                <p style="font-size: 16px; line-height: 1.6; margin: 0; max-width: 64ch; text-wrap: pretty">
+                  {c.texto}
+                </p>
+              </div>
+            ))
+          }
+        </div>
+        <p style="font-size: 15px; line-height: 1.6; max-width: 64ch; margin: 28px 0 0; opacity: 0.75; text-wrap: pretty">
+          São {totalObras} indicações ao todo. Os corpora completos, com fase, tipo, métricas e
+          momentum de cada obra, estão no <a href={rota("/codebook/mapeamento")}>mapeamento do campo</a
+          >.
+        </p>
+        <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 32px">
+          <a class="btn btn-primary" href={rota("/aulas/01")}>Voltar para a Aula 01</a>
+          <a class="btn btn-secondary" href={rota("/codebook/mapeamento")}>O mapeamento do campo</a>
+        </div>
+      </div>
+    </section>
+  </article>
+</Base>
