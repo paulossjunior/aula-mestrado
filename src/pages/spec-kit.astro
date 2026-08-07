@@ -1,0 +1,220 @@
+---
+import Base from "../layouts/Base.astro";
+import { rota } from "../lib/url";
+import dados from "../content/spec-kit.json";
+
+const etiqueta =
+  "font-family: var(--font-heading); font-weight: 800; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; padding: 4px 8px; display: inline-block; white-space: nowrap; ";
+const codigo =
+  "font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 15px; font-weight: 700;";
+---
+
+<Base
+  titulo="O fluxo do Spec Kit, etapa por etapa — Dev. de Software com IA"
+  descricao="Cada comando do Spec Kit descrito como a etapa de desenvolvimento de software que ele corresponde: acordos da equipe, especificação de requisitos, arquitetura, backlog, issues, implementação e reconciliação."
+>
+  <article>
+    <section class="om-pad" style="max-width: 1200px; margin: 0 auto; padding: 36px 32px 0">
+      <a
+        href={rota("/aulas/03")}
+        style="font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase"
+        >← Aula 03</a
+      >
+      <div
+        style="font-size: 13px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700); margin-top: 28px"
+      >
+        Material da Aula 03 · Desenvolvimento dirigido por especificação
+      </div>
+      <h1
+        style="font-family: var(--font-heading); font-weight: 900; font-size: clamp(36px, 7vw, 76px); line-height: 0.96; letter-spacing: -0.035em; margin: 14px 0 0; max-width: 18ch; text-wrap: balance"
+      >
+        O fluxo do Spec Kit, etapa por etapa
+      </h1>
+      <p style="font-size: 18px; line-height: 1.6; max-width: 64ch; margin: 24px 0 0; text-wrap: pretty">
+        Nenhum comando do <a href="https://github.com/github/spec-kit" target="_blank" rel="noopener"
+          >Spec Kit</a
+        > inventa uma etapa nova de desenvolvimento. Cada um corresponde a algo que a equipe já faz,
+        com outro nome e em outro lugar — uma reunião, um documento, um quadro de tarefas. O que muda
+        é que a etapa deixa de ser conversa e passa a ser arquivo versionado, que o agente lê antes de
+        escrever qualquer linha.
+      </p>
+      <p style="font-size: 16px; line-height: 1.6; max-width: 64ch; margin: 16px 0 0; opacity: 0.85; text-wrap: pretty">
+        É isso que o repositório chama de <em>inverter o jogo</em>: por décadas a especificação foi
+        andaime, descartado quando o trabalho de verdade — o código — começava. Aqui ela permanece, e
+        o código é derivado dela. <strong>Desvio da especificação é defeito, não escolha.</strong>
+      </p>
+      <div style="display: flex; gap: 12px; flex-wrap: wrap; margin: 28px 0 40px">
+        <a class="btn btn-primary" href="https://github.com/github/spec-kit" target="_blank" rel="noopener"
+          >Repositório do Spec Kit</a
+        >
+        <a class="btn btn-secondary" href={rota("/aulas/03")}>Voltar para a Aula 03</a>
+      </div>
+    </section>
+
+    <section style="border-top: 2px solid var(--color-text)">
+      <div class="om-pad om-sec" style="max-width: 1200px; margin: 0 auto; padding: 48px 32px 24px">
+        <h2 style="font-family: var(--font-heading); font-weight: 900; font-size: clamp(26px, 4vw, 40px); letter-spacing: -0.025em; margin: 0 0 10px">
+          O fluxo núcleo
+        </h2>
+        <p style="font-size: 16px; line-height: 1.6; max-width: 64ch; margin: 0; text-wrap: pretty">
+          Sete comandos, na ordem em que se usam. Cada bloco traz o que o comando faz, que etapa da
+          vida real ele ocupa, o que a equipe decide ali e que arquivo sobra depois.
+        </p>
+      </div>
+    </section>
+
+    {
+      dados.nucleo.map((c, i) => (
+        <section
+          style={`border-top: 2px solid var(--color-divider)${i % 2 === 1 ? "; background: var(--color-neutral-100)" : ""}`}
+        >
+          <div class="om-pad" style="max-width: 1200px; margin: 0 auto; padding: 32px">
+            <div
+              class="om-aula-grid"
+              style="display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: 48px; align-items: start"
+            >
+              <div>
+                <div style="display: flex; gap: 12px; align-items: baseline; flex-wrap: wrap">
+                  <span style="font-family: var(--font-heading); font-weight: 900; font-size: 26px; letter-spacing: -0.03em; color: var(--color-accent); opacity: 0.45">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <code style={codigo + " color: var(--color-accent-700)"}>{c.comando}</code>
+                </div>
+                <h3 style="font-family: var(--font-heading); font-weight: 900; font-size: clamp(22px, 3.4vw, 30px); line-height: 1.1; letter-spacing: -0.025em; margin: 10px 0 0">
+                  {c.etapa}
+                </h3>
+                <p style="font-size: 16px; line-height: 1.6; margin: 14px 0 0; max-width: 64ch; opacity: 0.85">
+                  {c.oQue}
+                </p>
+                <p style="font-size: 17px; line-height: 1.65; margin: 14px 0 0; max-width: 66ch; text-wrap: pretty">
+                  {c.naPratica}
+                </p>
+              </div>
+              <aside>
+                <div style="border-top: 2px solid var(--color-text); padding-top: 14px">
+                  <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.6">
+                    Quem conduz
+                  </div>
+                  <div style="font-family: var(--font-heading); font-weight: 800; font-size: 17px; margin-top: 4px">
+                    {c.papel}
+                  </div>
+                </div>
+                <div style="border-top: 2px solid var(--color-divider); padding-top: 14px; margin-top: 18px">
+                  <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.6">
+                    O que fica versionado
+                  </div>
+                  <code style={codigo + " display: block; margin-top: 6px; font-size: 14px; line-height: 1.4; word-break: break-word"}>
+                    {c.produz}
+                  </code>
+                </div>
+              </aside>
+            </div>
+          </div>
+        </section>
+      ))
+    }
+
+    <section style="border-top: 2px solid var(--color-text)">
+      <div class="om-pad om-sec" style="max-width: 1200px; margin: 0 auto; padding: 48px 32px">
+        <h2 style="font-family: var(--font-heading); font-weight: 900; font-size: clamp(26px, 4vw, 40px); letter-spacing: -0.025em; margin: 0 0 10px">
+          Os três de qualidade
+        </h2>
+        <p style="font-size: 16px; line-height: 1.6; max-width: 64ch; margin: 0 0 28px; text-wrap: pretty">
+          Opcionais no fluxo, obrigatórios em qualquer projeto que se leve a sério. Todos atacam o
+          mesmo problema: defeito de especificação custa muito mais quando descoberto no código.
+        </p>
+        <div style="border-top: 2px solid var(--color-text)">
+          {
+            dados.opcionais.map((c) => (
+              <div style="padding: 24px 0; border-bottom: 2px solid var(--color-divider)">
+                <div style="display: flex; gap: 12px; align-items: baseline; flex-wrap: wrap">
+                  <code style={codigo + " color: var(--color-accent-700)"}>{c.comando}</code>
+                  <span style={etiqueta + "background: transparent; color: var(--color-text); box-shadow: inset 0 0 0 2px var(--color-divider)"}>
+                    {c.quando}
+                  </span>
+                </div>
+                <h3 style="font-family: var(--font-heading); font-weight: 800; font-size: 21px; line-height: 1.2; letter-spacing: -0.015em; margin: 10px 0 0">
+                  {c.etapa}
+                </h3>
+                <p style="font-size: 15px; line-height: 1.55; margin: 8px 0 0; max-width: 66ch; opacity: 0.8">
+                  {c.oQue}
+                </p>
+                <p style="font-size: 16px; line-height: 1.6; margin: 10px 0 0; max-width: 66ch; text-wrap: pretty">
+                  {c.naPratica}
+                </p>
+                <div style="font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.55; margin-top: 10px">
+                  Produz: {c.produz}
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section style="border-top: 2px solid var(--color-text); background: var(--color-accent); color: #fff">
+      <div class="om-pad om-sec" style="max-width: 1200px; margin: 0 auto; padding: 56px 32px">
+        <h2
+          style="font-family: var(--font-heading); font-weight: 900; font-size: clamp(28px, 5vw, 48px); line-height: 1; letter-spacing: -0.03em; margin: 0; max-width: 26ch; text-wrap: balance"
+        >
+          O mesmo ciclo do Design Science Research, em escala de software
+        </h2>
+        <p style="font-size: 17px; line-height: 1.6; max-width: 62ch; margin: 18px 0 0">
+          Não é coincidência que as duas metades da Aula 03 caibam juntas. O que o DSR faz com um
+          artefato de pesquisa, o desenvolvimento dirigido por especificação faz com um artefato de
+          software — os passos são os mesmos, e mudam de nome.
+        </p>
+        <div style="margin-top: 36px; border-top: 2px solid rgba(255,255,255,0.45)">
+          {
+            dados.correspondencia.map((c) => (
+              <div
+                class="om-lab"
+                style="display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 0 32px; padding: 20px 0; border-bottom: 2px solid rgba(255,255,255,0.45)"
+              >
+                <div>
+                  <div style="font-family: var(--font-heading); font-weight: 800; font-size: 19px; line-height: 1.2; letter-spacing: -0.015em">
+                    {c.dsr}
+                  </div>
+                  <code style={codigo + " font-size: 13px; opacity: 0.85; display: block; margin-top: 6px"}>
+                    {c.sdd}
+                  </code>
+                </div>
+                <p style="font-size: 16px; line-height: 1.6; margin: 0; max-width: 62ch; text-wrap: pretty">
+                  {c.nota}
+                </p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section style="border-top: 2px solid var(--color-text)">
+      <div class="om-pad om-sec" style="max-width: 1200px; margin: 0 auto; padding: 48px 32px">
+        <h2 style="font-family: var(--font-heading); font-weight: 900; font-size: clamp(24px, 4vw, 34px); letter-spacing: -0.025em; margin: 0 0 12px">
+          Este site foi construído assim
+        </h2>
+        <p style="font-size: 16px; line-height: 1.65; max-width: 66ch; margin: 0 0 24px; text-wrap: pretty">
+          O exemplo mais próximo está aqui mesmo. A constituição do projeto, a especificação, o plano
+          e as tarefas estão versionados no repositório, e o que você está lendo é o resultado da
+          execução deles. Leia a spec e navegue o site: dá para conferir requisito por requisito.
+        </p>
+        <div style="display: flex; gap: 12px; flex-wrap: wrap">
+          <a
+            class="btn btn-primary"
+            href="https://github.com/paulossjunior/aula-mestrado/tree/main/specs/001-site-estatico-astro"
+            target="_blank"
+            rel="noopener">A especificação deste site</a
+          >
+          <a
+            class="btn btn-secondary"
+            href="https://github.com/paulossjunior/aula-mestrado/blob/main/.specify/memory/constitution.md"
+            target="_blank"
+            rel="noopener">A constituição</a
+          >
+          <a class="btn btn-secondary" href={rota("/aulas/03")}>Aula 03</a>
+        </div>
+      </div>
+    </section>
+  </article>
+</Base>

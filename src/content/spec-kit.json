@@ -1,0 +1,93 @@
+{
+  "nucleo": [
+    {
+      "comando": "/speckit.constitution",
+      "etapa": "Acordos da equipe",
+      "oQue": "Cria ou atualiza os princípios que governam o projeto e as diretrizes de desenvolvimento.",
+      "naPratica": "É a reunião em que a equipe combina como vai trabalhar, antes de haver qualquer requisito. Aqui se decide que todo código nasce de um teste que falha, que nenhuma issue entra sem estar classificada em Epic, User Story ou Task, que nenhum pull request é fechado sem revisão de um par, que commit segue Conventional Commits, e que dívida técnica declarada vale mais que dívida escondida. O que entra aqui não se renegocia a cada sprint — é o que se cobra quando alguém pergunta \"por que não fizemos assim?\".",
+      "produz": ".specify/memory/constitution.md",
+      "papel": "Tech lead com a equipe"
+    },
+    {
+      "comando": "/speckit.specify",
+      "etapa": "Especificação de requisitos",
+      "oQue": "Define o que se quer construir: requisitos e histórias de usuário.",
+      "naPratica": "É o documento de requisitos, ou o conjunto de casos de uso. Descreve o comportamento pelo lado de quem usa — quem faz, o que espera, o que acontece quando dá errado — e cada história vem com critérios de aceite verificáveis. Não fala em banco, framework ou endpoint: se a frase muda quando a equipe troca de tecnologia, ela está no arquivo errado.",
+      "produz": "specs/NNN-nome/spec.md",
+      "papel": "Analista de requisitos com o cliente"
+    },
+    {
+      "comando": "/speckit.plan",
+      "etapa": "Arquitetura e plano técnico",
+      "oQue": "Cria o plano de implementação com a pilha de tecnologia escolhida.",
+      "naPratica": "É o documento de design técnico, com as decisões de arquitetura e o porquê de cada uma. Aqui entram a stack, o modelo de dados, os contratos entre componentes, o que é síncrono e o que é fila, e os riscos conhecidos. É onde as decisões que um ADR registraria ficam explícitas antes de virarem código — inclusive as recusadas, com a razão.",
+      "produz": "specs/NNN-nome/plan.md",
+      "papel": "Arquiteto de software"
+    },
+    {
+      "comando": "/speckit.tasks",
+      "etapa": "Decomposição e backlog",
+      "oQue": "Gera a lista de tarefas executáveis para implementar o plano.",
+      "naPratica": "É o planejamento da sprint: quebrar o plano em tarefas pequenas o bastante para caber num dia, ordenadas por dependência, cada uma apontando o arquivo que vai tocar. Uma tarefa que ninguém sabe estimar é sinal de que o plano ainda está grosso demais e precisa voltar um passo.",
+      "produz": "specs/NNN-nome/tasks.md",
+      "papel": "Equipe no planejamento"
+    },
+    {
+      "comando": "/speckit.taskstoissues",
+      "etapa": "Abertura das issues no rastreador",
+      "oQue": "Converte a lista de tarefas em issues do GitHub, para acompanhamento e execução.",
+      "naPratica": "É passar o backlog para a ferramenta onde o trabalho é acompanhado, respeitando o padrão que a constituição fixou: Epic para o objetivo, User Story para o comportamento entregue, Task para o passo técnico. É aqui que o plano deixa de ser documento e vira trabalho atribuível, com responsável e prazo.",
+      "produz": "Issues no repositório, ligadas às tarefas",
+      "papel": "Gestão do projeto"
+    },
+    {
+      "comando": "/speckit.implement",
+      "etapa": "Implementação",
+      "oQue": "Executa todas as tarefas para construir a funcionalidade conforme o plano.",
+      "naPratica": "É a codificação propriamente dita, percorrendo o backlog na ordem. Se a constituição diz TDD, cada tarefa começa pelo teste que falha. A diferença para o desenvolvimento comum é que a fonte da verdade não é a memória de quem escreve: é a especificação, e o desvio dela é defeito, não escolha.",
+      "produz": "Código, testes e commits",
+      "papel": "Desenvolvimento"
+    },
+    {
+      "comando": "/speckit.converge",
+      "etapa": "Reconciliação com o código existente",
+      "oQue": "Avalia o código contra a especificação, o plano e as tarefas, e acrescenta o que falta como tarefas novas.",
+      "naPratica": "É a auditoria que responde \"o que a gente disse que ia fazer e não fez?\". Serve quando a implementação andou fora do fluxo, quando código legado precisa ser trazido para dentro da especificação, ou antes de declarar uma entrega pronta. O que ela encontra volta para o backlog em vez de virar comentário perdido em reunião.",
+      "produz": "Tarefas novas em tasks.md",
+      "papel": "Revisão de entrega"
+    }
+  ],
+  "opcionais": [
+    {
+      "comando": "/speckit.clarify",
+      "etapa": "Refinamento de requisitos",
+      "oQue": "Identifica áreas mal especificadas e faz até cinco perguntas dirigidas, gravando as respostas de volta na especificação.",
+      "naPratica": "É a reunião de refinamento com o cliente, antes de a arquitetura ser decidida. Existe porque requisito ambíguo não falha na especificação — falha três semanas depois, no código. Rodar antes do plano é mais barato que descobrir depois.",
+      "produz": "spec.md revisado",
+      "quando": "Antes de /speckit.plan"
+    },
+    {
+      "comando": "/speckit.analyze",
+      "etapa": "Rastreabilidade e revisão cruzada",
+      "oQue": "Analisa consistência e cobertura entre especificação, plano e tarefas.",
+      "naPratica": "É a matriz de rastreabilidade que ninguém gosta de manter à mão: todo requisito tem tarefa? Toda tarefa serve a algum requisito? Existe decisão no plano que a especificação não pediu? Aponta o requisito órfão e a tarefa que não responde a ninguém.",
+      "produz": "Relatório de inconsistências",
+      "quando": "Depois de /speckit.tasks, antes de /speckit.implement"
+    },
+    {
+      "comando": "/speckit.checklist",
+      "etapa": "Critérios de qualidade da especificação",
+      "oQue": "Gera listas de verificação que validam se os requisitos estão completos, claros e consistentes.",
+      "naPratica": "O README chama isso de \"testes unitários para o inglês\", e a analogia é exata: assim como o teste verifica o código, a checklist verifica o texto do requisito. É a definição de pronto aplicada à especificação, não à entrega.",
+      "produz": "Checklist por funcionalidade",
+      "quando": "Junto da especificação"
+    }
+  ],
+  "correspondencia": [
+    { "dsr": "Explicitar o problema", "sdd": "constitution + specify", "nota": "O problema de campo e as regras sob as quais ele será atacado." },
+    { "dsr": "Definir requisitos", "sdd": "specify + clarify", "nota": "Requisitos do artefato, com critério de aceite verificável." },
+    { "dsr": "Projetar e desenvolver", "sdd": "plan + tasks + implement", "nota": "Da decisão de arquitetura ao código que a realiza." },
+    { "dsr": "Demonstrar", "sdd": "implement + publicação", "nota": "O artefato existindo e sendo usado — não rodando só na máquina de quem escreveu." },
+    { "dsr": "Avaliar", "sdd": "analyze + checklist + converge", "nota": "Confronto entre o que foi prometido e o que existe." }
+  ]
+}

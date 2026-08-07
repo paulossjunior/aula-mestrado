@@ -39,9 +39,9 @@ jobs:
         run: |
           total=$(find dist -name index.html | wc -l | tr -d ' ')
           echo "páginas geradas: $total"
-          test "$total" -eq 23 || { echo "esperava 23 páginas, encontrei $total"; exit 1; }
+          test "$total" -eq 24 || { echo "esperava 24 páginas, encontrei $total"; exit 1; }
           for p in dist/index.html dist/conteudo/index.html dist/avaliacao/index.html \
-                   dist/leituras/index.html \
+                   dist/leituras/index.html dist/spec-kit/index.html \
                    dist/codebook/index.html dist/codebook/mapeamento/index.html; do
             test -f "$p" || { echo "faltou $p"; exit 1; }
           done
