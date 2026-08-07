@@ -186,9 +186,13 @@ Dois detalhes que não são óbvios:
   03 dez) é apresentação de trabalho e debate.
 - **Provisório, a substituir pelo plano de ensino real:** pesos da avaliação
   (20/30/50), enunciados dos quatro laboratórios e os títulos das aulas 02–17.
-- **Defasado:** `/codebook/mapeamento` ainda usa o recorte de 157/106 sob o esquema
-  de 8 fases; o codebook já está em 11 fases, 171/129. Há um aviso visível na própria
-  página. Atualizar quando os novos CSV existirem em `fontes/`.
+- **Parcialmente defasado:** o codebook e as **tabelas** do mapeamento já estão no
+  recorte atual — 11 fases, 171 estudos secundários e 129 artigos em sedes. Ainda
+  vêm do recorte anterior (157/106, 8 fases) as **duas figuras PNG** e o **corpus
+  navegável**, porque dependem dos CSV em `fontes/`, que continuam na versão antiga.
+  A própria página marca o que é o quê. Para atualizar: substitua
+  `fontes/corpus_secundarios_es_ia.csv` e `fontes/corpus_sedes_es.csv`, regere
+  `src/data/corpus.js` a partir deles e troque as figuras em `public/uploads/`.
 
 ---
 
