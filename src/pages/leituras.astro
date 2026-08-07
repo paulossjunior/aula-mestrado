@@ -7,6 +7,37 @@ import dados from "../content/leituras-base.json";
 const metrica = (o: { cit?: string; fwci?: string; momentum?: string }) =>
   [o.cit, o.fwci, o.momentum].filter(Boolean).join(" · ");
 
+// Procedência: trilha e tipo do estudo, sem repetir a sede que já vira etiqueta.
+const procedencia = (o: { trilha: string; tipo: string }) =>
+  [o.trilha, o.tipo].filter(Boolean).join(" · ");
+
+// Etiqueta da sede. Sede revisada por pares recebe o acento; preprint fica em
+// contorno, porque não passou por revisão.
+const etiquetaSede = (sede: string, sobreAcento = false) => {
+  const base =
+    "font-family: var(--font-heading); font-weight: 800; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; padding: 4px 8px; display: inline-block; white-space: nowrap; ";
+  if (sede === "arXiv") {
+    return (
+      base +
+      (sobreAcento
+        ? "background: transparent; color: #fff; box-shadow: inset 0 0 0 2px rgba(255,255,255,0.6)"
+        : "background: transparent; color: var(--color-text); box-shadow: inset 0 0 0 2px var(--color-divider)")
+    );
+  }
+  return (
+    base +
+    (sobreAcento
+      ? "background: #fff; color: var(--color-accent)"
+      : "background: var(--color-accent); color: #fff")
+  );
+};
+
+// Quantas indicações vieram de sede revisada por pares.
+const comSede = [
+  ...dados.tronco,
+  ...dados.fases.flatMap((f) => [...f.secundarios, ...f.primarios]),
+].filter((o) => o.sede !== "arXiv").length;
+
 const totalObras =
   dados.tronco.length +
   dados.fases.reduce((s, f) => s + f.secundarios.length + f.primarios.length, 0);
@@ -46,6 +77,21 @@ const totalObras =
         se lê <em>sem métrica indexada</em>, isso não significa pouco impacto — significa ausência de
         registro.
       </p>
+      <div
+        style="border: 2px solid var(--color-text); padding: 18px 20px; max-width: 64ch; margin: 24px 0 0; background: var(--color-neutral-100)"
+      >
+        <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-accent-700)">
+          Onde cada trabalho saiu
+        </div>
+        <p style="font-size: 15px; line-height: 1.6; margin: 10px 0 0; text-wrap: pretty">
+          Cada indicação abre com a sede de publicação. <span style={etiquetaSede("ICSE 2024")}
+            >sede</span
+          > em vermelho é conferência ou periódico revisado por pares — ICSE, FSE, ASE, ISSTA, MSR,
+          ICSME, SANER, TSE, TOSEM. <span style={etiquetaSede("arXiv")}>arXiv</span> em contorno é
+          preprint sem sede confirmada no corpus, o que vale para boa parte dos estudos secundários.
+          Dos {totalObras} trabalhos, {comSede} saíram em sede revisada por pares.
+        </p>
+      </div>
       <div style="display: flex; gap: 12px; flex-wrap: wrap; margin: 28px 0 40px">
         <a class="btn btn-primary" href="#fases">Ir para as fases</a>
         <a class="btn btn-secondary" href={rota("/codebook")}>O codebook das fases</a>
@@ -75,6 +121,12 @@ const totalObras =
                   {String(i + 1).padStart(2, "0")}
                 </div>
                 <div>
+                  <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin-bottom: 10px">
+                    <span style={etiquetaSede(o.sede, true)}>{o.sede}</span>
+                    <span style="font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.85">
+                      {procedencia(o)}
+                    </span>
+                  </div>
                   <a
                     href={o.url}
                     target="_blank"
@@ -87,7 +139,7 @@ const totalObras =
                     {o.foco}
                   </div>
                   <div style="font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; margin-top: 10px; opacity: 0.8">
-                    {o.origem} · {metrica(o)}
+                    arXiv:{o.arxiv} · {metrica(o)}
                   </div>
                 </div>
               </div>
@@ -159,6 +211,12 @@ const totalObras =
                   <div style="border-top: 2px solid var(--color-text); margin-top: 12px">
                     {bloco.itens.map((o) => (
                       <div style="padding: 16px 0; border-bottom: 2px solid var(--color-divider)">
+                        <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin-bottom: 8px">
+                          <span style={etiquetaSede(o.sede)}>{o.sede}</span>
+                          <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.55">
+                            {procedencia(o)}
+                          </span>
+                        </div>
                         <a
                           href={o.url}
                           target="_blank"
@@ -171,7 +229,7 @@ const totalObras =
                           {o.foco}
                         </div>
                         <div style="font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-top: 8px; opacity: 0.6">
-                          {o.origem} · {metrica(o)}
+                          arXiv:{o.arxiv} · {metrica(o)}
                         </div>
                       </div>
                     ))}
