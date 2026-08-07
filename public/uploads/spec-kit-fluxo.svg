@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1180 692" width="1180" height="692" role="img" aria-label="Fluxo dos comandos do Spec Kit: a constituição governa todas as etapas; specify, plan, tasks, taskstoissues e implement formam a linha principal; clarify, checklist e analyze entram como verificação; converge devolve ao backlog o que ficou faltando">
+<rect width="1180" height="692" fill="#f3f2f2"/>
+<defs><marker id="seta" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#201e1d"/></marker></defs>
+<rect x="40" y="56" width="1100" height="76" fill="#ec3013"/>
+<text x="58" y="86" font-family="ui-monospace, Menlo, monospace" font-size="16" font-weight="700" fill="#fff">/speckit.constitution</text>
+<text x="58" y="110" font-family="Archivo, system-ui, sans-serif" font-size="14" font-weight="700" fill="#fff">Acordos da equipe — vale para todas as etapas abaixo</text>
+<rect x="40" y="210" width="196" height="76" fill="#f3f2f2" stroke="#201e1d" stroke-width="2"/>
+<text x="54" y="239" font-family="ui-monospace, Menlo, monospace" font-size="15" font-weight="700" fill="#ec3013">specify</text>
+<text x="54" y="260" font-family="Archivo, system-ui, sans-serif" font-size="13.5" font-weight="700" fill="#201e1d">Especificação de</text>
+<text x="54" y="277" font-family="Archivo, system-ui, sans-serif" font-size="13.5" font-weight="700" fill="#201e1d">requisitos</text>
+<rect x="266" y="210" width="196" height="76" fill="#f3f2f2" stroke="#201e1d" stroke-width="2"/>
+<text x="280" y="239" font-family="ui-monospace, Menlo, monospace" font-size="15" font-weight="700" fill="#ec3013">plan</text>
+<text x="280" y="260" font-family="Archivo, system-ui, sans-serif" font-size="13.5" font-weight="700" fill="#201e1d">Arquitetura e plano</text>
+<text x="280" y="277" font-family="Archivo, system-ui, sans-serif" font-size="13.5" font-weight="700" fill="#201e1d">técnico</text>
+<line x1="240" y1="248" x2="260" y2="248" stroke="#201e1d" stroke-width="2" marker-end="url(#seta)"/>
+<rect x="492" y="210" width="196" height="76" fill="#f3f2f2" stroke="#201e1d" stroke-width="2"/>
+<text x="506" y="239" font-family="ui-monospace, Menlo, monospace" font-size="15" font-weight="700" fill="#ec3013">tasks</text>
+<text x="506" y="260" font-family="Archivo, system-ui, sans-serif" font-size="13.5" font-weight="700" fill="#201e1d">Decomposição e backlog</text>
+<line x1="466" y1="248" x2="486" y2="248" stroke="#201e1d" stroke-width="2" marker-end="url(#seta)"/>
+<rect x="718" y="210" width="196" height="76" fill="#f3f2f2" stroke="#201e1d" stroke-width="2"/>
+<text x="732" y="239" font-family="ui-monospace, Menlo, monospace" font-size="15" font-weight="700" fill="#ec3013">taskstoissues</text>
+<text x="732" y="260" font-family="Archivo, system-ui, sans-serif" font-size="13.5" font-weight="700" fill="#201e1d">Abertura das issues no</text>
+<text x="732" y="277" font-family="Archivo, system-ui, sans-serif" font-size="13.5" font-weight="700" fill="#201e1d">rastreador</text>
+<line x1="692" y1="248" x2="712" y2="248" stroke="#201e1d" stroke-width="2" marker-end="url(#seta)"/>
+<rect x="944" y="210" width="196" height="76" fill="#f3f2f2" stroke="#201e1d" stroke-width="2"/>
+<text x="958" y="239" font-family="ui-monospace, Menlo, monospace" font-size="15" font-weight="700" fill="#ec3013">implement</text>
+<text x="958" y="260" font-family="Archivo, system-ui, sans-serif" font-size="13.5" font-weight="700" fill="#201e1d">Implementação</text>
+<line x1="918" y1="248" x2="938" y2="248" stroke="#201e1d" stroke-width="2" marker-end="url(#seta)"/>
+<line x1="590" y1="136" x2="590" y2="202" stroke="#201e1d" stroke-width="2" marker-end="url(#seta)"/>
+<rect x="40" y="372" width="196" height="76" fill="#f3f2f2" stroke="#201e1d" stroke-width="2"/>
+<text x="54" y="401" font-family="ui-monospace, Menlo, monospace" font-size="15" font-weight="700" fill="#ec3013">clarify</text>
+<text x="54" y="422" font-family="Archivo, system-ui, sans-serif" font-size="13.5" font-weight="700" fill="#201e1d">Refinamento de requisitos</text>
+<line x1="138" y1="366" x2="138" y2="292" stroke="#201e1d" stroke-width="2" marker-end="url(#seta)" stroke-dasharray="6 5"/>
+<rect x="492" y="372" width="196" height="76" fill="#f3f2f2" stroke="#201e1d" stroke-width="2"/>
+<text x="506" y="401" font-family="ui-monospace, Menlo, monospace" font-size="15" font-weight="700" fill="#ec3013">analyze</text>
+<text x="506" y="422" font-family="Archivo, system-ui, sans-serif" font-size="13.5" font-weight="700" fill="#201e1d">Rastreabilidade e revisão</text>
+<text x="506" y="439" font-family="Archivo, system-ui, sans-serif" font-size="13.5" font-weight="700" fill="#201e1d">cruzada</text>
+<line x1="590" y1="366" x2="590" y2="292" stroke="#201e1d" stroke-width="2" marker-end="url(#seta)" stroke-dasharray="6 5"/>
+<rect x="266" y="372" width="196" height="76" fill="#f3f2f2" stroke="#201e1d" stroke-width="2"/>
+<text x="280" y="401" font-family="ui-monospace, Menlo, monospace" font-size="15" font-weight="700" fill="#ec3013">checklist</text>
+<text x="280" y="422" font-family="Archivo, system-ui, sans-serif" font-size="13.5" font-weight="700" fill="#201e1d">Qualidade da especificação</text>
+<line x1="364" y1="366" x2="364" y2="292" stroke="#201e1d" stroke-width="2" marker-end="url(#seta)" stroke-dasharray="6 5"/>
+<text x="40" y="346" font-family="Archivo, system-ui, sans-serif" font-size="12.5" font-weight="700" fill="#201e1d" fill-opacity="0.6" letter-spacing="1">VERIFICAÇÃO — OPCIONAL NO FLUXO, NÃO NA PRÁTICA</text>
+<rect x="944" y="520" width="196" height="76" fill="#ec3013" stroke="#201e1d" stroke-width="2"/>
+<text x="958" y="549" font-family="ui-monospace, Menlo, monospace" font-size="15" font-weight="700" fill="#fff">converge</text>
+<text x="958" y="570" font-family="Archivo, system-ui, sans-serif" font-size="13.5" font-weight="700" fill="#fff">Reconciliação com o código</text>
+<text x="958" y="587" font-family="Archivo, system-ui, sans-serif" font-size="13.5" font-weight="700" fill="#fff">existente</text>
+<line x1="1042" y1="292" x2="1042" y2="512" stroke="#201e1d" stroke-width="2" marker-end="url(#seta)"/>
+<path d="M 944 558 H 922 V 630 H 590 V 294" fill="none" stroke="#201e1d" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#seta)"/>
+<text x="602" y="622" font-family="Archivo, system-ui, sans-serif" font-size="12.5" font-weight="700" fill="#201e1d" fill-opacity="0.7">o que faltou volta como tarefa nova</text>
+</svg>

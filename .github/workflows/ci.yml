@@ -56,6 +56,7 @@ jobs:
           for a in dist/.nojekyll dist/fichamento.tex \
                    dist/uploads/mapa_secundarios_fase_ano.svg \
                    dist/uploads/sedes_fase_heatmap.svg \
+                   dist/uploads/spec-kit-fluxo.svg \
                    dist/_ds/modernist-a03d4a61-8041-48c5-a776-4257fca7a731/styles.css; do
             test -f "$a" || { echo "faltou $a"; exit 1; }
           done

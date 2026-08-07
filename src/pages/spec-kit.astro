@@ -52,6 +52,31 @@ const codigo =
     </section>
 
     <section style="border-top: 2px solid var(--color-text)">
+      <div class="om-pad om-sec" style="max-width: 1200px; margin: 0 auto; padding: 48px 32px">
+        <h2 style="font-family: var(--font-heading); font-weight: 900; font-size: clamp(26px, 4vw, 40px); letter-spacing: -0.025em; margin: 0 0 20px">
+          O fluxo inteiro numa figura
+        </h2>
+        {/* A figura é gerada do mesmo JSON desta página, por scripts/gerar-figuras.mjs:
+            nome e ordem dos comandos não podem divergir do texto abaixo. */}
+        <figure class="om-scroll" style="margin: 0; border: 2px solid var(--color-text)">
+          <img
+            src={rota("/uploads/spec-kit-fluxo.svg")}
+            alt="Fluxo dos comandos do Spec Kit. A constituição governa todas as etapas. A linha principal vai de specify a plan, tasks, taskstoissues e implement. Clarify e checklist entram antes do plano; analyze entre as tarefas e a implementação. Converge devolve ao backlog o que ficou faltando."
+            style="display: block; width: 100%; min-width: 900px; height: auto"
+            loading="lazy"
+          />
+        </figure>
+        <figcaption
+          style="font-size: 13px; line-height: 1.5; padding: 12px 0 0; opacity: 0.75; max-width: 74ch"
+        >
+          Linha cheia é o caminho obrigatório; linha tracejada é verificação, que entra no ponto em
+          que ainda dá tempo de corrigir barato. A faixa vermelha no topo vale para tudo o que vem
+          abaixo — nenhuma etapa negocia o que a constituição já fixou.
+        </figcaption>
+      </div>
+    </section>
+
+    <section style="border-top: 2px solid var(--color-text)">
       <div class="om-pad om-sec" style="max-width: 1200px; margin: 0 auto; padding: 48px 32px 24px">
         <h2 style="font-family: var(--font-heading); font-weight: 900; font-size: clamp(26px, 4vw, 40px); letter-spacing: -0.025em; margin: 0 0 10px">
           O fluxo núcleo
@@ -140,7 +165,7 @@ const codigo =
                   <div>
                     <div style="display: flex; gap: 12px; align-items: baseline; flex-wrap: wrap">
                       <code style={codigo + " color: var(--color-accent-700)"}>{c.comando}</code>
-                      <span style={etiqueta + "background: transparent; color: var(--color-text); box-shadow: inset 0 0 0 2px var(--color-divider)"}>
+                      <span style={etiqueta + "white-space: normal; background: transparent; color: var(--color-text); box-shadow: inset 0 0 0 2px var(--color-divider)"}>
                         {c.quando}
                       </span>
                     </div>

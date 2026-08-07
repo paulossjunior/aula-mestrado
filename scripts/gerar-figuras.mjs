@@ -216,3 +216,97 @@ const alvoH = resolve(raiz, "public/uploads/sedes_fase_heatmap.svg");
 writeFileSync(alvoH, h.join("\n") + "\n");
 console.log("escrito public/uploads/sedes_fase_heatmap.svg");
 console.log(`  ${sedes.sedes.length} sedes × ${sedes.fases.length} fases · maior célula = ${maxCel} · total ${sedes.total}`);
+
+// ---------------------------------------------------------------------------
+// Terceira figura: o fluxo do Spec Kit. Sai do mesmo JSON que a página usa,
+// então nome e ordem dos comandos nunca divergem do texto.
+// ---------------------------------------------------------------------------
+const sk = ler("src/content/spec-kit.json");
+
+const espinha = sk.nucleo.filter((c) => c.comando !== "/speckit.constitution" && c.comando !== "/speckit.converge");
+const constituicao = sk.nucleo.find((c) => c.comando === "/speckit.constitution");
+const converge = sk.nucleo.find((c) => c.comando === "/speckit.converge");
+const curto = (c) => c.comando.replace("/speckit.", "");
+
+const F_PAD = 40;
+const CX_L = 196;   // largura da caixa
+const CX_A = 76;    // altura da caixa
+const GAP = 30;
+const F_L = F_PAD * 2 + espinha.length * CX_L + (espinha.length - 1) * GAP;
+
+const Y_CONST = 56;
+const Y_ESPINHA = 210;
+const Y_QUAL = 372;
+const Y_CONV = 520;
+const F_A = Y_CONV + CX_A + 96;
+
+const f = [
+  `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${F_L} ${F_A}" width="${F_L}" height="${F_A}" role="img" aria-label="Fluxo dos comandos do Spec Kit: a constituição governa todas as etapas; specify, plan, tasks, taskstoissues e implement formam a linha principal; clarify, checklist e analyze entram como verificação; converge devolve ao backlog o que ficou faltando">`,
+  `<rect width="${F_L}" height="${F_A}" fill="${BG}"/>`,
+  `<defs><marker id="seta" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="${INK}"/></marker></defs>`,
+];
+
+// caixa com código do comando e etapa
+const caixa = (x, y, w, cmd, rotulo, destaque = false) => {
+  f.push(
+    `<rect x="${x}" y="${y}" width="${w}" height="${CX_A}" fill="${destaque ? ACENTO : BG}" stroke="${INK}" stroke-width="2"/>`,
+    `<text x="${x + 14}" y="${y + 29}" font-family="ui-monospace, Menlo, monospace" font-size="15" font-weight="700" fill="${destaque ? "#fff" : ACENTO}">${esc(cmd)}</text>`
+  );
+  quebrar(rotulo, 26).forEach((linha, k) =>
+    f.push(
+      `<text x="${x + 14}" y="${y + 50 + k * 17}" font-family="${FONTE}" font-size="13.5" font-weight="700" fill="${destaque ? "#fff" : INK}">${esc(linha)}</text>`
+    )
+  );
+};
+
+const seta = (x1, y1, x2, y2, tracejada = false) =>
+  f.push(
+    `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="${INK}" stroke-width="2" marker-end="url(#seta)"${tracejada ? ' stroke-dasharray="6 5"' : ""}/>`
+  );
+
+// 1. constituição: faixa que cobre tudo
+f.push(
+  `<rect x="${F_PAD}" y="${Y_CONST}" width="${F_L - 2 * F_PAD}" height="${CX_A}" fill="${ACENTO}"/>`,
+  `<text x="${F_PAD + 18}" y="${Y_CONST + 30}" font-family="ui-monospace, Menlo, monospace" font-size="16" font-weight="700" fill="#fff">${esc(constituicao.comando)}</text>`,
+  `<text x="${F_PAD + 18}" y="${Y_CONST + 54}" font-family="${FONTE}" font-size="14" font-weight="700" fill="#fff">${esc(constituicao.etapa)} — vale para todas as etapas abaixo</text>`
+);
+
+// 2. linha principal
+const xDe = (i) => F_PAD + i * (CX_L + GAP);
+espinha.forEach((c, i) => {
+  caixa(xDe(i), Y_ESPINHA, CX_L, curto(c), c.etapa);
+  if (i > 0) seta(xDe(i) - GAP + 4, Y_ESPINHA + CX_A / 2, xDe(i) - 6, Y_ESPINHA + CX_A / 2);
+});
+// da constituição para a linha principal
+seta(F_L / 2, Y_CONST + CX_A + 4, F_L / 2, Y_ESPINHA - 8);
+
+// 3. comandos de verificação, presos ao ponto em que entram
+const ancora = { "/speckit.clarify": 0, "/speckit.checklist": 0, "/speckit.analyze": 2 };
+const usados = {};
+sk.opcionais.forEach((c) => {
+  const i = ancora[c.comando] ?? 0;
+  const n = (usados[i] = (usados[i] ?? 0) + 1);
+  const x = xDe(i) + (n - 1) * (CX_L + GAP);
+  caixa(x, Y_QUAL, CX_L, curto(c), c.etapa);
+  seta(x + CX_L / 2, Y_QUAL - 6, x + CX_L / 2, Y_ESPINHA + CX_A + 6, true);
+});
+f.push(
+  `<text x="${F_PAD}" y="${Y_QUAL - 26}" font-family="${FONTE}" font-size="12.5" font-weight="700" fill="${INK}" fill-opacity="0.6" letter-spacing="1">VERIFICAÇÃO — OPCIONAL NO FLUXO, NÃO NA PRÁTICA</text>`
+);
+
+// 4. converge: volta ao backlog o que ficou faltando
+const xConv = xDe(espinha.length - 1);
+caixa(xConv, Y_CONV, CX_L, curto(converge), converge.etapa, true);
+seta(xConv + CX_L / 2, Y_ESPINHA + CX_A + 6, xConv + CX_L / 2, Y_CONV - 8);
+// retorno até a caixa de tasks
+const yVolta = Y_CONV + CX_A + 34;
+const xTasks = xDe(2) + CX_L / 2;
+f.push(
+  `<path d="M ${xConv} ${Y_CONV + CX_A / 2} H ${xConv - 22} V ${yVolta} H ${xTasks} V ${Y_ESPINHA + CX_A + 8}" fill="none" stroke="${INK}" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#seta)"/>`,
+  `<text x="${xTasks + 12}" y="${yVolta - 8}" font-family="${FONTE}" font-size="12.5" font-weight="700" fill="${INK}" fill-opacity="0.7">o que faltou volta como tarefa nova</text>`,
+  "</svg>"
+);
+
+writeFileSync(resolve(raiz, "public/uploads/spec-kit-fluxo.svg"), f.join("\n") + "\n");
+console.log("escrito public/uploads/spec-kit-fluxo.svg");
+console.log(`  ${espinha.length} etapas na linha principal · ${sk.opcionais.length} de verificação · converge no retorno`);
