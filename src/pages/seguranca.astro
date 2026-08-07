@@ -1,0 +1,241 @@
+---
+import Base from "../layouts/Base.astro";
+import { rota } from "../lib/url";
+import dados from "../content/seguranca.json";
+
+const { totais } = dados;
+const maiorCentral = Math.max(...dados.porFase.map((f) => f.centralSec + f.centralSedes));
+---
+
+<Base
+  titulo="Segurança no processo apoiado por IA — Dev. de Software com IA"
+  descricao="A dimensão de segurança dos dois corpora: dez tópicos cruzados com as doze fases do processo, para responder em que ponto do ciclo de vida a verificação de segurança está sendo automatizada."
+>
+  <article>
+    <section class="om-pad" style="max-width: 1200px; margin: 0 auto; padding: 36px 32px 0">
+      <a
+        href={rota("/codebook")}
+        style="font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase"
+        >← Codebook das fases</a
+      >
+      <div
+        style="font-size: 13px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700); margin-top: 28px"
+      >
+        Material da Aula 01 · Dimensão de segurança
+      </div>
+      <h1
+        style="font-family: var(--font-heading); font-weight: 900; font-size: clamp(36px, 7vw, 76px); line-height: 0.96; letter-spacing: -0.035em; margin: 14px 0 0; max-width: 20ch; text-wrap: balance"
+      >
+        Onde a segurança entra no processo
+      </h1>
+      <p style="font-size: 18px; line-height: 1.6; max-width: 64ch; margin: 24px 0 0; text-wrap: pretty">
+        Das {totais.obras} obras dos dois corpora, <strong>{totais.comSeguranca} tratam de segurança</strong> —
+        {totais.central} com falha, vulnerabilidade ou ataque como objeto central, e {totais.secundaria} tratando
+        segurança como preocupação entre outras.
+      </p>
+      <p style="font-size: 17px; line-height: 1.6; max-width: 64ch; margin: 16px 0 0; text-wrap: pretty">
+        <strong>Segurança não é uma fase, é uma preocupação que atravessa o ciclo.</strong> A mesma
+        falha pode ser prevenida na especificação, detectada na revisão, encontrada por teste antes da
+        entrega, corrigida por reparo, ou observada como ataque em produção. Codificá-la como fase
+        obrigaria a escolher entre o momento e o assunto, e perderia justamente a informação de onde no
+        processo a verificação acontece. Por isso ela é uma dimensão ortogonal: cada obra recebe uma
+        fase e, independentemente dela, um grau de centralidade da segurança.
+      </p>
+      <div style="display: flex; gap: 12px; flex-wrap: wrap; margin: 28px 0 40px">
+        <a class="btn btn-primary" href="#topicos">Os dez tópicos</a>
+        <a class="btn btn-secondary" href={rota("/codebook")}>As doze fases</a>
+      </div>
+    </section>
+
+    <section style="border-top: 2px solid var(--color-text); background: var(--color-neutral-100)">
+      <div class="om-pad om-sec" style="max-width: 1200px; margin: 0 auto; padding: 48px 32px">
+        <h2 style="font-family: var(--font-heading); font-weight: 900; font-size: clamp(24px, 4vw, 34px); letter-spacing: -0.025em; margin: 0 0 20px">
+          Os três graus
+        </h2>
+        <div style="border-top: 2px solid var(--color-text)">
+          {
+            dados.valores.map((v) => (
+              <div
+                class="om-lab"
+                style="display: grid; grid-template-columns: 160px minmax(0, 1fr); gap: 0 32px; padding: 16px 0; border-bottom: 2px solid var(--color-divider)"
+              >
+                <div style="font-family: var(--font-heading); font-weight: 800; font-size: 17px; color: var(--color-accent); padding-bottom: 6px">
+                  {v.valor}
+                </div>
+                <p style="font-size: 16px; line-height: 1.55; margin: 0; max-width: 64ch; text-wrap: pretty">
+                  {v.texto}
+                </p>
+              </div>
+            ))
+          }
+        </div>
+        <div style="margin-top: 24px; padding: 16px 20px; background: var(--color-bg); box-shadow: inset 0 0 0 2px var(--color-divider); max-width: 70ch">
+          <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.6">
+            Teste de decisão
+          </div>
+          <p style="font-size: 16px; line-height: 1.55; margin: 6px 0 0; font-style: italic">
+            {dados.teste}
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="topicos" style="border-top: 2px solid var(--color-text)">
+      <div class="om-pad om-sec" style="max-width: 1200px; margin: 0 auto; padding: 48px 32px">
+        <h2 style="font-family: var(--font-heading); font-weight: 900; font-size: clamp(26px, 4vw, 40px); letter-spacing: -0.025em; margin: 0 0 12px">
+          Dez tópicos, doze fases
+        </h2>
+        <p style="font-size: 16px; line-height: 1.6; max-width: 66ch; margin: 0 0 24px; text-wrap: pretty">
+          Cruzar o tópico com a fase responde a pergunta que interessa: em que ponto do processo a
+          verificação de segurança está sendo automatizada. As quatro fases que não recebem nenhuma
+          obra de segurança ficaram de fora do eixo.
+        </p>
+        {/* Figura gerada por scripts/gerar-figuras.mjs a partir do mesmo JSON desta página. */}
+        <figure class="om-scroll" style="margin: 0; border: 2px solid var(--color-text)">
+          <img
+            src={rota("/uploads/seguranca-topico-fase.svg")}
+            alt="Mapa de calor dos dez tópicos de segurança distribuídos pelas fases do processo. Verificação e qualidade concentra a maior parte das obras em quase todos os tópicos."
+            style="display: block; width: 100%; min-width: 940px; height: auto"
+            loading="lazy"
+          />
+        </figure>
+
+        <div class="om-scroll" style="border: 2px solid var(--color-text); margin-top: 32px">
+          <table class="table" style="width: 100%; border-collapse: collapse">
+            <thead>
+              <tr>
+                <th style="text-align: left">Tópico</th>
+                <th style="text-align: left">Obras</th>
+                <th style="text-align: left">Segurança central</th>
+                <th style="text-align: left">Fase predominante</th>
+                <th style="text-align: left">Sedes</th>
+              </tr>
+            </thead>
+            <tbody>
+              {
+                dados.topicos.map((t) => (
+                  <tr>
+                    <td style="line-height: 1.4">
+                      <span style="font-family: var(--font-heading); font-weight: 800; color: var(--color-accent)">
+                        {t.cod}
+                      </span>{" "}
+                      {t.nome}
+                    </td>
+                    <td style="font-family: var(--font-heading); font-weight: 800">{t.total}</td>
+                    <td>{t.central}</td>
+                    <td style="line-height: 1.4">{t.predominante}</td>
+                    <td style="line-height: 1.4; opacity: 0.8">{t.sedes}</td>
+                  </tr>
+                ))
+              }
+              <tr>
+                <td style="font-family: var(--font-heading); font-weight: 800">Total</td>
+                <td style="font-family: var(--font-heading); font-weight: 800">{totais.comSeguranca}</td>
+                <td style="font-family: var(--font-heading); font-weight: 800">{totais.central}</td>
+                <td colspan="2" />
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section style="border-top: 2px solid var(--color-text); background: var(--color-neutral-100)">
+      <div class="om-pad om-sec" style="max-width: 1200px; margin: 0 auto; padding: 48px 32px">
+        <h2 style="font-family: var(--font-heading); font-weight: 900; font-size: clamp(24px, 4vw, 34px); letter-spacing: -0.025em; margin: 0 0 12px">
+          Segurança central, por fase
+        </h2>
+        <p style="font-size: 16px; line-height: 1.6; max-width: 66ch; margin: 0 0 24px; text-wrap: pretty">
+          Quantas obras de cada fase têm segurança como objeto central, e sobre que total. Concentração
+          em verificação indica que o campo trata segurança como problema de detecção antes da entrega;
+          ausência em requisitos e arquitetura indica que a prevenção por projeto continua manual.
+        </p>
+        <div style="border-top: 2px solid var(--color-text)">
+          {
+            dados.porFase.map((f) => {
+              const central = f.centralSec + f.centralSedes;
+              const largura = maiorCentral ? (central / maiorCentral) * 100 : 0;
+              return (
+                <div style="display: grid; grid-template-columns: minmax(0, 1fr); gap: 6px; padding: 14px 0; border-bottom: 2px solid var(--color-divider)">
+                  <div style="display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap">
+                    <span style="font-family: var(--font-heading); font-weight: 700; font-size: 16px">
+                      {f.fase}
+                    </span>
+                    <span style="font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; opacity: 0.7">
+                      {central} central · {f.totalSec + f.totalSedes} obras
+                    </span>
+                  </div>
+                  <div style="height: 14px; background: var(--color-neutral-200)">
+                    <div style={`height: 14px; width: ${largura.toFixed(1)}%; background: var(--color-accent)`} />
+                  </div>
+                </div>
+              );
+            })
+          }
+        </div>
+        <p style="font-size: 14px; opacity: 0.65; margin: 16px 0 0">
+          Barra proporcional ao maior valor, que é verificação e qualidade com {maiorCentral} obras de
+          segurança central.
+        </p>
+      </div>
+    </section>
+
+    <section style="border-top: 2px solid var(--color-text)">
+      <div class="om-pad om-sec" style="max-width: 1200px; margin: 0 auto; padding: 48px 32px">
+        <h2 style="font-family: var(--font-heading); font-weight: 900; font-size: clamp(26px, 4vw, 40px); letter-spacing: -0.025em; margin: 0 0 24px">
+          Quatro leituras da matriz
+        </h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); gap: 2px; background: var(--color-divider); border: 2px solid var(--color-text)">
+          {
+            dados.achados.map((a, i) => (
+              <div style="background: var(--color-bg); padding: 24px">
+                <div style="font-family: var(--font-heading); font-weight: 900; font-size: 24px; letter-spacing: -0.03em; color: var(--color-accent); opacity: 0.45">
+                  {String(i + 1).padStart(2, "0")}
+                </div>
+                <h3 style="font-family: var(--font-heading); font-weight: 800; font-size: 19px; line-height: 1.2; letter-spacing: -0.015em; margin: 8px 0 0">
+                  {a.titulo}
+                </h3>
+                <p style="font-size: 16px; line-height: 1.6; margin: 10px 0 0; text-wrap: pretty">
+                  {a.texto}
+                </p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section style="border-top: 2px solid var(--color-text); background: var(--color-accent); color: #fff">
+      <div class="om-pad om-sec" style="max-width: 1200px; margin: 0 auto; padding: 56px 32px">
+        <h2
+          style="font-family: var(--font-heading); font-weight: 900; font-size: clamp(28px, 5vw, 48px); line-height: 1; letter-spacing: -0.03em; margin: 0; max-width: 26ch; text-wrap: balance"
+        >
+          {dados.lacuna.titulo}
+        </h2>
+        <div style="margin-top: 24px; max-width: 64ch">
+          {
+            dados.lacuna.paragrafos.map((p) => (
+              <p style="font-size: 17px; line-height: 1.65; margin: 0 0 16px; text-wrap: pretty" set:html={p} />
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section style="border-top: 2px solid var(--color-text)">
+      <div class="om-pad om-sec" style="max-width: 1200px; margin: 0 auto; padding: 48px 32px">
+        <h2 style="font-family: var(--font-heading); font-weight: 900; font-size: clamp(24px, 4vw, 34px); letter-spacing: -0.025em; margin: 0 0 12px">
+          {dados.fronteira.titulo}
+        </h2>
+        <p style="font-size: 17px; line-height: 1.65; max-width: 68ch; margin: 0 0 32px; text-wrap: pretty">
+          {dados.fronteira.texto}
+        </p>
+        <div style="display: flex; gap: 12px; flex-wrap: wrap">
+          <a class="btn btn-primary" href={rota("/codebook")}>As doze fases do processo</a>
+          <a class="btn btn-secondary" href={rota("/codebook/mapeamento")}>O mapeamento do campo</a>
+          <a class="btn btn-secondary" href={rota("/aulas/01")}>Aula 01</a>
+        </div>
+      </div>
+    </section>
+  </article>
+</Base>

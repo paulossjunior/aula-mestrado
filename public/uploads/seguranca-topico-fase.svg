@@ -1,0 +1,210 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1268 722" width="1268" height="722" role="img" aria-label="Distribuição dos dez tópicos de segurança pelas fases do processo, nas 140 obras que tratam de segurança">
+<rect width="1268" height="722" fill="#f3f2f2"/>
+<text x="410" y="78" font-family="Archivo, system-ui, sans-serif" font-size="12.5" font-weight="700" fill="#201e1d" text-anchor="middle">Requisitos</text>
+<text x="514" y="78" font-family="Archivo, system-ui, sans-serif" font-size="12.5" font-weight="700" fill="#201e1d" text-anchor="middle">Arquitetura</text>
+<text x="618" y="78" font-family="Archivo, system-ui, sans-serif" font-size="12.5" font-weight="700" fill="#201e1d" text-anchor="middle">Geração de</text>
+<text x="618" y="95" font-family="Archivo, system-ui, sans-serif" font-size="12.5" font-weight="700" fill="#201e1d" text-anchor="middle">código</text>
+<text x="722" y="78" font-family="Archivo, system-ui, sans-serif" font-size="12.5" font-weight="700" fill="#201e1d" text-anchor="middle">Verificação</text>
+<text x="826" y="78" font-family="Archivo, system-ui, sans-serif" font-size="12.5" font-weight="700" fill="#201e1d" text-anchor="middle">Depuração e</text>
+<text x="826" y="95" font-family="Archivo, system-ui, sans-serif" font-size="12.5" font-weight="700" fill="#201e1d" text-anchor="middle">reparo</text>
+<text x="930" y="78" font-family="Archivo, system-ui, sans-serif" font-size="12.5" font-weight="700" fill="#201e1d" text-anchor="middle">Manutenção</text>
+<text x="1034" y="78" font-family="Archivo, system-ui, sans-serif" font-size="12.5" font-weight="700" fill="#201e1d" text-anchor="middle">Operação em</text>
+<text x="1034" y="95" font-family="Archivo, system-ui, sans-serif" font-size="12.5" font-weight="700" fill="#201e1d" text-anchor="middle">produção</text>
+<text x="1138" y="78" font-family="Archivo, system-ui, sans-serif" font-size="12.5" font-weight="700" fill="#201e1d" text-anchor="middle">Processo</text>
+<text x="1138" y="95" font-family="Archivo, system-ui, sans-serif" font-size="12.5" font-weight="700" fill="#201e1d" text-anchor="middle">transversal</text>
+<text x="1228" y="78" font-family="Archivo, system-ui, sans-serif" font-size="12.5" font-weight="800" fill="#201e1d" text-anchor="middle">TOTAL</text>
+<line x1="0" y1="106" x2="1268" y2="106" stroke="#201e1d" stroke-width="2"/>
+<text x="28" y="160" font-family="Archivo, system-ui, sans-serif" font-size="14" font-weight="700" fill="#201e1d">S1 Detecção de vulnerabilidade em código</text>
+<rect x="360" y="134" width="100" height="42" fill="#ec3013" fill-opacity="0.29"/>
+<text x="410" y="160" font-family="Archivo, system-ui, sans-serif" font-size="14" font-weight="800" fill="#201e1d" text-anchor="middle">1</text>
+<rect x="464" y="134" width="100" height="42" fill="#ec3013" fill-opacity="0.00"/>
+<text x="514" y="160" font-family="Archivo, system-ui, sans-serif" font-size="13" fill="#bab6b6" text-anchor="middle">–</text>
+<rect x="568" y="134" width="100" height="42" fill="#ec3013" fill-opacity="0.00"/>
+<text x="618" y="160" font-family="Archivo, system-ui, sans-serif" font-size="13" fill="#bab6b6" text-anchor="middle">–</text>
+<rect x="672" y="134" width="100" height="42" fill="#ec3013" fill-opacity="0.98"/>
+<text x="722" y="160" font-family="Archivo, system-ui, sans-serif" font-size="14" font-weight="800" fill="#fff" text-anchor="middle">22</text>
+<rect x="776" y="134" width="100" height="42" fill="#ec3013" fill-opacity="0.29"/>
+<text x="826" y="160" font-family="Archivo, system-ui, sans-serif" font-size="14" font-weight="800" fill="#201e1d" text-anchor="middle">1</text>
+<rect x="880" y="134" width="100" height="42" fill="#ec3013" fill-opacity="0.00"/>
+<text x="930" y="160" font-family="Archivo, system-ui, sans-serif" font-size="13" fill="#bab6b6" text-anchor="middle">–</text>
+<rect x="984" y="134" width="100" height="42" fill="#ec3013" fill-opacity="0.00"/>
+<text x="1034" y="160" font-family="Archivo, system-ui, sans-serif" font-size="13" fill="#bab6b6" text-anchor="middle">–</text>
+<rect x="1088" y="134" width="100" height="42" fill="#ec3013" fill-opacity="0.00"/>
+<text x="1138" y="160" font-family="Archivo, system-ui, sans-serif" font-size="13" fill="#bab6b6" text-anchor="middle">–</text>
+<text x="1228" y="160" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="900" fill="#201e1d" text-anchor="middle">24</text>
+<line x1="0" y1="180" x2="1268" y2="180" stroke="#bab6b6" stroke-width="2"/>
+<text x="28" y="210" font-family="Archivo, system-ui, sans-serif" font-size="14" font-weight="700" fill="#201e1d">S2 Segurança do código gerado por IA</text>
+<rect x="360" y="184" width="100" height="42" fill="#ec3013" fill-opacity="0.00"/>
+<text x="410" y="210" font-family="Archivo, system-ui, sans-serif" font-size="13" fill="#bab6b6" text-anchor="middle">–</text>
+<rect x="464" y="184" width="100" height="42" fill="#ec3013" fill-opacity="0.00"/>
+<text x="514" y="210" font-family="Archivo, system-ui, sans-serif" font-size="13" fill="#bab6b6" text-anchor="middle">–</text>
+<rect x="568" y="184" width="100" height="42" fill="#ec3013" fill-opacity="0.75"/>
+<text x="618" y="210" font-family="Archivo, system-ui, sans-serif" font-size="14" font-weight="800" fill="#fff" text-anchor="middle">12</text>
+<rect x="672" y="184" width="100" height="42" fill="#ec3013" fill-opacity="0.69"/>
+<text x="722" y="210" font-family="Archivo, system-ui, sans-serif" font-size="14" font-weight="800" fill="#fff" text-anchor="middle">10</text>
+<rect x="776" y="184" width="100" height="42" fill="#ec3013" fill-opacity="0.00"/>
+<text x="826" y="210" font-family="Archivo, system-ui, sans-serif" font-size="13" fill="#bab6b6" text-anchor="middle">–</text>
+<rect x="880" y="184" width="100" height="42" fill="#ec3013" fill-opacity="0.29"/>
+<text x="930" y="210" font-family="Archivo, system-ui, sans-serif" font-size="14" font-weight="800" fill="#201e1d" text-anchor="middle">1</text>
+<rect x="984" y="184" width="100" height="42" fill="#ec3013" fill-opacity="0.00"/>
+<text x="1034" y="210" font-family="Archivo, system-ui, sans-serif" font-size="13" fill="#bab6b6" text-anchor="middle">–</text>
+<rect x="1088" y="184" width="100" height="42" fill="#ec3013" fill-opacity="0.00"/>
+<text x="1138" y="210" font-family="Archivo, system-ui, sans-serif" font-size="13" fill="#bab6b6" text-anchor="middle">–</text>
+<text x="1228" y="210" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="900" fill="#201e1d" text-anchor="middle">23</text>
+<line x1="0" y1="230" x2="1268" y2="230" stroke="#bab6b6" stroke-width="2"/>
+<text x="28" y="260" font-family="Archivo, system-ui, sans-serif" font-size="14" font-weight="700" fill="#201e1d">S3 Teste de segurança e descoberta ofensiva</text>
+<rect x="360" y="234" width="100" height="42" fill="#ec3013" fill-opacity="0.00"/>
+<text x="410" y="260" font-family="Archivo, system-ui, sans-serif" font-size="13" fill="#bab6b6" text-anchor="middle">–</text>
+<rect x="464" y="234" width="100" height="42" fill="#ec3013" fill-opacity="0.00"/>
+<text x="514" y="260" font-family="Archivo, system-ui, sans-serif" font-size="13" fill="#bab6b6" text-anchor="middle">–</text>
+<rect x="568" y="234" width="100" height="42" fill="#ec3013" fill-opacity="0.00"/>
+<text x="618" y="260" font-family="Archivo, system-ui, sans-serif" font-size="13" fill="#bab6b6" text-anchor="middle">–</text>
+<rect x="672" y="234" width="100" height="42" fill="#ec3013" fill-opacity="0.83"/>
+<text x="722" y="260" font-family="Archivo, system-ui, sans-serif" font-size="14" font-weight="800" fill="#fff" text-anchor="middle">15</text>
+<rect x="776" y="234" width="100" height="42" fill="#ec3013" fill-opacity="0.00"/>
+<text x="826" y="260" font-family="Archivo, system-ui, sans-serif" font-size="13" fill="#bab6b6" text-anchor="middle">–</text>
+<rect x="880" y="234" width="100" height="42" fill="#ec3013" fill-opacity="0.00"/>
+<text x="930" y="260" font-family="Archivo, system-ui, sans-serif" font-size="13" fill="#bab6b6" text-anchor="middle">–</text>
+<rect x="984" y="234" width="100" height="42" fill="#ec3013" fill-opacity="0.00"/>
+<text x="1034" y="260" font-family="Archivo, system-ui, sans-serif" font-size="13" fill="#bab6b6" text-anchor="middle">–</text>
+<rect x="1088" y="234" width="100" height="42" fill="#ec3013" fill-opacity="0.00"/>
+<text x="1138" y="260" font-family="Archivo, system-ui, sans-serif" font-size="13" fill="#bab6b6" text-anchor="middle">–</text>
+<text x="1228" y="260" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="900" fill="#201e1d" text-anchor="middle">15</text>
+<line x1="0" y1="280" x2="1268" y2="280" stroke="#bab6b6" stroke-width="2"/>
+<text x="28" y="310" font-family="Archivo, system-ui, sans-serif" font-size="14" font-weight="700" fill="#201e1d">S4 Reparo e mitigação de vulnerabilidade</text>
+<rect x="360" y="284" width="100" height="42" fill="#ec3013" fill-opacity="0.00"/>
+<text x="410" y="310" font-family="Archivo, system-ui, sans-serif" font-size="13" fill="#bab6b6" text-anchor="middle">–</text>
+<rect x="464" y="284" width="100" height="42" fill="#ec3013" fill-opacity="0.00"/>
+<text x="514" y="310" font-family="Archivo, system-ui, sans-serif" font-size="13" fill="#bab6b6" text-anchor="middle">–</text>
+<rect x="568" y="284" width="100" height="42" fill="#ec3013" fill-opacity="0.00"/>
+<text x="618" y="310" font-family="Archivo, system-ui, sans-serif" font-size="13" fill="#bab6b6" text-anchor="middle">–</text>
+<rect x="672" y="284" width="100" height="42" fill="#ec3013" fill-opacity="0.00"/>
+<text x="722" y="310" font-family="Archivo, system-ui, sans-serif" font-size="13" fill="#bab6b6" text-anchor="middle">–</text>
+<rect x="776" y="284" width="100" height="42" fill="#ec3013" fill-opacity="0.66"/>
+<text x="826" y="310" font-family="Archivo, system-ui, sans-serif" font-size="14" font-weight="800" fill="#fff" text-anchor="middle">9</text>
+<rect x="880" y="284" width="100" height="42" fill="#ec3013" fill-opacity="0.00"/>
+<text x="930" y="310" font-family="Archivo, system-ui, sans-serif" font-size="13" fill="#bab6b6" text-anchor="middle">–</text>
+<rect x="984" y="284" width="100" height="42" fill="#ec3013" fill-opacity="0.00"/>
+<text x="1034" y="310" font-family="Archivo, system-ui, sans-serif" font-size="13" fill="#bab6b6" text-anchor="middle">–</text>
+<rect x="1088" y="284" width="100" height="42" fill="#ec3013" fill-opacity="0.00"/>
+<text x="1138" y="310" font-family="Archivo, system-ui, sans-serif" font-size="13" fill="#bab6b6" text-anchor="middle">–</text>
+<text x="1228" y="310" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="900" fill="#201e1d" text-anchor="middle">9</text>
+<line x1="0" y1="330" x2="1268" y2="330" stroke="#bab6b6" stroke-width="2"/>
+<text x="28" y="360" font-family="Archivo, system-ui, sans-serif" font-size="14" font-weight="700" fill="#201e1d">S5 Cadeia de suprimentos e dependências</text>
+<rect x="360" y="334" width="100" height="42" fill="#ec3013" fill-opacity="0.00"/>
+<text x="410" y="360" font-family="Archivo, system-ui, sans-serif" font-size="13" fill="#bab6b6" text-anchor="middle">–</text>
+<rect x="464" y="334" width="100" height="42" fill="#ec3013" fill-opacity="0.00"/>
+<text x="514" y="360" font-family="Archivo, system-ui, sans-serif" font-size="13" fill="#bab6b6" text-anchor="middle">–</text>
+<rect x="568" y="334" width="100" height="42" fill="#ec3013" fill-opacity="0.00"/>
+<text x="618" y="360" font-family="Archivo, system-ui, sans-serif" font-size="13" fill="#bab6b6" text-anchor="middle">–</text>
+<rect x="672" y="334" width="100" height="42" fill="#ec3013" fill-opacity="0.56"/>
+<text x="722" y="360" font-family="Archivo, system-ui, sans-serif" font-size="14" font-weight="800" fill="#fff" text-anchor="middle">6</text>
+<rect x="776" y="334" width="100" height="42" fill="#ec3013" fill-opacity="0.00"/>
+<text x="826" y="360" font-family="Archivo, system-ui, sans-serif" font-size="13" fill="#bab6b6" text-anchor="middle">–</text>
+<rect x="880" y="334" width="100" height="42" fill="#ec3013" fill-opacity="0.29"/>
+<text x="930" y="360" font-family="Archivo, system-ui, sans-serif" font-size="14" font-weight="800" fill="#201e1d" text-anchor="middle">1</text>
+<rect x="984" y="334" width="100" height="42" fill="#ec3013" fill-opacity="0.00"/>
+<text x="1034" y="360" font-family="Archivo, system-ui, sans-serif" font-size="13" fill="#bab6b6" text-anchor="middle">–</text>
+<rect x="1088" y="334" width="100" height="42" fill="#ec3013" fill-opacity="0.00"/>
+<text x="1138" y="360" font-family="Archivo, system-ui, sans-serif" font-size="13" fill="#bab6b6" text-anchor="middle">–</text>
+<text x="1228" y="360" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="900" fill="#201e1d" text-anchor="middle">7</text>
+<line x1="0" y1="380" x2="1268" y2="380" stroke="#bab6b6" stroke-width="2"/>
+<text x="28" y="410" font-family="Archivo, system-ui, sans-serif" font-size="14" font-weight="700" fill="#201e1d">S6 Segurança do agente e do modelo</text>
+<rect x="360" y="384" width="100" height="42" fill="#ec3013" fill-opacity="0.00"/>
+<text x="410" y="410" font-family="Archivo, system-ui, sans-serif" font-size="13" fill="#bab6b6" text-anchor="middle">–</text>
+<rect x="464" y="384" width="100" height="42" fill="#ec3013" fill-opacity="0.00"/>
+<text x="514" y="410" font-family="Archivo, system-ui, sans-serif" font-size="13" fill="#bab6b6" text-anchor="middle">–</text>
+<rect x="568" y="384" width="100" height="42" fill="#ec3013" fill-opacity="0.29"/>
+<text x="618" y="410" font-family="Archivo, system-ui, sans-serif" font-size="14" font-weight="800" fill="#201e1d" text-anchor="middle">1</text>
+<rect x="672" y="384" width="100" height="42" fill="#ec3013" fill-opacity="0.43"/>
+<text x="722" y="410" font-family="Archivo, system-ui, sans-serif" font-size="14" font-weight="800" fill="#201e1d" text-anchor="middle">3</text>
+<rect x="776" y="384" width="100" height="42" fill="#ec3013" fill-opacity="0.00"/>
+<text x="826" y="410" font-family="Archivo, system-ui, sans-serif" font-size="13" fill="#bab6b6" text-anchor="middle">–</text>
+<rect x="880" y="384" width="100" height="42" fill="#ec3013" fill-opacity="0.00"/>
+<text x="930" y="410" font-family="Archivo, system-ui, sans-serif" font-size="13" fill="#bab6b6" text-anchor="middle">–</text>
+<rect x="984" y="384" width="100" height="42" fill="#ec3013" fill-opacity="0.00"/>
+<text x="1034" y="410" font-family="Archivo, system-ui, sans-serif" font-size="13" fill="#bab6b6" text-anchor="middle">–</text>
+<rect x="1088" y="384" width="100" height="42" fill="#ec3013" fill-opacity="0.60"/>
+<text x="1138" y="410" font-family="Archivo, system-ui, sans-serif" font-size="14" font-weight="800" fill="#fff" text-anchor="middle">7</text>
+<text x="1228" y="410" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="900" fill="#201e1d" text-anchor="middle">11</text>
+<line x1="0" y1="430" x2="1268" y2="430" stroke="#bab6b6" stroke-width="2"/>
+<text x="28" y="460" font-family="Archivo, system-ui, sans-serif" font-size="14" font-weight="700" fill="#201e1d">S7 Ataque e anomalia em operação</text>
+<rect x="360" y="434" width="100" height="42" fill="#ec3013" fill-opacity="0.00"/>
+<text x="410" y="460" font-family="Archivo, system-ui, sans-serif" font-size="13" fill="#bab6b6" text-anchor="middle">–</text>
+<rect x="464" y="434" width="100" height="42" fill="#ec3013" fill-opacity="0.00"/>
+<text x="514" y="460" font-family="Archivo, system-ui, sans-serif" font-size="13" fill="#bab6b6" text-anchor="middle">–</text>
+<rect x="568" y="434" width="100" height="42" fill="#ec3013" fill-opacity="0.00"/>
+<text x="618" y="460" font-family="Archivo, system-ui, sans-serif" font-size="13" fill="#bab6b6" text-anchor="middle">–</text>
+<rect x="672" y="434" width="100" height="42" fill="#ec3013" fill-opacity="0.00"/>
+<text x="722" y="460" font-family="Archivo, system-ui, sans-serif" font-size="13" fill="#bab6b6" text-anchor="middle">–</text>
+<rect x="776" y="434" width="100" height="42" fill="#ec3013" fill-opacity="0.00"/>
+<text x="826" y="460" font-family="Archivo, system-ui, sans-serif" font-size="13" fill="#bab6b6" text-anchor="middle">–</text>
+<rect x="880" y="434" width="100" height="42" fill="#ec3013" fill-opacity="0.00"/>
+<text x="930" y="460" font-family="Archivo, system-ui, sans-serif" font-size="13" fill="#bab6b6" text-anchor="middle">–</text>
+<rect x="984" y="434" width="100" height="42" fill="#ec3013" fill-opacity="0.37"/>
+<text x="1034" y="460" font-family="Archivo, system-ui, sans-serif" font-size="14" font-weight="800" fill="#201e1d" text-anchor="middle">2</text>
+<rect x="1088" y="434" width="100" height="42" fill="#ec3013" fill-opacity="0.00"/>
+<text x="1138" y="460" font-family="Archivo, system-ui, sans-serif" font-size="13" fill="#bab6b6" text-anchor="middle">–</text>
+<text x="1228" y="460" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="900" fill="#201e1d" text-anchor="middle">2</text>
+<line x1="0" y1="480" x2="1268" y2="480" stroke="#bab6b6" stroke-width="2"/>
+<text x="28" y="510" font-family="Archivo, system-ui, sans-serif" font-size="14" font-weight="700" fill="#201e1d">S8 Requisito, projeto e política</text>
+<rect x="360" y="484" width="100" height="42" fill="#ec3013" fill-opacity="0.43"/>
+<text x="410" y="510" font-family="Archivo, system-ui, sans-serif" font-size="14" font-weight="800" fill="#201e1d" text-anchor="middle">3</text>
+<rect x="464" y="484" width="100" height="42" fill="#ec3013" fill-opacity="0.37"/>
+<text x="514" y="510" font-family="Archivo, system-ui, sans-serif" font-size="14" font-weight="800" fill="#201e1d" text-anchor="middle">2</text>
+<rect x="568" y="484" width="100" height="42" fill="#ec3013" fill-opacity="0.00"/>
+<text x="618" y="510" font-family="Archivo, system-ui, sans-serif" font-size="13" fill="#bab6b6" text-anchor="middle">–</text>
+<rect x="672" y="484" width="100" height="42" fill="#ec3013" fill-opacity="0.63"/>
+<text x="722" y="510" font-family="Archivo, system-ui, sans-serif" font-size="14" font-weight="800" fill="#fff" text-anchor="middle">8</text>
+<rect x="776" y="484" width="100" height="42" fill="#ec3013" fill-opacity="0.00"/>
+<text x="826" y="510" font-family="Archivo, system-ui, sans-serif" font-size="13" fill="#bab6b6" text-anchor="middle">–</text>
+<rect x="880" y="484" width="100" height="42" fill="#ec3013" fill-opacity="0.29"/>
+<text x="930" y="510" font-family="Archivo, system-ui, sans-serif" font-size="14" font-weight="800" fill="#201e1d" text-anchor="middle">1</text>
+<rect x="984" y="484" width="100" height="42" fill="#ec3013" fill-opacity="0.00"/>
+<text x="1034" y="510" font-family="Archivo, system-ui, sans-serif" font-size="13" fill="#bab6b6" text-anchor="middle">–</text>
+<rect x="1088" y="484" width="100" height="42" fill="#ec3013" fill-opacity="0.60"/>
+<text x="1138" y="510" font-family="Archivo, system-ui, sans-serif" font-size="14" font-weight="800" fill="#fff" text-anchor="middle">7</text>
+<text x="1228" y="510" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="900" fill="#201e1d" text-anchor="middle">21</text>
+<line x1="0" y1="530" x2="1268" y2="530" stroke="#bab6b6" stroke-width="2"/>
+<text x="28" y="560" font-family="Archivo, system-ui, sans-serif" font-size="14" font-weight="700" fill="#201e1d">S9 Benchmark e avaliação de segurança</text>
+<rect x="360" y="534" width="100" height="42" fill="#ec3013" fill-opacity="0.00"/>
+<text x="410" y="560" font-family="Archivo, system-ui, sans-serif" font-size="13" fill="#bab6b6" text-anchor="middle">–</text>
+<rect x="464" y="534" width="100" height="42" fill="#ec3013" fill-opacity="0.00"/>
+<text x="514" y="560" font-family="Archivo, system-ui, sans-serif" font-size="13" fill="#bab6b6" text-anchor="middle">–</text>
+<rect x="568" y="534" width="100" height="42" fill="#ec3013" fill-opacity="0.00"/>
+<text x="618" y="560" font-family="Archivo, system-ui, sans-serif" font-size="13" fill="#bab6b6" text-anchor="middle">–</text>
+<rect x="672" y="534" width="100" height="42" fill="#ec3013" fill-opacity="1.00"/>
+<text x="722" y="560" font-family="Archivo, system-ui, sans-serif" font-size="14" font-weight="800" fill="#fff" text-anchor="middle">23</text>
+<rect x="776" y="534" width="100" height="42" fill="#ec3013" fill-opacity="0.00"/>
+<text x="826" y="560" font-family="Archivo, system-ui, sans-serif" font-size="13" fill="#bab6b6" text-anchor="middle">–</text>
+<rect x="880" y="534" width="100" height="42" fill="#ec3013" fill-opacity="0.00"/>
+<text x="930" y="560" font-family="Archivo, system-ui, sans-serif" font-size="13" fill="#bab6b6" text-anchor="middle">–</text>
+<rect x="984" y="534" width="100" height="42" fill="#ec3013" fill-opacity="0.29"/>
+<text x="1034" y="560" font-family="Archivo, system-ui, sans-serif" font-size="14" font-weight="800" fill="#201e1d" text-anchor="middle">1</text>
+<rect x="1088" y="534" width="100" height="42" fill="#ec3013" fill-opacity="0.00"/>
+<text x="1138" y="560" font-family="Archivo, system-ui, sans-serif" font-size="13" fill="#bab6b6" text-anchor="middle">–</text>
+<text x="1228" y="560" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="900" fill="#201e1d" text-anchor="middle">24</text>
+<line x1="0" y1="580" x2="1268" y2="580" stroke="#bab6b6" stroke-width="2"/>
+<text x="28" y="610" font-family="Archivo, system-ui, sans-serif" font-size="14" font-weight="700" fill="#201e1d">S10 Educação e prática humana</text>
+<rect x="360" y="584" width="100" height="42" fill="#ec3013" fill-opacity="0.00"/>
+<text x="410" y="610" font-family="Archivo, system-ui, sans-serif" font-size="13" fill="#bab6b6" text-anchor="middle">–</text>
+<rect x="464" y="584" width="100" height="42" fill="#ec3013" fill-opacity="0.00"/>
+<text x="514" y="610" font-family="Archivo, system-ui, sans-serif" font-size="13" fill="#bab6b6" text-anchor="middle">–</text>
+<rect x="568" y="584" width="100" height="42" fill="#ec3013" fill-opacity="0.29"/>
+<text x="618" y="610" font-family="Archivo, system-ui, sans-serif" font-size="14" font-weight="800" fill="#201e1d" text-anchor="middle">1</text>
+<rect x="672" y="584" width="100" height="42" fill="#ec3013" fill-opacity="0.37"/>
+<text x="722" y="610" font-family="Archivo, system-ui, sans-serif" font-size="14" font-weight="800" fill="#201e1d" text-anchor="middle">2</text>
+<rect x="776" y="584" width="100" height="42" fill="#ec3013" fill-opacity="0.00"/>
+<text x="826" y="610" font-family="Archivo, system-ui, sans-serif" font-size="13" fill="#bab6b6" text-anchor="middle">–</text>
+<rect x="880" y="584" width="100" height="42" fill="#ec3013" fill-opacity="0.00"/>
+<text x="930" y="610" font-family="Archivo, system-ui, sans-serif" font-size="13" fill="#bab6b6" text-anchor="middle">–</text>
+<rect x="984" y="584" width="100" height="42" fill="#ec3013" fill-opacity="0.00"/>
+<text x="1034" y="610" font-family="Archivo, system-ui, sans-serif" font-size="13" fill="#bab6b6" text-anchor="middle">–</text>
+<rect x="1088" y="584" width="100" height="42" fill="#ec3013" fill-opacity="0.29"/>
+<text x="1138" y="610" font-family="Archivo, system-ui, sans-serif" font-size="14" font-weight="800" fill="#201e1d" text-anchor="middle">1</text>
+<text x="1228" y="610" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="900" fill="#201e1d" text-anchor="middle">4</text>
+<line x1="0" y1="630" x2="1268" y2="630" stroke="#bab6b6" stroke-width="2"/>
+<line x1="0" y1="630" x2="1268" y2="630" stroke="#201e1d" stroke-width="2"/>
+<text x="28" y="664" font-family="Archivo, system-ui, sans-serif" font-size="13" font-weight="800" fill="#201e1d" letter-spacing="1.2">N = 140 OBRAS COM SEGURANÇA · 77 COM SEGURANÇA COMO OBJETO CENTRAL</text>
+<text x="28" y="688" font-family="Archivo, system-ui, sans-serif" font-size="12.5" font-weight="600" fill="#201e1d" fill-opacity="0.7">De 574 obras nos dois corpora. Fases sem nenhuma obra de segurança ficaram de fora do eixo.</text>
+</svg>

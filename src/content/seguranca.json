@@ -1,0 +1,161 @@
+{
+  "totais": {
+    "obras": 574,
+    "comSeguranca": 140,
+    "central": 77,
+    "secundaria": 63,
+    "centralSec": 34,
+    "centralSedes": 43
+  },
+  "valores": [
+    {
+      "valor": "central",
+      "texto": "Falha de segurança, vulnerabilidade, ataque ou ameaça é o objeto principal do trabalho."
+    },
+    {
+      "valor": "secundária",
+      "texto": "Segurança aparece como uma preocupação entre outras — um benchmark de geração de código que mede corretude e, entre outras propriedades, a segurança do que foi gerado."
+    },
+    {
+      "valor": "ausente",
+      "texto": "O trabalho não trata de segurança."
+    }
+  ],
+  "teste": "Se o trabalho fosse reescrito sem qualquer menção a vulnerabilidade, ataque ou ameaça, ele ainda teria uma contribuição? Se não, é central. Se sim, mas perderia uma seção de resultados, é secundária. Se nada mudaria, é ausente.",
+  "porFase": [
+    { "fase": "Descoberta de produto", "centralSec": 0, "centralSedes": 0, "totalSec": 5, "totalSedes": 7 },
+    { "fase": "Requisitos", "centralSec": 1, "centralSedes": 3, "totalSec": 11, "totalSedes": 10 },
+    { "fase": "Arquitetura", "centralSec": 1, "centralSedes": 0, "totalSec": 16, "totalSedes": 9 },
+    { "fase": "Geração de código", "centralSec": 3, "centralSedes": 5, "totalSec": 34, "totalSedes": 57 },
+    { "fase": "Verificação", "centralSec": 25, "centralSedes": 27, "totalSec": 71, "totalSedes": 126 },
+    { "fase": "Depuração e reparo", "centralSec": 0, "centralSedes": 8, "totalSec": 9, "totalSedes": 38 },
+    { "fase": "Manutenção", "centralSec": 2, "centralSedes": 0, "totalSec": 12, "totalSedes": 18 },
+    { "fase": "Operação em produção", "centralSec": 0, "centralSedes": 0, "totalSec": 3, "totalSedes": 15 },
+    { "fase": "Gestão de projeto", "centralSec": 0, "centralSedes": 0, "totalSec": 3, "totalSedes": 6 },
+    { "fase": "Conhecimento", "centralSec": 0, "centralSedes": 0, "totalSec": 2, "totalSedes": 8 },
+    { "fase": "Processo transversal", "centralSec": 2, "centralSedes": 0, "totalSec": 65, "totalSedes": 39 },
+    { "fase": "Formação", "centralSec": 0, "centralSedes": 0, "totalSec": 5, "totalSedes": 5 }
+  ],
+  "topicos": [
+    {
+      "cod": "S1",
+      "nome": "Detecção de vulnerabilidade em código",
+      "total": 24,
+      "central": 19,
+      "predominante": "Verificação",
+      "sedes": "ICSE 4 · ASE 3 · FSE 3",
+      "porFase": { "Verificação": 22, "Depuração e reparo": 1, "Requisitos": 1 }
+    },
+    {
+      "cod": "S2",
+      "nome": "Segurança do código gerado por IA",
+      "total": 23,
+      "central": 13,
+      "predominante": "Geração de código",
+      "sedes": "ASE 2 · FSE 2 · ICSME 2",
+      "porFase": { "Geração de código": 12, "Verificação": 10, "Manutenção": 1 }
+    },
+    {
+      "cod": "S3",
+      "nome": "Teste de segurança e descoberta ofensiva",
+      "total": 15,
+      "central": 7,
+      "predominante": "Verificação",
+      "sedes": "ICSE 4 · FSE 3 · ASE 2",
+      "porFase": { "Verificação": 15 }
+    },
+    {
+      "cod": "S4",
+      "nome": "Reparo e mitigação de vulnerabilidade",
+      "total": 9,
+      "central": 7,
+      "predominante": "Depuração e reparo",
+      "sedes": "ICSE 3 · FSE 2 · ASE 1",
+      "porFase": { "Depuração e reparo": 9 }
+    },
+    {
+      "cod": "S5",
+      "nome": "Cadeia de suprimentos e dependências",
+      "total": 7,
+      "central": 5,
+      "predominante": "Verificação",
+      "sedes": "FSE 2 · ICSE 2",
+      "porFase": { "Verificação": 6, "Manutenção": 1 }
+    },
+    {
+      "cod": "S6",
+      "nome": "Segurança do agente e do modelo",
+      "total": 11,
+      "central": 5,
+      "predominante": "Processo transversal",
+      "sedes": "ASE 2 · FSE 2 · TOSEM 1",
+      "porFase": { "Processo transversal": 7, "Verificação": 3, "Geração de código": 1 }
+    },
+    {
+      "cod": "S7",
+      "nome": "Ataque e anomalia em operação",
+      "total": 2,
+      "central": 0,
+      "predominante": "Operação em produção",
+      "sedes": "ICSE 1",
+      "porFase": { "Operação em produção": 2 }
+    },
+    {
+      "cod": "S8",
+      "nome": "Requisito, projeto e política",
+      "total": 21,
+      "central": 10,
+      "predominante": "Verificação",
+      "sedes": "ASE 3 · ICSE 2 · FSE 1",
+      "porFase": { "Verificação": 8, "Processo transversal": 7, "Requisitos": 3, "Arquitetura": 2, "Manutenção": 1 }
+    },
+    {
+      "cod": "S9",
+      "nome": "Benchmark e avaliação de segurança",
+      "total": 24,
+      "central": 10,
+      "predominante": "Verificação",
+      "sedes": "ICSE 5 · ASE 3 · FSE 3",
+      "porFase": { "Verificação": 23, "Operação em produção": 1 }
+    },
+    {
+      "cod": "S10",
+      "nome": "Educação e prática humana",
+      "total": 4,
+      "central": 1,
+      "predominante": "Verificação",
+      "sedes": "ICSE 1 · TOSEM 1",
+      "porFase": { "Verificação": 2, "Processo transversal": 1, "Geração de código": 1 }
+    }
+  ],
+  "achados": [
+    {
+      "titulo": "A segurança entra no processo pela verificação",
+      "texto": "Verificação e qualidade recebe 89 das 140 obras, distribuídas em sete dos dez tópicos. Detecção de vulnerabilidade em código, teste ofensivo e benchmark de segurança estão praticamente todos ali. É o ponto do processo onde a automação de segurança amadureceu."
+    },
+    {
+      "titulo": "O código gerado por IA virou objeto de segurança próprio",
+      "texto": "São 23 obras, divididas entre geração e verificação: 12 tratam de produzir código seguro por construção, e 10 de medir se o código gerado é inseguro. A divisão é informativa — o campo trata a insegurança do código gerado tanto como problema de geração quanto de avaliação, e a fronteira depende de o trabalho propor técnica ou instrumento de medida."
+    },
+    {
+      "titulo": "O instrumento de medida é grande demais em relação ao que mede",
+      "texto": "Benchmark e avaliação tem 24 obras — quase o mesmo que detecção de vulnerabilidade, que é a tarefa que os benchmarks medem. Um campo com tantos instrumentos quanto técnicas sugere que a comparabilidade ainda não se resolveu."
+    },
+    {
+      "titulo": "A prevenção por projeto é pequena, e a operação é quase vazia",
+      "texto": "Requisito, projeto e política soma 21 obras, e apenas 5 delas estão de fato em requisitos ou arquitetura — as outras aparecem em verificação e em processo transversal, o que significa que política de segurança é mais estudada como algo a verificar depois do que a projetar antes. E detecção de ataque em sistema operando tem 2 obras nos dois corpora somados, ambas com segurança como preocupação secundária, nenhuma central."
+    }
+  ],
+  "lacuna": {
+    "titulo": "A lacuna da operação, e o que ela significa",
+    "paragrafos": [
+      "A fase de monitoramento e operação em produção tem 15 artigos em sedes e 3 estudos secundários. Nenhum tem segurança como objeto central. Detecção de intrusão, identificação de comportamento malicioso em tempo de execução e resposta a incidente de segurança em produção estão no escopo declarado da fase, e a varredura dedicada consultou esse vocabulário explicitamente — inclusive <em>intrusion detection</em>, que retornou zero resultados na categoria de engenharia de software do arXiv.",
+      "Duas leituras são possíveis, e este método não as separa. A primeira: a comunidade de engenharia de software não trata detecção de exploração em produção como problema seu, delegando-o a operações e à segurança da informação. A segunda: essa literatura existe, mas nas sedes de segurança — CCS, USENIX Security, NDSS, S&P — que este levantamento não cobre, restrito como está a nove sedes de engenharia de software. A segunda é mais provável, e é uma limitação declarada do corpus, não um achado sobre o campo.",
+      "O que se pode afirmar com o material disponível é mais estreito e ainda assim útil: <strong>dentro da literatura de engenharia de software apoiada por IA, a segurança é tratada como problema de pré-entrega.</strong> O ciclo automatizado vai de gerar código seguro a detectar vulnerabilidade, testar ofensivamente e reparar; ele para na entrega. O que acontece com o software sob ataque depois de implantado não é, nessas sedes, um problema de engenharia de software."
+    ]
+  },
+  "fronteira": {
+    "titulo": "Um caso de fronteira que vale registrar",
+    "texto": "Segurança do agente e do modelo tem 11 obras e é o tópico de fronteira mais delicada. Injeção de prompt, envenenamento de ferramenta, escape de sandbox e risco de agente autônomo com permissão de escrita em repositório são ataques cujo alvo é o próprio agente, não o software que ele produz. Sete dessas obras estão em processo transversal, o que é correto: o objeto é a infraestrutura de agência. Durante a classificação, uma taxonomia de falhas em tempo de execução de servidores de protocolo de contexto estava em operação em produção e foi movida para processo transversal — falhas da infraestrutura que hospeda o agente são falhas de agência, não de um produto operando."
+  }
+}

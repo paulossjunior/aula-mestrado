@@ -3,7 +3,7 @@
     "cod": "F9",
     "curto": "Descoberta de produto",
     "nome": "Descoberta de produto e entendimento do problema",
-    "sec": "4",
+    "sec": "5",
     "sedes": "7",
     "escopo": "A fase anterior ao requisito. Antes de escrever o que o sistema deve fazer, alguém precisa entender que problema existe, para quem, e o que o produto atual já faz. Responde por que construir isto, e não como — tanto a descoberta voltada ao futuro quanto a arqueologia do legado, porque muitas vezes a única documentação viva da regra de negócio é o código que a implementa.",
     "inclui": "Pesquisa de usuário e de mercado; ideação e validação de hipótese de produto; análise de feedback, avaliações de loja e tíquetes de suporte; compreensão de código legado para recuperar intenção e regra de negócio; onboarding em base desconhecida.",
@@ -32,7 +32,7 @@
     "cod": "F1",
     "curto": "Requisitos",
     "nome": "Requisitos e especificação",
-    "sec": "7",
+    "sec": "11",
     "sedes": "10",
     "escopo": "Uma vez entendido o problema em descoberta de produto, esta é a fase que o registra formalmente. Tudo que ocorre antes de existir uma decisão de estrutura: descobrir, negociar, registrar e validar o que o software deve fazer — incluindo desenvolvimento dirigido por especificação, em que a especificação executável governa a execução do agente.",
     "inclui": "Elicitação e classificação de requisitos; geração e melhoria de histórias de usuário; extração de intenção a partir de issues; rastreabilidade requisito-para-código; especificação formal ou semiformal como entrada de geração; conformidade legal ou normativa.",
@@ -60,7 +60,7 @@
     "cod": "F2",
     "curto": "Arquitetura",
     "nome": "Projeto e arquitetura",
-    "sec": "11",
+    "sec": "16",
     "sedes": "9",
     "escopo": "A decisão de estrutura: como o sistema se decompõe em partes, que responsabilidades cada parte carrega e que restrições de qualidade a decomposição precisa honrar. Cobre decisão arquitetural, modelagem estrutural e comportamental, padrões de projeto e reestruturação em nível de componente.",
     "inclui": "Recomendação ou avaliação de decisão arquitetural; geração de diagramas UML e ER; decomposição em microsserviços; escolha de padrão de projeto; avaliação de conhecimento arquitetural de modelos; documentação de arquitetura.",
@@ -88,8 +88,8 @@
     "cod": "F3",
     "curto": "Geração de código",
     "nome": "Implementação e geração de código",
-    "sec": "28",
-    "sedes": "54",
+    "sec": "34",
+    "sedes": "57",
     "escopo": "A produção do código em si e as transformações que preservam ou traduzem sua intenção. A saída avaliada é código-fonte executável ou uma representação direta dele.",
     "inclui": "Geração a partir de linguagem natural; completação; geração em nível de repositório com recuperação de contexto; tradução entre linguagens; otimização de desempenho; sumarização e documentação de código; mensagens de commit.",
     "naoInclui": "Geração de código de teste (verificação). Patch para corrigir defeito conhecido (depuração e reparo). Migração de sistema legado inteiro (manutenção). Documentação mantida como base de conhecimento consultável (conhecimento).",
@@ -116,8 +116,8 @@
     "cod": "F4",
     "curto": "Verificação",
     "nome": "Verificação e qualidade",
-    "sec": "50",
-    "sedes": "125",
+    "sec": "71",
+    "sedes": "126",
     "escopo": "Tudo que julga se o código está adequado, sem necessariamente consertá-lo. Reúne as atividades de detecção: teste, revisão, análise e medição. Existe separada de depuração e reparo porque encontrar um problema e corrigi-lo têm literaturas, métricas e gargalos distintos.",
     "inclui": "Geração e manutenção de testes; teste metamórfico e baseado em propriedades; revisão de código, humana ou agêntica; análise estática; detecção de vulnerabilidade e de mau cheiro; avaliação de qualidade de código gerado.",
     "naoInclui": "Localização de falha seguida de correção (depuração e reparo). Benchmark cujo objeto é a capacidade geral de um agente, e não a qualidade de um artefato (em geral processo transversal).",
@@ -144,8 +144,8 @@
     "cod": "F5",
     "curto": "Depuração e reparo",
     "nome": "Depuração e reparo",
-    "sec": "8",
-    "sedes": "36",
+    "sec": "9",
+    "sedes": "38",
     "escopo": "O ciclo que parte de um defeito observado e termina em uma correção: reproduzir, localizar a causa, gerar o patch. É onde vive a resolução autônoma de issues, o gênero mais ativo da engenharia de software agêntica.",
     "inclui": "Localização de falha; reprodução automática de bug e de crash; reparo automatizado de programa; resolução agêntica de issue; depuração interativa assistida; raciocínio causal sobre defeito.",
     "naoInclui": "Detecção de vulnerabilidade sem correção (verificação). Correção de dívida técnica planejada em vez de reativa (manutenção).",
@@ -171,13 +171,13 @@
   {
     "cod": "F6",
     "curto": "Manutenção",
-    "nome": "Manutenção, evolução e operação",
-    "sec": "6",
-    "sedes": "21",
-    "escopo": "O que acontece depois que o software existe e funciona: adaptá-lo, movê-lo, mantê-lo saudável e operá-lo em produção. Distingue-se de depuração e reparo porque a motivação não é um defeito, e sim mudança de contexto, acúmulo de custo ou necessidade operacional.",
+    "nome": "Manutenção e evolução do código",
+    "sec": "12",
+    "sedes": "18",
+    "escopo": "O que acontece com o código depois que o software existe e funciona: adaptá-lo, movê-lo, mantê-lo saudável. O artefato observado é estático — código-fonte, histórico de commits, dependências declaradas. Distingue-se de depuração e reparo porque a motivação não é um defeito conhecido, e sim mudança de contexto ou acúmulo de custo. Nesta revisão a fase perdeu a operação, que passou a ter código próprio: manter código e operar produto são atividades distintas, com equipes, ferramentas e sinais de entrada diferentes, ainda que o vocabulário tradicional de engenharia de software as agrupe sob manutenção.",
     "inclui": "Migração de legado e de biblioteca; atualização de dependência; refatoração planejada; dívida técnica; evolvabilidade e manutenibilidade; operação assistida por agente e análise de causa raiz; sistemas de build; conformidade de licença.",
-    "naoInclui": "Reparo de defeito reportado (depuração e reparo). Reestruturação que redefine a arquitetura de componentes (arquitetura). Planejamento e orquestração de release (gestão de projeto) — a operação contínua da implantação permanece aqui.",
-    "teste": "O software já está em uso, e o artigo trata de mantê-lo viável ao longo do tempo?",
+    "naoInclui": "Correção de defeito conhecido (depuração e reparo). Análise de log, incidente ou telemetria de sistema em execução (operação em produção). Compreensão de código legado quando o objetivo é entender o domínio e não modificar (descoberta de produto). Documentação de código como base de conhecimento (gestão de conhecimento).",
+    "teste": "O trabalho transforma código existente por razão que não é um defeito, e o dado observado é o próprio código ou seu histórico?",
     "exemplos": [
       {
         "t": "A Survey on LLM Impact on Software Evolvability and Maintainability",
@@ -193,6 +193,45 @@
         "t": "When AI Agents Touch CI/CD Configurations: Frequency and Success",
         "url": "https://arxiv.org/abs/2601.17413",
         "meta": "2026 · MSR, trilha principal"
+      }
+    ]
+  },
+  {
+    "cod": "F12",
+    "curto": "Operação em produção",
+    "nome": "Monitoramento e operação do produto em produção",
+    "sec": "3",
+    "sedes": "15",
+    "escopo": "A fase em que o software já está executando e servindo usuários reais. O objeto de observação deixa de ser o artefato de código e passa a ser o sistema em funcionamento: seus logs, traços, métricas, alertas e incidentes. É a fase mais longa do ciclo de vida em tempo de calendário, e a única em que o comportamento observado inclui carga real, dados reais e adversários reais.",
+    "inclui": "Análise de log e de telemetria de sistema em execução; detecção de anomalia em tempo de execução; gestão e resposta a incidente; análise de causa raiz de falha em produção; AIOps e operação assistida por modelo de linguagem; observabilidade e instrumentação; apoio ao plantão e à triagem de alerta; predição de falha a partir de sinal operacional; autorreparo e remediação em execução; detecção de intrusão e de ataque em sistema operando; análise pós-morte de incidente.",
+    "naoInclui": "Refatoração, migração de versão, atualização de dependência e dívida técnica, que são manutenção porque observam código. Teste, análise estática e detecção de vulnerabilidade antes da entrega, que são verificação porque ocorrem antes de haver sistema em execução. Correção de falha conhecida no código, que é depuração e reparo. Análise de avaliação de usuário em loja de aplicativos para descobrir necessidade de produto, que é descoberta de produto porque o objeto é a necessidade e não o comportamento do sistema.",
+    "teste": "O dado que o trabalho analisa vem de um sistema que está executando — log, traço, métrica, alerta, incidente — ou vem de um artefato estático como código, commit ou dependência?",
+    "nota": "A fase tem 3 estudos secundários e 15 artigos em sedes, e nasceu na varredura dedicada desta revisão. A assimetria vale registrar: nenhuma das obras tem segurança como objeto central, apesar de detecção de intrusão e de ataque em sistema operando estar explicitamente no escopo. Isso não é lacuna de busca — as consultas de segurança em operação foram executadas e recuperaram material, que ao ser triado revelou-se sobre segurança de rede ou de modelo, não de software em produção.",
+    "exemplos": [
+      {
+        "t": "A Survey of AIOps for Failure Management in the Era of Large Language Models",
+        "url": "https://arxiv.org/abs/2406.11213",
+        "meta": "2024 · estudo secundário"
+      },
+      {
+        "t": "Recommending Root-Cause and Mitigation Steps for Cloud Incidents using Large Language Models",
+        "url": "https://arxiv.org/abs/2301.03797",
+        "meta": "2023 · ICSE, trilha principal"
+      },
+      {
+        "t": "LILAC: Log Parsing using LLMs with Adaptive Parsing Cache",
+        "url": "https://arxiv.org/abs/2310.01796",
+        "meta": "2023 · FSE, trilha principal"
+      },
+      {
+        "t": "Xpert: Empowering Incident Management with Query Recommendations via Large Language Models",
+        "url": "https://arxiv.org/abs/2312.11988",
+        "meta": "2023 · ICSE, trilha principal"
+      },
+      {
+        "t": "AgentOps: Enabling Observability of LLM Agents",
+        "url": "https://arxiv.org/abs/2411.05285",
+        "meta": "2024 · estudo secundário"
       }
     ]
   },
@@ -258,8 +297,8 @@
     "cod": "F7",
     "curto": "Processo transversal",
     "nome": "Processo transversal e ciclo completo",
-    "sec": "48",
-    "sedes": "40",
+    "sec": "65",
+    "sedes": "39",
     "escopo": "Não é resíduo. Um artigo entra aqui quando a unidade de análise não é uma atividade do ciclo de vida, e sim o arranjo entre atividades, entre agentes ou entre agentes e pessoas: cobertura de ciclo completo, infraestrutura de agência (memória, contexto, orquestração, avaliação de trajetória) e organização do trabalho como colaboração e governança.",
     "inclui": "Frameworks multiagente que cobrem múltiplas fases; arquiteturas de memória e engenharia de contexto; orquestração e protocolos de ferramenta; avaliação de agentes e trajetórias; benchmarks agênticos de propósito geral; produtividade, confiança e adoção em equipes; visão, roadmap e governança.",
     "naoInclui": "Framework multiagente avaliado inteiramente em uma fase — a cobertura tem de ser real, não declarada. Ensino da disciplina (formação). Survey de uma única fase. Coordenação operacional do trabalho (gestão de projeto). Documentação e base de conhecimento (conhecimento).",
@@ -286,7 +325,7 @@
     "cod": "F8",
     "curto": "Formação",
     "nome": "Formação e educação",
-    "sec": "4",
+    "sec": "5",
     "sedes": "5",
     "escopo": "A transmissão da prática, não a prática. Entra aqui o artigo cujo sujeito é quem aprende — estudante, desenvolvedor novato, currículo, avaliação pedagógica — em vez do software produzido.",
     "inclui": "Modelos de linguagem em disciplinas de programação e engenharia de software; feedback automatizado; tutores agênticos; currículo para engenharia de software agêntica; percepções e adoção por novatos e estudantes.",

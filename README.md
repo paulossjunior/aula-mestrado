@@ -20,13 +20,14 @@ nenhum arquivo de programação.
 | `/` | Ementa, objetivos, cronograma dos 17 encontros, bibliografia, resumo da avaliação e contato |
 | `/conteudo` | O programa completo, agrupado nas três unidades |
 | `/avaliacao` | Composição da nota, os quatro laboratórios, rubrica do artigo final e o modelo de fichamento |
-| `/codebook` | As onze fases do processo de software: escopo, inclusão, exclusão, teste de decisão e exemplos |
+| `/codebook` | As doze fases do processo de software: escopo, inclusão, exclusão, teste de decisão e exemplos |
 | `/codebook/mapeamento` | O mapeamento do campo: seis tabelas, duas figuras e o corpus navegável |
 | `/leituras` | Base de leituras: o tronco do campo e, por fase, o que ler para entrar nela |
 | `/spec-kit` | O fluxo do Spec Kit: cada comando como a etapa de desenvolvimento que ele ocupa |
+| `/seguranca` | A dimensão de segurança: dez tópicos cruzados com as doze fases do processo |
 | `/aulas/01` … `/aulas/17` | Uma página por encontro: roteiro, objetivos, atividade, entrega, leitura e material |
 
-São 24 páginas HTML estáticas. Só duas coisas usam JavaScript — o filtro de unidade
+São 25 páginas HTML estáticas. Só duas coisas usam JavaScript — o filtro de unidade
 no cronograma e o navegador de corpus. Todo o resto funciona com o JS desligado.
 
 ---
@@ -98,12 +99,13 @@ malformada nunca chega ao ar.
 
 ```
 src/content/aulas/NN.md         um arquivo por encontro (17)
-src/content/codebook/           as onze fases e as sete fronteiras de classificação
+src/content/codebook/           as doze fases e as sete fronteiras de classificação
 src/content/mapeamento/         as seis tabelas do mapeamento do campo
 src/content/bibliografia.json   ids do arXiv + rótulo (Núcleo / Fronteira)
 src/content/avaliacao.json      pesos, laboratórios, rubrica e modelo de fichamento
 src/content/leituras-base.json  a base de leituras: tronco e leituras por fase
 src/content/spec-kit.json       os comandos do Spec Kit e a etapa real de cada um
+src/content/seguranca.json      a dimensão de segurança: tópicos, cruzamento e achados
 src/content/unidades.json       as três unidades e suas descrições
 src/data/corpus.js              os dois corpora (157 secundários + 106 em sedes)
 
@@ -113,14 +115,14 @@ src/lib/url.ts                  resolve links sob o subcaminho do GitHub Pages
 src/lib/aulas.ts                traduz `estado` no que a página renderiza
 
 public/_ds/modernist-…/         o design system: styles.css, guia e tokens
-public/uploads/                 as duas figuras do mapeamento, geradas em SVG
+public/uploads/                 as quatro figuras do site, geradas em SVG por script
 public/fichamento.tex           o modelo em LaTeX (é o mesmo texto exibido no site)
 public/.nojekyll                obrigatório — veja "Deploy"
 
 fontes/                         material de origem: codebook, mapeamento e os CSV
 Disciplina.dc.html, support.js  o protótipo original, guardado como registro
 scripts/extrair-conteudo.mjs    o script que migrou os dados do protótipo
-scripts/gerar-figuras.mjs       regera as duas figuras a partir das tabelas
+scripts/gerar-figuras.mjs       regera as quatro figuras a partir das tabelas
 scripts/nomear-fases.mjs        trocou os códigos F pelos nomes das fases
 specs/                          a especificação que guiou a construção
 ```
@@ -154,7 +156,7 @@ As duas rodam a mesma bateria de verificação antes de deixar qualquer coisa pa
 1. `npm run check` — tipos e o schema do frontmatter das aulas. Um campo faltando
    ou com o tipo errado reprova aqui.
 2. `npm run build` — o site tem de construir.
-3. **24 páginas** — conta os `index.html` e confere um a um: as sete páginas fixas
+3. **25 páginas** — conta os `index.html` e confere um a um: as oito páginas fixas
    e as 17 aulas. Se uma sumir, reprova em vez de publicar um 404.
 4. **Assets obrigatórios** — `.nojekyll`, `fichamento.tex`, as duas figuras e a
    folha do design system.

@@ -310,3 +310,75 @@ f.push(
 writeFileSync(resolve(raiz, "public/uploads/spec-kit-fluxo.svg"), f.join("\n") + "\n");
 console.log("escrito public/uploads/spec-kit-fluxo.svg");
 console.log(`  ${espinha.length} etapas na linha principal · ${sk.opcionais.length} de verificação · converge no retorno`);
+
+// ---------------------------------------------------------------------------
+// Quarta figura: onde no processo cada tópico de segurança se concentra.
+// ---------------------------------------------------------------------------
+const seg = ler("src/content/seguranca.json");
+
+// Só as fases que recebem alguma obra de segurança, na ordem do ciclo de vida.
+const ORDEM_FASES = seg.porFase.map((f) => f.fase);
+const colunas = ORDEM_FASES.filter((f) => seg.topicos.some((t) => (t.porFase[f] ?? 0) > 0));
+
+const S_PAD = 28;
+const S_ROTULO = 330;
+const S_CEL = 104;
+const S_LINHA = 50;
+const S_TOPO = 130;
+const S_L = S_PAD + S_ROTULO + colunas.length * S_CEL + 78;
+const S_A = S_TOPO + seg.topicos.length * S_LINHA + 92;
+
+const maxSeg = Math.max(...seg.topicos.flatMap((t) => Object.values(t.porFase)));
+const intSeg = (v) => (v === 0 ? 0 : 0.1 + 0.9 * Math.sqrt(v / maxSeg));
+
+const s = [
+  `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${S_L} ${S_A}" width="${S_L}" height="${S_A}" role="img" aria-label="Distribuição dos dez tópicos de segurança pelas fases do processo, nas ${seg.totais.comSeguranca} obras que tratam de segurança">`,
+  `<rect width="${S_L}" height="${S_A}" fill="${BG}"/>`,
+];
+
+colunas.forEach((nome, c) => {
+  const x = S_PAD + S_ROTULO + c * S_CEL + S_CEL / 2;
+  quebrar(nome, 13).forEach((linha, k) =>
+    s.push(
+      `<text x="${x}" y="${S_TOPO - 52 + k * 17}" font-family="${FONTE}" font-size="12.5" font-weight="700" fill="${INK}" text-anchor="middle">${esc(linha)}</text>`
+    )
+  );
+});
+s.push(
+  `<text x="${S_L - 40}" y="${S_TOPO - 52}" font-family="${FONTE}" font-size="12.5" font-weight="800" fill="${INK}" text-anchor="middle">TOTAL</text>`,
+  `<line x1="0" y1="${S_TOPO - 24}" x2="${S_L}" y2="${S_TOPO - 24}" stroke="${INK}" stroke-width="2"/>`
+);
+
+seg.topicos.forEach((t, r) => {
+  const y = S_TOPO + r * S_LINHA;
+  s.push(
+    `<text x="${S_PAD}" y="${y + S_LINHA / 2 + 5}" font-family="${FONTE}" font-size="14" font-weight="700" fill="${INK}">${esc(t.cod)} ${esc(t.nome)}</text>`
+  );
+  colunas.forEach((nome, c) => {
+    const v = t.porFase[nome] ?? 0;
+    const x = S_PAD + S_ROTULO + c * S_CEL;
+    const op = intSeg(v);
+    s.push(`<rect x="${x + 2}" y="${y + 4}" width="${S_CEL - 4}" height="${S_LINHA - 8}" fill="${ACENTO}" fill-opacity="${op.toFixed(2)}"/>`);
+    s.push(
+      v === 0
+        ? `<text x="${x + S_CEL / 2}" y="${y + S_LINHA / 2 + 5}" font-family="${FONTE}" font-size="13" fill="${DIVISOR}" text-anchor="middle">–</text>`
+        : `<text x="${x + S_CEL / 2}" y="${y + S_LINHA / 2 + 5}" font-family="${FONTE}" font-size="14" font-weight="800" fill="${op > 0.55 ? "#fff" : INK}" text-anchor="middle">${v}</text>`
+    );
+  });
+  s.push(
+    `<text x="${S_L - 40}" y="${y + S_LINHA / 2 + 5}" font-family="${FONTE}" font-size="15" font-weight="900" fill="${INK}" text-anchor="middle">${t.total}</text>`,
+    `<line x1="0" y1="${y + S_LINHA}" x2="${S_L}" y2="${y + S_LINHA}" stroke="${DIVISOR}" stroke-width="2"/>`
+  );
+});
+
+const sBase = S_TOPO + seg.topicos.length * S_LINHA;
+s.push(
+  `<line x1="0" y1="${sBase}" x2="${S_L}" y2="${sBase}" stroke="${INK}" stroke-width="2"/>`,
+  `<text x="${S_PAD}" y="${sBase + 34}" font-family="${FONTE}" font-size="13" font-weight="800" fill="${INK}" letter-spacing="1.2">N = ${seg.totais.comSeguranca} OBRAS COM SEGURANÇA · ${seg.totais.central} COM SEGURANÇA COMO OBJETO CENTRAL</text>`,
+  `<text x="${S_PAD}" y="${sBase + 58}" font-family="${FONTE}" font-size="12.5" font-weight="600" fill="${INK}" fill-opacity="0.7">De ${seg.totais.obras} obras nos dois corpora. Fases sem nenhuma obra de segurança ficaram de fora do eixo.</text>`,
+  "</svg>"
+);
+
+writeFileSync(resolve(raiz, "public/uploads/seguranca-topico-fase.svg"), s.join("\n") + "\n");
+console.log("escrito public/uploads/seguranca-topico-fase.svg");
+console.log(`  ${seg.topicos.length} tópicos × ${colunas.length} fases · maior célula = ${maxSeg}`);

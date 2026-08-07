@@ -39,9 +39,9 @@ jobs:
         run: |
           total=$(find dist -name index.html | wc -l | tr -d ' ')
           echo "páginas geradas: $total"
-          test "$total" -eq 24 || { echo "esperava 24 páginas, encontrei $total"; exit 1; }
+          test "$total" -eq 25 || { echo "esperava 25 páginas, encontrei $total"; exit 1; }
           for p in dist/index.html dist/conteudo/index.html dist/avaliacao/index.html \
-                   dist/leituras/index.html dist/spec-kit/index.html \
+                   dist/leituras/index.html dist/spec-kit/index.html dist/seguranca/index.html \
                    dist/codebook/index.html dist/codebook/mapeamento/index.html; do
             test -f "$p" || { echo "faltou $p"; exit 1; }
           done
@@ -57,6 +57,7 @@ jobs:
                    dist/uploads/mapa_secundarios_fase_ano.svg \
                    dist/uploads/sedes_fase_heatmap.svg \
                    dist/uploads/spec-kit-fluxo.svg \
+                   dist/uploads/seguranca-topico-fase.svg \
                    dist/_ds/modernist-a03d4a61-8041-48c5-a776-4257fca7a731/styles.css; do
             test -f "$a" || { echo "faltou $a"; exit 1; }
           done
