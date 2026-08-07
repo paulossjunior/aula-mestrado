@@ -65,7 +65,7 @@ const totalObras =
         Por onde começar a ler
       </h1>
       <p style="font-size: 18px; line-height: 1.6; max-width: 64ch; margin: 24px 0 0; text-wrap: pretty">
-        Ponto de partida extraído dos dois corpora do projeto: 171 estudos secundários e 321 artigos
+        Ponto de partida extraído dos dois corpora do projeto: 233 estudos secundários e 321 artigos
         publicados em sedes de referência. Para cada uma das onze fases do processo, até dois estudos
         secundários — que dão o mapa da fase — e até dois trabalhos primários — que mostram como ela é
         praticada.
@@ -89,8 +89,8 @@ const totalObras =
           > em vermelho é conferência ou periódico revisado por pares — ICSE, FSE, ASE, ISSTA, MSR,
           ICSME, SANER, TSE, TOSEM. <span style={etiquetaSede("arXiv")}>arXiv</span> em contorno é
           preprint sem sede confirmada no corpus, o que vale para boa parte dos estudos secundários.
-          Dos {totalObras} trabalhos, {comSede} saíram em sede revisada por pares — inclusive
-          <strong>todos os cinco do tronco</strong>. Onde se lê <em>sede fora do corpus, a confirmar</em>,
+          Das {totalObras} indicações, {comSede} saíram em sede revisada por pares — inclusive
+          <strong>todas as {dados.tronco.length} do tronco</strong>. Onde se lê <em>sede fora do corpus, a confirmar</em>,
           a sede foi preenchida a partir de registro externo e ainda não passou pela verificação do
           corpus.
         </p>
@@ -107,11 +107,13 @@ const totalObras =
         <h2
           style="font-family: var(--font-heading); font-weight: 900; font-size: clamp(28px, 5vw, 52px); line-height: 1; letter-spacing: -0.03em; margin: 0; max-width: 24ch; text-wrap: balance"
         >
-          Se a leitura precisar começar por cinco artigos e nada mais
+          Se a leitura precisar começar por seis artigos e nada mais
         </h2>
-        <p style="font-size: 17px; line-height: 1.6; max-width: 60ch; margin: 18px 0 0">
-          São os trabalhos com maior impacto acumulado nos dois corpora somados. O vocabulário que
-          eles fixaram é usado por quase todo o resto da literatura.
+        <p style="font-size: 17px; line-height: 1.6; max-width: 62ch; margin: 18px 0 0">
+          São as seis obras <strong>distintas</strong> com maior impacto acumulado nos dois corpora
+          somados, e o vocabulário que elas fixaram é usado por quase todo o resto da literatura.
+          Três aparecem nos dois corpora — são revisões publicadas em sede de referência — e estão
+          contadas uma vez só. Cinco delas reaparecem adiante, na fase a que pertencem.
         </p>
         <div style="display: grid; gap: 0; margin-top: 36px; border-top: 2px solid rgba(255,255,255,0.45)">
           {
@@ -165,15 +167,17 @@ const totalObras =
           transversais. Ler na sequência dá a passagem de uma fase à seguinte — que é justamente o que
           o processo agêntico está reorganizando.
         </p>
+        {/* As réguas saem de cada célula, não do fundo do container: com onze fases
+            numa grade que se ajusta sozinha, sobram células e o fundo apareceria. */}
         <div
-          style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 2px; background: var(--color-divider); border: 2px solid var(--color-text)"
+          style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 0; border: 2px solid var(--color-text)"
         >
           {
             dados.fases.map((f) => (
               <a
                 class="om-hover"
                 href={`#${f.cod.toLowerCase()}`}
-                style="background: var(--color-bg); padding: 14px 16px; display: block; color: var(--color-text)"
+                style="background: var(--color-bg); padding: 14px 16px; display: block; color: var(--color-text); box-shadow: inset -2px -2px 0 var(--color-divider)"
               >
                 <div style="font-family: var(--font-heading); font-weight: 800; font-size: 15px; line-height: 1.2; color: var(--color-accent)">
                   {f.curto}

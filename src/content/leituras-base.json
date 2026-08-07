@@ -50,6 +50,18 @@
       "foco": "Framework multi-agente para geração colaborativa de código com LLMs"
     },
     {
+      "titulo": "Prompting Is All You Need: Automated Android Bug Replay with Large Language Models",
+      "url": "https://arxiv.org/abs/2306.01987",
+      "arxiv": "2306.01987",
+      "sede": "ICSE 2023",
+      "trilha": "trilha principal",
+      "tipo": "Ferramenta/sistema",
+      "cit": "154 citações",
+      "fwci": "FWCI 79",
+      "momentum": "crescendo",
+      "foco": "Reprodução automatizada de bugs Android via prompting de LLMs"
+    },
+    {
       "titulo": "LLM-Based Multi-Agent Systems for Software Engineering: Literature Review, Vision and the Road Ahead",
       "url": "https://arxiv.org/abs/2404.04834",
       "arxiv": "2404.04834",
@@ -125,6 +137,18 @@
       "nome": "Requisitos e especificação",
       "secundarios": [
         {
+          "titulo": "How Mature is Requirements Engineering for AI-based Systems? A Systematic Mapping Study on Practices, Challenges, and Future Research Directions",
+          "url": "https://arxiv.org/abs/2409.07192",
+          "arxiv": "2409.07192",
+          "sede": "arXiv",
+          "trilha": "preprint",
+          "tipo": "Mapeamento sistemático",
+          "cit": "29 citações",
+          "fwci": "FWCI 19",
+          "momentum": "acelerando",
+          "foco": "Práticas, desafios e lacunas em engenharia de requisitos para sistemas de IA"
+        },
+        {
           "titulo": "Generative AI for Requirements Engineering: A Systematic Literature Review",
           "url": "https://arxiv.org/abs/2409.06741",
           "arxiv": "2409.06741",
@@ -135,18 +159,6 @@
           "fwci": "FWCI 11",
           "momentum": "acelerando",
           "foco": "Generative AI aplicada a Engenharia de Requisitos"
-        },
-        {
-          "titulo": "Emotions in Requirements Engineering: A Systematic Mapping Study",
-          "url": "https://arxiv.org/abs/2305.16091",
-          "arxiv": "2305.16091",
-          "sede": "arXiv",
-          "trilha": "preprint",
-          "tipo": "Mapeamento sistemático",
-          "cit": "18 citações",
-          "fwci": "FWCI 6",
-          "momentum": "platô",
-          "foco": "Requisitos emocionais em engenharia de requisitos, mapeamento sistemático"
         }
       ],
       "primarios": [
@@ -182,6 +194,18 @@
       "nome": "Projeto e arquitetura",
       "secundarios": [
         {
+          "titulo": "Design Patterns for AI-based Systems: A Multivocal Literature Review and Pattern Repository",
+          "url": "https://arxiv.org/abs/2303.13173",
+          "arxiv": "2303.13173",
+          "sede": "arXiv",
+          "trilha": "preprint",
+          "tipo": "Revisão sistemática (SLR)",
+          "cit": "19 citações",
+          "fwci": "FWCI 6",
+          "momentum": "desacelerando",
+          "foco": "Padrões de projeto para sistemas baseados em IA"
+        },
+        {
           "titulo": "A Taxonomy of Foundation Model based Systems through the Lens of Software Architecture",
           "url": "https://arxiv.org/abs/2305.05352",
           "arxiv": "2305.05352",
@@ -192,18 +216,6 @@
           "fwci": "FWCI 3",
           "momentum": "acelerando",
           "foco": "Taxonomia de arquitetura de sistemas baseados em foundation models"
-        },
-        {
-          "titulo": "Domain-Driven Design in Software Development: A Systematic Literature Review on Implementation, Challenges, and Effectiveness",
-          "url": "https://arxiv.org/abs/2310.01905",
-          "arxiv": "2310.01905",
-          "sede": "arXiv",
-          "trilha": "preprint",
-          "tipo": "Revisão sistemática (SLR)",
-          "cit": "5 citações",
-          "fwci": "FWCI 3",
-          "momentum": "acelerando",
-          "foco": "Domain-Driven Design aplicado a arquitetura de software e microsserviços"
         }
       ],
       "primarios": [
@@ -352,15 +364,16 @@
           "foco": "Capacidades de ChatGPT em reparo automático de programas"
         },
         {
-          "titulo": "A Survey on Automated Program Repair Techniques",
-          "url": "https://arxiv.org/abs/2303.18184",
-          "arxiv": "2303.18184",
+          "titulo": "Learning Software Bug Reports: A Systematic Literature Review",
+          "url": "https://arxiv.org/abs/2507.04422",
+          "arxiv": "2507.04422",
           "sede": "arXiv",
           "trilha": "preprint",
-          "tipo": "Survey narrativo",
-          "cit": "20 citações",
-          "momentum": "desacelerando",
-          "foco": "Técnicas de reparo automático de programas com foco em aprendizado profundo"
+          "tipo": "Revisão sistemática (SLR)",
+          "cit": "7 citações",
+          "fwci": "FWCI 3",
+          "momentum": "acelerando",
+          "foco": "Aprendizado de máquina para análise automática de relatórios de bugs"
         }
       ],
       "primarios": [
@@ -396,24 +409,28 @@
       "nome": "Manutenção, evolução e operação",
       "secundarios": [
         {
-          "titulo": "AgentOps: Enabling Observability of LLM Agents",
-          "url": "https://arxiv.org/abs/2411.05285",
-          "arxiv": "2411.05285",
-          "sede": "arXiv",
-          "trilha": "preprint",
-          "tipo": "Mapeamento sistemático",
-          "cit": "2 citações",
-          "foco": "Observabilidade e monitoramento de agentes LLM em produção"
-        },
-        {
-          "titulo": "A Survey on Large Language Model Impact on Software Evolvability and Maintainability: the Good, the Bad, the Ugly, and the Remedy",
-          "url": "https://arxiv.org/abs/2601.20879",
-          "arxiv": "2601.20879",
+          "titulo": "Maintainability Challenges in ML: A Systematic Literature Review",
+          "url": "https://arxiv.org/abs/2408.09196",
+          "arxiv": "2408.09196",
           "sede": "arXiv",
           "trilha": "preprint",
           "tipo": "Revisão sistemática (SLR)",
-          "cit": "0 citações",
-          "foco": "Impacto de LLMs na manutenção e evolução de software"
+          "cit": "18 citações",
+          "fwci": "FWCI 1",
+          "momentum": "desacelerando",
+          "foco": "Desafios de manutenibilidade em sistemas de ML"
+        },
+        {
+          "titulo": "Systematic Literature Review on Application of Learning-based Approaches in Continuous Integration",
+          "url": "https://arxiv.org/abs/2406.19765",
+          "arxiv": "2406.19765",
+          "sede": "arXiv",
+          "trilha": "preprint",
+          "tipo": "Revisão sistemática (SLR)",
+          "cit": "13 citações",
+          "fwci": "FWCI 2",
+          "momentum": "desacelerando",
+          "foco": "Aprendizado automático em integração contínua e automação"
         }
       ],
       "primarios": [
@@ -656,7 +673,7 @@
     },
     {
       "titulo": "Identificar oportunidade de pesquisa",
-      "texto": "Comece pelas fases com poucos estudos secundários e vários primários: descoberta de produto, planejamento e releases, gestão de conhecimento. A assimetria entre praticar e sintetizar é a oportunidade."
+      "texto": "Comece pelas fases com poucos estudos secundários e vários primários. Planejamento e gestão de releases tem 3 revisões contra 6 artigos primários; gestão de conhecimento e documentação viva tem 2 contra 8; descoberta de produto tem 5 contra 7. A assimetria entre praticar e sintetizar é a oportunidade."
     }
   ]
 }
