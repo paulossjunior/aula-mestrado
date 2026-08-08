@@ -7,10 +7,11 @@
   ],
   "objetivos": [
     "Situar um trabalho de engenharia de software com IA no mapa das doze fases do processo, e dizer que evidência sustenta o que ele afirma.",
-    "Enquadrar a própria pesquisa como projeto de Design Science Research: problema de campo, artefato, avaliação e contribuição de conhecimento.",
+    "Usar o Design Science Research para formalizar o próprio processo de pesquisa: explicitar o problema de campo, derivar dele os requisitos do artefato, planejar a demonstração e a avaliação, e declarar qual é a contribuição de conhecimento.",
     "Conduzir um ciclo completo de desenvolvimento dirigido por especificação, do acordo de equipe ao artefato publicado — e verificá-lo contra a especificação que o gerou.",
     "Projetar e operar um agente sobre um repositório real: ferramentas, critério de parada e o ponto em que a decisão volta para o humano.",
     "Avaliar assistentes e agentes com desenho experimental defensável, declarando o que a métrica escolhida <strong>não</strong> mede.",
     "Redigir um estudo curto no formato SBC, com dados e código abertos."
-  ]
+  ],
+  "notaObjetivos": "Tudo isso <strong>sobre o tema da sua própria pesquisa</strong>. Os quatro laboratórios e o artigo final aplicam os conceitos da disciplina ao objeto que você já estuda — o repositório, o dataset, o protótipo ou a ferramenta da sua dissertação. Entrega que não se liga à sua pesquisa é devolvida para refazer."
 }
