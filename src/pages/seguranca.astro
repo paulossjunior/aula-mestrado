@@ -17,6 +17,21 @@ const etiquetaOrigem = (origem: string) =>
     : base + "background: var(--color-accent); color: #fff";
 
 const etiquetaFase = base + "background: var(--color-text); color: var(--color-bg)";
+
+// Grau de centralidade: sólido para central, contorno para secundária — a mesma
+// hierarquia visual que a tabela dos três graus usa.
+const etiquetaGrau = (grau: string) =>
+  grau === "central"
+    ? base + "background: var(--color-accent); color: #fff"
+    : base + "background: transparent; color: var(--color-text); box-shadow: inset 0 0 0 2px var(--color-divider)";
+
+// O CSV grava o grau sem acento; na tela vale o português.
+const rotuloGrau = (grau: string) => (grau === "secundaria" ? "secundária" : grau);
+
+// Sem registro no OpenAlex é diferente de zero citação, e a lista não deve
+// confundir as duas coisas.
+const metrica = (cit: string) =>
+  cit === "" ? "sem métrica indexada" : `${cit} ${cit === "1" ? "citação" : "citações"}`;
 ---
 
 <Base
@@ -193,6 +208,7 @@ const etiquetaFase = base + "background: var(--color-text); color: var(--color-b
                         <span style={etiquetaOrigem(org)}>{org}</span>
                       ))}
                       <span style={etiquetaFase}>{o.fase}</span>
+                      <span style={etiquetaGrau(o.grau)}>segurança {rotuloGrau(o.grau)}</span>
                     </div>
                     <a
                       href={`https://arxiv.org/abs/${o.arxiv}`}
@@ -202,7 +218,7 @@ const etiquetaFase = base + "background: var(--color-text); color: var(--color-b
                     </a>
                     <p style="margin: 0; line-height: 1.55; max-width: 72ch">{o.foco}</p>
                     <p style="margin: 0; font-size: 13px; opacity: 0.65">
-                      arXiv:{o.arxiv} · {o.metrica}
+                      arXiv:{o.arxiv} · {metrica(o.citacoes)}
                     </p>
                   </li>
                 ))}
