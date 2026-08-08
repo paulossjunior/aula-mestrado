@@ -24,7 +24,7 @@ nenhum arquivo de programação.
 | `/codebook/mapeamento` | O mapeamento do campo: seis tabelas e duas figuras |
 | `/leituras` | Base de leituras: o tronco do campo, o que ler por fase e o corpus inteiro navegável |
 | `/spec-kit` | O fluxo do Spec Kit: cada comando como a etapa de desenvolvimento que ele ocupa |
-| `/seguranca` | A dimensão de segurança: dez tópicos cruzados com as doze fases do processo |
+| `/seguranca` | A dimensão de segurança: dez tópicos cruzados com as doze fases, e as obras de cada tópico |
 | `/aulas/01` … `/aulas/17` | Uma página por encontro: roteiro, objetivos, atividade, entrega, leitura e material |
 
 São 25 páginas HTML estáticas. Só duas coisas usam JavaScript — o filtro de unidade
@@ -105,7 +105,7 @@ src/content/bibliografia.json   ids do arXiv + rótulo (Núcleo / Fronteira)
 src/content/avaliacao.json      pesos, laboratórios, rubrica e modelo de fichamento
 src/content/leituras-base.json  a base de leituras: tronco e leituras por fase
 src/content/spec-kit.json       os comandos do Spec Kit e a etapa real de cada um
-src/content/seguranca.json      a dimensão de segurança: tópicos, cruzamento e achados
+src/content/seguranca.json      a dimensão de segurança: tópicos, obras, cruzamento e achados
 src/content/curso.json          a ementa e os objetivos de aprendizagem da home
 src/content/unidades.json       as três unidades e suas descrições
 src/data/corpus.js              os dois corpora (157 secundários + 106 em sedes)

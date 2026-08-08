@@ -23,18 +23,90 @@
   ],
   "teste": "Se o trabalho fosse reescrito sem qualquer menção a vulnerabilidade, ataque ou ameaça, ele ainda teria uma contribuição? Se não, é central. Se sim, mas perderia uma seção de resultados, é secundária. Se nada mudaria, é ausente.",
   "porFase": [
-    { "fase": "Descoberta de produto", "centralSec": 0, "centralSedes": 0, "totalSec": 5, "totalSedes": 7 },
-    { "fase": "Requisitos", "centralSec": 1, "centralSedes": 3, "totalSec": 11, "totalSedes": 10 },
-    { "fase": "Arquitetura", "centralSec": 1, "centralSedes": 0, "totalSec": 16, "totalSedes": 9 },
-    { "fase": "Geração de código", "centralSec": 3, "centralSedes": 5, "totalSec": 34, "totalSedes": 57 },
-    { "fase": "Verificação", "centralSec": 25, "centralSedes": 27, "totalSec": 71, "totalSedes": 126 },
-    { "fase": "Depuração e reparo", "centralSec": 0, "centralSedes": 8, "totalSec": 9, "totalSedes": 38 },
-    { "fase": "Manutenção", "centralSec": 2, "centralSedes": 0, "totalSec": 12, "totalSedes": 18 },
-    { "fase": "Operação em produção", "centralSec": 0, "centralSedes": 0, "totalSec": 3, "totalSedes": 15 },
-    { "fase": "Gestão de projeto", "centralSec": 0, "centralSedes": 0, "totalSec": 3, "totalSedes": 6 },
-    { "fase": "Conhecimento", "centralSec": 0, "centralSedes": 0, "totalSec": 2, "totalSedes": 8 },
-    { "fase": "Processo transversal", "centralSec": 2, "centralSedes": 0, "totalSec": 65, "totalSedes": 39 },
-    { "fase": "Formação", "centralSec": 0, "centralSedes": 0, "totalSec": 5, "totalSedes": 5 }
+    {
+      "fase": "Descoberta de produto",
+      "centralSec": 0,
+      "centralSedes": 0,
+      "totalSec": 5,
+      "totalSedes": 7
+    },
+    {
+      "fase": "Requisitos",
+      "centralSec": 1,
+      "centralSedes": 3,
+      "totalSec": 11,
+      "totalSedes": 10
+    },
+    {
+      "fase": "Arquitetura",
+      "centralSec": 1,
+      "centralSedes": 0,
+      "totalSec": 16,
+      "totalSedes": 9
+    },
+    {
+      "fase": "Geração de código",
+      "centralSec": 3,
+      "centralSedes": 5,
+      "totalSec": 34,
+      "totalSedes": 57
+    },
+    {
+      "fase": "Verificação",
+      "centralSec": 25,
+      "centralSedes": 27,
+      "totalSec": 71,
+      "totalSedes": 126
+    },
+    {
+      "fase": "Depuração e reparo",
+      "centralSec": 0,
+      "centralSedes": 8,
+      "totalSec": 9,
+      "totalSedes": 38
+    },
+    {
+      "fase": "Manutenção",
+      "centralSec": 2,
+      "centralSedes": 0,
+      "totalSec": 12,
+      "totalSedes": 18
+    },
+    {
+      "fase": "Operação em produção",
+      "centralSec": 0,
+      "centralSedes": 0,
+      "totalSec": 3,
+      "totalSedes": 15
+    },
+    {
+      "fase": "Gestão de projeto",
+      "centralSec": 0,
+      "centralSedes": 0,
+      "totalSec": 3,
+      "totalSedes": 6
+    },
+    {
+      "fase": "Conhecimento",
+      "centralSec": 0,
+      "centralSedes": 0,
+      "totalSec": 2,
+      "totalSedes": 8
+    },
+    {
+      "fase": "Processo transversal",
+      "centralSec": 2,
+      "centralSedes": 0,
+      "totalSec": 65,
+      "totalSedes": 39
+    },
+    {
+      "fase": "Formação",
+      "centralSec": 0,
+      "centralSedes": 0,
+      "totalSec": 5,
+      "totalSedes": 5
+    }
   ],
   "topicos": [
     {
@@ -44,7 +116,45 @@
       "central": 19,
       "predominante": "Verificação",
       "sedes": "ICSE 4 · ASE 3 · FSE 3",
-      "porFase": { "Verificação": 22, "Depuração e reparo": 1, "Requisitos": 1 }
+      "porFase": {
+        "Verificação": 22,
+        "Depuração e reparo": 1,
+        "Requisitos": 1
+      },
+      "obras": [
+        {
+          "arxiv": "2404.02525",
+          "titulo": "Large Language Model for Vulnerability Detection and Repair: Literature Review and the Road Ahead",
+          "origem": "estudo secundário",
+          "fase": "Verificação",
+          "metrica": "101 citações",
+          "foco": "LLMs para detecção e reparo de vulnerabilidades em software"
+        },
+        {
+          "arxiv": "2502.18474",
+          "titulo": "A Contemporary Survey of Large Language Model Assisted Program Analysis",
+          "origem": "estudo secundário",
+          "fase": "Verificação",
+          "metrica": "16 citações",
+          "foco": "LLMs em análise estática, dinâmica e híbrida de programas"
+        },
+        {
+          "arxiv": "2306.11673",
+          "titulo": "A Survey on Automated Software Vulnerability Detection Using Machine Learning and Deep Learning",
+          "origem": "estudo secundário",
+          "fase": "Verificação",
+          "metrica": "9 citações",
+          "foco": "Detecção automatizada de vulnerabilidade com ML e aprendizado profundo"
+        },
+        {
+          "arxiv": "2501.14983",
+          "titulo": "Code Change Intention, Development Artifact and History Vulnerability: Putting Them Together for Vulnerability Fix Detection by LLM",
+          "origem": "FSE 2025",
+          "fase": "Depuração e reparo",
+          "metrica": "7 citações",
+          "foco": "Detecção de commits de correção de vulnerabilidade"
+        }
+      ]
     },
     {
       "cod": "S2",
@@ -53,7 +163,37 @@
       "central": 13,
       "predominante": "Geração de código",
       "sedes": "ASE 2 · FSE 2 · ICSME 2",
-      "porFase": { "Geração de código": 12, "Verificação": 10, "Manutenção": 1 }
+      "porFase": {
+        "Geração de código": 12,
+        "Verificação": 10,
+        "Manutenção": 1
+      },
+      "obras": [
+        {
+          "arxiv": "2407.07064",
+          "titulo": "Prompting Techniques for Secure Code Generation: A Systematic Investigation",
+          "origem": "estudo secundário · TOSEM 2024",
+          "fase": "Geração de código",
+          "metrica": "22 citações",
+          "foco": "Técnicas de prompting para geração segura de código"
+        },
+        {
+          "arxiv": "2403.07506",
+          "titulo": "Robustness, Security, Privacy, Explainability, Efficiency, and Usability of Large Language Models for Code",
+          "origem": "estudo secundário",
+          "fase": "Verificação",
+          "metrica": "9 citações",
+          "foco": "Propriedades não-funcionais de modelos de código"
+        },
+        {
+          "arxiv": "2410.15631",
+          "titulo": "Security of Language Models for Code: A Systematic Literature Review",
+          "origem": "estudo secundário",
+          "fase": "Verificação",
+          "metrica": "7 citações",
+          "foco": "Segurança de modelos de linguagem para código"
+        }
+      ]
     },
     {
       "cod": "S3",
@@ -62,7 +202,43 @@
       "central": 7,
       "predominante": "Verificação",
       "sedes": "ICSE 4 · FSE 3 · ASE 2",
-      "porFase": { "Verificação": 15 }
+      "porFase": {
+        "Verificação": 15
+      },
+      "obras": [
+        {
+          "arxiv": "2307.07221",
+          "titulo": "Software Testing with Large Language Models: Survey, Landscape, and Vision",
+          "origem": "TSE 2023",
+          "fase": "Verificação",
+          "metrica": "430 citações",
+          "foco": "LLMs em tarefas de teste de software"
+        },
+        {
+          "arxiv": "2505.16587",
+          "titulo": "A Survey on the Application of Large Language Models in Scenario-Based Testing of Automated Driving Systems",
+          "origem": "estudo secundário",
+          "fase": "Verificação",
+          "metrica": "6 citações",
+          "foco": "Teste baseado em cenários de sistemas autônomos"
+        },
+        {
+          "arxiv": "2412.01317",
+          "titulo": "The Seeds of the FUTURE Sprout from History: Fuzzing for Unveiling Vulnerabilities in Prospective Deep-Learning Libraries",
+          "origem": "ICSE 2024",
+          "fase": "Verificação",
+          "metrica": "5 citações",
+          "foco": "Fuzzing para detecção de vulnerabilidade em bibliotecas de aprendizado profundo"
+        },
+        {
+          "arxiv": "2504.12034",
+          "titulo": "OpDiffer: LLM-Assisted Opcode-Level Differential Testing of Ethereum Virtual Machine",
+          "origem": "ISSTA 2025",
+          "fase": "Verificação",
+          "metrica": "3 citações",
+          "foco": "Teste diferencial em nível de opcode"
+        }
+      ]
     },
     {
       "cod": "S4",
@@ -71,7 +247,43 @@
       "central": 7,
       "predominante": "Depuração e reparo",
       "sedes": "ICSE 3 · FSE 2 · ASE 1",
-      "porFase": { "Depuração e reparo": 9 }
+      "porFase": {
+        "Depuração e reparo": 9
+      },
+      "obras": [
+        {
+          "arxiv": "2305.18607",
+          "titulo": "How Effective Are Neural Networks for Fixing Security Vulnerabilities",
+          "origem": "ISSTA 2023",
+          "fase": "Depuração e reparo",
+          "metrica": "93 citações",
+          "foco": "Comparação de modelos e reparo automático em vulnerabilidades Java"
+        },
+        {
+          "arxiv": "2405.01466",
+          "titulo": "A Systematic Literature Review on Large Language Models for Automated Program Repair",
+          "origem": "TOSEM 2024",
+          "fase": "Depuração e reparo",
+          "metrica": "16 citações",
+          "foco": "Revisão sistemática de LLMs para reparo automatizado"
+        },
+        {
+          "arxiv": "2510.05480",
+          "titulo": "Vul-R2: A Reasoning LLM for Automated Vulnerability Repair",
+          "origem": "ASE 2025",
+          "fase": "Depuração e reparo",
+          "metrica": "2 citações",
+          "foco": "Reparo automatizado de vulnerabilidade com modelo de raciocínio"
+        },
+        {
+          "arxiv": "2411.07586",
+          "titulo": "A Comprehensive Survey of AI-Driven Advancements and Techniques in Automated Program Repair and Code Generation",
+          "origem": "estudo secundário",
+          "fase": "Depuração e reparo",
+          "metrica": "1 citação",
+          "foco": "Geração de código e reparo automático"
+        }
+      ]
     },
     {
       "cod": "S5",
@@ -80,7 +292,44 @@
       "central": 5,
       "predominante": "Verificação",
       "sedes": "FSE 2 · ICSE 2",
-      "porFase": { "Verificação": 6, "Manutenção": 1 }
+      "porFase": {
+        "Verificação": 6,
+        "Manutenção": 1
+      },
+      "obras": [
+        {
+          "arxiv": "2502.15830",
+          "titulo": "Show Me Your Code! Kill Code Poisoning: A Lightweight Method Based on Code Naturalness",
+          "origem": "ICSE 2025",
+          "fase": "Verificação",
+          "metrica": "4 citações",
+          "foco": "Detecção de envenenamento em modelos de código"
+        },
+        {
+          "arxiv": "2507.05270",
+          "titulo": "Open Source, Hidden Costs: A Systematic Literature Review on OSS License Management",
+          "origem": "estudo secundário",
+          "fase": "Verificação",
+          "metrica": "2 citações",
+          "foco": "Gestão de riscos de licenças de código aberto"
+        },
+        {
+          "arxiv": "2405.02828",
+          "titulo": "Trojans in Large Language Models of Code: A Critical Review through a Trigger-Based Taxonomy",
+          "origem": "estudo secundário",
+          "fase": "Verificação",
+          "metrica": "2 citações",
+          "foco": "Ataques trojan em modelos de linguagem para código"
+        },
+        {
+          "arxiv": "2604.27789",
+          "titulo": "Test Before You Deploy: Governing Updates in the LLM Supply Chain",
+          "origem": "FSE 2026",
+          "fase": "Verificação",
+          "metrica": "sem citações indexadas",
+          "foco": "Governança de testes para atualizações de modelo"
+        }
+      ]
     },
     {
       "cod": "S6",
@@ -89,7 +338,45 @@
       "central": 5,
       "predominante": "Processo transversal",
       "sedes": "ASE 2 · FSE 2 · TOSEM 1",
-      "porFase": { "Processo transversal": 7, "Verificação": 3, "Geração de código": 1 }
+      "porFase": {
+        "Processo transversal": 7,
+        "Verificação": 3,
+        "Geração de código": 1
+      },
+      "obras": [
+        {
+          "arxiv": "2401.05459",
+          "titulo": "Personal LLM Agents: Insights and Survey about the Capability, Efficiency and Security",
+          "origem": "estudo secundário",
+          "fase": "Processo transversal",
+          "metrica": "31 citações",
+          "foco": "Agentes pessoais integrados a dados e dispositivos"
+        },
+        {
+          "arxiv": "2409.02977",
+          "titulo": "Large Language Model-Based Agents for Software Engineering: A Survey",
+          "origem": "TOSEM 2024",
+          "fase": "Processo transversal",
+          "metrica": "15 citações",
+          "foco": "Agentes para engenharia de software: levantamento sistemático"
+        },
+        {
+          "arxiv": "2505.10924",
+          "titulo": "A Survey on the Safety and Security Threats of Computer-Using Agents: JARVIS or Ultron?",
+          "origem": "estudo secundário",
+          "fase": "Processo transversal",
+          "metrica": "1 citação",
+          "foco": "Taxonomia de ameaças e defesas em agentes de computador"
+        },
+        {
+          "arxiv": "2606.13175",
+          "titulo": "The End of Code Review: Coding Agents Supersede Human Inspection",
+          "origem": "estudo secundário",
+          "fase": "Processo transversal",
+          "metrica": "sem citações indexadas",
+          "foco": "Agentes substituindo revisão humana de código"
+        }
+      ]
     },
     {
       "cod": "S7",
@@ -98,7 +385,27 @@
       "central": 0,
       "predominante": "Operação em produção",
       "sedes": "ICSE 1",
-      "porFase": { "Operação em produção": 2 }
+      "porFase": {
+        "Operação em produção": 2
+      },
+      "obras": [
+        {
+          "arxiv": "2406.11213",
+          "titulo": "A Survey of AIOps for Failure Management in the Era of Large Language Models",
+          "origem": "estudo secundário",
+          "fase": "Operação em produção",
+          "metrica": "1 citação",
+          "foco": "AIOps para gestão de falhas de sistemas"
+        },
+        {
+          "arxiv": "2412.05240",
+          "titulo": "Automated, Unsupervised, and Auto-parameterized Inference of Data Patterns and Anomaly Detection",
+          "origem": "ICSE 2024",
+          "fase": "Operação em produção",
+          "metrica": "sem métrica indexada",
+          "foco": "Inferência de padrões e detecção de anomalias em dados"
+        }
+      ]
     },
     {
       "cod": "S8",
@@ -107,7 +414,47 @@
       "central": 10,
       "predominante": "Verificação",
       "sedes": "ASE 3 · ICSE 2 · FSE 1",
-      "porFase": { "Verificação": 8, "Processo transversal": 7, "Requisitos": 3, "Arquitetura": 2, "Manutenção": 1 }
+      "porFase": {
+        "Verificação": 8,
+        "Processo transversal": 7,
+        "Requisitos": 3,
+        "Arquitetura": 2,
+        "Manutenção": 1
+      },
+      "obras": [
+        {
+          "arxiv": "2404.04566",
+          "titulo": "Efficient and Green Large Language Models for Software Engineering: Literature Review, Vision, and the Road Ahead",
+          "origem": "TOSEM 2024",
+          "fase": "Processo transversal",
+          "metrica": "36 citações",
+          "foco": "Visão e roadmap para modelos eficientes e sustentáveis"
+        },
+        {
+          "arxiv": "2409.03220",
+          "titulo": "FairQuant: Certifying and Quantifying Fairness of Deep Neural Networks",
+          "origem": "ICSE 2024",
+          "fase": "Verificação",
+          "metrica": "7 citações",
+          "foco": "Certificação formal e quantificação de fairness"
+        },
+        {
+          "arxiv": "2412.16667",
+          "titulo": "The Good, the Bad, and the (Un)Usable: A Rapid Literature Review on Privacy as Code",
+          "origem": "estudo secundário",
+          "fase": "Verificação",
+          "metrica": "4 citações",
+          "foco": "Privacidade como código: detecção e geração automática"
+        },
+        {
+          "arxiv": "2503.11573",
+          "titulo": "Synthesizing Access Control Policies using Large Language Models",
+          "origem": "ICSE 2025",
+          "fase": "Requisitos",
+          "metrica": "4 citações",
+          "foco": "Síntese de políticas de controle de acesso"
+        }
+      ]
     },
     {
       "cod": "S9",
@@ -116,7 +463,36 @@
       "central": 10,
       "predominante": "Verificação",
       "sedes": "ICSE 5 · ASE 3 · FSE 3",
-      "porFase": { "Verificação": 23, "Operação em produção": 1 }
+      "porFase": {
+        "Verificação": 23,
+        "Operação em produção": 1
+      },
+      "obras": [
+        {
+          "arxiv": "2405.04760",
+          "titulo": "Large Language Models for Cyber Security: A Systematic Literature Review",
+          "origem": "estudo secundário · TOSEM 2024",
+          "fase": "Verificação",
+          "metrica": "94 citações",
+          "foco": "LLMs em cibersegurança: detecção, análise e resposta"
+        },
+        {
+          "arxiv": "2311.10372",
+          "titulo": "A Survey of Large Language Models for Code: Evolution, Benchmarking, and Future Trends",
+          "origem": "estudo secundário",
+          "fase": "Verificação",
+          "metrica": "23 citações",
+          "foco": "Modelos de linguagem especializados em código"
+        },
+        {
+          "arxiv": "2310.17903",
+          "titulo": "Pitfalls in Language Models for Code Intelligence: A Taxonomy and Survey",
+          "origem": "estudo secundário",
+          "fase": "Verificação",
+          "metrica": "8 citações",
+          "foco": "Armadilhas em modelos de linguagem para inteligência de código"
+        }
+      ]
     },
     {
       "cod": "S10",
@@ -125,7 +501,45 @@
       "central": 1,
       "predominante": "Verificação",
       "sedes": "ICSE 1 · TOSEM 1",
-      "porFase": { "Verificação": 2, "Processo transversal": 1, "Geração de código": 1 }
+      "porFase": {
+        "Verificação": 2,
+        "Processo transversal": 1,
+        "Geração de código": 1
+      },
+      "obras": [
+        {
+          "arxiv": "2308.06587",
+          "titulo": "A User-centered Security Evaluation of Copilot",
+          "origem": "ICSE 2023",
+          "fase": "Geração de código",
+          "metrica": "13 citações",
+          "foco": "Estudo com 25 usuários sobre segurança do código escrito com Copilot"
+        },
+        {
+          "arxiv": "2508.11034",
+          "titulo": "The Impact of Large Language Models (LLMs) on Code Review Process",
+          "origem": "estudo secundário",
+          "fase": "Verificação",
+          "metrica": "3 citações",
+          "foco": "Impacto no tempo e na eficiência da revisão de pull requests"
+        },
+        {
+          "arxiv": "2506.17120",
+          "titulo": "Reassessing Code Authorship Attribution in the Era of Language Models",
+          "origem": "TOSEM 2025",
+          "fase": "Verificação",
+          "metrica": "1 citação",
+          "foco": "Atribuição de autoria de código com modelos de código"
+        },
+        {
+          "arxiv": "2512.21347",
+          "titulo": "Understanding the Role of Large Language Models in Software Engineering: Evidence from an Industry Survey",
+          "origem": "estudo secundário",
+          "fase": "Processo transversal",
+          "metrica": "sem métrica indexada",
+          "foco": "Adoção de LLMs em desenvolvimento: percepções e riscos"
+        }
+      ]
     }
   ],
   "achados": [
@@ -157,5 +571,6 @@
   "fronteira": {
     "titulo": "Um caso de fronteira que vale registrar",
     "texto": "Segurança do agente e do modelo tem 11 obras e é o tópico de fronteira mais delicada. Injeção de prompt, envenenamento de ferramenta, escape de sandbox e risco de agente autônomo com permissão de escrita em repositório são ataques cujo alvo é o próprio agente, não o software que ele produz. Sete dessas obras estão em processo transversal, o que é correto: o objeto é a infraestrutura de agência. Durante a classificação, uma taxonomia de falhas em tempo de execução de servidores de protocolo de contexto estava em operação em produção e foi movida para processo transversal — falhas da infraestrutura que hospeda o agente são falhas de agência, não de um produto operando."
-  }
+  },
+  "notaObras": "Cada tópico lista as obras mais citadas dele, não todas. A lista completa das 140 obras com segurança está em <code>corpus_seguranca_topicos.csv</code>, e entra aqui quando o arquivo for publicado no repositório. Onde a origem traz dois valores, a obra aparece nos dois corpora — é a mesma revisão, contada uma vez."
 }
