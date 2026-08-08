@@ -5,6 +5,7 @@ import { todasAulas, NOMES_U, estiloTag } from "../lib/aulas";
 import fases from "../content/codebook/fases.json";
 import bibliografia from "../content/bibliografia.json";
 import avaliacao from "../content/avaliacao.json";
+import curso from "../content/curso.json";
 import { SECUNDARIOS } from "../data/corpus.js";
 
 const aulas = await todasAulas();
@@ -28,12 +29,6 @@ const artigos = bibliografia
   })
   .filter(Boolean) as any[];
 
-const objetivos = [
-  "Explicar o que um LLM pode e não pode garantir em tarefas de engenharia de software.",
-  "Projetar e executar um agente de software sobre um repositório real, com ferramentas e critério de parada.",
-  "Avaliar assistentes e agentes com métricas defensáveis, além do <em>pass@k</em>.",
-  "Redigir um artigo curto, no formato SBC/IEEE, com um experimento reprodutível.",
-];
 
 const fatos = [
   { rotulo: "Programa", valor: "PPCOMP · Mestrado" },
@@ -127,20 +122,14 @@ const estiloFiltro = (i: number, ativo: boolean) =>
         <h2 style="font-family: var(--font-heading); font-weight: 900; font-size: 34px; letter-spacing: -0.02em; margin: 0 0 20px">
           Ementa
         </h2>
-        <p style="font-size: 17px; line-height: 1.65; margin: 0 0 16px; text-wrap: pretty">
-          Fundamentos de modelos de linguagem aplicados a código: tokenização, contexto, geração e
-          limites. Engenharia de prompt e de contexto para tarefas de programação. Assistentes de
-          codificação e o efeito medido sobre produtividade e qualidade.
-        </p>
-        <p style="font-size: 17px; line-height: 1.65; margin: 0 0 16px; text-wrap: pretty">
-          Desenvolvimento orientado a especificação (SDD). Agentes de engenharia de software:
-          arquiteturas, ferramentas, execução em repositórios reais e <em>benchmarks</em> (SWE-bench e
-          sucessores). Agentes evolutivos e auto-aperfeiçoáveis.
-        </p>
-        <p style="font-size: 17px; line-height: 1.65; margin: 0; text-wrap: pretty">
-          Teste, revisão, verificação e segurança de código gerado por IA. Método experimental para
-          avaliar assistentes e agentes. Licenciamento, proveniência e ética.
-        </p>
+        {
+          curso.ementa.map((p, i) => (
+            <p
+              style={`font-size: 17px; line-height: 1.65; margin: 0 0 ${i === curso.ementa.length - 1 ? "0" : "16px"}; text-wrap: pretty`}
+              set:html={p}
+            />
+          ))
+        }
       </div>
       <div>
         <h2 style="font-family: var(--font-heading); font-weight: 900; font-size: 34px; letter-spacing: -0.02em; margin: 0 0 20px">
@@ -148,9 +137,9 @@ const estiloFiltro = (i: number, ativo: boolean) =>
         </h2>
         <ol style="margin: 0; padding: 0; list-style: none; display: grid; gap: 0">
           {
-            objetivos.map((o, i) => (
+            curso.objetivos.map((o, i) => (
               <li
-                style={`display: grid; grid-template-columns: 40px 1fr; gap: 16px; padding: 16px 0; border-top: 2px solid var(--color-divider); ${i === objetivos.length - 1 ? "border-bottom: 2px solid var(--color-divider);" : ""} font-size: 16px; line-height: 1.5`}
+                style={`display: grid; grid-template-columns: 40px 1fr; gap: 16px; padding: 16px 0; border-top: 2px solid var(--color-divider); ${i === curso.objetivos.length - 1 ? "border-bottom: 2px solid var(--color-divider);" : ""} font-size: 16px; line-height: 1.5`}
               >
                 <span style="font-family: var(--font-heading); font-weight: 800; color: var(--color-accent)">
                   {String(i + 1).padStart(2, "0")}

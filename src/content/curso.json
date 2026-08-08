@@ -1,0 +1,16 @@
+{
+  "ementa": [
+    "Fundamentos de modelos de linguagem aplicados a código: tokenização, contexto, geração e limites. Engenharia de prompt e de contexto para tarefas de programação. Assistentes de codificação e o efeito medido sobre produtividade e qualidade.",
+    "Design Science Research como método do trabalho: problema de campo, requisitos do artefato, demonstração e avaliação. Desenvolvimento dirigido por especificação (SDD), da constituição do projeto ao artefato publicado e verificável contra a própria especificação.",
+    "Agentes de engenharia de software: arquiteturas, ferramentas, execução em repositórios reais e <em>benchmarks</em> (SWE-bench e sucessores). Agentes evolutivos e auto-aperfeiçoáveis. Sistemas agênticos em produção.",
+    "Teste, revisão, verificação e segurança de código gerado por IA. Método experimental para avaliar assistentes e agentes. Licenciamento, proveniência e ética."
+  ],
+  "objetivos": [
+    "Situar um trabalho de engenharia de software com IA no mapa das doze fases do processo, e dizer que evidência sustenta o que ele afirma.",
+    "Enquadrar a própria pesquisa como projeto de Design Science Research: problema de campo, artefato, avaliação e contribuição de conhecimento.",
+    "Conduzir um ciclo completo de desenvolvimento dirigido por especificação, do acordo de equipe ao artefato publicado — e verificá-lo contra a especificação que o gerou.",
+    "Projetar e operar um agente sobre um repositório real: ferramentas, critério de parada e o ponto em que a decisão volta para o humano.",
+    "Avaliar assistentes e agentes com desenho experimental defensável, declarando o que a métrica escolhida <strong>não</strong> mede.",
+    "Redigir um estudo curto no formato SBC, com dados e código abertos."
+  ]
+}

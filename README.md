@@ -106,6 +106,7 @@ src/content/avaliacao.json      pesos, laboratórios, rubrica e modelo de ficham
 src/content/leituras-base.json  a base de leituras: tronco e leituras por fase
 src/content/spec-kit.json       os comandos do Spec Kit e a etapa real de cada um
 src/content/seguranca.json      a dimensão de segurança: tópicos, cruzamento e achados
+src/content/curso.json          a ementa e os objetivos de aprendizagem da home
 src/content/unidades.json       as três unidades e suas descrições
 src/data/corpus.js              os dois corpora (157 secundários + 106 em sedes)
 
