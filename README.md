@@ -22,7 +22,7 @@ nenhum arquivo de programação.
 | `/avaliacao` | Composição da nota, os quatro laboratórios, rubrica do artigo final e o modelo de fichamento |
 | `/codebook` | As doze fases do processo de software: escopo, inclusão, exclusão, teste de decisão e exemplos |
 | `/codebook/mapeamento` | O mapeamento do campo: seis tabelas e duas figuras |
-| `/leituras` | Base de leituras: o tronco do campo, o que ler por fase e o corpus inteiro navegável |
+| `/leituras` | Base de leituras: o tronco do campo, o que ler por fase, o corpus inteiro navegável e os CSV para download |
 | `/spec-kit` | O fluxo do Spec Kit: cada comando como a etapa de desenvolvimento que ele ocupa |
 | `/seguranca` | A dimensão de segurança: dez tópicos cruzados com as doze fases, e as obras de cada tópico |
 | `/aulas/01` … `/aulas/17` | Uma página por encontro: roteiro, objetivos, atividade, entrega, leitura e material |
@@ -108,7 +108,7 @@ src/content/spec-kit.json       os comandos do Spec Kit e a etapa real de cada u
 src/content/seguranca.json      a dimensão de segurança: tópicos, obras, cruzamento e achados
 src/content/curso.json          a ementa e os objetivos de aprendizagem da home
 src/content/unidades.json       as três unidades e suas descrições
-src/data/corpus.js              os dois corpora (157 secundários + 106 em sedes)
+src/data/corpus.js              GERADO: os dois corpora (236 secundários + 338 em sedes)
 
 src/layouts/Base.astro          head, header, footer e os estilos globais
 src/pages/                      as rotas (veja a tabela acima)
@@ -118,16 +118,35 @@ src/lib/aulas.ts                traduz `estado` no que a página renderiza
 public/_ds/modernist-…/         o design system: styles.css, guia e tokens
 public/uploads/                 as quatro figuras do site, geradas em SVG por script
 public/fichamento.tex           o modelo em LaTeX (é o mesmo texto exibido no site)
-public/dados/                   os dois corpora em CSV, publicados para download
+public/dados/                   os três CSV do corpus, publicados para download
 public/.nojekyll                obrigatório — veja "Deploy"
 
 fontes/                         material de origem: codebook, mapeamento e os CSV
 Disciplina.dc.html, support.js  o protótipo original, guardado como registro
 scripts/extrair-conteudo.mjs    o script que migrou os dados do protótipo
 scripts/gerar-figuras.mjs       regera as quatro figuras a partir das tabelas
+scripts/gerar-corpus.mjs        regera corpus, tabelas do mapeamento e obras de segurança dos CSV
 scripts/nomear-fases.mjs        trocou os códigos F pelos nomes das fases
 specs/                          a especificação que guiou a construção
 ```
+
+---
+
+## Atualizar o corpus
+
+Os três CSV em [`fontes/`](fontes/) são a fonte de tudo: tabelas do mapeamento, figuras, corpus
+navegável, obras de segurança e as contagens do codebook. Para trocar o recorte:
+
+```sh
+cp novos/*.csv fontes/
+node scripts/gerar-corpus.mjs    # regera dados, tabelas e a lista de segurança
+node scripts/gerar-figuras.mjs   # regera as quatro figuras
+npm run build
+```
+
+O que **não** é gerado, e continua sendo texto a revisar à mão: a prosa que interpreta os números
+(«verificação concentra 126 dos 338»), as lacunas, e o funil de triagem do corpus — esse último nem
+está nos CSV. Depois de trocar o recorte, procure os números antigos na prosa antes de publicar.
 
 ---
 

@@ -5,7 +5,8 @@
     "central": 77,
     "secundaria": 63,
     "centralSec": 34,
-    "centralSedes": 43
+    "centralSedes": 43,
+    "obrasUnicas": 137
   },
   "valores": [
     {
@@ -127,7 +128,8 @@
           "titulo": "Large Language Model for Vulnerability Detection and Repair: Literature Review and the Road Ahead",
           "origem": "estudo secundário",
           "fase": "Verificação",
-          "metrica": "101 citações",
+          "grau": "central",
+          "citacoes": "101",
           "foco": "LLMs para detecção e reparo de vulnerabilidades em software"
         },
         {
@@ -135,7 +137,8 @@
           "titulo": "A Contemporary Survey of Large Language Model Assisted Program Analysis",
           "origem": "estudo secundário",
           "fase": "Verificação",
-          "metrica": "16 citações",
+          "grau": "secundaria",
+          "citacoes": "16",
           "foco": "LLMs em análise estática, dinâmica e híbrida de programas"
         },
         {
@@ -143,28 +146,210 @@
           "titulo": "A Survey on Automated Software Vulnerability Detection Using Machine Learning and Deep Learning",
           "origem": "estudo secundário",
           "fase": "Verificação",
-          "metrica": "9 citações",
-          "foco": "Detecção automatizada de vulnerabilidade com ML e aprendizado profundo"
+          "grau": "central",
+          "citacoes": "9",
+          "foco": "Survey sistemático de detecção automatizada de vulnerabilidade com ML e DL"
         },
         {
           "arxiv": "2501.14983",
           "titulo": "Code Change Intention, Development Artifact and History Vulnerability: Putting Them Together for Vulnerability Fix Detection by LLM",
-          "origem": "FSE 2025",
+          "origem": "FSE",
           "fase": "Depuração e reparo",
-          "metrica": "7 citações",
-          "foco": "Detecção de commits de correção de vulnerabilidade"
+          "grau": "central",
+          "citacoes": "7",
+          "foco": "Detecção de commits de correção de vulnerabilidades usando LLM"
+        },
+        {
+          "arxiv": "2404.18496",
+          "titulo": "AI-powered Code Review with LLMs: Early Results",
+          "origem": "estudo secundário",
+          "fase": "Verificação",
+          "grau": "secundaria",
+          "citacoes": "6",
+          "foco": "revisão de código com agente LLM para detectar bugs e code smells"
+        },
+        {
+          "arxiv": "2507.22371",
+          "titulo": "SAEL: Leveraging Large Language Models with Adaptive Mixture-of-Experts for Smart Contract Vulnerability Detection",
+          "origem": "ICSME",
+          "fase": "Verificação",
+          "grau": "central",
+          "citacoes": "5",
+          "foco": "Detecção de vulnerabilidade em contrato inteligente com mistura adaptativa de especialistas"
+        },
+        {
+          "arxiv": "2507.22659",
+          "titulo": "A Systematic Literature Review on Detecting Software Vulnerabilities with Large Language Models",
+          "origem": "estudo secundário",
+          "fase": "Verificação",
+          "grau": "central",
+          "citacoes": "3",
+          "foco": "Detecção de vulnerabilidades de software usando LLMs"
+        },
+        {
+          "arxiv": "2507.19115",
+          "titulo": "Automated Code Review Using Large Language Models at Ericsson: An Experience Report",
+          "origem": "ICSME",
+          "fase": "Verificação",
+          "grau": "secundaria",
+          "citacoes": "3",
+          "foco": "Ferramenta LLM para automação de revisão de código com análise estática"
+        },
+        {
+          "arxiv": "2412.11194",
+          "titulo": "Direction for Detection: A Survey of Automated Vulnerability Detection and all of its Pain Points",
+          "origem": "estudo secundário",
+          "fase": "Verificação",
+          "grau": "central",
+          "citacoes": "2",
+          "foco": "detecção automatizada de vulnerabilidades via machine learning"
+        },
+        {
+          "arxiv": "2606.21822",
+          "titulo": "CNnotator: LLM-Guided Memory Safety Annotation Synthesis",
+          "origem": "ICSE",
+          "fase": "Requisitos",
+          "grau": "central",
+          "citacoes": "0",
+          "foco": "LLM com laço feedback para síntese automática de anotações segurança memória"
+        },
+        {
+          "arxiv": "2604.00079",
+          "titulo": "When Labels Are Scarce: A Systematic Mapping of Label-Efficient Code Vulnerability Detection",
+          "origem": "estudo secundário",
+          "fase": "Verificação",
+          "grau": "central",
+          "citacoes": "0",
+          "foco": "Detecção de vulnerabilidades com dados rotulados escassos"
+        },
+        {
+          "arxiv": "2601.19138",
+          "titulo": "AgenticSCR: An Autonomous Agentic Secure Code Review for Immature Vulnerabilities Detection",
+          "origem": "ASE",
+          "fase": "Verificação",
+          "grau": "central",
+          "citacoes": "0",
+          "foco": "Revisão segura de código com agente autônomo e memória semântica"
+        },
+        {
+          "arxiv": "2512.1754",
+          "titulo": "SGCR: A Specification-Grounded Framework for Trustworthy LLM Code Review",
+          "origem": "ASE",
+          "fase": "Verificação",
+          "grau": "secundaria",
+          "citacoes": "0",
+          "foco": "Framework LLM para revisão de código com especificações e verificação"
+        },
+        {
+          "arxiv": "2511.04014",
+          "titulo": "VulInstruct: Teaching LLMs Root-Cause Reasoning for Vulnerability Detection via Security Specifications",
+          "origem": "FSE",
+          "fase": "Verificação",
+          "grau": "central",
+          "citacoes": "0",
+          "foco": "detecção de vulnerabilidades via especificações de segurança extraídas"
+        },
+        {
+          "arxiv": "2512.08326",
+          "titulo": "Argus: A Multi-Agent Sensitive Information Leakage Detection Framework Based on Hierarchical Reference Relationships",
+          "origem": "ICSE",
+          "fase": "Verificação",
+          "grau": "central",
+          "citacoes": "0",
+          "foco": "Detecção de vazamento de informações sensíveis em repositórios usando arquitetura multi-agente com LLMs"
+        },
+        {
+          "arxiv": "2604.19031",
+          "titulo": "SAGE: Signal-Amplified Guided Embeddings for LLM-based Vulnerability Detection",
+          "origem": "ISSTA",
+          "fase": "Verificação",
+          "grau": "central",
+          "citacoes": "0",
+          "foco": "Amplificação de sinal com autoencoders esparsos para detectar vulnerabilidade em código"
+        },
+        {
+          "arxiv": "2604.24822",
+          "titulo": "A systematic literature Review for Transformer-based Software Vulnerability detection",
+          "origem": "estudo secundário",
+          "fase": "Verificação",
+          "grau": "central",
+          "citacoes": "",
+          "foco": "Transformers para detecção de vulnerabilidades de software"
+        },
+        {
+          "arxiv": "2606.28403",
+          "titulo": "Reinforcement Learning for Software Vulnerability Analysis: A Systematic Review with Emphasis on C/C++ Source Code and Static Analysis",
+          "origem": "estudo secundário",
+          "fase": "Verificação",
+          "grau": "central",
+          "citacoes": "",
+          "foco": "RL para detecção de vulnerabilidades e fuzzing em C/C++"
+        },
+        {
+          "arxiv": "2512.1194",
+          "titulo": "A Systematic Mapping Study on Risks and Vulnerabilities in Software Containers",
+          "origem": "estudo secundário",
+          "fase": "Verificação",
+          "grau": "central",
+          "citacoes": "",
+          "foco": "Segurança de containers: riscos, vulnerabilidades e práticas de mitigação"
+        },
+        {
+          "arxiv": "2503.04002",
+          "titulo": "Deep Learning Aided Software Vulnerability Detection: A Survey",
+          "origem": "estudo secundário",
+          "fase": "Verificação",
+          "grau": "central",
+          "citacoes": "",
+          "foco": "Survey de detecção de vulnerabilidade com aprendizado profundo e ciclo de vida próprio"
+        },
+        {
+          "arxiv": "2511.01941",
+          "titulo": "Detecting Vulnerabilities from Issue Reports for Internet-of-Things",
+          "origem": "ASE",
+          "fase": "Verificação",
+          "grau": "central",
+          "citacoes": "",
+          "foco": "detecção de issues de vulnerabilidade em projetos IoT com ML/LLM"
+        },
+        {
+          "arxiv": "2602.12681",
+          "titulo": "Fool Me If You Can: On the Robustness of Binary Code Similarity Detection Models against Semantics-preserving Transformations",
+          "origem": "FSE",
+          "fase": "Verificação",
+          "grau": "central",
+          "citacoes": "",
+          "foco": "Robustez de modelos de aprendizado profundo para detecção de similaridade em código binário contra transformações adversariais"
+        },
+        {
+          "arxiv": "2605.17548",
+          "titulo": "Rethinking Code Review in the Age of AI: A Vision for Agentic Code Review",
+          "origem": "ICSE",
+          "fase": "Verificação",
+          "grau": "secundaria",
+          "citacoes": "",
+          "foco": "Visão para revisão de código com agentes autônomos supervisores"
+        },
+        {
+          "arxiv": "2603.24837",
+          "titulo": "Bridging Code Property Graphs and Language Models for Program Analysis",
+          "origem": "ICSE",
+          "fase": "Verificação",
+          "grau": "central",
+          "citacoes": "",
+          "foco": "MCP server integrando Joern CPG e LLMs para deteccao de vulnerabilidades"
         }
       ]
     },
     {
       "cod": "S2",
       "nome": "Segurança do código gerado por IA",
-      "total": 23,
-      "central": 13,
+      "total": 22,
+      "central": 12,
       "predominante": "Geração de código",
       "sedes": "ASE 2 · FSE 2 · ICSME 2",
       "porFase": {
-        "Geração de código": 12,
+        "Geração de código": 11,
         "Verificação": 10,
         "Manutenção": 1
       },
@@ -172,26 +357,200 @@
         {
           "arxiv": "2407.07064",
           "titulo": "Prompting Techniques for Secure Code Generation: A Systematic Investigation",
-          "origem": "estudo secundário · TOSEM 2024",
+          "origem": "estudo secundário · TOSEM",
           "fase": "Geração de código",
-          "metrica": "22 citações",
-          "foco": "Técnicas de prompting para geração segura de código"
+          "grau": "central",
+          "citacoes": "22",
+          "foco": "Prompting techniques para geração segura de código por LLMs"
         },
         {
           "arxiv": "2403.07506",
           "titulo": "Robustness, Security, Privacy, Explainability, Efficiency, and Usability of Large Language Models for Code",
           "origem": "estudo secundário",
           "fase": "Verificação",
-          "metrica": "9 citações",
-          "foco": "Propriedades não-funcionais de modelos de código"
+          "grau": "central",
+          "citacoes": "9",
+          "foco": "Propriedades não-funcionais de LLMs para código: robustez, segurança, privacidade"
         },
         {
           "arxiv": "2410.15631",
           "titulo": "Security of Language Models for Code: A Systematic Literature Review",
           "origem": "estudo secundário",
           "fase": "Verificação",
-          "metrica": "7 citações",
-          "foco": "Segurança de modelos de linguagem para código"
+          "grau": "central",
+          "citacoes": "7",
+          "foco": "segurança de modelos de linguagem para código"
+        },
+        {
+          "arxiv": "2412.15004",
+          "titulo": "From Vulnerabilities to Remediation: A Systematic Literature Review of LLMs in Code Security",
+          "origem": "estudo secundário",
+          "fase": "Verificação",
+          "grau": "central",
+          "citacoes": "3",
+          "foco": "Vulnerabilidades em código gerado por LLMs e capacidades de detecção/reparo"
+        },
+        {
+          "arxiv": "2512.0002",
+          "titulo": "Large Language Model for Verilog Code Generation: Literature Review and the Road Ahead",
+          "origem": "estudo secundário",
+          "fase": "Geração de código",
+          "grau": "secundaria",
+          "citacoes": "1",
+          "foco": "Geração de código Verilog com LLMs em design de hardware"
+        },
+        {
+          "arxiv": "2603.1715",
+          "titulo": "Intent Formalization: A Grand Challenge for Reliable Coding in the Age of AI Agents",
+          "origem": "estudo secundário",
+          "fase": "Verificação",
+          "grau": "central",
+          "citacoes": "1",
+          "foco": "Formalização de intenção e verificação de código gerado por agentes IA"
+        },
+        {
+          "arxiv": "2510.07604",
+          "titulo": "RustAssure: Differential Symbolic Testing for LLM-Transpiled C-to-Rust Code",
+          "origem": "ASE",
+          "fase": "Verificação",
+          "grau": "secundaria",
+          "citacoes": "1",
+          "foco": "teste simbólico diferencial de código C transpilado para Rust por LLM"
+        },
+        {
+          "arxiv": "2604.12088",
+          "titulo": "Think Before You Code: Dual Reasoning for the NLSafety-Utility Trade-Off in LLM Code Generation",
+          "origem": "ASE",
+          "fase": "Geração de código",
+          "grau": "central",
+          "citacoes": "0",
+          "foco": "segurança e utilidade em geração de código com raciocínio dual"
+        },
+        {
+          "arxiv": "2606.27733",
+          "titulo": "BashCoder-R1: Towards Robust and Explainable Bash Code Generation with Robustness-Aware Group Relative Policy Optimization",
+          "origem": "ISSTA",
+          "fase": "Geração de código",
+          "grau": "secundaria",
+          "citacoes": "0",
+          "foco": "Framework LLM para geração robusta e explícita de scripts Bash"
+        },
+        {
+          "arxiv": "2607.17619",
+          "titulo": "Insecure Coding Preferences in Long-Term Memory: Security Risks for LLM-based Code Generation",
+          "origem": "ISSTA",
+          "fase": "Geração de código",
+          "grau": "central",
+          "citacoes": "0",
+          "foco": "Preferências inseguras na memória de longo prazo contaminam o código gerado"
+        },
+        {
+          "arxiv": "2605.05267",
+          "titulo": "Bridging Generation and Training: A Systematic Review of Quality Issues in LLMs for Code",
+          "origem": "estudo secundário",
+          "fase": "Geração de código",
+          "grau": "secundaria",
+          "citacoes": "",
+          "foco": "propagação de problemas de qualidade de dados de treino para código gerado"
+        },
+        {
+          "arxiv": "2503.01245",
+          "titulo": "Large Language Models for Code Generation: A Comprehensive Survey of Challenges, Techniques, Evaluation, and Applications",
+          "origem": "estudo secundário",
+          "fase": "Geração de código",
+          "grau": "secundaria",
+          "citacoes": "",
+          "foco": "LLMs para geração automática de código: técnicas, métricas e aplicações"
+        },
+        {
+          "arxiv": "2511.00776",
+          "titulo": "A Systematic Literature Review of Code Hallucinations in LLMs: Characterization, Mitigation Methods, Challenges, and Future Directions for Reliable AI",
+          "origem": "estudo secundário",
+          "fase": "Geração de código",
+          "grau": "central",
+          "citacoes": "",
+          "foco": "Alucinações em LLMs para geração e inteligência de código"
+        },
+        {
+          "arxiv": "2504.20799",
+          "titulo": "Hallucination by Code Generation LLMs: Taxonomy, Benchmarks, Mitigation, and Challenges",
+          "origem": "estudo secundário",
+          "fase": "Geração de código",
+          "grau": "secundaria",
+          "citacoes": "",
+          "foco": "taxonomia e mitigação de alucinações em geração de código"
+        },
+        {
+          "arxiv": "2601.08734",
+          "titulo": "TerraFormer: Automated Infrastructure-as-Code with LLMs Fine-Tuned via Policy-Guided Verifier Feedback",
+          "origem": "ICSE",
+          "fase": "Geração de código",
+          "grau": "secundaria",
+          "citacoes": "",
+          "foco": "Geração de código IaC com LLM fine-tuned via feedback de verificador"
+        },
+        {
+          "arxiv": "2607.15937",
+          "titulo": "The Language of Security: How Prompt Syntax Shapes Secure Code Generation in Open LLMs",
+          "origem": "ICSME",
+          "fase": "Geração de código",
+          "grau": "central",
+          "citacoes": "",
+          "foco": "Efeito da sintaxe do prompt na segurança do código gerado por LLMs abertos"
+        },
+        {
+          "arxiv": "2512.20334",
+          "titulo": "Comment Traps: How Defective Commented-out Code Augment Defects in AI-Assisted Code Generation",
+          "origem": "FSE",
+          "fase": "Verificação",
+          "grau": "secundaria",
+          "citacoes": "0",
+          "foco": "impacto de código comentado defeituoso na geração de código por IA"
+        },
+        {
+          "arxiv": "2512.05239",
+          "titulo": "A Survey of Bugs in AI-Generated Code",
+          "origem": "estudo secundário",
+          "fase": "Verificação",
+          "grau": "secundaria",
+          "citacoes": "",
+          "foco": "Classificação de bugs e defects em código gerado por modelos IA"
+        },
+        {
+          "arxiv": "2411.07597",
+          "titulo": "A Survey on Adversarial Machine Learning for Code Data: Realistic Threats, Countermeasures, and Interpretations",
+          "origem": "estudo secundário",
+          "fase": "Verificação",
+          "grau": "central",
+          "citacoes": "",
+          "foco": "Segurança de modelos de linguagem para código contra ataques adversariais"
+        },
+        {
+          "arxiv": "2604.01147",
+          "titulo": "SERSEM: Selective Entropy-Weighted Scoring for Membership Inference in Code Language Models",
+          "origem": "FSE",
+          "fase": "Verificação",
+          "grau": "central",
+          "citacoes": "",
+          "foco": "Ataque de inferência de memória em modelos de código LLM"
+        },
+        {
+          "arxiv": "2507.10054",
+          "titulo": "Explicit Vulnerability Generation with LLMs: An Investigation Beyond Adversarial Attacks",
+          "origem": "ICSME",
+          "fase": "Verificação",
+          "grau": "central",
+          "citacoes": "",
+          "foco": "Estudo empírico de geração de código vulnerável em LLMs abertos"
+        },
+        {
+          "arxiv": "2404.00227",
+          "titulo": "A Survey of using Large Language Models for Generating Infrastructure as Code",
+          "origem": "estudo secundário",
+          "fase": "Manutenção",
+          "grau": "secundaria",
+          "citacoes": "",
+          "foco": "geração de configurações de infraestrutura como código via LLM"
         }
       ]
     },
@@ -209,34 +568,137 @@
         {
           "arxiv": "2307.07221",
           "titulo": "Software Testing with Large Language Models: Survey, Landscape, and Vision",
-          "origem": "TSE 2023",
+          "origem": "TSE",
           "fase": "Verificação",
-          "metrica": "430 citações",
-          "foco": "LLMs em tarefas de teste de software"
+          "grau": "secundaria",
+          "citacoes": "430",
+          "foco": "Revisão de LLMs em tarefas de teste de software e engenharia de prompts"
         },
         {
           "arxiv": "2505.16587",
           "titulo": "A Survey on the Application of Large Language Models in Scenario-Based Testing of Automated Driving Systems",
           "origem": "estudo secundário",
           "fase": "Verificação",
-          "metrica": "6 citações",
-          "foco": "Teste baseado em cenários de sistemas autônomos"
+          "grau": "secundaria",
+          "citacoes": "6",
+          "foco": "LLMs em teste baseado em cenários de sistemas autônomos"
         },
         {
           "arxiv": "2412.01317",
           "titulo": "The Seeds of the FUTURE Sprout from History: Fuzzing for Unveiling Vulnerabilities in Prospective Deep-Learning Libraries",
-          "origem": "ICSE 2024",
+          "origem": "ICSE",
           "fase": "Verificação",
-          "metrica": "5 citações",
-          "foco": "Fuzzing para detecção de vulnerabilidade em bibliotecas de aprendizado profundo"
+          "grau": "central",
+          "citacoes": "5",
+          "foco": "Framework de fuzzing para detecção de vulnerabilidades em bibliotecas de aprendizado profundo"
         },
         {
           "arxiv": "2504.12034",
           "titulo": "OpDiffer: LLM-Assisted Opcode-Level Differential Testing of Ethereum Virtual Machine",
-          "origem": "ISSTA 2025",
+          "origem": "ISSTA",
           "fase": "Verificação",
-          "metrica": "3 citações",
-          "foco": "Teste diferencial em nível de opcode"
+          "grau": "central",
+          "citacoes": "3",
+          "foco": "Teste diferencial em nível de opcode de máquinas virtuais Ethereum"
+        },
+        {
+          "arxiv": "2607.02605",
+          "titulo": "A Survey of LLM-Driven Penetration Testing: Taxonomy, Co-Evolution, and Open Challenges",
+          "origem": "estudo secundário",
+          "fase": "Verificação",
+          "grau": "central",
+          "citacoes": "0",
+          "foco": "Evolução arquitetural de agentes LLM em pentest"
+        },
+        {
+          "arxiv": "2603.13411",
+          "titulo": "Human in the Loop for Fuzz Testing: Literature Review and the Road Ahead",
+          "origem": "estudo secundário",
+          "fase": "Verificação",
+          "grau": "central",
+          "citacoes": "0",
+          "foco": "Human-in-the-loop combinado com fuzz testing de software"
+        },
+        {
+          "arxiv": "2510.13078",
+          "titulo": "ADPerf: Investigating and Testing Performance in Autonomous Driving Systems",
+          "origem": "ASE",
+          "fase": "Verificação",
+          "grau": "secundaria",
+          "citacoes": "0",
+          "foco": "testar latência de detecção de obstáculos em direção autônoma"
+        },
+        {
+          "arxiv": "2606.25239",
+          "titulo": "Tensor-Based Batch Fuzzing with Adaptive Perturbation Scaling for Deep Neural Networks",
+          "origem": "ASE",
+          "fase": "Verificação",
+          "grau": "secundaria",
+          "citacoes": "0",
+          "foco": "fuzzing em lote com perturbação adaptativa para testar redes neurais"
+        },
+        {
+          "arxiv": "2512.21236",
+          "titulo": "Casting a SPELL: Sentence Pairing Exploration for LLM Limitation-breaking",
+          "origem": "FSE",
+          "fase": "Verificação",
+          "grau": "central",
+          "citacoes": "0",
+          "foco": "framework de jailbreak para geração de código malicioso em LLMs"
+        },
+        {
+          "arxiv": "2604.13611",
+          "titulo": "V2E: Validating Smart Contract Vulnerabilities through Profit-driven Exploit Generation and Execution",
+          "origem": "FSE",
+          "fase": "Verificação",
+          "grau": "central",
+          "citacoes": "0",
+          "foco": "validação automática de vulnerabilidades via geração de exploits em contratos inteligentes"
+        },
+        {
+          "arxiv": "2512.08706",
+          "titulo": "RESTifAI: LLM-Based Workflow for Reusable REST API Testing",
+          "origem": "ICSE",
+          "fase": "Verificação",
+          "grau": "secundaria",
+          "citacoes": "0",
+          "foco": "Geração de testes para APIs REST com LLM, happy-path e casos negativos"
+        },
+        {
+          "arxiv": "2512.15422",
+          "titulo": "A Survey on the Applications of Generative Artificial Intelligence in Automated Driving Systems Test Scenario Generation Methods",
+          "origem": "estudo secundário",
+          "fase": "Verificação",
+          "grau": "secundaria",
+          "citacoes": "",
+          "foco": "Geração de cenários teste para sistemas de direção autônoma com IA generativa"
+        },
+        {
+          "arxiv": "2603.2456",
+          "titulo": "Boosting LLMs for Mutation Generation",
+          "origem": "FSE",
+          "fase": "Verificação",
+          "grau": "secundaria",
+          "citacoes": "",
+          "foco": "geração de mutantes via RAG e fine-tuning para teste"
+        },
+        {
+          "arxiv": "2605.00413",
+          "titulo": "ClozeMaster: Fuzzing Rust Compiler by Harnessing LLMs for Infilling Masked Real Programs",
+          "origem": "ICSE",
+          "fase": "Verificação",
+          "grau": "secundaria",
+          "citacoes": "",
+          "foco": "Fuzzing de compilador Rust usando LLMs para geração de casos de teste"
+        },
+        {
+          "arxiv": "2512.19758",
+          "titulo": "Attention Distance: A Novel Metric for Directed Fuzzing with Large Language Models",
+          "origem": "ICSE",
+          "fase": "Verificação",
+          "grau": "central",
+          "citacoes": "",
+          "foco": "métrica de distância guiada por LLM para fuzzing direcionado"
         }
       ]
     },
@@ -254,34 +716,83 @@
         {
           "arxiv": "2305.18607",
           "titulo": "How Effective Are Neural Networks for Fixing Security Vulnerabilities",
-          "origem": "ISSTA 2023",
+          "origem": "ISSTA",
           "fase": "Depuração e reparo",
-          "metrica": "93 citações",
-          "foco": "Comparação de modelos e reparo automático em vulnerabilidades Java"
+          "grau": "central",
+          "citacoes": "93",
+          "foco": "Comparação de LLMs e reparo automático em vulnerabilidades Java, com novo benchmark"
         },
         {
           "arxiv": "2405.01466",
           "titulo": "A Systematic Literature Review on Large Language Models for Automated Program Repair",
-          "origem": "TOSEM 2024",
+          "origem": "TOSEM",
           "fase": "Depuração e reparo",
-          "metrica": "16 citações",
-          "foco": "Revisão sistemática de LLMs para reparo automatizado"
+          "grau": "secundaria",
+          "citacoes": "16",
+          "foco": "Revisão sistemática de LLMs para reparo automatizado de programas"
         },
         {
-          "arxiv": "2510.05480",
+          "arxiv": "2510.0548",
           "titulo": "Vul-R2: A Reasoning LLM for Automated Vulnerability Repair",
-          "origem": "ASE 2025",
+          "origem": "ASE",
           "fase": "Depuração e reparo",
-          "metrica": "2 citações",
-          "foco": "Reparo automatizado de vulnerabilidade com modelo de raciocínio"
+          "grau": "central",
+          "citacoes": "2",
+          "foco": "reparo automatizado de vulnerabilidades com LLM de raciocínio"
         },
         {
           "arxiv": "2411.07586",
           "titulo": "A Comprehensive Survey of AI-Driven Advancements and Techniques in Automated Program Repair and Code Generation",
           "origem": "estudo secundário",
           "fase": "Depuração e reparo",
-          "metrica": "1 citação",
-          "foco": "Geração de código e reparo automático"
+          "grau": "secundaria",
+          "citacoes": "1",
+          "foco": "Geração de código e reparo automático com LLMs"
+        },
+        {
+          "arxiv": "2401.15459",
+          "titulo": "Multi-LLM Collaboration + Data-Centric Innovation = 2x Better Vulnerability Repair",
+          "origem": "ICSE",
+          "fase": "Depuração e reparo",
+          "grau": "central",
+          "citacoes": "1",
+          "foco": "Reparo automático de vulnerabilidade com CWE e colaboração entre dois LLMs"
+        },
+        {
+          "arxiv": "2605.22087",
+          "titulo": "Automated Repair of TEE Partitioning Issues via DSL-Guided and LLM-Assisted Patching",
+          "origem": "FSE",
+          "fase": "Depuração e reparo",
+          "grau": "central",
+          "citacoes": "0",
+          "foco": "reparo automatizado de vulnerabilidades de particionamento em TEE"
+        },
+        {
+          "arxiv": "2605.01769",
+          "titulo": "VulKey: Automated Vulnerability Repair Guided by Domain-Specific Repair Patterns",
+          "origem": "FSE",
+          "fase": "Depuração e reparo",
+          "grau": "central",
+          "citacoes": "0",
+          "foco": "Reparo de vulnerabilidade guiado por padrões hierárquicos derivados de CWE e NVD"
+        },
+        {
+          "arxiv": "2512.20203",
+          "titulo": "Well Begun is Half Done: Location-Aware and Trace-Guided Iterative Automated Vulnerability Repair",
+          "origem": "ICSE",
+          "fase": "Depuração e reparo",
+          "grau": "central",
+          "citacoes": "0",
+          "foco": "Reparo automatizado de vulnerabilidades com LLM iterativo e localização guiada"
+        },
+        {
+          "arxiv": "2512.22633",
+          "titulo": "Rethinking the Capability of Fine-Tuned Language Models for Automated Vulnerability Repair",
+          "origem": "ICSE",
+          "fase": "Depuração e reparo",
+          "grau": "central",
+          "citacoes": "",
+          "foco": "Avaliacao empirica de modelos ajustados para reparo automatico de vulnerabilidades"
         }
       ]
     },
@@ -298,36 +809,67 @@
       },
       "obras": [
         {
-          "arxiv": "2502.15830",
+          "arxiv": "2502.1583",
           "titulo": "Show Me Your Code! Kill Code Poisoning: A Lightweight Method Based on Code Naturalness",
-          "origem": "ICSE 2025",
+          "origem": "ICSE",
           "fase": "Verificação",
-          "metrica": "4 citações",
-          "foco": "Detecção de envenenamento em modelos de código"
+          "grau": "central",
+          "citacoes": "4",
+          "foco": "Detecção de ataques de envenenamento em modelos de código via análise de naturalidade"
         },
         {
-          "arxiv": "2507.05270",
+          "arxiv": "2507.0527",
           "titulo": "Open Source, Hidden Costs: A Systematic Literature Review on OSS License Management",
           "origem": "estudo secundário",
           "fase": "Verificação",
-          "metrica": "2 citações",
-          "foco": "Gestão de riscos de licenças de código aberto"
+          "grau": "secundaria",
+          "citacoes": "2",
+          "foco": "Gestão de riscos de licenças OSS em desenvolvimento de software"
         },
         {
           "arxiv": "2405.02828",
           "titulo": "Trojans in Large Language Models of Code: A Critical Review through a Trigger-Based Taxonomy",
           "origem": "estudo secundário",
           "fase": "Verificação",
-          "metrica": "2 citações",
-          "foco": "Ataques trojan em modelos de linguagem para código"
+          "grau": "central",
+          "citacoes": "2",
+          "foco": "Segurança de modelos de linguagem para código contra ataques trojans"
         },
         {
           "arxiv": "2604.27789",
           "titulo": "Test Before You Deploy: Governing Updates in the LLM Supply Chain",
-          "origem": "FSE 2026",
+          "origem": "FSE",
           "fase": "Verificação",
-          "metrica": "sem citações indexadas",
-          "foco": "Governança de testes para atualizações de modelo"
+          "grau": "secundaria",
+          "citacoes": "0",
+          "foco": "governança de testes e gates de compatibilidade para atualizações de LLM"
+        },
+        {
+          "arxiv": "2604.04977",
+          "titulo": "Towards Predicting Multi-Vulnerability Attack Chains in Software Supply Chains from Software Bill of Materials Graphs",
+          "origem": "FSE",
+          "fase": "Verificação",
+          "grau": "central",
+          "citacoes": "",
+          "foco": "Predição de cadeias de ataque multi-vulnerabilidade em SBOMs via aprendizado em grafos heterogêneos"
+        },
+        {
+          "arxiv": "2512.23385",
+          "titulo": "Securing the AI Supply Chain: What Can We Learn From Developer-Reported Security Issues and Solutions of AI Projects?",
+          "origem": "ICSE",
+          "fase": "Verificação",
+          "grau": "central",
+          "citacoes": "",
+          "foco": "Segurança em supply chain de IA: classificação de issues de developers"
+        },
+        {
+          "arxiv": "2506.03507",
+          "titulo": "Software Bill of Materials in Software Supply Chain Security A Systematic Literature Review",
+          "origem": "estudo secundário",
+          "fase": "Manutenção",
+          "grau": "central",
+          "citacoes": "",
+          "foco": "SBOMs em segurança de cadeia de suprimentos de software"
         }
       ]
     },
@@ -340,8 +882,8 @@
       "sedes": "ASE 2 · FSE 2 · TOSEM 1",
       "porFase": {
         "Processo transversal": 7,
-        "Verificação": 3,
-        "Geração de código": 1
+        "Geração de código": 1,
+        "Verificação": 3
       },
       "obras": [
         {
@@ -349,32 +891,99 @@
           "titulo": "Personal LLM Agents: Insights and Survey about the Capability, Efficiency and Security",
           "origem": "estudo secundário",
           "fase": "Processo transversal",
-          "metrica": "31 citações",
-          "foco": "Agentes pessoais integrados a dados e dispositivos"
+          "grau": "secundaria",
+          "citacoes": "31",
+          "foco": "agentes LLM pessoais integrados a dados e dispositivos"
         },
         {
           "arxiv": "2409.02977",
           "titulo": "Large Language Model-Based Agents for Software Engineering: A Survey",
-          "origem": "TOSEM 2024",
+          "origem": "TOSEM",
           "fase": "Processo transversal",
-          "metrica": "15 citações",
-          "foco": "Agentes para engenharia de software: levantamento sistemático"
+          "grau": "secundaria",
+          "citacoes": "15",
+          "foco": "Agentes baseados em LLMs para Engenharia de Software: levantamento sistemático"
         },
         {
           "arxiv": "2505.10924",
           "titulo": "A Survey on the Safety and Security Threats of Computer-Using Agents: JARVIS or Ultron?",
           "origem": "estudo secundário",
           "fase": "Processo transversal",
-          "metrica": "1 citação",
-          "foco": "Taxonomia de ameaças e defesas em agentes de computador"
+          "grau": "central",
+          "citacoes": "1",
+          "foco": "Taxonomia de ameaças de segurança e defesas em agentes de computador"
+        },
+        {
+          "arxiv": "2509.14404",
+          "titulo": "A Taxonomy of Prompt Defects in LLM Systems",
+          "origem": "estudo secundário",
+          "fase": "Geração de código",
+          "grau": "central",
+          "citacoes": "0",
+          "foco": "taxonomia de defeitos de prompt em sistemas LLM"
+        },
+        {
+          "arxiv": "2604.0307",
+          "titulo": "How Your Credentials Are Leaked by LLM Agent Skills: An Empirical Study",
+          "origem": "ASE",
+          "fase": "Verificação",
+          "grau": "central",
+          "citacoes": "0",
+          "foco": "vazamento de credenciais em skills de agentes LLM"
+        },
+        {
+          "arxiv": "2605.30777",
+          "titulo": "What Breaks When LLMs Code? Characterizing Operational Safety Failures of Agentic Code Assistants",
+          "origem": "ASE",
+          "fase": "Verificação",
+          "grau": "central",
+          "citacoes": "",
+          "foco": "Falhas de segurança operacional em agentes de codificação autônomos"
+        },
+        {
+          "arxiv": "2603.28166",
+          "titulo": "Evaluating Privilege Usage of Agents with Real-World Tools",
+          "origem": "FSE",
+          "fase": "Verificação",
+          "grau": "central",
+          "citacoes": "",
+          "foco": "Avaliação de segurança e privilégios em agentes LLM com ferramentas reais"
         },
         {
           "arxiv": "2606.13175",
           "titulo": "The End of Code Review: Coding Agents Supersede Human Inspection",
           "origem": "estudo secundário",
           "fase": "Processo transversal",
-          "metrica": "sem citações indexadas",
-          "foco": "Agentes substituindo revisão humana de código"
+          "grau": "secundaria",
+          "citacoes": "0",
+          "foco": "Agentes de IA substituindo revisão humana de código em qualidade"
+        },
+        {
+          "arxiv": "2604.13103",
+          "titulo": "Fairness in Multi-Agent Systems for Software Engineering: An SDLC-Oriented Rapid Review",
+          "origem": "FSE",
+          "fase": "Processo transversal",
+          "grau": "secundaria",
+          "citacoes": "0",
+          "foco": "Fairness em sistemas multi-agente LLM para desenvolvimento software"
+        },
+        {
+          "arxiv": "2606.05339",
+          "titulo": "A Taxonomy of Runtime Faults in Model Context Protocol Servers",
+          "origem": "estudo secundário",
+          "fase": "Processo transversal",
+          "grau": "secundaria",
+          "citacoes": "",
+          "foco": "Taxonomia de falhas em tempo de execução de servidores MCP"
+        },
+        {
+          "arxiv": "2512.22256",
+          "titulo": "Agentic Software Issue Resolution with Large Language Models: A Survey",
+          "origem": "estudo secundário",
+          "fase": "Processo transversal",
+          "grau": "secundaria",
+          "citacoes": "",
+          "foco": "Agentes LLM para resolução automática de issues em repositórios software"
         }
       ]
     },
@@ -394,103 +1003,436 @@
           "titulo": "A Survey of AIOps for Failure Management in the Era of Large Language Models",
           "origem": "estudo secundário",
           "fase": "Operação em produção",
-          "metrica": "1 citação",
-          "foco": "AIOps para gestão de falhas de sistemas"
+          "grau": "secundaria",
+          "citacoes": "1",
+          "foco": "AIOps baseado em LLM para gestão de falhas de sistemas"
         },
         {
-          "arxiv": "2412.05240",
+          "arxiv": "2412.0524",
           "titulo": "Automated, Unsupervised, and Auto-parameterized Inference of Data Patterns and Anomaly Detection",
-          "origem": "ICSE 2024",
+          "origem": "ICSE",
           "fase": "Operação em produção",
-          "metrica": "sem métrica indexada",
-          "foco": "Inferência de padrões e detecção de anomalias em dados"
+          "grau": "secundaria",
+          "citacoes": "",
+          "foco": "inferência automática de padrões e detecção de anomalias em dados"
         }
       ]
     },
     {
       "cod": "S8",
       "nome": "Requisito, projeto e política",
-      "total": 21,
+      "total": 20,
       "central": 10,
       "predominante": "Verificação",
       "sedes": "ASE 3 · ICSE 2 · FSE 1",
       "porFase": {
+        "Processo transversal": 6,
         "Verificação": 8,
-        "Processo transversal": 7,
         "Requisitos": 3,
-        "Arquitetura": 2,
-        "Manutenção": 1
+        "Manutenção": 1,
+        "Arquitetura": 2
       },
       "obras": [
         {
           "arxiv": "2404.04566",
           "titulo": "Efficient and Green Large Language Models for Software Engineering: Literature Review, Vision, and the Road Ahead",
-          "origem": "TOSEM 2024",
+          "origem": "TOSEM",
           "fase": "Processo transversal",
-          "metrica": "36 citações",
-          "foco": "Visão e roadmap para modelos eficientes e sustentáveis"
+          "grau": "secundaria",
+          "citacoes": "36",
+          "foco": "Visão e roadmap para LLMs eficientes e sustentáveis em engenharia de software"
         },
         {
-          "arxiv": "2409.03220",
+          "arxiv": "2409.0322",
           "titulo": "FairQuant: Certifying and Quantifying Fairness of Deep Neural Networks",
-          "origem": "ICSE 2024",
+          "origem": "ICSE",
           "fase": "Verificação",
-          "metrica": "7 citações",
-          "foco": "Certificação formal e quantificação de fairness"
+          "grau": "secundaria",
+          "citacoes": "7",
+          "foco": "Certificação formal e quantificação de fairness em redes neurais profundas"
+        },
+        {
+          "arxiv": "2503.11573",
+          "titulo": "Synthesizing Access Control Policies using Large Language Models",
+          "origem": "ICSE",
+          "fase": "Requisitos",
+          "grau": "central",
+          "citacoes": "4",
+          "foco": "Síntese de políticas de controle de acesso usando LLMs com prompting"
         },
         {
           "arxiv": "2412.16667",
           "titulo": "The Good, the Bad, and the (Un)Usable: A Rapid Literature Review on Privacy as Code",
           "origem": "estudo secundário",
           "fase": "Verificação",
-          "metrica": "4 citações",
-          "foco": "Privacidade como código: detecção e geração automática"
+          "grau": "central",
+          "citacoes": "4",
+          "foco": "Privacy as Code: detecção e geração automática de código privacy-friendly"
         },
         {
-          "arxiv": "2503.11573",
-          "titulo": "Synthesizing Access Control Policies using Large Language Models",
-          "origem": "ICSE 2025",
+          "arxiv": "2503.13793",
+          "titulo": "Mapping the Trust Terrain: LLMs in Software Engineering -- Insights and Perspectives",
+          "origem": "estudo secundário · TSE",
+          "fase": "Processo transversal",
+          "grau": "secundaria",
+          "citacoes": "3",
+          "foco": "Confiabilidade e trustworthiness de LLMs em tarefas engenharia software"
+        },
+        {
+          "arxiv": "2408.01303",
+          "titulo": "A Systematic Mapping Study on SDN Controllers for Enhancing Security in IoT Networks",
+          "origem": "estudo secundário",
+          "fase": "Verificação",
+          "grau": "central",
+          "citacoes": "1",
+          "foco": "Segurança em redes IoT com controladores SDN"
+        },
+        {
+          "arxiv": "2510.06343",
+          "titulo": "Leveraging Large Language Models for Cybersecurity Risk Assessment -- A Case from Forestry Cyber-Physical Systems",
+          "origem": "ASE",
+          "fase": "Verificação",
+          "grau": "central",
+          "citacoes": "1",
+          "foco": "Ferramenta LLM com RAG para avaliação de riscos cibernéticos"
+        },
+        {
+          "arxiv": "2506.21693",
+          "titulo": "The DevSafeOps Dilemma: A Systematic Literature Review on Rapidity in Safe Autonomous Driving Development and Operation",
+          "origem": "estudo secundário",
+          "fase": "Manutenção",
+          "grau": "central",
+          "citacoes": "1",
+          "foco": "DevOps em desenvolvimento seguro de sistemas autônomos"
+        },
+        {
+          "arxiv": "2507.15025",
+          "titulo": "Survey of GenAI for Automotive Software Development: From Requirements to Executable Code",
+          "origem": "estudo secundário",
+          "fase": "Processo transversal",
+          "grau": "secundaria",
+          "citacoes": "1",
+          "foco": "GenAI e LLMs em requisitos, conformidade e geração de código automotivo"
+        },
+        {
+          "arxiv": "2607.27374",
+          "titulo": "From Backlog Items to Security Guidance: Towards Continuous Security Compliance",
+          "origem": "ASE",
           "fase": "Requisitos",
-          "metrica": "4 citações",
-          "foco": "Síntese de políticas de controle de acesso"
+          "grau": "central",
+          "citacoes": "0",
+          "foco": "classificação e RAG para vincular itens de backlog a requisitos de segurança"
+        },
+        {
+          "arxiv": "2607.21608",
+          "titulo": "From Obligation to Specification: A Survey on Validating EU AI Act Requirements in RE",
+          "origem": "estudo secundário",
+          "fase": "Requisitos",
+          "grau": "central",
+          "citacoes": "",
+          "foco": "Validação de requisitos EU AI Act com ferramentas LLM-agenticas"
+        },
+        {
+          "arxiv": "2506.01595",
+          "titulo": "A Systematic Mapping Study on Software Architecture for AI-based Mobility Systems",
+          "origem": "estudo secundário",
+          "fase": "Arquitetura",
+          "grau": "secundaria",
+          "citacoes": "",
+          "foco": "Arquitetura de software para sistemas críticos baseados em IA"
+        },
+        {
+          "arxiv": "2407.18584",
+          "titulo": "Designing Secure AI-based Systems: a Multi-Vocal Literature Review",
+          "origem": "estudo secundário",
+          "fase": "Arquitetura",
+          "grau": "central",
+          "citacoes": "",
+          "foco": "diretrizes arquiteturais de segurança para sistemas baseados em IA"
+        },
+        {
+          "arxiv": "2601.20918",
+          "titulo": "Infusion of Blockchain to Establish Trustworthiness in AI Supported Software Evolution: A Systematic Literature Review",
+          "origem": "estudo secundário",
+          "fase": "Verificação",
+          "grau": "central",
+          "citacoes": "0",
+          "foco": "Confiabilidade em evolução de software apoiada por IA e blockchain"
+        },
+        {
+          "arxiv": "2605.03822",
+          "titulo": "KVerus: Scalable and Resilient Formal Verification Proof Generation for Rust Code",
+          "origem": "ASE",
+          "fase": "Verificação",
+          "grau": "secundaria",
+          "citacoes": "0",
+          "foco": "geração automática de provas de verificação formal para código Rust"
+        },
+        {
+          "arxiv": "2607.13196",
+          "titulo": "From Human-Centric to Agentic Code Review: The Impact of Different Generations of Generative AI Technology on Review Quality",
+          "origem": "estudo secundário",
+          "fase": "Verificação",
+          "grau": "secundaria",
+          "citacoes": "",
+          "foco": "Impacto de agentes IA em qualidade e eficiência de code review"
+        },
+        {
+          "arxiv": "2512.23782",
+          "titulo": "A Systematic Mapping on Software Fairness: Focus, Trends and Industrial Context",
+          "origem": "estudo secundário",
+          "fase": "Verificação",
+          "grau": "secundaria",
+          "citacoes": "",
+          "foco": "Fairness em sistemas software: soluções, tendências e viabilidade industrial"
+        },
+        {
+          "arxiv": "2605.00073",
+          "titulo": "AgentReputation: A Decentralized Agentic AI Reputation Framework",
+          "origem": "FSE",
+          "fase": "Processo transversal",
+          "grau": "secundaria",
+          "citacoes": "0",
+          "foco": "framework de reputação descentralizado para marketplaces de agentes de IA"
+        },
+        {
+          "arxiv": "2606.23696",
+          "titulo": "Privacy Engineering: A Systematic Literature Review",
+          "origem": "estudo secundário",
+          "fase": "Processo transversal",
+          "grau": "central",
+          "citacoes": "",
+          "foco": "Engenharia de privacidade em ciclo de vida de software sob GDPR"
+        },
+        {
+          "arxiv": "2508.02279",
+          "titulo": "Dialogue Systems Engineering: A Survey and Future Directions",
+          "origem": "estudo secundário",
+          "fase": "Processo transversal",
+          "grau": "secundaria",
+          "citacoes": "",
+          "foco": "Engenharia de software para sistemas de diálogo com LLMs"
         }
       ]
     },
     {
       "cod": "S9",
       "nome": "Benchmark e avaliação de segurança",
-      "total": 24,
-      "central": 10,
+      "total": 23,
+      "central": 9,
       "predominante": "Verificação",
       "sedes": "ICSE 5 · ASE 3 · FSE 3",
       "porFase": {
-        "Verificação": 23,
+        "Verificação": 22,
         "Operação em produção": 1
       },
       "obras": [
         {
-          "arxiv": "2405.04760",
+          "arxiv": "2405.0476",
           "titulo": "Large Language Models for Cyber Security: A Systematic Literature Review",
-          "origem": "estudo secundário · TOSEM 2024",
+          "origem": "estudo secundário · TOSEM",
           "fase": "Verificação",
-          "metrica": "94 citações",
-          "foco": "LLMs em cibersegurança: detecção, análise e resposta"
+          "grau": "central",
+          "citacoes": "94",
+          "foco": "LLMs para detecção vulnerabilidades, análise malware, agentes autônomos segurança"
         },
         {
           "arxiv": "2311.10372",
           "titulo": "A Survey of Large Language Models for Code: Evolution, Benchmarking, and Future Trends",
           "origem": "estudo secundário",
           "fase": "Verificação",
-          "metrica": "23 citações",
-          "foco": "Modelos de linguagem especializados em código"
+          "grau": "secundaria",
+          "citacoes": "23",
+          "foco": "Modelos de linguagem especializados em código e geração de software"
         },
         {
           "arxiv": "2310.17903",
           "titulo": "Pitfalls in Language Models for Code Intelligence: A Taxonomy and Survey",
           "origem": "estudo secundário",
           "fase": "Verificação",
-          "metrica": "8 citações",
-          "foco": "Armadilhas em modelos de linguagem para inteligência de código"
+          "grau": "secundaria",
+          "citacoes": "8",
+          "foco": "Pitfalls em modelos de linguagem para inteligência de código"
+        },
+        {
+          "arxiv": "2404.09836",
+          "titulo": "How Far Have We Gone in Binary Code Understanding Using Large Language Models",
+          "origem": "ICSME",
+          "fase": "Verificação",
+          "grau": "secundaria",
+          "citacoes": "8",
+          "foco": "Benchmark de LLMs em análise de código binário e engenharia reversa"
+        },
+        {
+          "arxiv": "2407.00125",
+          "titulo": "A Survey on Failure Analysis and Fault Injection in AI Systems",
+          "origem": "estudo secundário",
+          "fase": "Verificação",
+          "grau": "secundaria",
+          "citacoes": "7",
+          "foco": "análise de falhas e injeção de falhas em sistemas de IA"
+        },
+        {
+          "arxiv": "2506.11094",
+          "titulo": "The Scales of Justitia: A Comprehensive Survey on Safety Evaluation of LLMs",
+          "origem": "estudo secundário",
+          "fase": "Verificação",
+          "grau": "central",
+          "citacoes": "4",
+          "foco": "Avaliação de segurança de LLMs: toxicidade, viés, robustez e confiabilidade"
+        },
+        {
+          "arxiv": "2312.00324",
+          "titulo": "Machine Learning for Actionable Warning Identification: A Comprehensive Survey",
+          "origem": "estudo secundário",
+          "fase": "Verificação",
+          "grau": "secundaria",
+          "citacoes": "3",
+          "foco": "identificação de alertas acionáveis com machine learning em análise estática"
+        },
+        {
+          "arxiv": "2507.2261",
+          "titulo": "Metamorphic Testing of Deep Code Models: A Systematic Literature Review",
+          "origem": "estudo secundário",
+          "fase": "Verificação",
+          "grau": "secundaria",
+          "citacoes": "1",
+          "foco": "Teste de robustez de modelos de IA para código via metamorfic testing"
+        },
+        {
+          "arxiv": "2303.16362",
+          "titulo": "Benchmarking Software Vulnerability Detection Techniques: A Survey",
+          "origem": "estudo secundário",
+          "fase": "Verificação",
+          "grau": "central",
+          "citacoes": "1",
+          "foco": "Survey sobre práticas de benchmark em detecção de vulnerabilidade de software"
+        },
+        {
+          "arxiv": "2601.12448",
+          "titulo": "Evaluating Large Language Models for Time Series Anomaly Detection in Aerospace Software",
+          "origem": "ASE",
+          "fase": "Operação em produção",
+          "grau": "secundaria",
+          "citacoes": "",
+          "foco": "benchmark de LLMs para detecção de anomalias em telemetria aeroespacial"
+        },
+        {
+          "arxiv": "2605.26169",
+          "titulo": "ESBMC: A Survey of Its Evolution, Integration, and Future Directions in Formal Software Verification",
+          "origem": "estudo secundário",
+          "fase": "Verificação",
+          "grau": "central",
+          "citacoes": "0",
+          "foco": "Evolução ESBMC: verificação formal, integração LLM e agentes autônomos"
+        },
+        {
+          "arxiv": "2606.30219",
+          "titulo": "EvalSafetyGap: A Hybrid Survey and Conceptual Framework for LLM Evaluation-Safety Failures",
+          "origem": "estudo secundário",
+          "fase": "Verificação",
+          "grau": "central",
+          "citacoes": "0",
+          "foco": "Validade de benchmarks e falhas de segurança em avaliação de LLMs"
+        },
+        {
+          "arxiv": "2604.01527",
+          "titulo": "REAP: Automatic Curation of Coding Agent Benchmarks from Interactive Production Usage",
+          "origem": "ASE",
+          "fase": "Verificação",
+          "grau": "secundaria",
+          "citacoes": "0",
+          "foco": "curadoria automática de benchmarks de agentes de codificação a partir de uso real"
+        },
+        {
+          "arxiv": "2510.13106",
+          "titulo": "TRUSTVIS: A Multi-Dimensional Trustworthiness Evaluation Framework for Large Language Models",
+          "origem": "ASE",
+          "fase": "Verificação",
+          "grau": "central",
+          "citacoes": "0",
+          "foco": "avaliação de segurança e robustez de LLMs com visualização interativa"
+        },
+        {
+          "arxiv": "2604.10611",
+          "titulo": "DuCodeMark: Dual-Purpose Code Dataset Watermarking via Style-Aware Watermark-Poison Design",
+          "origem": "FSE",
+          "fase": "Verificação",
+          "grau": "central",
+          "citacoes": "0",
+          "foco": "watermarking de datasets de código contra uso não autorizado"
+        },
+        {
+          "arxiv": "2604.20211",
+          "titulo": "Towards Secure Logging: Characterizing and Benchmarking Logging Code Security Issues with LLMs",
+          "origem": "FSE",
+          "fase": "Verificação",
+          "grau": "central",
+          "citacoes": "0",
+          "foco": "detecção e reparo de vulnerabilidades em código de logging com LLMs"
+        },
+        {
+          "arxiv": "2604.27677",
+          "titulo": "PuzzleMark: Implicit Jigsaw Learning for Robust Code Dataset Watermarking in Neural Code Completion Models",
+          "origem": "FSE",
+          "fase": "Verificação",
+          "grau": "secundaria",
+          "citacoes": "0",
+          "foco": "watermarking robusto para datasets de código em modelos de completação"
+        },
+        {
+          "arxiv": "2601.01129",
+          "titulo": "RovoDev Code Reviewer: A Large-Scale Online Evaluation of LLM-based Code Review Automation at Atlassian",
+          "origem": "ICSE",
+          "fase": "Verificação",
+          "grau": "secundaria",
+          "citacoes": "0",
+          "foco": "Automação de revisão de código com LLM integrado em plataforma enterprise"
+        },
+        {
+          "arxiv": "2506.17208",
+          "titulo": "Dissecting the SWE-Bench Leaderboards: Profiling Submitters and Architectures of LLM- and Agent-Based Repair Systems",
+          "origem": "ICSE",
+          "fase": "Verificação",
+          "grau": "secundaria",
+          "citacoes": "0",
+          "foco": "Estudo empírico de arquiteturas e submissões em benchmark APR"
+        },
+        {
+          "arxiv": "2412.00746",
+          "titulo": "BDefects4NN: A Backdoor Defect Database for Controlled Localization Studies in Neural Networks",
+          "origem": "ICSE",
+          "fase": "Verificação",
+          "grau": "central",
+          "citacoes": "0",
+          "foco": "Database de defeitos backdoor para localização em redes neurais"
+        },
+        {
+          "arxiv": "2602.13377",
+          "titulo": "A Survey of Code Review Benchmarks and Evaluation Practices in Pre-LLM and LLM Era",
+          "origem": "estudo secundário",
+          "fase": "Verificação",
+          "grau": "secundaria",
+          "citacoes": "",
+          "foco": "Benchmarks e práticas de avaliação para revisão de código com LLMs"
+        },
+        {
+          "arxiv": "2605.11341",
+          "titulo": "CPEMH: An Agentic Framework for Prompt-Driven Behavior Evaluation and Assurance in Foundation-Model Systems for Mental Health Screening",
+          "origem": "ICSE",
+          "fase": "Verificação",
+          "grau": "secundaria",
+          "citacoes": "",
+          "foco": "avaliação e auditoria de comportamento de prompts em triagem clínica"
+        },
+        {
+          "arxiv": "2604.12615",
+          "titulo": "DeepTest Tool Competition 2026: Benchmarking an LLM-Based Automotive Assistant",
+          "origem": "ICSE",
+          "fase": "Verificação",
+          "grau": "secundaria",
+          "citacoes": "",
+          "foco": "Benchmarking ferramentas de teste para assistente LLM automotivo"
         }
       ]
     },
@@ -502,17 +1444,18 @@
       "predominante": "Verificação",
       "sedes": "ICSE 1 · TOSEM 1",
       "porFase": {
+        "Geração de código": 1,
         "Verificação": 2,
-        "Processo transversal": 1,
-        "Geração de código": 1
+        "Processo transversal": 1
       },
       "obras": [
         {
           "arxiv": "2308.06587",
           "titulo": "A User-centered Security Evaluation of Copilot",
-          "origem": "ICSE 2023",
+          "origem": "ICSE",
           "fase": "Geração de código",
-          "metrica": "13 citações",
+          "grau": "central",
+          "citacoes": "13",
           "foco": "Estudo com 25 usuários sobre segurança do código escrito com Copilot"
         },
         {
@@ -520,24 +1463,27 @@
           "titulo": "The Impact of Large Language Models (LLMs) on Code Review Process",
           "origem": "estudo secundário",
           "fase": "Verificação",
-          "metrica": "3 citações",
-          "foco": "Impacto no tempo e na eficiência da revisão de pull requests"
+          "grau": "secundaria",
+          "citacoes": "3",
+          "foco": "Impacto do GPT no tempo e eficiência da revisão de pull requests"
         },
         {
-          "arxiv": "2506.17120",
+          "arxiv": "2506.1712",
           "titulo": "Reassessing Code Authorship Attribution in the Era of Language Models",
-          "origem": "TOSEM 2025",
+          "origem": "TOSEM",
           "fase": "Verificação",
-          "metrica": "1 citação",
-          "foco": "Atribuição de autoria de código com modelos de código"
+          "grau": "secundaria",
+          "citacoes": "1",
+          "foco": "Atribuicao de autoria de codigo usando LMs de codigo"
         },
         {
           "arxiv": "2512.21347",
           "titulo": "Understanding the Role of Large Language Models in Software Engineering: Evidence from an Industry Survey",
           "origem": "estudo secundário",
           "fase": "Processo transversal",
-          "metrica": "sem métrica indexada",
-          "foco": "Adoção de LLMs em desenvolvimento: percepções e riscos"
+          "grau": "secundaria",
+          "citacoes": "",
+          "foco": "Adoção de LLMs em desenvolvimento de software: percepções e riscos"
         }
       ]
     }
@@ -572,5 +1518,5 @@
     "titulo": "Um caso de fronteira que vale registrar",
     "texto": "Segurança do agente e do modelo tem 11 obras e é o tópico de fronteira mais delicada. Injeção de prompt, envenenamento de ferramenta, escape de sandbox e risco de agente autônomo com permissão de escrita em repositório são ataques cujo alvo é o próprio agente, não o software que ele produz. Sete dessas obras estão em processo transversal, o que é correto: o objeto é a infraestrutura de agência. Durante a classificação, uma taxonomia de falhas em tempo de execução de servidores de protocolo de contexto estava em operação em produção e foi movida para processo transversal — falhas da infraestrutura que hospeda o agente são falhas de agência, não de um produto operando."
   },
-  "notaObras": "Cada tópico lista as obras mais citadas dele, não todas as 140. A classificação completa por tópico ainda não está publicada como CSV: os dois corpora crus estão para download na base de leituras, mas sem a coluna de segurança, que veio de uma análise à parte. Onde a origem traz dois valores, a obra aparece nos dois corpora — é a mesma revisão, contada uma vez."
+  "notaObras": "Estão aqui <strong>todas</strong> as obras com segurança, não uma amostra. São 137 obras em 140 registros: três aparecem nos dois corpora — é a mesma revisão, publicada também em sede de referência —, e a tabela acima já as conta uma vez só. Onde a origem traz dois valores, é esse o caso."
 }

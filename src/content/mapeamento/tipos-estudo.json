@@ -1,8 +1,50 @@
 [
-  { "tipo": "T1 Revisão sistemática (SLR)", "a23": "4", "a24": "10", "a25": "18", "a26": "13", "total": "45" },
-  { "tipo": "T2 Mapeamento sistemático", "a23": "5", "a24": "4", "a25": "8", "a26": "2", "total": "19" },
-  { "tipo": "T3 Survey narrativo", "a23": "9", "a24": "20", "a25": "36", "a26": "16", "total": "81" },
-  { "tipo": "T4 Taxonomia/framework", "a23": "1", "a24": "2", "a25": "2", "a26": "1", "total": "6" },
-  { "tipo": "T5 Estudo terciário/meta-análise", "a23": "–", "a24": "–", "a25": "–", "a26": "1", "total": "1" },
-  { "tipo": "T6 Survey com praticantes + revisão", "a23": "3", "a24": "4", "a25": "6", "a26": "6", "total": "19" }
+  {
+    "tipo": "T1 Revisão sistemática (SLR)",
+    "a23": "7",
+    "a24": "18",
+    "a25": "27",
+    "a26": "18",
+    "total": "70"
+  },
+  {
+    "tipo": "T2 Mapeamento sistemático",
+    "a23": "8",
+    "a24": "7",
+    "a25": "13",
+    "a26": "6",
+    "total": "34"
+  },
+  {
+    "tipo": "T3 Survey narrativo",
+    "a23": "12",
+    "a24": "29",
+    "a25": "42",
+    "a26": "18",
+    "total": "101"
+  },
+  {
+    "tipo": "T4 Taxonomia/framework",
+    "a23": "1",
+    "a24": "3",
+    "a25": "4",
+    "a26": "3",
+    "total": "11"
+  },
+  {
+    "tipo": "T5 Estudo terciário/meta-análise",
+    "a23": "–",
+    "a24": "–",
+    "a25": "–",
+    "a26": "1",
+    "total": "1"
+  },
+  {
+    "tipo": "T6 Survey com praticantes + revisão",
+    "a23": "3",
+    "a24": "4",
+    "a25": "6",
+    "a26": "6",
+    "total": "19"
+  }
 ]

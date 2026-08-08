@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1222 664" width="1222" height="664" role="img" aria-label="Mapa de calor dos 321 artigos com sede confirmada, por sede de publicação e fase do processo">
-<rect width="1222" height="664" fill="#f3f2f2"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1316 664" width="1316" height="664" role="img" aria-label="Mapa de calor dos 338 artigos com sede confirmada, por sede de publicação e fase do processo">
+<rect width="1316" height="664" fill="#f3f2f2"/>
 <text x="207" y="74" font-family="Archivo, system-ui, sans-serif" font-size="12.5" font-weight="700" fill="#201e1d" text-anchor="middle">Descoberta</text>
 <text x="207" y="91" font-family="Archivo, system-ui, sans-serif" font-size="12.5" font-weight="700" fill="#201e1d" text-anchor="middle">de produto</text>
 <text x="301" y="74" font-family="Archivo, system-ui, sans-serif" font-size="12.5" font-weight="700" fill="#201e1d" text-anchor="middle">Requisitos</text>
@@ -7,160 +7,174 @@
 <text x="489" y="74" font-family="Archivo, system-ui, sans-serif" font-size="12.5" font-weight="700" fill="#201e1d" text-anchor="middle">Geração de</text>
 <text x="489" y="91" font-family="Archivo, system-ui, sans-serif" font-size="12.5" font-weight="700" fill="#201e1d" text-anchor="middle">código</text>
 <text x="583" y="74" font-family="Archivo, system-ui, sans-serif" font-size="12.5" font-weight="700" fill="#201e1d" text-anchor="middle">Verificação</text>
-<text x="677" y="74" font-family="Archivo, system-ui, sans-serif" font-size="12.5" font-weight="700" fill="#201e1d" text-anchor="middle">Reparo</text>
+<text x="677" y="74" font-family="Archivo, system-ui, sans-serif" font-size="12.5" font-weight="700" fill="#201e1d" text-anchor="middle">Depuração e</text>
+<text x="677" y="91" font-family="Archivo, system-ui, sans-serif" font-size="12.5" font-weight="700" fill="#201e1d" text-anchor="middle">reparo</text>
 <text x="771" y="74" font-family="Archivo, system-ui, sans-serif" font-size="12.5" font-weight="700" fill="#201e1d" text-anchor="middle">Manutenção</text>
-<text x="865" y="74" font-family="Archivo, system-ui, sans-serif" font-size="12.5" font-weight="700" fill="#201e1d" text-anchor="middle">Planejamento</text>
-<text x="865" y="91" font-family="Archivo, system-ui, sans-serif" font-size="12.5" font-weight="700" fill="#201e1d" text-anchor="middle">&amp; releases</text>
-<text x="959" y="74" font-family="Archivo, system-ui, sans-serif" font-size="12.5" font-weight="700" fill="#201e1d" text-anchor="middle">Conhecimento</text>
-<text x="959" y="91" font-family="Archivo, system-ui, sans-serif" font-size="12.5" font-weight="700" fill="#201e1d" text-anchor="middle">&amp; docs</text>
-<text x="1053" y="74" font-family="Archivo, system-ui, sans-serif" font-size="12.5" font-weight="700" fill="#201e1d" text-anchor="middle">Processo</text>
-<text x="1053" y="91" font-family="Archivo, system-ui, sans-serif" font-size="12.5" font-weight="700" fill="#201e1d" text-anchor="middle">transversal</text>
-<text x="1147" y="74" font-family="Archivo, system-ui, sans-serif" font-size="12.5" font-weight="700" fill="#201e1d" text-anchor="middle">Formação</text>
-<line x1="0" y1="98" x2="1222" y2="98" stroke="#201e1d" stroke-width="2"/>
+<text x="865" y="74" font-family="Archivo, system-ui, sans-serif" font-size="12.5" font-weight="700" fill="#201e1d" text-anchor="middle">Operação em</text>
+<text x="865" y="91" font-family="Archivo, system-ui, sans-serif" font-size="12.5" font-weight="700" fill="#201e1d" text-anchor="middle">produção</text>
+<text x="959" y="74" font-family="Archivo, system-ui, sans-serif" font-size="12.5" font-weight="700" fill="#201e1d" text-anchor="middle">Gestão de</text>
+<text x="959" y="91" font-family="Archivo, system-ui, sans-serif" font-size="12.5" font-weight="700" fill="#201e1d" text-anchor="middle">projeto</text>
+<text x="1053" y="74" font-family="Archivo, system-ui, sans-serif" font-size="12.5" font-weight="700" fill="#201e1d" text-anchor="middle">Conhecimento</text>
+<text x="1147" y="74" font-family="Archivo, system-ui, sans-serif" font-size="12.5" font-weight="700" fill="#201e1d" text-anchor="middle">Processo</text>
+<text x="1147" y="91" font-family="Archivo, system-ui, sans-serif" font-size="12.5" font-weight="700" fill="#201e1d" text-anchor="middle">transversal</text>
+<text x="1241" y="74" font-family="Archivo, system-ui, sans-serif" font-size="12.5" font-weight="700" fill="#201e1d" text-anchor="middle">Formação</text>
+<line x1="0" y1="98" x2="1316" y2="98" stroke="#201e1d" stroke-width="2"/>
 <text x="28" y="149" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d">ICSE</text>
-<text x="144" y="149" font-family="Archivo, system-ui, sans-serif" font-size="13" font-weight="700" fill="#201e1d" fill-opacity="0.55" text-anchor="end">125</text>
+<text x="144" y="149" font-family="Archivo, system-ui, sans-serif" font-size="13" font-weight="700" fill="#201e1d" fill-opacity="0.55" text-anchor="end">131</text>
 <rect x="162" y="122" width="90" height="44" fill="#ec3013" fill-opacity="0.29"/>
 <text x="207" y="149" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d" text-anchor="middle">2</text>
-<rect x="256" y="122" width="90" height="44" fill="#ec3013" fill-opacity="0.39"/>
+<rect x="256" y="122" width="90" height="44" fill="#ec3013" fill-opacity="0.40"/>
 <text x="301" y="149" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d" text-anchor="middle">5</text>
-<rect x="350" y="122" width="90" height="44" fill="#ec3013" fill-opacity="0.39"/>
+<rect x="350" y="122" width="90" height="44" fill="#ec3013" fill-opacity="0.40"/>
 <text x="395" y="149" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d" text-anchor="middle">5</text>
-<rect x="444" y="122" width="90" height="44" fill="#ec3013" fill-opacity="0.77"/>
-<text x="489" y="149" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#fff" text-anchor="middle">26</text>
+<rect x="444" y="122" width="90" height="44" fill="#ec3013" fill-opacity="0.79"/>
+<text x="489" y="149" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#fff" text-anchor="middle">27</text>
 <rect x="538" y="122" width="90" height="44" fill="#ec3013" fill-opacity="1.00"/>
-<text x="583" y="149" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#fff" text-anchor="middle">47</text>
-<rect x="632" y="122" width="90" height="44" fill="#ec3013" fill-opacity="0.54"/>
-<text x="677" y="149" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d" text-anchor="middle">11</text>
-<rect x="726" y="122" width="90" height="44" fill="#ec3013" fill-opacity="0.49"/>
-<text x="771" y="149" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d" text-anchor="middle">9</text>
-<rect x="820" y="122" width="90" height="44" fill="#ec3013" fill-opacity="0.23"/>
-<text x="865" y="149" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d" text-anchor="middle">1</text>
-<rect x="914" y="122" width="90" height="44" fill="#ec3013" fill-opacity="0.29"/>
-<text x="959" y="149" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d" text-anchor="middle">2</text>
-<rect x="1008" y="122" width="90" height="44" fill="#ec3013" fill-opacity="0.63"/>
-<text x="1053" y="149" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#fff" text-anchor="middle">16</text>
-<rect x="1102" y="122" width="90" height="44" fill="#ec3013" fill-opacity="0.23"/>
-<text x="1147" y="149" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d" text-anchor="middle">1</text>
-<text x="28" y="201" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d">FSE</text>
-<text x="144" y="201" font-family="Archivo, system-ui, sans-serif" font-size="13" font-weight="700" fill="#201e1d" fill-opacity="0.55" text-anchor="end">67</text>
+<text x="583" y="149" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#fff" text-anchor="middle">46</text>
+<rect x="632" y="122" width="90" height="44" fill="#ec3013" fill-opacity="0.56"/>
+<text x="677" y="149" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#fff" text-anchor="middle">12</text>
+<rect x="726" y="122" width="90" height="44" fill="#ec3013" fill-opacity="0.45"/>
+<text x="771" y="149" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d" text-anchor="middle">7</text>
+<rect x="820" y="122" width="90" height="44" fill="#ec3013" fill-opacity="0.48"/>
+<text x="865" y="149" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d" text-anchor="middle">8</text>
+<rect x="914" y="122" width="90" height="44" fill="#ec3013" fill-opacity="0.23"/>
+<text x="959" y="149" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d" text-anchor="middle">1</text>
+<rect x="1008" y="122" width="90" height="44" fill="#ec3013" fill-opacity="0.29"/>
+<text x="1053" y="149" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d" text-anchor="middle">2</text>
+<rect x="1102" y="122" width="90" height="44" fill="#ec3013" fill-opacity="0.61"/>
+<text x="1147" y="149" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#fff" text-anchor="middle">15</text>
+<rect x="1196" y="122" width="90" height="44" fill="#ec3013" fill-opacity="0.23"/>
+<text x="1241" y="149" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d" text-anchor="middle">1</text>
+<text x="28" y="201" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d">ASE</text>
+<text x="144" y="201" font-family="Archivo, system-ui, sans-serif" font-size="13" font-weight="700" fill="#201e1d" fill-opacity="0.55" text-anchor="end">71</text>
 <rect x="162" y="174" width="90" height="44" fill="#ec3013" fill-opacity="0.23"/>
 <text x="207" y="201" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d" text-anchor="middle">1</text>
 <rect x="256" y="174" width="90" height="44" fill="#ec3013" fill-opacity="0.23"/>
 <text x="301" y="201" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d" text-anchor="middle">1</text>
-<rect x="350" y="174" width="90" height="44" fill="#ec3013" fill-opacity="0.23"/>
-<text x="395" y="201" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d" text-anchor="middle">1</text>
-<rect x="444" y="174" width="90" height="44" fill="#ec3013" fill-opacity="0.55"/>
-<text x="489" y="201" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#fff" text-anchor="middle">12</text>
-<rect x="538" y="174" width="90" height="44" fill="#ec3013" fill-opacity="0.81"/>
-<text x="583" y="201" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#fff" text-anchor="middle">29</text>
-<rect x="632" y="174" width="90" height="44" fill="#ec3013" fill-opacity="0.52"/>
-<text x="677" y="201" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d" text-anchor="middle">10</text>
-<rect x="726" y="174" width="90" height="44" fill="#ec3013" fill-opacity="0.39"/>
-<text x="771" y="201" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d" text-anchor="middle">5</text>
-<rect x="820" y="174" width="90" height="44" fill="#ec3013" fill-opacity="0.23"/>
-<text x="865" y="201" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d" text-anchor="middle">1</text>
-<rect x="914" y="174" width="90" height="44" fill="#ec3013" fill-opacity="0.00"/>
-<text x="959" y="201" font-family="Archivo, system-ui, sans-serif" font-size="14" fill="#bab6b6" text-anchor="middle">–</text>
-<rect x="1008" y="174" width="90" height="44" fill="#ec3013" fill-opacity="0.39"/>
-<text x="1053" y="201" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d" text-anchor="middle">5</text>
-<rect x="1102" y="174" width="90" height="44" fill="#ec3013" fill-opacity="0.29"/>
-<text x="1147" y="201" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d" text-anchor="middle">2</text>
-<text x="28" y="253" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d">ASE</text>
-<text x="144" y="253" font-family="Archivo, system-ui, sans-serif" font-size="13" font-weight="700" fill="#201e1d" fill-opacity="0.55" text-anchor="end">71</text>
+<rect x="350" y="174" width="90" height="44" fill="#ec3013" fill-opacity="0.29"/>
+<text x="395" y="201" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d" text-anchor="middle">2</text>
+<rect x="444" y="174" width="90" height="44" fill="#ec3013" fill-opacity="0.50"/>
+<text x="489" y="201" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d" text-anchor="middle">9</text>
+<rect x="538" y="174" width="90" height="44" fill="#ec3013" fill-opacity="0.84"/>
+<text x="583" y="201" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#fff" text-anchor="middle">31</text>
+<rect x="632" y="174" width="90" height="44" fill="#ec3013" fill-opacity="0.45"/>
+<text x="677" y="201" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d" text-anchor="middle">7</text>
+<rect x="726" y="174" width="90" height="44" fill="#ec3013" fill-opacity="0.23"/>
+<text x="771" y="201" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d" text-anchor="middle">1</text>
+<rect x="820" y="174" width="90" height="44" fill="#ec3013" fill-opacity="0.37"/>
+<text x="865" y="201" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d" text-anchor="middle">4</text>
+<rect x="914" y="174" width="90" height="44" fill="#ec3013" fill-opacity="0.23"/>
+<text x="959" y="201" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d" text-anchor="middle">1</text>
+<rect x="1008" y="174" width="90" height="44" fill="#ec3013" fill-opacity="0.00"/>
+<text x="1053" y="201" font-family="Archivo, system-ui, sans-serif" font-size="14" fill="#bab6b6" text-anchor="middle">–</text>
+<rect x="1102" y="174" width="90" height="44" fill="#ec3013" fill-opacity="0.56"/>
+<text x="1147" y="201" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#fff" text-anchor="middle">12</text>
+<rect x="1196" y="174" width="90" height="44" fill="#ec3013" fill-opacity="0.29"/>
+<text x="1241" y="201" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d" text-anchor="middle">2</text>
+<text x="28" y="253" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d">FSE</text>
+<text x="144" y="253" font-family="Archivo, system-ui, sans-serif" font-size="13" font-weight="700" fill="#201e1d" fill-opacity="0.55" text-anchor="end">69</text>
 <rect x="162" y="226" width="90" height="44" fill="#ec3013" fill-opacity="0.23"/>
 <text x="207" y="253" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d" text-anchor="middle">1</text>
 <rect x="256" y="226" width="90" height="44" fill="#ec3013" fill-opacity="0.23"/>
 <text x="301" y="253" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d" text-anchor="middle">1</text>
-<rect x="350" y="226" width="90" height="44" fill="#ec3013" fill-opacity="0.29"/>
-<text x="395" y="253" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d" text-anchor="middle">2</text>
-<rect x="444" y="226" width="90" height="44" fill="#ec3013" fill-opacity="0.49"/>
-<text x="489" y="253" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d" text-anchor="middle">9</text>
-<rect x="538" y="226" width="90" height="44" fill="#ec3013" fill-opacity="0.84"/>
-<text x="583" y="253" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#fff" text-anchor="middle">32</text>
-<rect x="632" y="226" width="90" height="44" fill="#ec3013" fill-opacity="0.49"/>
-<text x="677" y="253" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d" text-anchor="middle">9</text>
-<rect x="726" y="226" width="90" height="44" fill="#ec3013" fill-opacity="0.29"/>
-<text x="771" y="253" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d" text-anchor="middle">2</text>
-<rect x="820" y="226" width="90" height="44" fill="#ec3013" fill-opacity="0.23"/>
-<text x="865" y="253" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d" text-anchor="middle">1</text>
-<rect x="914" y="226" width="90" height="44" fill="#ec3013" fill-opacity="0.00"/>
-<text x="959" y="253" font-family="Archivo, system-ui, sans-serif" font-size="14" fill="#bab6b6" text-anchor="middle">–</text>
-<rect x="1008" y="226" width="90" height="44" fill="#ec3013" fill-opacity="0.55"/>
-<text x="1053" y="253" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#fff" text-anchor="middle">12</text>
-<rect x="1102" y="226" width="90" height="44" fill="#ec3013" fill-opacity="0.29"/>
-<text x="1147" y="253" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d" text-anchor="middle">2</text>
+<rect x="350" y="226" width="90" height="44" fill="#ec3013" fill-opacity="0.23"/>
+<text x="395" y="253" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d" text-anchor="middle">1</text>
+<rect x="444" y="226" width="90" height="44" fill="#ec3013" fill-opacity="0.56"/>
+<text x="489" y="253" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#fff" text-anchor="middle">12</text>
+<rect x="538" y="226" width="90" height="44" fill="#ec3013" fill-opacity="0.81"/>
+<text x="583" y="253" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#fff" text-anchor="middle">29</text>
+<rect x="632" y="226" width="90" height="44" fill="#ec3013" fill-opacity="0.52"/>
+<text x="677" y="253" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d" text-anchor="middle">10</text>
+<rect x="726" y="226" width="90" height="44" fill="#ec3013" fill-opacity="0.40"/>
+<text x="771" y="253" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d" text-anchor="middle">5</text>
+<rect x="820" y="226" width="90" height="44" fill="#ec3013" fill-opacity="0.29"/>
+<text x="865" y="253" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d" text-anchor="middle">2</text>
+<rect x="914" y="226" width="90" height="44" fill="#ec3013" fill-opacity="0.23"/>
+<text x="959" y="253" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d" text-anchor="middle">1</text>
+<rect x="1008" y="226" width="90" height="44" fill="#ec3013" fill-opacity="0.00"/>
+<text x="1053" y="253" font-family="Archivo, system-ui, sans-serif" font-size="14" fill="#bab6b6" text-anchor="middle">–</text>
+<rect x="1102" y="226" width="90" height="44" fill="#ec3013" fill-opacity="0.40"/>
+<text x="1147" y="253" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d" text-anchor="middle">5</text>
+<rect x="1196" y="226" width="90" height="44" fill="#ec3013" fill-opacity="0.29"/>
+<text x="1241" y="253" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d" text-anchor="middle">2</text>
 <text x="28" y="305" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d">ISSTA</text>
-<text x="144" y="305" font-family="Archivo, system-ui, sans-serif" font-size="13" font-weight="700" fill="#201e1d" fill-opacity="0.55" text-anchor="end">13</text>
+<text x="144" y="305" font-family="Archivo, system-ui, sans-serif" font-size="13" font-weight="700" fill="#201e1d" fill-opacity="0.55" text-anchor="end">18</text>
 <rect x="162" y="278" width="90" height="44" fill="#ec3013" fill-opacity="0.23"/>
 <text x="207" y="305" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d" text-anchor="middle">1</text>
 <rect x="256" y="278" width="90" height="44" fill="#ec3013" fill-opacity="0.23"/>
 <text x="301" y="305" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d" text-anchor="middle">1</text>
 <rect x="350" y="278" width="90" height="44" fill="#ec3013" fill-opacity="0.00"/>
 <text x="395" y="305" font-family="Archivo, system-ui, sans-serif" font-size="14" fill="#bab6b6" text-anchor="middle">–</text>
-<rect x="444" y="278" width="90" height="44" fill="#ec3013" fill-opacity="0.29"/>
-<text x="489" y="305" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d" text-anchor="middle">2</text>
-<rect x="538" y="278" width="90" height="44" fill="#ec3013" fill-opacity="0.36"/>
-<text x="583" y="305" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d" text-anchor="middle">4</text>
-<rect x="632" y="278" width="90" height="44" fill="#ec3013" fill-opacity="0.36"/>
-<text x="677" y="305" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d" text-anchor="middle">4</text>
+<rect x="444" y="278" width="90" height="44" fill="#ec3013" fill-opacity="0.33"/>
+<text x="489" y="305" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d" text-anchor="middle">3</text>
+<rect x="538" y="278" width="90" height="44" fill="#ec3013" fill-opacity="0.43"/>
+<text x="583" y="305" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d" text-anchor="middle">6</text>
+<rect x="632" y="278" width="90" height="44" fill="#ec3013" fill-opacity="0.43"/>
+<text x="677" y="305" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d" text-anchor="middle">6</text>
 <rect x="726" y="278" width="90" height="44" fill="#ec3013" fill-opacity="0.00"/>
 <text x="771" y="305" font-family="Archivo, system-ui, sans-serif" font-size="14" fill="#bab6b6" text-anchor="middle">–</text>
 <rect x="820" y="278" width="90" height="44" fill="#ec3013" fill-opacity="0.00"/>
 <text x="865" y="305" font-family="Archivo, system-ui, sans-serif" font-size="14" fill="#bab6b6" text-anchor="middle">–</text>
 <rect x="914" y="278" width="90" height="44" fill="#ec3013" fill-opacity="0.00"/>
 <text x="959" y="305" font-family="Archivo, system-ui, sans-serif" font-size="14" fill="#bab6b6" text-anchor="middle">–</text>
-<rect x="1008" y="278" width="90" height="44" fill="#ec3013" fill-opacity="0.23"/>
-<text x="1053" y="305" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d" text-anchor="middle">1</text>
-<rect x="1102" y="278" width="90" height="44" fill="#ec3013" fill-opacity="0.00"/>
-<text x="1147" y="305" font-family="Archivo, system-ui, sans-serif" font-size="14" fill="#bab6b6" text-anchor="middle">–</text>
-<text x="28" y="357" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d">MSR</text>
-<text x="144" y="357" font-family="Archivo, system-ui, sans-serif" font-size="13" font-weight="700" fill="#201e1d" fill-opacity="0.55" text-anchor="end">9</text>
-<rect x="162" y="330" width="90" height="44" fill="#ec3013" fill-opacity="0.00"/>
-<text x="207" y="357" font-family="Archivo, system-ui, sans-serif" font-size="14" fill="#bab6b6" text-anchor="middle">–</text>
+<rect x="1008" y="278" width="90" height="44" fill="#ec3013" fill-opacity="0.00"/>
+<text x="1053" y="305" font-family="Archivo, system-ui, sans-serif" font-size="14" fill="#bab6b6" text-anchor="middle">–</text>
+<rect x="1102" y="278" width="90" height="44" fill="#ec3013" fill-opacity="0.23"/>
+<text x="1147" y="305" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d" text-anchor="middle">1</text>
+<rect x="1196" y="278" width="90" height="44" fill="#ec3013" fill-opacity="0.00"/>
+<text x="1241" y="305" font-family="Archivo, system-ui, sans-serif" font-size="14" fill="#bab6b6" text-anchor="middle">–</text>
+<text x="28" y="357" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d">ICSME</text>
+<text x="144" y="357" font-family="Archivo, system-ui, sans-serif" font-size="13" font-weight="700" fill="#201e1d" fill-opacity="0.55" text-anchor="end">13</text>
+<rect x="162" y="330" width="90" height="44" fill="#ec3013" fill-opacity="0.23"/>
+<text x="207" y="357" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d" text-anchor="middle">1</text>
 <rect x="256" y="330" width="90" height="44" fill="#ec3013" fill-opacity="0.00"/>
 <text x="301" y="357" font-family="Archivo, system-ui, sans-serif" font-size="14" fill="#bab6b6" text-anchor="middle">–</text>
-<rect x="350" y="330" width="90" height="44" fill="#ec3013" fill-opacity="0.00"/>
-<text x="395" y="357" font-family="Archivo, system-ui, sans-serif" font-size="14" fill="#bab6b6" text-anchor="middle">–</text>
-<rect x="444" y="330" width="90" height="44" fill="#ec3013" fill-opacity="0.00"/>
-<text x="489" y="357" font-family="Archivo, system-ui, sans-serif" font-size="14" fill="#bab6b6" text-anchor="middle">–</text>
-<rect x="538" y="330" width="90" height="44" fill="#ec3013" fill-opacity="0.33"/>
-<text x="583" y="357" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d" text-anchor="middle">3</text>
-<rect x="632" y="330" width="90" height="44" fill="#ec3013" fill-opacity="0.00"/>
-<text x="677" y="357" font-family="Archivo, system-ui, sans-serif" font-size="14" fill="#bab6b6" text-anchor="middle">–</text>
-<rect x="726" y="330" width="90" height="44" fill="#ec3013" fill-opacity="0.33"/>
-<text x="771" y="357" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d" text-anchor="middle">3</text>
+<rect x="350" y="330" width="90" height="44" fill="#ec3013" fill-opacity="0.23"/>
+<text x="395" y="357" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d" text-anchor="middle">1</text>
+<rect x="444" y="330" width="90" height="44" fill="#ec3013" fill-opacity="0.33"/>
+<text x="489" y="357" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d" text-anchor="middle">3</text>
+<rect x="538" y="330" width="90" height="44" fill="#ec3013" fill-opacity="0.40"/>
+<text x="583" y="357" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d" text-anchor="middle">5</text>
+<rect x="632" y="330" width="90" height="44" fill="#ec3013" fill-opacity="0.23"/>
+<text x="677" y="357" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d" text-anchor="middle">1</text>
+<rect x="726" y="330" width="90" height="44" fill="#ec3013" fill-opacity="0.00"/>
+<text x="771" y="357" font-family="Archivo, system-ui, sans-serif" font-size="14" fill="#bab6b6" text-anchor="middle">–</text>
 <rect x="820" y="330" width="90" height="44" fill="#ec3013" fill-opacity="0.00"/>
 <text x="865" y="357" font-family="Archivo, system-ui, sans-serif" font-size="14" fill="#bab6b6" text-anchor="middle">–</text>
-<rect x="914" y="330" width="90" height="44" fill="#ec3013" fill-opacity="0.29"/>
-<text x="959" y="357" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d" text-anchor="middle">2</text>
-<rect x="1008" y="330" width="90" height="44" fill="#ec3013" fill-opacity="0.23"/>
-<text x="1053" y="357" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d" text-anchor="middle">1</text>
+<rect x="914" y="330" width="90" height="44" fill="#ec3013" fill-opacity="0.00"/>
+<text x="959" y="357" font-family="Archivo, system-ui, sans-serif" font-size="14" fill="#bab6b6" text-anchor="middle">–</text>
+<rect x="1008" y="330" width="90" height="44" fill="#ec3013" fill-opacity="0.29"/>
+<text x="1053" y="357" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d" text-anchor="middle">2</text>
 <rect x="1102" y="330" width="90" height="44" fill="#ec3013" fill-opacity="0.00"/>
 <text x="1147" y="357" font-family="Archivo, system-ui, sans-serif" font-size="14" fill="#bab6b6" text-anchor="middle">–</text>
-<text x="28" y="409" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d">ICSME</text>
-<text x="144" y="409" font-family="Archivo, system-ui, sans-serif" font-size="13" font-weight="700" fill="#201e1d" fill-opacity="0.55" text-anchor="end">11</text>
-<rect x="162" y="382" width="90" height="44" fill="#ec3013" fill-opacity="0.23"/>
-<text x="207" y="409" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d" text-anchor="middle">1</text>
+<rect x="1196" y="330" width="90" height="44" fill="#ec3013" fill-opacity="0.00"/>
+<text x="1241" y="357" font-family="Archivo, system-ui, sans-serif" font-size="14" fill="#bab6b6" text-anchor="middle">–</text>
+<text x="28" y="409" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d">MSR</text>
+<text x="144" y="409" font-family="Archivo, system-ui, sans-serif" font-size="13" font-weight="700" fill="#201e1d" fill-opacity="0.55" text-anchor="end">9</text>
+<rect x="162" y="382" width="90" height="44" fill="#ec3013" fill-opacity="0.00"/>
+<text x="207" y="409" font-family="Archivo, system-ui, sans-serif" font-size="14" fill="#bab6b6" text-anchor="middle">–</text>
 <rect x="256" y="382" width="90" height="44" fill="#ec3013" fill-opacity="0.00"/>
 <text x="301" y="409" font-family="Archivo, system-ui, sans-serif" font-size="14" fill="#bab6b6" text-anchor="middle">–</text>
-<rect x="350" y="382" width="90" height="44" fill="#ec3013" fill-opacity="0.23"/>
-<text x="395" y="409" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d" text-anchor="middle">1</text>
-<rect x="444" y="382" width="90" height="44" fill="#ec3013" fill-opacity="0.29"/>
-<text x="489" y="409" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d" text-anchor="middle">2</text>
-<rect x="538" y="382" width="90" height="44" fill="#ec3013" fill-opacity="0.36"/>
-<text x="583" y="409" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d" text-anchor="middle">4</text>
-<rect x="632" y="382" width="90" height="44" fill="#ec3013" fill-opacity="0.23"/>
-<text x="677" y="409" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d" text-anchor="middle">1</text>
-<rect x="726" y="382" width="90" height="44" fill="#ec3013" fill-opacity="0.00"/>
-<text x="771" y="409" font-family="Archivo, system-ui, sans-serif" font-size="14" fill="#bab6b6" text-anchor="middle">–</text>
+<rect x="350" y="382" width="90" height="44" fill="#ec3013" fill-opacity="0.00"/>
+<text x="395" y="409" font-family="Archivo, system-ui, sans-serif" font-size="14" fill="#bab6b6" text-anchor="middle">–</text>
+<rect x="444" y="382" width="90" height="44" fill="#ec3013" fill-opacity="0.00"/>
+<text x="489" y="409" font-family="Archivo, system-ui, sans-serif" font-size="14" fill="#bab6b6" text-anchor="middle">–</text>
+<rect x="538" y="382" width="90" height="44" fill="#ec3013" fill-opacity="0.33"/>
+<text x="583" y="409" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d" text-anchor="middle">3</text>
+<rect x="632" y="382" width="90" height="44" fill="#ec3013" fill-opacity="0.00"/>
+<text x="677" y="409" font-family="Archivo, system-ui, sans-serif" font-size="14" fill="#bab6b6" text-anchor="middle">–</text>
+<rect x="726" y="382" width="90" height="44" fill="#ec3013" fill-opacity="0.33"/>
+<text x="771" y="409" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d" text-anchor="middle">3</text>
 <rect x="820" y="382" width="90" height="44" fill="#ec3013" fill-opacity="0.00"/>
 <text x="865" y="409" font-family="Archivo, system-ui, sans-serif" font-size="14" fill="#bab6b6" text-anchor="middle">–</text>
-<rect x="914" y="382" width="90" height="44" fill="#ec3013" fill-opacity="0.29"/>
-<text x="959" y="409" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d" text-anchor="middle">2</text>
-<rect x="1008" y="382" width="90" height="44" fill="#ec3013" fill-opacity="0.00"/>
-<text x="1053" y="409" font-family="Archivo, system-ui, sans-serif" font-size="14" fill="#bab6b6" text-anchor="middle">–</text>
-<rect x="1102" y="382" width="90" height="44" fill="#ec3013" fill-opacity="0.00"/>
-<text x="1147" y="409" font-family="Archivo, system-ui, sans-serif" font-size="14" fill="#bab6b6" text-anchor="middle">–</text>
+<rect x="914" y="382" width="90" height="44" fill="#ec3013" fill-opacity="0.00"/>
+<text x="959" y="409" font-family="Archivo, system-ui, sans-serif" font-size="14" fill="#bab6b6" text-anchor="middle">–</text>
+<rect x="1008" y="382" width="90" height="44" fill="#ec3013" fill-opacity="0.29"/>
+<text x="1053" y="409" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d" text-anchor="middle">2</text>
+<rect x="1102" y="382" width="90" height="44" fill="#ec3013" fill-opacity="0.23"/>
+<text x="1147" y="409" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d" text-anchor="middle">1</text>
+<rect x="1196" y="382" width="90" height="44" fill="#ec3013" fill-opacity="0.00"/>
+<text x="1241" y="409" font-family="Archivo, system-ui, sans-serif" font-size="14" fill="#bab6b6" text-anchor="middle">–</text>
 <text x="28" y="461" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d">SANER</text>
 <text x="144" y="461" font-family="Archivo, system-ui, sans-serif" font-size="13" font-weight="700" fill="#201e1d" fill-opacity="0.55" text-anchor="end">3</text>
 <rect x="162" y="434" width="90" height="44" fill="#ec3013" fill-opacity="0.00"/>
@@ -179,61 +193,67 @@
 <text x="771" y="461" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d" text-anchor="middle">1</text>
 <rect x="820" y="434" width="90" height="44" fill="#ec3013" fill-opacity="0.00"/>
 <text x="865" y="461" font-family="Archivo, system-ui, sans-serif" font-size="14" fill="#bab6b6" text-anchor="middle">–</text>
-<rect x="914" y="434" width="90" height="44" fill="#ec3013" fill-opacity="0.23"/>
-<text x="959" y="461" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d" text-anchor="middle">1</text>
-<rect x="1008" y="434" width="90" height="44" fill="#ec3013" fill-opacity="0.00"/>
-<text x="1053" y="461" font-family="Archivo, system-ui, sans-serif" font-size="14" fill="#bab6b6" text-anchor="middle">–</text>
+<rect x="914" y="434" width="90" height="44" fill="#ec3013" fill-opacity="0.00"/>
+<text x="959" y="461" font-family="Archivo, system-ui, sans-serif" font-size="14" fill="#bab6b6" text-anchor="middle">–</text>
+<rect x="1008" y="434" width="90" height="44" fill="#ec3013" fill-opacity="0.23"/>
+<text x="1053" y="461" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d" text-anchor="middle">1</text>
 <rect x="1102" y="434" width="90" height="44" fill="#ec3013" fill-opacity="0.00"/>
 <text x="1147" y="461" font-family="Archivo, system-ui, sans-serif" font-size="14" fill="#bab6b6" text-anchor="middle">–</text>
-<line x1="0" y1="482" x2="1222" y2="482" stroke="#201e1d" stroke-width="2"/>
-<text x="28" y="513" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d">TSE</text>
-<text x="144" y="513" font-family="Archivo, system-ui, sans-serif" font-size="13" font-weight="700" fill="#201e1d" fill-opacity="0.55" text-anchor="end">4</text>
-<rect x="162" y="486" width="90" height="44" fill="#ec3013" fill-opacity="0.23"/>
-<text x="207" y="513" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d" text-anchor="middle">1</text>
-<rect x="256" y="486" width="90" height="44" fill="#ec3013" fill-opacity="0.00"/>
-<text x="301" y="513" font-family="Archivo, system-ui, sans-serif" font-size="14" fill="#bab6b6" text-anchor="middle">–</text>
+<rect x="1196" y="434" width="90" height="44" fill="#ec3013" fill-opacity="0.00"/>
+<text x="1241" y="461" font-family="Archivo, system-ui, sans-serif" font-size="14" fill="#bab6b6" text-anchor="middle">–</text>
+<line x1="0" y1="482" x2="1316" y2="482" stroke="#201e1d" stroke-width="2"/>
+<text x="28" y="513" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d">TOSEM</text>
+<text x="144" y="513" font-family="Archivo, system-ui, sans-serif" font-size="13" font-weight="700" fill="#201e1d" fill-opacity="0.55" text-anchor="end">18</text>
+<rect x="162" y="486" width="90" height="44" fill="#ec3013" fill-opacity="0.00"/>
+<text x="207" y="513" font-family="Archivo, system-ui, sans-serif" font-size="14" fill="#bab6b6" text-anchor="middle">–</text>
+<rect x="256" y="486" width="90" height="44" fill="#ec3013" fill-opacity="0.29"/>
+<text x="301" y="513" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d" text-anchor="middle">2</text>
 <rect x="350" y="486" width="90" height="44" fill="#ec3013" fill-opacity="0.00"/>
 <text x="395" y="513" font-family="Archivo, system-ui, sans-serif" font-size="14" fill="#bab6b6" text-anchor="middle">–</text>
-<rect x="444" y="486" width="90" height="44" fill="#ec3013" fill-opacity="0.00"/>
-<text x="489" y="513" font-family="Archivo, system-ui, sans-serif" font-size="14" fill="#bab6b6" text-anchor="middle">–</text>
-<rect x="538" y="486" width="90" height="44" fill="#ec3013" fill-opacity="0.23"/>
-<text x="583" y="513" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d" text-anchor="middle">1</text>
-<rect x="632" y="486" width="90" height="44" fill="#ec3013" fill-opacity="0.00"/>
-<text x="677" y="513" font-family="Archivo, system-ui, sans-serif" font-size="14" fill="#bab6b6" text-anchor="middle">–</text>
-<rect x="726" y="486" width="90" height="44" fill="#ec3013" fill-opacity="0.00"/>
-<text x="771" y="513" font-family="Archivo, system-ui, sans-serif" font-size="14" fill="#bab6b6" text-anchor="middle">–</text>
-<rect x="820" y="486" width="90" height="44" fill="#ec3013" fill-opacity="0.23"/>
-<text x="865" y="513" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d" text-anchor="middle">1</text>
-<rect x="914" y="486" width="90" height="44" fill="#ec3013" fill-opacity="0.00"/>
-<text x="959" y="513" font-family="Archivo, system-ui, sans-serif" font-size="14" fill="#bab6b6" text-anchor="middle">–</text>
+<rect x="444" y="486" width="90" height="44" fill="#ec3013" fill-opacity="0.33"/>
+<text x="489" y="513" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d" text-anchor="middle">3</text>
+<rect x="538" y="486" width="90" height="44" fill="#ec3013" fill-opacity="0.37"/>
+<text x="583" y="513" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d" text-anchor="middle">4</text>
+<rect x="632" y="486" width="90" height="44" fill="#ec3013" fill-opacity="0.23"/>
+<text x="677" y="513" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d" text-anchor="middle">1</text>
+<rect x="726" y="486" width="90" height="44" fill="#ec3013" fill-opacity="0.23"/>
+<text x="771" y="513" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d" text-anchor="middle">1</text>
+<rect x="820" y="486" width="90" height="44" fill="#ec3013" fill-opacity="0.00"/>
+<text x="865" y="513" font-family="Archivo, system-ui, sans-serif" font-size="14" fill="#bab6b6" text-anchor="middle">–</text>
+<rect x="914" y="486" width="90" height="44" fill="#ec3013" fill-opacity="0.29"/>
+<text x="959" y="513" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d" text-anchor="middle">2</text>
 <rect x="1008" y="486" width="90" height="44" fill="#ec3013" fill-opacity="0.23"/>
 <text x="1053" y="513" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d" text-anchor="middle">1</text>
-<rect x="1102" y="486" width="90" height="44" fill="#ec3013" fill-opacity="0.00"/>
-<text x="1147" y="513" font-family="Archivo, system-ui, sans-serif" font-size="14" fill="#bab6b6" text-anchor="middle">–</text>
-<text x="28" y="565" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d">TOSEM</text>
-<text x="144" y="565" font-family="Archivo, system-ui, sans-serif" font-size="13" font-weight="700" fill="#201e1d" fill-opacity="0.55" text-anchor="end">18</text>
-<rect x="162" y="538" width="90" height="44" fill="#ec3013" fill-opacity="0.00"/>
-<text x="207" y="565" font-family="Archivo, system-ui, sans-serif" font-size="14" fill="#bab6b6" text-anchor="middle">–</text>
-<rect x="256" y="538" width="90" height="44" fill="#ec3013" fill-opacity="0.29"/>
-<text x="301" y="565" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d" text-anchor="middle">2</text>
+<rect x="1102" y="486" width="90" height="44" fill="#ec3013" fill-opacity="0.37"/>
+<text x="1147" y="513" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d" text-anchor="middle">4</text>
+<rect x="1196" y="486" width="90" height="44" fill="#ec3013" fill-opacity="0.00"/>
+<text x="1241" y="513" font-family="Archivo, system-ui, sans-serif" font-size="14" fill="#bab6b6" text-anchor="middle">–</text>
+<text x="28" y="565" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d">TSE</text>
+<text x="144" y="565" font-family="Archivo, system-ui, sans-serif" font-size="13" font-weight="700" fill="#201e1d" fill-opacity="0.55" text-anchor="end">6</text>
+<rect x="162" y="538" width="90" height="44" fill="#ec3013" fill-opacity="0.23"/>
+<text x="207" y="565" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d" text-anchor="middle">1</text>
+<rect x="256" y="538" width="90" height="44" fill="#ec3013" fill-opacity="0.00"/>
+<text x="301" y="565" font-family="Archivo, system-ui, sans-serif" font-size="14" fill="#bab6b6" text-anchor="middle">–</text>
 <rect x="350" y="538" width="90" height="44" fill="#ec3013" fill-opacity="0.00"/>
 <text x="395" y="565" font-family="Archivo, system-ui, sans-serif" font-size="14" fill="#bab6b6" text-anchor="middle">–</text>
-<rect x="444" y="538" width="90" height="44" fill="#ec3013" fill-opacity="0.33"/>
-<text x="489" y="565" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d" text-anchor="middle">3</text>
-<rect x="538" y="538" width="90" height="44" fill="#ec3013" fill-opacity="0.36"/>
-<text x="583" y="565" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d" text-anchor="middle">4</text>
+<rect x="444" y="538" width="90" height="44" fill="#ec3013" fill-opacity="0.00"/>
+<text x="489" y="565" font-family="Archivo, system-ui, sans-serif" font-size="14" fill="#bab6b6" text-anchor="middle">–</text>
+<rect x="538" y="538" width="90" height="44" fill="#ec3013" fill-opacity="0.23"/>
+<text x="583" y="565" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d" text-anchor="middle">1</text>
 <rect x="632" y="538" width="90" height="44" fill="#ec3013" fill-opacity="0.23"/>
 <text x="677" y="565" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d" text-anchor="middle">1</text>
-<rect x="726" y="538" width="90" height="44" fill="#ec3013" fill-opacity="0.23"/>
-<text x="771" y="565" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d" text-anchor="middle">1</text>
-<rect x="820" y="538" width="90" height="44" fill="#ec3013" fill-opacity="0.29"/>
-<text x="865" y="565" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d" text-anchor="middle">2</text>
+<rect x="726" y="538" width="90" height="44" fill="#ec3013" fill-opacity="0.00"/>
+<text x="771" y="565" font-family="Archivo, system-ui, sans-serif" font-size="14" fill="#bab6b6" text-anchor="middle">–</text>
+<rect x="820" y="538" width="90" height="44" fill="#ec3013" fill-opacity="0.23"/>
+<text x="865" y="565" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d" text-anchor="middle">1</text>
 <rect x="914" y="538" width="90" height="44" fill="#ec3013" fill-opacity="0.23"/>
 <text x="959" y="565" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d" text-anchor="middle">1</text>
-<rect x="1008" y="538" width="90" height="44" fill="#ec3013" fill-opacity="0.36"/>
-<text x="1053" y="565" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d" text-anchor="middle">4</text>
-<rect x="1102" y="538" width="90" height="44" fill="#ec3013" fill-opacity="0.00"/>
-<text x="1147" y="565" font-family="Archivo, system-ui, sans-serif" font-size="14" fill="#bab6b6" text-anchor="middle">–</text>
-<line x1="0" y1="586" x2="1222" y2="586" stroke="#201e1d" stroke-width="2"/>
-<text x="28" y="620" font-family="Archivo, system-ui, sans-serif" font-size="13" font-weight="800" fill="#201e1d" letter-spacing="1.2">N = 321 ARTIGOS COM SEDE CONFIRMADA · CONFERÊNCIAS ACIMA, PERIÓDICOS ABAIXO</text>
+<rect x="1008" y="538" width="90" height="44" fill="#ec3013" fill-opacity="0.00"/>
+<text x="1053" y="565" font-family="Archivo, system-ui, sans-serif" font-size="14" fill="#bab6b6" text-anchor="middle">–</text>
+<rect x="1102" y="538" width="90" height="44" fill="#ec3013" fill-opacity="0.23"/>
+<text x="1147" y="565" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d" text-anchor="middle">1</text>
+<rect x="1196" y="538" width="90" height="44" fill="#ec3013" fill-opacity="0.00"/>
+<text x="1241" y="565" font-family="Archivo, system-ui, sans-serif" font-size="14" fill="#bab6b6" text-anchor="middle">–</text>
+<line x1="0" y1="586" x2="1316" y2="586" stroke="#201e1d" stroke-width="2"/>
+<text x="28" y="620" font-family="Archivo, system-ui, sans-serif" font-size="13" font-weight="800" fill="#201e1d" letter-spacing="1.2">N = 338 ARTIGOS COM SEDE CONFIRMADA · CONFERÊNCIAS ACIMA, PERIÓDICOS ABAIXO</text>
 </svg>

@@ -9,40 +9,13 @@
     "foco": "Agentes de código autônomos para resolução de issues em engenharia de software"
   },
   {
-    "id": "2607.13196",
-    "url": "https://arxiv.org/abs/2607.13196",
+    "id": "2603.1715",
+    "url": "https://arxiv.org/abs/2603.17150",
     "ano": "2026",
     "fase": "Verificação",
     "tipo": "T3",
-    "titulo": "From Human-Centric to Agentic Code Review: The Impact of Different Generations of Generative AI Technology on Review Quality",
-    "foco": "Impacto de agentes de IA em qualidade e eficiência de code review"
-  },
-  {
-    "id": "2605.18747",
-    "url": "https://arxiv.org/abs/2605.18747",
-    "ano": "2026",
-    "fase": "Processo transversal",
-    "tipo": "T3",
-    "titulo": "Code as Agent Harness",
-    "foco": "Código como infraestrutura para agentes autônomos"
-  },
-  {
-    "id": "2606.04967",
-    "url": "https://arxiv.org/abs/2606.04967",
-    "ano": "2026",
-    "fase": "Processo transversal",
-    "tipo": "T3",
-    "titulo": "From Prompt to Process: a Process Taxonomy and Comparative Assessment of Frameworks Supporting AI Software Development Agents",
-    "foco": "Taxonomia de processos para frameworks de desenvolvimento com agentes"
-  },
-  {
-    "id": "2602.06052",
-    "url": "https://arxiv.org/abs/2602.06052",
-    "ano": "2026",
-    "fase": "Processo transversal",
-    "tipo": "T3",
-    "titulo": "A Survey of Agent Memory in the Second Half: Towards Self-Evolving and Long-Horizon Agents",
-    "foco": "Memória de agentes para tarefas longas"
+    "titulo": "Intent Formalization: A Grand Challenge for Reliable Coding in the Age of AI Agents",
+    "foco": "Formalização de intenção e verificação de código gerado por agentes IA"
   },
   {
     "id": "2605.13898",
@@ -51,16 +24,16 @@
     "fase": "Verificação",
     "tipo": "T1",
     "titulo": "Bidirectional Empowerment of Metamorphic Testing and Large Language Models: A Systematic Survey",
-    "foco": "Teste metamórfico e verificação de modelos com agentes autônomos"
+    "foco": "Teste e verificação de LLMs usando metamorphic testing e agentes autônomos"
   },
   {
     "id": "2606.13175",
     "url": "https://arxiv.org/abs/2606.13175",
     "ano": "2026",
-    "fase": "Verificação",
+    "fase": "Processo transversal",
     "tipo": "T3",
     "titulo": "The End of Code Review: Coding Agents Supersede Human Inspection",
-    "foco": "Agentes substituindo a revisão humana de código"
+    "foco": "Agentes de IA substituindo revisão humana de código em qualidade"
   },
   {
     "id": "2605.26169",
@@ -69,7 +42,7 @@
     "fase": "Verificação",
     "tipo": "T3",
     "titulo": "ESBMC: A Survey of Its Evolution, Integration, and Future Directions in Formal Software Verification",
-    "foco": "Verificação formal, integração com modelos e agentes autônomos"
+    "foco": "Evolução ESBMC: verificação formal, integração LLM e agentes autônomos"
   },
   {
     "id": "2608.01001",
@@ -78,7 +51,25 @@
     "fase": "Manutenção",
     "tipo": "T2",
     "titulo": "From AI Technical Debt to Agentic Technical Debt: A Systematic Mapping of Root Causes and Manifestations in Agentic AI Systems",
-    "foco": "Dívida técnica em sistemas agênticos"
+    "foco": "Manutenção e evolução de sistemas agenticos, dívida técnica em agentes autônomos"
+  },
+  {
+    "id": "2607.02605",
+    "url": "https://arxiv.org/abs/2607.02605",
+    "ano": "2026",
+    "fase": "Verificação",
+    "tipo": "T3",
+    "titulo": "A Survey of LLM-Driven Penetration Testing: Taxonomy, Co-Evolution, and Open Challenges",
+    "foco": "Evolução arquitetural de agentes LLM em pentest"
+  },
+  {
+    "id": "2605.18747",
+    "url": "https://arxiv.org/abs/2605.18747",
+    "ano": "2026",
+    "fase": "Processo transversal",
+    "tipo": "T3",
+    "titulo": "Code as Agent Harness",
+    "foco": "Código como infraestrutura para agentes LLM autônomos em engenharia de software"
   },
   {
     "id": "2605.15245",
@@ -87,16 +78,43 @@
     "fase": "Processo transversal",
     "tipo": "T1",
     "titulo": "Assistance to Autonomy: A Systematic Literature Review of Agentic AI across the Software Development Life Cycle",
-    "foco": "Agentes autônomos em todo o ciclo de vida"
+    "foco": "Agentes autônomos em todo ciclo de vida desenvolvimento software"
+  },
+  {
+    "id": "2606.04967",
+    "url": "https://arxiv.org/abs/2606.04967",
+    "ano": "2026",
+    "fase": "Processo transversal",
+    "tipo": "T3",
+    "titulo": "From Prompt to Process: a Process Taxonomy and Comparative Assessment of Frameworks Supporting AI Software Development Agents",
+    "foco": "Taxonomia de processos para frameworks de desenvolvimento de software com agentes IA"
+  },
+  {
+    "id": "2607.13196",
+    "url": "https://arxiv.org/abs/2607.13196",
+    "ano": "2026",
+    "fase": "Verificação",
+    "tipo": "T3",
+    "titulo": "From Human-Centric to Agentic Code Review: The Impact of Different Generations of Generative AI Technology on Review Quality",
+    "foco": "Impacto de agentes IA em qualidade e eficiência de code review"
   },
   {
     "id": "2606.05339",
     "url": "https://arxiv.org/abs/2606.05339",
     "ano": "2026",
-    "fase": "Verificação",
+    "fase": "Processo transversal",
     "tipo": "T4",
     "titulo": "A Taxonomy of Runtime Faults in Model Context Protocol Servers",
     "foco": "Taxonomia de falhas em tempo de execução de servidores MCP"
+  },
+  {
+    "id": "2602.06052",
+    "url": "https://arxiv.org/abs/2602.06052",
+    "ano": "2026",
+    "fase": "Processo transversal",
+    "tipo": "T3",
+    "titulo": "A Survey of Agent Memory in the Second Half: Towards Self-Evolving and Long-Horizon Agents",
+    "foco": "Memória de agentes LLM para desenvolvimento de software e tarefas longas"
   },
   {
     "id": "2608.03392",
@@ -105,60 +123,42 @@
     "fase": "Processo transversal",
     "tipo": "T3",
     "titulo": "Self-Evolving Coding Agents",
-    "foco": "Agentes de codificação que evoluem com feedback"
+    "foco": "Agentes de codificação autônomos que evoluem mediante feedback"
   },
   {
-    "id": "2603.17150",
-    "url": "https://arxiv.org/abs/2603.17150",
-    "ano": "2026",
+    "id": "2503.16416",
+    "url": "https://arxiv.org/abs/2503.16416",
+    "ano": "2025",
     "fase": "Verificação",
     "tipo": "T3",
-    "titulo": "Intent Formalization: A Grand Challenge for Reliable Coding in the Age of AI Agents",
-    "foco": "Formalização de intenção e verificação de código gerado por agentes"
+    "titulo": "Survey on Evaluation of LLM-based Agents",
+    "foco": "Métodos de avaliação de agentes baseados em LLM e benchmarks"
   },
   {
-    "id": "2510.09721",
-    "url": "https://arxiv.org/abs/2510.09721",
+    "id": "2504.19838",
+    "url": "https://arxiv.org/abs/2504.19838",
     "ano": "2025",
     "fase": "Processo transversal",
     "tipo": "T3",
-    "titulo": "A Comprehensive Survey on Benchmarks and Solutions in Software Engineering of LLM-Empowered Agentic System",
-    "foco": "Benchmarks e soluções agênticas"
+    "titulo": "LLM-Powered GUI Agents in Phone Automation: Surveying Progress and Prospects",
+    "foco": "Agentes LLM para automação GUI em telefones: arquiteturas, modelos, datasets"
   },
   {
-    "id": "2508.00083",
-    "url": "https://arxiv.org/abs/2508.00083",
+    "id": "2508.07407",
+    "url": "https://arxiv.org/abs/2508.07407",
     "ano": "2025",
     "fase": "Processo transversal",
     "tipo": "T3",
-    "titulo": "A Survey on Code Generation with LLM-based Agents",
-    "foco": "Agentes autônomos para geração de código e ciclo de vida"
+    "titulo": "A Comprehensive Survey of Self-Evolving AI Agents: A New Paradigm Bridging Foundation Models and Lifelong Agentic Systems",
+    "foco": "Agentes autônomos auto-evoluíveis com feedback contínuo e otimização adaptativa"
   },
   {
-    "id": "2512.22256",
-    "url": "https://arxiv.org/abs/2512.22256",
-    "ano": "2025",
-    "fase": "Depuração e reparo",
-    "tipo": "T3",
-    "titulo": "Agentic Software Issue Resolution with Large Language Models: A Survey",
-    "foco": "Resolução automática de issues em repositórios"
-  },
-  {
-    "id": "2506.13932",
-    "url": "https://arxiv.org/abs/2506.13932",
-    "ano": "2025",
-    "fase": "Geração de código",
-    "tipo": "T3",
-    "titulo": "Code Reasoning for Software Engineering Tasks: A Survey and A Call to Action",
-    "foco": "Raciocínio em tempo de inferência para tarefas de engenharia de software"
-  },
-  {
-    "id": "2508.17692",
-    "url": "https://arxiv.org/abs/2508.17692",
+    "id": "2503.13793",
+    "url": "https://arxiv.org/abs/2503.13793",
     "ano": "2025",
     "fase": "Processo transversal",
-    "tipo": "T3",
-    "titulo": "LLM-based Agentic Reasoning Frameworks: A Survey from Methods to Scenarios",
-    "foco": "Frameworks de raciocínio agêntico"
+    "tipo": "T1",
+    "titulo": "Mapping the Trust Terrain: LLMs in Software Engineering -- Insights and Perspectives",
+    "foco": "Confiabilidade e trustworthiness de LLMs em tarefas engenharia software"
   }
 ]

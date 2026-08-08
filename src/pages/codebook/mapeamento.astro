@@ -45,14 +45,13 @@ import lacunas from "../../content/mapeamento/lacunas.json";
           Versão dos dados
         </div>
         <p style="font-size: 15px; line-height: 1.6; margin: 8px 0 0; text-wrap: pretty">
-          As tabelas e as duas figuras desta página são o recorte de <strong>171 estudos
-            secundários</strong
-          > e <strong>321 artigos em sedes</strong>, sob onze fases. O corpus já cresceu para
-          <strong>236 e 338</strong>, sob doze fases — o <a href="/aula-mestrado/codebook">codebook</a>
-          já traz essas contagens —, mas a distribuição por fase e ano do recorte novo ainda não foi
-          publicada, e por isso as tabelas continuam nas de 171, que fecham. O <strong
-            >corpus navegável</strong
-          > ao final é mais antigo ainda: 157 e 106, sob oito fases, porque depende dos CSV.
+          Tudo nesta página — tabelas, figuras e o <a href={rota("/leituras#corpus")}>corpus
+            navegável</a
+          > — sai do mesmo recorte: <strong>236 estudos secundários</strong> e <strong>338 artigos em
+            sedes</strong
+          >, sob as doze fases do <a href={rota("/codebook")}>codebook</a>. Os três CSV que sustentam
+          esses números estão publicados para download, e as tabelas são geradas deles por script, não
+          transcritas — quando o corpus mudar, elas mudam juntas.
         </p>
       </div>
     </section>
@@ -72,14 +71,15 @@ import lacunas from "../../content/mapeamento/lacunas.json";
         <p style="font-size: 17px; line-height: 1.65; max-width: 64ch; margin: 20px 0 0; text-wrap: pretty">
           O objeto não são as técnicas primárias, e sim a literatura de segunda ordem que já tentou
           organizar o campo: quem revisou o quê, com que protocolo, e onde a síntese ainda não chegou.
-          Setenta e quatro consultas ao arXiv produziram 1.172 registros únicos; o filtro de segunda
-          ordem e a triagem manual deixaram 157, e uma varredura complementar com o vocabulário das
-          fases periféricas somou outros 14 — <strong>171 estudos secundários</strong> ao todo, cada um
-          com rótulo de fase, tipo de estudo e grau de foco em <em>Agentic</em>.
+          Consultas ao arXiv com o vocabulário de estudos secundários, ampliadas por uma varredura nas
+          fases periféricas; o filtro de segunda ordem e a triagem manual deixaram
+          <strong>236 estudos secundários</strong>, cada um com rótulo de fase, tipo de estudo, grau de
+          foco em <em>Agentic</em> e grau de centralidade da segurança. O CSV traz, para cada obra, a
+          justificativa da fase e quantas consultas a recuperaram.
         </p>
         <p style="font-size: 15px; line-height: 1.6; max-width: 64ch; margin: 14px 0 0; opacity: 0.75; text-wrap: pretty">
-          Métricas de citação vindas do OpenAlex, casadas por similaridade de título ≥ 0,85. Apenas 104
-          dos 171 têm registro casado e 53 têm FWCI — preprints recentes raramente têm referências
+          Métricas de citação vindas do OpenAlex, casadas por similaridade de título ≥ 0,85. Apenas 147
+          dos 236 têm registro casado e 75 têm FWCI — preprints recentes raramente têm referências
           indexadas. As citações servem para separar clássicos consolidados de trabalhos sem rastro
           bibliométrico, não para ranquear qualidade.
         </p>
@@ -96,20 +96,19 @@ import lacunas from "../../content/mapeamento/lacunas.json";
             <strong>1.172 registros únicos</strong>.
           </p>
           <p style="font-size: 15px; line-height: 1.6; margin: 12px 0 0; text-wrap: pretty">
-            O filtro de segunda ordem operou sobre título e resumo. Dos 300 candidatos, 188 tinham
-            escopo de engenharia de software; a triagem por modelo descartou mais 31 cujo objeto
-            central era outro domínio, deixando 157. Uma varredura complementar, com 14 consultas no
-            vocabulário das fases periféricas — documentação, conhecimento arquitetural, estimativa de
-            esforço, triagem de issues, compreensão de programa, descoberta de produto —, recuperou 18
-            candidatos, dos quais 14 entraram e 4 foram descartados por tratarem de metodologia de
-            revisão e não do processo de desenvolvimento. Corpus final: <strong>171</strong>.
+            O filtro de segunda ordem operou sobre título e resumo, e a triagem por modelo descartou o
+            que tinha objeto central em outro domínio. Uma varredura complementar, no vocabulário das
+            fases periféricas — documentação, conhecimento arquitetural, estimativa de esforço, triagem
+            de issues, compreensão de programa, descoberta de produto —, recuperou o que a consulta
+            principal não alcançava. Corpus final: <strong>236</strong>. O funil completo, com a
+            contagem de cada etapa de triagem, não está nos CSV publicados.
           </p>
         </div>
 
         <figure style="margin: 40px 0 0; border: 2px solid var(--color-text)">
           <img
             src={rota("/uploads/mapa_secundarios_fase_ano.svg")}
-            alt="Distribuição dos 171 estudos secundários por fase do processo e ano de submissão no arXiv"
+            alt="Distribuição dos 236 estudos secundários por fase do processo e ano de submissão no arXiv"
             style="display: block; width: 100%; height: auto"
             loading="lazy"
           />
@@ -117,7 +116,7 @@ import lacunas from "../../content/mapeamento/lacunas.json";
             style="font-size: 13px; line-height: 1.5; padding: 12px 16px; border-top: 2px solid var(--color-text); background: var(--color-neutral-100)"
           >
             Área do círculo ∝ número de revisões; a intensidade da cor indica a fração da fase com
-            agentes autônomos como objeto central. n = 171, sob as onze fases.
+            agentes autônomos como objeto central. n = 236, sob as doze fases.
           </figcaption>
         </figure>
 
@@ -152,11 +151,13 @@ import lacunas from "../../content/mapeamento/lacunas.json";
           </table>
         </div>
         <p style="font-size: 16px; line-height: 1.65; max-width: 68ch; margin: 22px 0 0; text-wrap: pretty">
-          A distribuição é fortemente desequilibrada. Implementação e verificação juntas concentram
-          <strong>78 dos 171 estudos</strong>, quase metade do corpus, enquanto requisitos tem 7,
-          arquitetura 11, manutenção 6, gestão de projeto 3 e gestão de conhecimento 2. Reproduz-se na literatura de segunda ordem o mesmo
-          viés dos estudos primários: a atividade que o modelo executa bem e cujo resultado é fácil de
-          medir com um benchmark é também a que mais atrai revisões.
+          A distribuição é fortemente desequilibrada. Verificação e geração de código juntas concentram
+          <strong>105 dos 236 estudos</strong>, enquanto requisitos tem 11, arquitetura 16, manutenção
+          12, gestão de projeto 3 e gestão de conhecimento 2. Reproduz-se na literatura de segunda ordem
+          o mesmo viés dos estudos primários: a atividade que o modelo executa bem e cujo resultado é
+          fácil de medir com um benchmark é também a que mais atrai revisões. A exceção é
+          <strong>processo transversal, com 65</strong> — o campo produziu muita revisão que olha o
+          ciclo inteiro, e pouca que entre numa fase só.
         </p>
 
         <h3 style="font-family: var(--font-heading); font-weight: 900; font-size: 24px; letter-spacing: -0.02em; margin: 40px 0 16px">
@@ -230,13 +231,13 @@ import lacunas from "../../content/mapeamento/lacunas.json";
           </table>
         </div>
         <p style="font-size: 16px; line-height: 1.65; max-width: 68ch; margin: 22px 0 0; text-wrap: pretty">
-          Quase metade do corpus são surveys narrativos, 81 ao todo. Revisões com protocolo explícito
-          somam 64, e a proporção melhorou de forma visível: 9 de 22 em 2023, 15 de 39 em 2026. O
-          aparecimento de 19 estudos que combinam revisão da literatura com dados primários de
+          Surveys narrativos são 101, quase metade do corpus. Revisões com protocolo explícito somam
+          104 — e a proporção não melhorou: 15 de 31 em 2023, 24 de 52 em 2026, praticamente a mesma
+          fração. O aparecimento de 19 estudos que combinam revisão da literatura com dados primários de
           praticantes é o sinal metodológico mais interessante do período — é a única linha que
           confronta a literatura com o que equipes de fato fazem. Há <strong
             >exatamente um estudo terciário</strong
-          >, e de escopo restrito a geração de código, mais seis taxonomias: para um campo com 171
+          >, e de escopo restrito a geração de código, mais onze taxonomias: para um campo com 236
           revisões em quatro anos, é pouco.
         </p>
       </div>
@@ -306,7 +307,7 @@ import lacunas from "../../content/mapeamento/lacunas.json";
         <h2
           style="font-family: var(--font-heading); font-weight: 900; font-size: clamp(26px, 4vw, 40px); line-height: 1.02; letter-spacing: -0.025em; margin: 0; max-width: 30ch; text-wrap: balance"
         >
-          A fronteira agêntica: 43 revisões com agentes como objeto central, 32 delas de 2025 em
+          A fronteira agêntica: 47 revisões com agentes como objeto central, 35 delas de 2025 em
           diante
         </h2>
         <div class="om-scroll" style="border: 2px solid var(--color-text); margin-top: 28px">
@@ -364,22 +365,22 @@ import lacunas from "../../content/mapeamento/lacunas.json";
         <figure style="margin: 0; border: 2px solid var(--color-text)">
           <img
             src={rota("/uploads/sedes_fase_heatmap.svg")}
-            alt="Mapa de calor dos 321 artigos com sede confirmada, por sede de publicação e fase do processo"
+            alt="Mapa de calor dos 338 artigos com sede confirmada, por sede de publicação e fase do processo"
             style="display: block; width: 100%; height: auto"
             loading="lazy"
           />
           <figcaption
             style="font-size: 13px; line-height: 1.5; padding: 12px 16px; border-top: 2px solid var(--color-text); background: var(--color-neutral-100)"
           >
-            321 artigos com sede confirmada no campo de comentário do arXiv (2023–2026); total por
+            338 artigos com sede confirmada no campo de comentário do arXiv (2023–2026); total por
             sede à esquerda. Conferências acima, periódicos TSE e TOSEM abaixo.
           </figcaption>
         </figure>
         <p style="font-size: 16px; line-height: 1.65; max-width: 68ch; margin: 22px 0 0; text-wrap: pretty">
-          <strong>Verificação e qualidade concentra 125 dos 321 artigos</strong> das sedes principais;
-          planejamento, conhecimento e descoberta somam 21 entre as três. ICSE é a maior sede com 125
-          artigos, 47 deles em verificação e 26 em geração de código; ASE tem 71, com 32 em verificação
-          e 12 em processo transversal; FSE tem 67, com 29 em verificação. O desequilíbrio do trabalho
+          <strong>Verificação e qualidade concentra 126 dos 338 artigos</strong> das sedes principais;
+          planejamento, conhecimento e descoberta somam 21 entre as três. ICSE é a maior sede com 131
+          artigos, 46 deles em verificação e 27 em geração de código; ASE tem 71, com 31 em verificação
+          e 12 em processo transversal; FSE tem 69, com 29 em verificação. O desequilíbrio do trabalho
           primário é ainda mais acentuado que o da literatura de segunda ordem.
         </p>
       </div>
@@ -411,7 +412,7 @@ import lacunas from "../../content/mapeamento/lacunas.json";
         <h2
           style="font-family: var(--font-heading); font-weight: 900; font-size: clamp(28px, 5vw, 48px); line-height: 1; letter-spacing: -0.03em; margin: 0; max-width: 26ch; text-wrap: balance"
         >
-          Cinco lacunas que nenhuma das 171 revisões cobre
+          Cinco lacunas que nenhuma das 236 revisões cobre
         </h2>
         <p style="font-size: 17px; line-height: 1.6; max-width: 60ch; margin: 18px 0 0">
           Cada uma é um tema de artigo disponível — e um bom ponto de partida para o trabalho de
@@ -421,9 +422,9 @@ import lacunas from "../../content/mapeamento/lacunas.json";
           Uma advertência antes da lista. As lacunas de versões anteriores foram medidas com o
           vocabulário das consultas originais, que privilegiavam agentes, modelos de linguagem e as
           fases centrais do ciclo. Varreduras dedicadas mostraram que parte do que parecia vazio era
-          falha de recuperação — o corpus passou de 157 para 171, e a afirmação de que não existia
-          revisão sobre documentação viva estava simplesmente errada. Leia o que segue como hipótese a
-          testar, não como resultado fechado.
+          falha de recuperação — o corpus passou de 157 para 236 em varreduras sucessivas, e a afirmação
+          de que não existia revisão sobre documentação viva estava simplesmente errada. Leia o que
+          segue como hipótese a testar, não como resultado fechado.
         </p>
         <div style="display: grid; gap: 0; margin-top: 36px; border-top: 2px solid rgba(255,255,255,0.45)">
           {

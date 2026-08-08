@@ -1,6 +1,6 @@
 [
   {
-    "id": "2308.10620",
+    "id": "2308.1062",
     "url": "https://arxiv.org/abs/2308.10620",
     "ano": "2023",
     "fase": "Processo transversal",
@@ -30,6 +30,36 @@
     "titulo": "Large Language Models for Software Engineering: Survey and Open Problems"
   },
   {
+    "id": "2404.04834",
+    "url": "https://arxiv.org/abs/2404.04834",
+    "ano": "2024",
+    "fase": "Processo transversal",
+    "tipo": "T1",
+    "cit": "154",
+    "fwci": "291.7",
+    "titulo": "LLM-Based Multi-Agent Systems for Software Engineering: Literature Review, Vision and the Road Ahead"
+  },
+  {
+    "id": "2303.17125",
+    "url": "https://arxiv.org/abs/2303.17125",
+    "ano": "2023",
+    "fase": "Verificação",
+    "tipo": "T6",
+    "cit": "143",
+    "fwci": "73.8",
+    "titulo": "A Large-Scale Survey on the Usability of AI Programming Assistants: Successes and Challenges"
+  },
+  {
+    "id": "2307.02503",
+    "url": "https://arxiv.org/abs/2307.02503",
+    "ano": "2023",
+    "fase": "Geração de código",
+    "tipo": "T3",
+    "cit": "123",
+    "fwci": "53.7",
+    "titulo": "Natural Language Generation and Understanding of Big Code for AI-Assisted Programming: A Review"
+  },
+  {
     "id": "2406.00515",
     "url": "https://arxiv.org/abs/2406.00515",
     "ano": "2024",
@@ -50,6 +80,66 @@
     "titulo": "Evolutionary Computation in the Era of Large Language Model: Survey and Roadmap"
   },
   {
+    "id": "2404.02525",
+    "url": "https://arxiv.org/abs/2404.02525",
+    "ano": "2024",
+    "fase": "Verificação",
+    "tipo": "T1",
+    "cit": "101",
+    "fwci": "24.2",
+    "titulo": "Large Language Model for Vulnerability Detection and Repair: Literature Review and the Road Ahead"
+  },
+  {
+    "id": "2405.0476",
+    "url": "https://arxiv.org/abs/2405.04760",
+    "ano": "2024",
+    "fase": "Verificação",
+    "tipo": "T1",
+    "cit": "94",
+    "fwci": "12.4",
+    "titulo": "Large Language Models for Cyber Security: A Systematic Literature Review"
+  },
+  {
+    "id": "2404.13501",
+    "url": "https://arxiv.org/abs/2404.13501",
+    "ano": "2024",
+    "fase": "Processo transversal",
+    "tipo": "T3",
+    "cit": "88",
+    "fwci": "106.9",
+    "titulo": "A Survey on the Memory Mechanism of Large Language Model based Agents"
+  },
+  {
+    "id": "2410.16349",
+    "url": "https://arxiv.org/abs/2410.16349",
+    "ano": "2024",
+    "fase": "Formação",
+    "tipo": "T1",
+    "cit": "64",
+    "fwci": "22.9",
+    "titulo": "Large Language Models in Computer Science Education: A Systematic Literature Review"
+  },
+  {
+    "id": "2402.0168",
+    "url": "https://arxiv.org/abs/2402.01680",
+    "ano": "2024",
+    "fase": "Processo transversal",
+    "tipo": "T3",
+    "cit": "61",
+    "fwci": "",
+    "titulo": "Large Language Model based Multi-Agents: A Survey of Progress and Challenges"
+  },
+  {
+    "id": "2502.07893",
+    "url": "https://arxiv.org/abs/2502.07893",
+    "ano": "2025",
+    "fase": "Verificação",
+    "tipo": "T2",
+    "cit": "48",
+    "fwci": "12.5",
+    "titulo": "Sentiment Analysis Tools in Software Engineering: A Systematic Mapping Study"
+  },
+  {
     "id": "2410.03981",
     "url": "https://arxiv.org/abs/2410.03981",
     "ano": "2024",
@@ -58,95 +148,5 @@
     "cit": "41",
     "fwci": "46.9",
     "titulo": "A Survey on LLM-based Code Generation for Low-Resource and Domain-Specific Programming Languages"
-  },
-  {
-    "id": "2311.10372",
-    "url": "https://arxiv.org/abs/2311.10372",
-    "ano": "2023",
-    "fase": "Geração de código",
-    "tipo": "T3",
-    "cit": "23",
-    "fwci": "–",
-    "titulo": "A Survey of Large Language Models for Code: Evolution, Benchmarking, and Future Trends"
-  },
-  {
-    "id": "2409.09030",
-    "url": "https://arxiv.org/abs/2409.09030",
-    "ano": "2024",
-    "fase": "Processo transversal",
-    "tipo": "T3",
-    "cit": "22",
-    "fwci": "26.8",
-    "titulo": "Agents in Software Engineering: Survey, Landscape, and Vision"
-  },
-  {
-    "id": "2312.15223",
-    "url": "https://arxiv.org/abs/2312.15223",
-    "ano": "2023",
-    "fase": "Processo transversal",
-    "tipo": "T3",
-    "cit": "21",
-    "fwci": "–",
-    "titulo": "A Survey on Large Language Models for Software Engineering"
-  },
-  {
-    "id": "2408.02479",
-    "url": "https://arxiv.org/abs/2408.02479",
-    "ano": "2024",
-    "fase": "Processo transversal",
-    "tipo": "T3",
-    "cit": "20",
-    "fwci": "–",
-    "titulo": "From LLMs to LLM-based Agents for Software Engineering: A Survey of Current, Challenges and Future"
-  },
-  {
-    "id": "2303.18184",
-    "url": "https://arxiv.org/abs/2303.18184",
-    "ano": "2023",
-    "fase": "Depuração e reparo",
-    "tipo": "T3",
-    "cit": "20",
-    "fwci": "–",
-    "titulo": "A Survey on Automated Program Repair Techniques"
-  },
-  {
-    "id": "2311.07989",
-    "url": "https://arxiv.org/abs/2311.07989",
-    "ano": "2023",
-    "fase": "Processo transversal",
-    "tipo": "T3",
-    "cit": "18",
-    "fwci": "–",
-    "titulo": "Unifying the Perspectives of NLP and Software Engineering: A Survey on Language Models for Code"
-  },
-  {
-    "id": "2405.01466",
-    "url": "https://arxiv.org/abs/2405.01466",
-    "ano": "2024",
-    "fase": "Depuração e reparo",
-    "tipo": "T1",
-    "cit": "16",
-    "fwci": "–",
-    "titulo": "A Systematic Literature Review on Large Language Models for Automated Program Repair"
-  },
-  {
-    "id": "2409.02977",
-    "url": "https://arxiv.org/abs/2409.02977",
-    "ano": "2024",
-    "fase": "Processo transversal",
-    "tipo": "T3",
-    "cit": "15",
-    "fwci": "–",
-    "titulo": "Large Language Model-Based Agents for Software Engineering: A Survey"
-  },
-  {
-    "id": "2401.00812",
-    "url": "https://arxiv.org/abs/2401.00812",
-    "ano": "2024",
-    "fase": "Geração de código",
-    "tipo": "T3",
-    "cit": "14",
-    "fwci": "–",
-    "titulo": "If LLM Is the Wizard, Then Code Is the Wand: A Survey on How Code Empowers Large Language Models to Serve as Intelligent Agents"
   }
 ]

@@ -5,9 +5,15 @@ import dados from "../content/leituras-base.json";
 import nomesFase from "../content/nomes-fase.json";
 
 // A métrica de cada obra vira uma linha só: citações · FWCI · momentum.
+const grausSeguranca = [
+  { chave: "todas", label: "Toda obra" },
+  { chave: "com", label: "Com segurança" },
+  { chave: "central", label: "Segurança central" },
+];
+
 const abasCorpus = [
-  { chave: "sec", label: "157 estudos secundários" },
-  { chave: "sedes", label: "106 artigos em sedes" },
+  { chave: "sec", label: "236 estudos secundários" },
+  { chave: "sedes", label: "338 artigos em sedes" },
 ];
 
 // O corpus guarda a fase como código; o botão mostra o nome.
@@ -74,14 +80,20 @@ const arquivos = [
   {
     nome: "corpus_secundarios_es_ia.csv",
     href: "/dados/corpus_secundarios_es_ia.csv",
-    registros: 157,
-    peso: "56 KB",
+    registros: 236,
+    peso: "144 KB",
   },
   {
     nome: "corpus_sedes_es.csv",
     href: "/dados/corpus_sedes_es.csv",
-    registros: 106,
-    peso: "43 KB",
+    registros: 338,
+    peso: "188 KB",
+  },
+  {
+    nome: "corpus_seguranca_topicos.csv",
+    href: "/dados/corpus_seguranca_topicos.csv",
+    registros: 140,
+    peso: "44 KB",
   },
 ];
 
@@ -118,8 +130,8 @@ const totalObras =
         Por onde começar a ler
       </h1>
       <p style="font-size: 18px; line-height: 1.6; max-width: 64ch; margin: 24px 0 0; text-wrap: pretty">
-        Ponto de partida extraído dos dois corpora do projeto: 233 estudos secundários e 321 artigos
-        publicados em sedes de referência. Para cada uma das onze fases do processo, até dois estudos
+        Ponto de partida extraído dos dois corpora do projeto: 236 estudos secundários e 338 artigos
+        publicados em sedes de referência. Para cada uma das doze fases do processo, até dois estudos
         secundários — que dão o mapa da fase — e até dois trabalhos primários — que mostram como ela é
         praticada.
       </p>
@@ -137,11 +149,10 @@ const totalObras =
           Recorte dos dados
         </div>
         <p style="font-size: 15px; line-height: 1.6; margin: 10px 0 0; text-wrap: pretty">
-          Esta seleção sai do recorte de <strong>233 estudos secundários</strong>. As tabelas de
-          distribuição por fase e ano, no <a href={rota("/codebook/mapeamento")}>mapeamento</a>, e as
-          contagens do <a href={rota("/codebook")}>codebook</a> ainda são as de 171 — o último recorte
-          com distribuição publicada. Por isso um número aqui pode não bater com um de lá; onde isso
-          acontece, está dito.
+          Esta seleção, as tabelas do <a href={rota("/codebook/mapeamento")}>mapeamento</a>, as
+          contagens do <a href={rota("/codebook")}>codebook</a> e o corpus navegável ao final saem
+          todos do mesmo recorte: <strong>236 e 338</strong>, sob doze fases. Os CSV que os sustentam
+          estão publicados <a href="#corpus">no fim desta página</a>.
         </p>
       </div>
       <div
@@ -331,14 +342,14 @@ const totalObras =
         <p style="font-size: 16px; line-height: 1.6; max-width: 62ch; margin: 16px 0 28px; text-wrap: pretty">
           Acima está a seleção curada, com até quatro leituras por fase. Aqui está <strong
             >tudo</strong
-          >: os dois corpora inteiros, artigo por artigo, com filtro por corpus e por fase. Cada
-          registro traz autor, ano, foco declarado e o link para o arXiv.
+          >: os dois corpora inteiros, artigo por artigo, com filtro por corpus, por fase e pela
+          dimensão de segurança. Cada registro traz autor, ano, foco declarado e o link para o arXiv.
         </p>
         <p style="font-size: 15px; line-height: 1.6; max-width: 64ch; margin: 0 0 20px; opacity: 0.8; text-wrap: pretty">
-          <strong>Recorte desta lista.</strong> Ela vem dos CSV abaixo, que ainda são os de 157 estudos
-          secundários e 106 artigos em sedes, sob oito fases. O corpus corrente é maior — 236 e 338,
-          sob doze fases, como o <a href={rota("/codebook")}>codebook</a> registra —, e esta lista será
-          trocada quando os CSV novos forem publicados.
+          <strong>Recorte desta lista.</strong> Ela vem dos CSV abaixo: 236 estudos secundários e 338
+          artigos em sedes, sob as doze fases que o <a href={rota("/codebook")}>codebook</a> define — o
+          mesmo corte das tabelas do <a href={rota("/codebook/mapeamento")}>mapeamento</a>. Dentro de cada
+          corpus, a ordem é por citação.
         </p>
 
         <div style="border: 2px solid var(--color-text); padding: 20px 24px; margin: 0 0 28px; max-width: 72ch">
@@ -346,7 +357,7 @@ const totalObras =
             Os dados crus
           </div>
           <p style="font-size: 15px; line-height: 1.6; margin: 8px 0 16px; text-wrap: pretty">
-            Toda tabela, figura e contagem deste site sai destes dois arquivos. Estão aqui para você
+            Toda tabela, figura e contagem deste site sai destes três arquivos. Estão aqui para você
             conferir o que a página afirma, refazer o corte com outro critério, ou usar o corpus na
             sua própria análise — sem depender do filtro acima.
           </p>
@@ -365,10 +376,13 @@ const totalObras =
             }
           </div>
           <p style="font-size: 13px; line-height: 1.55; margin: 16px 0 0; opacity: 0.7; text-wrap: pretty">
-            Colunas comuns aos dois: <code>arxiv_id</code>, <code>titulo</code>, <code>ano</code>,
-            <code>fase</code>, <code>fase_nome</code>, <code>foco</code>, <code>agentico</code>,
-            <code>url</code>. O de sedes traz ainda <code>sede</code> e <code>tipo_trilha</code>;
-            o de secundários, <code>tipo_nome</code> e <code>fwci_openalex</code>.
+            Colunas comuns aos dois corpora: <code>arxiv_id</code>, <code>titulo</code>,
+            <code>ano</code>, <code>fase</code>, <code>fase_nome</code>, <code>foco</code>,
+            <code>agentico</code>, <code>seguranca</code>, <code>citacoes</code>, <code>fwci</code>,
+            <code>url</code>, e a <code>justificativa_fase</code> de cada classificação. O de sedes
+            traz ainda <code>sede</code> e <code>tipo_trilha</code>; o de secundários,
+            <code>tipo_nome</code>. O terceiro arquivo cruza as obras com segurança contra os dez
+            tópicos da <a href={rota("/seguranca")}>página de segurança</a>.
           </p>
         </div>
 
@@ -391,6 +405,19 @@ const totalObras =
               fasesCorpus.map((f, i) => (
                 <button type="button" data-fase={f.chave} style={estiloBotao(i === 0)}>
                   {f.label}
+                </button>
+              ))
+            }
+          </div>
+          <div
+            id="corpus-seguranca"
+            class="om-corpus-filtro"
+            style="display: flex; flex-wrap: wrap; border: 2px solid var(--color-text)"
+          >
+            {
+              grausSeguranca.map((g, i) => (
+                <button type="button" data-seg={g.chave} style={estiloBotao(i === 0)}>
+                  {g.label}
                 </button>
               ))
             }
@@ -488,8 +515,11 @@ const totalObras =
   const abas = document.getElementById("corpus-abas")!;
   const filtrosFase = document.getElementById("corpus-fases")!;
 
+  const filtrosSeg = document.getElementById("corpus-seguranca")!;
+
   let corpo: "sec" | "sedes" = "sec";
   let fase = "Todas";
+  let seg = "todas";
   let limite = 25;
 
   const pintar = (grupo: HTMLElement, atributo: string, valor: string) => {
@@ -523,7 +553,11 @@ const totalObras =
 
   const desenhar = () => {
     const base: any[] = corpo === "sec" ? SECUNDARIOS : SEDES;
-    const filtrado = base.filter((r) => fase === "Todas" || r.f === fase);
+    const filtrado = base
+      .filter((r) => fase === "Todas" || r.f === fase)
+      .filter((r) =>
+        seg === "todas" ? true : seg === "central" ? r.seg === "central" : r.seg !== "ausente"
+      );
     const mostrados = filtrado.slice(0, limite);
 
     lista.textContent = "";
@@ -548,6 +582,17 @@ const totalObras =
         "font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.6",
         r.ano
       );
+      if (r.seg && r.seg !== "ausente") {
+        texto(
+          cabecalho,
+          "span",
+          "font-size: 11px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; padding: 2px 7px; " +
+            (r.seg === "central"
+              ? "background: var(--color-text); color: var(--color-bg)"
+              : "box-shadow: inset 0 0 0 2px var(--color-divider)"),
+          r.seg === "central" ? "segurança central" : "segurança secundária"
+        );
+      }
       linha.appendChild(cabecalho);
 
       const titulo = texto(
@@ -586,6 +631,15 @@ const totalObras =
     fase = alvo.dataset.fase!;
     limite = 25;
     pintar(filtrosFase, "fase", fase);
+    desenhar();
+  });
+
+  filtrosSeg.addEventListener("click", (ev) => {
+    const alvo = (ev.target as HTMLElement).closest("button");
+    if (!alvo) return;
+    seg = alvo.dataset.seg!;
+    limite = 25;
+    pintar(filtrosSeg, "seg", seg);
     desenhar();
   });
 
