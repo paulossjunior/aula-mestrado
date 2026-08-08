@@ -68,6 +68,23 @@ const etiquetaSede = (sede: string, sobreAcento = false) => {
   );
 };
 
+// Os CSV crus, publicados para conferência e reuso. Peso e contagem conferidos
+// contra os arquivos em public/dados na hora de escrever.
+const arquivos = [
+  {
+    nome: "corpus_secundarios_es_ia.csv",
+    href: "/dados/corpus_secundarios_es_ia.csv",
+    registros: 157,
+    peso: "56 KB",
+  },
+  {
+    nome: "corpus_sedes_es.csv",
+    href: "/dados/corpus_sedes_es.csv",
+    registros: 106,
+    peso: "43 KB",
+  },
+];
+
 // Quantas indicações vieram de sede revisada por pares.
 const comSede = [
   ...dados.tronco,
@@ -317,12 +334,43 @@ const totalObras =
           >: os dois corpora inteiros, artigo por artigo, com filtro por corpus e por fase. Cada
           registro traz autor, ano, foco declarado e o link para o arXiv.
         </p>
-        <p style="font-size: 15px; line-height: 1.6; max-width: 64ch; margin: 0 0 28px; opacity: 0.8; text-wrap: pretty">
-          <strong>Recorte desta lista.</strong> Ela vem dos CSV, que ainda são os de 157 estudos
+        <p style="font-size: 15px; line-height: 1.6; max-width: 64ch; margin: 0 0 20px; opacity: 0.8; text-wrap: pretty">
+          <strong>Recorte desta lista.</strong> Ela vem dos CSV abaixo, que ainda são os de 157 estudos
           secundários e 106 artigos em sedes, sob oito fases. O corpus corrente é maior — 236 e 338,
           sob doze fases, como o <a href={rota("/codebook")}>codebook</a> registra —, e esta lista será
           trocada quando os CSV novos forem publicados.
         </p>
+
+        <div style="border: 2px solid var(--color-text); padding: 20px 24px; margin: 0 0 28px; max-width: 72ch">
+          <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.6">
+            Os dados crus
+          </div>
+          <p style="font-size: 15px; line-height: 1.6; margin: 8px 0 16px; text-wrap: pretty">
+            Toda tabela, figura e contagem deste site sai destes dois arquivos. Estão aqui para você
+            conferir o que a página afirma, refazer o corte com outro critério, ou usar o corpus na
+            sua própria análise — sem depender do filtro acima.
+          </p>
+          <div style="display: grid; gap: 10px">
+            {
+              arquivos.map((a) => (
+                <a href={rota(a.href)} download style="display: flex; flex-wrap: wrap; gap: 4px 10px; align-items: baseline">
+                  <span style="font-family: var(--font-heading); font-weight: 700; font-size: 15px">
+                    {a.nome}
+                  </span>
+                  <span style="font-size: 13px; opacity: 0.65; color: var(--color-text)">
+                    {a.registros} registros · {a.peso} · CSV
+                  </span>
+                </a>
+              ))
+            }
+          </div>
+          <p style="font-size: 13px; line-height: 1.55; margin: 16px 0 0; opacity: 0.7; text-wrap: pretty">
+            Colunas comuns aos dois: <code>arxiv_id</code>, <code>titulo</code>, <code>ano</code>,
+            <code>fase</code>, <code>fase_nome</code>, <code>foco</code>, <code>agentico</code>,
+            <code>url</code>. O de sedes traz ainda <code>sede</code> e <code>tipo_trilha</code>;
+            o de secundários, <code>tipo_nome</code> e <code>fwci_openalex</code>.
+          </p>
+        </div>
 
         <div style="display: flex; gap: 16px; flex-wrap: wrap; align-items: flex-start">
           <div id="corpus-abas" class="om-corpus-filtro" style="display: flex; border: 2px solid var(--color-text)">

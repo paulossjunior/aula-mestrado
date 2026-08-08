@@ -118,6 +118,7 @@ src/lib/aulas.ts                traduz `estado` no que a página renderiza
 public/_ds/modernist-…/         o design system: styles.css, guia e tokens
 public/uploads/                 as quatro figuras do site, geradas em SVG por script
 public/fichamento.tex           o modelo em LaTeX (é o mesmo texto exibido no site)
+public/dados/                   os dois corpora em CSV, publicados para download
 public/.nojekyll                obrigatório — veja "Deploy"
 
 fontes/                         material de origem: codebook, mapeamento e os CSV

@@ -169,6 +169,11 @@ const etiquetaFase = base + "background: var(--color-text); color: var(--color-b
           style="max-width: 68ch; line-height: 1.65; margin: 0 0 32px; padding: 12px 16px; border-left: 2px solid var(--color-accent); background: var(--color-neutral-100); font-size: 15px"
           set:html={dados.notaObras}
         />
+        <p style="margin: -16px 0 32px">
+          <a href={rota("/leituras#corpus")} style="font-size: 14px; font-weight: 700">
+            Baixar os dois corpora em CSV →
+          </a>
+        </p>
 
         {
           dados.topicos.map((t) => (
