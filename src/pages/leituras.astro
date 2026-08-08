@@ -2,6 +2,42 @@
 import Base from "../layouts/Base.astro";
 import { rota } from "../lib/url";
 import dados from "../content/leituras-base.json";
+import nomesFase from "../content/nomes-fase.json";
+
+// A métrica de cada obra vira uma linha só: citações · FWCI · momentum.
+const abasCorpus = [
+  { chave: "sec", label: "157 estudos secundários" },
+  { chave: "sedes", label: "106 artigos em sedes" },
+];
+
+// O corpus guarda a fase como código; o botão mostra o nome.
+// Só F1–F8 porque este recorte é anterior à revisão que criou as três novas fases.
+const fasesCorpus = [
+  { chave: "Todas", label: "Todas" },
+  { chave: "F1", label: nomesFase.F1 },
+  { chave: "F2", label: nomesFase.F2 },
+  { chave: "F3", label: nomesFase.F3 },
+  { chave: "F4", label: nomesFase.F4 },
+  { chave: "F5", label: nomesFase.F5 },
+  { chave: "F6", label: nomesFase.F6 },
+  { chave: "F7", label: nomesFase.F7 },
+  { chave: "F8", label: nomesFase.F8 },
+];
+
+const estiloBotao = (ativo: boolean) =>
+  [
+    "font-family: var(--font-heading)",
+    "font-weight: 700",
+    "font-size: 12px",
+    "letter-spacing: 0.08em",
+    "text-transform: uppercase",
+    "padding: 9px 13px",
+    "border: 0",
+    "cursor: pointer",
+    "text-align: left",
+    ativo ? "background: var(--color-accent)" : "background: transparent",
+    ativo ? "color: #fff" : "color: var(--color-text)",
+  ].join(";");
 
 // A métrica de cada obra vira uma linha só: citações · FWCI · momentum.
 const metrica = (o: { cit?: string; fwci?: string; momentum?: string }) =>
@@ -265,6 +301,73 @@ const totalObras =
       ))
     }
 
+    <section id="corpus" style="border-top: 2px solid var(--color-text); background: var(--color-neutral-100)">
+      <div class="om-pad om-sec" style="max-width: 1200px; margin: 0 auto; padding: 56px 32px">
+        <div
+          style="font-size: 13px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700)"
+        >
+          Corpus completo · navegável
+        </div>
+        <h2 style="font-family: var(--font-heading); font-weight: 900; font-size: clamp(26px, 4vw, 40px); letter-spacing: -0.025em; margin: 10px 0 0">
+          Os dois corpora, artigo por artigo
+        </h2>
+        <p style="font-size: 16px; line-height: 1.6; max-width: 62ch; margin: 16px 0 28px; text-wrap: pretty">
+          Acima está a seleção curada, com até quatro leituras por fase. Aqui está <strong
+            >tudo</strong
+          >: os dois corpora inteiros, artigo por artigo, com filtro por corpus e por fase. Cada
+          registro traz autor, ano, foco declarado e o link para o arXiv.
+        </p>
+        <p style="font-size: 15px; line-height: 1.6; max-width: 64ch; margin: 0 0 28px; opacity: 0.8; text-wrap: pretty">
+          <strong>Recorte desta lista.</strong> Ela vem dos CSV, que ainda são os de 157 estudos
+          secundários e 106 artigos em sedes, sob oito fases. O corpus corrente é maior — 236 e 338,
+          sob doze fases, como o <a href={rota("/codebook")}>codebook</a> registra —, e esta lista será
+          trocada quando os CSV novos forem publicados.
+        </p>
+
+        <div style="display: flex; gap: 16px; flex-wrap: wrap; align-items: flex-start">
+          <div id="corpus-abas" class="om-corpus-filtro" style="display: flex; border: 2px solid var(--color-text)">
+            {
+              abasCorpus.map((t, i) => (
+                <button type="button" data-corpo={t.chave} style={estiloBotao(i === 0)}>
+                  {t.label}
+                </button>
+              ))
+            }
+          </div>
+          <div
+            id="corpus-fases"
+            class="om-corpus-filtro"
+            style="display: flex; flex-wrap: wrap; border: 2px solid var(--color-text)"
+          >
+            {
+              fasesCorpus.map((f, i) => (
+                <button type="button" data-fase={f.chave} style={estiloBotao(i === 0)}>
+                  {f.label}
+                </button>
+              ))
+            }
+          </div>
+        </div>
+
+        <div
+          id="corpus-contagem"
+          style="font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.6; margin: 20px 0 0"
+        >
+          Mostrando 0 de 0
+        </div>
+
+        <p id="corpus-vazio" style="font-size: 15px; opacity: 0.6; margin: 18px 0 0">
+          Carregando o corpus…
+        </p>
+
+        <div id="corpus-lista" style="border-top: 2px solid var(--color-text); margin-top: 16px"></div>
+
+        <div id="corpus-mais" style="margin-top: 24px; display: none">
+          <button type="button" class="btn btn-secondary">Mostrar mais 50</button>
+        </div>
+      </div>
+    </section>
+
     <section style="border-top: 2px solid var(--color-text)">
       <div class="om-pad om-sec" style="max-width: 1200px; margin: 0 auto; padding: 56px 32px">
         <h2 style="font-family: var(--font-heading); font-weight: 900; font-size: clamp(26px, 4vw, 40px); letter-spacing: -0.025em; margin: 0 0 10px">
@@ -303,3 +406,130 @@ const totalObras =
     </section>
   </article>
 </Base>
+
+<script>
+  // Navegador de corpus: única parte da página que depende de JavaScript.
+  // Sem ele, tabelas, figuras e texto continuam legíveis.
+  import { SECUNDARIOS, SEDES } from "../data/corpus.js";
+
+  const AGENCIA: Record<string, string> = {
+    alto: "Agentic central",
+    medio: "Agentic em seção",
+    baixo: "Sem foco em Agentic",
+  };
+
+  const lista = document.getElementById("corpus-lista")!;
+  const contagem = document.getElementById("corpus-contagem")!;
+  const vazio = document.getElementById("corpus-vazio")!;
+  const mais = document.getElementById("corpus-mais")!;
+  const abas = document.getElementById("corpus-abas")!;
+  const filtrosFase = document.getElementById("corpus-fases")!;
+
+  let corpo: "sec" | "sedes" = "sec";
+  let fase = "Todas";
+  let limite = 25;
+
+  const pintar = (grupo: HTMLElement, atributo: string, valor: string) => {
+    grupo.querySelectorAll<HTMLButtonElement>("button").forEach((b) => {
+      const ligado = b.dataset[atributo] === valor;
+      b.style.background = ligado ? "var(--color-accent)" : "transparent";
+      b.style.color = ligado ? "#fff" : "var(--color-text)";
+    });
+  };
+
+  const meta = (r: any) =>
+    corpo === "sec"
+      ? [r.tpn, AGENCIA[r.ag], r.cit ? `${r.cit} ${r.cit === "1" ? "citação" : "citações"}` : ""]
+          .filter(Boolean)
+          .join(" · ")
+      : [
+          `${r.sede} · ${r.trilha === "aceito" ? "trilha principal" : "workshop"}`,
+          r.cn,
+          AGENCIA[r.ag],
+        ]
+          .filter(Boolean)
+          .join(" · ");
+
+  const texto = (pai: HTMLElement, tag: string, estilo: string, conteudo: string) => {
+    const el = document.createElement(tag);
+    el.setAttribute("style", estilo);
+    el.textContent = conteudo;
+    pai.appendChild(el);
+    return el;
+  };
+
+  const desenhar = () => {
+    const base: any[] = corpo === "sec" ? SECUNDARIOS : SEDES;
+    const filtrado = base.filter((r) => fase === "Todas" || r.f === fase);
+    const mostrados = filtrado.slice(0, limite);
+
+    lista.textContent = "";
+    for (const r of mostrados) {
+      const linha = document.createElement("div");
+      linha.setAttribute(
+        "style",
+        "display: grid; grid-template-columns: minmax(0, 1fr); gap: 6px; padding: 18px 0; border-bottom: 2px solid var(--color-divider)"
+      );
+
+      const cabecalho = document.createElement("div");
+      cabecalho.setAttribute("style", "display: flex; gap: 12px; flex-wrap: wrap; align-items: baseline");
+      texto(
+        cabecalho,
+        "span",
+        "font-family: var(--font-heading); font-weight: 900; font-size: 16px; color: var(--color-accent)",
+        r.fn
+      );
+      texto(
+        cabecalho,
+        "span",
+        "font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.6",
+        r.ano
+      );
+      linha.appendChild(cabecalho);
+
+      const titulo = texto(
+        linha,
+        "a",
+        "font-family: var(--font-heading); font-weight: 700; font-size: 18px; line-height: 1.3; letter-spacing: -0.01em; max-width: 74ch",
+        r.t
+      ) as HTMLAnchorElement;
+      titulo.href = r.url;
+      titulo.target = "_blank";
+      titulo.rel = "noopener";
+
+      texto(linha, "div", "font-size: 14px; line-height: 1.5; opacity: 0.8", `${r.a} · ${meta(r)}`);
+      texto(linha, "div", "font-size: 14px; line-height: 1.5; max-width: 74ch", r.foco ?? "");
+
+      lista.appendChild(linha);
+    }
+
+    contagem.textContent = `Mostrando ${mostrados.length} de ${filtrado.length}`;
+    vazio.style.display = base.length === 0 ? "" : "none";
+    mais.style.display = mostrados.length < filtrado.length ? "" : "none";
+  };
+
+  abas.addEventListener("click", (ev) => {
+    const alvo = (ev.target as HTMLElement).closest("button");
+    if (!alvo) return;
+    corpo = alvo.dataset.corpo as "sec" | "sedes";
+    limite = 25;
+    pintar(abas, "corpo", corpo);
+    desenhar();
+  });
+
+  filtrosFase.addEventListener("click", (ev) => {
+    const alvo = (ev.target as HTMLElement).closest("button");
+    if (!alvo) return;
+    fase = alvo.dataset.fase!;
+    limite = 25;
+    pintar(filtrosFase, "fase", fase);
+    desenhar();
+  });
+
+  mais.addEventListener("click", () => {
+    limite += 50;
+    desenhar();
+  });
+
+  desenhar();
+</script>

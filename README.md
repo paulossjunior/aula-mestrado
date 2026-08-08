@@ -21,8 +21,8 @@ nenhum arquivo de programação.
 | `/conteudo` | O programa completo, agrupado nas três unidades |
 | `/avaliacao` | Composição da nota, os quatro laboratórios, rubrica do artigo final e o modelo de fichamento |
 | `/codebook` | As doze fases do processo de software: escopo, inclusão, exclusão, teste de decisão e exemplos |
-| `/codebook/mapeamento` | O mapeamento do campo: seis tabelas, duas figuras e o corpus navegável |
-| `/leituras` | Base de leituras: o tronco do campo e, por fase, o que ler para entrar nela |
+| `/codebook/mapeamento` | O mapeamento do campo: seis tabelas e duas figuras |
+| `/leituras` | Base de leituras: o tronco do campo, o que ler por fase e o corpus inteiro navegável |
 | `/spec-kit` | O fluxo do Spec Kit: cada comando como a etapa de desenvolvimento que ele ocupa |
 | `/seguranca` | A dimensão de segurança: dez tópicos cruzados com as doze fases do processo |
 | `/aulas/01` … `/aulas/17` | Uma página por encontro: roteiro, objetivos, atividade, entrega, leitura e material |
