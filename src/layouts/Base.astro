@@ -62,6 +62,10 @@ const nav = [
       * { box-sizing: border-box; }
       :focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
       html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+      /* O cabeçalho é sticky: sem esta folga, todo salto por âncora deixa o alvo
+         escondido atrás dele. 160px é a altura do cabeçalho no celular, onde o
+         menu quebra em duas linhas; no desktop ele tem 56px (veja o breakpoint). */
+      html { scroll-padding-top: 176px; }
 
       /* mobile first: estas são as regras base */
       .om-pad { padding-left: 20px !important; padding-right: 20px !important; }
@@ -84,6 +88,7 @@ const nav = [
       .om-lab > * + * { border-top: 2px solid var(--color-divider); }
 
       @media (min-width: 861px) {
+        html { scroll-padding-top: 72px; }
         .om-pad { padding-left: 32px !important; padding-right: 32px !important; }
         .om-sec { padding-top: 72px !important; padding-bottom: 72px !important; }
         .om-2col { grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr) !important; gap: 64px !important; }
