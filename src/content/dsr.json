@@ -1,0 +1,272 @@
+{
+  "abertura": {
+    "titulo": "Como preencher o template DSR",
+    "resumo": "O que escrever em cada parte da dissertação, seção por seção. Não é uma introdução a Design Science Research: é a instrução de preenchimento do template que você vai usar, escrita para você saber o que cada trecho precisa revelar antes de começar a escrever.",
+    "procedencia": "Este guia acompanha o template de dissertação usado no programa, cuja organização foi construída a partir da tese do professor. O template está disponível para download nesta página.",
+    "chamada": [
+      "A proposta do template não é que você descreva as etapas da DSR.",
+      "O objetivo é que a dissertação revele a lógica da pesquisa: qual problema motivou o trabalho, o que precisava ser aprendido, como o artefato foi concebido, quais evidências orientaram sua evolução e o que foi aprendido ao final.",
+      "É essa perspectiva que está alinhada à Design Science Research, na qual a compreensão do problema e da solução ocorre por meio da construção e da avaliação de artefatos."
+    ],
+    "descricao": "Guia de preenchimento do template de dissertação em Design Science Research: o que escrever em cada parte, dos ciclos de relevância, design e rigor às Learning Iterations, à demonstração e à avaliação.",
+    "tituloPagina": "Como preencher o template DSR — Dev. de Software com IA"
+  },
+  "template": {
+    "arquivo": "modelo_DSR.zip",
+    "href": "/dsr/modelo_DSR.zip",
+    "peso": "347 KB",
+    "texto": "Envie a pasta inteira, ou o próprio ZIP, para o Overleaf e compile <code>main.tex</code>. Os trechos marcados com <code>\\preencher{…}</code> indicam o conteúdo que você substitui pelo texto definitivo. O modelo foi deliberadamente escrito em texto corrido: requisitos e critérios aparecem integrados à narrativa, em vez de listas. Use-o como estrutura de escrita, não como formulário de tópicos.",
+    "conteudo": [
+      "<code>main.tex</code> — o documento que você compila",
+      "<code>capitulos/metodo-dsr.tex</code> — método de pesquisa e os três ciclos",
+      "<code>capitulos/learning-iterations.tex</code> — uma seção por Learning Iteration, com «O que aprendemos?»",
+      "<code>capitulos/final-learning-iteration.tex</code> — a avaliação final, do contexto às considerações",
+      "<code>referencias.bib</code> — as quatro obras que fundamentam o método",
+      "<code>Modelo_DSR_compilado.pdf</code> — o modelo já compilado, com os campos a preencher destacados"
+    ]
+  },
+  "partes": [
+    {
+      "n": "01",
+      "titulo": "Método de pesquisa",
+      "pergunta": "Por que a Design Science Research é adequada a este problema?",
+      "espera": [
+        "Apresentar a DSR como a abordagem metodológica adotada e explicar por que ela é adequada ao problema tratado na dissertação.",
+        "Mostrar que a pesquisa busca produzir uma intervenção — um artefato — destinada a resolver ou melhorar uma situação problemática e, ao mesmo tempo, produzir conhecimento a partir desse processo.",
+        "Apresentar a organização geral da pesquisa nas seis atividades de Peffers et al.: identificação do problema e motivação, definição dos objetivos da solução, design e desenvolvimento, demonstração, avaliação e comunicação.",
+        "Explicar que essas atividades se relacionam aos três ciclos de Hevner — relevância, design e rigor — e que os três precisam estar claramente identificáveis no projeto."
+      ],
+      "evitar": [
+        "Dizer que a DSR foi usada porque houve desenvolvimento de software. Não é suficiente: o que caracteriza a DSR é produzir conhecimento pela construção e avaliação do artefato, não o fato de ter havido programação.",
+        "Tratar as seis atividades como sequência rígida. Elas constituem um modelo para organizar e comunicar o processo de pesquisa, não uma ordem obrigatória de execução."
+      ],
+      "exemplo": null,
+      "referencia": "peffers2007"
+    },
+    {
+      "n": "02",
+      "titulo": "Ciclo de relevância",
+      "pergunta": "De onde veio o problema, e o que uma solução precisa possibilitar?",
+      "espera": [
+        "Explicar de onde surgiu o problema: o contexto real que motivou a pesquisa, com evidências de que o problema existe. Elas podem vir de experiências anteriores, estudos exploratórios, entrevistas, documentos, dados de organizações, trabalhos anteriores ou da literatura.",
+        "Explicar quem é afetado pelo problema, quais consequências ele produz e por que as soluções existentes ainda não são suficientes.",
+        "Apresentar os objetivos da solução: o que uma solução adequada precisa possibilitar — sem entrar em tecnologia ainda.",
+        "Fazer cada requisito surgir desse raciocínio. Ao ler R2, o leitor deve conseguir voltar ao problema ou a algum conhecimento da literatura e entender por que aquele requisito existe.",
+        "Começar a apresentar os critérios de avaliação já aqui, criando a ligação entre problema e avaliação."
+      ],
+      "evitar": [
+        "Começar pelo artefato. «Esta pesquisa propõe desenvolver um sistema para…» ainda não explica o problema. Primeiro precisa ficar claro o que está errado ou pode ser melhorado no mundo real; depois se discute a solução.",
+        "Criar o critério de avaliação só depois que o artefato está pronto. Se a pesquisa afirma que a solução deve melhorar a precisão de uma atividade, depois tem de existir evidência relacionada à precisão."
+      ],
+      "exemplo": "Se o problema é dificuldade de integrar informações, o objetivo da solução pode ser «possibilitar a integração de informações provenientes de fontes heterogêneas». Só depois se explica como isso foi realizado.",
+      "referencia": "hevner2007"
+    },
+    {
+      "n": "03",
+      "titulo": "Ciclo de design",
+      "pergunta": "Como o artefato foi construído, e por que dessas decisões?",
+      "espera": [
+        "Apresentar como o artefato foi efetivamente construído e como evoluiu. O artefato pode ser software, método, processo, modelo, arquitetura, framework, linguagem, instrumento ou outra construção destinada a resolver o problema investigado.",
+        "Destacar as decisões de design relevantes.",
+        "Para cada decisão importante, deixar compreensível a lógica: havia determinado problema ou requisito; existiam possíveis maneiras de tratá-lo; uma alternativa foi escolhida por determinada razão; essa escolha foi implementada; depois foram produzidas evidências sobre sua adequação."
+      ],
+      "evitar": [
+        "Transformar o texto em diário de programação. O interesse científico não está em registrar que uma API foi implementada na segunda-feira e uma interface na terça."
+      ],
+      "exemplo": null,
+      "referencia": "hevner2004"
+    },
+    {
+      "n": "04",
+      "titulo": "Learning Iterations",
+      "pergunta": "O que cada estudo empírico precisava descobrir, e por que naquele momento?",
+      "espera": [
+        "Começar cada Learning Iteration explicando por que aquele estudo precisou ser realizado naquele momento da pesquisa. O leitor precisa compreender qual dúvida levou à realização do estudo.",
+        "Partir do resultado da etapa anterior: uma decisão de design que precisava ser avaliada, um aspecto do problema ainda não compreendido, ou uma limitação identificada que exigiu nova investigação.",
+        "Formular uma questão específica que represente o que se deseja aprender. Ela não precisa ser a questão principal da dissertação — pode ser uma questão intermediária que ajude a tomar uma decisão.",
+        "Explicar o desenho do estudo: método escolhido, contexto, participantes ou unidades de análise, procedimentos de coleta e de análise. O método deve ser coerente com aquilo que se pretende aprender."
+      ],
+      "evitar": [
+        "Escrever apenas «foi realizado um estudo de caso». Isso não diz que dúvida da pesquisa motivou o estudo.",
+        "Tratar os estudos empíricos apenas como avaliações feitas depois que o artefato ficou pronto. Eles podem servir durante a pesquisa para compreender melhor o problema, fundamentar o artefato, orientar seu desenvolvimento, avaliá-lo ou melhorá-lo."
+      ],
+      "exemplo": "A primeira versão do artefato dependia da utilização de X. Entretanto, ainda não existiam evidências suficientes de que X seria adequado ao contexto investigado. Dessa forma, foi realizada uma Learning Iteration para investigar se…",
+      "referencia": "barcellos2022"
+    },
+    {
+      "n": "05",
+      "titulo": "O que aprendemos",
+      "pergunta": "O que aqueles resultados ensinaram à pesquisa?",
+      "espera": [
+        "Dizer explicitamente o que os resultados ensinaram à pesquisa — não repetir os resultados do estudo.",
+        "Declarar quando a evidência confirmou uma decisão de design.",
+        "Indicar qual limitação foi revelada, quando houve.",
+        "Explicar o novo requisito, quando o estudo produziu um.",
+        "Deixar clara a mudança, quando o estudo fez abandonar uma abordagem e procurar outra.",
+        "Fechar preparando a iteração seguinte: «aprendemos X; entretanto, o estudo também revelou Y; para investigar Y, realizamos a próxima Learning Iteration»."
+      ],
+      "evitar": [
+        "Não retire esta seção do template. Ela força a separação entre resultado empírico e aprendizado científico, que é onde a contribuição começa a aparecer."
+      ],
+      "exemplo": "«Quatro dos cinco participantes consideraram a ferramenta útil» é um resultado. «Os resultados sugerem que a visualização X é adequada para apoiar a atividade Y, porém sua utilização exige que previamente exista Z» é um aprendizado — e pode influenciar o artefato ou gerar conhecimento reutilizável.",
+      "referencia": "barcellos2022"
+    },
+    {
+      "n": "06",
+      "titulo": "Ciclo de rigor",
+      "pergunta": "Em qual conhecimento você se apoiou para decidir construir dessa maneira?",
+      "espera": [
+        "Tornar explícito de onde veio o conhecimento utilizado para construir o artefato.",
+        "Dizer quando uma teoria levou à criação de um requisito.",
+        "Mostrar a relação quando um modelo existente orientou a arquitetura do artefato.",
+        "Explicar a influência quando um estudo anterior sugeriu determinado método de avaliação.",
+        "Devolver à base de conhecimento: os resultados produzidos pela pesquisa também retornam como conhecimento novo."
+      ],
+      "evitar": [
+        "Deixar a literatura apenas no capítulo de fundamentação teórica. Ela precisa influenciar decisões concretas da pesquisa.",
+        "Responder só «o que construí?». O texto precisa responder também «em qual conhecimento me apoiei para decidir construí-lo dessa maneira?»."
+      ],
+      "exemplo": null,
+      "referencia": "hevner2007"
+    },
+    {
+      "n": "07",
+      "titulo": "Demonstração",
+      "pergunta": "O artefato consegue ser aplicado ao problema para o qual foi projetado?",
+      "espera": [
+        "Mostrar que o artefato pode ser aplicado para tratar o problema, depois que atinge uma versão utilizável.",
+        "Escolher a forma conforme a natureza do trabalho: prova de conceito, cenário de aplicação, experimento, estudo de caso ou uso em uma organização.",
+        "Demonstrar que o artefato não existe apenas conceitualmente — ele precisa ser aplicado de alguma maneira que permita observar sua atuação diante do problema."
+      ],
+      "evitar": [],
+      "exemplo": null,
+      "referencia": "peffers2007"
+    },
+    {
+      "n": "08",
+      "titulo": "Avaliação",
+      "pergunta": "As evidências respondem aos critérios que você definiu antes?",
+      "espera": [
+        "Retornar aos objetivos e critérios definidos anteriormente.",
+        "Explicar claramente o que está sendo avaliado, como será avaliado e quais evidências permitirão concluir se o artefato atende ao que foi proposto.",
+        "Tratar a avaliação final como uma nova Learning Iteration, se fizer sentido: a pergunta deixa de ser se o artefato passou ou falhou e passa a ser o que foi aprendido quando ele foi aplicado num contexto mais completo ou realista."
+      ],
+      "evitar": [
+        "Concluir com «os usuários gostaram do sistema», «a solução funcionou» ou «os resultados foram satisfatórios». Essas afirmações podem fazer parte das evidências, mas precisam estar relacionadas a critérios previamente definidos."
+      ],
+      "exemplo": null,
+      "referencia": "hevner2004"
+    },
+    {
+      "n": "09",
+      "titulo": "O que mostrar ao terminar",
+      "pergunta": "A narrativa fecha, do problema à contribuição?",
+      "espera": [
+        "Ao final, a dissertação deve ter uma narrativa contínua.",
+        "O leitor deve compreender de onde surgiu o problema; como ele originou objetivos e requisitos; qual conhecimento científico influenciou as decisões; como essas decisões resultaram no artefato; quais Learning Iterations foram necessárias; o que foi aprendido em cada uma; como esses aprendizados alteraram a pesquisa; como o artefato foi demonstrado e avaliado; e qual conhecimento pode ser extraído de todo o processo."
+      ],
+      "evitar": [],
+      "exemplo": null,
+      "referencia": null
+    }
+  ],
+  "cadeia": [
+    {
+      "n": 1,
+      "elo": "Problema",
+      "pergunta": "O que está errado ou pode ser melhorado no mundo real?"
+    },
+    {
+      "n": 2,
+      "elo": "Objetivos da solução",
+      "pergunta": "O que uma solução adequada precisa possibilitar?"
+    },
+    {
+      "n": 3,
+      "elo": "Requisitos",
+      "pergunta": "De onde vem cada requisito — do problema ou da literatura?"
+    },
+    {
+      "n": 4,
+      "elo": "Conhecimento existente",
+      "pergunta": "Em que a pesquisa se apoiou para decidir?"
+    },
+    {
+      "n": 5,
+      "elo": "Decisões de design",
+      "pergunta": "Que alternativas havia, e por que esta foi escolhida?"
+    },
+    {
+      "n": 6,
+      "elo": "Artefato",
+      "pergunta": "O que foi construído, e como ele responde aos requisitos?"
+    },
+    {
+      "n": 7,
+      "elo": "Learning Iterations",
+      "pergunta": "Que dúvida cada estudo precisava resolver?"
+    },
+    {
+      "n": 8,
+      "elo": "Evidências",
+      "pergunta": "O que os estudos produziram?"
+    },
+    {
+      "n": 9,
+      "elo": "Aprendizados",
+      "pergunta": "O que aquelas evidências ensinaram à pesquisa?"
+    },
+    {
+      "n": 10,
+      "elo": "Evolução do artefato",
+      "pergunta": "O que mudou no artefato por causa do que se aprendeu?"
+    },
+    {
+      "n": 11,
+      "elo": "Avaliação final e contribuição",
+      "pergunta": "O artefato atende ao que foi proposto, e que conhecimento fica?"
+    }
+  ],
+  "referencias": [
+    {
+      "id": "hevner2004",
+      "autores": "Hevner, March, Park & Ram",
+      "ano": "2004",
+      "titulo": "Design Science in Information Systems Research",
+      "papel": "Os fundamentos da Design Science: o papel do artefato e a relação entre construir, avaliar e produzir conhecimento.",
+      "href": "https://wise.vub.ac.be/sites/default/files/thesis_info/design_science.pdf",
+      "registro": "MIS Quarterly 28(1), 75–105 · DOI 10.2307/25148625"
+    },
+    {
+      "id": "hevner2007",
+      "autores": "Hevner",
+      "ano": "2007",
+      "titulo": "A Three Cycle View of Design Science Research",
+      "papel": "Os três ciclos que estruturam o template: relevância, design e rigor.",
+      "href": "https://www.uni-kassel.de/fb07/index.php?eID=dumpFile&f=4898&t=f&token=930ca01adbdcc1e7f24d1a3d3a1f0a17422df86e",
+      "registro": "Scandinavian Journal of Information Systems 19(2), 87–92"
+    },
+    {
+      "id": "peffers2007",
+      "autores": "Peffers, Tuunanen, Rothenberger & Chatterjee",
+      "ano": "2007",
+      "titulo": "A Design Science Research Methodology for Information Systems Research",
+      "papel": "As seis atividades que organizam o método: problema e motivação, objetivos da solução, design e desenvolvimento, demonstração, avaliação e comunicação.",
+      "href": "https://indico.cern.ch/event/1542774/contributions/6494311/attachments/3080345/5465431/Peffers_2007_A%20Design%20Science%20Research%20Methodology%20for%20Information%20Systems%20Research.pdf",
+      "registro": "Journal of MIS 24(3), 45–77 · DOI 10.2753/MIS0742-1222240302"
+    },
+    {
+      "id": "barcellos2022",
+      "autores": "Barcellos et al.",
+      "ano": "2022",
+      "titulo": "Organizing Empirical Studies as Learning Iterations in Design Science Research Projects",
+      "papel": "As Learning Iterations: cada estudo empírico como uma iteração que produz conhecimento para compreender o problema, fundamentar, desenvolver, avaliar ou evoluir o artefato.",
+      "href": "https://sol.sbc.org.br/index.php/sbqs/article/view/23302",
+      "registro": "SBQS 2022 · DOI 10.1145/3571473.3571474"
+    }
+  ],
+  "fechamento": {
+    "titulo": "Como saber se está pronto",
+    "texto": "Tente reconstruir mentalmente a cadeia inteira, do problema à contribuição. Se algum elo não puder ser explicado, provavelmente existe uma lacuna na escrita — ou no próprio desenho da pesquisa."
+  }
+}

@@ -47,8 +47,12 @@ jobs:
         run: |
           total=$(find dist -name index.html | wc -l | tr -d ' ')
           echo "páginas geradas: $total"
-          test "$total" -eq 25 || { echo "esperava 25 páginas, encontrei $total"; exit 1; }
+          test "$total" -eq 26 || { echo "esperava 26 páginas, encontrei $total"; exit 1; }
           test -f dist/.nojekyll || { echo "faltou .nojekyll: o Pages ignoraria _ds/ e _astro/"; exit 1; }
+          # O template DSR é o único binário que a página promete para download.
+          test -f dist/dsr/modelo_DSR.zip || { echo "faltou o template DSR"; exit 1; }
+          cmp -s dist/dsr/modelo_DSR.zip fontes/dsr/modelo_DSR.zip \
+            || { echo "o template publicado difere do original em fontes/"; exit 1; }
           grep -q 'href="/aula-mestrado/' dist/index.html \
             || { echo "a home não usa o base /aula-mestrado"; exit 1; }
 

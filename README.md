@@ -25,9 +25,10 @@ nenhum arquivo de programação.
 | `/leituras` | Base de leituras: o tronco do campo, o que ler por fase, o corpus inteiro navegável e os CSV para download |
 | `/spec-kit` | O fluxo do Spec Kit: cada comando como a etapa de desenvolvimento que ele ocupa |
 | `/seguranca` | A dimensão de segurança: dez tópicos cruzados com as doze fases, e as obras de cada tópico |
+| `/dsr` | Guia de preenchimento do template de dissertação em DSR, com o template para download |
 | `/aulas/01` … `/aulas/17` | Uma página por encontro: roteiro, objetivos, atividade, entrega, leitura e material |
 
-São 25 páginas HTML estáticas. Só duas coisas usam JavaScript — o filtro de unidade
+São 26 páginas HTML estáticas. Só duas coisas usam JavaScript — o filtro de unidade
 no cronograma e o navegador de corpus. Todo o resto funciona com o JS desligado.
 
 ---
@@ -107,6 +108,7 @@ src/content/leituras-base.json  a base de leituras: tronco e leituras por fase
 src/content/spec-kit.json       os comandos do Spec Kit e a etapa real de cada um
 src/content/seguranca.json      a dimensão de segurança: tópicos, obras, cruzamento e achados
 src/content/curso.json          a ementa e os objetivos de aprendizagem da home
+src/content/dsr.json            o guia do template DSR: partes, cadeia e referências
 src/content/unidades.json       as três unidades e suas descrições
 src/data/corpus.js              GERADO: os dois corpora (236 secundários + 338 em sedes)
 
@@ -119,6 +121,7 @@ public/_ds/modernist-…/         o design system: styles.css, guia e tokens
 public/uploads/                 as quatro figuras do site, geradas em SVG por script
 public/fichamento.tex           o modelo em LaTeX (é o mesmo texto exibido no site)
 public/dados/                   os três CSV do corpus, publicados para download
+public/dsr/modelo_DSR.zip       o template LaTeX de dissertação, para download
 public/.nojekyll                obrigatório — veja "Deploy"
 
 fontes/                         material de origem: codebook, mapeamento e os CSV

@@ -35,3 +35,13 @@ Ortogonal à fase: cada obra tem uma fase e um grau de centralidade da seguranç
 (central, secundária, ausente). Os dados estão em `src/content/seguranca.json` e
 são publicados em `/seguranca`. Das 574 obras dos dois corpora, 140 tratam de
 segurança — 77 com ela como objeto central.
+
+## Template DSR
+
+`public/dsr/modelo_DSR.zip` é cópia exata de `fontes/dsr/modelo_DSR.zip`, publicada
+para download na página `/dsr`. Ao trocar o template, troque nos dois lugares e
+confira com `cmp` — a página declara o peso do arquivo, e um peso errado é uma
+promessa quebrada antes do clique.
+
+`fontes/dsr/exemplo_dsr.pdf` **não** é publicado: é tese de terceiros, sem licença de
+redistribuição declarada.
