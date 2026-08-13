@@ -1,4 +1,5 @@
 ---
+import Migalha from "../components/Migalha.astro";
 import Base from "../layouts/Base.astro";
 import { rota } from "../lib/url";
 import dados from "../content/spec-kit.json";
@@ -15,11 +16,7 @@ const codigo =
 >
   <article>
     <section class="om-pad" style="max-width: 1200px; margin: 0 auto; padding: 36px 32px 0">
-      <a
-        href={rota("/aulas/03")}
-        style="font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase"
-        >← Aula 03</a
-      >
+      <Migalha trilha={[{ texto: "Início", href: "/" }, { texto: "Aula 03", href: "/aulas/03" }, { texto: "Spec Kit" }]} />
       <div
         style="font-size: 13px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700); margin-top: 28px"
       >

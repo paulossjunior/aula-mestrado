@@ -1,4 +1,5 @@
 ---
+import Migalha from "../../components/Migalha.astro";
 import Base from "../../layouts/Base.astro";
 import { rota } from "../../lib/url";
 import distFase from "../../content/mapeamento/distribuicao-fase.json";
@@ -17,11 +18,7 @@ import lacunas from "../../content/mapeamento/lacunas.json";
 >
   <article>
     <section class="om-pad" style="max-width: 1200px; margin: 0 auto; padding: 36px 32px 40px">
-      <a
-        href={rota("/codebook")}
-        style="font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase"
-        >← Codebook das fases</a
-      >
+      <Migalha trilha={[{ texto: "Início", href: "/" }, { texto: "Aula 01", href: "/aulas/01" }, { texto: "Codebook", href: "/codebook" }, { texto: "Mapeamento" }]} />
       <div
         style="font-size: 13px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700); margin-top: 28px"
       >

@@ -1,4 +1,5 @@
 ---
+import Migalha from "../../components/Migalha.astro";
 import Base from "../../layouts/Base.astro";
 import { rota, link } from "../../lib/url";
 import { todasAulas, NOMES_U, estiloTag, janela } from "../../lib/aulas";
@@ -25,11 +26,13 @@ const tituloProxima = proxima ? `${proxima.n} · ${proxima.titulo}` : "Voltar ao
 >
   <article>
     <section class="om-pad" style="max-width: 1200px; margin: 0 auto; padding: 40px 32px 0">
-      <a
-        href={rota("/#cronograma")}
-        style="font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase"
-        >← Voltar ao cronograma</a
-      >
+      <Migalha
+        trilha={[
+          { texto: "Início", href: "/" },
+          { texto: "Cronograma", href: "/#cronograma" },
+          { texto: `Aula ${aula.n}` },
+        ]}
+      />
       <div style="display: flex; gap: 20px; align-items: baseline; flex-wrap: wrap; margin-top: 32px">
         <span
           style="font-family: var(--font-heading); font-weight: 900; font-size: clamp(64px, 11vw, 140px); line-height: 0.8; letter-spacing: -0.05em; color: var(--color-accent)"

@@ -115,6 +115,7 @@ src/data/corpus.js              GERADO: os dois corpora (236 secundários + 338 
 src/layouts/Base.astro          head, header, footer e os estilos globais
 src/pages/                      as rotas (veja a tabela acima)
 src/lib/url.ts                  resolve links sob o subcaminho do GitHub Pages
+src/components/Migalha.astro    a migalha de pão, com a trilha em dados estruturados
 src/lib/aulas.ts                traduz `estado` no que a página renderiza
 
 public/_ds/modernist-…/         o design system: styles.css, guia e tokens

@@ -1,4 +1,5 @@
 ---
+import Migalha from "../components/Migalha.astro";
 import Base from "../layouts/Base.astro";
 import { rota } from "../lib/url";
 import dados from "../content/dsr.json";
@@ -73,11 +74,7 @@ const tituloSecao =
 <Base titulo={abertura.tituloPagina} descricao={abertura.descricao}>
   <article>
     <section class="om-pad" style="max-width: 1200px; margin: 0 auto; padding: 36px 32px 0">
-      <a
-        href={rota("/aulas/02")}
-        style="font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase"
-        >← Aula 02</a
-      >
+      <Migalha trilha={[{ texto: "Início", href: "/" }, { texto: "Aula 02", href: "/aulas/02" }, { texto: "Guideline DSR" }]} />
       <div
         style="font-size: 13px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700); margin-top: 28px"
       >

@@ -1,4 +1,5 @@
 ---
+import Migalha from "../components/Migalha.astro";
 import Base from "../layouts/Base.astro";
 import { rota } from "../lib/url";
 import dados from "../content/leituras-base.json";
@@ -114,11 +115,7 @@ const totalObras =
 >
   <article>
     <section class="om-pad" style="max-width: 1200px; margin: 0 auto; padding: 36px 32px 0">
-      <a
-        href={rota("/aulas/01")}
-        style="font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase"
-        >← Aula 01</a
-      >
+      <Migalha trilha={[{ texto: "Início", href: "/" }, { texto: "Aula 01", href: "/aulas/01" }, { texto: "Base de leituras" }]} />
       <div
         style="font-size: 13px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700); margin-top: 28px"
       >

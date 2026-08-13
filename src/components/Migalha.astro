@@ -1,0 +1,47 @@
+---
+import { rota } from "../lib/url";
+
+// A migalha substitui o link de volta solto que cada página tinha. Um "← Aula 02"
+// diz de onde se veio, mas não onde se está; a trilha inteira diz as duas coisas.
+interface Props {
+  trilha: { texto: string; href?: string }[];
+}
+const { trilha } = Astro.props;
+
+// O último item é a página atual e não vira link.
+const itens = trilha.map((t, i) => ({ ...t, atual: i === trilha.length - 1 }));
+
+// A mesma trilha em dados estruturados, para o buscador entender a hierarquia.
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: itens.map((t, i) => ({
+    "@type": "ListItem",
+    position: i + 1,
+    name: t.texto,
+    ...(t.href ? { item: new URL(rota(t.href), "https://paulossjunior.github.io").href } : {}),
+  })),
+};
+---
+
+<nav aria-label="Você está em" style="margin: 0 0 4px">
+  <ol
+    style="list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; align-items: baseline; gap: 0 8px; font-size: 13px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase"
+  >
+    {
+      itens.map((t, i) => (
+        <li style="display: flex; align-items: baseline; gap: 8px; min-width: 0">
+          {i > 0 && <span aria-hidden="true" style="opacity: 0.4">/</span>}
+          {t.href && !t.atual ? (
+            <a href={rota(t.href)}>{t.texto}</a>
+          ) : (
+            <span aria-current={t.atual ? "page" : undefined} style="opacity: 0.6">
+              {t.texto}
+            </span>
+          )}
+        </li>
+      ))
+    }
+  </ol>
+</nav>
+<script type="application/ld+json" set:html={JSON.stringify(jsonLd)} is:inline />
