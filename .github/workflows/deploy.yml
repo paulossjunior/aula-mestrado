@@ -34,6 +34,11 @@ jobs:
       - name: Checagem de tipos e de schema
         run: npm run check
 
+      # A avaliação promete 30% da nota em laboratórios. Um lab sem encontro no
+      # cronograma é nota que o aluno não sabe como cumprir — reprova antes de ir ao ar.
+      - name: Conferir os laboratórios contra o cronograma
+        run: node scripts/conferir-labs.mjs
+
       - uses: actions/configure-pages@v5
 
       - run: npm run build

@@ -34,24 +34,42 @@
     }
   ],
   "fichamento": [
-    { "campo": "Referência", "texto": "Autor, título, ano e link." },
-    { "campo": "Tema", "texto": "Assunto principal do texto." },
-    { "campo": "Objetivo", "texto": "O que o autor pretende discutir ou demonstrar." },
-    { "campo": "Resumo", "texto": "Síntese das principais ideias, com suas próprias palavras." },
-    { "campo": "Citação importante", "texto": "“Trecho relevante do texto.” (p. XX)" },
-    { "campo": "Comentário", "texto": "Sua avaliação sobre o texto e como ele pode ser útil para sua pesquisa." }
+    {
+      "campo": "Referência",
+      "texto": "Autor, título, ano e link."
+    },
+    {
+      "campo": "Tema",
+      "texto": "Assunto principal do texto."
+    },
+    {
+      "campo": "Objetivo",
+      "texto": "O que o autor pretende discutir ou demonstrar."
+    },
+    {
+      "campo": "Resumo",
+      "texto": "Síntese das principais ideias, com suas próprias palavras."
+    },
+    {
+      "campo": "Citação importante",
+      "texto": "“Trecho relevante do texto.” (p. XX)"
+    },
+    {
+      "campo": "Comentário",
+      "texto": "Sua avaliação sobre o texto e como ele pode ser útil para sua pesquisa."
+    }
   ],
   "labs": [
     {
       "n": "01",
-      "prazo": "Encontro 04",
+      "prazo": "Encontro 07",
       "titulo": "Engenharia de prompt aplicada ao seu domínio",
       "descricao": "Construir e versionar um conjunto de prompts para uma tarefa de código recorrente, com critério explícito de acerto e registro de falhas.",
       "noSeuTema": "a tarefa escolhida vem do software da sua pesquisa — o pipeline de dados, o simulador, o serviço que você está construindo."
     },
     {
       "n": "02",
-      "prazo": "Encontro 07",
+      "prazo": "Encontro 10",
       "titulo": "Especificação executável (SDD) de um componente seu",
       "descricao": "Escrever a especificação de um componente e conduzir o modelo a implementá-lo a partir dela, com testes derivados da própria especificação.",
       "noSeuTema": "o componente é um módulo real da sua dissertação, não um exemplo de aula."

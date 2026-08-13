@@ -126,6 +126,7 @@ Disciplina.dc.html, support.js  o protótipo original, guardado como registro
 scripts/extrair-conteudo.mjs    o script que migrou os dados do protótipo
 scripts/gerar-figuras.mjs       regera as quatro figuras a partir das tabelas
 scripts/gerar-corpus.mjs        regera corpus, tabelas do mapeamento e obras de segurança dos CSV
+scripts/conferir-labs.mjs       confere os laboratórios contra o cronograma (roda no CI)
 scripts/nomear-fases.mjs        trocou os códigos F pelos nomes das fases
 specs/                          a especificação que guiou a construção
 ```
@@ -182,6 +183,9 @@ As duas rodam a mesma bateria de verificação antes de deixar qualquer coisa pa
 4. **Assets obrigatórios** — `.nojekyll`, `fichamento.tex`, as duas figuras e a
    folha do design system.
 5. **Caminho base** — a home tem de sair com links `/aula-mestrado/`.
+6. **Laboratórios** — [`scripts/conferir-labs.mjs`](scripts/conferir-labs.mjs) confere que cada
+   laboratório prometido na avaliação tem, no cronograma, um encontro que o atribui e outro que o
+   recebe. A nota promete 30% em laboratórios; um lab sem data é nota que o aluno não sabe cumprir.
 
 Na prática: você edita uma aula, faz commit na `main`, e em ~1 minuto o site está
 atualizado. Se o arquivo estiver malformado, o workflow falha e **o site no ar
