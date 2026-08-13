@@ -1,205 +1,315 @@
 {
   "abertura": {
     "titulo": "Guideline para o aluno preencher o template",
-    "resumo": "A proposta do template não é fazer com que o aluno simplesmente descreva as etapas da DSR. O objetivo é que a dissertação revele a lógica da pesquisa.",
-    "procedencia": "As referências centrais deste guideline são Hevner et al. (2004) para os fundamentos da Design Science em Sistemas de Informação, Hevner (2007) para os ciclos de Relevância, Design e Rigor, Peffers et al. (2007) para as seis atividades da DSRM e Barcellos et al. (2022) para a organização dos estudos empíricos como Learning Iterations.",
-    "chamada": [
-      "Qual problema motivou o trabalho, o que precisava ser aprendido, como o artefato foi concebido, quais evidências orientaram sua evolução e o que foi aprendido ao final do processo.",
-      "Essa perspectiva está alinhada à Design Science Research, na qual a compreensão do problema e da solução ocorre por meio da construção e da avaliação de artefatos."
-    ],
+    "tituloPagina": "Guideline para preencher o template DSR — Dev. de Software com IA",
     "descricao": "Guideline para o aluno preencher o template de dissertação em Design Science Research: método de pesquisa, ciclos de relevância, design e rigor, Learning Iterations, demonstração e avaliação.",
-    "tituloPagina": "Guideline para preencher o template DSR — Dev. de Software com IA"
+    "intro": "A proposta do template não é fazer com que o aluno simplesmente descreva as etapas da DSR. O objetivo é que a dissertação revele a lógica da pesquisa: <strong>qual problema motivou o trabalho, o que precisava ser aprendido, como o artefato foi concebido, quais evidências orientaram sua evolução e o que foi aprendido ao final do processo</strong>. Essa perspectiva está alinhada à Design Science Research, na qual a compreensão do problema e da solução ocorre por meio da construção e da avaliação de artefatos.",
+    "introRef": "hevner2004"
   },
   "template": {
-    "arquivo": "modelo_DSR.zip",
-    "href": "/dsr/modelo_DSR.zip",
-    "peso": "347 KB",
-    "texto": "O texto metodológico permanece em preto e instruções como <em>[PREENCHA: explique de onde surgiu o problema…]</em> aparecem em vermelho. Quando você terminar a dissertação, basta substituir esses trechos pelo conteúdo definitivo."
-  },
-  "partes": [
-    {
-      "n": "01",
-      "titulo": "Método de Pesquisa",
-      "espera": [
-        "Apresentar a DSR como a abordagem metodológica adotada e explicar por que ela é adequada ao problema tratado na dissertação.",
-        "Mostrar que a pesquisa busca produzir uma intervenção — um artefato — destinada a resolver ou melhorar uma situação problemática e, ao mesmo tempo, produzir conhecimento a partir desse processo.",
-        "Apresentar a organização geral da pesquisa nas seis atividades de Peffers et al.: identificação do problema e motivação, definição dos objetivos da solução, design e desenvolvimento, demonstração, avaliação e comunicação.",
-        "Explicar que essas atividades se relacionam aos três ciclos de Hevner — relevância, design e rigor — e que os três precisam estar claramente identificáveis no projeto."
-      ],
-      "evitar": [
-        "Dizer que a DSR foi usada porque houve desenvolvimento de software. Não é suficiente: o que caracteriza a DSR é produzir conhecimento pela construção e avaliação do artefato, não o fato de ter havido programação.",
-        "Tratar as seis atividades como sequência rígida. Elas constituem um modelo para organizar e comunicar o processo de pesquisa, não uma ordem obrigatória de execução."
-      ],
-      "exemplo": null,
-      "referencia": "peffers2007"
-    },
-    {
-      "n": "02",
-      "titulo": "Ciclo de Relevância",
-      "espera": [
-        "Explicar de onde surgiu o problema: o contexto real que motivou a pesquisa, com evidências de que o problema existe. Elas podem vir de experiências anteriores, estudos exploratórios, entrevistas, documentos, dados de organizações, trabalhos anteriores ou da literatura.",
-        "Explicar quem é afetado pelo problema, quais consequências ele produz e por que as soluções existentes ainda não são suficientes.",
-        "Apresentar os objetivos da solução: o que uma solução adequada precisa possibilitar — sem entrar em tecnologia ainda.",
-        "Fazer cada requisito surgir desse raciocínio. Ao ler R2, o leitor deve conseguir voltar ao problema ou a algum conhecimento da literatura e entender por que aquele requisito existe.",
-        "Começar a apresentar os critérios de avaliação já aqui, criando a ligação entre problema e avaliação."
-      ],
-      "evitar": [
-        "Começar pelo artefato. «Esta pesquisa propõe desenvolver um sistema para…» ainda não explica o problema. Primeiro precisa ficar claro o que está errado ou pode ser melhorado no mundo real; depois se discute a solução.",
-        "Criar o critério de avaliação só depois que o artefato está pronto. Se a pesquisa afirma que a solução deve melhorar a precisão de uma atividade, depois tem de existir evidência relacionada à precisão."
-      ],
-      "exemplo": "Se o problema é dificuldade de integrar informações, o objetivo da solução pode ser «possibilitar a integração de informações provenientes de fontes heterogêneas». Só depois se explica como isso foi realizado.",
-      "referencia": "hevner2007"
-    },
-    {
-      "n": "03",
-      "titulo": "Ciclo de Design",
-      "espera": [
-        "Apresentar como o artefato foi efetivamente construído e como evoluiu. O artefato pode ser software, método, processo, modelo, arquitetura, framework, linguagem, instrumento ou outra construção destinada a resolver o problema investigado.",
-        "Destacar as decisões de design relevantes.",
-        "Para cada decisão importante, deixar compreensível a lógica: havia determinado problema ou requisito; existiam possíveis maneiras de tratá-lo; uma alternativa foi escolhida por determinada razão; essa escolha foi implementada; depois foram produzidas evidências sobre sua adequação."
-      ],
-      "evitar": [
-        "Transformar o texto em diário de programação. O interesse científico não está em registrar que uma API foi implementada na segunda-feira e uma interface na terça."
-      ],
-      "exemplo": null,
-      "referencia": "hevner2004"
-    },
-    {
-      "n": "04",
-      "titulo": "Como preencher cada Learning Iteration",
-      "espera": [
-        "Começar cada Learning Iteration explicando por que aquele estudo precisou ser realizado naquele momento da pesquisa. O leitor precisa compreender qual dúvida levou à realização do estudo.",
-        "Partir do resultado da etapa anterior: uma decisão de design que precisava ser avaliada, um aspecto do problema ainda não compreendido, ou uma limitação identificada que exigiu nova investigação.",
-        "Formular uma questão específica que represente o que se deseja aprender. Ela não precisa ser a questão principal da dissertação — pode ser uma questão intermediária que ajude a tomar uma decisão.",
-        "Explicar o desenho do estudo: método escolhido, contexto, participantes ou unidades de análise, procedimentos de coleta e de análise. O método deve ser coerente com aquilo que se pretende aprender."
-      ],
-      "evitar": [
-        "Escrever apenas «foi realizado um estudo de caso». Isso não diz que dúvida da pesquisa motivou o estudo.",
-        "Tratar os estudos empíricos apenas como avaliações feitas depois que o artefato ficou pronto. Eles podem servir durante a pesquisa para compreender melhor o problema, fundamentar o artefato, orientar seu desenvolvimento, avaliá-lo ou melhorá-lo."
-      ],
-      "exemplo": "A primeira versão do artefato dependia da utilização de X. Entretanto, ainda não existiam evidências suficientes de que X seria adequado ao contexto investigado. Dessa forma, foi realizada uma Learning Iteration para investigar se…",
-      "referencia": "barcellos2022"
-    },
-    {
-      "n": "05",
-      "titulo": "Ciclo de Rigor",
-      "espera": [
-        "Tornar explícito de onde veio o conhecimento utilizado para construir o artefato.",
-        "Dizer quando uma teoria levou à criação de um requisito.",
-        "Mostrar a relação quando um modelo existente orientou a arquitetura do artefato.",
-        "Explicar a influência quando um estudo anterior sugeriu determinado método de avaliação.",
-        "Devolver à base de conhecimento: os resultados produzidos pela pesquisa também retornam como conhecimento novo."
-      ],
-      "evitar": [
-        "Deixar a literatura apenas no capítulo de fundamentação teórica. Ela precisa influenciar decisões concretas da pesquisa.",
-        "Responder só «o que construí?». O texto precisa responder também «em qual conhecimento me apoiei para decidir construí-lo dessa maneira?»."
-      ],
-      "exemplo": null,
-      "referencia": "hevner2007"
-    },
-    {
-      "n": "06",
-      "titulo": "Demonstração",
-      "espera": [
-        "Mostrar que o artefato pode ser aplicado para tratar o problema, depois que atinge uma versão utilizável.",
-        "Escolher a forma conforme a natureza do trabalho: prova de conceito, cenário de aplicação, experimento, estudo de caso ou uso em uma organização.",
-        "Demonstrar que o artefato não existe apenas conceitualmente — ele precisa ser aplicado de alguma maneira que permita observar sua atuação diante do problema."
-      ],
-      "evitar": [],
-      "exemplo": null,
-      "referencia": "peffers2007"
-    },
-    {
-      "n": "07",
-      "titulo": "Avaliação",
-      "espera": [
-        "Retornar aos objetivos e critérios definidos anteriormente.",
-        "Explicar claramente o que está sendo avaliado, como será avaliado e quais evidências permitirão concluir se o artefato atende ao que foi proposto.",
-        "Tratar a avaliação final como uma nova Learning Iteration, se fizer sentido: a pergunta deixa de ser se o artefato passou ou falhou e passa a ser o que foi aprendido quando ele foi aplicado num contexto mais completo ou realista."
-      ],
-      "evitar": [
-        "Concluir com «os usuários gostaram do sistema», «a solução funcionou» ou «os resultados foram satisfatórios». Essas afirmações podem fazer parte das evidências, mas precisam estar relacionadas a critérios previamente definidos."
-      ],
-      "exemplo": null,
-      "referencia": "hevner2004"
-    },
-    {
-      "n": "08",
-      "titulo": "A seção “What did we learn?”",
-      "espera": [
-        "Dizer explicitamente o que os resultados ensinaram à pesquisa — não repetir os resultados do estudo.",
-        "Declarar quando a evidência confirmou uma decisão de design.",
-        "Indicar qual limitação foi revelada, quando houve.",
-        "Explicar o novo requisito, quando o estudo produziu um.",
-        "Deixar clara a mudança, quando o estudo fez abandonar uma abordagem e procurar outra.",
-        "Fechar preparando a iteração seguinte: «aprendemos X; entretanto, o estudo também revelou Y; para investigar Y, realizamos a próxima Learning Iteration»."
-      ],
-      "evitar": [
-        "Não retire esta seção do template. Ela força a separação entre resultado empírico e aprendizado científico, que é onde a contribuição começa a aparecer."
-      ],
-      "exemplo": "«Quatro dos cinco participantes consideraram a ferramenta útil» é um resultado. «Os resultados sugerem que a visualização X é adequada para apoiar a atividade Y, porém sua utilização exige que previamente exista Z» é um aprendizado — e pode influenciar o artefato ou gerar conhecimento reutilizável.",
-      "referencia": "barcellos2022"
-    },
-    {
-      "n": "09",
-      "titulo": "O que o aluno deve conseguir mostrar ao terminar",
-      "espera": [
-        "Ao final, a dissertação deve ter uma narrativa contínua.",
-        "O leitor deve compreender de onde surgiu o problema; como ele originou objetivos e requisitos; qual conhecimento científico influenciou as decisões; como essas decisões resultaram no artefato; quais Learning Iterations foram necessárias; o que foi aprendido em cada uma; como esses aprendizados alteraram a pesquisa; como o artefato foi demonstrado e avaliado; e qual conhecimento pode ser extraído de todo o processo."
-      ],
-      "evitar": [],
-      "exemplo": null,
-      "referencia": null
+    "titulo": "O template da entrega",
+    "texto": "Este é o documento que você entrega ao final do curso. O texto metodológico permanece em preto e instruções como <em>[PREENCHA: explique de onde surgiu o problema…]</em> aparecem em vermelho. Quando terminar, basta substituir esses trechos pelo conteúdo definitivo.",
+    "arquivos": [
+      {
+        "nome": "modelo_DSR_compilado.pdf",
+        "href": "/dsr/modelo_DSR_compilado.pdf",
+        "peso": "166 KB",
+        "descricao": "O template do documento a entregar, já compilado — 15 páginas, com os trechos a substituir em vermelho"
+      },
+      {
+        "nome": "modelo_DSR.zip",
+        "href": "/dsr/modelo_DSR.zip",
+        "peso": "347 KB",
+        "descricao": "O fonte em LaTeX desse PDF, para você preencher e compilar"
+      }
+    ],
+    "exemplo": {
+      "titulo": "Um exemplo de tese escrita com DSR",
+      "texto": "A tese do professor é um exemplo completo do que este template organiza: os três ciclos, as Learning Iterations e a seção «O que aprendemos?» aplicados a uma pesquisa real.",
+      "obra": "Paulo Sérgio dos Santos Júnior (2023). From Continuous Software Engineering Reference Ontologies to the Integration of Data for Data-Driven Software Development",
+      "fonte": "Tese de doutorado · PPGI/UFES, Vitória",
+      "href": "http://www.inf.ufes.br/~monalessa/wp-content/papercite-data/pdf/santosjr_thesis_2023.pdf"
     }
-  ],
-  "cadeia": [
+  },
+  "secoes": [
     {
-      "n": 1,
-      "elo": "Problema"
+      "titulo": "Método de Pesquisa",
+      "blocos": [
+        {
+          "tipo": "p",
+          "texto": "O aluno deve iniciar a seção apresentando a Design Science Research como a abordagem metodológica adotada e explicando por que ela é adequada ao problema tratado na dissertação. Não é suficiente dizer que DSR foi utilizada porque houve desenvolvimento de um software. É necessário mostrar que a pesquisa busca produzir uma intervenção — um artefato — destinada a resolver ou melhorar uma situação problemática e, ao mesmo tempo, produzir conhecimento a partir desse processo."
+        },
+        {
+          "tipo": "p",
+          "texto": "Na sequência, o aluno deve apresentar a organização geral da pesquisa. O modelo utilizado na tese segue as seis atividades propostas por Peffers et al.: identificação do problema e motivação, definição dos objetivos da solução, design e desenvolvimento, demonstração, avaliação e comunicação. Essas atividades não devem necessariamente ser compreendidas como uma sequência rígida; elas constituem um modelo para organizar e comunicar o processo de pesquisa.",
+          "ref": "peffers2007"
+        },
+        {
+          "tipo": "p",
+          "texto": "O aluno também deve explicar que essas atividades são relacionadas aos três ciclos apresentados por Hevner: <strong>Relevance Cycle, Design Cycle e Rigor Cycle</strong>. O ciclo de relevância conecta a pesquisa ao ambiente no qual o problema existe; o ciclo de rigor conecta a pesquisa à base de conhecimento científico existente; e o ciclo de design envolve as sucessivas atividades de construção e avaliação do artefato. Hevner argumenta que esses três ciclos precisam estar claramente identificáveis em um projeto de DSR.",
+          "ref": "hevner2007"
+        }
+      ]
     },
     {
-      "n": 2,
-      "elo": "Objetivos da solução"
+      "titulo": "Ciclo de Relevância",
+      "blocos": [
+        {
+          "tipo": "p",
+          "texto": "Nesta parte, o aluno precisa explicar de onde surgiu o problema. O texto deve apresentar o contexto real que motivou a pesquisa e mostrar evidências de que o problema existe. Essas evidências podem vir de experiências anteriores, estudos exploratórios, entrevistas, documentos, dados de organizações, trabalhos anteriores ou da literatura."
+        },
+        {
+          "tipo": "p",
+          "texto": "O aluno deve evitar começar pelo artefato. Uma frase como “esta pesquisa propõe desenvolver um sistema para...” ainda não explica o problema. Primeiro deve ficar claro <strong>o que está errado ou pode ser melhorado no mundo real</strong>. Depois disso, pode-se discutir a solução."
+        },
+        {
+          "tipo": "p",
+          "texto": "O texto precisa explicar quem é afetado pelo problema, quais consequências ele produz e por que as soluções existentes ainda não são suficientes. O ciclo de relevância é justamente o mecanismo pelo qual requisitos e problemas provenientes do ambiente entram na pesquisa e pelo qual o artefato retorna posteriormente ao ambiente para avaliação.",
+          "ref": "hevner2007"
+        },
+        {
+          "tipo": "p",
+          "texto": "Depois de caracterizar o problema, o aluno deve apresentar os <strong>objetivos da solução</strong>. Neste ponto, a recomendação é não entrar imediatamente em tecnologias. O texto deve explicar o que uma solução adequada precisa possibilitar. Se o problema é dificuldade de integrar informações, por exemplo, o objetivo da solução pode ser “possibilitar a integração de informações provenientes de fontes heterogêneas”. Somente posteriormente será explicado como isso foi realizado."
+        },
+        {
+          "tipo": "p",
+          "texto": "Os requisitos apresentados no template, como R1, R2 e R3, devem surgir desse raciocínio. Cada requisito precisa ter uma origem compreensível. Ao ler R2, por exemplo, o leitor deveria conseguir voltar ao problema ou a algum conhecimento da literatura e entender por que aquele requisito existe."
+        },
+        {
+          "tipo": "p",
+          "texto": "Os critérios de avaliação também devem começar a aparecer nesse momento. Isso cria uma ligação importante entre problema e avaliação. Se a pesquisa afirma que determinada solução deve melhorar a precisão de uma atividade, então posteriormente deve existir alguma evidência relacionada à precisão. O critério não deveria ser criado apenas depois de o artefato estar pronto."
+        }
+      ]
     },
     {
-      "n": 3,
-      "elo": "Requisitos"
+      "titulo": "Ciclo de Design",
+      "blocos": [
+        {
+          "tipo": "p",
+          "texto": "Esta é a parte em que o aluno apresenta como o artefato foi efetivamente construído e evoluiu."
+        },
+        {
+          "tipo": "p",
+          "texto": "O artefato pode ser software, método, processo, modelo, arquitetura, framework, linguagem, instrumento ou outra construção destinada a resolver o problema investigado. Na tradição de Design Science, a construção e a avaliação do artefato são atividades centrais da pesquisa.",
+          "ref": "hevner2004"
+        },
+        {
+          "tipo": "p",
+          "texto": "Entretanto, o texto não deve se transformar em um diário de programação. O interesse científico não está em registrar que determinada API foi implementada na segunda-feira e uma interface na terça-feira. O aluno deve destacar <strong>decisões de design relevantes</strong>."
+        },
+        {
+          "tipo": "p",
+          "texto": "Para cada decisão importante, o texto deveria permitir compreender algo próximo da seguinte lógica: havia determinado problema ou requisito; existiam possíveis maneiras de tratá-lo; uma alternativa foi escolhida por determinada razão; essa escolha foi implementada; posteriormente foram produzidas evidências sobre sua adequação."
+        },
+        {
+          "tipo": "p",
+          "texto": "É justamente aqui que entram as <strong>Learning Iterations</strong>, uma característica importante do modelo utilizado na sua tese."
+        },
+        {
+          "tipo": "p",
+          "texto": "Barcellos et al. propõem organizar estudos empíricos realizados em projetos de DSR como Learning Iterations. A ideia é que os estudos não sejam vistos apenas como avaliações realizadas depois que o artefato está pronto. Eles podem ser usados durante a pesquisa para compreender melhor o problema, fundamentar o artefato, orientar seu desenvolvimento, avaliá-lo ou melhorá-lo.",
+          "ref": "barcellos2022"
+        }
+      ]
     },
     {
-      "n": 4,
-      "elo": "Conhecimento existente"
+      "titulo": "Como preencher cada Learning Iteration",
+      "blocos": [
+        {
+          "tipo": "p",
+          "texto": "Cada Learning Iteration deve começar explicando <strong>por que aquele estudo precisou ser realizado naquele momento da pesquisa</strong>."
+        },
+        {
+          "tipo": "p",
+          "texto": "Esse ponto é fundamental. A dissertação não deve simplesmente dizer: “foi realizado um estudo de caso”. O leitor precisa compreender qual dúvida existente no desenvolvimento da pesquisa levou à realização daquele estudo."
+        },
+        {
+          "tipo": "p",
+          "texto": "Uma boa introdução para uma Learning Iteration normalmente parte do resultado da etapa anterior. O texto pode explicar que determinada decisão de design precisava ser avaliada, que determinado aspecto do problema ainda não estava suficientemente compreendido ou que uma limitação identificada anteriormente exigiu uma nova investigação."
+        },
+        {
+          "tipo": "p",
+          "texto": "Depois disso, deve ser formulada uma questão específica que represente aquilo que o pesquisador deseja aprender. A questão da Learning Iteration não precisa ser necessariamente a questão principal da dissertação. Ela pode ser uma questão intermediária que ajude o pesquisador a tomar determinada decisão."
+        },
+        {
+          "tipo": "p",
+          "texto": "Por exemplo, a lógica pode ser:"
+        },
+        {
+          "tipo": "citacao",
+          "texto": "A primeira versão do artefato dependia da utilização de X. Entretanto, ainda não existiam evidências suficientes de que X seria adequado ao contexto investigado. Dessa forma, foi realizada uma Learning Iteration para investigar se..."
+        },
+        {
+          "tipo": "p",
+          "texto": "Na sequência, o aluno deve explicar o desenho do estudo empírico utilizado para responder à questão. Isso inclui o método escolhido, contexto, participantes ou unidades de análise, procedimentos de coleta e procedimentos de análise. A escolha do método deve ser coerente com aquilo que se pretende aprender."
+        },
+        {
+          "tipo": "p",
+          "texto": "Depois de apresentar os resultados, deve existir uma seção equivalente ao <strong>“What did we learn?”</strong> existente na tese."
+        },
+        {
+          "tipo": "p",
+          "texto": "Essa seção é provavelmente uma das mais importantes de cada Learning Iteration."
+        },
+        {
+          "tipo": "p",
+          "texto": "Nela, o aluno não deve apenas repetir os resultados do estudo. Deve dizer explicitamente <strong>o que aqueles resultados ensinaram à pesquisa</strong>."
+        },
+        {
+          "tipo": "p",
+          "texto": "Se a evidência confirmou uma decisão de design, isso deve ser declarado. Se revelou uma limitação, o texto deve indicar qual. Se produziu um novo requisito, deve ser explicado. Se fez o pesquisador abandonar uma abordagem e procurar outra, essa mudança deve aparecer claramente."
+        },
+        {
+          "tipo": "p",
+          "texto": "É essa ligação que transforma um conjunto de estudos empíricos em um processo coerente de aprendizado. O propósito das Learning Iterations é justamente produzir conhecimento útil para compreender o problema, fundamentar e desenvolver o artefato, avaliá-lo ou refiná-lo.",
+          "ref": "barcellos2022"
+        },
+        {
+          "tipo": "p",
+          "texto": "Idealmente, o final de uma Learning Iteration prepara naturalmente o início da seguinte."
+        },
+        {
+          "tipo": "p",
+          "texto": "A narrativa pode assumir a forma:"
+        },
+        {
+          "tipo": "destaque",
+          "texto": "<strong>“Aprendemos X. Entretanto, o estudo também revelou Y. Para investigar Y, realizamos a próxima Learning Iteration.”</strong>"
+        },
+        {
+          "tipo": "p",
+          "texto": "Essa estrutura aparece de maneira muito forte na sua tese e é algo que eu recomendaria manter no trabalho dos alunos."
+        }
+      ]
     },
     {
-      "n": 5,
-      "elo": "Decisões de design"
+      "titulo": "Ciclo de Rigor",
+      "blocos": [
+        {
+          "tipo": "p",
+          "texto": "No ciclo de rigor, o aluno precisa tornar explícito de onde veio o conhecimento utilizado para construir o artefato."
+        },
+        {
+          "tipo": "p",
+          "texto": "A literatura não deveria aparecer apenas no capítulo de fundamentação teórica. Ela deve influenciar decisões concretas da pesquisa."
+        },
+        {
+          "tipo": "p",
+          "texto": "Se uma teoria levou à criação de um requisito, isso deve ser dito. Se um modelo existente orientou a arquitetura do artefato, essa relação deve aparecer. Se um estudo anterior sugeriu determinado método de avaliação, o texto deve explicar essa influência."
+        },
+        {
+          "tipo": "p",
+          "texto": "O ciclo de rigor conecta as atividades de design à base de conhecimento composta por fundamentos científicos, experiências e conhecimentos já acumulados. Ao mesmo tempo, os resultados produzidos pela pesquisa devem retornar a essa base como novos conhecimentos.",
+          "ref": "hevner2007"
+        },
+        {
+          "tipo": "p",
+          "texto": "Assim, o aluno deveria conseguir responder no texto não apenas <strong>“o que construí?”</strong>, mas também <strong>“em qual conhecimento me apoiei para decidir construí-lo dessa maneira?”</strong>"
+        }
+      ]
     },
     {
-      "n": 6,
-      "elo": "Artefato"
+      "titulo": "Demonstração",
+      "blocos": [
+        {
+          "tipo": "p",
+          "texto": "Depois que o artefato atinge uma versão que permite sua utilização, o aluno precisa mostrar que ele consegue ser aplicado para tratar o problema para o qual foi projetado."
+        },
+        {
+          "tipo": "p",
+          "texto": "A demonstração pode ocorrer por uma prova de conceito, cenário de aplicação, experimento, estudo de caso ou uso em uma organização, dependendo da natureza do trabalho."
+        },
+        {
+          "tipo": "p",
+          "texto": "O ponto principal é demonstrar que o artefato não existe apenas conceitualmente. Ele precisa ser aplicado de alguma maneira que permita observar sua atuação diante do problema."
+        },
+        {
+          "tipo": "p",
+          "texto": "No processo de Peffers et al., a demonstração corresponde justamente ao uso do artefato para mostrar que ele pode contribuir para a solução de uma ou mais instâncias do problema.",
+          "ref": "peffers2007"
+        }
+      ]
     },
     {
-      "n": 7,
-      "elo": "Learning Iterations"
+      "titulo": "Avaliação",
+      "blocos": [
+        {
+          "tipo": "p",
+          "texto": "Na avaliação, o aluno deve retornar aos objetivos e critérios definidos anteriormente."
+        },
+        {
+          "tipo": "p",
+          "texto": "O texto deve explicar claramente <strong>o que está sendo avaliado</strong>, <strong>como será avaliado</strong> e <strong>quais evidências permitirão concluir se o artefato atende ao que foi proposto</strong>."
+        },
+        {
+          "tipo": "p",
+          "texto": "Um erro que deve ser evitado é utilizar apenas afirmações como “os usuários gostaram do sistema”, “a solução funcionou” ou “os resultados foram satisfatórios”. Essas afirmações podem fazer parte das evidências, mas precisam estar relacionadas a critérios previamente definidos."
+        },
+        {
+          "tipo": "p",
+          "texto": "Hevner et al. colocam a avaliação do artefato como elemento essencial de uma pesquisa em Design Science, e Peffers et al. incluem explicitamente uma atividade de avaliação na DSRM.",
+          "ref": "hevner2004"
+        },
+        {
+          "tipo": "p",
+          "texto": "No modelo da tese, a avaliação final também pode ser tratada como uma nova Learning Iteration. Isso é particularmente interessante porque preserva a lógica de aprendizado: a pesquisa não pergunta apenas se o artefato passou ou falhou, mas procura compreender <strong>o que foi aprendido quando o artefato foi aplicado em um contexto mais completo ou realista</strong>."
+        }
+      ]
     },
     {
-      "n": 8,
-      "elo": "Evidências"
+      "titulo": "A seção “What did we learn?”",
+      "blocos": [
+        {
+          "tipo": "p",
+          "texto": "Eu recomendaria pedir aos alunos que <strong>não retirem essa seção</strong>, mesmo que posteriormente você decida traduzir o título para “O que aprendemos?”."
+        },
+        {
+          "tipo": "p",
+          "texto": "Ela força o pesquisador a separar resultado empírico de aprendizado científico."
+        },
+        {
+          "tipo": "p",
+          "texto": "Por exemplo, “quatro dos cinco participantes consideraram a ferramenta útil” é um resultado."
+        },
+        {
+          "tipo": "p",
+          "texto": "Já uma conclusão como “os resultados sugerem que a visualização X é adequada para apoiar a atividade Y, porém sua utilização exige que previamente exista Z” representa um aprendizado que pode influenciar o artefato ou gerar conhecimento reutilizável."
+        },
+        {
+          "tipo": "p",
+          "texto": "É nesse segundo nível que começa a aparecer de forma mais clara a contribuição da pesquisa."
+        }
+      ]
     },
     {
-      "n": 9,
-      "elo": "Aprendizados"
-    },
-    {
-      "n": 10,
-      "elo": "Evolução do artefato"
-    },
-    {
-      "n": 11,
-      "elo": "Avaliação final"
-    },
-    {
-      "n": 12,
-      "elo": "Contribuição"
+      "titulo": "O que o aluno deve conseguir mostrar ao terminar",
+      "blocos": [
+        {
+          "tipo": "p",
+          "texto": "Ao final do preenchimento, a dissertação deve possuir uma narrativa contínua. O leitor deve conseguir compreender de onde surgiu o problema; como o problema originou objetivos e requisitos; qual conhecimento científico influenciou as decisões; como essas decisões resultaram no artefato; quais Learning Iterations foram necessárias durante seu desenvolvimento; o que foi aprendido em cada uma delas; como esses aprendizados alteraram a pesquisa; como o artefato foi demonstrado e avaliado; e qual conhecimento pode ser extraído de todo esse processo."
+        },
+        {
+          "tipo": "p",
+          "texto": "A melhor forma de verificar isso é tentar reconstruir mentalmente a seguinte cadeia:"
+        },
+        {
+          "tipo": "destaque",
+          "texto": "<strong>Problema → objetivos da solução → requisitos → conhecimento existente → decisões de design → artefato → Learning Iterations → evidências → aprendizados → evolução do artefato → avaliação final → contribuição.</strong>"
+        },
+        {
+          "tipo": "p",
+          "texto": "Se algum elo não puder ser explicado, provavelmente existe uma lacuna na escrita ou no próprio desenho da pesquisa."
+        },
+        {
+          "tipo": "p",
+          "texto": "As referências centrais desse guideline são <strong>Hevner et al. (2004)</strong> para os fundamentos da Design Science em Sistemas de Informação, <strong>Hevner (2007)</strong> para os ciclos de Relevância, Design e Rigor, <strong>Peffers et al. (2007)</strong> para as seis atividades da DSRM e <strong>Barcellos et al. (2022)</strong> para a organização dos estudos empíricos como Learning Iterations.",
+          "ref": "hevner2004"
+        },
+        {
+          "tipo": "p",
+          "texto": "Acho que vale a pena colocar <strong>este guideline dentro do próprio projeto LaTeX</strong>, como um arquivo `GUIA-DE-PREENCHIMENTO.pdf` ou como páginas iniciais que o aluno exclui antes de entregar a dissertação. Assim, o ZIP teria simultaneamente o <strong>template preenchível</strong> e o <strong>manual de como preenchê-lo</strong>."
+        }
+      ]
     }
   ],
   "referencias": [
@@ -271,9 +381,5 @@
         }
       ]
     }
-  ],
-  "fechamento": {
-    "titulo": "Como saber se está pronto",
-    "texto": "Tente reconstruir mentalmente a cadeia inteira, do problema à contribuição. Se algum elo não puder ser explicado, provavelmente existe uma lacuna na escrita — ou no próprio desenho da pesquisa."
-  }
+  ]
 }

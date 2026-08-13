@@ -43,5 +43,10 @@ para download na página `/dsr`. Ao trocar o template, troque nos dois lugares e
 confira com `cmp` — a página declara o peso do arquivo, e um peso errado é uma
 promessa quebrada antes do clique.
 
-`fontes/dsr/exemplo_dsr.pdf` **não** é publicado: é tese de terceiros, sem licença de
-redistribuição declarada.
+`public/dsr/modelo_DSR_compilado.pdf` é cópia de `fontes/dsr/exemplo_dsr.pdf`. O nome
+da fonte engana: não é um exemplo de tese, e sim o **template compilado do documento
+que o aluno entrega ao final do curso** — 15 páginas com os campos `[PREENCHA: …]` em
+vermelho. Foi publicado com o nome que descreve o que ele é.
+
+O exemplo de tese escrita com DSR é outra coisa: a tese do professor, que a página
+linka no endereço da UFES, sem hospedar cópia.

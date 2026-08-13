@@ -52,7 +52,10 @@ jobs:
           # O template DSR é o único binário que a página promete para download.
           test -f dist/dsr/modelo_DSR.zip || { echo "faltou o template DSR"; exit 1; }
           cmp -s dist/dsr/modelo_DSR.zip fontes/dsr/modelo_DSR.zip \
-            || { echo "o template publicado difere do original em fontes/"; exit 1; }
+            || { echo "o fonte do template difere do original em fontes/"; exit 1; }
+          test -f dist/dsr/modelo_DSR_compilado.pdf || { echo "faltou o template compilado"; exit 1; }
+          cmp -s dist/dsr/modelo_DSR_compilado.pdf fontes/dsr/exemplo_dsr.pdf \
+            || { echo "o template compilado difere do original em fontes/"; exit 1; }
           grep -q 'href="/aula-mestrado/' dist/index.html \
             || { echo "a home não usa o base /aula-mestrado"; exit 1; }
 
