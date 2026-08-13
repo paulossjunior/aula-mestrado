@@ -26,11 +26,7 @@
       },
       {
         "tipo": "p",
-        "texto": "De maneira simplificada, o leitor deve conseguir reconstruir uma trajetória semelhante a:"
-      },
-      {
-        "tipo": "destaque",
-        "texto": "<strong>Problema → necessidade de conhecimento → objetivos da solução → requisitos → conhecimento científico → decisões de design → artefato → estudos empíricos → evidências → aprendizados → evolução do artefato → avaliação → contribuição científica.</strong>"
+        "texto": "De maneira simplificada, o leitor deve conseguir reconstruir a trajetória da pesquisa — do problema à contribuição científica."
       },
       {
         "tipo": "p",
@@ -39,20 +35,20 @@
     ]
   },
   "template": {
-    "titulo": "O template da entrega",
-    "texto": "Este é o documento que você entrega ao final do curso. O texto metodológico permanece em preto e instruções como <em>[PREENCHA: explique de onde surgiu o problema…]</em> aparecem em vermelho. Quando terminar, basta substituir esses trechos pelo conteúdo definitivo.",
+    "titulo": "O modelo da dissertação",
+    "texto": "Estes arquivos são o <strong>modelo</strong>, não a entrega. Baixe o fonte em LaTeX, compile e substitua cada trecho em vermelho — <em>[PREENCHA: explique de onde surgiu o problema…]</em> — pelo conteúdo da sua pesquisa. O texto em preto é metodológico e permanece. O que você entrega ao final do curso é este documento preenchido.",
     "arquivos": [
       {
         "nome": "modelo_DSR_compilado.pdf",
         "href": "/dsr/modelo_DSR_compilado.pdf",
         "peso": "166 KB",
-        "descricao": "O template do documento a entregar, já compilado — 15 páginas, com os trechos a substituir em vermelho"
+        "descricao": "O modelo já compilado — 15 páginas, para ver como fica antes de começar"
       },
       {
         "nome": "modelo_DSR.zip",
         "href": "/dsr/modelo_DSR.zip",
         "peso": "347 KB",
-        "descricao": "O fonte em LaTeX desse PDF, para você preencher e compilar"
+        "descricao": "O fonte em LaTeX, que é o que você preenche e compila"
       }
     ],
     "exemplo": {
@@ -1520,23 +1516,23 @@
   },
   "glossario": {
     "titulo": "Os artefatos da tese citada",
-    "texto": "Os exemplos vêm de uma tese sobre integração de dados em desenvolvimento de software. Estes são os nomes que aparecem nos trechos citados.",
+    "texto": "Consulta rápida dos nomes que aparecem nos trechos citados.",
     "itens": [
       {
         "nome": "Immigrant",
-        "texto": "A abordagem completa, composta pelos três artefatos abaixo. Considera as necessidades de informação da organização e os dados disponíveis para entregar integração com significado."
+        "texto": "A abordagem completa, composta pelos três artefatos abaixo."
       },
       {
         "nome": "California",
-        "texto": "Serve para identificar quais informações a organização precisa. Mostrou-se útil, mas exige conhecimento e tempo para ser aplicado — limitação que provocou a iteração seguinte."
+        "texto": "Identifica quais informações a organização precisa."
       },
       {
         "nome": "Zeppelin",
-        "texto": "Instrumento de diagnóstico das práticas de engenharia de software contínua da organização, criado para reduzir o custo de aplicação do California."
+        "texto": "Diagnostica as práticas de engenharia de software contínua da organização."
       },
       {
         "nome": "The Band",
-        "texto": "A solução de integração de dados, baseada em rede de ontologias e em Federated Information System, que entrega os dados integrados."
+        "texto": "Entrega os dados integrados, com base em rede de ontologias."
       }
     ]
   },
@@ -1576,5 +1572,36 @@
         "exemplo": "“Ontologies can be used to deal with these issues in semantic integration initiatives.”"
       }
     ]
+  },
+  "tese": {
+    "rotulo": "A pesquisa que serve de exemplo",
+    "titulo": "De onde vêm os exemplos deste guia",
+    "obra": "From Continuous Software Engineering Reference Ontologies to the Integration of Data for Data-Driven Software Development",
+    "autoria": "Paulo Sérgio dos Santos Júnior · Tese de doutorado, PPGI/UFES, 2023",
+    "href": "http://www.inf.ufes.br/~monalessa/wp-content/papercite-data/pdf/santosjr_thesis_2023.pdf",
+    "blocos": [
+      {
+        "rotulo": "O problema",
+        "texto": "Organizações de software usam aplicações diferentes para apoiar aspectos diferentes do desenvolvimento, mas muitas não usam os dados presentes nelas para apoiar decisões. Uma das razões é a dificuldade de acessar, integrar, analisar e visualizar dados de aplicações heterogêneas — dificuldade que produz conflitos semânticos quando o mesmo item de informação recebe interpretações divergentes."
+      },
+      {
+        "rotulo": "A proposta",
+        "texto": "Usar redes de ontologias para estabelecer uma arquitetura de integração e atribuir semântica aos dados das aplicações. E mais: defender que os dados integrados estejam alinhados às necessidades de informação da organização — não basta integrar tudo o que é tecnicamente possível."
+      },
+      {
+        "rotulo": "O artefato",
+        "texto": "Immigrant, uma abordagem composta por três partes. California identifica quais informações a organização precisa. Zeppelin diagnostica as práticas de engenharia de software contínua que ela adota. The Band entrega os dados integrados, com base em rede de ontologias e em Federated Information System."
+      },
+      {
+        "rotulo": "Como foi construído",
+        "texto": "Quatro Learning Iterations. A primeira produziu a versão inicial do Immigrant e revelou a necessidade de compreender melhor as necessidades de informação. Isso levou ao California, cuja aplicação mostrou benefícios mas exigia conhecimento e tempo — limitação que provocou o Zeppelin. Em paralelo, a cobertura de outros processos levou ao The Band."
+      },
+      {
+        "rotulo": "O que a avaliação mostrou",
+        "texto": "A quarta iteração aplicou a abordagem inteira numa organização real. O resultado foi declarado como evidência preliminar de utilidade e viabilidade — e não como demonstração universal, porque foi uma organização só, de perfil específico, com o próprio autor envolvido no estudo."
+      }
+    ],
+    "ligacao": "É essa pesquisa que fornece todos os trechos citados nas seções seguintes. Quando o guia diz «na tese», é dela que se trata: o exemplo não é hipotético, e você pode abrir o documento e conferir cada passagem no contexto.",
+    "ressalva": "Resumo escrito a partir dos trechos citados neste guideline."
   }
 }

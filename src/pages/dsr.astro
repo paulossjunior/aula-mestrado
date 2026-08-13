@@ -25,7 +25,7 @@ const figuras: Record<string, { src: string; legenda: string }> = {
   },
 };
 
-const { abertura, template, secoes, referencias, trajetoria, glossario } = dados as {
+const { abertura, template, secoes, referencias, trajetoria, glossario, tese } = dados as {
   abertura: { titulo: string; tituloPagina: string; descricao: string; intro: Bloco[] };
   template: {
     titulo: string;
@@ -39,6 +39,10 @@ const { abertura, template, secoes, referencias, trajetoria, glossario } = dados
   cadeiaLI: { titulo: string; legenda: string };
   construcaoProblema: { titulo: string; legenda: string };
   glossario: { titulo: string; texto: string; itens: { nome: string; texto: string }[] };
+  tese: {
+    rotulo: string; titulo: string; obra: string; autoria: string; href: string;
+    blocos: { rotulo: string; texto: string }[]; ligacao: string; ressalva: string;
+  };
 };
 
 // Um bloco pode citar a obra que o fundamenta. Se o id não existir, o build para —
@@ -105,22 +109,7 @@ const tituloSecao =
                 </div>
               </div>
             ) : b.tipo === "destaque" ? (
-              <>
-                <p class="om-dest" set:html={b.texto} />
-                {b.texto?.includes("contribuição científica") && (
-                  <figure class="om-fig">
-                    <div class="om-scroll">
-                      <img
-                        src={rota("/uploads/dsr-trajetoria.svg")}
-                        alt={trajetoria.legenda}
-                        style="display: block; width: 100%; min-width: 720px; height: auto"
-                        loading="lazy"
-                      />
-                    </div>
-                    <figcaption>{trajetoria.legenda}</figcaption>
-                  </figure>
-                )}
-              </>
+              <p class="om-dest" set:html={b.texto} />
             ) : b.tipo === "link" ? (
               <p class="om-med" style="margin: -8px 0 20px; font-size: 14px">
                 <a href={`#ref-${b.ref}`}>
@@ -137,6 +126,18 @@ const tituloSecao =
           )
         }
         </div>
+          <figure class="om-fig">
+            <div class="om-scroll">
+              <img
+                src={rota("/uploads/dsr-trajetoria.svg")}
+                alt={trajetoria.legenda}
+                style="display: block; width: 100%; min-width: 720px; height: auto"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>{trajetoria.legenda}</figcaption>
+          </figure>
+
           <aside class="om-abre-lado">
             <div id="template" style="border: 2px solid var(--color-text); padding: 20px 22px; scroll-margin-top: 8px">
               <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.6">
@@ -197,6 +198,46 @@ const tituloSecao =
               </dl>
             </div>
           </aside>
+      </div>
+    </section>
+
+    <section style="border-top: 2px solid var(--color-text); background: var(--color-neutral-100)">
+      <div class="om-pad om-sec" style="max-width: 1200px; margin: 0 auto; padding: 48px 32px">
+        <div
+          style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-accent-700)"
+        >
+          {tese.rotulo}
+        </div>
+        <h2
+          style="font-family: var(--font-heading); font-weight: 900; font-size: clamp(24px, 4vw, 34px); letter-spacing: -0.025em; margin: 10px 0 0; max-width: 24ch; text-wrap: balance"
+        >
+          {tese.titulo}
+        </h2>
+
+        <div class="om-tese">
+          {
+            tese.blocos.map((b) => (
+              <div>
+                <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-accent-700); border-top: 2px solid var(--color-text); padding-top: 10px">
+                  {b.rotulo}
+                </div>
+                <p style="font-size: 15px; line-height: 1.62; margin: 8px 0 0; text-wrap: pretty">{b.texto}</p>
+              </div>
+            ))
+          }
+        </div>
+
+        <p style="font-size: 16px; line-height: 1.65; max-width: 66ch; margin: 30px 0 0; text-wrap: pretty">
+          {tese.ligacao}
+        </p>
+        <a
+          href={tese.href}
+          style="display: inline-block; font-family: var(--font-heading); font-weight: 700; font-size: 15px; line-height: 1.35; margin: 14px 0 0; max-width: 62ch"
+        >
+          {tese.obra}
+        </a>
+        <p style="font-size: 13px; margin: 4px 0 0; opacity: 0.7">{tese.autoria}</p>
+        <p style="font-size: 12px; margin: 12px 0 0; opacity: 0.6">{tese.ressalva}</p>
       </div>
     </section>
 
@@ -352,6 +393,26 @@ const tituloSecao =
         grid-template-columns: minmax(0, 1fr) 21em;
         gap: 0 56px;
         align-items: start;
+      }
+    }
+
+    /* O resumo da tese em colunas: cinco blocos curtos lado a lado ocupam a
+       página, enquanto empilhados dariam uma coluna longa e estreita. */
+    .om-tese {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 22px;
+      margin: 28px 0 0;
+    }
+    @media (min-width: 861px) {
+      .om-tese {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 26px 40px;
+      }
+    }
+    @media (min-width: 1180px) {
+      .om-tese {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
       }
     }
 
