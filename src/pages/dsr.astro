@@ -126,7 +126,52 @@ const tituloSecao =
           )
         }
         </div>
-          <aside class="om-abre-lado">
+          </div>
+
+                    <h3
+              style="font-family: var(--font-heading); font-weight: 800; font-size: clamp(20px, 3vw, 26px); letter-spacing: -0.02em; margin: 34px 0 0; max-width: 30ch; text-wrap: balance"
+            >
+              {trajetoria.titulo}
+            </h3>
+            <p style="font-size: 16px; line-height: 1.65; max-width: 66ch; margin: 12px 0 0; text-wrap: pretty">
+              {trajetoria.intro}
+            </p>
+
+            <div class="om-traj">
+              <figure class="om-fig" style="margin: 0">
+                <div class="om-scroll">
+                  <img
+                    src={rota("/uploads/dsr-trajetoria.svg")}
+                    alt={trajetoria.legenda}
+                    style="display: block; width: 100%; min-width: 560px; height: auto"
+                    loading="lazy"
+                  />
+                </div>
+              </figure>
+
+              <ol style="list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; align-content: start">
+                {
+                  trajetoria.elos.map((e) => (
+                    <li style="display: grid; grid-template-columns: 30px minmax(0, 1fr); gap: 10px; align-items: baseline">
+                      <span style="font-family: var(--font-heading); font-weight: 800; font-size: 13px; color: var(--color-accent)">
+                        {String(e.n).padStart(2, "0")}
+                      </span>
+                      <div style="min-width: 0">
+                        <div style="font-family: var(--font-heading); font-weight: 800; font-size: 15px; line-height: 1.25">
+                          {e.nome}
+                        </div>
+                        <p style="font-size: 14px; line-height: 1.55; margin: 3px 0 0; text-wrap: pretty">
+                          {e.explicacao}
+                        </p>
+                      </div>
+                    </li>
+                  ))
+                }
+              </ol>
+            </div>
+
+
+        <aside class="om-abre-lado">
             <div id="template" style="border: 2px solid var(--color-text); padding: 20px 22px; scroll-margin-top: 8px">
               <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.6">
                 {template.titulo}
@@ -227,47 +272,6 @@ const tituloSecao =
         <p style="font-size: 13px; margin: 4px 0 0; opacity: 0.7">{tese.autoria}</p>
         <p style="font-size: 12px; margin: 12px 0 0; opacity: 0.6">{tese.ressalva}</p>
 
-        <h3
-          style="font-family: var(--font-heading); font-weight: 800; font-size: clamp(20px, 3vw, 26px); letter-spacing: -0.02em; margin: 44px 0 0; max-width: 30ch; text-wrap: balance"
-        >
-          {trajetoria.titulo}
-        </h3>
-        <p style="font-size: 16px; line-height: 1.65; max-width: 66ch; margin: 12px 0 0; text-wrap: pretty">
-          {trajetoria.intro}
-        </p>
-
-        <div class="om-traj">
-          <figure class="om-fig" style="margin: 0">
-            <div class="om-scroll">
-              <img
-                src={rota("/uploads/dsr-trajetoria.svg")}
-                alt={trajetoria.legenda}
-                style="display: block; width: 100%; min-width: 560px; height: auto"
-                loading="lazy"
-              />
-            </div>
-          </figure>
-
-          <ol style="list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; align-content: start">
-            {
-              trajetoria.elos.map((e) => (
-                <li style="display: grid; grid-template-columns: 30px minmax(0, 1fr); gap: 10px; align-items: baseline">
-                  <span style="font-family: var(--font-heading); font-weight: 800; font-size: 13px; color: var(--color-accent)">
-                    {String(e.n).padStart(2, "0")}
-                  </span>
-                  <div style="min-width: 0">
-                    <div style="font-family: var(--font-heading); font-weight: 800; font-size: 15px; line-height: 1.25">
-                      {e.nome}
-                    </div>
-                    <p style="font-size: 14px; line-height: 1.55; margin: 3px 0 0; text-wrap: pretty">
-                      {e.explicacao}
-                    </p>
-                  </div>
-                </li>
-              ))
-            }
-          </ol>
-        </div>
       </div>
     </section>
 
@@ -344,7 +348,7 @@ const tituloSecao =
                   )}
 
                   {figuras[s.titulo] && (
-                    <figure class="om-fig">
+          <figure class="om-fig">
                       <div class="om-scroll">
                         <img
                           src={rota(figuras[s.titulo].src)}
