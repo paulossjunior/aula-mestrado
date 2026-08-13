@@ -1376,7 +1376,7 @@
   "trajetoria": {
     "titulo": "A trajetória que o leitor deve conseguir reconstruir",
     "legenda": "Os treze elos da trajetória, distribuídos pelos três ciclos de Hevner. O laço de evidências a decisões de design é o que faz a pesquisa evoluir: cada estudo produz aprendizado, e o aprendizado muda o que vem depois.",
-    "nota": "A trajetória não precisa ser linear: a pesquisa evolui à medida que novos conhecimentos são produzidos.",
+    "nota": "A trajetória não precisa ser linear.",
     "faixas": [
       {
         "id": "relevancia",
@@ -1403,67 +1403,80 @@
       {
         "n": 1,
         "nome": "Problema",
-        "faixa": "relevancia"
+        "faixa": "relevancia",
+        "explicacao": "O que está errado ou pode ser melhorado no mundo real, com evidência de que o problema existe e de quem ele afeta."
       },
       {
         "n": 2,
         "nome": "Necessidade de conhecimento",
-        "faixa": "relevancia"
+        "faixa": "relevancia",
+        "explicacao": "O que ainda falta saber para poder agir. É daqui que nasce cada estudo empírico da pesquisa."
       },
       {
         "n": 3,
         "nome": "Objetivos da solução",
-        "faixa": "relevancia"
+        "faixa": "relevancia",
+        "explicacao": "O que uma solução adequada precisa possibilitar — dito antes de escolher qualquer tecnologia."
       },
       {
         "n": 4,
         "nome": "Requisitos",
-        "faixa": "relevancia"
+        "faixa": "relevancia",
+        "explicacao": "O que o artefato precisa ter. Ao ler um requisito, deve ser possível voltar ao problema ou à literatura e entender por que ele existe."
       },
       {
         "n": 5,
         "nome": "Conhecimento científico",
-        "faixa": "rigor"
+        "faixa": "rigor",
+        "explicacao": "As teorias, modelos e estudos que orientam as decisões. Não é o capítulo de fundamentação: é o que de fato mudou uma escolha."
       },
       {
         "n": 6,
         "nome": "Decisões de design",
-        "faixa": "design"
+        "faixa": "design",
+        "explicacao": "A alternativa escolhida entre as possíveis, e a razão da escolha."
       },
       {
         "n": 7,
         "nome": "Artefato",
-        "faixa": "design"
+        "faixa": "design",
+        "explicacao": "O que foi construído: software, método, processo, modelo, arquitetura, framework, linguagem ou instrumento."
       },
       {
         "n": 8,
         "nome": "Estudos empíricos",
-        "faixa": "design"
+        "faixa": "design",
+        "explicacao": "As Learning Iterations. Cada uma existe porque havia algo a aprender naquele ponto da pesquisa."
       },
       {
         "n": 9,
         "nome": "Evidências",
-        "faixa": "design"
+        "faixa": "design",
+        "explicacao": "O que os estudos mostraram — os resultados, ainda sem interpretação."
       },
       {
         "n": 10,
         "nome": "Aprendizados",
-        "faixa": "design"
+        "faixa": "design",
+        "explicacao": "O que aquelas evidências ensinaram à pesquisa. É aqui que resultado empírico vira conhecimento."
       },
       {
         "n": 11,
         "nome": "Evolução do artefato",
-        "faixa": "design"
+        "faixa": "design",
+        "explicacao": "O que mudou no artefato por causa do que se aprendeu. Sem isso, o estudo não teve consequência."
       },
       {
         "n": 12,
         "nome": "Avaliação",
-        "faixa": "design"
+        "faixa": "design",
+        "explicacao": "As evidências confrontadas com os critérios definidos lá no começo — não com a impressão de quem usou."
       },
       {
         "n": 13,
         "nome": "Contribuição científica",
-        "faixa": "saida"
+        "faixa": "saida",
+        "explicacao": "O conhecimento que fica. Se o software deixasse de existir amanhã, o que ainda serviria a outros pesquisadores?"
       }
     ],
     "lacos": [
@@ -1480,7 +1493,8 @@
     ],
     "colunaFixa": {
       "5": 0
-    }
+    },
+    "intro": "A trajetória tem treze elos, distribuídos pelos três ciclos de Hevner. Ela não precisa ser percorrida em linha reta: o laço em vermelho é o que faz a pesquisa evoluir — o aprendizado muda a decisão de design e revela o que ainda falta aprender."
   },
   "cadeiaLI": {
     "titulo": "A cadeia de aprendizado: as quatro Learning Iterations da tese",

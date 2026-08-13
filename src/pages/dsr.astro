@@ -35,7 +35,7 @@ const { abertura, template, secoes, referencias, trajetoria, glossario, tese } =
   };
   secoes: { titulo: string; blocos: Bloco[] }[];
   referencias: { id: string; autores: string; ano: string; titulo: string; papel: string; enderecos: { rotulo: string; href: string }[] }[];
-  trajetoria: { titulo: string; legenda: string };
+  trajetoria: { titulo: string; legenda: string; intro: string; elos: { n: number; nome: string; explicacao: string }[] };
   cadeiaLI: { titulo: string; legenda: string };
   construcaoProblema: { titulo: string; legenda: string };
   glossario: { titulo: string; texto: string; itens: { nome: string; texto: string }[] };
@@ -126,18 +126,6 @@ const tituloSecao =
           )
         }
         </div>
-          <figure class="om-fig">
-            <div class="om-scroll">
-              <img
-                src={rota("/uploads/dsr-trajetoria.svg")}
-                alt={trajetoria.legenda}
-                style="display: block; width: 100%; min-width: 720px; height: auto"
-                loading="lazy"
-              />
-            </div>
-            <figcaption>{trajetoria.legenda}</figcaption>
-          </figure>
-
           <aside class="om-abre-lado">
             <div id="template" style="border: 2px solid var(--color-text); padding: 20px 22px; scroll-margin-top: 8px">
               <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.6">
@@ -238,6 +226,48 @@ const tituloSecao =
         </a>
         <p style="font-size: 13px; margin: 4px 0 0; opacity: 0.7">{tese.autoria}</p>
         <p style="font-size: 12px; margin: 12px 0 0; opacity: 0.6">{tese.ressalva}</p>
+
+        <h3
+          style="font-family: var(--font-heading); font-weight: 800; font-size: clamp(20px, 3vw, 26px); letter-spacing: -0.02em; margin: 44px 0 0; max-width: 30ch; text-wrap: balance"
+        >
+          {trajetoria.titulo}
+        </h3>
+        <p style="font-size: 16px; line-height: 1.65; max-width: 66ch; margin: 12px 0 0; text-wrap: pretty">
+          {trajetoria.intro}
+        </p>
+
+        <div class="om-traj">
+          <figure class="om-fig" style="margin: 0">
+            <div class="om-scroll">
+              <img
+                src={rota("/uploads/dsr-trajetoria.svg")}
+                alt={trajetoria.legenda}
+                style="display: block; width: 100%; min-width: 560px; height: auto"
+                loading="lazy"
+              />
+            </div>
+          </figure>
+
+          <ol style="list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; align-content: start">
+            {
+              trajetoria.elos.map((e) => (
+                <li style="display: grid; grid-template-columns: 30px minmax(0, 1fr); gap: 10px; align-items: baseline">
+                  <span style="font-family: var(--font-heading); font-weight: 800; font-size: 13px; color: var(--color-accent)">
+                    {String(e.n).padStart(2, "0")}
+                  </span>
+                  <div style="min-width: 0">
+                    <div style="font-family: var(--font-heading); font-weight: 800; font-size: 15px; line-height: 1.25">
+                      {e.nome}
+                    </div>
+                    <p style="font-size: 14px; line-height: 1.55; margin: 3px 0 0; text-wrap: pretty">
+                      {e.explicacao}
+                    </p>
+                  </div>
+                </li>
+              ))
+            }
+          </ol>
+        </div>
       </div>
     </section>
 
@@ -392,6 +422,22 @@ const tituloSecao =
       .om-abre {
         grid-template-columns: minmax(0, 1fr) 21em;
         gap: 0 56px;
+        align-items: start;
+      }
+    }
+
+    /* A figura ao lado da lista que explica cada etapa: em tela larga leem-se
+       juntas, no celular a figura vem primeiro e a lista embaixo. */
+    .om-traj {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 26px;
+      margin: 26px 0 0;
+    }
+    @media (min-width: 1180px) {
+      .om-traj {
+        grid-template-columns: minmax(0, 620px) minmax(0, 1fr);
+        gap: 0 44px;
         align-items: start;
       }
     }

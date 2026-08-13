@@ -1,83 +1,80 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 998 764" width="998" height="764" role="img" aria-label="Os treze elos da trajetória, distribuídos pelos três ciclos de Hevner. O laço de evidências a decisões de design é o que faz a pesquisa evoluir: cada estudo produz aprendizado, e o aprendizado muda o que vem depois.">
-<rect width="998" height="764" fill="#f3f2f2"/>
-<text x="30" y="52" font-family="Archivo, system-ui, sans-serif" font-size="17" font-weight="900" fill="#201e1d">A trajetória que o leitor deve conseguir reconstruir</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 610 864" width="610" height="864" role="img" aria-label="Os treze elos da trajetória, distribuídos pelos três ciclos de Hevner. O laço de evidências a decisões de design é o que faz a pesquisa evoluir: cada estudo produz aprendizado, e o aprendizado muda o que vem depois.">
 <defs>
-    <marker id="ponta" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-      <path d="M 0 0 L 10 5 L 0 10 z" fill="#201e1d"/>
-    </marker>
-    <marker id="ponta-acento" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-      <path d="M 0 0 L 10 5 L 0 10 z" fill="#ec3013"/>
-    </marker>
-  </defs>
-<line x1="30" y1="64" x2="968" y2="64" stroke="#bab6b6" stroke-width="2"/>
-<text x="30" y="88" font-family="Archivo, system-ui, sans-serif" font-size="14" font-weight="800" fill="#201e1d">Relevance Cycle</text>
-<text x="30" y="108" font-family="Archivo, system-ui, sans-serif" font-size="12" fill="#201e1d" opacity="0.6">O ambiente onde o problema existe</text>
-<line x1="30" y1="186" x2="968" y2="186" stroke="#bab6b6" stroke-width="2"/>
-<text x="30" y="210" font-family="Archivo, system-ui, sans-serif" font-size="14" font-weight="800" fill="#201e1d">Rigor Cycle · entrada</text>
-<text x="30" y="230" font-family="Archivo, system-ui, sans-serif" font-size="12" fill="#201e1d" opacity="0.6">O que a base de conhecimento oferece</text>
-<line x1="30" y1="308" x2="968" y2="308" stroke="#bab6b6" stroke-width="2"/>
-<text x="30" y="332" font-family="Archivo, system-ui, sans-serif" font-size="14" font-weight="800" fill="#201e1d">Design Cycle</text>
-<text x="30" y="352" font-family="Archivo, system-ui, sans-serif" font-size="12" fill="#201e1d" opacity="0.6">Construir, estudar, aprender, evoluir</text>
-<line x1="30" y1="526" x2="968" y2="526" stroke="#bab6b6" stroke-width="2"/>
-<text x="30" y="550" font-family="Archivo, system-ui, sans-serif" font-size="14" font-weight="800" fill="#201e1d">Rigor Cycle · saída</text>
-<text x="30" y="570" font-family="Archivo, system-ui, sans-serif" font-size="12" fill="#201e1d" opacity="0.6">O que volta para a base de conhecimento</text>
-<path d="M 374 115 L 398 115" stroke="#201e1d" stroke-width="2" fill="none" marker-end="url(#ponta)"/>
-<path d="M 572 115 L 596 115" stroke="#201e1d" stroke-width="2" fill="none" marker-end="url(#ponta)"/>
-<path d="M 770 115 L 794 115" stroke="#201e1d" stroke-width="2" fill="none" marker-end="url(#ponta)"/>
-<path d="M 884 146 L 884 173 L 290 173 L 290 200" stroke="#201e1d" stroke-width="2" fill="none" marker-end="url(#ponta)"/>
-<path d="M 290 268 L 290 295 L 290 295 L 290 322" stroke="#201e1d" stroke-width="2" fill="none" marker-end="url(#ponta)"/>
-<path d="M 374 359 L 398 359" stroke="#201e1d" stroke-width="2" fill="none" marker-end="url(#ponta)"/>
-<path d="M 572 359 L 596 359" stroke="#201e1d" stroke-width="2" fill="none" marker-end="url(#ponta)"/>
-<path d="M 770 359 L 794 359" stroke="#201e1d" stroke-width="2" fill="none" marker-end="url(#ponta)"/>
-<path d="M 884 390 L 884 404 L 290 404 L 290 418" stroke="#201e1d" stroke-width="2" fill="none" marker-end="url(#ponta)"/>
-<path d="M 374 455 L 398 455" stroke="#201e1d" stroke-width="2" fill="none" marker-end="url(#ponta)"/>
-<path d="M 572 455 L 596 455" stroke="#201e1d" stroke-width="2" fill="none" marker-end="url(#ponta)"/>
-<path d="M 686 486 L 686 513 L 290 513 L 290 540" stroke="#201e1d" stroke-width="2" fill="none" marker-end="url(#ponta)"/>
-<path d="M 206 455 L 190 455 L 190 408 L 290 408 L 290 396" stroke="#ec3013" stroke-width="2" fill="none" stroke-dasharray="5 4" marker-end="url(#ponta-acento)"/>
-<path d="M 206 455 L 174 455 L 174 164 L 488 164 L 488 152" stroke="#ec3013" stroke-width="2" fill="none" stroke-dasharray="5 4" marker-end="url(#ponta-acento)"/>
-<rect x="206" y="84" width="168" height="62" fill="#f3f2f2" stroke="#201e1d" stroke-width="2"/>
-<text x="218" y="104" font-family="Archivo, system-ui, sans-serif" font-size="12" font-weight="800" fill="#ec3013">01</text>
-<text x="218" y="122" font-family="Archivo, system-ui, sans-serif" font-size="13" font-weight="700" fill="#201e1d">Problema</text>
-<rect x="404" y="84" width="168" height="62" fill="#f3f2f2" stroke="#201e1d" stroke-width="2"/>
-<text x="416" y="104" font-family="Archivo, system-ui, sans-serif" font-size="12" font-weight="800" fill="#ec3013">02</text>
-<text x="416" y="122" font-family="Archivo, system-ui, sans-serif" font-size="13" font-weight="700" fill="#201e1d">Necessidade de</text>
-<text x="416" y="137" font-family="Archivo, system-ui, sans-serif" font-size="13" font-weight="700" fill="#201e1d">conhecimento</text>
-<rect x="602" y="84" width="168" height="62" fill="#f3f2f2" stroke="#201e1d" stroke-width="2"/>
-<text x="614" y="104" font-family="Archivo, system-ui, sans-serif" font-size="12" font-weight="800" fill="#ec3013">03</text>
-<text x="614" y="122" font-family="Archivo, system-ui, sans-serif" font-size="13" font-weight="700" fill="#201e1d">Objetivos da solução</text>
-<rect x="800" y="84" width="168" height="62" fill="#f3f2f2" stroke="#201e1d" stroke-width="2"/>
-<text x="812" y="104" font-family="Archivo, system-ui, sans-serif" font-size="12" font-weight="800" fill="#ec3013">04</text>
-<text x="812" y="122" font-family="Archivo, system-ui, sans-serif" font-size="13" font-weight="700" fill="#201e1d">Requisitos</text>
-<rect x="206" y="206" width="168" height="62" fill="#f3f2f2" stroke="#201e1d" stroke-width="2"/>
-<text x="218" y="226" font-family="Archivo, system-ui, sans-serif" font-size="12" font-weight="800" fill="#ec3013">05</text>
-<text x="218" y="244" font-family="Archivo, system-ui, sans-serif" font-size="13" font-weight="700" fill="#201e1d">Conhecimento</text>
-<text x="218" y="259" font-family="Archivo, system-ui, sans-serif" font-size="13" font-weight="700" fill="#201e1d">científico</text>
-<rect x="206" y="328" width="168" height="62" fill="#f3f2f2" stroke="#201e1d" stroke-width="2"/>
-<text x="218" y="348" font-family="Archivo, system-ui, sans-serif" font-size="12" font-weight="800" fill="#ec3013">06</text>
-<text x="218" y="366" font-family="Archivo, system-ui, sans-serif" font-size="13" font-weight="700" fill="#201e1d">Decisões de design</text>
-<rect x="404" y="328" width="168" height="62" fill="#f3f2f2" stroke="#201e1d" stroke-width="2"/>
-<text x="416" y="348" font-family="Archivo, system-ui, sans-serif" font-size="12" font-weight="800" fill="#ec3013">07</text>
-<text x="416" y="366" font-family="Archivo, system-ui, sans-serif" font-size="13" font-weight="700" fill="#201e1d">Artefato</text>
-<rect x="602" y="328" width="168" height="62" fill="#f3f2f2" stroke="#201e1d" stroke-width="2"/>
-<text x="614" y="348" font-family="Archivo, system-ui, sans-serif" font-size="12" font-weight="800" fill="#ec3013">08</text>
-<text x="614" y="366" font-family="Archivo, system-ui, sans-serif" font-size="13" font-weight="700" fill="#201e1d">Estudos empíricos</text>
-<rect x="800" y="328" width="168" height="62" fill="#f3f2f2" stroke="#201e1d" stroke-width="2"/>
-<text x="812" y="348" font-family="Archivo, system-ui, sans-serif" font-size="12" font-weight="800" fill="#ec3013">09</text>
-<text x="812" y="366" font-family="Archivo, system-ui, sans-serif" font-size="13" font-weight="700" fill="#201e1d">Evidências</text>
-<rect x="206" y="424" width="168" height="62" fill="#f3f2f2" stroke="#201e1d" stroke-width="2"/>
-<text x="218" y="444" font-family="Archivo, system-ui, sans-serif" font-size="12" font-weight="800" fill="#ec3013">10</text>
-<text x="218" y="462" font-family="Archivo, system-ui, sans-serif" font-size="13" font-weight="700" fill="#201e1d">Aprendizados</text>
-<rect x="404" y="424" width="168" height="62" fill="#f3f2f2" stroke="#201e1d" stroke-width="2"/>
-<text x="416" y="444" font-family="Archivo, system-ui, sans-serif" font-size="12" font-weight="800" fill="#ec3013">11</text>
-<text x="416" y="462" font-family="Archivo, system-ui, sans-serif" font-size="13" font-weight="700" fill="#201e1d">Evolução do artefato</text>
-<rect x="602" y="424" width="168" height="62" fill="#f3f2f2" stroke="#201e1d" stroke-width="2"/>
-<text x="614" y="444" font-family="Archivo, system-ui, sans-serif" font-size="12" font-weight="800" fill="#ec3013">12</text>
-<text x="614" y="462" font-family="Archivo, system-ui, sans-serif" font-size="13" font-weight="700" fill="#201e1d">Avaliação</text>
-<rect x="206" y="546" width="168" height="62" fill="#f3f2f2" stroke="#201e1d" stroke-width="2"/>
-<text x="218" y="566" font-family="Archivo, system-ui, sans-serif" font-size="12" font-weight="800" fill="#ec3013">13</text>
-<text x="218" y="584" font-family="Archivo, system-ui, sans-serif" font-size="13" font-weight="700" fill="#201e1d">Contribuição</text>
-<text x="218" y="599" font-family="Archivo, system-ui, sans-serif" font-size="13" font-weight="700" fill="#201e1d">científica</text>
-<line x1="30" y1="702" x2="56" y2="702" stroke="#ec3013" stroke-width="2" stroke-dasharray="5 4"/>
-<text x="64" y="706" font-family="Archivo, system-ui, sans-serif" font-size="12" font-weight="700" fill="#ec3013">o aprendizado muda a decisão · e revela o que ainda falta aprender</text>
-<text x="30" y="730" font-family="Archivo, system-ui, sans-serif" font-size="12" fill="#201e1d" opacity="0.7">A trajetória não precisa ser linear: a pesquisa evolui à medida que novos conhecimentos são produzidos.</text>
+  <marker id="ponta" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M 0 0 L 10 5 L 0 10 z" fill="#201e1d"/>
+  </marker>
+  <marker id="ponta-acento" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M 0 0 L 10 5 L 0 10 z" fill="#ec3013"/>
+  </marker>
+</defs>
+<rect width="610" height="864" fill="#f3f2f2"/>
+<text x="30" y="48" font-family="Archivo, system-ui, sans-serif" font-size="16" font-weight="900" fill="#201e1d">A trajetória que o leitor deve conseguir reconstruir</text>
+<rect x="30" y="74" width="4" height="208" fill="#ec3013" opacity="0.35"/>
+<text x="44" y="89" font-family="Archivo, system-ui, sans-serif" font-size="12" font-weight="800" fill="#201e1d">Relevance Cycle</text>
+<text x="44" y="105" font-family="Archivo, system-ui, sans-serif" font-size="11" fill="#201e1d" opacity="0.6">O ambiente onde o problema existe</text>
+<rect x="30" y="298" width="4" height="40" fill="#ec3013" opacity="0.35"/>
+<text x="44" y="313" font-family="Archivo, system-ui, sans-serif" font-size="12" font-weight="800" fill="#201e1d">Rigor Cycle · entrada</text>
+<text x="44" y="329" font-family="Archivo, system-ui, sans-serif" font-size="11" fill="#201e1d" opacity="0.6">O que a base de conhecimento oferece</text>
+<rect x="30" y="354" width="4" height="376" fill="#ec3013" opacity="0.35"/>
+<text x="44" y="369" font-family="Archivo, system-ui, sans-serif" font-size="12" font-weight="800" fill="#201e1d">Design Cycle</text>
+<text x="44" y="385" font-family="Archivo, system-ui, sans-serif" font-size="11" fill="#201e1d" opacity="0.6">Construir, estudar, aprender, evoluir</text>
+<rect x="30" y="746" width="4" height="40" fill="#ec3013" opacity="0.35"/>
+<text x="44" y="761" font-family="Archivo, system-ui, sans-serif" font-size="12" font-weight="800" fill="#201e1d">Rigor Cycle · saída</text>
+<text x="44" y="777" font-family="Archivo, system-ui, sans-serif" font-size="11" fill="#201e1d" opacity="0.6">O que volta para a base de conhecimento</text>
+<path d="M 228 114 L 228 126" stroke="#201e1d" stroke-width="2" marker-end="url(#ponta)"/>
+<path d="M 228 170 L 228 182" stroke="#201e1d" stroke-width="2" marker-end="url(#ponta)"/>
+<path d="M 228 226 L 228 238" stroke="#201e1d" stroke-width="2" marker-end="url(#ponta)"/>
+<path d="M 228 282 L 228 294" stroke="#201e1d" stroke-width="2" marker-end="url(#ponta)"/>
+<path d="M 228 338 L 228 350" stroke="#201e1d" stroke-width="2" marker-end="url(#ponta)"/>
+<path d="M 228 394 L 228 406" stroke="#201e1d" stroke-width="2" marker-end="url(#ponta)"/>
+<path d="M 228 450 L 228 462" stroke="#201e1d" stroke-width="2" marker-end="url(#ponta)"/>
+<path d="M 228 506 L 228 518" stroke="#201e1d" stroke-width="2" marker-end="url(#ponta)"/>
+<path d="M 228 562 L 228 574" stroke="#201e1d" stroke-width="2" marker-end="url(#ponta)"/>
+<path d="M 228 618 L 228 630" stroke="#201e1d" stroke-width="2" marker-end="url(#ponta)"/>
+<path d="M 228 674 L 228 686" stroke="#201e1d" stroke-width="2" marker-end="url(#ponta)"/>
+<path d="M 228 730 L 228 742" stroke="#201e1d" stroke-width="2" marker-end="url(#ponta)"/>
+<path d="M 506 598 L 524 598 L 524 374 L 512 374" stroke="#ec3013" stroke-width="2" fill="none" stroke-dasharray="5 4" marker-end="url(#ponta-acento)"/>
+<path d="M 506 598 L 550 598 L 550 150 L 512 150" stroke="#ec3013" stroke-width="2" fill="none" stroke-dasharray="5 4" marker-end="url(#ponta-acento)"/>
+<rect x="206" y="74" width="300" height="40" fill="#f3f2f2" stroke="#201e1d" stroke-width="2"/>
+<text x="218" y="99" font-family="Archivo, system-ui, sans-serif" font-size="12" font-weight="800" fill="#ec3013">01</text>
+<text x="242" y="99" font-family="Archivo, system-ui, sans-serif" font-size="14" font-weight="700" fill="#201e1d">Problema</text>
+<rect x="206" y="130" width="300" height="40" fill="#f3f2f2" stroke="#201e1d" stroke-width="2"/>
+<text x="218" y="155" font-family="Archivo, system-ui, sans-serif" font-size="12" font-weight="800" fill="#ec3013">02</text>
+<text x="242" y="155" font-family="Archivo, system-ui, sans-serif" font-size="14" font-weight="700" fill="#201e1d">Necessidade de conhecimento</text>
+<rect x="206" y="186" width="300" height="40" fill="#f3f2f2" stroke="#201e1d" stroke-width="2"/>
+<text x="218" y="211" font-family="Archivo, system-ui, sans-serif" font-size="12" font-weight="800" fill="#ec3013">03</text>
+<text x="242" y="211" font-family="Archivo, system-ui, sans-serif" font-size="14" font-weight="700" fill="#201e1d">Objetivos da solução</text>
+<rect x="206" y="242" width="300" height="40" fill="#f3f2f2" stroke="#201e1d" stroke-width="2"/>
+<text x="218" y="267" font-family="Archivo, system-ui, sans-serif" font-size="12" font-weight="800" fill="#ec3013">04</text>
+<text x="242" y="267" font-family="Archivo, system-ui, sans-serif" font-size="14" font-weight="700" fill="#201e1d">Requisitos</text>
+<rect x="206" y="298" width="300" height="40" fill="#f3f2f2" stroke="#201e1d" stroke-width="2"/>
+<text x="218" y="323" font-family="Archivo, system-ui, sans-serif" font-size="12" font-weight="800" fill="#ec3013">05</text>
+<text x="242" y="323" font-family="Archivo, system-ui, sans-serif" font-size="14" font-weight="700" fill="#201e1d">Conhecimento científico</text>
+<rect x="206" y="354" width="300" height="40" fill="#f3f2f2" stroke="#201e1d" stroke-width="2"/>
+<text x="218" y="379" font-family="Archivo, system-ui, sans-serif" font-size="12" font-weight="800" fill="#ec3013">06</text>
+<text x="242" y="379" font-family="Archivo, system-ui, sans-serif" font-size="14" font-weight="700" fill="#201e1d">Decisões de design</text>
+<rect x="206" y="410" width="300" height="40" fill="#f3f2f2" stroke="#201e1d" stroke-width="2"/>
+<text x="218" y="435" font-family="Archivo, system-ui, sans-serif" font-size="12" font-weight="800" fill="#ec3013">07</text>
+<text x="242" y="435" font-family="Archivo, system-ui, sans-serif" font-size="14" font-weight="700" fill="#201e1d">Artefato</text>
+<rect x="206" y="466" width="300" height="40" fill="#f3f2f2" stroke="#201e1d" stroke-width="2"/>
+<text x="218" y="491" font-family="Archivo, system-ui, sans-serif" font-size="12" font-weight="800" fill="#ec3013">08</text>
+<text x="242" y="491" font-family="Archivo, system-ui, sans-serif" font-size="14" font-weight="700" fill="#201e1d">Estudos empíricos</text>
+<rect x="206" y="522" width="300" height="40" fill="#f3f2f2" stroke="#201e1d" stroke-width="2"/>
+<text x="218" y="547" font-family="Archivo, system-ui, sans-serif" font-size="12" font-weight="800" fill="#ec3013">09</text>
+<text x="242" y="547" font-family="Archivo, system-ui, sans-serif" font-size="14" font-weight="700" fill="#201e1d">Evidências</text>
+<rect x="206" y="578" width="300" height="40" fill="#f3f2f2" stroke="#201e1d" stroke-width="2"/>
+<text x="218" y="603" font-family="Archivo, system-ui, sans-serif" font-size="12" font-weight="800" fill="#ec3013">10</text>
+<text x="242" y="603" font-family="Archivo, system-ui, sans-serif" font-size="14" font-weight="700" fill="#201e1d">Aprendizados</text>
+<rect x="206" y="634" width="300" height="40" fill="#f3f2f2" stroke="#201e1d" stroke-width="2"/>
+<text x="218" y="659" font-family="Archivo, system-ui, sans-serif" font-size="12" font-weight="800" fill="#ec3013">11</text>
+<text x="242" y="659" font-family="Archivo, system-ui, sans-serif" font-size="14" font-weight="700" fill="#201e1d">Evolução do artefato</text>
+<rect x="206" y="690" width="300" height="40" fill="#f3f2f2" stroke="#201e1d" stroke-width="2"/>
+<text x="218" y="715" font-family="Archivo, system-ui, sans-serif" font-size="12" font-weight="800" fill="#ec3013">12</text>
+<text x="242" y="715" font-family="Archivo, system-ui, sans-serif" font-size="14" font-weight="700" fill="#201e1d">Avaliação</text>
+<rect x="206" y="746" width="300" height="40" fill="#f3f2f2" stroke="#201e1d" stroke-width="2"/>
+<text x="218" y="771" font-family="Archivo, system-ui, sans-serif" font-size="12" font-weight="800" fill="#ec3013">13</text>
+<text x="242" y="771" font-family="Archivo, system-ui, sans-serif" font-size="14" font-weight="700" fill="#201e1d">Contribuição científica</text>
+<line x1="524" y1="818" x2="546" y2="818" stroke="#ec3013" stroke-width="2" stroke-dasharray="5 4"/>
+<text x="30" y="822" font-family="Archivo, system-ui, sans-serif" font-size="12" font-weight="700" fill="#ec3013">o aprendizado muda a decisão · e revela o que ainda falta aprender</text>
+<text x="30" y="842" font-family="Archivo, system-ui, sans-serif" font-size="12" fill="#201e1d" opacity="0.7">A trajetória não precisa ser linear.</text>
 </svg>
