@@ -3,7 +3,26 @@ import Base from "../layouts/Base.astro";
 import { rota } from "../lib/url";
 import dados from "../content/dsr.json";
 
-const { abertura, template, secoes, referencias } = dados;
+// O JSON traz blocos de tipos diferentes; declarar a forma evita que o TypeScript
+// infira uma união em que todo campo é opcional.
+type Bloco = {
+  tipo: "p" | "par" | "destaque" | "link";
+  texto?: string | null;
+  citacoes?: string[];
+  ref?: string;
+};
+
+const { abertura, template, secoes, referencias } = dados as {
+  abertura: { titulo: string; tituloPagina: string; descricao: string; intro: Bloco[] };
+  template: {
+    titulo: string;
+    texto: string;
+    arquivos: { nome: string; href: string; peso: string; descricao: string }[];
+    exemplo: { titulo: string; texto: string; obra: string; fonte: string; href: string };
+  };
+  secoes: { titulo: string; blocos: Bloco[] }[];
+  referencias: { id: string; autores: string; ano: string; titulo: string; papel: string; enderecos: { rotulo: string; href: string }[] }[];
+};
 
 // Um bloco pode citar a obra que o fundamenta. Se o id não existir, o build para —
 // melhor quebrar aqui do que publicar uma âncora que não leva a lugar nenhum.
@@ -14,7 +33,7 @@ for (const s of secoes)
       throw new Error(`dsr.json: um bloco cita a referência "${b.ref}", que não existe`);
 
 // A referência de um bloco já foi validada acima; o helper só evita repetir o `!`.
-const obra = (id: string) => porId.get(id)!;
+const obra = (id?: string) => porId.get(id ?? "")!;
 
 const ancora = (t: string) =>
   t
@@ -25,7 +44,6 @@ const ancora = (t: string) =>
     .replace(/^-|-$/g, "");
 
 // Texto corrido pede medida de leitura, não largura de página.
-const leitura = "";
 const paragrafo = "font-size: 17px; line-height: 1.72; margin: 0 0 18px; text-wrap: pretty;";
 const tituloSecao =
   "font-family: var(--font-heading); font-weight: 800; font-size: clamp(23px, 3.4vw, 31px); line-height: 1.14; letter-spacing: -0.022em; margin: 0; max-width: 22ch; text-wrap: balance";
@@ -52,7 +70,7 @@ const tituloSecao =
 
       <div style="margin: 26px 0 34px">
         {
-          abertura.intro.map((b: any, i: number) =>
+          abertura.intro.map((b, i) =>
             b.tipo === "par" ? (
               <div class="om-par">
                 {b.texto ? (
@@ -61,7 +79,7 @@ const tituloSecao =
                   <div />
                 )}
                 <div class="om-par-cit">
-                  {b.citacoes.map((c: string) => (
+                  {(b.citacoes ?? []).map((c: string) => (
                     <blockquote class="om-cit">
                       <p set:html={c} />
                     </blockquote>
@@ -140,7 +158,7 @@ const tituloSecao =
                       <div class="om-par">
                         {b.texto ? <p style={paragrafo} set:html={b.texto} /> : <div />}
                         <div class="om-par-cit">
-                          {b.citacoes.map((c: string) => (
+                          {(b.citacoes ?? []).map((c: string) => (
                             <blockquote class="om-cit">
                               <p set:html={c} />
                             </blockquote>

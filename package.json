@@ -3,12 +3,12 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "description": "Site da disciplina Tópico Especial em IA: Desenvolvimento de Software Suportado por IA — PPCOMP/IFES Serra 2026.2",
+  "description": "Site da disciplina T\u00f3pico Especial em IA: Desenvolvimento de Software Suportado por IA \u2014 PPCOMP/IFES Serra 2026.2",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "check": "astro check",
+    "check": "rm -rf .astro && astro check",
     "extrair": "node scripts/extrair-conteudo.mjs"
   },
   "dependencies": {
