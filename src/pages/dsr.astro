@@ -13,6 +13,9 @@ for (const s of secoes)
     if (b.ref && !porId.has(b.ref))
       throw new Error(`dsr.json: um bloco cita a referência "${b.ref}", que não existe`);
 
+// A referência de um bloco já foi validada acima; o helper só evita repetir o `!`.
+const obra = (id: string) => porId.get(id)!;
+
 const ancora = (t: string) =>
   t
     .toLowerCase()
@@ -22,8 +25,8 @@ const ancora = (t: string) =>
     .replace(/^-|-$/g, "");
 
 // Texto corrido pede medida de leitura, não largura de página.
-const leitura = "max-width: 34em;";
-const paragrafo = `font-size: 17px; line-height: 1.72; margin: 0 0 18px; ${leitura} text-wrap: pretty;`;
+const leitura = "";
+const paragrafo = "font-size: 17px; line-height: 1.72; margin: 0 0 18px; text-wrap: pretty;";
 const tituloSecao =
   "font-family: var(--font-heading); font-weight: 800; font-size: clamp(23px, 3.4vw, 31px); line-height: 1.14; letter-spacing: -0.022em; margin: 0; max-width: 22ch; text-wrap: balance";
 ---
@@ -47,10 +50,42 @@ const tituloSecao =
         {abertura.titulo}
       </h1>
 
-      <p
-        style={`font-size: 19px; line-height: 1.65; margin: 26px 0 34px; ${leitura} text-wrap: pretty`}
-        set:html={abertura.intro}
-      />
+      <div style="margin: 26px 0 34px">
+        {
+          abertura.intro.map((b: any, i: number) =>
+            b.tipo === "par" ? (
+              <div class="om-par">
+                {b.texto ? (
+                  <p class="om-abertura" set:html={b.texto} />
+                ) : (
+                  <div />
+                )}
+                <div class="om-par-cit">
+                  {b.citacoes.map((c: string) => (
+                    <blockquote class="om-cit">
+                      <p set:html={c} />
+                    </blockquote>
+                  ))}
+                </div>
+              </div>
+            ) : b.tipo === "destaque" ? (
+              <p class="om-dest" set:html={b.texto} />
+            ) : b.tipo === "link" ? (
+              <p class="om-med" style="margin: -8px 0 20px; font-size: 14px">
+                <a href={`#ref-${b.ref}`}>
+                  {obra(b.ref).autores} ({obra(b.ref).ano}) →
+                </a>
+              </p>
+            ) : (
+              <p
+                class="om-abertura"
+                style={i === 0 ? "font-size: 19px" : ""}
+                set:html={b.texto}
+              />
+            )
+          )
+        }
+      </div>
     </section>
 
     <section style="border-top: 2px solid var(--color-text)">
@@ -101,31 +136,27 @@ const tituloSecao =
                   </div>
 
                   {s.blocos.map((b) =>
-                    b.tipo === "citacao" ? (
-                      <blockquote
-                        style={`border-left: 2px solid var(--color-accent); margin: 4px 0 22px; padding: 2px 0 2px 22px; ${leitura}`}
-                      >
-                        <p
-                          style="font-size: 17px; line-height: 1.65; margin: 0; font-style: italic"
-                          set:html={b.texto}
-                        />
-                      </blockquote>
+                    b.tipo === "par" ? (
+                      <div class="om-par">
+                        {b.texto ? <p style={paragrafo} set:html={b.texto} /> : <div />}
+                        <div class="om-par-cit">
+                          {b.citacoes.map((c: string) => (
+                            <blockquote class="om-cit">
+                              <p set:html={c} />
+                            </blockquote>
+                          ))}
+                        </div>
+                      </div>
                     ) : b.tipo === "destaque" ? (
-                      <p
-                        style={`font-family: var(--font-heading); font-weight: 800; font-size: 19px; line-height: 1.42; letter-spacing: -0.015em; margin: 4px 0 24px; padding: 18px 22px; background: var(--color-neutral-100); ${leitura}`}
-                        set:html={b.texto}
-                      />
+                      <p class="om-dest" set:html={b.texto} />
+                    ) : b.tipo === "link" ? (
+                      <p class="om-med" style="margin: -8px 0 20px; font-size: 14px">
+                        <a href={`#ref-${b.ref}`}>
+                          {obra(b.ref).autores} ({obra(b.ref).ano}) — {obra(b.ref).titulo}
+                        </a>
+                      </p>
                     ) : (
-                      <>
-                        <p style={paragrafo} set:html={b.texto} />
-                        {b.ref && (
-                          <p style="margin: -10px 0 20px; font-size: 13px">
-                            <a href={`#ref-${b.ref}`}>
-                              {porId.get(b.ref)!.autores} ({porId.get(b.ref)!.ano})
-                            </a>
-                          </p>
-                        )}
-                      </>
+                      <p style={paragrafo} class="om-med" set:html={b.texto} />
                     )
                   )}
                 </section>
@@ -134,8 +165,8 @@ const tituloSecao =
 
             <section id="template" style="padding: 34px 0 6px; scroll-margin-top: 8px">
               <h2 style={tituloSecao}>{template.titulo}</h2>
-              <p style={`${paragrafo} margin-top: 20px`} set:html={template.texto} />
-              <div style={`border: 2px solid var(--color-text); padding: 18px 22px; ${leitura} display: grid; gap: 14px`}>
+              <p style={`${paragrafo} margin-top: 20px`} class="om-med" set:html={template.texto} />
+              <div class="om-med" style="border: 2px solid var(--color-text); padding: 18px 22px; display: grid; gap: 14px">
                 {
                   template.arquivos.map((a) => (
                     <div>
@@ -159,7 +190,7 @@ const tituloSecao =
                 }
               </div>
 
-              <div style={`border-left: 2px solid var(--color-accent); padding: 4px 0 4px 22px; margin: 26px 0 0; ${leitura}`}>
+              <div class="om-med" style="border-left: 2px solid var(--color-accent); padding: 4px 0 4px 22px; margin: 26px 0 0">
                 <div style="font-family: var(--font-heading); font-weight: 800; font-size: 17px; letter-spacing: -0.015em">
                   {template.exemplo.titulo}
                 </div>
@@ -181,7 +212,7 @@ const tituloSecao =
                   referencias.map((r) => (
                     <div
                       id={`ref-${r.id}`}
-                      style={`padding: 16px 0; border-bottom: 2px solid var(--color-divider); scroll-margin-top: 8px; ${leitura}`}
+                      class="om-med" style="padding: 16px 0; border-bottom: 2px solid var(--color-divider); scroll-margin-top: 8px"
                     >
                       <div style="font-family: var(--font-heading); font-weight: 800; font-size: 16px; line-height: 1.32">
                         {r.autores} ({r.ano}). {r.titulo}
@@ -219,6 +250,71 @@ const tituloSecao =
     .om-guia-indice {
       border-bottom: 2px solid var(--color-divider);
     }
+
+    /* Parágrafo e a citação que ele anuncia são uma unidade de leitura: no
+       celular empilham, em tela larga ficam lado a lado e alinhados pelo topo.
+       Deixá-los flutuar soltos faria a citação escorregar para longe do texto
+       que a apresenta. */
+    .om-par {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+    }
+    .om-par-cit {
+      display: grid;
+      gap: 14px;
+      align-content: start;
+    }
+    .om-abertura {
+      font-size: 17px;
+      line-height: 1.68;
+      margin: 0 0 18px;
+      text-wrap: pretty;
+      max-width: 34em;
+    }
+
+    @media (min-width: 1180px) {
+      .om-par {
+        grid-template-columns: minmax(0, 1fr) 20em;
+        gap: 0 40px;
+        align-items: start;
+      }
+      .om-par-cit .om-cit {
+        margin: 2px 0 18px;
+      }
+      .om-par-cit .om-cit p {
+        font-size: 15px;
+        line-height: 1.58;
+      }
+    }
+
+    /* Medida de leitura: nunca deixa a linha passar do confortável. */
+    .om-med {
+      max-width: 34em;
+    }
+    .om-cit {
+      border-left: 2px solid var(--color-accent);
+      margin: 4px 0 22px;
+      padding: 2px 0 2px 22px;
+      max-width: 34em;
+    }
+    .om-cit p {
+      font-size: 17px;
+      line-height: 1.65;
+      margin: 0;
+      font-style: italic;
+    }
+    .om-dest {
+      font-family: var(--font-heading);
+      font-weight: 800;
+      font-size: 19px;
+      line-height: 1.42;
+      letter-spacing: -0.015em;
+      margin: 4px 0 24px;
+      padding: 18px 22px;
+      background: var(--color-neutral-100);
+      max-width: 40em;
+    }
+
     @media (min-width: 861px) {
       /* Desktop: o índice acompanha a leitura. */
       .om-guia {
@@ -234,5 +330,6 @@ const tituloSecao =
         padding-right: 24px;
       }
     }
+
   </style>
 </Base>

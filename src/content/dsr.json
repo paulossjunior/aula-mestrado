@@ -1,10 +1,50 @@
 {
   "abertura": {
-    "titulo": "Guideline para o aluno preencher o template",
-    "tituloPagina": "Guideline para preencher o template DSR — Dev. de Software com IA",
-    "descricao": "Guideline para o aluno preencher o template de dissertação em Design Science Research: método de pesquisa, ciclos de relevância, design e rigor, Learning Iterations, demonstração e avaliação.",
-    "intro": "A proposta do template não é fazer com que o aluno simplesmente descreva as etapas da DSR. O objetivo é que a dissertação revele a lógica da pesquisa: <strong>qual problema motivou o trabalho, o que precisava ser aprendido, como o artefato foi concebido, quais evidências orientaram sua evolução e o que foi aprendido ao final do processo</strong>. Essa perspectiva está alinhada à Design Science Research, na qual a compreensão do problema e da solução ocorre por meio da construção e da avaliação de artefatos.",
-    "introRef": "hevner2004"
+    "titulo": "Guideline para escrita de uma dissertação com Design Science Research",
+    "tituloPagina": "Guideline para escrita de dissertação com DSR — Dev. de Software com IA",
+    "descricao": "Guideline para o estudante escrever a dissertação com Design Science Research: os três ciclos, Learning Iterations, demonstração, avaliação, ameaças à validade e contribuição científica, com exemplos extraídos de uma tese real.",
+    "intro": [
+      {
+        "tipo": "p",
+        "texto": "Este guideline tem como objetivo auxiliar o estudante na escrita de uma dissertação que utiliza Design Science Research (DSR) como abordagem metodológica. Ele deve ser utilizado em conjunto com o template LaTeX fornecido. No template, os textos apresentados em vermelho indicam os trechos que precisam ser substituídos ou desenvolvidos pelo estudante."
+      },
+      {
+        "tipo": "p",
+        "texto": "O objetivo não é fazer com que todas as dissertações reproduzam exatamente a mesma estrutura ou tenham a mesma quantidade de estudos. O template procura ajudar o estudante a tornar explícita a lógica da pesquisa, mostrando como o problema investigado se relaciona com o conhecimento científico utilizado, com as decisões de design, com o artefato desenvolvido, com os estudos empíricos realizados e, principalmente, com os aprendizados produzidos ao longo da pesquisa."
+      },
+      {
+        "tipo": "p",
+        "texto": "Em Design Science Research, desenvolver um software, método, modelo, processo ou outra solução não é suficiente, por si só, para caracterizar uma pesquisa científica. A construção do artefato faz parte de um processo no qual conhecimento sobre o problema e sobre possíveis soluções é produzido por meio da concepção, construção, aplicação e avaliação desse artefato."
+      },
+      {
+        "tipo": "p",
+        "texto": "Hevner et al. (2004) apresentam Design Science como um paradigma no qual conhecimento e compreensão sobre um domínio de problema e sua solução são obtidos por meio da construção e da aplicação de artefatos."
+      },
+      {
+        "tipo": "p",
+        "texto": "A referência pode ser consultada em:"
+      },
+      {
+        "tipo": "link",
+        "ref": "hevner2004"
+      },
+      {
+        "tipo": "p",
+        "texto": "Durante a escrita da dissertação, o estudante deve procurar tornar claras três questões: <strong>qual problema estamos tentando resolver, por que construímos o artefato dessa maneira e o que aprendemos ao construí-lo e avaliá-lo?</strong>"
+      },
+      {
+        "tipo": "p",
+        "texto": "De maneira simplificada, o leitor deve conseguir reconstruir uma trajetória semelhante a:"
+      },
+      {
+        "tipo": "destaque",
+        "texto": "<strong>Problema → necessidade de conhecimento → objetivos da solução → requisitos → conhecimento científico → decisões de design → artefato → estudos empíricos → evidências → aprendizados → evolução do artefato → avaliação → contribuição científica.</strong>"
+      },
+      {
+        "tipo": "p",
+        "texto": "Essa trajetória não precisa ser linear. Ao contrário, uma característica importante da DSR é justamente a possibilidade de a pesquisa evoluir à medida que novos conhecimentos são produzidos."
+      }
+    ]
   },
   "template": {
     "titulo": "O template da entrega",
@@ -33,200 +73,875 @@
   },
   "secoes": [
     {
-      "titulo": "Método de Pesquisa",
+      "titulo": "Apresentando a Design Science Research na dissertação",
       "blocos": [
         {
           "tipo": "p",
-          "texto": "O aluno deve iniciar a seção apresentando a Design Science Research como a abordagem metodológica adotada e explicando por que ela é adequada ao problema tratado na dissertação. Não é suficiente dizer que DSR foi utilizada porque houve desenvolvimento de um software. É necessário mostrar que a pesquisa busca produzir uma intervenção — um artefato — destinada a resolver ou melhorar uma situação problemática e, ao mesmo tempo, produzir conhecimento a partir desse processo."
+          "texto": "Na seção de método de pesquisa, o estudante deve inicialmente explicar por que a Design Science Research é adequada ao trabalho desenvolvido."
         },
         {
           "tipo": "p",
-          "texto": "Na sequência, o aluno deve apresentar a organização geral da pesquisa. O modelo utilizado na tese segue as seis atividades propostas por Peffers et al.: identificação do problema e motivação, definição dos objetivos da solução, design e desenvolvimento, demonstração, avaliação e comunicação. Essas atividades não devem necessariamente ser compreendidas como uma sequência rígida; elas constituem um modelo para organizar e comunicar o processo de pesquisa.",
+          "texto": "A justificativa não deve ser simplesmente afirmar que DSR foi adotada porque um software foi desenvolvido. Deve existir um problema relevante e uma intervenção concebida para contribuir para sua solução."
+        },
+        {
+          "tipo": "par",
+          "texto": "Na tese utilizada como exemplo neste guideline, a relação entre o problema, o artefato e a abordagem de pesquisa aparece explicitamente quando a pesquisa é sintetizada:",
+          "citacoes": [
+            "“In this work, we propose to use networked ontologies to establish an integration architecture and assign semantics to application data.”"
+          ]
+        },
+        {
+          "tipo": "par",
+          "texto": "Logo depois, a abordagem metodológica é explicitada:",
+          "citacoes": [
+            "“The work followed the Design Science Research paradigm and involved four learning iterations.”"
+          ]
+        },
+        {
+          "tipo": "p",
+          "texto": "Observe que a DSR não aparece isolada. Antes de declarar o método, o texto apresenta aquilo que está sendo proposto e o problema ao qual a proposta está relacionada."
+        },
+        {
+          "tipo": "p",
+          "texto": "Ao preencher o template, o estudante deve procurar fazer algo semelhante. Primeiro deve situar o problema e a intervenção proposta. Depois deve explicar por que investigar esse problema por meio da construção e avaliação de um artefato caracteriza uma abordagem adequada de Design Science Research."
+        }
+      ]
+    },
+    {
+      "titulo": "Organização geral da pesquisa",
+      "blocos": [
+        {
+          "tipo": "p",
+          "texto": "Uma referência importante para organizar uma pesquisa em DSR é Peffers et al., que apresentam a Design Science Research Methodology. A metodologia compreende atividades relacionadas à identificação do problema e motivação, definição dos objetivos da solução, design e desenvolvimento, demonstração, avaliação e comunicação."
+        },
+        {
+          "tipo": "p",
+          "texto": "A referência pode ser consultada em:"
+        },
+        {
+          "tipo": "link",
           "ref": "peffers2007"
         },
         {
           "tipo": "p",
-          "texto": "O aluno também deve explicar que essas atividades são relacionadas aos três ciclos apresentados por Hevner: <strong>Relevance Cycle, Design Cycle e Rigor Cycle</strong>. O ciclo de relevância conecta a pesquisa ao ambiente no qual o problema existe; o ciclo de rigor conecta a pesquisa à base de conhecimento científico existente; e o ciclo de design envolve as sucessivas atividades de construção e avaliação do artefato. Hevner argumenta que esses três ciclos precisam estar claramente identificáveis em um projeto de DSR.",
+          "texto": "Essas atividades são úteis para estruturar a pesquisa, mas não devem ser entendidas como uma sequência rígida na qual o problema é completamente compreendido antes do desenvolvimento e nunca mais é revisitado."
+        },
+        {
+          "tipo": "p",
+          "texto": "A própria execução da pesquisa pode produzir novos conhecimentos que alterem a compreensão do problema ou da solução."
+        },
+        {
+          "tipo": "par",
+          "texto": "Isso aparece claramente na tese. Ao descrever a primeira Learning Iteration, o texto registra:",
+          "citacoes": [
+            "“As result, we created the first version of Immigrant.”"
+          ]
+        },
+        {
+          "tipo": "par",
+          "texto": "Entretanto, o estudo não terminou apenas com a criação de uma primeira versão do artefato. A investigação produziu uma nova necessidade:",
+          "citacoes": [
+            "“The first learning iteration raised a demand to investigate how to understand the way an organization works...”"
+          ]
+        },
+        {
+          "tipo": "p",
+          "texto": "Esse trecho é importante porque mostra uma característica central da DSR. O desenvolvimento de uma solução produziu conhecimento que revelou uma nova parte do problema."
+        },
+        {
+          "tipo": "par",
+          "texto": "A pesquisa então continuou:",
+          "citacoes": [
+            "“This prompted the second learning iteration...”"
+          ]
+        },
+        {
+          "tipo": "p",
+          "texto": "O estudante deve procurar explicitar esse tipo de relação. Sempre que uma investigação ou versão do artefato produzir uma nova necessidade de conhecimento, essa transição deve aparecer claramente no texto."
+        }
+      ]
+    },
+    {
+      "titulo": "Relevance Cycle, Design Cycle e Rigor Cycle",
+      "blocos": [
+        {
+          "tipo": "p",
+          "texto": "O template utiliza também os três ciclos apresentados por Hevner (2007): <strong>Relevance Cycle, Design Cycle e Rigor Cycle</strong>."
+        },
+        {
+          "tipo": "p",
+          "texto": "A referência pode ser consultada em:"
+        },
+        {
+          "tipo": "link",
           "ref": "hevner2007"
+        },
+        {
+          "tipo": "p",
+          "texto": "O Relevance Cycle conecta a pesquisa ao ambiente no qual existe o problema. O Rigor Cycle conecta a investigação à base de conhecimento científico. O Design Cycle representa a construção e avaliação iterativa do artefato."
+        },
+        {
+          "tipo": "p",
+          "texto": "Esses ciclos não devem existir apenas como um desenho na seção metodológica. Eles precisam ser perceptíveis na narrativa da dissertação."
+        },
+        {
+          "tipo": "par",
+          "texto": "Um trecho da tese sintetiza bem essa interação:",
+          "citacoes": [
+            "“Each learning iteration helped us better understand the target problem and gradually evaluate design choices we have made to develop Immigrant.”"
+          ]
+        },
+        {
+          "tipo": "p",
+          "texto": "Essa frase é particularmente importante para compreender a lógica da pesquisa."
+        },
+        {
+          "tipo": "p",
+          "texto": "A expressão <strong>“better understand the target problem”</strong> mostra que as iterações ajudaram a aprofundar a compreensão do problema, característica associada ao Relevance Cycle."
+        },
+        {
+          "tipo": "p",
+          "texto": "Já a expressão <strong>“evaluate design choices”</strong> mostra que essas mesmas iterações produziram evidências sobre decisões tomadas durante a construção do artefato, característica associada ao Design Cycle."
+        },
+        {
+          "tipo": "p",
+          "texto": "Ao mesmo tempo, essas decisões são fundamentadas por conhecimentos existentes, estabelecendo a relação com o Rigor Cycle."
+        },
+        {
+          "tipo": "p",
+          "texto": "O aluno deve procurar fazer com que esses três movimentos sejam identificáveis em sua própria narrativa."
         }
       ]
     },
     {
-      "titulo": "Ciclo de Relevância",
+      "titulo": "Relevance Cycle: começar pelo problema, e não pela tecnologia",
       "blocos": [
         {
           "tipo": "p",
-          "texto": "Nesta parte, o aluno precisa explicar de onde surgiu o problema. O texto deve apresentar o contexto real que motivou a pesquisa e mostrar evidências de que o problema existe. Essas evidências podem vir de experiências anteriores, estudos exploratórios, entrevistas, documentos, dados de organizações, trabalhos anteriores ou da literatura."
+          "texto": "No Relevance Cycle, o pesquisador deve caracterizar o ambiente no qual o problema existe."
         },
         {
           "tipo": "p",
-          "texto": "O aluno deve evitar começar pelo artefato. Uma frase como “esta pesquisa propõe desenvolver um sistema para...” ainda não explica o problema. Primeiro deve ficar claro <strong>o que está errado ou pode ser melhorado no mundo real</strong>. Depois disso, pode-se discutir a solução."
+          "texto": "Isso significa explicar o contexto, as pessoas ou organizações afetadas, as necessidades existentes e as dificuldades que justificam uma intervenção."
         },
         {
           "tipo": "p",
-          "texto": "O texto precisa explicar quem é afetado pelo problema, quais consequências ele produz e por que as soluções existentes ainda não são suficientes. O ciclo de relevância é justamente o mecanismo pelo qual requisitos e problemas provenientes do ambiente entram na pesquisa e pelo qual o artefato retorna posteriormente ao ambiente para avaliação.",
-          "ref": "hevner2007"
+          "texto": "O estudante deve evitar começar pela tecnologia."
         },
         {
           "tipo": "p",
-          "texto": "Depois de caracterizar o problema, o aluno deve apresentar os <strong>objetivos da solução</strong>. Neste ponto, a recomendação é não entrar imediatamente em tecnologias. O texto deve explicar o que uma solução adequada precisa possibilitar. Se o problema é dificuldade de integrar informações, por exemplo, o objetivo da solução pode ser “possibilitar a integração de informações provenientes de fontes heterogêneas”. Somente posteriormente será explicado como isso foi realizado."
+          "texto": "Uma introdução como “este trabalho desenvolve uma aplicação utilizando inteligência artificial” ainda não explica por que aquela aplicação precisa existir."
         },
         {
           "tipo": "p",
-          "texto": "Os requisitos apresentados no template, como R1, R2 e R3, devem surgir desse raciocínio. Cada requisito precisa ter uma origem compreensível. Ao ler R2, por exemplo, o leitor deveria conseguir voltar ao problema ou a algum conhecimento da literatura e entender por que aquele requisito existe."
+          "texto": "Na tese, a construção do problema começa muito antes da apresentação de Immigrant ou The Band."
+        },
+        {
+          "tipo": "par",
+          "texto": "O texto inicialmente estabelece uma necessidade relacionada à evolução do desenvolvimento de software:",
+          "citacoes": [
+            "“Hence, organizations should evolve to continuous and data-driven development in a Continuous Software Engineering (CSE) approach.”"
+          ]
+        },
+        {
+          "tipo": "par",
+          "texto": "Depois, o texto mostra uma situação encontrada nas organizações:",
+          "citacoes": [
+            "“Software organizations often use different applications to support different aspects of software development.”"
+          ]
+        },
+        {
+          "tipo": "par",
+          "texto": "Em seguida, apresenta-se o problema:",
+          "citacoes": [
+            "“However, many of them do not use data present in the applications to support data-driven software development.”"
+          ]
+        },
+        {
+          "tipo": "par",
+          "texto": "A argumentação então aprofunda uma possível causa:",
+          "citacoes": [
+            "“One of the reasons for that is the difficulty in accessing, integrating, analyzing, and viewing data handled by heterogeneous applications.”"
+          ]
         },
         {
           "tipo": "p",
-          "texto": "Os critérios de avaliação também devem começar a aparecer nesse momento. Isso cria uma ligação importante entre problema e avaliação. Se a pesquisa afirma que determinada solução deve melhorar a precisão de uma atividade, então posteriormente deve existir alguma evidência relacionada à precisão. O critério não deveria ser criado apenas depois de o artefato estar pronto."
+          "texto": "Observe a construção da narrativa."
+        },
+        {
+          "tipo": "p",
+          "texto": "O texto não começa afirmando “vamos utilizar ontologias”."
+        },
+        {
+          "tipo": "p",
+          "texto": "Primeiro apresenta o contexto. Depois mostra uma situação problemática. Em seguida identifica uma dificuldade mais específica que impede ou dificulta aquilo que as organizações precisam fazer."
+        },
+        {
+          "tipo": "p",
+          "texto": "Somente depois é introduzido o conhecimento tecnológico relacionado à solução."
+        },
+        {
+          "tipo": "p",
+          "texto": "O estudante deve procurar construir o problema de sua dissertação da mesma forma: <strong>contexto → necessidade → dificuldade → problema → possibilidade de intervenção</strong>."
         }
       ]
     },
     {
-      "titulo": "Ciclo de Design",
+      "titulo": "Relacionando o problema ao conhecimento existente",
       "blocos": [
         {
           "tipo": "p",
-          "texto": "Esta é a parte em que o aluno apresenta como o artefato foi efetivamente construído e evoluiu."
+          "texto": "Depois de apresentar o problema, a literatura deve ajudar a compreendê-lo e indicar possibilidades de solução."
+        },
+        {
+          "tipo": "par",
+          "texto": "Na tese, depois de discutir a dificuldade de integrar dados de aplicações heterogêneas, o texto apresenta uma consequência:",
+          "citacoes": [
+            "“This difficulty can result in semantic conflicts whenever divergent interpretations are given to the same information item...”"
+          ]
+        },
+        {
+          "tipo": "par",
+          "texto": "Logo depois, a literatura ajuda a indicar uma possibilidade:",
+          "citacoes": [
+            "“Ontologies can be used to deal with these issues in semantic integration initiatives.”"
+          ]
+        },
+        {
+          "tipo": "par",
+          "texto": "E o texto explica por quê:",
+          "citacoes": [
+            "“They establish a common conceptualization about the applications subject domains and support communication and integration.”"
+          ]
         },
         {
           "tipo": "p",
-          "texto": "O artefato pode ser software, método, processo, modelo, arquitetura, framework, linguagem, instrumento ou outra construção destinada a resolver o problema investigado. Na tradição de Design Science, a construção e a avaliação do artefato são atividades centrais da pesquisa.",
-          "ref": "hevner2004"
+          "texto": "Esse é um bom exemplo de interação entre Relevance Cycle e Rigor Cycle."
         },
         {
           "tipo": "p",
-          "texto": "Entretanto, o texto não deve se transformar em um diário de programação. O interesse científico não está em registrar que determinada API foi implementada na segunda-feira e uma interface na terça-feira. O aluno deve destacar <strong>decisões de design relevantes</strong>."
+          "texto": "O problema veio do ambiente. A literatura oferece conhecimento que ajuda a compreender o problema e a orientar uma possível solução."
         },
         {
           "tipo": "p",
-          "texto": "Para cada decisão importante, o texto deveria permitir compreender algo próximo da seguinte lógica: havia determinado problema ou requisito; existiam possíveis maneiras de tratá-lo; uma alternativa foi escolhida por determinada razão; essa escolha foi implementada; posteriormente foram produzidas evidências sobre sua adequação."
+          "texto": "O aluno deve procurar evitar duas partes completamente desconectadas da dissertação, uma denominada “fundamentação teórica” e outra denominada “desenvolvimento da solução”."
         },
         {
           "tipo": "p",
-          "texto": "É justamente aqui que entram as <strong>Learning Iterations</strong>, uma característica importante do modelo em que este template se baseia."
-        },
-        {
-          "tipo": "p",
-          "texto": "Barcellos et al. propõem organizar estudos empíricos realizados em projetos de DSR como Learning Iterations. A ideia é que os estudos não sejam vistos apenas como avaliações realizadas depois que o artefato está pronto. Eles podem ser usados durante a pesquisa para compreender melhor o problema, fundamentar o artefato, orientar seu desenvolvimento, avaliá-lo ou melhorá-lo.",
-          "ref": "barcellos2022"
+          "texto": "A fundamentação deve influenciar aquilo que será construído."
         }
       ]
     },
     {
-      "titulo": "Como preencher cada Learning Iteration",
+      "titulo": "Dos problemas aos objetivos da solução",
       "blocos": [
         {
           "tipo": "p",
-          "texto": "Cada Learning Iteration deve começar explicando <strong>por que aquele estudo precisou ser realizado naquele momento da pesquisa</strong>."
+          "texto": "Depois de caracterizar o problema, o estudante deve estabelecer aquilo que uma solução deveria ser capaz de realizar."
         },
         {
           "tipo": "p",
-          "texto": "Esse ponto é fundamental. A dissertação não deve simplesmente dizer: “foi realizado um estudo de caso”. O leitor precisa compreender qual dúvida existente no desenvolvimento da pesquisa levou à realização daquele estudo."
+          "texto": "Os objetivos da solução devem ser formulados antes dos detalhes tecnológicos."
         },
         {
           "tipo": "p",
-          "texto": "Uma boa introdução para uma Learning Iteration normalmente parte do resultado da etapa anterior. O texto pode explicar que determinada decisão de design precisava ser avaliada, que determinado aspecto do problema ainda não estava suficientemente compreendido ou que uma limitação identificada anteriormente exigiu uma nova investigação."
+          "texto": "Se o problema é a dificuldade de integrar dados provenientes de aplicações heterogêneas, um objetivo da solução pode ser fornecer uma forma de integração capaz de preservar ou atribuir significado aos dados."
+        },
+        {
+          "tipo": "par",
+          "texto": "A tese apresenta uma formulação bastante clara da intervenção proposta:",
+          "citacoes": [
+            "“We propose to use networked ontologies to establish an integration architecture and assign semantics to application data.”"
+          ]
+        },
+        {
+          "tipo": "par",
+          "texto": "O texto ainda acrescenta outro princípio importante:",
+          "citacoes": [
+            "“Moreover, we advocate that integrated data should be aligned to the organization information needs.”"
+          ]
         },
         {
           "tipo": "p",
-          "texto": "Depois disso, deve ser formulada uma questão específica que represente aquilo que o pesquisador deseja aprender. A questão da Learning Iteration não precisa ser necessariamente a questão principal da dissertação. Ela pode ser uma questão intermediária que ajude o pesquisador a tomar determinada decisão."
+          "texto": "Esse segundo trecho é especialmente interessante porque mostra que a solução não deveria simplesmente integrar tudo o que fosse tecnicamente possível."
         },
         {
           "tipo": "p",
-          "texto": "Por exemplo, a lógica pode ser:"
-        },
-        {
-          "tipo": "citacao",
-          "texto": "A primeira versão do artefato dependia da utilização de X. Entretanto, ainda não existiam evidências suficientes de que X seria adequado ao contexto investigado. Dessa forma, foi realizada uma Learning Iteration para investigar se..."
+          "texto": "A integração deveria ser orientada pelas necessidades de informação da organização."
         },
         {
           "tipo": "p",
-          "texto": "Na sequência, o aluno deve explicar o desenho do estudo empírico utilizado para responder à questão. Isso inclui o método escolhido, contexto, participantes ou unidades de análise, procedimentos de coleta e procedimentos de análise. A escolha do método deve ser coerente com aquilo que se pretende aprender."
+          "texto": "Isso demonstra como a compreensão do problema produz características que posteriormente influenciam o design."
         },
         {
           "tipo": "p",
-          "texto": "Depois de apresentar os resultados, deve existir uma seção equivalente ao <strong>“What did we learn?”</strong> existente na tese."
+          "texto": "Ao escrever sua dissertação, o estudante deve procurar deixar clara essa passagem entre <strong>o problema observado</strong> e <strong>aquilo que uma solução precisa oferecer</strong>."
+        }
+      ]
+    },
+    {
+      "titulo": "Requisitos podem surgir durante a própria pesquisa",
+      "blocos": [
+        {
+          "tipo": "p",
+          "texto": "Em uma DSR, nem todos os requisitos precisam necessariamente ser conhecidos no começo da pesquisa."
         },
         {
           "tipo": "p",
-          "texto": "Essa seção é provavelmente uma das mais importantes de cada Learning Iteration."
+          "texto": "Novos requisitos podem surgir à medida que o pesquisador obtém evidências."
         },
         {
           "tipo": "p",
-          "texto": "Nela, o aluno não deve apenas repetir os resultados do estudo. Deve dizer explicitamente <strong>o que aqueles resultados ensinaram à pesquisa</strong>."
+          "texto": "Isso aparece claramente na primeira Learning Iteration da tese."
         },
         {
           "tipo": "p",
-          "texto": "Se a evidência confirmou uma decisão de design, isso deve ser declarado. Se revelou uma limitação, o texto deve indicar qual. Se produziu um novo requisito, deve ser explicado. Se fez o pesquisador abandonar uma abordagem e procurar outra, essa mudança deve aparecer claramente."
+          "texto": "Inicialmente, a investigação concentrou-se no uso de ontologias para integrar dados provenientes de diferentes aplicações."
+        },
+        {
+          "tipo": "par",
+          "texto": "Depois do estudo, entretanto, surgiu um novo aprendizado:",
+          "citacoes": [
+            "“With this study, we confirmed in practice the necessity of properly identifying the organization’s information needs to guide data integration...”"
+          ]
+        },
+        {
+          "tipo": "par",
+          "texto": "Além disso:",
+          "citacoes": [
+            "“we noticed that organizations may face difficulties in identifying such information.”"
+          ]
         },
         {
           "tipo": "p",
-          "texto": "É essa ligação que transforma um conjunto de estudos empíricos em um processo coerente de aprendizado. O propósito das Learning Iterations é justamente produzir conhecimento útil para compreender o problema, fundamentar e desenvolver o artefato, avaliá-lo ou refiná-lo.",
-          "ref": "barcellos2022"
+          "texto": "Esses resultados produziram uma nova necessidade para o design da solução."
         },
         {
           "tipo": "p",
-          "texto": "Idealmente, o final de uma Learning Iteration prepara naturalmente o início da seguinte."
+          "texto": "Não bastava integrar dados."
         },
         {
           "tipo": "p",
-          "texto": "A narrativa pode assumir a forma:"
+          "texto": "Era necessário também ajudar a organização a identificar quais informações eram relevantes."
+        },
+        {
+          "tipo": "par",
+          "texto": "O texto continua:",
+          "citacoes": [
+            "“we observed that understanding how the organization works and the CSE practices it adopts is useful to identify the organization’s information needs.”"
+          ]
+        },
+        {
+          "tipo": "p",
+          "texto": "Esse aprendizado levou a outra investigação."
+        },
+        {
+          "tipo": "p",
+          "texto": "O estudante deve observar que aqui existe uma cadeia de rastreabilidade:"
         },
         {
           "tipo": "destaque",
-          "texto": "<strong>“Aprendemos X. Entretanto, o estudo também revelou Y. Para investigar Y, realizamos a próxima Learning Iteration.”</strong>"
+          "texto": "<strong>estudo → evidência → aprendizado → nova necessidade → nova investigação → evolução do artefato.</strong>"
         },
         {
           "tipo": "p",
-          "texto": "Essa estrutura aparece de maneira muito forte na tese que originou este modelo, e é recomendável mantê-la no seu trabalho."
+          "texto": "Essa cadeia deve aparecer sempre que novos requisitos forem identificados durante a dissertação."
         }
       ]
     },
     {
-      "titulo": "Ciclo de Rigor",
+      "titulo": "Rigor Cycle: conhecimento científico deve orientar decisões",
       "blocos": [
         {
           "tipo": "p",
-          "texto": "No ciclo de rigor, o aluno precisa tornar explícito de onde veio o conhecimento utilizado para construir o artefato."
+          "texto": "O Rigor Cycle estabelece a ligação entre a pesquisa e a base de conhecimento existente."
         },
         {
           "tipo": "p",
-          "texto": "A literatura não deveria aparecer apenas no capítulo de fundamentação teórica. Ela deve influenciar decisões concretas da pesquisa."
+          "texto": "Isso significa que as decisões tomadas durante o desenvolvimento do artefato não devem ser justificadas apenas por preferência pessoal ou conveniência técnica."
         },
         {
           "tipo": "p",
-          "texto": "Se uma teoria levou à criação de um requisito, isso deve ser dito. Se um modelo existente orientou a arquitetura do artefato, essa relação deve aparecer. Se um estudo anterior sugeriu determinado método de avaliação, o texto deve explicar essa influência."
+          "texto": "A literatura pode indicar conceitos, teorias, métodos, arquiteturas ou princípios que ajudem a construir a solução."
+        },
+        {
+          "tipo": "par",
+          "texto": "Na tese, por exemplo, a decisão de utilizar ontologias é relacionada ao problema de integração semântica:",
+          "citacoes": [
+            "“Ontologies can be used to deal with these issues in semantic integration initiatives.”"
+          ]
+        },
+        {
+          "tipo": "par",
+          "texto": "Posteriormente, o desenvolvimento evolui para uma solução baseada em redes de ontologias e Federated Information Systems:",
+          "citacoes": [
+            "“we evolved the software solution [...] to a data integration solution based on the concepts of ontology network and Federated Information System (FIS), called The Band.”"
+          ]
         },
         {
           "tipo": "p",
-          "texto": "O ciclo de rigor conecta as atividades de design à base de conhecimento composta por fundamentos científicos, experiências e conhecimentos já acumulados. Ao mesmo tempo, os resultados produzidos pela pesquisa devem retornar a essa base como novos conhecimentos.",
-          "ref": "hevner2007"
+          "texto": "Observe que esses conceitos não aparecem apenas como revisão bibliográfica. Eles são utilizados para tomar decisões concretas sobre a construção do artefato."
         },
         {
           "tipo": "p",
-          "texto": "Assim, o aluno deveria conseguir responder no texto não apenas <strong>“o que construí?”</strong>, mas também <strong>“em qual conhecimento me apoiei para decidir construí-lo dessa maneira?”</strong>"
+          "texto": "Ao escrever, o estudante deve procurar responder: <strong>qual conhecimento existente justifica ou influencia esta decisão de design?</strong>"
         }
       ]
     },
     {
-      "titulo": "Demonstração",
+      "titulo": "Design Cycle: construir, avaliar, aprender e evoluir",
       "blocos": [
         {
           "tipo": "p",
-          "texto": "Depois que o artefato atinge uma versão que permite sua utilização, o aluno precisa mostrar que ele consegue ser aplicado para tratar o problema para o qual foi projetado."
+          "texto": "No Design Cycle, o artefato é progressivamente construído e avaliado."
         },
         {
           "tipo": "p",
-          "texto": "A demonstração pode ocorrer por uma prova de conceito, cenário de aplicação, experimento, estudo de caso ou uso em uma organização, dependendo da natureza do trabalho."
+          "texto": "A escrita dessa seção não deve se transformar em um diário de programação."
         },
         {
           "tipo": "p",
-          "texto": "O ponto principal é demonstrar que o artefato não existe apenas conceitualmente. Ele precisa ser aplicado de alguma maneira que permita observar sua atuação diante do problema."
+          "texto": "O interesse científico está principalmente nas decisões relevantes."
+        },
+        {
+          "tipo": "par",
+          "texto": "A tese apresenta de maneira bastante clara que o artefato foi sendo modificado durante a pesquisa:",
+          "citacoes": [
+            "“Thus, we evolved the software solution proposed in (SANTOS et al., 2021) to a data integration solution...”"
+          ]
+        },
+        {
+          "tipo": "par",
+          "texto": "Depois, explica uma característica da nova solução:",
+          "citacoes": [
+            "“The Band leverages Continuum as the basis to build reusable and autonomous software components...”"
+          ]
+        },
+        {
+          "tipo": "par",
+          "texto": "E apresenta o resultado pretendido dessa decisão:",
+          "citacoes": [
+            "“As a result, data from different applications can be integrated and visualized to provide meaningful information...”"
+          ]
         },
         {
           "tipo": "p",
-          "texto": "No processo de Peffers et al., a demonstração corresponde justamente ao uso do artefato para mostrar que ele pode contribuir para a solução de uma ou mais instâncias do problema.",
-          "ref": "peffers2007"
+          "texto": "Essa sequência é útil como modelo de escrita."
+        },
+        {
+          "tipo": "p",
+          "texto": "O estudante deve procurar explicar <strong>o que mudou, por que mudou e qual resultado a decisão pretende produzir</strong>."
+        }
+      ]
+    },
+    {
+      "titulo": "Learning Iterations como mecanismo de evolução da DSR",
+      "blocos": [
+        {
+          "tipo": "p",
+          "texto": "O template utiliza o conceito de <strong>Learning Iterations</strong>, conforme discutido por Barcellos et al. (2022)."
+        },
+        {
+          "tipo": "p",
+          "texto": "A referência está disponível em:"
+        },
+        {
+          "tipo": "link",
+          "ref": "barcellos2022"
+        },
+        {
+          "tipo": "p",
+          "texto": "e em:"
+        },
+        {
+          "tipo": "link",
+          "ref": "barcellos2022"
+        },
+        {
+          "tipo": "p",
+          "texto": "Uma Learning Iteration representa uma investigação realizada porque existe algo que precisa ser aprendido para que a pesquisa avance."
+        },
+        {
+          "tipo": "par",
+          "texto": "A própria tese resume a função dessas iterações:",
+          "citacoes": [
+            "“Each learning iteration helped us better understand the target problem and gradually evaluate design choices...”"
+          ]
+        },
+        {
+          "tipo": "p",
+          "texto": "Essa frase deve ser tomada como referência conceitual pelo estudante."
+        },
+        {
+          "tipo": "p",
+          "texto": "Uma Learning Iteration não precisa existir apenas para avaliar o artefato final."
+        },
+        {
+          "tipo": "p",
+          "texto": "Ela pode ajudar a compreender o problema, investigar uma hipótese, avaliar uma decisão, descobrir requisitos ou testar uma nova versão da solução."
+        }
+      ]
+    },
+    {
+      "titulo": "Uma Learning Iteration deve surgir de uma necessidade de conhecimento",
+      "blocos": [
+        {
+          "tipo": "p",
+          "texto": "Antes de explicar participantes, entrevistas, questionários ou procedimentos, o estudante deve explicar <strong>por que aquele estudo foi necessário</strong>."
+        },
+        {
+          "tipo": "p",
+          "texto": "A transição entre a primeira e a segunda Learning Iteration da tese fornece um exemplo muito claro."
+        },
+        {
+          "tipo": "par",
+          "texto": "Primeiro é apresentado o resultado da primeira iteração:",
+          "citacoes": [
+            "“As result, we created the first version of Immigrant.”"
+          ]
+        },
+        {
+          "tipo": "par",
+          "texto": "Depois surge uma nova necessidade:",
+          "citacoes": [
+            "“The first learning iteration raised a demand to investigate how to understand the way an organization works...”"
+          ]
+        },
+        {
+          "tipo": "par",
+          "texto": "E finalmente aparece a consequência:",
+          "citacoes": [
+            "“This prompted the second learning iteration...”"
+          ]
+        },
+        {
+          "tipo": "p",
+          "texto": "Essa é uma excelente estrutura para o estudante utilizar."
+        },
+        {
+          "tipo": "p",
+          "texto": "Em termos genéricos:"
+        },
+        {
+          "tipo": "destaque",
+          "texto": "<strong>“O estudo anterior produziu X. Entretanto, identificamos que ainda era necessário compreender Y. Por esse motivo, realizamos uma nova Learning Iteration.”</strong>"
+        },
+        {
+          "tipo": "p",
+          "texto": "Esse tipo de escrita cria continuidade entre os estudos."
+        }
+      ]
+    },
+    {
+      "titulo": "Uma limitação pode provocar uma nova Learning Iteration",
+      "blocos": [
+        {
+          "tipo": "p",
+          "texto": "Uma Learning Iteration também pode surgir quando uma solução apresenta bons resultados, mas revela uma limitação."
+        },
+        {
+          "tipo": "p",
+          "texto": "Isso acontece na transição entre California e Zeppelin."
+        },
+        {
+          "tipo": "par",
+          "texto": "A tese reconhece inicialmente que California pode ser útil. Entretanto:",
+          "citacoes": [
+            "“Although California can be useful in this matter, it may demand knowledge and time to be applied.”"
+          ]
+        },
+        {
+          "tipo": "par",
+          "texto": "Essa observação tem uma consequência direta:",
+          "citacoes": [
+            "“Thus, we performed the third learning iteration...”"
+          ]
+        },
+        {
+          "tipo": "par",
+          "texto": "Essa terceira iteração investigou Zeppelin em cinco organizações:",
+          "citacoes": [
+            "“a multiple case study with five Brazilian software organizations to evaluate a diagnostic instrument, called Zeppelin...”"
+          ]
+        },
+        {
+          "tipo": "p",
+          "texto": "O estudante deve observar que a limitação da solução anterior não foi apresentada apenas como uma fraqueza."
+        },
+        {
+          "tipo": "p",
+          "texto": "Ela se tornou uma <strong>nova necessidade de pesquisa</strong>."
+        },
+        {
+          "tipo": "p",
+          "texto": "Essa é uma característica muito valiosa da DSR."
+        }
+      ]
+    },
+    {
+      "titulo": "Execução e resultados da Learning Iteration",
+      "blocos": [
+        {
+          "tipo": "p",
+          "texto": "Depois de explicar a necessidade de conhecimento, o estudante deve apresentar como pretende obtê-lo."
+        },
+        {
+          "tipo": "p",
+          "texto": "Nesse ponto entram o desenho do estudo, o contexto, participantes, instrumentos, procedimentos de coleta e métodos de análise."
+        },
+        {
+          "tipo": "p",
+          "texto": "A escolha do método deve ser coerente com aquilo que se deseja aprender."
+        },
+        {
+          "tipo": "p",
+          "texto": "Depois da execução, os resultados devem ser descritos."
+        },
+        {
+          "tipo": "p",
+          "texto": "Entretanto, uma Learning Iteration não deve terminar apenas com “Execution and Results”."
+        },
+        {
+          "tipo": "par",
+          "texto": "A dissertação utilizada como modelo cria deliberadamente uma seção adicional intitulada:",
+          "citacoes": [
+            "“What did we learn?”"
+          ]
+        },
+        {
+          "tipo": "p",
+          "texto": "Essa seção tem uma função metodológica importante: separar <strong>resultado empírico</strong> de <strong>aprendizado produzido para a DSR</strong>."
+        }
+      ]
+    },
+    {
+      "titulo": "What did we learn?: tornar o aprendizado explícito",
+      "blocos": [
+        {
+          "tipo": "p",
+          "texto": "Depois de apresentar os resultados, o estudante deve explicar explicitamente o que aprendeu."
+        },
+        {
+          "tipo": "p",
+          "texto": "A tese faz isso de forma direta."
+        },
+        {
+          "tipo": "par",
+          "texto": "Na aplicação final de Immigrant, após utilizar Zeppelin e California, o texto afirma:",
+          "citacoes": [
+            "“We learned that by doing that it was possible to understand the organization faster than when California was applied alone...”"
+          ]
+        },
+        {
+          "tipo": "p",
+          "texto": "Observe a diferença entre descrever a atividade e descrever o aprendizado."
+        },
+        {
+          "tipo": "p",
+          "texto": "“Utilizamos Zeppelin e California” é uma descrição da execução."
+        },
+        {
+          "tipo": "p",
+          "texto": "“Foi possível compreender a organização mais rapidamente” é conhecimento produzido a partir da experiência."
+        },
+        {
+          "tipo": "p",
+          "texto": "O estudante deve procurar fazer essa passagem em todas as Learning Iterations."
+        },
+        {
+          "tipo": "p",
+          "texto": "A pergunta fundamental é:"
+        },
+        {
+          "tipo": "destaque",
+          "texto": "<strong>O que sabemos depois deste estudo que não sabíamos antes dele?</strong>"
+        }
+      ]
+    },
+    {
+      "titulo": "O aprendizado deve produzir consequências para o artefato",
+      "blocos": [
+        {
+          "tipo": "p",
+          "texto": "Uma Learning Iteration torna-se ainda mais relevante quando o conhecimento produzido influencia diretamente o design."
+        },
+        {
+          "tipo": "p",
+          "texto": "Na avaliação de Zeppelin, a tese relata que algumas respostas poderiam decorrer de interpretações incorretas das afirmações do instrumento."
+        },
+        {
+          "tipo": "par",
+          "texto": "O texto afirma:",
+          "citacoes": [
+            "“people can misunderstand the statements and provide incorrect answers.”"
+          ]
+        },
+        {
+          "tipo": "par",
+          "texto": "Em seguida, uma evidência é apresentada:",
+          "citacoes": [
+            "“conducting an interview helps understand how CSE practices have been performed in the organization...”"
+          ]
+        },
+        {
+          "tipo": "par",
+          "texto": "Finalmente, aparece uma consequência para o artefato:",
+          "citacoes": [
+            "“This shows that Zeppelin can be improved to better support its users to properly understand the statements...”"
+          ]
+        },
+        {
+          "tipo": "p",
+          "texto": "Esse trecho é um excelente modelo para o aluno porque mostra toda a sequência:"
+        },
+        {
+          "tipo": "destaque",
+          "texto": "<strong>problema observado → evidência → aprendizado → melhoria do artefato.</strong>"
+        },
+        {
+          "tipo": "p",
+          "texto": "Quando possível, a seção “What did we learn?” deve terminar mostrando qual consequência o conhecimento produzido teve sobre a pesquisa."
+        }
+      ]
+    },
+    {
+      "titulo": "Resultados inesperados também são conhecimento",
+      "blocos": [
+        {
+          "tipo": "p",
+          "texto": "Nem toda Learning Iteration precisa confirmar as expectativas iniciais."
+        },
+        {
+          "tipo": "p",
+          "texto": "Resultados negativos, restrições e dependências também podem ser contribuições importantes."
+        },
+        {
+          "tipo": "par",
+          "texto": "Durante a aplicação de The Band, por exemplo, a tese identifica:",
+          "citacoes": [
+            "“The Band data integration is sensitive to the quality of application data.”"
+          ]
+        },
+        {
+          "tipo": "par",
+          "texto": "Depois, o aprendizado é ampliado:",
+          "citacoes": [
+            "“quality of such data is directly related to the quality of the process that produce it...”"
+          ]
+        },
+        {
+          "tipo": "par",
+          "texto": "E surge uma implicação:",
+          "citacoes": [
+            "“to improve the quality of data integration it is necessary to improve the development process...”"
+          ]
+        },
+        {
+          "tipo": "p",
+          "texto": "Observe que a descoberta de uma dependência não é escondida."
+        },
+        {
+          "tipo": "p",
+          "texto": "Ela se torna conhecimento sobre as condições necessárias para que o artefato produza resultados adequados."
+        },
+        {
+          "tipo": "p",
+          "texto": "O aluno deve tratar limitações dessa maneira sempre que possível."
+        }
+      ]
+    },
+    {
+      "titulo": "Evolução do artefato por meio das Learning Iterations",
+      "blocos": [
+        {
+          "tipo": "p",
+          "texto": "Ao final de várias Learning Iterations, o estudante deve ser capaz de explicar como o artefato chegou à sua forma atual."
+        },
+        {
+          "tipo": "par",
+          "texto": "Na tese, essa evolução é sintetizada explicitamente:",
+          "citacoes": [
+            "“At the end, we reached the first version of The Band...”"
+          ]
+        },
+        {
+          "tipo": "par",
+          "texto": "Além disso:",
+          "citacoes": [
+            "“California and Zeppelin were incorporated into Immigrant’s current version...”"
+          ]
+        },
+        {
+          "tipo": "p",
+          "texto": "Essas incorporações não aparecem como decisões arbitrárias."
+        },
+        {
+          "tipo": "p",
+          "texto": "Elas são consequências dos aprendizados obtidos durante as iterações anteriores."
+        },
+        {
+          "tipo": "par",
+          "texto": "Em outra parte da tese, essa evolução também aparece quando é explicado que a primeira solução não cobria determinados processos:",
+          "citacoes": [
+            "“data from applications addressing certain CSE processes [...] was not included in the first version of the proposed solution.”"
+          ]
+        },
+        {
+          "tipo": "par",
+          "texto": "A consequência foi:",
+          "citacoes": [
+            "“we decided to expand the scope of integrated data using an ontology network.”"
+          ]
+        },
+        {
+          "tipo": "p",
+          "texto": "Esse é outro padrão importante:"
+        },
+        {
+          "tipo": "destaque",
+          "texto": "<strong>limitação identificada → decisão de design → evolução do artefato.</strong>"
+        }
+      ]
+    },
+    {
+      "titulo": "Demonstração do artefato",
+      "blocos": [
+        {
+          "tipo": "p",
+          "texto": "Depois de construir uma versão utilizável do artefato, o estudante deve demonstrar que ela pode ser aplicada ao problema para o qual foi concebida."
+        },
+        {
+          "tipo": "p",
+          "texto": "A demonstração deve deixar claro o contexto de utilização, os elementos do artefato utilizados e o que se pretende demonstrar."
+        },
+        {
+          "tipo": "par",
+          "texto": "Na aplicação final descrita na tese, o processo é resumido da seguinte maneira:",
+          "citacoes": [
+            "“initially, Zeppelin was used to gain a comprehensive understanding of the current CSE practices implemented in the organization.”"
+          ]
+        },
+        {
+          "tipo": "par",
+          "texto": "Em seguida:",
+          "citacoes": [
+            "“we employed California to pinpoint specific information requirements...”"
+          ]
+        },
+        {
+          "tipo": "par",
+          "texto": "E finalmente:",
+          "citacoes": [
+            "“we used The Band to deliver cohesive and integrated data to meet the identified information needs.”"
+          ]
+        },
+        {
+          "tipo": "p",
+          "texto": "Esse trecho é interessante porque mostra o artefato funcionando como uma composição de elementos, cada um cumprindo uma função na solução do problema."
+        },
+        {
+          "tipo": "p",
+          "texto": "O estudante deve procurar fornecer uma descrição semelhante quando demonstrar seu artefato."
         }
       ]
     },
@@ -235,75 +950,399 @@
       "blocos": [
         {
           "tipo": "p",
-          "texto": "Na avaliação, o aluno deve retornar aos objetivos e critérios definidos anteriormente."
+          "texto": "A avaliação deve produzir evidências relacionadas aos objetivos da solução."
         },
         {
           "tipo": "p",
-          "texto": "O texto deve explicar claramente <strong>o que está sendo avaliado</strong>, <strong>como será avaliado</strong> e <strong>quais evidências permitirão concluir se o artefato atende ao que foi proposto</strong>."
+          "texto": "Ela não deve ser limitada a afirmações como “o sistema funcionou” ou “os usuários gostaram”."
+        },
+        {
+          "tipo": "par",
+          "texto": "Na tese, a Learning Iteration final possui um objetivo claro:",
+          "citacoes": [
+            "“to evaluate Immigrant in a real context to verify whether it is useful and whether its use is feasible.”"
+          ]
         },
         {
           "tipo": "p",
-          "texto": "Um erro que deve ser evitado é utilizar apenas afirmações como “os usuários gostaram do sistema”, “a solução funcionou” ou “os resultados foram satisfatórios”. Essas afirmações podem fazer parte das evidências, mas precisam estar relacionadas a critérios previamente definidos."
+          "texto": "Essa frase é um bom exemplo porque apresenta explicitamente <strong>o que se pretende avaliar</strong>."
+        },
+        {
+          "tipo": "par",
+          "texto": "Posteriormente, a conclusão é coerente com esse objetivo:",
+          "citacoes": [
+            "“Immigrant was considered useful by the director to enable data-driven software development.”"
+          ]
         },
         {
           "tipo": "p",
-          "texto": "Hevner et al. colocam a avaliação do artefato como elemento essencial de uma pesquisa em Design Science, e Peffers et al. incluem explicitamente uma atividade de avaliação na DSRM.",
-          "ref": "hevner2004"
+          "texto": "Entretanto, a dissertação não transforma essa percepção em uma afirmação universal."
         },
         {
           "tipo": "p",
-          "texto": "No modelo da tese, a avaliação final também pode ser tratada como uma nova Learning Iteration. Isso é particularmente interessante porque preserva a lógica de aprendizado: a pesquisa não pergunta apenas se o artefato passou ou falhou, mas procura compreender <strong>o que foi aprendido quando o artefato foi aplicado em um contexto mais completo ou realista</strong>."
+          "texto": "Isso nos leva às ameaças à validade."
         }
       ]
     },
     {
-      "titulo": "A seção “What did we learn?”",
+      "titulo": "Ameaças à validade e força das evidências",
       "blocos": [
         {
           "tipo": "p",
-          "texto": "<strong>Não retire essa seção</strong>, mesmo que o título apareça traduzido como “O que aprendemos?”."
+          "texto": "Uma avaliação científica precisa apresentar também os limites das evidências produzidas."
+        },
+        {
+          "tipo": "par",
+          "texto": "A tese reconhece, por exemplo:",
+          "citacoes": [
+            "“the main threat is that Immigrant was applied in only one organization...”"
+          ]
+        },
+        {
+          "tipo": "par",
+          "texto": "Também reconhece que:",
+          "citacoes": [
+            "“the organization profile is very specific...”"
+          ]
+        },
+        {
+          "tipo": "par",
+          "texto": "Além disso, o papel do próprio pesquisador é tratado como uma ameaça:",
+          "citacoes": [
+            "“the main threat is the influence of the author in the study...”"
+          ]
+        },
+        {
+          "tipo": "par",
+          "texto": "Diante dessas limitações, a conclusão é cuidadosamente delimitada:",
+          "citacoes": [
+            "“the obtained results must be considered preliminary evidence that needs other studies to be confirmed.”"
+          ]
         },
         {
           "tipo": "p",
-          "texto": "Ela força o pesquisador a separar resultado empírico de aprendizado científico."
+          "texto": "Esse é um importante modelo de escrita acadêmica."
         },
         {
           "tipo": "p",
-          "texto": "Por exemplo, “quatro dos cinco participantes consideraram a ferramenta útil” é um resultado."
+          "texto": "O aluno não precisa demonstrar que seu artefato funciona universalmente."
         },
         {
           "tipo": "p",
-          "texto": "Já uma conclusão como “os resultados sugerem que a visualização X é adequada para apoiar a atividade Y, porém sua utilização exige que previamente exista Z” representa um aprendizado que pode influenciar o artefato ou gerar conhecimento reutilizável."
-        },
-        {
-          "tipo": "p",
-          "texto": "É nesse segundo nível que começa a aparecer de forma mais clara a contribuição da pesquisa."
+          "texto": "Precisa apresentar claramente <strong>qual evidência possui, em qual contexto ela foi produzida e até onde essa evidência permite chegar</strong>."
         }
       ]
     },
     {
-      "titulo": "O que o aluno deve conseguir mostrar ao terminar",
+      "titulo": "Learning Iteration final",
       "blocos": [
         {
           "tipo": "p",
-          "texto": "Ao final do preenchimento, a dissertação deve possuir uma narrativa contínua. O leitor deve conseguir compreender de onde surgiu o problema; como o problema originou objetivos e requisitos; qual conhecimento científico influenciou as decisões; como essas decisões resultaram no artefato; quais Learning Iterations foram necessárias durante seu desenvolvimento; o que foi aprendido em cada uma delas; como esses aprendizados alteraram a pesquisa; como o artefato foi demonstrado e avaliado; e qual conhecimento pode ser extraído de todo esse processo."
+          "texto": "A avaliação final também pode ser organizada como uma Learning Iteration."
         },
         {
           "tipo": "p",
-          "texto": "A melhor forma de verificar isso é tentar reconstruir mentalmente a seguinte cadeia:"
+          "texto": "Isso significa que ela não deve procurar apenas responder se o artefato “funciona”."
+        },
+        {
+          "tipo": "p",
+          "texto": "Ela deve procurar produzir novos conhecimentos sobre sua utilização."
+        },
+        {
+          "tipo": "par",
+          "texto": "Na tese, a quarta iteração é descrita da seguinte maneira:",
+          "citacoes": [
+            "“To evaluate Immigrant’s usefulness and practical feasibility, we performed the fourth learning iteration...”"
+          ]
+        },
+        {
+          "tipo": "par",
+          "texto": "O artefato foi então aplicado utilizando seus diferentes componentes:",
+          "citacoes": [
+            "“Zeppelin and California were used to help identify information needs and The Band was used to provide integrated data...”"
+          ]
+        },
+        {
+          "tipo": "par",
+          "texto": "A conclusão é adequadamente cuidadosa:",
+          "citacoes": [
+            "“The results provide preliminary evidence that Immigrant is useful and its use in a practical setting is feasible.”"
+          ]
+        },
+        {
+          "tipo": "p",
+          "texto": "Observe novamente a escolha da expressão <strong>“preliminary evidence”</strong>."
+        },
+        {
+          "tipo": "p",
+          "texto": "Isso comunica aquilo que foi aprendido sem extrapolar a força do estudo realizado."
+        }
+      ]
+    },
+    {
+      "titulo": "Como sintetizar todas as Learning Iterations",
+      "blocos": [
+        {
+          "tipo": "p",
+          "texto": "Ao final da dissertação, o estudante deve reconstruir a história completa da evolução da pesquisa."
+        },
+        {
+          "tipo": "p",
+          "texto": "A tese faz isso na seção de síntese."
+        },
+        {
+          "tipo": "par",
+          "texto": "Primeiro retoma a primeira investigação:",
+          "citacoes": [
+            "“In the first learning iteration we explored the use of an ontology on agile development with Scrum to integrate software development data...”"
+          ]
+        },
+        {
+          "tipo": "par",
+          "texto": "Depois registra o aprendizado:",
+          "citacoes": [
+            "“we confirmed in practice the necessity of properly identifying the organization’s information needs to guide data integration...”"
+          ]
+        },
+        {
+          "tipo": "par",
+          "texto": "Esse conhecimento leva à próxima investigação:",
+          "citacoes": [
+            "“Thus, we performed the second learning iteration...”"
+          ]
+        },
+        {
+          "tipo": "par",
+          "texto": "A segunda investigação revela uma limitação:",
+          "citacoes": [
+            "“it may demand knowledge and time to be applied.”"
+          ]
+        },
+        {
+          "tipo": "par",
+          "texto": "Isso provoca a terceira:",
+          "citacoes": [
+            "“Thus, we performed the third learning iteration...”"
+          ]
+        },
+        {
+          "tipo": "p",
+          "texto": "Finalmente, uma quarta Learning Iteration é utilizada para avaliar o artefato em um contexto real."
+        },
+        {
+          "tipo": "p",
+          "texto": "Essa sequência é provavelmente uma das partes mais importantes para o aluno compreender."
+        },
+        {
+          "tipo": "p",
+          "texto": "A dissertação não contém apenas quatro estudos."
+        },
+        {
+          "tipo": "p",
+          "texto": "Ela contém uma <strong>cadeia de aprendizado</strong>."
+        }
+      ]
+    },
+    {
+      "titulo": "Contribuição científica",
+      "blocos": [
+        {
+          "tipo": "p",
+          "texto": "No final do trabalho, o estudante deve distinguir aquilo que foi construído daquilo que foi aprendido."
+        },
+        {
+          "tipo": "p",
+          "texto": "O artefato é uma contribuição importante, mas não necessariamente a única contribuição."
+        },
+        {
+          "tipo": "par",
+          "texto": "Na síntese da tese, por exemplo, Immigrant é apresentado como uma abordagem composta por California, Zeppelin e The Band:",
+          "citacoes": [
+            "“Immigrant considers the organization’s information needs and the available data to provide meaningful data integration to support CSE.”"
+          ]
+        },
+        {
+          "tipo": "par",
+          "texto": "Os diferentes componentes cumprem papéis específicos:",
+          "citacoes": [
+            "“California and Zeppelin are used to understand the organization and identify its information needs...”"
+          ]
+        },
+        {
+          "tipo": "par",
+          "texto": "Enquanto:",
+          "citacoes": [
+            "“The Band is used to provide ontology-based integrated data to meet the identified information needs.”"
+          ]
+        },
+        {
+          "tipo": "p",
+          "texto": "Entretanto, a contribuição científica não está apenas na existência desses artefatos."
+        },
+        {
+          "tipo": "p",
+          "texto": "Está também no conhecimento produzido sobre como identificar necessidades de informação, como combinar compreensão organizacional e integração de dados e quais condições interferem na aplicação da abordagem."
+        },
+        {
+          "tipo": "p",
+          "texto": "O estudante deve fazer essa distinção em sua dissertação."
+        },
+        {
+          "tipo": "p",
+          "texto": "Uma pergunta útil é:"
         },
         {
           "tipo": "destaque",
-          "texto": "<strong>Problema → objetivos da solução → requisitos → conhecimento existente → decisões de design → artefato → Learning Iterations → evidências → aprendizados → evolução do artefato → avaliação final → contribuição.</strong>"
+          "texto": "<strong>Se o software desenvolvido deixasse de existir amanhã, que conhecimento produzido durante esta pesquisa ainda poderia ser utilizado por outros pesquisadores ou profissionais?</strong>"
         },
         {
           "tipo": "p",
-          "texto": "Se algum elo não puder ser explicado, provavelmente existe uma lacuna na escrita ou no próprio desenho da pesquisa."
+          "texto": "A resposta ajuda a identificar a contribuição científica."
+        }
+      ]
+    },
+    {
+      "titulo": "A narrativa que o estudante deve produzir",
+      "blocos": [
+        {
+          "tipo": "p",
+          "texto": "Quando a dissertação estiver concluída, o leitor deve ser capaz de reconstruir sua lógica."
         },
         {
           "tipo": "p",
-          "texto": "As referências centrais desse guideline são <strong>Hevner et al. (2004)</strong> para os fundamentos da Design Science em Sistemas de Informação, <strong>Hevner (2007)</strong> para os ciclos de Relevância, Design e Rigor, <strong>Peffers et al. (2007)</strong> para as seis atividades da DSRM e <strong>Barcellos et al. (2022)</strong> para a organização dos estudos empíricos como Learning Iterations.",
-          "ref": "hevner2004"
+          "texto": "Na tese utilizada como referência, essa lógica pode ser resumida da seguinte forma."
+        },
+        {
+          "tipo": "p",
+          "texto": "A pesquisa identificou uma dificuldade relacionada ao uso de dados distribuídos em diferentes aplicações."
+        },
+        {
+          "tipo": "p",
+          "texto": "A primeira Learning Iteration investigou uma solução baseada em ontologias e produziu uma primeira versão do artefato."
+        },
+        {
+          "tipo": "p",
+          "texto": "Essa investigação revelou a necessidade de compreender melhor as necessidades de informação das organizações."
+        },
+        {
+          "tipo": "p",
+          "texto": "Essa necessidade provocou a segunda Learning Iteration e o desenvolvimento de California."
+        },
+        {
+          "tipo": "p",
+          "texto": "A aplicação de California mostrou benefícios, mas também revelou dificuldades relacionadas ao conhecimento e ao tempo necessários."
+        },
+        {
+          "tipo": "p",
+          "texto": "Essa limitação provocou uma terceira Learning Iteration e o desenvolvimento de Zeppelin."
+        },
+        {
+          "tipo": "p",
+          "texto": "Paralelamente, novas necessidades relacionadas à cobertura de diferentes processos levaram à evolução da integração e à criação de The Band."
+        },
+        {
+          "tipo": "p",
+          "texto": "Finalmente, uma quarta Learning Iteration reuniu os componentes da abordagem e produziu evidências sobre sua utilidade e viabilidade prática."
+        },
+        {
+          "tipo": "par",
+          "texto": "A própria tese resume a função desse processo:",
+          "citacoes": [
+            "“Each learning iteration helped us better understand the target problem and gradually evaluate design choices...”"
+          ]
+        },
+        {
+          "tipo": "p",
+          "texto": "Essa é a narrativa que este template pretende estimular."
+        },
+        {
+          "tipo": "p",
+          "texto": "Não apenas:"
+        },
+        {
+          "tipo": "destaque",
+          "texto": "<strong>“Eu desenvolvi um artefato e depois o avaliei.”</strong>"
+        },
+        {
+          "tipo": "p",
+          "texto": "Mas:"
+        },
+        {
+          "tipo": "destaque",
+          "texto": "<strong>“Eu tinha um problema. Para resolvê-lo, precisava aprender. Cada investigação produziu evidências. Essas evidências modificaram minha compreensão do problema e minhas decisões de design. O artefato evoluiu como consequência desse aprendizado.”</strong>"
+        }
+      ]
+    },
+    {
+      "titulo": "Como revisar sua própria escrita",
+      "blocos": [
+        {
+          "tipo": "p",
+          "texto": "Ao terminar cada parte do template, o estudante deve verificar se consegue explicar a conexão entre aquilo que acabou de escrever e aquilo que vem em seguida."
+        },
+        {
+          "tipo": "p",
+          "texto": "Depois do problema, deve ser possível responder: <strong>o que precisamos compreender ou resolver?</strong>"
+        },
+        {
+          "tipo": "p",
+          "texto": "Depois de um requisito: <strong>de onde surgiu esse requisito?</strong>"
+        },
+        {
+          "tipo": "p",
+          "texto": "Depois de uma decisão de design: <strong>qual problema, evidência ou conhecimento justifica essa decisão?</strong>"
+        },
+        {
+          "tipo": "p",
+          "texto": "Depois de uma Learning Iteration: <strong>o que aprendemos?</strong>"
+        },
+        {
+          "tipo": "p",
+          "texto": "Depois de um aprendizado: <strong>o que mudou na pesquisa por causa disso?</strong>"
+        },
+        {
+          "tipo": "p",
+          "texto": "Depois de uma avaliação: <strong>quais evidências foram produzidas e até onde elas permitem concluir?</strong>"
+        },
+        {
+          "tipo": "p",
+          "texto": "E, ao final da dissertação: <strong>o que sabemos agora que não sabíamos antes da realização desta pesquisa?</strong>"
+        },
+        {
+          "tipo": "par",
+          "texto": "A estrutura utilizada na tese fornece um exemplo particularmente simples dessa lógica:",
+          "citacoes": [
+            "“The first learning iteration raised a demand...”"
+          ]
+        },
+        {
+          "tipo": "par",
+          "texto": "seguido de:",
+          "citacoes": [
+            "“This prompted the second learning iteration...”"
+          ]
+        },
+        {
+          "tipo": "par",
+          "texto": "e, posteriormente:",
+          "citacoes": [
+            "“Although California can be useful [...] it may demand knowledge and time...”"
+          ]
+        },
+        {
+          "tipo": "par",
+          "texto": "seguido de:",
+          "citacoes": [
+            "“Thus, we performed the third learning iteration...”"
+          ]
+        },
+        {
+          "tipo": "p",
+          "texto": "Essas pequenas expressões — <strong>“raised a demand”</strong>, <strong>“this prompted”</strong>, <strong>“we learned”</strong>, <strong>“thus, we performed”</strong> — tornam explícita uma característica essencial da Design Science Research: <strong>a pesquisa evolui porque aprende</strong>."
+        },
+        {
+          "tipo": "p",
+          "texto": "Esse é o principal comportamento que o estudante deve procurar reproduzir ao preencher o template."
         }
       ]
     }

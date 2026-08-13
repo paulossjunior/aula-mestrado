@@ -25,7 +25,7 @@ nenhum arquivo de programação.
 | `/leituras` | Base de leituras: o tronco do campo, o que ler por fase, o corpus inteiro navegável e os CSV para download |
 | `/spec-kit` | O fluxo do Spec Kit: cada comando como a etapa de desenvolvimento que ele ocupa |
 | `/seguranca` | A dimensão de segurança: dez tópicos cruzados com as doze fases, e as obras de cada tópico |
-| `/dsr` | O guideline de preenchimento em texto corrido, com o template da entrega para download |
+| `/dsr` | O guideline de escrita da dissertação em DSR: 25 seções, com os trechos da tese que servem de exemplo |
 | `/aulas/01` … `/aulas/17` | Uma página por encontro: roteiro, objetivos, atividade, entrega, leitura e material |
 
 São 26 páginas HTML estáticas. Só duas coisas usam JavaScript — o filtro de unidade
