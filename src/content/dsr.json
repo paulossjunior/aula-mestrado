@@ -103,7 +103,7 @@
         },
         {
           "tipo": "p",
-          "texto": "É justamente aqui que entram as <strong>Learning Iterations</strong>, uma característica importante do modelo utilizado na sua tese."
+          "texto": "É justamente aqui que entram as <strong>Learning Iterations</strong>, uma característica importante do modelo em que este template se baseia."
         },
         {
           "tipo": "p",
@@ -178,7 +178,7 @@
         },
         {
           "tipo": "p",
-          "texto": "Essa estrutura aparece de maneira muito forte na sua tese e é algo que eu recomendaria manter no trabalho dos alunos."
+          "texto": "Essa estrutura aparece de maneira muito forte na tese que originou este modelo, e é recomendável mantê-la no seu trabalho."
         }
       ]
     },
@@ -261,7 +261,7 @@
       "blocos": [
         {
           "tipo": "p",
-          "texto": "Eu recomendaria pedir aos alunos que <strong>não retirem essa seção</strong>, mesmo que posteriormente você decida traduzir o título para “O que aprendemos?”."
+          "texto": "<strong>Não retire essa seção</strong>, mesmo que o título apareça traduzido como “O que aprendemos?”."
         },
         {
           "tipo": "p",
@@ -304,10 +304,6 @@
           "tipo": "p",
           "texto": "As referências centrais desse guideline são <strong>Hevner et al. (2004)</strong> para os fundamentos da Design Science em Sistemas de Informação, <strong>Hevner (2007)</strong> para os ciclos de Relevância, Design e Rigor, <strong>Peffers et al. (2007)</strong> para as seis atividades da DSRM e <strong>Barcellos et al. (2022)</strong> para a organização dos estudos empíricos como Learning Iterations.",
           "ref": "hevner2004"
-        },
-        {
-          "tipo": "p",
-          "texto": "Acho que vale a pena colocar <strong>este guideline dentro do próprio projeto LaTeX</strong>, como um arquivo `GUIA-DE-PREENCHIMENTO.pdf` ou como páginas iniciais que o aluno exclui antes de entregar a dissertação. Assim, o ZIP teria simultaneamente o <strong>template preenchível</strong> e o <strong>manual de como preenchê-lo</strong>."
         }
       ]
     }
