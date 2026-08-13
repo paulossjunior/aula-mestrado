@@ -1376,5 +1376,114 @@
         }
       ]
     }
-  ]
+  ],
+  "trajetoria": {
+    "titulo": "A trajetória que o leitor deve conseguir reconstruir",
+    "legenda": "Os treze elos da trajetória, distribuídos pelos três ciclos de Hevner. O laço de evidências a decisões de design é o que faz a pesquisa evoluir: cada estudo produz aprendizado, e o aprendizado muda o que vem depois.",
+    "nota": "A trajetória não precisa ser linear: a pesquisa evolui à medida que novos conhecimentos são produzidos.",
+    "faixas": [
+      {
+        "id": "relevancia",
+        "nome": "Relevance Cycle",
+        "ambiente": "O ambiente onde o problema existe"
+      },
+      {
+        "id": "rigor",
+        "nome": "Rigor Cycle · entrada",
+        "ambiente": "O que a base de conhecimento oferece"
+      },
+      {
+        "id": "design",
+        "nome": "Design Cycle",
+        "ambiente": "Construir, estudar, aprender, evoluir"
+      },
+      {
+        "id": "saida",
+        "nome": "Rigor Cycle · saída",
+        "ambiente": "O que volta para a base de conhecimento"
+      }
+    ],
+    "elos": [
+      {
+        "n": 1,
+        "nome": "Problema",
+        "faixa": "relevancia"
+      },
+      {
+        "n": 2,
+        "nome": "Necessidade de conhecimento",
+        "faixa": "relevancia"
+      },
+      {
+        "n": 3,
+        "nome": "Objetivos da solução",
+        "faixa": "relevancia"
+      },
+      {
+        "n": 4,
+        "nome": "Requisitos",
+        "faixa": "relevancia"
+      },
+      {
+        "n": 5,
+        "nome": "Conhecimento científico",
+        "faixa": "rigor"
+      },
+      {
+        "n": 6,
+        "nome": "Decisões de design",
+        "faixa": "design"
+      },
+      {
+        "n": 7,
+        "nome": "Artefato",
+        "faixa": "design"
+      },
+      {
+        "n": 8,
+        "nome": "Estudos empíricos",
+        "faixa": "design"
+      },
+      {
+        "n": 9,
+        "nome": "Evidências",
+        "faixa": "design"
+      },
+      {
+        "n": 10,
+        "nome": "Aprendizados",
+        "faixa": "design"
+      },
+      {
+        "n": 11,
+        "nome": "Evolução do artefato",
+        "faixa": "design"
+      },
+      {
+        "n": 12,
+        "nome": "Avaliação",
+        "faixa": "design"
+      },
+      {
+        "n": 13,
+        "nome": "Contribuição científica",
+        "faixa": "saida"
+      }
+    ],
+    "lacos": [
+      {
+        "de": 10,
+        "para": 6,
+        "rotulo": "o aprendizado muda a decisão"
+      },
+      {
+        "de": 10,
+        "para": 2,
+        "rotulo": "e revela o que ainda falta aprender"
+      }
+    ],
+    "colunaFixa": {
+      "5": 0
+    }
+  }
 }

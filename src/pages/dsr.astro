@@ -12,7 +12,7 @@ type Bloco = {
   ref?: string;
 };
 
-const { abertura, template, secoes, referencias } = dados as {
+const { abertura, template, secoes, referencias, trajetoria } = dados as {
   abertura: { titulo: string; tituloPagina: string; descricao: string; intro: Bloco[] };
   template: {
     titulo: string;
@@ -22,6 +22,7 @@ const { abertura, template, secoes, referencias } = dados as {
   };
   secoes: { titulo: string; blocos: Bloco[] }[];
   referencias: { id: string; autores: string; ano: string; titulo: string; papel: string; enderecos: { rotulo: string; href: string }[] }[];
+  trajetoria: { titulo: string; legenda: string };
 };
 
 // Um bloco pode citar a obra que o fundamenta. Se o id não existir, o build para —
@@ -88,7 +89,22 @@ const tituloSecao =
                 </div>
               </div>
             ) : b.tipo === "destaque" ? (
-              <p class="om-dest" set:html={b.texto} />
+              <>
+                <p class="om-dest" set:html={b.texto} />
+                {b.texto?.includes("contribuição científica") && (
+                  <figure class="om-fig">
+                    <div class="om-scroll">
+                      <img
+                        src={rota("/uploads/dsr-trajetoria.svg")}
+                        alt={trajetoria.legenda}
+                        style="display: block; width: 100%; min-width: 720px; height: auto"
+                        loading="lazy"
+                      />
+                    </div>
+                    <figcaption>{trajetoria.legenda}</figcaption>
+                  </figure>
+                )}
+              </>
             ) : b.tipo === "link" ? (
               <p class="om-med" style="margin: -8px 0 20px; font-size: 14px">
                 <a href={`#ref-${b.ref}`}>
@@ -287,6 +303,21 @@ const tituloSecao =
         gap: 0 56px;
         align-items: start;
       }
+    }
+
+    /* A figura sangra além da medida de leitura — é um mapa, não um parágrafo.
+       Em tela estreita rola dentro do próprio contêiner, como as outras do site. */
+    .om-fig {
+      margin: 4px 0 26px;
+      border: 2px solid var(--color-text);
+      max-width: 100%;
+    }
+    .om-fig figcaption {
+      font-size: 13px;
+      line-height: 1.5;
+      padding: 12px 16px;
+      border-top: 2px solid var(--color-text);
+      background: var(--color-neutral-100);
     }
 
     /* Parágrafo e a citação que ele anuncia são uma unidade de leitura: no

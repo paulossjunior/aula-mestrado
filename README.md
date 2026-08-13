@@ -118,7 +118,7 @@ src/lib/url.ts                  resolve links sob o subcaminho do GitHub Pages
 src/lib/aulas.ts                traduz `estado` no que a página renderiza
 
 public/_ds/modernist-…/         o design system: styles.css, guia e tokens
-public/uploads/                 as quatro figuras do site, geradas em SVG por script
+public/uploads/                 as cinco figuras do site, geradas em SVG por script
 public/fichamento.tex           o modelo em LaTeX (é o mesmo texto exibido no site)
 public/dados/                   os três CSV do corpus, publicados para download
 public/dsr/                     o template da entrega: o PDF compilado e o fonte LaTeX
@@ -183,8 +183,8 @@ As duas rodam a mesma bateria de verificação antes de deixar qualquer coisa pa
 2. `npm run build` — o site tem de construir.
 3. **25 páginas** — conta os `index.html` e confere um a um: as oito páginas fixas
    e as 17 aulas. Se uma sumir, reprova em vez de publicar um 404.
-4. **Assets obrigatórios** — `.nojekyll`, `fichamento.tex`, as duas figuras e a
-   folha do design system.
+4. **Assets obrigatórios** — `.nojekyll`, `fichamento.tex`, as figuras, o template DSR
+   e a folha do design system.
 5. **Caminho base** — a home tem de sair com links `/aula-mestrado/`.
 6. **Laboratórios** — [`scripts/conferir-labs.mjs`](scripts/conferir-labs.mjs) confere que cada
    laboratório prometido na avaliação tem, no cronograma, um encontro que o atribui e outro que o

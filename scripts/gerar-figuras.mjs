@@ -382,3 +382,138 @@ s.push(
 writeFileSync(resolve(raiz, "public/uploads/seguranca-topico-fase.svg"), s.join("\n") + "\n");
 console.log("escrito public/uploads/seguranca-topico-fase.svg");
 console.log(`  ${seg.topicos.length} tópicos × ${colunas.length} fases · maior célula = ${maxSeg}`);
+
+// --- A trajetória da DSR, por ciclo de Hevner --------------------------------
+// Treze elos em três faixas, com o laço que faz a pesquisa evoluir. Uma seta reta
+// contradiria o próprio guideline, que diz que a trajetória não é linear.
+{
+  const t = ler("src/content/dsr.json").trajetoria;
+
+  const CAIXA_L = 168;
+  const CAIXA_A = 62;
+  const GAP_X = 30;
+  const GAP_Y = 34;
+  const PAD = 30;
+  const ROTULO = 176;          // coluna dos nomes de faixa
+  const COLS = 4;              // elos por linha dentro da faixa
+
+  // Cada faixa ocupa quantas linhas forem necessárias para os seus elos.
+  const porFaixa = t.faixas.map((f) => ({
+    ...f,
+    elos: t.elos.filter((e) => e.faixa === f.id),
+  }));
+  const linhasDe = (n) => Math.ceil(n / COLS);
+
+  let y = PAD + 54;
+  const pos = new Map();
+  const faixas = [];
+  for (const f of porFaixa) {
+    const linhas = linhasDe(f.elos.length);
+    const alturaFaixa = linhas * CAIXA_A + (linhas - 1) * GAP_Y;
+    faixas.push({ ...f, y, altura: alturaFaixa });
+    f.elos.forEach((e, i) => {
+      const fixa = t.colunaFixa?.[e.n];
+      const col = fixa ?? i % COLS;
+      const lin = Math.floor(i / COLS);
+      pos.set(e.n, {
+        x: PAD + ROTULO + col * (CAIXA_L + GAP_X),
+        y: y + lin * (CAIXA_A + GAP_Y),
+        elo: e,
+      });
+    });
+    y += alturaFaixa + GAP_Y + 26;
+  }
+
+  const L = PAD + ROTULO + COLS * CAIXA_L + (COLS - 1) * GAP_X + PAD;
+  const A = y + 96;
+
+  const esc = (s) =>
+    String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+
+  // Quebra o nome do elo em duas linhas quando não cabe.
+  const quebrar = (nome) => {
+    if (nome.length <= 20) return [nome];
+    const pal = nome.split(" ");
+    const meio = Math.ceil(pal.length / 2);
+    return [pal.slice(0, meio).join(" "), pal.slice(meio).join(" ")];
+  };
+
+  const seta = (x1, y1, x2, y2, cor) =>
+    `<path d="M ${x1} ${y1} L ${x2} ${y2}" stroke="${cor}" stroke-width="2" fill="none" marker-end="url(#ponta)"/>`;
+
+  const partes = [];
+
+  partes.push(`<defs>
+    <marker id="ponta" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="${INK}"/>
+    </marker>
+    <marker id="ponta-acento" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="${ACENTO}"/>
+    </marker>
+  </defs>`);
+
+  // As faixas, com o nome do ciclo à esquerda.
+  for (const f of faixas) {
+    partes.push(
+      `<line x1="${PAD}" y1="${f.y - 20}" x2="${L - PAD}" y2="${f.y - 20}" stroke="${DIVISOR}" stroke-width="2"/>`,
+      `<text x="${PAD}" y="${f.y + 4}" font-family="${FONTE}" font-size="14" font-weight="800" fill="${INK}">${esc(f.nome)}</text>`,
+      `<text x="${PAD}" y="${f.y + 24}" font-family="${FONTE}" font-size="12" fill="${INK}" opacity="0.6">${esc(f.ambiente)}</text>`
+    );
+  }
+
+  // Setas da sequência, entre elos consecutivos.
+  for (let n = 1; n < t.elos.length; n++) {
+    const a = pos.get(n), b = pos.get(n + 1);
+    if (a.y === b.y && b.x > a.x) {
+      partes.push(seta(a.x + CAIXA_L, a.y + CAIXA_A / 2, b.x - 6, b.y + CAIXA_A / 2, INK));
+    } else {
+      // Desce e volta: contorna pela direita da caixa de origem.
+      const x1 = a.x + CAIXA_L / 2, y1 = a.y + CAIXA_A;
+      const x2 = b.x + CAIXA_L / 2, y2 = b.y - 6;
+      const meio = (y1 + y2) / 2;
+      partes.push(
+        `<path d="M ${x1} ${y1} L ${x1} ${meio} L ${x2} ${meio} L ${x2} ${y2}" stroke="${INK}" stroke-width="2" fill="none" marker-end="url(#ponta)"/>`
+      );
+    }
+  }
+
+  // Os laços de retorno, em acento: é neles que a pesquisa aprende.
+  const rotulos = [];
+  for (const [i, l] of t.lacos.entries()) {
+    const a = pos.get(l.de), b = pos.get(l.para);
+    const xe = PAD + ROTULO - 16 - i * 16;          // cada laço na sua calha
+    const x1 = a.x, y1 = a.y + CAIXA_A / 2;
+    const x2 = b.x + CAIXA_L / 2, y2 = b.y + CAIXA_A + 6;
+    partes.push(
+      `<path d="M ${x1} ${y1} L ${xe} ${y1} L ${xe} ${y2 + 12} L ${x2} ${y2 + 12} L ${x2} ${y2}" stroke="${ACENTO}" stroke-width="2" fill="none" stroke-dasharray="5 4" marker-end="url(#ponta-acento)"/>`
+    );
+    rotulos.push(l.rotulo);
+  }
+
+  // As caixas por cima das setas.
+  for (const { x, y, elo } of pos.values()) {
+    const linhas = quebrar(elo.nome);
+    partes.push(
+      `<rect x="${x}" y="${y}" width="${CAIXA_L}" height="${CAIXA_A}" fill="${BG}" stroke="${INK}" stroke-width="2"/>`,
+      `<text x="${x + 12}" y="${y + 20}" font-family="${FONTE}" font-size="12" font-weight="800" fill="${ACENTO}">${String(elo.n).padStart(2, "0")}</text>`
+    );
+    linhas.forEach((linha, i) => {
+      partes.push(
+        `<text x="${x + 12}" y="${y + 38 + i * 15}" font-family="${FONTE}" font-size="13" font-weight="700" fill="${INK}">${esc(linha)}</text>`
+      );
+    });
+  }
+
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${L} ${A}" width="${L}" height="${A}" role="img" aria-label="${esc(t.legenda)}">
+<rect width="${L}" height="${A}" fill="${BG}"/>
+<text x="${PAD}" y="${PAD + 22}" font-family="${FONTE}" font-size="17" font-weight="900" fill="${INK}">${esc(t.titulo)}</text>
+${partes.join("\n")}
+<line x1="${PAD}" y1="${A - 62}" x2="${PAD + 26}" y2="${A - 62}" stroke="${ACENTO}" stroke-width="2" stroke-dasharray="5 4"/>
+<text x="${PAD + 34}" y="${A - 58}" font-family="${FONTE}" font-size="12" font-weight="700" fill="${ACENTO}">${esc(rotulos.join(" · "))}</text>
+<text x="${PAD}" y="${A - 34}" font-family="${FONTE}" font-size="12" fill="${INK}" opacity="0.7">${esc(t.nota)}</text>
+</svg>
+`;
+  writeFileSync(resolve(raiz, "public/uploads/dsr-trajetoria.svg"), svg);
+  console.log("escrito public/uploads/dsr-trajetoria.svg");
+  console.log(`  ${t.elos.length} elos · ${t.faixas.length} ciclos · ${t.lacos.length} laços · ${L}×${A}`);
+}
