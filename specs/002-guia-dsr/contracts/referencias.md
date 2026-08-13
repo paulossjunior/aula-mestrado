@@ -39,3 +39,22 @@ extenso, e o link é um complemento — nunca o único identificador.
 
 Os parâmetros `?utm_source=chatgpt.com` presentes em `fontes/dsr/source_guideline.md`
 são rastreamento da ferramenta que gerou o arquivo. Removidos de todos os endereços.
+
+
+---
+
+## Revisão de 2026-08-13 — só as duas fontes
+
+O professor determinou que a página escrevesse **somente** sobre `guideline.md` e
+`source_guideline.md`. Com isso:
+
+- **Sede, volume, páginas e DOI saíram.** Eu os havia trazido de fora para dar
+  resiliência à referência. Não estão em nenhuma das duas fontes.
+- **Todos os endereços que a fonte lista entram**, com o rótulo que ela usa — inclusive
+  os que devolvem 403 a robô (MISQ, Taylor & Francis, ACM). A escolha de mandar o aluno
+  só para o PDF aberto era minha, e a fonte oferece os dois; agora ela decide.
+- **«Peffers et al.»**, não os quatro sobrenomes: os nomes por extenso vinham do
+  `main.tex` de dentro do ZIP.
+
+A tabela de verificação HTTP acima continua válida como registro do que respondia em
+2026-08-13, mas já não determina qual endereço a página mostra.

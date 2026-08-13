@@ -38,7 +38,6 @@ Nove entradas, na ordem em que aparecem no template. Cobrem FR-001 e FR-002.
 | --- | --- | --- |
 | `n` | string | Ordinal de dois dígitos, `"01"`…`"09"` |
 | `titulo` | string | Nome da parte, como o aluno a encontra no template |
-| `pergunta` | string | A pergunta que aquela parte responde — é o que o aluno precisa conseguir nomear (SC-001) |
 | `espera` | string[] | O que o texto precisa conter. Um item por exigência |
 | `evitar` | string[] | Os erros que o guia adverte. Vazio quando a fonte não adverte nada |
 | `exemplo` | string \| null | Formulação de exemplo, quando a fonte oferece uma. `null` quando não |
@@ -77,18 +76,16 @@ pesquisa.
 
 | Campo | Tipo | Regra |
 | --- | --- | --- |
-| `n` | number | Posição, 1 a 11 |
-| `elo` | string | Nome do elo |
-| `pergunta` | string | O que o aluno tem de conseguir responder naquele ponto |
+| `n` | number | Posição, 1 a 12 |
+| `elo` | string | Nome do elo, como a fonte o escreve |
 
 Ordem fixa: problema · objetivos da solução · requisitos · conhecimento existente ·
 decisões de design · artefato · Learning Iterations · evidências · aprendizados ·
 evolução do artefato · avaliação final · contribuição.
 
-> A fonte lista doze termos nessa sentença. «Avaliação final» e «contribuição» são o
-> mesmo elo de fechamento em dois momentos — a avaliação produz a contribuição —, e a
-> própria fonte trata o par como um passo. O modelo registra onze elos, com o último
-> nomeando os dois. A decisão está aqui para não parecer erro de contagem.
+> A fonte lista doze termos e é assim que a página os mostra. Eu havia fundido os dois
+> últimos em um só elo, por lê-los como um par; a leitura pode ser defensável, mas
+> agrupar o que a fonte separa é decisão minha, e ela saiu.
 
 ---
 
@@ -103,11 +100,13 @@ Quatro entradas. Cobre FR-004; os endereços vêm de `contracts/referencias.md`.
 | `ano` | string | Ano de publicação |
 | `titulo` | string | Título por extenso |
 | `papel` | string | O que sustenta no template |
-| `href` | string | Endereço primário, verificado |
-| `registro` | string | Sede e DOI, como texto — sobrevive ao link quebrar |
+| `enderecos` | {rotulo, href}[] | Os endereços que `source_guideline.md` lista para aquela obra, com o rótulo que ela usa: «Artigo», «PDF», «Artigo/DOI», «Artigo na SBC», «ACM Digital Library» |
 
-**Regra de validação**: `autores`, `ano` e `titulo` nunca vazios. É o que mantém a
-referência identificável se o endereço sair do ar.
+**Regra de validação**: `autores`, `ano` e `titulo` nunca vazios, e `autores` como a
+fonte cita — «Peffers et al.», não os quatro nomes por extenso, que não constam dela.
+
+**Sede, volume, páginas e DOI não entram.** Não estão em nenhuma das duas fontes; eu
+os havia acrescentado de fora e foram removidos a pedido do professor.
 
 ---
 
@@ -127,12 +126,11 @@ O arquivo que o aluno vai preencher, oferecido para download. Cobre FR-012.
 | `arquivo` | string | `"modelo_DSR.zip"` |
 | `href` | string | `"/dsr/modelo_DSR.zip"` |
 | `peso` | string | Tamanho real do arquivo, conferido no disco |
-| `texto` | string | O que é e como usar — compilar `main.tex`, substituir os `\preencher{...}` |
-| `conteudo` | string[] | O que há dentro: `main.tex`, os três capítulos, `referencias.bib` e o PDF compilado |
+| `texto` | string | O mecanismo, como o guideline o descreve: texto metodológico em preto, `[PREENCHA: …]` em vermelho |
 
-O template é escrito em texto corrido de propósito: requisitos e critérios aparecem
-dentro da narrativa, não como listas. É estrutura de escrita, não formulário — e a
-página precisa dizer isso, senão o aluno o trata como checklist.
+**A lista do interior do ZIP não entra.** Ela viria do README dentro do arquivo, que
+não é uma das duas fontes autorizadas. O link para download fica; a análise do
+conteúdo, não.
 
 ---
 
