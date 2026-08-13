@@ -35,20 +35,20 @@
     ]
   },
   "template": {
-    "titulo": "O modelo da dissertação",
-    "texto": "Estes arquivos são o <strong>modelo</strong>, não a entrega. Baixe o fonte em LaTeX, compile e substitua cada trecho em vermelho — <em>[PREENCHA: explique de onde surgiu o problema…]</em> — pelo conteúdo da sua pesquisa. O texto em preto é metodológico e permanece. O que você entrega ao final do curso é este documento preenchido.",
+    "titulo": "O template da entrega",
+    "texto": "Este é o documento que você entrega ao final do curso. O texto metodológico permanece em preto e instruções como <em>[PREENCHA: explique de onde surgiu o problema…]</em> aparecem em vermelho. Quando terminar, basta substituir esses trechos pelo conteúdo definitivo.",
     "arquivos": [
       {
         "nome": "modelo_DSR_compilado.pdf",
         "href": "/dsr/modelo_DSR_compilado.pdf",
         "peso": "166 KB",
-        "descricao": "O modelo já compilado — 15 páginas, para ver como fica antes de começar"
+        "descricao": "O template do documento a entregar, já compilado — 15 páginas, com os trechos a substituir em vermelho"
       },
       {
         "nome": "modelo_DSR.zip",
         "href": "/dsr/modelo_DSR.zip",
         "peso": "347 KB",
-        "descricao": "O fonte em LaTeX, que é o que você preenche e compila"
+        "descricao": "O fonte em LaTeX desse PDF, para você preencher e compilar"
       }
     ],
     "exemplo": {
