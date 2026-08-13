@@ -68,7 +68,8 @@ const tituloSecao =
         {abertura.titulo}
       </h1>
 
-      <div style="margin: 26px 0 34px">
+      <div class="om-abre">
+        <div>
         {
           abertura.intro.map((b, i) =>
             b.tipo === "par" ? (
@@ -103,6 +104,47 @@ const tituloSecao =
             )
           )
         }
+        </div>
+          <aside class="om-abre-lado">
+            <div id="template" style="border: 2px solid var(--color-text); padding: 20px 22px; scroll-margin-top: 8px">
+              <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.6">
+                {template.titulo}
+              </div>
+              <div style="display: grid; gap: 14px; margin: 14px 0 0">
+                {
+                  template.arquivos.map((a) => (
+                    <div>
+                      <a
+                        href={rota(a.href)}
+                        download
+                        style="display: flex; flex-wrap: wrap; gap: 3px 8px; align-items: baseline"
+                      >
+                        <span style="font-family: var(--font-heading); font-weight: 800; font-size: 15px">
+                          {a.nome}
+                        </span>
+                        <span style="font-size: 12px; opacity: 0.6; color: var(--color-text)">{a.peso}</span>
+                      </a>
+                      <p style="font-size: 13px; line-height: 1.5; margin: 3px 0 0; opacity: 0.8">
+                        {a.descricao}
+                      </p>
+                    </div>
+                  ))
+                }
+              </div>
+              <p style="font-size: 13px; line-height: 1.55; margin: 16px 0 0; opacity: 0.8" set:html={template.texto} />
+            </div>
+
+            <div style="border-left: 2px solid var(--color-accent); padding: 2px 0 2px 18px; margin: 22px 0 0">
+              <div style="font-family: var(--font-heading); font-weight: 800; font-size: 15px; letter-spacing: -0.01em">
+                {template.exemplo.titulo}
+              </div>
+              <p style="font-size: 14px; line-height: 1.55; margin: 6px 0 0">{template.exemplo.texto}</p>
+              <a href={template.exemplo.href} style="display: inline-block; font-size: 14px; font-weight: 700; line-height: 1.35; margin: 8px 0 0">
+                {template.exemplo.obra}
+              </a>
+              <p style="font-size: 12px; margin: 3px 0 0; opacity: 0.7">{template.exemplo.fonte}</p>
+            </div>
+          </aside>
       </div>
     </section>
 
@@ -181,48 +223,6 @@ const tituloSecao =
               ))
             }
 
-            <section id="template" style="padding: 34px 0 6px; scroll-margin-top: 8px">
-              <h2 style={tituloSecao}>{template.titulo}</h2>
-              <p style={`${paragrafo} margin-top: 20px`} class="om-med" set:html={template.texto} />
-              <div class="om-med" style="border: 2px solid var(--color-text); padding: 18px 22px; display: grid; gap: 14px">
-                {
-                  template.arquivos.map((a) => (
-                    <div>
-                      <a
-                        href={rota(a.href)}
-                        download
-                        style="display: flex; flex-wrap: wrap; gap: 4px 10px; align-items: baseline"
-                      >
-                        <span style="font-family: var(--font-heading); font-weight: 800; font-size: 16px">
-                          {a.nome}
-                        </span>
-                        <span style="font-size: 13px; opacity: 0.65; color: var(--color-text)">
-                          {a.peso}
-                        </span>
-                      </a>
-                      <p style="font-size: 14px; line-height: 1.5; margin: 3px 0 0; opacity: 0.8">
-                        {a.descricao}
-                      </p>
-                    </div>
-                  ))
-                }
-              </div>
-
-              <div class="om-med" style="border-left: 2px solid var(--color-accent); padding: 4px 0 4px 22px; margin: 26px 0 0">
-                <div style="font-family: var(--font-heading); font-weight: 800; font-size: 17px; letter-spacing: -0.015em">
-                  {template.exemplo.titulo}
-                </div>
-                <p style="font-size: 16px; line-height: 1.62; margin: 8px 0 0">{template.exemplo.texto}</p>
-                <a
-                  href={template.exemplo.href}
-                  style="display: inline-block; font-size: 15px; font-weight: 700; line-height: 1.35; margin: 10px 0 0"
-                >
-                  {template.exemplo.obra}
-                </a>
-                <p style="font-size: 13px; margin: 4px 0 0; opacity: 0.7">{template.exemplo.fonte}</p>
-              </div>
-            </section>
-
             <section id="referencias" style="padding: 34px 0 8px; scroll-margin-top: 8px">
               <h2 style={tituloSecao}>Referências</h2>
               <div style="border-top: 2px solid var(--color-text); margin-top: 20px">
@@ -267,6 +267,26 @@ const tituloSecao =
     }
     .om-guia-indice {
       border-bottom: 2px solid var(--color-divider);
+    }
+
+    /* A abertura ocupa a página inteira: o texto à esquerda, o template à direita.
+       Sem isso a metade direita ficava vazia enquanto o download esperava no fim. */
+    .om-abre {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 32px;
+      margin: 26px 0 34px;
+    }
+    .om-abre-lado {
+      display: block;
+    }
+
+    @media (min-width: 861px) {
+      .om-abre {
+        grid-template-columns: minmax(0, 1fr) 21em;
+        gap: 0 56px;
+        align-items: start;
+      }
     }
 
     /* Parágrafo e a citação que ele anuncia são uma unidade de leitura: no

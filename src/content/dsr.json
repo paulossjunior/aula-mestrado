@@ -18,15 +18,7 @@
       },
       {
         "tipo": "p",
-        "texto": "Hevner et al. (2004) apresentam Design Science como um paradigma no qual conhecimento e compreensão sobre um domínio de problema e sua solução são obtidos por meio da construção e da aplicação de artefatos."
-      },
-      {
-        "tipo": "p",
-        "texto": "A referência pode ser consultada em:"
-      },
-      {
-        "tipo": "link",
-        "ref": "hevner2004"
+        "texto": "<a href=\"#ref-hevner2004\">Hevner et al. (2004)</a> apresentam Design Science como um paradigma no qual conhecimento e compreensão sobre um domínio de problema e sua solução são obtidos por meio da construção e da aplicação de artefatos."
       },
       {
         "tipo": "p",
@@ -112,15 +104,7 @@
       "blocos": [
         {
           "tipo": "p",
-          "texto": "Uma referência importante para organizar uma pesquisa em DSR é Peffers et al., que apresentam a Design Science Research Methodology. A metodologia compreende atividades relacionadas à identificação do problema e motivação, definição dos objetivos da solução, design e desenvolvimento, demonstração, avaliação e comunicação."
-        },
-        {
-          "tipo": "p",
-          "texto": "A referência pode ser consultada em:"
-        },
-        {
-          "tipo": "link",
-          "ref": "peffers2007"
+          "texto": "Uma referência importante para organizar uma pesquisa em DSR é <a href=\"#ref-peffers2007\">Peffers et al.</a>, que apresentam a Design Science Research Methodology. A metodologia compreende atividades relacionadas à identificação do problema e motivação, definição dos objetivos da solução, design e desenvolvimento, demonstração, avaliação e comunicação."
         },
         {
           "tipo": "p",
@@ -166,15 +150,7 @@
       "blocos": [
         {
           "tipo": "p",
-          "texto": "O template utiliza também os três ciclos apresentados por Hevner (2007): <strong>Relevance Cycle, Design Cycle e Rigor Cycle</strong>."
-        },
-        {
-          "tipo": "p",
-          "texto": "A referência pode ser consultada em:"
-        },
-        {
-          "tipo": "link",
-          "ref": "hevner2007"
+          "texto": "O template utiliza também os três ciclos apresentados por <a href=\"#ref-hevner2007\">Hevner (2007)</a>: <strong>Relevance Cycle, Design Cycle e Rigor Cycle</strong>."
         },
         {
           "tipo": "p",
@@ -539,23 +515,7 @@
       "blocos": [
         {
           "tipo": "p",
-          "texto": "O template utiliza o conceito de <strong>Learning Iterations</strong>, conforme discutido por Barcellos et al. (2022)."
-        },
-        {
-          "tipo": "p",
-          "texto": "A referência está disponível em:"
-        },
-        {
-          "tipo": "link",
-          "ref": "barcellos2022"
-        },
-        {
-          "tipo": "p",
-          "texto": "e em:"
-        },
-        {
-          "tipo": "link",
-          "ref": "barcellos2022"
+          "texto": "O template utiliza o conceito de <strong>Learning Iterations</strong>, conforme discutido por <a href=\"#ref-barcellos2022\">Barcellos et al. (2022)</a>."
         },
         {
           "tipo": "p",
