@@ -12,7 +12,20 @@ type Bloco = {
   ref?: string;
 };
 
-const { abertura, template, secoes, referencias, trajetoria } = dados as {
+// Cada figura declara em que seção entra. Prender a figura ao título evita
+// espalhar condições pelo corpo da página.
+const figuras: Record<string, { src: string; legenda: string }> = {
+  "Learning Iterations como mecanismo de evolução da DSR": {
+    src: "/uploads/dsr-learning-iterations.svg",
+    legenda: dados.cadeiaLI.legenda,
+  },
+  "Relevance Cycle: começar pelo problema, e não pela tecnologia": {
+    src: "/uploads/dsr-construcao-problema.svg",
+    legenda: dados.construcaoProblema.legenda,
+  },
+};
+
+const { abertura, template, secoes, referencias, trajetoria, glossario } = dados as {
   abertura: { titulo: string; tituloPagina: string; descricao: string; intro: Bloco[] };
   template: {
     titulo: string;
@@ -23,6 +36,9 @@ const { abertura, template, secoes, referencias, trajetoria } = dados as {
   secoes: { titulo: string; blocos: Bloco[] }[];
   referencias: { id: string; autores: string; ano: string; titulo: string; papel: string; enderecos: { rotulo: string; href: string }[] }[];
   trajetoria: { titulo: string; legenda: string };
+  cadeiaLI: { titulo: string; legenda: string };
+  construcaoProblema: { titulo: string; legenda: string };
+  glossario: { titulo: string; texto: string; itens: { nome: string; texto: string }[] };
 };
 
 // Um bloco pode citar a obra que o fundamenta. Se o id não existir, o build para —
@@ -47,7 +63,7 @@ const ancora = (t: string) =>
 // Texto corrido pede medida de leitura, não largura de página.
 const paragrafo = "font-size: 17px; line-height: 1.72; margin: 0 0 18px; text-wrap: pretty;";
 const tituloSecao =
-  "font-family: var(--font-heading); font-weight: 800; font-size: clamp(23px, 3.4vw, 31px); line-height: 1.14; letter-spacing: -0.022em; margin: 0; max-width: 22ch; text-wrap: balance";
+  "font-family: var(--font-heading); font-weight: 800; font-size: clamp(23px, 3.4vw, 31px); line-height: 1.14; letter-spacing: -0.022em; margin: 0; max-width: 34ch; text-wrap: balance";
 ---
 
 <Base titulo={abertura.tituloPagina} descricao={abertura.descricao}>
@@ -160,6 +176,26 @@ const tituloSecao =
               </a>
               <p style="font-size: 12px; margin: 3px 0 0; opacity: 0.7">{template.exemplo.fonte}</p>
             </div>
+            <div style="border: 2px solid var(--color-divider); padding: 18px 20px; margin: 22px 0 0">
+              <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.6">
+                {glossario.titulo}
+              </div>
+              <p style="font-size: 13px; line-height: 1.55; margin: 8px 0 0; opacity: 0.8">
+                {glossario.texto}
+              </p>
+              <dl style="margin: 14px 0 0; display: grid; gap: 12px">
+                {
+                  glossario.itens.map((g) => (
+                    <div>
+                      <dt style="font-family: var(--font-heading); font-weight: 800; font-size: 14px; color: var(--color-accent)">
+                        {g.nome}
+                      </dt>
+                      <dd style="font-size: 13px; line-height: 1.5; margin: 2px 0 0">{g.texto}</dd>
+                    </div>
+                  ))
+                }
+              </dl>
+            </div>
           </aside>
       </div>
     </section>
@@ -234,6 +270,20 @@ const tituloSecao =
                     ) : (
                       <p style={paragrafo} class="om-med" set:html={b.texto} />
                     )
+                  )}
+
+                  {figuras[s.titulo] && (
+                    <figure class="om-fig">
+                      <div class="om-scroll">
+                        <img
+                          src={rota(figuras[s.titulo].src)}
+                          alt={figuras[s.titulo].legenda}
+                          style="display: block; width: 100%; min-width: 780px; height: auto"
+                          loading="lazy"
+                        />
+                      </div>
+                      <figcaption>{figuras[s.titulo].legenda}</figcaption>
+                    </figure>
                   )}
                 </section>
               ))

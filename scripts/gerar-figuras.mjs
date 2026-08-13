@@ -517,3 +517,176 @@ ${partes.join("\n")}
   console.log("escrito public/uploads/dsr-trajetoria.svg");
   console.log(`  ${t.elos.length} elos · ${t.faixas.length} ciclos · ${t.lacos.length} laços · ${L}×${A}`);
 }
+
+// --- A cadeia de Learning Iterations ----------------------------------------
+// O mapa da trajetória mostra os elos; esta mostra o motor. Cada iteração parte
+// do que a anterior revelou — é a diferença entre quatro estudos e uma cadeia.
+{
+  const c = ler("src/content/dsr.json").cadeiaLI;
+
+  const COL = 210;
+  const GAP = 74;                 // espaço para o rótulo do "revelou"
+  const PAD = 30;
+  const TOPO = 116;
+  const esc = (s) =>
+    String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+
+  // Quebra em linhas de no máximo `max` caracteres, sem cortar palavra.
+  const dobrar = (txt, max) => {
+    const out = [];
+    let linha = "";
+    for (const pal of String(txt).split(" ")) {
+      if ((linha + " " + pal).trim().length > max) {
+        out.push(linha.trim());
+        linha = pal;
+      } else linha += " " + pal;
+    }
+    if (linha.trim()) out.push(linha.trim());
+    return out;
+  };
+
+  // A caixa é medida pelo conteúdo: a mais alta define a altura de todas, para
+  // as quatro ficarem alinhadas sem que nenhuma corte texto na base.
+  const CAMPOS = [["Investigou", "investigou"], ["Produziu", "produziu"]];
+  const alturaDe = (it) =>
+    46 + CAMPOS.reduce((s, [, chave]) => s + 15 + dobrar(it[chave], 30).length * 13 + 12, 0) - 12 + 14;
+  const CAIXA_A = Math.max(...c.iteracoes.map(alturaDe));
+
+  const L = PAD * 2 + c.iteracoes.length * COL + (c.iteracoes.length - 1) * GAP;
+  const A = TOPO + CAIXA_A + 150;
+
+  const partes = [];
+
+  c.iteracoes.forEach((it, i) => {
+    const x = PAD + i * (COL + GAP);
+    const y = TOPO;
+
+    partes.push(
+      `<rect x="${x}" y="${y}" width="${COL}" height="${CAIXA_A}" fill="${BG}" stroke="${INK}" stroke-width="2"/>`,
+      `<rect x="${x}" y="${y}" width="${COL}" height="26" fill="${INK}"/>`,
+      `<text x="${x + 12}" y="${y + 18}" font-family="${FONTE}" font-size="13" font-weight="800" fill="${BG}">${esc(it.n)}</text>`
+    );
+
+    let cursor = y + 46;
+    for (const [rotulo, chave] of CAMPOS) {
+      const valor = it[chave];
+      partes.push(
+        `<text x="${x + 12}" y="${cursor}" font-family="${FONTE}" font-size="9" font-weight="700" fill="${INK}" opacity="0.55" letter-spacing="1">${esc(rotulo.toUpperCase())}</text>`
+      );
+      dobrar(valor, 30).forEach((linha, k) => {
+        partes.push(
+          `<text x="${x + 12}" y="${cursor + 15 + k * 13}" font-family="${FONTE}" font-size="12" font-weight="${rotulo === "Produziu" ? 800 : 400}" fill="${INK}">${esc(linha)}</text>`
+        );
+      });
+      cursor += 15 + dobrar(valor, 30).length * 13 + 12;
+    }
+
+    // A seta até a iteração seguinte carrega o que esta revelou.
+    if (it.revelou) {
+      const x2 = x + COL + GAP;
+      const meio = y + CAIXA_A / 2;
+      partes.push(
+        `<path d="M ${x + COL} ${meio} L ${x2 - 6} ${meio}" stroke="${ACENTO}" stroke-width="2" fill="none" marker-end="url(#ponta-acento)"/>`,
+        `<text x="${x + COL + GAP / 2}" y="${meio - 12}" font-family="${FONTE}" font-size="10" font-weight="800" fill="${ACENTO}" text-anchor="middle" letter-spacing="0.6">REVELOU</text>`
+      );
+      dobrar(it.revelou, 34).forEach((linha, k) => {
+        partes.push(
+          `<text x="${x + COL + GAP / 2}" y="${y + CAIXA_A + 26 + k * 14}" font-family="${FONTE}" font-size="11" fill="${ACENTO}" text-anchor="middle">${esc(linha)}</text>`
+        );
+      });
+    }
+  });
+
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${L} ${A}" width="${L}" height="${A}" role="img" aria-label="${esc(c.legenda)}">
+<defs>
+  <marker id="ponta-acento" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M 0 0 L 10 5 L 0 10 z" fill="${ACENTO}"/>
+  </marker>
+</defs>
+<rect width="${L}" height="${A}" fill="${BG}"/>
+<text x="${PAD}" y="${PAD + 22}" font-family="${FONTE}" font-size="17" font-weight="900" fill="${INK}">${esc(c.titulo)}</text>
+${dobrar(c.partida, 120)
+  .map((l, i) => `<text x="${PAD}" y="${PAD + 48 + i * 16}" font-family="${FONTE}" font-size="12" fill="${INK}" opacity="0.7">${esc(l)}</text>`)
+  .join("\n")}
+${partes.join("\n")}
+<text x="${PAD}" y="${A - 26}" font-family="${FONTE}" font-size="13" font-weight="800" fill="${INK}">${esc(c.nota)}</text>
+</svg>
+`;
+  writeFileSync(resolve(raiz, "public/uploads/dsr-learning-iterations.svg"), svg);
+  console.log("escrito public/uploads/dsr-learning-iterations.svg");
+  console.log(`  ${c.iteracoes.length} iterações · ${L}×${A}`);
+}
+
+// --- Como a tese constrói o problema ----------------------------------------
+// Cinco movimentos até a tecnologia. A ordem é o argumento: a intervenção vem
+// por último, depois de o problema estar de pé.
+{
+  const c = ler("src/content/dsr.json").construcaoProblema;
+
+  const PAD = 30;
+  const TOPO = 106;
+  const COL = 244;
+  const GAP = 26;
+  const CAB = 60;
+
+  const esc = (s) =>
+    String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  const dobrar = (txt, max) => {
+    const out = []; let linha = "";
+    for (const pal of String(txt).split(" ")) {
+      if ((linha + " " + pal).trim().length > max) { out.push(linha.trim()); linha = pal; }
+      else linha += " " + pal;
+    }
+    if (linha.trim()) out.push(linha.trim());
+    return out;
+  };
+
+  const linhasEx = c.passos.map((p) => dobrar(p.exemplo, 34));
+  const CAIXA_A = CAB + 14 + Math.max(...linhasEx.map((l) => l.length)) * 14 + 16;
+  const L = PAD * 2 + c.passos.length * COL + (c.passos.length - 1) * GAP;
+  const A = TOPO + CAIXA_A + 86;
+
+  const partes = [];
+  c.passos.forEach((p, i) => {
+    const x = PAD + i * (COL + GAP);
+    const y = TOPO;
+    // A intensidade cresce com o passo: o argumento vai se fechando.
+    const forca = 0.1 + (i / (c.passos.length - 1)) * 0.9;
+
+    partes.push(
+      `<rect x="${x}" y="${y}" width="${COL}" height="${CAIXA_A}" fill="${BG}" stroke="${INK}" stroke-width="2"/>`,
+      `<rect x="${x}" y="${y}" width="${COL}" height="6" fill="${ACENTO}" opacity="${forca.toFixed(2)}"/>`,
+      `<text x="${x + 14}" y="${y + 30}" font-family="${FONTE}" font-size="12" font-weight="800" fill="${ACENTO}">${String(p.n).padStart(2, "0")}</text>`,
+      `<text x="${x + 36}" y="${y + 30}" font-family="${FONTE}" font-size="15" font-weight="800" fill="${INK}">${esc(p.nome)}</text>`,
+      `<text x="${x + 14}" y="${y + 50}" font-family="${FONTE}" font-size="12" fill="${INK}" opacity="0.65">${esc(p.pergunta)}</text>`,
+      `<line x1="${x + 14}" y1="${y + CAB}" x2="${x + COL - 14}" y2="${y + CAB}" stroke="${DIVISOR}" stroke-width="2"/>`
+    );
+    linhasEx[i].forEach((linha, k) => {
+      partes.push(
+        `<text x="${x + 14}" y="${y + CAB + 22 + k * 14}" font-family="${FONTE}" font-size="11" font-style="italic" fill="${INK}" opacity="0.85">${esc(linha)}</text>`
+      );
+    });
+    if (i < c.passos.length - 1) {
+      partes.push(
+        `<path d="M ${x + COL} ${y + CAIXA_A / 2} L ${x + COL + GAP - 6} ${y + CAIXA_A / 2}" stroke="${INK}" stroke-width="2" marker-end="url(#ponta)"/>`
+      );
+    }
+  });
+
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${L} ${A}" width="${L}" height="${A}" role="img" aria-label="${esc(c.legenda)}">
+<defs>
+  <marker id="ponta" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M 0 0 L 10 5 L 0 10 z" fill="${INK}"/>
+  </marker>
+</defs>
+<rect width="${L}" height="${A}" fill="${BG}"/>
+<text x="${PAD}" y="${PAD + 22}" font-family="${FONTE}" font-size="17" font-weight="900" fill="${INK}">${esc(c.titulo)}</text>
+${dobrar(c.legenda, 130).map((l, i) => `<text x="${PAD}" y="${PAD + 46 + i * 16}" font-family="${FONTE}" font-size="12" fill="${INK}" opacity="0.7">${esc(l)}</text>`).join("\n")}
+${partes.join("\n")}
+<text x="${PAD}" y="${A - 26}" font-family="${FONTE}" font-size="13" font-weight="800" fill="${INK}">${esc(c.nota)}</text>
+</svg>
+`;
+  writeFileSync(resolve(raiz, "public/uploads/dsr-construcao-problema.svg"), svg);
+  console.log("escrito public/uploads/dsr-construcao-problema.svg");
+  console.log(`  ${c.passos.length} passos · ${L}×${A}`);
+}

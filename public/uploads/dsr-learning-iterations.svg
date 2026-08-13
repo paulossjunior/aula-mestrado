@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1122 420" width="1122" height="420" role="img" aria-label="Cada iteração parte de algo que precisava ser aprendido, produz um resultado e revela o que ainda falta — e é essa revelação que provoca a iteração seguinte. A dissertação não contém quatro estudos: contém uma cadeia de aprendizado.">
+<defs>
+  <marker id="ponta-acento" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M 0 0 L 10 5 L 0 10 z" fill="#ec3013"/>
+  </marker>
+</defs>
+<rect width="1122" height="420" fill="#f3f2f2"/>
+<text x="30" y="52" font-family="Archivo, system-ui, sans-serif" font-size="17" font-weight="900" fill="#201e1d">A cadeia de aprendizado: as quatro Learning Iterations da tese</text>
+<text x="30" y="78" font-family="Archivo, system-ui, sans-serif" font-size="12" fill="#201e1d" opacity="0.7">A pesquisa identificou uma dificuldade relacionada ao uso de dados distribuídos em diferentes aplicações.</text>
+<rect x="30" y="116" width="210" height="154" fill="#f3f2f2" stroke="#201e1d" stroke-width="2"/>
+<rect x="30" y="116" width="210" height="26" fill="#201e1d"/>
+<text x="42" y="134" font-family="Archivo, system-ui, sans-serif" font-size="13" font-weight="800" fill="#f3f2f2">LI 1</text>
+<text x="42" y="162" font-family="Archivo, system-ui, sans-serif" font-size="9" font-weight="700" fill="#201e1d" opacity="0.55" letter-spacing="1">INVESTIGOU</text>
+<text x="42" y="177" font-family="Archivo, system-ui, sans-serif" font-size="12" font-weight="400" fill="#201e1d">Uma solução baseada em</text>
+<text x="42" y="190" font-family="Archivo, system-ui, sans-serif" font-size="12" font-weight="400" fill="#201e1d">ontologias</text>
+<text x="42" y="215" font-family="Archivo, system-ui, sans-serif" font-size="9" font-weight="700" fill="#201e1d" opacity="0.55" letter-spacing="1">PRODUZIU</text>
+<text x="42" y="230" font-family="Archivo, system-ui, sans-serif" font-size="12" font-weight="800" fill="#201e1d">A primeira versão do artefato</text>
+<path d="M 240 193 L 308 193" stroke="#ec3013" stroke-width="2" fill="none" marker-end="url(#ponta-acento)"/>
+<text x="277" y="181" font-family="Archivo, system-ui, sans-serif" font-size="10" font-weight="800" fill="#ec3013" text-anchor="middle" letter-spacing="0.6">REVELOU</text>
+<text x="277" y="296" font-family="Archivo, system-ui, sans-serif" font-size="11" fill="#ec3013" text-anchor="middle">a necessidade de compreender</text>
+<text x="277" y="310" font-family="Archivo, system-ui, sans-serif" font-size="11" fill="#ec3013" text-anchor="middle">melhor as necessidades de</text>
+<text x="277" y="324" font-family="Archivo, system-ui, sans-serif" font-size="11" fill="#ec3013" text-anchor="middle">informação das organizações</text>
+<rect x="314" y="116" width="210" height="154" fill="#f3f2f2" stroke="#201e1d" stroke-width="2"/>
+<rect x="314" y="116" width="210" height="26" fill="#201e1d"/>
+<text x="326" y="134" font-family="Archivo, system-ui, sans-serif" font-size="13" font-weight="800" fill="#f3f2f2">LI 2</text>
+<text x="326" y="162" font-family="Archivo, system-ui, sans-serif" font-size="9" font-weight="700" fill="#201e1d" opacity="0.55" letter-spacing="1">INVESTIGOU</text>
+<text x="326" y="177" font-family="Archivo, system-ui, sans-serif" font-size="12" font-weight="400" fill="#201e1d">Como identificar essas</text>
+<text x="326" y="190" font-family="Archivo, system-ui, sans-serif" font-size="12" font-weight="400" fill="#201e1d">necessidades</text>
+<text x="326" y="215" font-family="Archivo, system-ui, sans-serif" font-size="9" font-weight="700" fill="#201e1d" opacity="0.55" letter-spacing="1">PRODUZIU</text>
+<text x="326" y="230" font-family="Archivo, system-ui, sans-serif" font-size="12" font-weight="800" fill="#201e1d">California</text>
+<path d="M 524 193 L 592 193" stroke="#ec3013" stroke-width="2" fill="none" marker-end="url(#ponta-acento)"/>
+<text x="561" y="181" font-family="Archivo, system-ui, sans-serif" font-size="10" font-weight="800" fill="#ec3013" text-anchor="middle" letter-spacing="0.6">REVELOU</text>
+<text x="561" y="296" font-family="Archivo, system-ui, sans-serif" font-size="11" fill="#ec3013" text-anchor="middle">dificuldades relacionadas ao</text>
+<text x="561" y="310" font-family="Archivo, system-ui, sans-serif" font-size="11" fill="#ec3013" text-anchor="middle">conhecimento e ao tempo</text>
+<text x="561" y="324" font-family="Archivo, system-ui, sans-serif" font-size="11" fill="#ec3013" text-anchor="middle">necessários para aplicá-lo</text>
+<rect x="598" y="116" width="210" height="154" fill="#f3f2f2" stroke="#201e1d" stroke-width="2"/>
+<rect x="598" y="116" width="210" height="26" fill="#201e1d"/>
+<text x="610" y="134" font-family="Archivo, system-ui, sans-serif" font-size="13" font-weight="800" fill="#f3f2f2">LI 3</text>
+<text x="610" y="162" font-family="Archivo, system-ui, sans-serif" font-size="9" font-weight="700" fill="#201e1d" opacity="0.55" letter-spacing="1">INVESTIGOU</text>
+<text x="610" y="177" font-family="Archivo, system-ui, sans-serif" font-size="12" font-weight="400" fill="#201e1d">Como reduzir esse custo de</text>
+<text x="610" y="190" font-family="Archivo, system-ui, sans-serif" font-size="12" font-weight="400" fill="#201e1d">aplicação</text>
+<text x="610" y="215" font-family="Archivo, system-ui, sans-serif" font-size="9" font-weight="700" fill="#201e1d" opacity="0.55" letter-spacing="1">PRODUZIU</text>
+<text x="610" y="230" font-family="Archivo, system-ui, sans-serif" font-size="12" font-weight="800" fill="#201e1d">Zeppelin</text>
+<path d="M 808 193 L 876 193" stroke="#ec3013" stroke-width="2" fill="none" marker-end="url(#ponta-acento)"/>
+<text x="845" y="181" font-family="Archivo, system-ui, sans-serif" font-size="10" font-weight="800" fill="#ec3013" text-anchor="middle" letter-spacing="0.6">REVELOU</text>
+<text x="845" y="296" font-family="Archivo, system-ui, sans-serif" font-size="11" fill="#ec3013" text-anchor="middle">em paralelo, a necessidade de</text>
+<text x="845" y="310" font-family="Archivo, system-ui, sans-serif" font-size="11" fill="#ec3013" text-anchor="middle">cobrir outros processos — que</text>
+<text x="845" y="324" font-family="Archivo, system-ui, sans-serif" font-size="11" fill="#ec3013" text-anchor="middle">levou a The Band</text>
+<rect x="882" y="116" width="210" height="154" fill="#f3f2f2" stroke="#201e1d" stroke-width="2"/>
+<rect x="882" y="116" width="210" height="26" fill="#201e1d"/>
+<text x="894" y="134" font-family="Archivo, system-ui, sans-serif" font-size="13" font-weight="800" fill="#f3f2f2">LI final</text>
+<text x="894" y="162" font-family="Archivo, system-ui, sans-serif" font-size="9" font-weight="700" fill="#201e1d" opacity="0.55" letter-spacing="1">INVESTIGOU</text>
+<text x="894" y="177" font-family="Archivo, system-ui, sans-serif" font-size="12" font-weight="400" fill="#201e1d">Se o artefato é útil e viável</text>
+<text x="894" y="190" font-family="Archivo, system-ui, sans-serif" font-size="12" font-weight="400" fill="#201e1d">na prática</text>
+<text x="894" y="215" font-family="Archivo, system-ui, sans-serif" font-size="9" font-weight="700" fill="#201e1d" opacity="0.55" letter-spacing="1">PRODUZIU</text>
+<text x="894" y="230" font-family="Archivo, system-ui, sans-serif" font-size="12" font-weight="800" fill="#201e1d">Evidência preliminar de</text>
+<text x="894" y="243" font-family="Archivo, system-ui, sans-serif" font-size="12" font-weight="800" fill="#201e1d">utilidade e viabilidade</text>
+<text x="30" y="394" font-family="Archivo, system-ui, sans-serif" font-size="13" font-weight="800" fill="#201e1d">A pesquisa evolui porque aprende.</text>
+</svg>

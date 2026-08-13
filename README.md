@@ -118,7 +118,7 @@ src/lib/url.ts                  resolve links sob o subcaminho do GitHub Pages
 src/lib/aulas.ts                traduz `estado` no que a página renderiza
 
 public/_ds/modernist-…/         o design system: styles.css, guia e tokens
-public/uploads/                 as cinco figuras do site, geradas em SVG por script
+public/uploads/                 as sete figuras do site, geradas em SVG por script
 public/fichamento.tex           o modelo em LaTeX (é o mesmo texto exibido no site)
 public/dados/                   os três CSV do corpus, publicados para download
 public/dsr/                     o template da entrega: o PDF compilado e o fonte LaTeX

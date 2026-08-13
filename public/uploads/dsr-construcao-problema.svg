@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1384 338" width="1384" height="338" role="img" aria-label="Cinco movimentos, na ordem em que a tese os apresenta. O texto não começa dizendo qual tecnologia vai usar: chega nela por último, depois de o problema já estar de pé.">
+<defs>
+  <marker id="ponta" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M 0 0 L 10 5 L 0 10 z" fill="#201e1d"/>
+  </marker>
+</defs>
+<rect width="1384" height="338" fill="#f3f2f2"/>
+<text x="30" y="52" font-family="Archivo, system-ui, sans-serif" font-size="17" font-weight="900" fill="#201e1d">Como a tese constrói o problema</text>
+<text x="30" y="76" font-family="Archivo, system-ui, sans-serif" font-size="12" fill="#201e1d" opacity="0.7">Cinco movimentos, na ordem em que a tese os apresenta. O texto não começa dizendo qual tecnologia vai usar: chega nela por último,</text>
+<text x="30" y="92" font-family="Archivo, system-ui, sans-serif" font-size="12" fill="#201e1d" opacity="0.7">depois de o problema já estar de pé.</text>
+<rect x="30" y="106" width="244" height="146" fill="#f3f2f2" stroke="#201e1d" stroke-width="2"/>
+<rect x="30" y="106" width="244" height="6" fill="#ec3013" opacity="0.10"/>
+<text x="44" y="136" font-family="Archivo, system-ui, sans-serif" font-size="12" font-weight="800" fill="#ec3013">01</text>
+<text x="66" y="136" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d">Contexto</text>
+<text x="44" y="156" font-family="Archivo, system-ui, sans-serif" font-size="12" fill="#201e1d" opacity="0.65">Onde isso acontece?</text>
+<line x1="44" y1="166" x2="260" y2="166" stroke="#bab6b6" stroke-width="2"/>
+<text x="44" y="188" font-family="Archivo, system-ui, sans-serif" font-size="11" font-style="italic" fill="#201e1d" opacity="0.85">“organizations should evolve to</text>
+<text x="44" y="202" font-family="Archivo, system-ui, sans-serif" font-size="11" font-style="italic" fill="#201e1d" opacity="0.85">continuous and data-driven</text>
+<text x="44" y="216" font-family="Archivo, system-ui, sans-serif" font-size="11" font-style="italic" fill="#201e1d" opacity="0.85">development…”</text>
+<path d="M 274 179 L 294 179" stroke="#201e1d" stroke-width="2" marker-end="url(#ponta)"/>
+<rect x="300" y="106" width="244" height="146" fill="#f3f2f2" stroke="#201e1d" stroke-width="2"/>
+<rect x="300" y="106" width="244" height="6" fill="#ec3013" opacity="0.33"/>
+<text x="314" y="136" font-family="Archivo, system-ui, sans-serif" font-size="12" font-weight="800" fill="#ec3013">02</text>
+<text x="336" y="136" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d">Necessidade</text>
+<text x="314" y="156" font-family="Archivo, system-ui, sans-serif" font-size="12" fill="#201e1d" opacity="0.65">O que se precisa fazer?</text>
+<line x1="314" y1="166" x2="530" y2="166" stroke="#bab6b6" stroke-width="2"/>
+<text x="314" y="188" font-family="Archivo, system-ui, sans-serif" font-size="11" font-style="italic" fill="#201e1d" opacity="0.85">“Software organizations often use</text>
+<text x="314" y="202" font-family="Archivo, system-ui, sans-serif" font-size="11" font-style="italic" fill="#201e1d" opacity="0.85">different applications to support</text>
+<text x="314" y="216" font-family="Archivo, system-ui, sans-serif" font-size="11" font-style="italic" fill="#201e1d" opacity="0.85">different aspects of software</text>
+<text x="314" y="230" font-family="Archivo, system-ui, sans-serif" font-size="11" font-style="italic" fill="#201e1d" opacity="0.85">development.”</text>
+<path d="M 544 179 L 564 179" stroke="#201e1d" stroke-width="2" marker-end="url(#ponta)"/>
+<rect x="570" y="106" width="244" height="146" fill="#f3f2f2" stroke="#201e1d" stroke-width="2"/>
+<rect x="570" y="106" width="244" height="6" fill="#ec3013" opacity="0.55"/>
+<text x="584" y="136" font-family="Archivo, system-ui, sans-serif" font-size="12" font-weight="800" fill="#ec3013">03</text>
+<text x="606" y="136" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d">Dificuldade</text>
+<text x="584" y="156" font-family="Archivo, system-ui, sans-serif" font-size="12" fill="#201e1d" opacity="0.65">O que impede?</text>
+<line x1="584" y1="166" x2="800" y2="166" stroke="#bab6b6" stroke-width="2"/>
+<text x="584" y="188" font-family="Archivo, system-ui, sans-serif" font-size="11" font-style="italic" fill="#201e1d" opacity="0.85">“many of them do not use data</text>
+<text x="584" y="202" font-family="Archivo, system-ui, sans-serif" font-size="11" font-style="italic" fill="#201e1d" opacity="0.85">present in the applications to</text>
+<text x="584" y="216" font-family="Archivo, system-ui, sans-serif" font-size="11" font-style="italic" fill="#201e1d" opacity="0.85">support data-driven software</text>
+<text x="584" y="230" font-family="Archivo, system-ui, sans-serif" font-size="11" font-style="italic" fill="#201e1d" opacity="0.85">development.”</text>
+<path d="M 814 179 L 834 179" stroke="#201e1d" stroke-width="2" marker-end="url(#ponta)"/>
+<rect x="840" y="106" width="244" height="146" fill="#f3f2f2" stroke="#201e1d" stroke-width="2"/>
+<rect x="840" y="106" width="244" height="6" fill="#ec3013" opacity="0.78"/>
+<text x="854" y="136" font-family="Archivo, system-ui, sans-serif" font-size="12" font-weight="800" fill="#ec3013">04</text>
+<text x="876" y="136" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d">Problema</text>
+<text x="854" y="156" font-family="Archivo, system-ui, sans-serif" font-size="12" fill="#201e1d" opacity="0.65">Qual é a causa?</text>
+<line x1="854" y1="166" x2="1070" y2="166" stroke="#bab6b6" stroke-width="2"/>
+<text x="854" y="188" font-family="Archivo, system-ui, sans-serif" font-size="11" font-style="italic" fill="#201e1d" opacity="0.85">“the difficulty in accessing,</text>
+<text x="854" y="202" font-family="Archivo, system-ui, sans-serif" font-size="11" font-style="italic" fill="#201e1d" opacity="0.85">integrating, analyzing, and</text>
+<text x="854" y="216" font-family="Archivo, system-ui, sans-serif" font-size="11" font-style="italic" fill="#201e1d" opacity="0.85">viewing data handled by</text>
+<text x="854" y="230" font-family="Archivo, system-ui, sans-serif" font-size="11" font-style="italic" fill="#201e1d" opacity="0.85">heterogeneous applications.”</text>
+<path d="M 1084 179 L 1104 179" stroke="#201e1d" stroke-width="2" marker-end="url(#ponta)"/>
+<rect x="1110" y="106" width="244" height="146" fill="#f3f2f2" stroke="#201e1d" stroke-width="2"/>
+<rect x="1110" y="106" width="244" height="6" fill="#ec3013" opacity="1.00"/>
+<text x="1124" y="136" font-family="Archivo, system-ui, sans-serif" font-size="12" font-weight="800" fill="#ec3013">05</text>
+<text x="1146" y="136" font-family="Archivo, system-ui, sans-serif" font-size="15" font-weight="800" fill="#201e1d">Possibilidade de intervenção</text>
+<text x="1124" y="156" font-family="Archivo, system-ui, sans-serif" font-size="12" fill="#201e1d" opacity="0.65">O que pode resolver?</text>
+<line x1="1124" y1="166" x2="1340" y2="166" stroke="#bab6b6" stroke-width="2"/>
+<text x="1124" y="188" font-family="Archivo, system-ui, sans-serif" font-size="11" font-style="italic" fill="#201e1d" opacity="0.85">“Ontologies can be used to deal</text>
+<text x="1124" y="202" font-family="Archivo, system-ui, sans-serif" font-size="11" font-style="italic" fill="#201e1d" opacity="0.85">with these issues in semantic</text>
+<text x="1124" y="216" font-family="Archivo, system-ui, sans-serif" font-size="11" font-style="italic" fill="#201e1d" opacity="0.85">integration initiatives.”</text>
+<text x="30" y="312" font-family="Archivo, system-ui, sans-serif" font-size="13" font-weight="800" fill="#201e1d">O estudante deve construir o problema da sua dissertação da mesma forma.</text>
+</svg>

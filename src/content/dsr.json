@@ -1485,5 +1485,96 @@
     "colunaFixa": {
       "5": 0
     }
+  },
+  "cadeiaLI": {
+    "titulo": "A cadeia de aprendizado: as quatro Learning Iterations da tese",
+    "legenda": "Cada iteração parte de algo que precisava ser aprendido, produz um resultado e revela o que ainda falta — e é essa revelação que provoca a iteração seguinte. A dissertação não contém quatro estudos: contém uma cadeia de aprendizado.",
+    "nota": "A pesquisa evolui porque aprende.",
+    "partida": "A pesquisa identificou uma dificuldade relacionada ao uso de dados distribuídos em diferentes aplicações.",
+    "iteracoes": [
+      {
+        "n": "LI 1",
+        "investigou": "Uma solução baseada em ontologias",
+        "produziu": "A primeira versão do artefato",
+        "revelou": "a necessidade de compreender melhor as necessidades de informação das organizações"
+      },
+      {
+        "n": "LI 2",
+        "investigou": "Como identificar essas necessidades",
+        "produziu": "California",
+        "revelou": "dificuldades relacionadas ao conhecimento e ao tempo necessários para aplicá-lo"
+      },
+      {
+        "n": "LI 3",
+        "investigou": "Como reduzir esse custo de aplicação",
+        "produziu": "Zeppelin",
+        "revelou": "em paralelo, a necessidade de cobrir outros processos — que levou a The Band"
+      },
+      {
+        "n": "LI final",
+        "investigou": "Se o artefato é útil e viável na prática",
+        "produziu": "Evidência preliminar de utilidade e viabilidade",
+        "revelou": null
+      }
+    ]
+  },
+  "glossario": {
+    "titulo": "Os artefatos da tese citada",
+    "texto": "Os exemplos vêm de uma tese sobre integração de dados em desenvolvimento de software. Estes são os nomes que aparecem nos trechos citados.",
+    "itens": [
+      {
+        "nome": "Immigrant",
+        "texto": "A abordagem completa, composta pelos três artefatos abaixo. Considera as necessidades de informação da organização e os dados disponíveis para entregar integração com significado."
+      },
+      {
+        "nome": "California",
+        "texto": "Serve para identificar quais informações a organização precisa. Mostrou-se útil, mas exige conhecimento e tempo para ser aplicado — limitação que provocou a iteração seguinte."
+      },
+      {
+        "nome": "Zeppelin",
+        "texto": "Instrumento de diagnóstico das práticas de engenharia de software contínua da organização, criado para reduzir o custo de aplicação do California."
+      },
+      {
+        "nome": "The Band",
+        "texto": "A solução de integração de dados, baseada em rede de ontologias e em Federated Information System, que entrega os dados integrados."
+      }
+    ]
+  },
+  "construcaoProblema": {
+    "titulo": "Como a tese constrói o problema",
+    "legenda": "Cinco movimentos, na ordem em que a tese os apresenta. O texto não começa dizendo qual tecnologia vai usar: chega nela por último, depois de o problema já estar de pé.",
+    "nota": "O estudante deve construir o problema da sua dissertação da mesma forma.",
+    "passos": [
+      {
+        "n": 1,
+        "nome": "Contexto",
+        "pergunta": "Onde isso acontece?",
+        "exemplo": "“organizations should evolve to continuous and data-driven development…”"
+      },
+      {
+        "n": 2,
+        "nome": "Necessidade",
+        "pergunta": "O que se precisa fazer?",
+        "exemplo": "“Software organizations often use different applications to support different aspects of software development.”"
+      },
+      {
+        "n": 3,
+        "nome": "Dificuldade",
+        "pergunta": "O que impede?",
+        "exemplo": "“many of them do not use data present in the applications to support data-driven software development.”"
+      },
+      {
+        "n": 4,
+        "nome": "Problema",
+        "pergunta": "Qual é a causa?",
+        "exemplo": "“the difficulty in accessing, integrating, analyzing, and viewing data handled by heterogeneous applications.”"
+      },
+      {
+        "n": 5,
+        "nome": "Possibilidade de intervenção",
+        "pergunta": "O que pode resolver?",
+        "exemplo": "“Ontologies can be used to deal with these issues in semantic integration initiatives.”"
+      }
+    ]
   }
 }
