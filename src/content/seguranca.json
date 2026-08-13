@@ -1491,7 +1491,7 @@
   "achados": [
     {
       "titulo": "A segurança entra no processo pela verificação",
-      "texto": "Verificação e qualidade recebe 89 das 140 obras, distribuídas em sete dos dez tópicos. Detecção de vulnerabilidade em código, teste ofensivo e benchmark de segurança estão praticamente todos ali. É o ponto do processo onde a automação de segurança amadureceu."
+      "texto": "Verificação e qualidade recebe 88 das 137 obras, distribuídas em oito dos dez tópicos. Detecção de vulnerabilidade em código, teste ofensivo e benchmark de segurança estão praticamente todos ali. É o ponto do processo onde a automação de segurança amadureceu."
     },
     {
       "titulo": "O código gerado por IA virou objeto de segurança próprio",
@@ -1499,7 +1499,7 @@
     },
     {
       "titulo": "O instrumento de medida é grande demais em relação ao que mede",
-      "texto": "Benchmark e avaliação tem 24 obras — quase o mesmo que detecção de vulnerabilidade, que é a tarefa que os benchmarks medem. Um campo com tantos instrumentos quanto técnicas sugere que a comparabilidade ainda não se resolveu."
+      "texto": "Benchmark e avaliação tem 23 obras — quase o mesmo que detecção de vulnerabilidade, que é a tarefa que os benchmarks medem. Um campo com tantos instrumentos quanto técnicas sugere que a comparabilidade ainda não se resolveu."
     },
     {
       "titulo": "A prevenção por projeto é pequena, e a operação é quase vazia",

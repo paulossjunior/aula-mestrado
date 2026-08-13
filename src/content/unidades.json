@@ -2,12 +2,12 @@
   {
     "romano": "I",
     "nome": "Fundamentos",
-    "descricao": "Como um modelo de linguagem se comporta diante de código: o que ele garante, o que ele apenas parece garantir e como medir a diferença."
+    "descricao": "Como um modelo de linguagem se comporta diante de código, e como enquadrar o próprio trabalho: o mapa do campo, o Design Science Research como método da pesquisa e o desenvolvimento dirigido por especificação, da constituição do projeto ao artefato publicado."
   },
   {
     "romano": "II",
     "nome": "Agentes",
-    "descricao": "Da especificação ao agente que age sobre um repositório — arquiteturas, ferramentas, critérios de parada e colaboração entre agentes."
+    "descricao": "O agente que age sobre um repositório: arquiteturas, ferramentas, memória, critérios de parada, contexto em escala e os benchmarks que dizem — e não dizem — se ele funciona."
   },
   {
     "romano": "III",
