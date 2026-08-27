@@ -47,7 +47,7 @@ jobs:
         run: |
           total=$(find dist -name index.html | wc -l | tr -d ' ')
           echo "páginas geradas: $total"
-          test "$total" -eq 26 || { echo "esperava 26 páginas, encontrei $total"; exit 1; }
+          test "$total" -eq 27 || { echo "esperava 27 páginas, encontrei $total"; exit 1; }
           test -f dist/.nojekyll || { echo "faltou .nojekyll: o Pages ignoraria _ds/ e _astro/"; exit 1; }
           # O template DSR é o único binário que a página promete para download.
           test -f dist/dsr/modelo_DSR.zip || { echo "faltou o template DSR"; exit 1; }
