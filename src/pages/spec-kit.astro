@@ -44,6 +44,7 @@ const codigo =
         <a class="btn btn-primary" href="https://github.com/github/spec-kit" target="_blank" rel="noopener"
           >Repositório do Spec Kit</a
         >
+        <a class="btn btn-secondary" href={rota("/spec-kit-anatomia")}>A anatomia do kit</a>
         <a class="btn btn-secondary" href={rota("/aulas/03")}>Voltar para a Aula 03</a>
       </div>
     </section>
@@ -137,6 +138,55 @@ const codigo =
                 </div>
               </aside>
             </div>
+            {i === 0 && (
+              <div style="margin-top: 32px; border: 2px solid var(--color-text); padding: 24px 28px">
+                <h4 style="font-family: var(--font-heading); font-weight: 900; font-size: clamp(19px, 2.6vw, 24px); letter-spacing: -0.02em; margin: 0">
+                  O que as equipes costumam fixar aqui
+                </h4>
+                <p style="font-size: 15px; line-height: 1.6; max-width: 70ch; margin: 10px 0 0; opacity: 0.85; text-wrap: pretty">
+                  {dados.constituicaoExemplos.intro}
+                </p>
+                <div
+                  class="om-aula-grid"
+                  style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px 32px; margin-top: 22px"
+                >
+                  {dados.constituicaoExemplos.categorias.map((cat) => (
+                    <div style="border-top: 2px solid var(--color-divider); padding-top: 12px">
+                      <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-accent-700)">
+                        {cat.nome}
+                      </div>
+                      <ul style="margin: 8px 0 0; padding-left: 18px; font-size: 15px; line-height: 1.55">
+                        {cat.itens.map((item) => (
+                          <li style="margin-top: 6px; text-wrap: pretty">{item}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
+                <p style="font-size: 15px; line-height: 1.6; max-width: 70ch; margin: 22px 0 0; padding-left: 16px; box-shadow: inset 2px 0 0 var(--color-accent); text-wrap: pretty">
+                  <strong style="font-family: var(--font-heading); font-weight: 800">O que não entra.</strong>{" "}
+                  {dados.constituicaoExemplos.naoEntra}
+                </p>
+                <p style="font-size: 15px; line-height: 1.6; max-width: 70ch; margin: 12px 0 0; text-wrap: pretty">
+                  O teste que a comunidade aplica: <em>{dados.constituicaoExemplos.teste}</em>
+                </p>
+                <p style="font-size: 13px; line-height: 1.6; max-width: 74ch; margin: 14px 0 0; opacity: 0.75; text-wrap: pretty">
+                  Fontes: os artigos numerados vêm da{" "}
+                  <a href="https://github.com/github/spec-kit/blob/main/spec-driven.md" target="_blank" rel="noopener">
+                    constituição do próprio Spec Kit
+                  </a>
+                  ; os demais exemplos e o teste de decoração vêm de{" "}
+                  <a href="https://daita.io/en/blog/spec_kit_constitution_first_principles/" target="_blank" rel="noopener">
+                    Spec-Kit Constitution From First Principles
+                  </a>{" "}
+                  e de{" "}
+                  <a href="https://qualitywithmillan.github.io/blog/ai/constitution-md-spec-driven-development.html" target="_blank" rel="noopener">
+                    constitution.md in Spec-Driven Development
+                  </a>
+                  .
+                </p>
+              </div>
+            )}
           </div>
         </section>
       ))

@@ -1,4 +1,56 @@
 {
+  "constituicaoExemplos": {
+    "intro": "O que uma equipe escreve nesse arquivo? Os três primeiros grupos abaixo vêm da constituição do próprio Spec Kit — os nove artigos que o repositório usa em si mesmo. Os demais aparecem repetidamente nas constituições que a comunidade publica.",
+    "categorias": [
+      {
+        "nome": "Testes",
+        "itens": [
+          "TDD inegociável: nenhuma linha de implementação antes de o teste existir, ser validado e falhar (Artigo III do Spec Kit).",
+          "Integração primeiro: testes de fronteira rodam contra banco e serviços reais; mock é exceção que se justifica (Artigo IX).",
+          "Cobertura mínima de código verificada no CI — o número importa menos do que ser portão automático, não aspiração."
+        ]
+      },
+      {
+        "nome": "Arquitetura e simplicidade",
+        "itens": [
+          "Library-first: toda funcionalidade nasce como biblioteca independente, exposta por linha de comando (Artigos I e II).",
+          "Anti-abstração: usar o framework diretamente; camada extra exige justificativa (Artigo VIII).",
+          "Simplicidade: começar com o mínimo de projetos e proibir future-proofing sem requisito que o peça (Artigo VII)."
+        ]
+      },
+      {
+        "nome": "Fluxo de trabalho",
+        "itens": [
+          "Nenhuma mudança sem issue: todo trabalho nasce classificado em Epic, User Story ou Task.",
+          "Nenhum pull request fecha sem revisão de um par; commit segue Conventional Commits.",
+          "O comando que o desenvolvedor roda na máquina dele é o mesmo que o CI roda."
+        ]
+      },
+      {
+        "nome": "Contratos e versionamento",
+        "itens": [
+          "Toda fronteira entre componentes — HTTP, fila, arquivo, banco — tem schema com versão.",
+          "Versionamento semântico, com política explícita para mudança que quebra compatibilidade."
+        ]
+      },
+      {
+        "nome": "Operação e observabilidade",
+        "itens": [
+          "Log estruturado obrigatório: logs, métricas e traces derivam do mesmo evento.",
+          "Toda mudança é reversível em minutos, sem escrever código novo.",
+          "Alerta só existe se corresponde a sintoma visível ao usuário e aponta para um runbook."
+        ]
+      },
+      {
+        "nome": "Definição de pronto",
+        "itens": [
+          "Um pull request não está pronto até a mudança estar nas mãos dos usuários, observável e reversível."
+        ]
+      }
+    ],
+    "naoEntra": "Nome de ferramenta (\"use Postgres 16\") envelhece na primeira migração; preferência de estilo é trabalho de linter, não de constituição; e aspiração sem critério (\"valorizamos qualidade\") não governa nada porque nada a viola.",
+    "teste": "Se remover o princípio não muda nenhum plano nem nenhum diff, ele é decoração — não governança."
+  },
   "nucleo": [
     {
       "comando": "/speckit.constitution",
