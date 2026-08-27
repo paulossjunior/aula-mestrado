@@ -186,6 +186,46 @@ const codigo =
       ))
     }
 
+    <section style="border-top: 2px solid var(--color-text)">
+      <div class="om-pad om-sec" style="max-width: 1200px; margin: 0 auto; padding: 48px 32px">
+        <h2 style="font-family: var(--font-heading); font-weight: 900; font-size: clamp(26px, 4vw, 40px); letter-spacing: -0.025em; margin: 0 0 10px">
+          {dados.skillsMcp.titulo}
+        </h2>
+        <p style="font-size: 16px; line-height: 1.6; max-width: 64ch; margin: 0 0 28px; text-wrap: pretty">
+          {dados.skillsMcp.intro}
+        </p>
+        <div
+          class="om-aula-grid"
+          style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px 48px"
+        >
+          {
+            dados.skillsMcp.blocos.map((b) => (
+              <div style="border-top: 2px solid var(--color-text); padding-top: 14px">
+                <h3 style="font-family: var(--font-heading); font-weight: 900; font-size: clamp(20px, 2.8vw, 26px); line-height: 1.15; letter-spacing: -0.02em; margin: 0">
+                  {b.pergunta}
+                </h3>
+                <div style="font-family: var(--font-heading); font-weight: 800; font-size: 16px; margin-top: 6px; color: var(--color-accent-700)">
+                  {b.resposta}
+                </div>
+                <p style="font-size: 16px; line-height: 1.6; margin: 12px 0 0; max-width: 60ch; text-wrap: pretty">
+                  {b.texto}
+                </p>
+              </div>
+            ))
+          }
+        </div>
+        <p style="font-size: 15px; line-height: 1.6; max-width: 70ch; margin: 28px 0 0; padding-left: 16px; box-shadow: inset 2px 0 0 var(--color-accent); text-wrap: pretty">
+          {dados.skillsMcp.fecho}
+        </p>
+        <p style="font-size: 13px; line-height: 1.6; margin: 14px 0 0; opacity: 0.75">
+          Fonte:{" "}
+          <a href={dados.skillsMcp.fonte.href} target="_blank" rel="noopener">
+            {dados.skillsMcp.fonte.ref}
+          </a>
+        </p>
+      </div>
+    </section>
+
     <section style="border-top: 2px solid var(--color-text); background: var(--color-accent); color: #fff">
       <div class="om-pad om-sec" style="max-width: 1200px; margin: 0 auto; padding: 56px 32px">
         <h2

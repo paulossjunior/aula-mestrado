@@ -169,6 +169,27 @@
       ]
     }
   ],
+  "skillsMcp": {
+    "titulo": "E skills e MCP?",
+    "intro": "Duas perguntas de fronteira que aparecem assim que se entende a anatomia: o kit usa skills? Usa MCP? As respostas são diferentes — e a diferença é exatamente a distinção entre repertório e ferramentas.",
+    "blocos": [
+      {
+        "pergunta": "O Spec Kit usa skills?",
+        "resposta": "Sim — nativamente.",
+        "texto": "O kit instala os comandos como skills nos agentes que suportam o modo. No Claude Code, a documentação registra \"installs skills in .claude/skills\" — exatamente o que este repositório tem, uma skill por comando. Em agentes onde o padrão é slash command, a opção --integration-options=\"--skills\" troca a instalação. O ponto conceitual: o comando do Spec Kit é uma skill — o mesmo prompt versionado vira slash command, skill ou arquivo de prompt conforme o agente escolhido."
+      },
+      {
+        "pergunta": "O Spec Kit usa MCP?",
+        "resposta": "Indiretamente — consome, não fornece.",
+        "texto": "O kit não é servidor MCP nem gerencia servidores: pressupõe as ferramentas que o agente já tem. O /speckit.taskstoissues exige o MCP do GitHub no agente para abrir as issues — a documentação confirma pelo contraexemplo: no agente Pi, sem suporte MCP nativo, \"taskstoissues won't work as intended\". E durante o /speckit.implement, o agente usa qualquer MCP que tenha configurado — banco, navegador, design — sem que o kit bloqueie ou proveja nada."
+      }
+    ],
+    "fecho": "Na linguagem desta página: skills são o repertório do agente, e o kit adiciona a ele; MCP é a camada de ferramentas do agente, e o kit a pressupõe.",
+    "fonte": {
+      "ref": "Supported AI Coding Agent Integrations — documentação oficial do Spec Kit.",
+      "href": "https://github.com/github/spec-kit/blob/main/docs/reference/integrations.md"
+    }
+  },
   "correspondencia": [
     {
       "conceito": "Memória de curto prazo",
