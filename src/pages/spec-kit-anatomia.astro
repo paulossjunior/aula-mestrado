@@ -1,0 +1,262 @@
+---
+import Migalha from "../components/Migalha.astro";
+import Base from "../layouts/Base.astro";
+import { rota } from "../lib/url";
+import dados from "../content/spec-kit-anatomia.json";
+
+const codigo =
+  "font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 15px; font-weight: 700;";
+---
+
+<Base
+  titulo="A anatomia do Spec Kit — Dev. de Software com IA"
+  descricao="Os componentes de software do Spec Kit — CLI, memória, templates, scripts, skills, workflow e artefatos — e o conceito de arquitetura de agentes que cada um realiza."
+>
+  <article>
+    <section class="om-pad" style="max-width: 1200px; margin: 0 auto; padding: 36px 32px 0">
+      <Migalha trilha={[{ texto: "Início", href: "/" }, { texto: "Aula 03", href: "/aulas/03" }, { texto: "Anatomia do Spec Kit" }]} />
+      <div
+        style="font-size: 13px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700); margin-top: 28px"
+      >
+        Material das Aulas 03 e 05 · Desenvolvimento dirigido por especificação
+      </div>
+      <h1
+        style="font-family: var(--font-heading); font-weight: 900; font-size: clamp(36px, 7vw, 76px); line-height: 0.96; letter-spacing: -0.035em; margin: 14px 0 0; max-width: 18ch; text-wrap: balance"
+      >
+        A anatomia do Spec Kit
+      </h1>
+      <p style="font-size: 18px; line-height: 1.6; max-width: 64ch; margin: 24px 0 0; text-wrap: pretty">
+        O <a href={rota("/spec-kit")}>fluxo de comandos</a> é o que se vê. Por baixo dele há um
+        sistema de software: uma CLI que monta a máquina, uma memória que o agente relê a cada
+        passo, templates que dão forma aos artefatos, scripts que fazem o trabalho exato e um
+        workflow que ordena tudo. Esta página abre a caixa.
+      </p>
+      <p style="font-size: 16px; line-height: 1.6; max-width: 64ch; margin: 16px 0 0; opacity: 0.85; text-wrap: pretty">
+        A decisão de engenharia central é uma só: <strong
+          >separar o determinístico do probabilístico.</strong
+        > O que precisa ser exato — numerar uma pasta, criar uma branch, checar um pré-requisito — é
+        script. O que precisa de julgamento — escrever um requisito, decidir uma arquitetura — é
+        agente, e o julgamento não é livre: memória e template o cercam. Lido assim, cada componente
+        do kit realiza um conceito de arquitetura de agentes.
+      </p>
+      <div style="display: flex; gap: 12px; flex-wrap: wrap; margin: 28px 0 40px">
+        <a class="btn btn-primary" href={rota("/spec-kit")}>O fluxo, etapa por etapa</a>
+        <a class="btn btn-secondary" href="https://github.com/github/spec-kit" target="_blank" rel="noopener"
+          >Repositório do Spec Kit</a
+        >
+        <a class="btn btn-secondary" href={rota("/aulas/03")}>Aula 03</a>
+      </div>
+    </section>
+
+    <section style="border-top: 2px solid var(--color-text)">
+      <div class="om-pad om-sec" style="max-width: 1200px; margin: 0 auto; padding: 48px 32px">
+        <h2 style="font-family: var(--font-heading); font-weight: 900; font-size: clamp(26px, 4vw, 40px); letter-spacing: -0.025em; margin: 0 0 10px">
+          Primeiro, os conceitos — e de onde vêm
+        </h2>
+        <p style="font-size: 16px; line-height: 1.6; max-width: 64ch; margin: 0 0 28px; text-wrap: pretty">
+          Antes da máquina, o vocabulário. Nenhum termo desta página é jargão de fornecedor: cada um
+          tem literatura revisada por pares. As definições abaixo são o mínimo para ler o resto da
+          página; os artigos são o ponto de partida para a Aula 08 e para quem for usar os conceitos
+          na própria pesquisa.
+        </p>
+        <div style="border-top: 2px solid var(--color-text)">
+          {
+            dados.conceitos.map((c) => (
+              <div style="padding: 24px 0; border-bottom: 2px solid var(--color-divider)">
+                <div
+                  class="om-aula-grid"
+                  style="display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 12px 32px; align-items: start"
+                >
+                  <div>
+                    <h3 style="font-family: var(--font-heading); font-weight: 900; font-size: 20px; line-height: 1.15; letter-spacing: -0.02em; margin: 0">
+                      {c.nome}
+                    </h3>
+                    <div style="font-size: 13px; margin-top: 4px; opacity: 0.65">{c.tambem}</div>
+                  </div>
+                  <div>
+                    <p style="font-size: 16px; line-height: 1.6; margin: 0; max-width: 66ch; text-wrap: pretty">
+                      {c.definicao}
+                    </p>
+                    <ul style="list-style: none; margin: 10px 0 0; padding: 0">
+                      {c.refs.map((r) => (
+                        <li style="font-size: 13px; line-height: 1.5; margin-top: 4px; opacity: 0.8">
+                          <a href={r.href} target="_blank" rel="noopener">
+                            {r.ref}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section style="border-top: 2px solid var(--color-text)">
+      <div class="om-pad om-sec" style="max-width: 1200px; margin: 0 auto; padding: 48px 32px">
+        <h2 style="font-family: var(--font-heading); font-weight: 900; font-size: clamp(26px, 4vw, 40px); letter-spacing: -0.025em; margin: 0 0 20px">
+          O mapa: o que o <code style={codigo + " font-size: 0.8em"}>specify init</code> instala
+        </h2>
+        <div class="om-scroll" style="border: 2px solid var(--color-text)">
+          <pre
+            style="margin: 0; padding: 24px 28px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 14px; line-height: 1.7; min-width: 640px; overflow-x: auto">{`projeto/
+├── .specify/
+│   ├── memory/constitution.md        ← memória de longo prazo
+│   ├── templates/*.md                ← forma dos artefatos (guardrail)
+│   ├── scripts/bash/*.sh             ← ferramentas determinísticas
+│   ├── workflows/workflow.yml        ← orquestração, com portões de revisão
+│   └── integrations/*.manifest.json  ← contrato com cada agente
+├── .claude/skills/speckit-*/         ← os comandos, instalados como prompts
+└── specs/NNN-nome/                   ← memória de trabalho: spec, plan, tasks`}</pre>
+        </div>
+        <p style="font-size: 13px; line-height: 1.5; padding: 12px 0 0; opacity: 0.75; max-width: 74ch">
+          A árvore acima é a deste repositório, que foi construído com o kit. O diretório dos
+          comandos muda com o agente escolhido — skills para o Claude Code, prompts para o Copilot —
+          mas o <code style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px">.specify/</code> é o mesmo para todos.
+        </p>
+      </div>
+    </section>
+
+    <section style="border-top: 2px solid var(--color-text)">
+      <div class="om-pad om-sec" style="max-width: 1200px; margin: 0 auto; padding: 48px 32px 24px">
+        <h2 style="font-family: var(--font-heading); font-weight: 900; font-size: clamp(26px, 4vw, 40px); letter-spacing: -0.025em; margin: 0 0 10px">
+          Os sete componentes
+        </h2>
+        <p style="font-size: 16px; line-height: 1.6; max-width: 64ch; margin: 0; text-wrap: pretty">
+          Um bloco por componente: o que ele é, a decisão de engenharia que carrega, o conceito de
+          arquitetura de agentes que realiza — e o que quebra quando ele falta.
+        </p>
+      </div>
+    </section>
+
+    {
+      dados.componentes.map((c, i) => (
+        <section
+          style={`border-top: 2px solid var(--color-divider)${i % 2 === 1 ? "; background: var(--color-neutral-100)" : ""}`}
+        >
+          <div class="om-pad" style="max-width: 1200px; margin: 0 auto; padding: 32px">
+            <div
+              class="om-aula-grid"
+              style="display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: 48px; align-items: start"
+            >
+              <div>
+                <div style="display: flex; gap: 12px; align-items: baseline; flex-wrap: wrap">
+                  <span style="font-family: var(--font-heading); font-weight: 900; font-size: 26px; letter-spacing: -0.03em; color: var(--color-accent); opacity: 0.45">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <code style={codigo + " color: var(--color-accent-700)"}>{c.caminho}</code>
+                </div>
+                <h3 style="font-family: var(--font-heading); font-weight: 900; font-size: clamp(22px, 3.4vw, 30px); line-height: 1.1; letter-spacing: -0.025em; margin: 10px 0 0">
+                  {c.titulo}
+                </h3>
+                <p style="font-size: 16px; line-height: 1.6; margin: 14px 0 0; max-width: 64ch; opacity: 0.85">
+                  {c.oQue}
+                </p>
+                <p style="font-size: 17px; line-height: 1.65; margin: 14px 0 0; max-width: 66ch; text-wrap: pretty">
+                  {c.engenharia}
+                </p>
+                <p style="font-size: 15px; line-height: 1.6; margin: 14px 0 0; max-width: 66ch; padding-left: 16px; box-shadow: inset 2px 0 0 var(--color-accent); text-wrap: pretty">
+                  <strong style="font-family: var(--font-heading); font-weight: 800">Sem ele.</strong>{" "}
+                  {c.semEle}
+                </p>
+              </div>
+              <aside>
+                <div style="border-top: 2px solid var(--color-text); padding-top: 14px">
+                  <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.6">
+                    Conceito de arquitetura de agentes
+                  </div>
+                  <div style="font-family: var(--font-heading); font-weight: 800; font-size: 17px; margin-top: 4px; color: var(--color-accent-700)">
+                    {c.agentic}
+                  </div>
+                  <p style="font-size: 15px; line-height: 1.55; margin: 8px 0 0">{c.agenticNota}</p>
+                </div>
+                <div style="border-top: 2px solid var(--color-divider); padding-top: 14px; margin-top: 18px">
+                  <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.6">
+                    Neste repositório
+                  </div>
+                  <p style="font-size: 15px; line-height: 1.55; margin: 6px 0 0">{c.nesteRepo}</p>
+                </div>
+              </aside>
+            </div>
+          </div>
+        </section>
+      ))
+    }
+
+    <section style="border-top: 2px solid var(--color-text); background: var(--color-accent); color: #fff">
+      <div class="om-pad om-sec" style="max-width: 1200px; margin: 0 auto; padding: 56px 32px">
+        <h2
+          style="font-family: var(--font-heading); font-weight: 900; font-size: clamp(28px, 5vw, 48px); line-height: 1; letter-spacing: -0.03em; margin: 0; max-width: 26ch; text-wrap: balance"
+        >
+          Um agente por dentro, antes da Aula 08
+        </h2>
+        <p style="font-size: 17px; line-height: 1.6; max-width: 62ch; margin: 18px 0 0">
+          A Aula 08 examina estes conceitos em agentes de propósito geral — ReAct, ferramentas,
+          memória. No Spec Kit eles aparecem congelados em arquivos que se pode abrir e ler, o que
+          faz do kit um espécime de dissecação: cada conceito da arquitetura tem um arquivo com
+          nome e endereço.
+        </p>
+        <div style="margin-top: 36px; border-top: 2px solid rgba(255,255,255,0.45)">
+          {
+            dados.correspondencia.map((c) => (
+              <div
+                class="om-lab"
+                style="display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 0 32px; padding: 20px 0; border-bottom: 2px solid rgba(255,255,255,0.45)"
+              >
+                <div>
+                  <div style="font-family: var(--font-heading); font-weight: 800; font-size: 19px; line-height: 1.2; letter-spacing: -0.015em">
+                    {c.conceito}
+                  </div>
+                  <code style={codigo + " font-size: 13px; opacity: 0.85; display: block; margin-top: 6px"}>
+                    {c.componente}
+                  </code>
+                </div>
+                <p style="font-size: 16px; line-height: 1.6; margin: 0; max-width: 62ch; text-wrap: pretty">
+                  {c.nota}
+                </p>
+              </div>
+            ))
+          }
+        </div>
+        <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 32px">
+          <a class="btn" style="background: #fff; color: var(--color-accent-700)" href={rota("/aulas/08")}
+            >Aula 08: arquiteturas de agentes</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <section style="border-top: 2px solid var(--color-text)">
+      <div class="om-pad om-sec" style="max-width: 1200px; margin: 0 auto; padding: 48px 32px">
+        <h2 style="font-family: var(--font-heading); font-weight: 900; font-size: clamp(24px, 4vw, 34px); letter-spacing: -0.025em; margin: 0 0 12px">
+          Abra a caixa neste repositório
+        </h2>
+        <p style="font-size: 16px; line-height: 1.65; max-width: 66ch; margin: 0 0 16px; text-wrap: pretty">
+          Todos os componentes descritos aqui existem neste site, que foi construído com o kit.
+          Exercício de dissecação: abra o repositório da sua Todo list, percorra o
+          <code style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 14px">.specify/</code>
+          e, para cada arquivo, diga qual conceito da tabela vermelha ele realiza — e o que
+          aconteceria com o fluxo se ele fosse apagado.
+        </p>
+        <div style="display: flex; gap: 12px; flex-wrap: wrap">
+          <a
+            class="btn btn-primary"
+            href="https://github.com/paulossjunior/aula-mestrado/blob/main/.specify/memory/constitution.md"
+            target="_blank"
+            rel="noopener">A constituição deste site</a
+          >
+          <a
+            class="btn btn-secondary"
+            href="https://github.com/paulossjunior/aula-mestrado/tree/main/specs/001-site-estatico-astro"
+            target="_blank"
+            rel="noopener">A memória de trabalho da feature 001</a
+          >
+          <a class="btn btn-secondary" href={rota("/spec-kit")}>O fluxo, etapa por etapa</a>
+        </div>
+      </div>
+    </section>
+  </article>
+</Base>

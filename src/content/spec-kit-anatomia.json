@@ -1,0 +1,214 @@
+{
+  "componentes": [
+    {
+      "caminho": "specify (CLI)",
+      "titulo": "O harness: quem monta o ambiente",
+      "oQue": "Ferramenta de linha de comando (Python, instalada com uv) que instala e atualiza a máquina do Spec Kit dentro de um projeto.",
+      "engenharia": "O comando specify init não gera código do produto — gera infraestrutura: o diretório .specify/ completo e os comandos no formato nativo do agente escolhido. É assim que o mesmo kit fala com mais de trinta agentes: um manifesto de integração registra cada arquivo instalado, com hash, para que a atualização do kit não sobrescreva o que a equipe alterou de propósito.",
+      "agentic": "Harness / runtime",
+      "agenticNota": "Todo agente roda dentro de um harness — a camada que prepara contexto, ferramentas e permissões antes de o modelo ver o primeiro token. O CLI é exatamente isso: monta o ambiente, não raciocina.",
+      "semEle": "Cada projeto reinventa a estrutura à mão, e atualizar o kit vira busca-e-cola de arquivos.",
+      "nesteRepo": ".specify/integrations/claude.manifest.json — instalação registrada em 6 de agosto de 2026, cada arquivo com hash SHA-256."
+    },
+    {
+      "caminho": ".specify/memory/",
+      "titulo": "A memória que não evapora",
+      "oQue": "Guarda a constituição do projeto — os princípios inegociáveis que todo comando relê antes de agir.",
+      "engenharia": "O contexto de uma conversa é memória de curto prazo: acaba quando a janela fecha. O que precisa sobreviver a qualquer sessão — as regras do projeto — vive em arquivo versionado, com emendas datadas e versão semântica. Todo comando do fluxo começa carregando essa memória, e um plano que a contradiz é defeito a corrigir, não opinião a discutir.",
+      "agentic": "Memória de longo prazo",
+      "agenticNota": "Arquitetura de agentes distingue a memória de trabalho (a janela de contexto, volátil) da memória persistente, recuperada a cada episódio. A constituição é a persistente — o agente não a lembra, ele a relê.",
+      "semEle": "Cada sessão redecide o que já foi combinado, e as decisões divergem de uma conversa para a outra sem ninguém perceber.",
+      "nesteRepo": "constitution.md v1.0.0, ratificada em 6 de agosto de 2026 — o princípio I fixa que conteúdo vive separado de código."
+    },
+    {
+      "caminho": ".specify/templates/",
+      "titulo": "A forma dos artefatos",
+      "oQue": "Um template por artefato: especificação, plano, tarefas, checklist e a própria constituição.",
+      "engenharia": "Template não é burocracia — é restrição de saída. O agente não decide a estrutura do documento; decide o conteúdo dentro de uma estrutura fixa. É isso que torna os artefatos comparáveis entre funcionalidades e verificáveis por máquina: o /speckit.analyze só consegue cruzar spec e tarefas porque as duas têm forma previsível.",
+      "agentic": "Saída estruturada / guardrail",
+      "agenticNota": "Mesmo papel do JSON Schema numa chamada de ferramenta: reduzir o espaço do que o modelo pode produzir ao que o resto do sistema consegue consumir.",
+      "semEle": "Cada especificação sai com uma cara, e nenhuma ferramenta a jusante consegue ler nenhuma delas.",
+      "nesteRepo": "Cinco templates: spec, plan, tasks, checklist e constitution."
+    },
+    {
+      "caminho": ".specify/scripts/",
+      "titulo": "As mãos determinísticas",
+      "oQue": "Scripts de shell que os comandos invocam para o trabalho que precisa ser exato: criar a pasta numerada da funcionalidade, abrir a branch, verificar pré-requisitos.",
+      "engenharia": "Modelo de linguagem não numera diretório nem cria branch — script faz. O create-new-feature.sh calcula o próximo número e cria specs/NNN-nome/; o check-prerequisites.sh recusa rodar /speckit.tasks se o plan.md não existe. É a divisão de trabalho central do kit: exatidão para o código, julgamento para o modelo — e nunca o contrário.",
+      "agentic": "Ferramentas (tool use)",
+      "agenticNota": "No ciclo ReAct, o agente alterna raciocínio e ação, e a ação é uma chamada de ferramenta. Aqui as ferramentas são scripts versionados no próprio repositório — auditáveis como qualquer código.",
+      "semEle": "O modelo improvisa numeração e branch, e uma vez em dez erra — e o erro corrompe a convenção de que todo o resto depende.",
+      "nesteRepo": "common.sh, create-new-feature.sh, setup-plan.sh, setup-tasks.sh e check-prerequisites.sh."
+    },
+    {
+      "caminho": ".claude/skills/",
+      "titulo": "O repertório do agente",
+      "oQue": "Cada comando /speckit.* é um arquivo de prompt instalado no diretório nativo do agente — neste projeto, como skills do Claude Code.",
+      "engenharia": "Comando não é binário: é prompt versionado, legível e editável. Invocar /speckit.specify carrega instruções que dizem ao agente qual script rodar, qual template preencher e qual memória consultar. O mesmo comando é instalado em formatos diferentes conforme o agente — skill, slash command ou arquivo de prompt.",
+      "agentic": "Habilidades (skills)",
+      "agenticNota": "O repertório de um agente é definido em linguagem natural versionada — a \"programação\" dele. Abrir o SKILL.md de um comando é ler o código-fonte do comando.",
+      "semEle": "O fluxo vira instrução oral: cada pessoa pede de um jeito, e o agente responde de outro.",
+      "nesteRepo": "Dez skills speckit-*, uma por comando do fluxo."
+    },
+    {
+      "caminho": ".specify/workflows/",
+      "titulo": "O maestro",
+      "oQue": "O workflow.yml descreve o ciclo completo — specify, plan, tasks, implement — com portões de revisão entre as etapas.",
+      "engenharia": "A orquestração fica fora do modelo: a ordem das etapas, os pontos de parada e o que destrava cada passo são declarados em YAML, não lembrados pelo agente. O portão de revisão é uma pessoa aprovando o artefato antes de o passo seguinte começar.",
+      "agentic": "Orquestração / human-in-the-loop",
+      "agenticNota": "É o padrão planejador–executor: controle de fluxo determinístico por fora, passos probabilísticos por dentro. Os portões são o human-in-the-loop — o ponto em que julgamento humano é requisito, não cortesia.",
+      "semEle": "O agente decide sozinho quando pular da especificação para o código — e pula cedo demais.",
+      "nesteRepo": "Workflow \"Full SDD Cycle\" v1.0.0, que exige Spec Kit 0.8.5 ou superior."
+    },
+    {
+      "caminho": "specs/NNN-nome/",
+      "titulo": "A memória de trabalho",
+      "oQue": "A pasta onde cada funcionalidade acumula seus artefatos: spec.md, plan.md, tasks.md e o que mais o fluxo produzir.",
+      "engenharia": "É o estado compartilhado do fluxo. O /speckit.plan lê o spec.md; o /speckit.tasks lê o plan.md; o /speckit.implement lê tudo. Nenhum passo depende do que o anterior \"lembrou\" — depende do que o anterior escreveu. Duas sessões, dois agentes ou duas semanas de distância: o estado está no arquivo, não na conversa.",
+      "agentic": "Memória de trabalho externalizada",
+      "agenticNota": "O rascunho interno do agente promovido a artefato versionado. É engenharia de contexto: em vez de caber tudo na janela, cada passo recebe exatamente os arquivos de que precisa.",
+      "semEle": "O contexto da conversa é o único fio que liga os passos — e romper a sessão rompe o projeto.",
+      "nesteRepo": "specs/001-site-estatico-astro (este site) e specs/002-guia-dsr."
+    }
+  ],
+  "conceitos": [
+    {
+      "nome": "Harness",
+      "tambem": "Interface agente–computador (ACI)",
+      "definicao": "A camada de software entre o modelo e o mundo: decide que ferramentas existem, como o resultado de cada ação volta formatado e o que entra no contexto a cada passo. O trabalho que nomeou o conceito mostra que o mesmo modelo resolve quase o dobro de tarefas quando a interface é desenhada para agente em vez de reaproveitada de humanos — o harness é variável de projeto, não detalhe de infraestrutura.",
+      "refs": [
+        {
+          "ref": "Yang et al. SWE-agent: Agent-Computer Interfaces Enable Automated Software Engineering. NeurIPS 2024.",
+          "href": "https://arxiv.org/abs/2405.15793"
+        }
+      ]
+    },
+    {
+      "nome": "Memória de curto e de longo prazo",
+      "tambem": "Hierarquia de memória",
+      "definicao": "A janela de contexto é a memória imediata do agente: volátil, limitada e cara. O que precisa sobreviver a uma sessão vive fora dela e é trazido de volta quando necessário. O experimento dos Generative Agents mostrou o mecanismo em funcionamento: um fluxo persistente de memórias, recuperadas por relevância, recência e importância, é o que mantém o comportamento coerente ao longo de dias — sem ele, o agente recomeça do zero a cada conversa.",
+      "refs": [
+        {
+          "ref": "Park et al. Generative Agents: Interactive Simulacra of Human Behavior. UIST 2023.",
+          "href": "https://arxiv.org/abs/2304.03442"
+        }
+      ]
+    },
+    {
+      "nome": "Memória de trabalho externalizada",
+      "tambem": "Estado em artefato",
+      "definicao": "O estado do trabalho escrito fora da janela de contexto — e relido no episódio seguinte. No Reflexion, o agente grava num buffer persistente o que aprendeu com cada tentativa, e é a releitura desse buffer que melhora a tentativa seguinte: a memória vira artefato, não lembrança. As pastas de specs/ fazem o mesmo movimento — cada passo lê o que o anterior escreveu, nunca o que o anterior \"lembrou\".",
+      "refs": [
+        {
+          "ref": "Shinn et al. Reflexion: Language Agents with Verbal Reinforcement Learning. NeurIPS 2023.",
+          "href": "https://arxiv.org/abs/2303.11366"
+        }
+      ]
+    },
+    {
+      "nome": "Ferramentas",
+      "tambem": "Tool use",
+      "definicao": "O ReAct estabeleceu o ciclo que virou padrão: o modelo alterna traços de raciocínio com ações sobre um ambiente externo, e o resultado de cada ação volta como observação para o passo seguinte. A ação é uma chamada de ferramenta — busca, API, script. O Toolformer mostrou que um modelo pode aprender sozinho quando vale a pena chamar uma API em vez de responder de memória.",
+      "refs": [
+        {
+          "ref": "Yao et al. ReAct: Synergizing Reasoning and Acting in Language Models. ICLR 2023.",
+          "href": "https://arxiv.org/abs/2210.03629"
+        },
+        {
+          "ref": "Schick et al. Toolformer: Language Models Can Teach Themselves to Use Tools. NeurIPS 2023.",
+          "href": "https://arxiv.org/abs/2302.04761"
+        }
+      ]
+    },
+    {
+      "nome": "Habilidades",
+      "tambem": "Skill library",
+      "definicao": "Comportamento reutilizável armazenado fora dos pesos do modelo — texto ou código versionado, recuperado quando a situação pede. O Voyager construiu a primeira biblioteca assim: cada habilidade aprendida vira um programa guardado e indexado, e o repertório do agente cresce sem retreinar nada. Um comando do Spec Kit é exatamente isso: uma habilidade em linguagem natural, versionada no repositório.",
+      "refs": [
+        {
+          "ref": "Wang et al. Voyager: An Open-Ended Embodied Agent with Large Language Models. TMLR 2024.",
+          "href": "https://arxiv.org/abs/2305.16291"
+        }
+      ]
+    },
+    {
+      "nome": "Guardrails",
+      "tambem": "Saída estruturada",
+      "definicao": "Camada programável entre o modelo e a aplicação que restringe o que pode entrar e o que pode sair — formatos obrigatórios, trajetórias permitidas, verificações antes de a resposta seguir adiante. O ponto de engenharia: o controle fica fora dos pesos, em regras legíveis e versionadas, não em esperança de que o modelo se comporte.",
+      "refs": [
+        {
+          "ref": "Rebedea et al. NeMo Guardrails: A Toolkit for Controllable and Safe LLM Applications. EMNLP 2023.",
+          "href": "https://arxiv.org/abs/2310.10501"
+        }
+      ]
+    },
+    {
+      "nome": "Orquestração",
+      "tambem": "Planejador–executor",
+      "definicao": "O fluxo entre passos — ordem, condições, quem fala com quem — definido por programa, não decidido pelo modelo no meio do caminho. O AutoGen tornou o padrão explícito: agentes conversáveis cujo encadeamento é código determinístico. O MetaGPT deu o passo que o Spec Kit repete: codificar os procedimentos operacionais de uma equipe de software — papéis, artefatos e ordem de entrega — no próprio fluxo dos agentes.",
+      "refs": [
+        {
+          "ref": "Wu et al. AutoGen: Enabling Next-Gen LLM Applications via Multi-Agent Conversations. COLM 2024.",
+          "href": "https://arxiv.org/abs/2308.08155"
+        },
+        {
+          "ref": "Hong et al. MetaGPT: Meta Programming for a Multi-Agent Collaborative Framework. ICLR 2024.",
+          "href": "https://arxiv.org/abs/2308.00352"
+        }
+      ]
+    },
+    {
+      "nome": "Human-in-the-loop",
+      "tambem": "Portões de revisão",
+      "definicao": "Pontos do fluxo em que aprovação humana é requisito estrutural, não cortesia: o agente para e espera. O HULA, da Atlassian, é o estudo em escala industrial — engenheiros refinam o plano e o código gerados a cada etapa, dentro do Jira, e é essa revisão intermediária que sustenta a confiança no resultado. Os portões do workflow do Spec Kit são o mesmo desenho.",
+      "refs": [
+        {
+          "ref": "Takerngsaksiri et al. Human-In-the-Loop Software Development Agents. ICSE SEIP 2025.",
+          "href": "https://arxiv.org/abs/2411.12924"
+        }
+      ]
+    }
+  ],
+  "correspondencia": [
+    {
+      "conceito": "Memória de curto prazo",
+      "componente": "A janela de contexto da conversa",
+      "nota": "A única parte que evapora — e por isso o kit não confia nada importante a ela."
+    },
+    {
+      "conceito": "Memória de longo prazo",
+      "componente": ".specify/memory/constitution.md",
+      "nota": "Relida a cada comando; sobrevive a qualquer sessão, agente ou pessoa."
+    },
+    {
+      "conceito": "Memória de trabalho",
+      "componente": "specs/NNN-nome/",
+      "nota": "O estado entre os passos do fluxo, escrito em disco em vez de lembrado."
+    },
+    {
+      "conceito": "Ferramentas",
+      "componente": ".specify/scripts/",
+      "nota": "Ações determinísticas que o agente invoca; exatidão que não se pede a um modelo."
+    },
+    {
+      "conceito": "Habilidades",
+      "componente": ".claude/skills/speckit-*",
+      "nota": "O repertório do agente, escrito em linguagem natural e versionado."
+    },
+    {
+      "conceito": "Guardrails",
+      "componente": ".specify/templates/",
+      "nota": "Restrição de saída: o modelo decide o conteúdo, nunca a forma."
+    },
+    {
+      "conceito": "Orquestração e human-in-the-loop",
+      "componente": ".specify/workflows/workflow.yml",
+      "nota": "Ordem, portões e aprovações declarados fora do modelo."
+    },
+    {
+      "conceito": "Harness",
+      "componente": "specify (CLI) + manifests de integração",
+      "nota": "Quem monta o ambiente do agente antes de qualquer raciocínio."
+    }
+  ]
+}
