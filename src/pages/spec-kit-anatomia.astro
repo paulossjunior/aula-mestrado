@@ -48,7 +48,59 @@ const codigo =
       </div>
     </section>
 
-    <section style="border-top: 2px solid var(--color-text)">
+    <section style="border-top: 2px solid var(--color-text); background: var(--color-neutral-100)">
+      <div class="om-pad" style="max-width: 1200px; margin: 0 auto; padding: 28px 32px 32px">
+        <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.6">
+          Nesta página
+        </div>
+        <ol
+          style="margin: 14px 0 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 10px 40px; counter-reset: sumario"
+        >
+          {
+            [
+              { href: "#conceitos", texto: "Primeiro, os conceitos — e de onde vêm" },
+              { href: "#mapa", texto: "O mapa: o que o specify init instala" },
+              { href: "#componentes", texto: "Os sete componentes" },
+              { href: "#skills-mcp", texto: "E skills e MCP?" },
+              { href: "#correspondencia", texto: "Um agente por dentro, antes da Aula 08" },
+              { href: "#abra-a-caixa", texto: "Abra a caixa neste repositório" },
+            ].map((s, i) => (
+              <li style="display: flex; gap: 10px; align-items: baseline">
+                <span
+                  style="font-family: var(--font-heading); font-weight: 900; font-size: 15px; color: var(--color-accent); opacity: 0.55"
+                  aria-hidden="true"
+                >
+                  {i + 1}
+                </span>
+                <a
+                  href={s.href}
+                  style="font-family: var(--font-heading); font-weight: 800; font-size: 16px; line-height: 1.3; text-decoration: none"
+                >
+                  {s.texto}
+                </a>
+              </li>
+            ))
+          }
+        </ol>
+        <div style="margin-top: 14px; display: flex; gap: 8px 14px; flex-wrap: wrap; align-items: baseline">
+          <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.6">
+            Direto a um componente
+          </span>
+          {
+            dados.componentes.map((c, i) => (
+              <a
+                href={`#componente-${i + 1}`}
+                style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 13px; font-weight: 700; text-decoration: none; color: var(--color-accent-700)"
+              >
+                {String(i + 1).padStart(2, "0")} {c.caminho}
+              </a>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section id="conceitos" style="border-top: 2px solid var(--color-text); scroll-margin-top: 24px">
       <div class="om-pad om-sec" style="max-width: 1200px; margin: 0 auto; padding: 48px 32px">
         <h2 style="font-family: var(--font-heading); font-weight: 900; font-size: clamp(26px, 4vw, 40px); letter-spacing: -0.025em; margin: 0 0 10px">
           Primeiro, os conceitos — e de onde vêm
@@ -95,7 +147,7 @@ const codigo =
       </div>
     </section>
 
-    <section style="border-top: 2px solid var(--color-text)">
+    <section id="mapa" style="border-top: 2px solid var(--color-text); scroll-margin-top: 24px">
       <div class="om-pad om-sec" style="max-width: 1200px; margin: 0 auto; padding: 48px 32px">
         <h2 style="font-family: var(--font-heading); font-weight: 900; font-size: clamp(26px, 4vw, 40px); letter-spacing: -0.025em; margin: 0 0 20px">
           O mapa: o que o <code style={codigo + " font-size: 0.8em"}>specify init</code> instala
@@ -120,7 +172,7 @@ const codigo =
       </div>
     </section>
 
-    <section style="border-top: 2px solid var(--color-text)">
+    <section id="componentes" style="border-top: 2px solid var(--color-text); scroll-margin-top: 24px">
       <div class="om-pad om-sec" style="max-width: 1200px; margin: 0 auto; padding: 48px 32px 24px">
         <h2 style="font-family: var(--font-heading); font-weight: 900; font-size: clamp(26px, 4vw, 40px); letter-spacing: -0.025em; margin: 0 0 10px">
           Os sete componentes
@@ -135,7 +187,8 @@ const codigo =
     {
       dados.componentes.map((c, i) => (
         <section
-          style={`border-top: 2px solid var(--color-divider)${i % 2 === 1 ? "; background: var(--color-neutral-100)" : ""}`}
+          id={`componente-${i + 1}`}
+          style={`border-top: 2px solid var(--color-divider); scroll-margin-top: 24px${i % 2 === 1 ? "; background: var(--color-neutral-100)" : ""}`}
         >
           <div class="om-pad" style="max-width: 1200px; margin: 0 auto; padding: 32px">
             <div
@@ -186,7 +239,7 @@ const codigo =
       ))
     }
 
-    <section style="border-top: 2px solid var(--color-text)">
+    <section id="skills-mcp" style="border-top: 2px solid var(--color-text); scroll-margin-top: 24px">
       <div class="om-pad om-sec" style="max-width: 1200px; margin: 0 auto; padding: 48px 32px">
         <h2 style="font-family: var(--font-heading); font-weight: 900; font-size: clamp(26px, 4vw, 40px); letter-spacing: -0.025em; margin: 0 0 10px">
           {dados.skillsMcp.titulo}
@@ -226,7 +279,10 @@ const codigo =
       </div>
     </section>
 
-    <section style="border-top: 2px solid var(--color-text); background: var(--color-accent); color: #fff">
+    <section
+      id="correspondencia"
+      style="border-top: 2px solid var(--color-text); background: var(--color-accent); color: #fff; scroll-margin-top: 24px"
+    >
       <div class="om-pad om-sec" style="max-width: 1200px; margin: 0 auto; padding: 56px 32px">
         <h2
           style="font-family: var(--font-heading); font-weight: 900; font-size: clamp(28px, 5vw, 48px); line-height: 1; letter-spacing: -0.03em; margin: 0; max-width: 26ch; text-wrap: balance"
@@ -269,7 +325,7 @@ const codigo =
       </div>
     </section>
 
-    <section style="border-top: 2px solid var(--color-text)">
+    <section id="abra-a-caixa" style="border-top: 2px solid var(--color-text); scroll-margin-top: 24px">
       <div class="om-pad om-sec" style="max-width: 1200px; margin: 0 auto; padding: 48px 32px">
         <h2 style="font-family: var(--font-heading); font-weight: 900; font-size: clamp(24px, 4vw, 34px); letter-spacing: -0.025em; margin: 0 0 12px">
           Abra a caixa neste repositório
