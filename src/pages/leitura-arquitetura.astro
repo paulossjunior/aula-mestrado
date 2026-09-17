@@ -1,0 +1,95 @@
+---
+import Migalha from "../components/Migalha.astro";
+import Base from "../layouts/Base.astro";
+import { rota } from "../lib/url";
+import dados from "../content/leitura-arquitetura.json";
+---
+
+<Base
+  titulo="Como preparar a leitura de uma arquitetura agêntica — Dev. de Software com IA"
+  descricao="Guia prático em sete passos para transformar o PDF de uma arquitetura agêntica numa apresentação arguível: delimitar, traçar o caminho, nomear conceitos, localizar a verificação e fechar com o empréstimo para a própria pesquisa."
+>
+  <article>
+    <section class="om-pad" style="max-width: 1200px; margin: 0 auto; padding: 36px 32px 0">
+      <Migalha trilha={[{ texto: "Início", href: "/" }, { texto: "Aula 06", href: "/aulas/06" }, { texto: "Leitura de arquitetura" }]} />
+      <div
+        style="font-size: 13px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700); margin-top: 28px"
+      >
+        Guia prático · Material da Aula 06
+      </div>
+      <h1
+        style="font-family: var(--font-heading); font-weight: 900; font-size: clamp(34px, 6vw, 64px); line-height: 0.98; letter-spacing: -0.035em; margin: 14px 0 0; max-width: 20ch; text-wrap: balance"
+      >
+        Como preparar a leitura de uma arquitetura agêntica
+      </h1>
+      <p style="font-size: 17px; line-height: 1.65; max-width: 64ch; margin: 24px 0 0; text-wrap: pretty">
+        {dados.situacao}
+      </p>
+      <div style="display: flex; gap: 12px; flex-wrap: wrap; margin: 28px 0 40px">
+        <a class="btn btn-primary" href={rota("/spec-kit-anatomia#conceitos")}>O glossário, com as fontes</a>
+        <a class="btn btn-secondary" href={rota("/aulas/06")}>Voltar para a Aula 06</a>
+      </div>
+    </section>
+
+    <section style="border-top: 2px solid var(--color-text)">
+      <div class="om-pad om-sec" style="max-width: 1200px; margin: 0 auto; padding: 48px 32px">
+        <h2 style="font-family: var(--font-heading); font-weight: 900; font-size: clamp(24px, 4vw, 36px); letter-spacing: -0.025em; margin: 0 0 8px">
+          Os sete passos
+        </h2>
+        <p style="font-size: 15px; line-height: 1.6; max-width: 64ch; margin: 0 0 24px; opacity: 0.8; text-wrap: pretty">
+          Na ordem. Cada passo produz uma peça da apresentação; o passo 7 só as arruma.
+        </p>
+        <div style="border-top: 2px solid var(--color-text)">
+          {
+            dados.passos.map((p, i) => (
+              <div
+                class="om-roteiro"
+                style="display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: 0 32px; padding: 22px 0; border-bottom: 2px solid var(--color-divider); align-items: start"
+              >
+                <div style="font-family: var(--font-heading); font-weight: 900; font-size: 34px; letter-spacing: -0.03em; color: var(--color-accent); opacity: 0.5; line-height: 1">
+                  {String(i + 1).padStart(2, "0")}
+                </div>
+                <div>
+                  <h3 style="font-family: var(--font-heading); font-weight: 900; font-size: clamp(19px, 2.6vw, 24px); line-height: 1.15; letter-spacing: -0.02em; margin: 0">
+                    {p.titulo}
+                  </h3>
+                  <p style="font-size: 16px; line-height: 1.65; margin: 8px 0 0; max-width: 66ch; text-wrap: pretty">
+                    {p.texto}
+                  </p>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+        <p style="font-size: 15px; line-height: 1.6; max-width: 70ch; margin: 24px 0 0; padding-left: 16px; box-shadow: inset 2px 0 0 var(--color-accent); text-wrap: pretty">
+          <strong style="font-family: var(--font-heading); font-weight: 800">Se o sistema é o da sua pesquisa.</strong>{" "}
+          {dados.condicional}
+        </p>
+      </div>
+    </section>
+
+    <section style="border-top: 2px solid var(--color-text); background: var(--color-neutral-100)">
+      <div class="om-pad om-sec" style="max-width: 1200px; margin: 0 auto; padding: 48px 32px">
+        <h2 style="font-family: var(--font-heading); font-weight: 900; font-size: clamp(22px, 3.5vw, 32px); letter-spacing: -0.025em; margin: 0 0 16px">
+          Antes de apresentar, confira
+        </h2>
+        <ul style="margin: 0; padding: 0; list-style: none; max-width: 74ch">
+          {
+            dados.checklist.map((item) => (
+              <li style="display: flex; gap: 12px; align-items: baseline; padding: 10px 0; border-bottom: 2px solid var(--color-divider); font-size: 16px; line-height: 1.55">
+                <span style="font-family: var(--font-heading); font-weight: 900; color: var(--color-accent)" aria-hidden="true">
+                  →
+                </span>
+                <span style="text-wrap: pretty">{item}</span>
+              </li>
+            ))
+          }
+        </ul>
+        <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 28px">
+          <a class="btn btn-primary" href={rota("/aulas/06")}>As arquiteturas da Aula 06</a>
+          <a class="btn btn-secondary" href={rota("/spec-kit-anatomia")}>A anatomia do Spec Kit</a>
+        </div>
+      </div>
+    </section>
+  </article>
+</Base>

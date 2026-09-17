@@ -1,0 +1,41 @@
+{
+  "situacao": "Você vai apresentar um sistema agêntico — a EDITE, o Oráculo, o Valida ou um componente da sua própria pesquisa — e tem em mãos o PDF da arquitetura. A tarefa: transformar o diagrama numa leitura que a turma consiga arguir. Este guia assume que você já conhece os conceitos de arquitetura de agentes; se algum nome soar estranho, consulte o glossário antes de começar.",
+  "passos": [
+    {
+      "titulo": "Delimite o sistema numa frase",
+      "texto": "Escreva: \"recebe X do usuário e devolve Y verificado\". Se a frase não sai, você ainda não entendeu o sistema — volte ao PDF e procure onde a entrada do usuário aparece e onde a resposta sai. Nada de listar tecnologias nessa frase: entrada e saída, só."
+    },
+    {
+      "titulo": "Trace o caminho feliz",
+      "texto": "Da entrada à saída, liste em ordem cada transformação que o dado sofre. O diagrama do PDF vira uma lista numerada: a pergunta chega, algo a interpreta, algo consulta, algo monta a resposta, algo confere. Se duas setas saem da mesma caixa, escolha o caminho comum e anote o desvio para o passo 5."
+    },
+    {
+      "titulo": "Nomeie cada peça com um conceito",
+      "texto": "Para cada item da lista, diga qual conceito de arquitetura de agentes ele realiza: harness, ferramenta, memória, guardrail ou human-in-the-loop. Não decore as definições — consulte o glossário e cite a fonte quando usar o termo. Peça que não recebe conceito nenhum é achado, não falha sua: leve-a como pergunta para a apresentação."
+    },
+    {
+      "titulo": "Localize a verificação",
+      "texto": "Aponte no caminho o lugar exato em que um erro do modelo seria pego antes de chegar ao usuário. Se o sistema verifica, diga como; se não encontrar verificação nenhuma, isso é o achado central da sua leitura — apresente-o como tal."
+    },
+    {
+      "titulo": "Pergunte: e quando erra?",
+      "texto": "Descreva o falso positivo e o falso negativo do sistema: o que cada um custa, quem paga o custo e o que a arquitetura deixa para decisão humana. Se você anotou desvios no passo 2, é aqui que eles entram."
+    },
+    {
+      "titulo": "Feche com o empréstimo",
+      "texto": "Escolha uma decisão de desenho do sistema que se aplica ao artefato da sua pesquisa e diga por quê. Uma basta — o fecho é o que a arguição vai atacar primeiro, então escolha a que você sabe defender."
+    },
+    {
+      "titulo": "Monte a apresentação nessa ordem",
+      "texto": "Poucos slides, na sequência dos passos: a frase do sistema, o caminho numerado, o mapa peça-conceito, a verificação, o erro e o empréstimo. Respeite o tempo do roteiro do encontro — apresentação que estoura o tempo perde a arguição, que é onde a leitura é testada."
+    }
+  ],
+  "condicional": "Se o sistema for o da sua própria pesquisa — caso dos encontros de agentes mais adiante — o guia é o mesmo, com um passo a mais: comece declarando o que ainda não existe. Ler arquitetura de sistema em produção é reconstituição; ler a do próprio projeto é projeto, e a turma precisa saber qual dos dois está arguindo.",
+  "checklist": [
+    "A frase \"recebe X e devolve Y verificado\" está escrita e cabe numa linha?",
+    "Cada caixa do caminho tem um conceito nomeado — ou virou pergunta declarada?",
+    "Você sabe apontar onde o erro do modelo é pego antes do usuário?",
+    "Sabe dizer o que custa o falso positivo e o falso negativo?",
+    "O empréstimo para a sua pesquisa está escolhido e defensável?"
+  ]
+}
