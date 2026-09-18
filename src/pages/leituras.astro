@@ -18,17 +18,11 @@ const abasCorpus = [
 ];
 
 // O corpus guarda a fase como código; o botão mostra o nome.
-// Só F1–F8 porque este recorte é anterior à revisão que criou as três novas fases.
 const fasesCorpus = [
   { chave: "Todas", label: "Todas" },
-  { chave: "F1", label: nomesFase.F1 },
-  { chave: "F2", label: nomesFase.F2 },
-  { chave: "F3", label: nomesFase.F3 },
-  { chave: "F4", label: nomesFase.F4 },
-  { chave: "F5", label: nomesFase.F5 },
-  { chave: "F6", label: nomesFase.F6 },
-  { chave: "F7", label: nomesFase.F7 },
-  { chave: "F8", label: nomesFase.F8 },
+  ...(["F1", "F2", "F3", "F4", "F5", "F6", "F7", "F8", "F9", "F10", "F11", "F12"] as const).map(
+    (chave) => ({ chave, label: nomesFase[chave] })
+  ),
 ];
 
 const estiloBotao = (ativo: boolean) =>
@@ -111,7 +105,7 @@ const totalObras =
 
 <Base
   titulo="Base de leituras — Dev. de Software com IA"
-  descricao="Ponto de partida de leitura extraído dos dois corpora: o tronco do campo e, para cada uma das onze fases do processo, os estudos secundários que dão o mapa e os trabalhos primários que mostram a prática."
+  descricao="Ponto de partida de leitura extraído dos dois corpora: o tronco do campo e, para onze das doze fases do processo, os estudos secundários que dão o mapa e os trabalhos primários que mostram a prática."
 >
   <article>
     <section class="om-pad" style="max-width: 1200px; margin: 0 auto; padding: 36px 32px 0">
@@ -128,7 +122,7 @@ const totalObras =
       </h1>
       <p style="font-size: 18px; line-height: 1.6; max-width: 64ch; margin: 24px 0 0; text-wrap: pretty">
         Ponto de partida extraído dos dois corpora do projeto: 236 estudos secundários e 338 artigos
-        publicados em sedes de referência. Para cada uma das doze fases do processo, até dois estudos
+        publicados em sedes de referência. Para onze das doze fases do processo, até dois estudos
         secundários — que dão o mapa da fase — e até dois trabalhos primários — que mostram como ela é
         praticada.
       </p>
@@ -187,8 +181,8 @@ const totalObras =
         <p style="font-size: 17px; line-height: 1.6; max-width: 62ch; margin: 18px 0 0">
           São as seis obras <strong>distintas</strong> com maior impacto acumulado nos dois corpora
           somados, e o vocabulário que elas fixaram é usado por quase todo o resto da literatura.
-          Três aparecem nos dois corpora — são revisões publicadas em sede de referência — e estão
-          contadas uma vez só. Cinco delas reaparecem adiante, na fase a que pertencem.
+          Uma delas aparece nos dois corpora — revisão publicada em sede de referência — e está
+          contada uma vez só. Cinco reaparecem adiante, na fase a que pertencem.
         </p>
         <div style="display: grid; gap: 0; margin-top: 36px; border-top: 2px solid rgba(255,255,255,0.45)">
           {

@@ -337,7 +337,7 @@
           "fase": "Verificação",
           "grau": "central",
           "citacoes": "",
-          "foco": "MCP server integrando Joern CPG e LLMs para deteccao de vulnerabilidades"
+          "foco": "MCP server integrando Joern CPG e LLMs para detecção de vulnerabilidades"
         }
       ]
     },
@@ -792,7 +792,7 @@
           "fase": "Depuração e reparo",
           "grau": "central",
           "citacoes": "",
-          "foco": "Avaliacao empirica de modelos ajustados para reparo automatico de vulnerabilidades"
+          "foco": "Avaliação empírica de modelos ajustados para reparo automático de vulnerabilidades"
         }
       ]
     },
@@ -1474,7 +1474,7 @@
           "fase": "Verificação",
           "grau": "secundaria",
           "citacoes": "1",
-          "foco": "Atribuicao de autoria de codigo usando LMs de codigo"
+          "foco": "Atribuição de autoria de código usando LMs de código"
         },
         {
           "arxiv": "2512.21347",
@@ -1495,7 +1495,7 @@
     },
     {
       "titulo": "O código gerado por IA virou objeto de segurança próprio",
-      "texto": "São 23 obras, divididas entre geração e verificação: 12 tratam de produzir código seguro por construção, e 10 de medir se o código gerado é inseguro. A divisão é informativa — o campo trata a insegurança do código gerado tanto como problema de geração quanto de avaliação, e a fronteira depende de o trabalho propor técnica ou instrumento de medida."
+      "texto": "São 22 obras, a maior parte dividida entre geração e verificação: 11 tratam de produzir código seguro por construção, e 10 de medir se o código gerado é inseguro. A divisão é informativa — o campo trata a insegurança do código gerado tanto como problema de geração quanto de avaliação, e a fronteira depende de o trabalho propor técnica ou instrumento de medida."
     },
     {
       "titulo": "O instrumento de medida é grande demais em relação ao que mede",
@@ -1503,7 +1503,7 @@
     },
     {
       "titulo": "A prevenção por projeto é pequena, e a operação é quase vazia",
-      "texto": "Requisito, projeto e política soma 21 obras, e apenas 5 delas estão de fato em requisitos ou arquitetura — as outras aparecem em verificação e em processo transversal, o que significa que política de segurança é mais estudada como algo a verificar depois do que a projetar antes. E detecção de ataque em sistema operando tem 2 obras nos dois corpora somados, ambas com segurança como preocupação secundária, nenhuma central."
+      "texto": "Requisito, projeto e política soma 20 obras, e apenas 5 delas estão de fato em requisitos ou arquitetura — as outras aparecem em verificação e em processo transversal, o que significa que política de segurança é mais estudada como algo a verificar depois do que a projetar antes. E detecção de ataque em sistema operando tem 2 obras nos dois corpora somados, ambas com segurança como preocupação secundária, nenhuma central."
     }
   ],
   "lacuna": {

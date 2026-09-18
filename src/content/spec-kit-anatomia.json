@@ -223,7 +223,7 @@
     },
     {
       "conceito": "Orquestração e human-in-the-loop",
-      "componente": ".specify/workflows/workflow.yml",
+      "componente": ".specify/workflows/speckit/workflow.yml",
       "nota": "Ordem, portões e aprovações declarados fora do modelo."
     },
     {

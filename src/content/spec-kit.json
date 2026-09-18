@@ -1,6 +1,6 @@
 {
   "constituicaoExemplos": {
-    "intro": "O que uma equipe escreve nesse arquivo? Os três primeiros grupos abaixo vêm da constituição do próprio Spec Kit — os nove artigos que o repositório usa em si mesmo. Os demais aparecem repetidamente nas constituições que a comunidade publica.",
+    "intro": "O que uma equipe escreve nesse arquivo? Os dois primeiros grupos abaixo vêm da constituição do próprio Spec Kit — os nove artigos que o repositório usa em si mesmo. Os demais aparecem repetidamente nas constituições que a comunidade publica.",
     "categorias": [
       {
         "nome": "Testes",
