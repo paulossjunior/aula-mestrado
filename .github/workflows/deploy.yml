@@ -46,8 +46,13 @@ jobs:
       - name: Conferir o que vai ser publicado
         run: |
           total=$(find dist -name index.html | wc -l | tr -d ' ')
-          echo "páginas geradas: $total"
-          test "$total" -eq 30 || { echo "esperava 30 páginas, encontrei $total"; exit 1; }
+          # A contagem esperada é derivada da fonte, não fixada à mão: cada .astro
+          # em src/pages vira uma página, exceto [n].astro, que gera uma por aula.
+          estaticas=$(find src/pages -type f -name '*.astro' ! -name '\[n\].astro' | wc -l | tr -d ' ')
+          aulas=$(find src/content/aulas -type f -name '*.md' | wc -l | tr -d ' ')
+          esperado=$((estaticas + aulas))
+          echo "páginas geradas: $total (esperado pela fonte: $esperado)"
+          test "$total" -eq "$esperado" || { echo "esperava $esperado páginas, encontrei $total"; exit 1; }
           test -f dist/.nojekyll || { echo "faltou .nojekyll: o Pages ignoraria _ds/ e _astro/"; exit 1; }
           # O template DSR é o único binário que a página promete para download.
           test -f dist/dsr/modelo_DSR.zip || { echo "faltou o template DSR"; exit 1; }
