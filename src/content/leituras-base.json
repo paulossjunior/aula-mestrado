@@ -406,7 +406,7 @@
     {
       "cod": "F6",
       "curto": "Manutenção",
-      "nome": "Manutenção, evolução e operação",
+      "nome": "Manutenção e evolução do código",
       "secundarios": [
         {
           "titulo": "Maintainability Challenges in ML: A Systematic Literature Review",
@@ -455,6 +455,55 @@
           "cit": "3 citações",
           "fwci": "FWCI 6",
           "foco": "Refatoração e dívida técnica em sistemas de build"
+        }
+      ]
+    },
+    {
+      "cod": "F12",
+      "curto": "Operação em produção",
+      "nome": "Monitoramento e operação do produto em produção",
+      "secundarios": [
+        {
+          "titulo": "AgentOps: Enabling Observability of LLM Agents",
+          "url": "https://arxiv.org/abs/2411.05285",
+          "arxiv": "2411.05285",
+          "sede": "arXiv",
+          "trilha": "preprint",
+          "tipo": "Mapeamento sistemático",
+          "cit": "2 citações",
+          "foco": "Observabilidade e monitoramento de agentes LLM em produção"
+        },
+        {
+          "titulo": "A Survey of AIOps for Failure Management in the Era of Large Language Models",
+          "url": "https://arxiv.org/abs/2406.11213",
+          "arxiv": "2406.11213",
+          "sede": "arXiv",
+          "trilha": "preprint",
+          "tipo": "Survey narrativo",
+          "cit": "1 citação",
+          "foco": "AIOps baseado em LLM para gestão de falhas de sistemas"
+        }
+      ],
+      "primarios": [
+        {
+          "titulo": "Recommending Root-Cause and Mitigation Steps for Cloud Incidents using Large Language Models",
+          "url": "https://arxiv.org/abs/2301.03797",
+          "arxiv": "2301.03797",
+          "sede": "ICSE 2023",
+          "trilha": "aceito",
+          "tipo": "Estudo empírico",
+          "cit": "109 citações",
+          "foco": "Causa raiz e mitigação de incidentes de nuvem avaliadas em 40 mil casos reais"
+        },
+        {
+          "titulo": "LILAC: Log Parsing using LLMs with Adaptive Parsing Cache",
+          "url": "https://arxiv.org/abs/2310.01796",
+          "arxiv": "2310.01796",
+          "sede": "FSE 2024",
+          "trilha": "aceito",
+          "tipo": "Técnica/abordagem",
+          "cit": "102 citações",
+          "foco": "Parsing de log com LLM e cache adaptativo de templates"
         }
       ]
     },
@@ -612,7 +661,7 @@
     {
       "cod": "F8",
       "curto": "Formação",
-      "nome": "Formação e educação em engenharia de software",
+      "nome": "Formação e educação",
       "secundarios": [
         {
           "titulo": "Large Language Models in Computer Science Education: A Systematic Literature Review",

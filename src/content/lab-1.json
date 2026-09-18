@@ -1,0 +1,32 @@
+{
+  "situacao": "O Laboratório 1 foi atribuído na Aula 03 e é entregue até a véspera do encontro 07 — 23 de setembro, 23h59. A tese dele: prompt é artefato de engenharia — versionado, testado e comparável — e não frase improvisada no chat. O laboratório mede o que muda quando a mesma tarefa é dada ao modelo sob quatro estratégias diferentes, no domínio da sua própria pesquisa.",
+  "passos": [
+    {
+      "titulo": "Escolha uma tarefa do seu domínio",
+      "texto": "Uma tarefa de implementação ligada à sua pesquisa, pequena o bastante para caber numa sessão de trabalho — uma função, um parser, uma transformação de dados. Grande demais e você medirá cansaço, não estratégia."
+    },
+    {
+      "titulo": "Implemente a mesma tarefa quatro vezes",
+      "texto": "Uma execução por estratégia, sempre partindo do zero: prompt direto; prompt com exemplos (few-shot); prompt com contexto do repositório (os arquivos relevantes, no recorte certo); e prompt com critérios de aceite explícitos. Não misture as estratégias — a comparação depende do isolamento."
+    },
+    {
+      "titulo": "Registre cada execução",
+      "texto": "Três medidas por execução, anotadas na planilha: acertos (o que saiu certo de primeira), retrabalho (quantas correções até funcionar) e tempo total. Registre durante, não de memória no fim."
+    },
+    {
+      "titulo": "Versione os prompts com o código",
+      "texto": "Cada prompt é um arquivo no repositório, ao lado do código que ele gerou. Prompt que só existe no histórico do chat não é artefato — é conversa perdida."
+    },
+    {
+      "titulo": "Feche com uma conclusão de uma página",
+      "texto": "Qual estratégia venceu no seu domínio, em qual medida, e por quê. Se o resultado contrariar a expectativa — o prompt direto ganhando do contextualizado, por exemplo — isso não é problema: é o achado."
+    }
+  ],
+  "entregavel": "Repositório com os prompts versionados, o código das quatro execuções, a planilha de registro e a conclusão de uma página. Entrega até 23h59 de 23 de setembro, véspera do encontro 07.",
+  "leitura": {
+    "titulo": "A Prompt Pattern Catalog to Enhance Prompt Engineering with ChatGPT",
+    "autor": "White, Fu, Hays et al.",
+    "fonte": "arXiv:2302.11382 · 2023",
+    "href": "https://arxiv.org/abs/2302.11382"
+  }
+}

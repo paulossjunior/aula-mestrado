@@ -1,0 +1,90 @@
+---
+import Migalha from "../components/Migalha.astro";
+import Base from "../layouts/Base.astro";
+import { rota } from "../lib/url";
+import dados from "../content/lab-1.json";
+---
+
+<Base
+  titulo="Lab 1: prompts do seu domínio — Dev. de Software com IA"
+  descricao="Descrição e roteiro do Laboratório 1: a mesma tarefa do domínio da sua pesquisa implementada sob quatro estratégias de prompt, com registro de acertos, retrabalho e tempo."
+>
+  <article>
+    <section class="om-pad" style="max-width: 1200px; margin: 0 auto; padding: 36px 32px 0">
+      <Migalha trilha={[{ texto: "Início", href: "/" }, { texto: "Aula 03", href: "/aulas/03" }, { texto: "Lab 1" }]} />
+      <div
+        style="font-size: 13px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700); margin-top: 28px"
+      >
+        Guia prático · Laboratório 1 · Atribuído na Aula 03
+      </div>
+      <h1
+        style="font-family: var(--font-heading); font-weight: 900; font-size: clamp(34px, 6vw, 64px); line-height: 0.98; letter-spacing: -0.035em; margin: 14px 0 0; max-width: 20ch; text-wrap: balance"
+      >
+        Lab 1: prompts do seu domínio
+      </h1>
+      <p style="font-size: 17px; line-height: 1.65; max-width: 64ch; margin: 24px 0 0; text-wrap: pretty">
+        {dados.situacao}
+      </p>
+      <div style="display: flex; gap: 12px; flex-wrap: wrap; margin: 28px 0 40px">
+        <a class="btn btn-primary" href={dados.leitura.href} target="_blank" rel="noopener"
+          >A leitura de apoio: padrões de prompt</a
+        >
+        <a class="btn btn-secondary" href={rota("/avaliacao")}>Como é avaliado</a>
+      </div>
+    </section>
+
+    <section style="border-top: 2px solid var(--color-text)">
+      <div class="om-pad om-sec" style="max-width: 1200px; margin: 0 auto; padding: 48px 32px">
+        <h2 style="font-family: var(--font-heading); font-weight: 900; font-size: clamp(24px, 4vw, 36px); letter-spacing: -0.025em; margin: 0 0 8px">
+          O roteiro em cinco passos
+        </h2>
+        <p style="font-size: 15px; line-height: 1.6; max-width: 64ch; margin: 0 0 24px; opacity: 0.8; text-wrap: pretty">
+          Na ordem. O laboratório é uma comparação controlada — o valor está no registro, não na
+          velocidade.
+        </p>
+        <div style="border-top: 2px solid var(--color-text)">
+          {
+            dados.passos.map((p, i) => (
+              <div
+                class="om-roteiro"
+                style="display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: 0 32px; padding: 22px 0; border-bottom: 2px solid var(--color-divider); align-items: start"
+              >
+                <div style="font-family: var(--font-heading); font-weight: 900; font-size: 34px; letter-spacing: -0.03em; color: var(--color-accent); opacity: 0.5; line-height: 1">
+                  {String(i + 1).padStart(2, "0")}
+                </div>
+                <div>
+                  <h3 style="font-family: var(--font-heading); font-weight: 900; font-size: clamp(19px, 2.6vw, 24px); line-height: 1.15; letter-spacing: -0.02em; margin: 0">
+                    {p.titulo}
+                  </h3>
+                  <p style="font-size: 16px; line-height: 1.65; margin: 8px 0 0; max-width: 66ch; text-wrap: pretty">
+                    {p.texto}
+                  </p>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section style="border-top: 2px solid var(--color-text); background: var(--color-neutral-100)">
+      <div class="om-pad om-sec" style="max-width: 1200px; margin: 0 auto; padding: 48px 32px">
+        <h2 style="font-family: var(--font-heading); font-weight: 900; font-size: clamp(22px, 3.5vw, 32px); letter-spacing: -0.025em; margin: 0 0 12px">
+          O que entregar
+        </h2>
+        <p style="font-size: 16px; line-height: 1.65; max-width: 66ch; margin: 0 0 20px; text-wrap: pretty">
+          {dados.entregavel}
+        </p>
+        <div style="border-top: 2px solid var(--color-divider); padding-top: 14px; max-width: 66ch">
+          <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.6">
+            Leitura de apoio
+          </div>
+          <p style="font-size: 15px; line-height: 1.55; margin: 6px 0 0">
+            <a href={dados.leitura.href} target="_blank" rel="noopener">{dados.leitura.titulo}</a> —{" "}
+            {dados.leitura.autor} · {dados.leitura.fonte}
+          </p>
+        </div>
+      </div>
+    </section>
+  </article>
+</Base>
