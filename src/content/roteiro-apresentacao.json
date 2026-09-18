@@ -1,0 +1,60 @@
+{
+  "situacao": "Você vai apresentar nos encontros de apresentação e debate: 12 minutos, 8 telas, e depois 8 minutos de arguição. Este roteiro diz o que cada tela carrega e quanto tempo ela tem. A regra que governa tudo: a turma argui método e evidência, não o tema — cada tela existe para sustentar uma arguição, não para decorar a fala.",
+  "telas": [
+    {
+      "n": "1",
+      "titulo": "O problema de campo",
+      "texto": "Quem sofre o problema, onde e qual o custo de ele continuar existindo. Uma frase no topo; o resto é o contexto mínimo para um colega de outra área entender.",
+      "tempo": "1 min"
+    },
+    {
+      "n": "2",
+      "titulo": "A pergunta de conhecimento",
+      "texto": "O que a pesquisa quer saber que ninguém respondeu ainda. Distinga do problema de campo: um é do mundo, o outro é da ciência.",
+      "tempo": "1 min"
+    },
+    {
+      "n": "3",
+      "titulo": "O artefato",
+      "texto": "O que você está construindo — e, em uma linha, o que ele não é. Tipo do artefato declarado: método, modelo, ferramenta, instância.",
+      "tempo": "1min30"
+    },
+    {
+      "n": "4",
+      "titulo": "Requisitos e critérios de aceite",
+      "texto": "Os requisitos que o artefato precisa cumprir, cada um com critério verificável. Requisito sem critério não entra na tela — vira pergunta da arguição.",
+      "tempo": "1min30"
+    },
+    {
+      "n": "5",
+      "titulo": "O desenho da avaliação",
+      "texto": "Como você vai demonstrar e avaliar: com quem, medindo o quê, comparando com o quê. É a tela mais arguida — monte-a esperando a pergunta \"essa avaliação sustenta essa conclusão?\".",
+      "tempo": "2 min"
+    },
+    {
+      "n": "6",
+      "titulo": "A evidência que já existe",
+      "texto": "O que está de pé hoje: protótipo, dados, resultado parcial. Evidência, não impressão de uso — mostre o repositório, o número, a tela do sistema.",
+      "tempo": "2 min"
+    },
+    {
+      "n": "7",
+      "titulo": "O que mudou e por quê",
+      "texto": "A diferença em relação à versão anterior do trabalho e o que provocou cada mudança — uma aula, uma leitura, um resultado que contrariou a expectativa.",
+      "tempo": "1min30"
+    },
+    {
+      "n": "8",
+      "titulo": "Próximo passo e pedido",
+      "texto": "Um próximo passo verificável no encontro seguinte, e um pedido concreto à turma: a dúvida em que a arguição pode ajudar. Termine aqui — não volte para agradecer telas atrás.",
+      "tempo": "1min30"
+    }
+  ],
+  "regras": [
+    "12 minutos para 8 telas: nenhuma tela merece mais que os tempos acima. Ensaiada uma vez com relógio, a apresentação cabe.",
+    "Nada de parede de texto: cada tela tem um título que afirma algo e no máximo cinco linhas de apoio.",
+    "Slides são evidência, não teleprompter — quem lê slide perde a arguição.",
+    "Estourou o tempo? Corte as telas 1–2 na hora, nunca as 5–6: a arguição é sobre método e evidência."
+  ],
+  "condicional": "Se a apresentação for do enquadramento DSR (encontro 07), as telas 1–5 são o próprio enquadramento revisado e a tela 7 é obrigatória: o que mudou desde a Aula 03 e por quê. Se for resultado de laboratório ou do artigo (encontros 12, 16 e 17), a tela 6 cresce e a 3 encolhe — o artefato a turma já conhece."
+}

@@ -1,0 +1,36 @@
+{
+  "situacao": "Enquanto um colega apresenta, você preenche este formulário; nos 8 minutos de arguição, ele é o seu roteiro. O propósito: arguir o desenho da pesquisa por critério de método, nunca o tema. Preencha durante a apresentação — arguição improvisada vira opinião, e opinião não ajuda quem apresentou.",
+  "campos": [
+    {
+      "nome": "O trabalho em uma frase",
+      "instrucao": "Complete: \"o artefato X pretende resolver Y, e a avaliação proposta é Z\". Se você não consegue preencher, essa é a primeira pergunta da arguição — e a mais útil.",
+      "tipo": "Texto livre, uma frase"
+    },
+    {
+      "nome": "O ponto mais forte, com evidência",
+      "instrucao": "O que está bem sustentado e por quê. Aponte a tela e a evidência — \"forte\" sem evidência não conta.",
+      "tipo": "Texto livre, até duas frases"
+    },
+    {
+      "nome": "Onde a avaliação não sustenta a conclusão",
+      "instrucao": "O ponto específico em que o desenho da avaliação não permitiria afirmar o que o trabalho pretende afirmar. É o campo obrigatório da arguição — a pergunta canônica da disciplina.",
+      "tipo": "Texto livre, obrigatório"
+    },
+    {
+      "nome": "E se o artefato não funcionar?",
+      "instrucao": "O que o apresentador aprenderia se o artefato falhasse na avaliação. Se a resposta for \"nada\", o desenho tem um problema: avaliação boa produz conhecimento nos dois desfechos.",
+      "tipo": "Texto livre"
+    },
+    {
+      "nome": "Uma pergunta e um próximo passo",
+      "instrucao": "A pergunta que você fará em voz alta na arguição, e um próximo passo concreto que você sugeriria. Entregue o formulário ao apresentador no fim do debate.",
+      "tipo": "Texto livre"
+    }
+  ],
+  "uso": [
+    "Antes: leia a frase-modelo do campo 1 para saber o que capturar durante a fala.",
+    "Durante: preencha os campos 1–4 enquanto o colega apresenta; anote a tela a que cada observação se refere.",
+    "Na arguição: faça a pergunta do campo 5 primeiro; os campos 3 e 4 são a réplica se a resposta for evasiva.",
+    "Depois: entregue o formulário preenchido ao apresentador — ele é feedback por escrito, não avaliação com nota."
+  ]
+}
