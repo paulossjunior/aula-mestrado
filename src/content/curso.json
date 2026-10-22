@@ -2,8 +2,8 @@
   "ementa": [
     "Fundamentos de modelos de linguagem aplicados a código: tokenização, contexto, geração e limites. Engenharia de prompt e de contexto para tarefas de programação. Assistentes de codificação e o efeito medido sobre produtividade e qualidade.",
     "Design Science Research como método do trabalho: problema de campo, requisitos do artefato, demonstração e avaliação. Desenvolvimento dirigido por especificação (SDD), da constituição do projeto ao artefato publicado e verificável contra a própria especificação.",
-    "Agentes de engenharia de software: arquiteturas, ferramentas, execução em repositórios reais e <em>benchmarks</em> (SWE-bench e sucessores). Agentes evolutivos e auto-aperfeiçoáveis. Sistemas agênticos em produção.",
-    "Teste, revisão, verificação e segurança de código gerado por IA. Método experimental para avaliar assistentes e agentes. Licenciamento, proveniência e ética."
+    "Agentes de engenharia de software: arquiteturas, ferramentas e execução em repositórios reais. Agentes como membros de equipe, coordenados por quadro de issues (Multica). Frameworks de orquestração multiagente: CrewAI, LangChain e LangGraph. Sistemas agênticos em produção.",
+    "Teste, revisão, verificação e segurança de código gerado por IA. Método experimental para avaliar assistentes e agentes, com rastros de execução como dado. Declaração de uso de IA em trabalhos acadêmicos."
   ],
   "objetivos": [
     "Situar um trabalho de engenharia de software com IA no mapa das doze fases do processo, e dizer que evidência sustenta o que ele afirma.",
