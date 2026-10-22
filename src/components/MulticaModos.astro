@@ -19,7 +19,7 @@ const situacao =
     ? "comece pela etapa 1"
     : /^\d+$/.test(dados.modos[i].etapa)
       ? `etapa ${dados.modos[i].etapa} de ${dados.modos.length - 1}`
-      : "depois das três etapas";
+      : `depois das ${dados.modos.length - 1} etapas`;
 ---
 
 {

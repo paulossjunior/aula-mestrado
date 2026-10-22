@@ -25,11 +25,11 @@ nenhum arquivo de programação.
 | `/leituras` | Base de leituras: o tronco do campo, o que ler por fase, o corpus inteiro navegável e os CSV para download |
 | `/spec-kit` | O fluxo do Spec Kit: cada comando como a etapa de desenvolvimento que ele ocupa |
 | `/seguranca` | A dimensão de segurança: dez tópicos cruzados com as doze fases, e as obras de cada tópico |
-| `/multica` | Multica em quatro modos (Diátaxis): explicação, `/multica/tutorial`, `/multica/referencia` e `/multica/guias` |
+| `/multica` | Multica em quatro modos (Diátaxis): explicação, `/multica/tutorial`, `/multica/referencia`, `/multica/exercicio` e `/multica/guias` |
 | `/dsr` | O guideline de escrita da dissertação em DSR: 25 seções, com os trechos da tese que servem de exemplo |
 | `/aulas/01` … `/aulas/17` | Uma página por encontro: roteiro, objetivos, atividade, entrega, leitura e material |
 
-São 35 páginas HTML estáticas. Só duas coisas usam JavaScript — o filtro de unidade
+São 36 páginas HTML estáticas. Só duas coisas usam JavaScript — o filtro de unidade
 no cronograma e o navegador de corpus. Todo o resto funciona com o JS desligado.
 
 ---

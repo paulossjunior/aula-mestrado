@@ -1,0 +1,149 @@
+---
+import Migalha from "../../components/Migalha.astro";
+import MulticaModos from "../../components/MulticaModos.astro";
+import Base from "../../layouts/Base.astro";
+import { rota } from "../../lib/url";
+import { estilo } from "../../lib/multica";
+import dados from "../../content/multica.json";
+
+const e = dados.exercicio;
+const bloco =
+  "margin: 12px 0 0; padding: 14px 16px; border: 2px solid var(--color-text); background: var(--color-neutral-100); overflow-x: auto; white-space: pre-wrap; word-break: break-word";
+---
+
+<Base
+  titulo="Exercício: a Todo list com um time de agentes — Dev. de Software com IA"
+  descricao="A Todo list da Aula 03, com o mesmo Spec Kit, reconstruída por um squad de agentes no Multica: você só aprova nos portões e registra o rastro para comparar os dois processos."
+>
+  <article>
+    <section class="om-pad" style="max-width: 1200px; margin: 0 auto; padding: 36px 32px 0">
+      <Migalha
+        trilha={[{ texto: "Início", href: "/" }, { texto: "Aula 11", href: "/aulas/11" }, { texto: "Multica", href: "/multica" }, { texto: "Exercício" }]}
+      />
+      <div style={estilo.sobretitulo}>Exercício · Atribuído na Aula 11</div>
+      <h1 style={estilo.h1}>A Todo list de novo, com um time de agentes</h1>
+      <p style="font-size: 17px; line-height: 1.65; max-width: 64ch; margin: 24px 0 0; text-wrap: pretty">{e.situacao}</p>
+      <p style="font-size: 15px; line-height: 1.6; max-width: 64ch; margin: 14px 0 0; padding-left: 16px; box-shadow: inset 2px 0 0 var(--color-accent); text-wrap: pretty">
+        <strong style="font-family: var(--font-heading); font-weight: 800">Prazo.</strong> {e.prazo}
+      </p>
+      <div style="border: 2px solid var(--color-text); padding: 20px 24px; margin: 28px 0 40px; max-width: 64ch">
+        <div style={estilo.rotulo}>Antes de começar</div>
+        <ul style="margin: 8px 0 0; padding-left: 18px; font-size: 15px; line-height: 1.55">
+          {e.prereqs.map((p) => <li style="margin-top: 4px">{p}</li>)}
+        </ul>
+        <p style="font-size: 14px; line-height: 1.55; margin: 12px 0 0; opacity: 0.8">
+          Os comandos do Spec Kit estão em <a href={rota("/spec-kit")}>o fluxo do Spec Kit</a>; os termos do
+          Multica, na <a href={rota("/multica/referencia")}>referência</a>.
+        </p>
+      </div>
+    </section>
+
+    <MulticaModos atual="/multica/exercicio" />
+
+    <section style="border-top: 2px solid var(--color-text)">
+      <div class="om-pad om-sec" style={estilo.secao}>
+        <h2 style={estilo.h2}>As regras</h2>
+        <p style={estilo.intro}>Três restrições. São elas que transformam o exercício numa comparação.</p>
+        <div class="om-aula-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px 32px">
+          {
+            e.regras.map((r) => (
+              <div style="border-top: 2px solid var(--color-text); padding-top: 12px">
+                <div style="font-family: var(--font-heading); font-weight: 900; font-size: 19px">{r.titulo}</div>
+                <p style="font-size: 15px; line-height: 1.6; margin: 6px 0 0; text-wrap: pretty">{r.texto}</p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section style="border-top: 2px solid var(--color-text)">
+      <div class="om-pad om-sec" style={estilo.secao}>
+        <h2 style={estilo.h2}>O roteiro em {e.passos.length} passos</h2>
+        <div style="border-top: 2px solid var(--color-text); margin-top: 18px">
+          {
+            e.passos.map((p, i) => (
+              <div class="om-roteiro" style="display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: 0 32px; padding: 24px 0; border-bottom: 2px solid var(--color-divider); align-items: start">
+                <div style="font-family: var(--font-heading); font-weight: 900; font-size: 34px; letter-spacing: -0.03em; color: var(--color-accent); opacity: 0.5; line-height: 1">
+                  {String(i + 1).padStart(2, "0")}
+                </div>
+                <div>
+                  <h3 style="font-family: var(--font-heading); font-weight: 900; font-size: clamp(19px, 2.6vw, 24px); line-height: 1.15; letter-spacing: -0.02em; margin: 0">
+                    {p.titulo}
+                  </h3>
+                  <p style="font-size: 16px; line-height: 1.65; margin: 8px 0 0; max-width: 70ch; text-wrap: pretty">{p.texto}</p>
+                  {p.comando && (
+                    <pre class="om-scroll" style={bloco}><code style={estilo.codigo}>{p.comando}</code></pre>
+                  )}
+                  {p.bloco && (
+                    <div style="margin-top: 14px">
+                      <div style={estilo.rotulo}>{p.bloco.rotulo}</div>
+                      <pre class="om-scroll" style={bloco}><code style={estilo.codigo + " font-weight: 500; font-size: 13px; line-height: 1.55"}>{p.bloco.texto}</code></pre>
+                    </div>
+                  )}
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section style="border-top: 2px solid var(--color-text); background: var(--color-neutral-100)">
+      <div class="om-pad om-sec" style={estilo.secao}>
+        <div class="om-aula-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 48px">
+          <div>
+            <h2 style={estilo.h2}>Os portões</h2>
+            <p style={estilo.intro}>As únicas intervenções previstas. Cada uma corresponde a uma decisão que, na Aula 03, você tomava no terminal.</p>
+            <div style="border-top: 2px solid var(--color-text)">
+              {
+                e.portoes.map((g) => (
+                  <div style="display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: 16px; padding: 12px 0; border-bottom: 2px solid var(--color-divider); align-items: baseline">
+                    <span style="font-family: var(--font-heading); font-weight: 800; font-size: 16px">{g.estagio}</span>
+                    <span style="font-size: 15px; line-height: 1.5">{g.voce}</span>
+                  </div>
+                ))
+              }
+            </div>
+          </div>
+          <div>
+            <h2 style={estilo.h2}>O que registrar</h2>
+            <p style={estilo.intro}>Por sub-issue, nas duas versões. Estimativa é permitida para a Aula 03, desde que marcada.</p>
+            <div style="border-top: 2px solid var(--color-text)">
+              {
+                e.medidas.map((m) => (
+                  <div style="display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: 16px; padding: 12px 0; border-bottom: 2px solid var(--color-divider); align-items: baseline">
+                    <span style="font-family: var(--font-heading); font-weight: 800; font-size: 16px">{m.medida}</span>
+                    <span style="font-size: 15px; line-height: 1.5">{m.como}</span>
+                  </div>
+                ))
+              }
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="border-top: 2px solid var(--color-text)">
+      <div class="om-pad om-sec" style={estilo.secao}>
+        <h2 style={estilo.h2}>O que entregar</h2>
+        <ol style="margin: 0; padding: 0; list-style: none; border-top: 2px solid var(--color-text); max-width: 76ch">
+          {
+            e.entregaveis.map((t, i) => (
+              <li style="display: grid; grid-template-columns: 48px minmax(0, 1fr); gap: 14px; padding: 14px 0; border-bottom: 2px solid var(--color-divider); font-size: 16px; line-height: 1.6">
+                <span style="font-family: var(--font-heading); font-weight: 900; color: var(--color-accent)">{i + 1}</span>
+                <span style="text-wrap: pretty">{t}</span>
+              </li>
+            ))
+          }
+        </ol>
+        <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 28px">
+          <a class="btn btn-secondary" href={rota("/aulas/03")}>A Todo list da Aula 03</a>
+          <a class="btn btn-secondary" href={rota("/aulas/14")}>Onde os registros serão discutidos: Aula 14</a>
+        </div>
+      </div>
+    </section>
+
+    <MulticaModos atual="/multica/exercicio" fim />
+  </article>
+</Base>

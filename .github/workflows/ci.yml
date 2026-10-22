@@ -54,7 +54,8 @@ jobs:
                    dist/leituras/index.html dist/spec-kit/index.html dist/seguranca/index.html \
                    dist/codebook/index.html dist/codebook/mapeamento/index.html \
                    dist/multica/index.html dist/multica/tutorial/index.html \
-                   dist/multica/referencia/index.html dist/multica/guias/index.html; do
+                   dist/multica/referencia/index.html dist/multica/guias/index.html \
+                   dist/multica/exercicio/index.html; do
             test -f "$p" || { echo "faltou $p"; exit 1; }
           done
           for n in 01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 16 17; do

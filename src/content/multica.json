@@ -28,6 +28,15 @@
       "para": "Três agentes, duas issues, um squad, duas skills e um autopilot. Cada passo aponta para o conceito que exercita."
     },
     {
+      "etapa": "4",
+      "verbo": "Pratique",
+      "modo": "Exercício",
+      "titulo": "A Todo list de novo, com um time de agentes",
+      "href": "/multica/exercicio",
+      "tempo": "até 11 nov",
+      "para": "A Todo list da Aula 03, com o mesmo Spec Kit — agora conduzida por um squad no Multica, com você só nos portões de aprovação."
+    },
+    {
       "etapa": "Depois",
       "verbo": "Resolva problemas",
       "modo": "Guia prático",
@@ -486,6 +495,99 @@
       { "comando": "multica skill import --file <arquivo>", "texto": "Importa uma skill." },
       { "comando": "multica autopilot trigger <id>", "texto": "Dispara um autopilot uma vez." },
       { "comando": "multica config set workspaces_root <caminho>", "texto": "Define a raiz dos diretórios de trabalho." }
+    ]
+  },
+
+  "exercicio": {
+    "situacao": "Na Aula 03 você construiu uma Todo list com o Spec Kit, conduzindo o agente no terminal: digitava cada comando, lia cada artefato e decidia quando avançar. Neste exercício o produto e o método são os mesmos — Spec Kit, da constituição à aplicação no ar —, mas quem conduz é um time de agentes no Multica, e você passa de operador a quem aprova. A pergunta que o exercício responde: o que muda no processo, no rastro e no resultado quando o mesmo SDD é executado por agentes coordenados?",
+    "prazo": "Entrega até 23h59 de 11 de novembro, véspera do encontro 14. Os registros entram na discussão daquele encontro, sobre método experimental para avaliar assistentes.",
+    "prereqs": [
+      "O tutorial feito: workspace, runtime online, os agentes Engineer e Reviewer, o GitHub conectado.",
+      "O repositório da sua Todo list da Aula 03 — dele você tira o texto da especificação e os números para comparar.",
+      "uv instalado, para rodar o Spec Kit."
+    ],
+    "regras": [
+      {
+        "titulo": "Mesma entrada",
+        "texto": "A descrição do produto é o mesmo texto que você deu ao /speckit.specify na Aula 03. Sem isso, a comparação mede a mudança de pedido, não a de processo."
+      },
+      {
+        "titulo": "Nenhuma edição à mão",
+        "texto": "Depois do passo 1, você não edita código nem artefato do Spec Kit. Toda mudança passa por issue, comentário ou chat — é isso que deixa o rastro completo."
+      },
+      {
+        "titulo": "Você só atua nos portões",
+        "texto": "Aprovar a constituição, responder às clarificações, aprovar a especificação, aprovar o plano e aprovar cada merge. Qualquer outra intervenção é registrada como intervenção extra."
+      }
+    ],
+    "passos": [
+      {
+        "titulo": "Crie o repositório com o Spec Kit instalado",
+        "texto": "No seu computador, inicialize um projeto novo com o Spec Kit para Claude Code, publique-o no GitHub e registre-o no workspace. Este é o único passo feito à mão.",
+        "comando": "uvx --from git+https://github.com/github/spec-kit.git specify init todo-multica --ai claude\ncd todo-multica\ngit add . && git commit -m \"chore: Spec Kit instalado\"\ngh repo create todo-multica --public --source . --push\nmultica repo add"
+      },
+      {
+        "titulo": "Crie o projeto e vincule o repositório",
+        "texto": "Em Projects, crie Todo list SDD e adicione o repositório todo-multica como resource, com ref main. Na descrição do projeto, escreva as regras que toda run deve ler.",
+        "bloco": {
+          "rotulo": "Descrição do projeto",
+          "texto": "Todo list web construída por desenvolvimento dirigido por especificação, com o Spec Kit já instalado no repositório. Todo artefato em .specify/ e specs/ é versionado. Nenhuma linha de implementação antes de especificação e plano aprovados por um humano. Toda mudança chega por pull request com o identificador da issue no título."
+        }
+      },
+      {
+        "titulo": "Escreva a skill do fluxo Spec Kit",
+        "texto": "Em Skills → New skill → criar manualmente, crie spec-kit-flow com o conteúdo abaixo. Anexe ao Engineer e ao Spec Writer, que você cria no passo seguinte.",
+        "bloco": {
+          "rotulo": "SKILL.md",
+          "texto": "---\nname: spec-kit-flow\ndescription: Conduz o desenvolvimento dirigido por especificação com o Spec Kit neste repositório. Use em toda issue do projeto Todo list SDD.\n---\n\n# Fluxo Spec Kit\n\n## Antes de começar\n- Confirme que .specify/ existe na raiz. Se não existir, pare e comente pedindo a instalação.\n- A partir do estágio 2, leia .specify/memory/constitution.md antes de tudo.\n- Identifique o estágio da issue e rode só os comandos dele.\n- Se um comando /speckit.* não estiver disponível, leia o arquivo correspondente em .claude/commands/ e siga-o.\n\n## Passos por estágio\n1. Constituição: /speckit.constitution.\n2. Especificação: /speckit.specify com a descrição da issue; depois /speckit.clarify. Cada pergunta de clarificação vira comentário mencionando o humano responsável. Não responda por ele.\n3. Plano e tarefas: /speckit.plan, /speckit.tasks e /speckit.analyze. Achado CRITICAL no analyze bloqueia o estágio.\n4. Implementação: /speckit.implement, uma história de usuário por pull request, marcando as tarefas concluídas em tasks.md.\n5. Publicação: workflow de deploy no GitHub Pages; comente a URL.\n\n## Formato do resultado\n- Um pull request por estágio, ou por história no estágio 4, com o identificador da issue no título.\n- Comentário final: o que foi gerado, onde estão os artefatos, o que ficou pendente.\n\n## Quando parar e perguntar\n- Qualquer [NEEDS CLARIFICATION] na especificação.\n- Código divergente da especificação: corrija o código; mudar a especificação exige aprovação humana.\n- Qualquer alteração na constituição."
+        }
+      },
+      {
+        "titulo": "Monte o squad Todo Team",
+        "texto": "Peça ao Multica helper um agente novo, Spec Writer, no seu runtime com Claude Code: escreve constituição e especificação, conduz as clarificações e nunca escreve código. Depois peça o squad Todo Team com um Lead como líder, o Spec Writer, o Engineer, o Reviewer e você, cada um com descrição de papel, e as instruções abaixo.",
+        "bloco": {
+          "rotulo": "Instruções do squad",
+          "texto": "Estágios 1 e 2 vão ao Spec Writer. Estágios 3, 4 e 5 vão ao Engineer. Todo pull request passa pelo Reviewer, que confere o resultado contra a constituição e a especificação e cita arquivo e linha. Nenhum estágio começa antes de o humano aprovar o anterior em comentário. Ao fim de cada estágio, mencione o humano com o link do PR e o que ele precisa decidir. Pare quando o Reviewer aprovar e o humano não tiver respondido: não insista nem avance."
+        }
+      },
+      {
+        "titulo": "Abra a issue pai e as sub-issues em estágios",
+        "texto": "No projeto, crie a issue Todo list publicada e, dentro dela, cinco sub-issues com estágio de 1 a 5: Constituição; Especificação e clarificação (com o texto da Aula 03 na descrição); Plano e tarefas; Implementação; Publicação. Atribua a issue pai ao Todo Team."
+      },
+      {
+        "titulo": "Atue só nos portões",
+        "texto": "Acompanhe pela Inbox. A cada menção do Lead, leia o PR e o artefato, decida e responda em comentário — aprovado, ou o que precisa mudar. Responda às perguntas de clarificação do Spec Writer como responderia ao /speckit.clarify no terminal."
+      },
+      {
+        "titulo": "Verifique o que foi publicado",
+        "texto": "Abra a URL comentada no estágio 5. Percorra cada critério de aceite da especificação e marque, na planilha, se a aplicação o cumpre. Critério não cumprido vira comentário na sub-issue de implementação, mencionando o Lead."
+      },
+      {
+        "titulo": "Registre o rastro",
+        "texto": "Para cada sub-issue, tire do Execution log e da linha do tempo os números da tabela abaixo. Preencha a mesma tabela para a Todo list da Aula 03, com o que o histórico de commits e a sua memória permitirem — e marque o que é estimativa."
+      }
+    ],
+    "portoes": [
+      { "estagio": "1 · Constituição", "voce": "Aprova os princípios ou pede ajuste." },
+      { "estagio": "2 · Especificação", "voce": "Responde às clarificações e aprova a especificação." },
+      { "estagio": "3 · Plano e tarefas", "voce": "Aprova o plano depois do analyze sem achado CRITICAL." },
+      { "estagio": "4 · Implementação", "voce": "Aprova o merge de cada história revisada." },
+      { "estagio": "5 · Publicação", "voce": "Confere a URL contra os critérios de aceite." }
+    ],
+    "medidas": [
+      { "medida": "Runs", "como": "Total de runs da sub-issue, e quantas terminaram em failed." },
+      { "medida": "Rodadas de revisão", "como": "Quantas vezes o Reviewer devolveu achados antes de aprovar." },
+      { "medida": "Intervenções nos portões", "como": "Comentários seus de aprovação ou de clarificação." },
+      { "medida": "Intervenções extras", "como": "Qualquer outra ação sua: corrigir rumo, destravar, refazer pedido. Anote o motivo de cada uma." },
+      { "medida": "Tempo de relógio", "como": "Da atribuição ao último merge do estágio." },
+      { "medida": "Critérios de aceite", "como": "Quantos a aplicação publicada cumpre, de quantos a especificação define." }
+    ],
+    "entregaveis": [
+      "A URL da Todo list no ar.",
+      "O repositório todo-multica, com .specify/, specs/ e o histórico de pull requests.",
+      "Capturas do Execution log da issue pai e de cada sub-issue.",
+      "A tabela de medidas preenchida para as duas versões, Aula 03 e Multica.",
+      "Uma página de análise: três diferenças de processo, uma de resultado, a intervenção extra que mais pesou e a regra que você escreveria nas instruções de algum agente para eliminá-la."
     ]
   },
 
