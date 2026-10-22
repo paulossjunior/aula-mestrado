@@ -1,5 +1,6 @@
 ---
 import Migalha from "../../components/Migalha.astro";
+import MulticaModos from "../../components/MulticaModos.astro";
 import Base from "../../layouts/Base.astro";
 import { rota, link } from "../../lib/url";
 import { todasAulas, NOMES_U, estiloTag, janela } from "../../lib/aulas";
@@ -62,6 +63,8 @@ const tituloProxima = proxima ? `${proxima.n} · ${proxima.titulo}` : "Voltar ao
         {aula.resumo}
       </p>
     </section>
+
+    {aula.detalhada && aula.guia === "multica" && <MulticaModos atual={`/aulas/${aula.n}`} />}
 
     {
       aula.aDefinir && (

@@ -39,15 +39,22 @@ jobs:
       - name: Build
         run: npm run build
 
-      # As 22 páginas têm de existir; se uma sumir, o site publicaria com 404.
+      # Todas as páginas têm de existir; se uma sumir, o site publicaria com 404.
       - name: Conferir as páginas geradas
         run: |
           total=$(find dist -name index.html | wc -l | tr -d ' ')
           echo "páginas geradas: $total"
-          test "$total" -eq 26 || { echo "esperava 26 páginas, encontrei $total"; exit 1; }
+          # Mesma derivação do deploy: cada .astro vira uma página, exceto [n].astro,
+          # que gera uma por aula. Número fixo à mão já ficou para trás uma vez.
+          estaticas=$(find src/pages -type f -name '*.astro' ! -name '\[n\].astro' | wc -l | tr -d ' ')
+          aulas=$(find src/content/aulas -type f -name '*.md' | wc -l | tr -d ' ')
+          esperado=$((estaticas + aulas))
+          test "$total" -eq "$esperado" || { echo "esperava $esperado páginas, encontrei $total"; exit 1; }
           for p in dist/index.html dist/conteudo/index.html dist/avaliacao/index.html \
                    dist/leituras/index.html dist/spec-kit/index.html dist/seguranca/index.html \
-                   dist/codebook/index.html dist/codebook/mapeamento/index.html; do
+                   dist/codebook/index.html dist/codebook/mapeamento/index.html \
+                   dist/multica/index.html dist/multica/tutorial/index.html \
+                   dist/multica/referencia/index.html dist/multica/guias/index.html; do
             test -f "$p" || { echo "faltou $p"; exit 1; }
           done
           for n in 01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 16 17; do

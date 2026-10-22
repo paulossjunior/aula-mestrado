@@ -46,6 +46,8 @@ const aulas = defineCollection({
     // apresentacao→ último encontro do mês, apresentação de trabalho e debate
     // definir     → o site mostra "A definir"; o conteúdo abaixo fica invisível
     estado: z.enum(["fechada", "apresentacao", "definir"]),
+    // Guia de leitura exibido na página do encontro, abaixo do resumo.
+    guia: z.enum(["multica"]).optional(),
     ...conteudo,
     rascunho: z.object(conteudo).partial().optional(),
   }),

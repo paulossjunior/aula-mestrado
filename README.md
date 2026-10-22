@@ -25,10 +25,11 @@ nenhum arquivo de programação.
 | `/leituras` | Base de leituras: o tronco do campo, o que ler por fase, o corpus inteiro navegável e os CSV para download |
 | `/spec-kit` | O fluxo do Spec Kit: cada comando como a etapa de desenvolvimento que ele ocupa |
 | `/seguranca` | A dimensão de segurança: dez tópicos cruzados com as doze fases, e as obras de cada tópico |
+| `/multica` | Multica em quatro modos (Diátaxis): explicação, `/multica/tutorial`, `/multica/referencia` e `/multica/guias` |
 | `/dsr` | O guideline de escrita da dissertação em DSR: 25 seções, com os trechos da tese que servem de exemplo |
 | `/aulas/01` … `/aulas/17` | Uma página por encontro: roteiro, objetivos, atividade, entrega, leitura e material |
 
-São 26 páginas HTML estáticas. Só duas coisas usam JavaScript — o filtro de unidade
+São 35 páginas HTML estáticas. Só duas coisas usam JavaScript — o filtro de unidade
 no cronograma e o navegador de corpus. Todo o resto funciona com o JS desligado.
 
 ---
@@ -182,8 +183,8 @@ As duas rodam a mesma bateria de verificação antes de deixar qualquer coisa pa
 1. `npm run check` — tipos e o schema do frontmatter das aulas. Um campo faltando
    ou com o tipo errado reprova aqui.
 2. `npm run build` — o site tem de construir.
-3. **25 páginas** — conta os `index.html` e confere um a um: as oito páginas fixas
-   e as 17 aulas. Se uma sumir, reprova em vez de publicar um 404.
+3. **Todas as páginas** — conta os `index.html` contra o número derivado da fonte
+   (cada `.astro` mais uma por aula) e confere as principais uma a uma. Se uma sumir, reprova em vez de publicar um 404.
 4. **Assets obrigatórios** — `.nojekyll`, `fichamento.tex`, as figuras, o template DSR
    e a folha do design system.
 5. **Caminho base** — a home tem de sair com links `/aula-mestrado/`.

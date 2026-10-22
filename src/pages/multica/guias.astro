@@ -1,0 +1,70 @@
+---
+import Migalha from "../../components/Migalha.astro";
+import MulticaModos from "../../components/MulticaModos.astro";
+import Base from "../../layouts/Base.astro";
+import { rota } from "../../lib/url";
+import { estilo } from "../../lib/multica";
+import dados from "../../content/multica.json";
+---
+
+<Base
+  titulo="Como fazer no Multica — Dev. de Software com IA"
+  descricao="Guias práticos do Multica: como isolar o daemon da sua conta pessoal e como destravar um runtime offline."
+>
+  <article>
+    <section class="om-pad" style="max-width: 1200px; margin: 0 auto; padding: 36px 32px 0">
+      <Migalha
+        trilha={[{ texto: "Início", href: "/" }, { texto: "Aula 11", href: "/aulas/11" }, { texto: "Multica", href: "/multica" }, { texto: "Como fazer" }]}
+      />
+      <div style={estilo.sobretitulo}>Guias práticos</div>
+      <h1 style={estilo.h1}>Como fazer</h1>
+      <p style="font-size: 17px; line-height: 1.6; max-width: 64ch; margin: 24px 0 0; text-wrap: pretty">
+        Receitas para quem já fez o <a href={rota("/multica/tutorial")}>tutorial</a> e tem um problema concreto.
+      </p>
+      <nav aria-label="Guias" style="display: flex; gap: 8px; flex-wrap: wrap; margin: 24px 0 40px">
+        {dados.guias.map((g) => <a href={`#${g.id}`} style={estilo.etiqueta}>{g.titulo}</a>)}
+      </nav>
+    </section>
+
+    <MulticaModos atual="/multica/guias" />
+
+    {
+      dados.guias.map((g, i) => (
+        <section id={g.id} style={`border-top: 2px solid var(--color-text)${i % 2 ? "; background: var(--color-neutral-100)" : ""}`}>
+          <div class="om-pad om-sec" style={estilo.secao}>
+            <h2 style={estilo.h2}>{g.titulo}</h2>
+            <p style={estilo.intro}>
+              <strong style="font-family: var(--font-heading); font-weight: 800">Quando usar.</strong> {g.quando}
+            </p>
+            <ol style="margin: 0; padding: 0; list-style: none; border-top: 2px solid var(--color-text)">
+              {g.passos.map((p, j) => (
+                <li style="display: grid; grid-template-columns: 48px minmax(0, 1fr); gap: 14px; padding: 16px 0; border-bottom: 2px solid var(--color-divider)">
+                  <span style="font-family: var(--font-heading); font-weight: 900; font-size: 18px; color: var(--color-accent)">{j + 1}</span>
+                  <div>
+                    <p style="font-size: 16px; line-height: 1.6; margin: 0; max-width: 70ch; text-wrap: pretty">{p.texto}</p>
+                    {p.comando && (
+                      <pre class="om-scroll" style="margin: 10px 0 0; padding: 10px 14px; border: 2px solid var(--color-text); background: var(--color-bg); overflow-x: auto">
+                        <code style={estilo.codigo}>{p.comando}</code>
+                      </pre>
+                    )}
+                  </div>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </section>
+      ))
+    }
+
+    <section style="border-top: 2px solid var(--color-text)">
+      <div class="om-pad om-sec" style={estilo.secao}>
+        <p style="font-size: 13px; line-height: 1.6; max-width: 74ch; margin: 0; opacity: 0.75; text-wrap: pretty">
+          Fontes: <a href="https://multica.ai/docs/security-model" target="_blank" rel="noopener">Security model</a>,{" "}
+          <a href="https://multica.ai/docs/daemon-runtimes" target="_blank" rel="noopener">Daemon and runtimes</a> e{" "}
+          <a href="https://multica.ai/docs/tasks" target="_blank" rel="noopener">Runs</a>, na documentação oficial.
+          Para entender por que não há sandbox, veja <a href={rota("/multica")}>Sobre o Multica</a>.
+        </p>
+      </div>
+    </section>
+  </article>
+</Base>

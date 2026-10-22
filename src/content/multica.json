@@ -1,0 +1,524 @@
+{
+  "modos": [
+    {
+      "etapa": "1",
+      "verbo": "Entenda",
+      "modo": "Explicação",
+      "titulo": "Sobre o Multica",
+      "href": "/multica",
+      "tempo": "15 min",
+      "para": "O que é o Multica, como uma execução acontece e por que ele é desenhado assim. Leitura longe do teclado."
+    },
+    {
+      "etapa": "2",
+      "verbo": "Conheça os conceitos",
+      "modo": "Referência",
+      "titulo": "Referência dos conceitos",
+      "href": "/multica/referencia",
+      "tempo": "25 min",
+      "para": "Todos os conceitos em cinco grupos. Na primeira vez, leia os grupos em ordem; depois, a página vira consulta."
+    },
+    {
+      "etapa": "3",
+      "verbo": "Faça o tutorial",
+      "modo": "Tutorial",
+      "titulo": "Primeiros passos: seu primeiro time de agentes",
+      "href": "/multica/tutorial",
+      "tempo": "2 h · em sala",
+      "para": "Três agentes, duas issues, um squad, duas skills e um autopilot. Cada passo aponta para o conceito que exercita."
+    },
+    {
+      "etapa": "Depois",
+      "verbo": "Resolva problemas",
+      "modo": "Guia prático",
+      "titulo": "Como fazer",
+      "href": "/multica/guias",
+      "tempo": "quando precisar",
+      "para": "Receitas para problemas concretos: isolar o daemon, destravar um runtime offline."
+    }
+  ],
+
+  "sobre": {
+    "fronteira": {
+      "frase": "O Multica registra e coordena o trabalho; os computadores conectados o executam.",
+      "noMultica": [
+        "Workspaces, issues, comentários e status",
+        "Configuração e skills dos agentes",
+        "Status, registros e resultados das runs",
+        "Variáveis de ambiente customizadas e configuração MCP do agente — enviadas ao runtime a cada execução"
+      ],
+      "noComputador": [
+        "As ferramentas de IA e as credenciais delas",
+        "Os diretórios de código e os arquivos locais",
+        "As alterações reais de arquivos e a execução de comandos"
+      ],
+      "ressalva": "Execução local não quer dizer que os segredos só existem na sua máquina: o que vai em variáveis de ambiente do agente ou em MCP fica guardado no servidor. E o servidor guarda o que o agente escreveu nas respostas — inclusive trechos de código que ele leu."
+    },
+    "caminho": [
+      {
+        "titulo": "A issue dá o contexto",
+        "texto": "Descrição, discussão e responsável. Quando o responsável é um agente, o Multica junta a isso as instruções, o modelo, as skills e o runtime desse agente."
+      },
+      {
+        "titulo": "O Multica cria a run",
+        "texto": "A run entra numa fila. Sem runtime online, ela espera — e a fila não expira por tempo enquanto o runtime mandar heartbeat."
+      },
+      {
+        "titulo": "Um runtime reivindica a run",
+        "texto": "O daemon do computador conectado pega a run e invoca a ferramenta de IA configurada no agente — Claude Code, Codex ou outra."
+      },
+      {
+        "titulo": "A ferramenta executa localmente",
+        "texto": "Lê o diretório de trabalho, roda comandos, edita arquivos. Tudo na sua máquina, com as permissões do usuário que roda o daemon."
+      },
+      {
+        "titulo": "O resultado volta à issue",
+        "texto": "Progresso, comentários e resultados aparecem em tempo real na linha do tempo e no Execution log."
+      }
+    ],
+    "porques": [
+      {
+        "titulo": "Por que um quadro de issues, e não mais um chat",
+        "texto": "Assistentes de código nasceram como conversa: uma pessoa, uma janela, um contexto que some quando a janela fecha. Isso serve para explorar, mas não para equipe — ninguém mais vê o que foi pedido, o que o agente tentou e por que parou. O Multica põe o agente onde o trabalho de engenharia já é registrado: a issue tem responsável, status, discussão e histórico, e cada execução deixa um rastro que qualquer membro lê. O chat continua existindo, mas privado e reservado ao que ainda não é trabalho: a pergunta rápida, o rascunho. Quando a conclusão importa para a equipe, ela vai para uma issue."
+      },
+      {
+        "titulo": "Por que o agente não é um processo",
+        "texto": "Um agente no Multica é uma configuração — nome, instruções, modelo, skills, permissão — e não algo que fica rodando. Só existe execução quando alguém aciona: atribui, menciona, conversa ou agenda. Essa separação entre identidade (o agente) e máquina (o runtime) tem duas consequências. A primeira é que o mesmo agente pode ser trocado de modelo ou de computador sem perder o histórico. A segunda é que as credenciais da ferramenta de IA nunca saem da máquina do dono: o servidor coordena, mas não executa. O preço é a dependência de um computador ligado — runtime offline, fila parada."
+      },
+      {
+        "titulo": "Por que run concluída não é issue concluída",
+        "texto": "Uma run termina quando a ferramenta para de executar. Isso diz que a execução acabou, não que o objetivo foi atingido. Por isso o Multica separa os dois registros: a run tem estado (completed, failed…), a issue tem status (in_review, done…), e só a issue é decisão de alguém. Para pesquisa, a distinção é preciosa. Benchmarks contam issues resolvidas; o Execution log permite contar outra coisa — quantas runs, quantas rodadas de revisão e quantas intervenções humanas uma issue precisou até ser aceita."
+      },
+      {
+        "titulo": "Por que a correção vira instrução",
+        "texto": "No tutorial, o primeiro pull request não se vincula à issue porque falta o identificador no título. A saída não é corrigir à mão: é pedir ao agente que grave a regra nas próprias instruções. A lógica é a mesma da constituição no Spec Kit — o que o agente precisa obedecer sempre não pode depender de alguém lembrar de dizer. A diferença é o lugar: no Spec Kit a regra mora num arquivo versionado com o código; no Multica, na configuração do agente, fora do repositório. Cada lugar tem seu custo: o primeiro acompanha o projeto, o segundo acompanha o agente."
+      },
+      {
+        "titulo": "Por que o revisor roda em outro modelo",
+        "texto": "O Engineer do tutorial roda em Claude; o Reviewer, em Codex com um modelo da OpenAI. A escolha não é estética. Dois agentes do mesmo modelo tendem a errar das mesmas formas e a achar razoáveis as mesmas soluções — a revisão vira eco. Trocar o modelo do revisor é uma tentativa barata de independência, parecida com pedir a revisão a alguém de outra equipe. Não é garantia: modelos diferentes compartilham boa parte dos dados de treino."
+      },
+      {
+        "titulo": "Por que o líder do squad não implementa",
+        "texto": "Um squad é um endereço, não um superagente: o trabalho atribuído a ele vai só para o líder, que lê, delega por menção, registra a avaliação e para. Separar coordenação de execução impede que o líder, ao primeiro obstáculo, comece a fazer o trabalho que deveria distribuir. Há um risco que o desenho não resolve sozinho: agentes que se mencionam podem conversar sem fim. O sistema funde execuções duplicadas e não reaciona o líder pelo próprio comentário, mas quando parar é decisão que precisa estar escrita nas instruções."
+      },
+      {
+        "titulo": "Por que não há sandbox",
+        "texto": "Toda run tem as permissões do usuário que roda o daemon: os mesmos arquivos, as mesmas credenciais, a rede livre. No caminho padrão, Codex roda com danger-full-access e Claude Code com bypassPermissions, porque não há ninguém ali para aprovar cada comando. A documentação defende a escolha: um sandbox parcial quebraria a instalação de dependências e o uso de CLIs de nuvem, e mesmo assim não impediria que uma credencial lida fosse enviada pela rede. A resposta do projeto é mover a fronteira para fora — um usuário dedicado, um container, uma máquina virtual. Para quem desenha experimento com agentes, isso muda o protocolo: o ambiente de execução passa a ser variável a controlar e a relatar."
+      }
+    ],
+    "debate": [
+      "No tutorial, em que momentos a decisão foi humana? Liste-os e diga quais poderiam ser delegados sem perda — e quais não.",
+      "O Reviewer roda em outra ferramenta e outro modelo. O que essa escolha protege que dois agentes do mesmo modelo não protegeriam?",
+      "Run completed não é issue done. Que métrica de pesquisa nasce dessa distinção — e o que o Execution log permite medir que um benchmark de issues resolvidas não mede?",
+      "O passo 9 do tutorial transforma uma correção em instrução. Compare com a constituição do Spec Kit: onde deve morar uma regra que o agente precisa obedecer sempre?",
+      "Com o daemon rodando na sua conta, sem sandbox, que credencial da sua máquina um agente poderia ler hoje? Como isso muda o desenho do seu experimento?"
+    ]
+  },
+
+  "tutorial": {
+    "constroi": "Vamos montar um time de três agentes que constrói, revisa e mantém um site pessoal de fotógrafo — e depois transformá-lo num squad que recebe uma issue e entrega sozinho, com você aprovando no fim.",
+    "tempo": "Cerca de duas horas, em duas partes.",
+    "prereqs": [
+      "Uma conta no Multica, criada em multica.ai.",
+      "Claude Code e Codex instalados e autenticados no computador que vai rodar os agentes.",
+      "GitHub CLI (gh) instalado e autenticado.",
+      "pnpm instalado.",
+      "Ter feito as etapas 1 e 2 do guia de leitura: Sobre o Multica (inclusive “Por que não há sandbox”) e a Referência dos conceitos."
+    ],
+    "partes": [
+      {
+        "parte": "Parte 1 · Um agente, uma issue",
+        "passos": [
+          {
+            "titulo": "Crie o workspace",
+            "texto": "Clique no nome do workspace no topo da barra lateral e escolha Create workspace. Em Name, escreva o nome da sua dupla. Em URL, um slug curto — ele não muda depois.",
+            "verifica": "A barra lateral mostra o nome do novo workspace.",
+            "conceitos": ["Workspace"]
+          },
+          {
+            "titulo": "Conecte o computador",
+            "texto": "Baixe o Multica Desktop em multica.ai/download, instale e faça login com a mesma conta. Ele registra o computador e inicia o daemon sozinho. Abra Configure → Runtimes.",
+            "verifica": "O computador aparece como online, com Claude Code e Codex na lista de ferramentas detectadas.",
+            "conceitos": ["Runtime", "Daemon", "Ferramenta de IA"]
+          },
+          {
+            "titulo": "Crie o primeiro agente: Multica helper",
+            "texto": "Vá em Agents → New agent → Start blank. Em Name, Multica helper. Em Runtime, o seu computador com Claude Code; em Model, Sonnet. Em Instructions, escreva: você atende pedidos sobre o workspace — cria e atualiza issues, muda status, responde dúvidas; responde curto e resume o que fez em uma linha; não mexe em código nem em repositórios; se o pedido for ambíguo, pergunta antes de agir. Deixe o resto como está e clique em criar.",
+            "verifica": "Multica helper aparece na lista de agentes.",
+            "conceitos": ["Agent", "Instructions"]
+          },
+          {
+            "titulo": "Peça ao helper que crie o Engineer",
+            "texto": "Abra Chat, selecione o Multica helper e escreva: crie um agente chamado Engineer, no mesmo runtime, com o modelo Opus, responsável por construir e manter o meu site pessoal. Mantenha Only me quando ele perguntar.",
+            "verifica": "Em Agents → Engineer, o modelo é Opus e há instruções escritas pelo helper: escopo, como obter o código e o que exigir antes de enviar uma mudança.",
+            "conceitos": ["Chat", "Access"]
+          },
+          {
+            "titulo": "Prepare o repositório",
+            "texto": "No Chat, agora com o Engineer, escreva: crie um repositório vazio chamado personal-website na minha conta do GitHub e registre-o no workspace. Depois abra Settings → Code, clique em Connect GitHub e autorize.",
+            "comando": "multica repo add",
+            "verifica": "personal-website aparece em Settings → Code, e a linha do GitHub mostra a conta conectada.",
+            "conceitos": ["Repositório", "Integração com GitHub"]
+          },
+          {
+            "titulo": "Abra a primeira issue",
+            "texto": "Clique em New Issue (atalho C), deixe o modo agente e escolha Engineer em Created by. Na descrição, peça: trabalhe no repositório registrado; comece pelo template do shadcn com o comando abaixo, sem scaffold do zero, e commite o template como está; faça um site de fotógrafo com as seções Introduction, My work, Contact e Pricing; use imagens de placeholder do picsum.photos e liste onde trocá-las; estilo sóbrio, sem as palavras premium ou high-end; escolha as fontes; abra um pull request no fim. Envie.",
+            "comando": "pnpm dlx shadcn@latest init --preset b5rR41Mtnc --template next --pointer",
+            "verifica": "A issue recebe o identificador MUL-1, o Engineer como responsável e o status In Progress. No Execution log, à direita, você vê a run em running e, em View transcript, cada comando Bash, cada Read e cada Edit.",
+            "conceitos": ["Issue", "Status", "Run", "Execution log e transcript"]
+          },
+          {
+            "titulo": "Veja o resultado",
+            "texto": "Espere o status ir para In Review — chega uma notificação na Inbox e o Engineer comenta com capturas de tela. Clique no botão de chat no canto inferior direito, selecione o Engineer, digite @ para citar MUL-1 e pergunte em que endereço local o site está rodando e qual é o PR. Abra o endereço no navegador.",
+            "verifica": "O site do fotógrafo abre no navegador com as quatro seções.",
+            "conceitos": ["Inbox e inscrição"]
+          },
+          {
+            "titulo": "Vincule o pull request",
+            "texto": "Olhe a área Pull requests de MUL-1. Se ela estiver vazia, é porque nem o título nem a branch do PR têm o texto MUL-1 — foi o que aconteceu no tutorial original. Peça ao Engineer, no chat: acrescente MUL-1 ao título do PR.",
+            "verifica": "O card do PR aparece em Pull requests, com estado, tamanho e, se houver, o resultado do CI.",
+            "conceitos": ["Integração com GitHub"]
+          },
+          {
+            "titulo": "Transforme a correção em regra",
+            "texto": "Ainda no chat com o Engineer, escreva: grave duas regras nas suas instruções — não se autoverifique com screenshots depois de terminar, porque eu reviso no navegador; e o identificador da issue vai sempre no título ou na branch do PR.",
+            "comando": "multica agent update",
+            "verifica": "Em Agents → Engineer, as duas regras estão nas instruções.",
+            "conceitos": ["Instructions"]
+          },
+          {
+            "titulo": "Crie o Reviewer",
+            "texto": "No chat com o Multica helper, escreva: crie um agente chamado Reviewer, no meu runtime com Codex, que só revisa — lê o estado real do PR antes de revisar, cita arquivo e linha, registra as conclusões como comentário na issue e nunca altera código.",
+            "verifica": "Em Agents → Reviewer, a ferramenta é Codex e as instruções proíbem editar código.",
+            "conceitos": ["Agent", "Ferramenta de IA"]
+          },
+          {
+            "titulo": "Faça a revisão cruzada",
+            "texto": "No campo de comentário de MUL-1, digite @Reviewer, peça a revisão do PR e envie. Quando ele responder com os achados, comente @Engineer pedindo que corrija todos. Quando o Engineer responder com o relatório, comente @Reviewer de novo pedindo a segunda rodada.",
+            "verifica": "O Reviewer aprova para merge. Repare: ninguém trocou o responsável da issue e nenhuma issue nova foi aberta.",
+            "conceitos": ["@-menção"]
+          },
+          {
+            "titulo": "Feche a primeira issue",
+            "texto": "Comente em MUL-1: @Engineer faça o merge do PR e leve a issue para Done.",
+            "verifica": "O Engineer mescla, apaga a branch, roda os checks na main e reporta. MUL-1 está em Done e chega uma notificação na Inbox.",
+            "conceitos": ["Status"]
+          }
+        ]
+      },
+      {
+        "parte": "Parte 2 · Do agente à equipe",
+        "passos": [
+          {
+            "titulo": "Forme o squad Website Team",
+            "texto": "No chat com o Multica helper, peça: crie o squad Website Team com um agente novo chamado Lead como líder, que gerencia e não executa; o Engineer para desenvolvimento; o Reviewer para revisar todo PR; e eu para a aprovação final — cada um com uma descrição curta de papel. Nas instruções do squad: desenvolvimento vai ao Engineer; a entrega espera a aprovação do Reviewer; o Engineer faz o merge depois da minha aprovação.",
+            "verifica": "Em Squads → Website Team, o Lead aparece como líder e os quatro membros têm descrição de papel.",
+            "conceitos": ["Squad", "Roster, papéis e instruções do squad"]
+          },
+          {
+            "titulo": "Dê método aos agentes com skills",
+            "texto": "Vá em Skills → New skill → criar manualmente. Crie tdd: primeiro escreva um teste que falha, depois a implementação que faz exatamente esse teste passar. Crie i-have-adhd: a primeira linha do relato é sempre um próximo passo acionável, itens de várias etapas são numerados, o progresso fica visível. Anexe tdd ao Engineer e i-have-adhd ao Lead, na aba Skills de cada agente.",
+            "verifica": "Na aba Skills do Engineer aparece tdd; na do Lead, i-have-adhd.",
+            "conceitos": ["Skill"]
+          },
+          {
+            "titulo": "Entregue a segunda issue ao squad",
+            "texto": "Abra o Chat com o Lead e descreva: transforme o site em template genérico — troque o nome real por um nome de fotógrafo fictício e o e-mail real por hello@example.com, sem mudar layout nem estrutura de conteúdo. Clique em Create with agent e atribua ao Website Team.",
+            "verifica": "Surge MUL-2. No Execution log, você vê o Lead assumir e delegar ao Engineer, o Engineer abrir o PR, o Reviewer voltar sem achados e o Lead mencionar você com o link do PR, as mudanças e os pontos que pedem seu julgamento.",
+            "conceitos": ["Squad", "Chat"]
+          },
+          {
+            "titulo": "Aprove a entrega",
+            "texto": "Leia os pontos que o Lead deixou para você e responda no comentário de MUL-2 aprovando o merge.",
+            "verifica": "O Engineer mescla e MUL-2 vai para Done.",
+            "conceitos": ["Status"]
+          },
+          {
+            "titulo": "Agende uma revisão semanal",
+            "texto": "No chat com o Multica helper, escreva: crie um autopilot em que, toda segunda-feira às 9h, o Reviewer faz uma varredura completa do repositório — redundâncias, código morto, estrutura, convenções — e registra os achados em comentários, sem alterar código. Depois abra o autopilot criado e clique em Run now.",
+            "verifica": "O Run now cria uma issue nova atribuída ao Reviewer, e a run dela aparece no histórico do autopilot.",
+            "conceitos": ["Autopilot"]
+          },
+          {
+            "titulo": "Chame sua dupla",
+            "texto": "Em Settings → Members, convide o colega pelo e-mail dele.",
+            "verifica": "O convite aparece como pendente. Quando ele entrar, já pode mencionar o Engineer numa issue — mas só executa agentes cujo Access permita.",
+            "conceitos": ["Membros e papéis", "Access"]
+          }
+        ]
+      }
+    ],
+    "fim": "Você tem agora um workspace com três agentes, um squad, duas skills, duas issues fechadas por pull request revisado e um autopilot semanal. O próximo passo natural é agrupar as issues num Project e vincular a ele o repositório — veja Project e Project resource na referência."
+  },
+
+  "referencia": {
+    "grupos": [
+      {
+        "nome": "Organização do trabalho",
+        "conceitos": [
+          {
+            "termo": "Workspace",
+            "def": "Escopo autocontido onde a equipe trabalha. Contém todo o trabalho e toda a configuração; humanos e agentes atuam dentro dele. Isola equipes umas das outras.",
+            "regra": "Nome alterável; URL (slug, como multica.ai/my-team) fixa. O mesmo computador conectado a dois workspaces gera dois runtimes separados."
+          },
+          {
+            "termo": "Membros e papéis",
+            "def": "Toda pessoa no workspace tem exatamente um papel: owner (controle total, inclusive excluir o workspace e gerir owners), admin (configurações e equipe, exceto owners) ou member (trabalho do dia a dia).",
+            "regra": "Há sempre ao menos um owner. O papel não determina quem executa um agente — isso é o Access, que owner e admin não contornam. Convites valem 7 dias e concedem só admin ou member. Remover um membro desativa os runtimes dele, arquiva os agentes vinculados e cancela as runs não concluídas."
+          },
+          {
+            "termo": "Issue",
+            "def": "Unidade básica do trabalho. Campos: título, descrição, status, prioridade, responsável, datas, rótulos, propriedades personalizadas, projeto, pai e filhas, atividade e Execution log. Só o título é obrigatório.",
+            "regra": "Identificador sequencial no workspace (MUL-1, MUL-123). Responsável membro: nenhuma run. Responsável agente: uma run. Responsável squad: o líder recebe. Excluir é permanente e cancela as runs não concluídas; cancelled preserva o registro."
+          },
+          {
+            "termo": "Status",
+            "def": "Sete status nativos em quatro categorias: unstarted (backlog, todo), started (in_progress, in_review, blocked), done (done) e closed (cancelled).",
+            "regra": "Issue em backlog não aciona agente. O agente marca in_progress ao começar e in_review ao entregar. Run que falha sem outra run ativa nem retry devolve in_progress para todo. Owners e admins criam status próprios; a categoria é fixada na criação e o nome não confere comportamento. Status nativos não são renomeados nem arquivados."
+          },
+          {
+            "termo": "Sub-issue e estágio",
+            "def": "Divisão de uma issue em filhas. A pai guarda o objetivo geral; o status de uma não altera o da outra.",
+            "regra": "Sub-issues podem ter estágio (1, 2, 3…). Quando todas as do estágio mais antigo chegam a done ou cancelled, a pai recebe \"sub-issues completed\"; se o responsável dela for agente, ele é acionado. Sub-issues sem estágio formam um lote único."
+          },
+          {
+            "termo": "Project",
+            "def": "Agrupa issues em torno de um objetivo e acompanha o progresso como unidade. Nome e descrição do projeto entram no contexto de toda run sobre issue dele.",
+            "regra": "Uma issue pertence a no máximo um projeto. Mover de projeto não cria cópia. Pode ter um lead e um workflow."
+          },
+          {
+            "termo": "Project resource",
+            "def": "Código vinculado ao projeto para dar às runs um contexto de trabalho estável. Dois tipos: github_repo (checkout gerenciado pelo runtime, com ref padrão) e local_directory (pasta de um computador, adicionada só pelo Desktop, no máximo uma por daemon).",
+            "regra": "local_directory tem execution_mode. in_place (Direct, padrão): trabalha na branch atual, uma run por vez; a concorrente fica em waiting_local_directory. worktree (Parallel): um git worktree por run, branch agent/<agente>/<issue>, sem merge automático; o não commitado é commitado na branch antes de o worktree ser removido. A run recebe .multica/project/resources.json no diretório de trabalho."
+          },
+          {
+            "termo": "Workflow",
+            "def": "Conjunto ordenado de etapas que as issues de um projeto percorrem. Cada etapa é uma coluna de status com um handoff: No handoff, Hand to member ou Hand to agent, mais instruções, próxima etapa e etapa de retorno.",
+            "regra": "Templates: Delivery, Content, Community e em branco; sem escolha, vale o Default (todos os status, nenhum handoff). Terminar uma run não muda o status: quem trata a etapa move a issue. Trocar o workflow de um projeto não inicia agente. Um workflow serve vários projetos. Só owners e admins criam workflows."
+          },
+          {
+            "termo": "Repositório",
+            "def": "Repositório de código registrado no workspace, em Settings → Code ou por multica repo add. A lista de repositórios do workspace entra em toda run.",
+            "regra": "Registro do repositório (o que o agente usa) e conexão com o GitHub (de onde chegam eventos de PR) são configurações independentes."
+          }
+        ]
+      },
+      {
+        "nome": "Agentes e execução",
+        "conceitos": [
+          {
+            "termo": "Agent",
+            "def": "Colaborador de IA definido por uma configuração reutilizável: nome, avatar, descrição, instruções, modelo e nível de thinking, skills, Access, runtime e execution settings. Não é um processo de longa duração: só executa quando acionado.",
+            "regra": "Um único owner. Trocar modelo ou instruções não cria outro agente; o histórico permanece. Disponibilidade vem do runtime (online, offline, instável); carga vem das runs (working, queued, idle). Arquivado: some dos seletores, não recebe atribuição nem menção, runs não concluídas são canceladas; pode ser restaurado. Agentes criam issues, comentam e mudam status, mas não têm inbox."
+          },
+          {
+            "termo": "Instructions",
+            "def": "Texto entregue ao agente em toda execução: responsabilidades, estilo, limites e requisitos de entrega.",
+            "regra": "A descrição do agente é só exibição e não entra no prompt. Alteração vale a partir da próxima run; editável pela interface ou por multica agent update."
+          },
+          {
+            "termo": "Access",
+            "def": "Quem pode executar o agente: Only me (padrão), Entire workspace ou Specific people.",
+            "regra": "Só o owner do agente altera. Atribuição, menção, squad, quick action e autopilot não contornam o Access; em squad, vale o Access do líder."
+          },
+          {
+            "termo": "Execution settings",
+            "def": "Limite de concorrência, variáveis de ambiente, argumentos de CLI, MCP e integrações externas do agente. Inclui os conversation starters: até três sugestões exibidas ao abrir um chat.",
+            "regra": "Configurações que podem conter credencial têm leitura restrita e ficam armazenadas no servidor, que as envia ao runtime a cada run."
+          },
+          {
+            "termo": "Skill",
+            "def": "Pacote reutilizável de método: um SKILL.md obrigatório (quando se aplica, o que conferir antes, passos, formato do resultado, quando parar e perguntar) e arquivos de apoio opcionais (references/, templates/, scripts/). As instruções definem quem o agente é; a skill, como um tipo de trabalho é feito.",
+            "regra": "Segue o padrão aberto de Agent Skills da Anthropic. Uma skill serve vários agentes, habilitada ou desligada por agente; vale a partir da próxima run. Antes de cada run, é injetada no caminho que a ferramenta lê (.claude/skills/, $CODEX_HOME/skills/…) sem sobrescrever as do repositório. Criação: manual, pasta local, URL (GitHub, ClawHub, Skills.sh) ou cópia de runtime. O Multica não revisa, não assina nem isola o conteúdo. Exclusão é permanente e remove de todos os agentes."
+          },
+          {
+            "termo": "Runtime",
+            "def": "Ambiente de execução: um computador conectado mais uma ferramenta de IA instalada nele (ou um perfil de runtime customizado). O agente é a identidade; o runtime, a máquina.",
+            "regra": "Um runtime hospeda vários agentes. Privado por padrão: só o dono cria agentes nele. Público: outros membros usam a máquina, sem acesso às credenciais da ferramenta. Removido automaticamente após 7 dias offline sem agentes vinculados."
+          },
+          {
+            "termo": "Daemon",
+            "def": "Processo em segundo plano no computador conectado. Conecta-se ao servidor, descobre as ferramentas de IA no PATH, reivindica runs e devolve os resultados.",
+            "regra": "Heartbeat a cada 15 segundos; sem ele, o runtime fica offline em cerca de 3 minutos. Não inicia sem ao menos uma ferramenta suportada. Concorrência: 20 runs por daemon e 6 por agente, vale o menor (MULTICA_DAEMON_MAX_CONCURRENT_TASKS ajusta o primeiro). Reiniciar atualiza os registros, sem duplicar runtimes."
+          },
+          {
+            "termo": "Ferramenta de IA",
+            "def": "Programa local que lê, executa e edita: Claude Code, Codex, Cursor Agent, GitHub Copilot CLI, OpenCode, Qwen Code, Kimi CLI e mais de vinte outros. O Multica invoca a ferramenta; não a substitui.",
+            "regra": "A lista de modelos vem da ferramenta; sem seleção, vale o padrão dela. Quase todas retomam sessão. Suporte a MCP gerenciado e caminho de injeção de skills variam por ferramenta."
+          },
+          {
+            "termo": "Run",
+            "def": "Registro de uma execução concreta: o que disparou, qual agente, até onde foi e como terminou. Uma issue acumula muitas runs; nenhuma é sobrescrita.",
+            "regra": "Estados na tabela abaixo. Retry automático só para falha transitória (runtime offline, reinício do daemon, timeout, rede), no máximo duas execuções; falha de autenticação, cota, configuração ou modelo nunca é repetida. Mudar responsável ou status não interrompe uma run em curso. Retry manual chama o agente daquela run, não o responsável atual."
+          },
+          {
+            "termo": "Execution log e transcript",
+            "def": "Seção da barra lateral da issue que lista as runs: origem, agente, estado e tempo. Runs ativas no topo; as antigas em Show past runs. View transcript mostra mensagens do agente, chamadas de ferramenta (Bash, Read, Edit) e erros.",
+            "regra": "Atualiza em tempo real. O ⓘ mostra computador, ferramenta e diretório de trabalho da run. Permite parar e repetir runs."
+          },
+          {
+            "termo": "Sessão",
+            "def": "Contexto acumulado da ferramenta de IA entre runs. O Multica guarda o ID da sessão e direciona as runs seguintes a um runtime que tenha acesso a ela.",
+            "regra": "Se a sessão local sumiu ou foi contaminada (context_overflow, requisição inválida), a run começa sessão nova sobre o mesmo diretório. multica issue rerun sempre usa sessão e diretório novos."
+          },
+          {
+            "termo": "Diretório de trabalho",
+            "def": "Pasta por run, gerenciada pelo daemon; padrão em ~/multica_workspaces/.",
+            "regra": "Raiz definida por --workspaces-root, que prevalece sobre MULTICA_WORKSPACES_ROOT, que prevalece sobre multica config set workspaces_root. Mudar a raiz não move diretórios existentes. O Multica nunca apaga um local_directory."
+          }
+        ]
+      },
+      {
+        "nome": "Colaboração",
+        "conceitos": [
+          {
+            "termo": "Atribuição",
+            "def": "Definir agente ou squad como responsável pela issue: ele passa a ser dono do trabalho inteiro.",
+            "regra": "Um alvo por vez. Fora de backlog, entra na fila imediatamente; com runtime offline, espera."
+          },
+          {
+            "termo": "@-menção",
+            "def": "Citação de um agente num comentário para que trate aquele pedido. Não muda responsável nem status; aceita vários alvos.",
+            "regra": "A prévia de gatilho mostra, antes do envio, quem será iniciado e por quê. Resposta a um agente vai a ele; comentário de nível superior sem menção vai ao responsável. Comentários consecutivos ao mesmo agente se fundem numa run. /note publica sem acionar ninguém; @all notifica só pessoas e desliga o gatilho do responsável. O sistema funde menções duplicadas entre agentes, mas não define condição de parada."
+          },
+          {
+            "termo": "Quick action",
+            "def": "Pedido frequente salvo como botão na issue. Campos: nome, visibilidade (Just me ou Team), Runs as (agente, squad ou No target) e prompt fixo, sem variáveis.",
+            "regra": "Clique na barra lateral publica na hora; / no comentário insere como rascunho editável. Não muda responsável nem status. Ações Team são criadas por owners e admins e exigem agente que todos possam executar."
+          },
+          {
+            "termo": "Chat",
+            "def": "Conversa privada com um agente, fora do quadro de issues. Cada mensagem gera uma run.",
+            "regra": "Visível só ao criador. Não recebe o contexto de issue nenhuma, mas o agente pode consultá-las pela CLI dentro das suas permissões. Project context (botão +) inclui descrição e recursos de um projeto. Create with agent cria uma issue a partir da conversa. Arquivar torna a conversa somente leitura."
+          },
+          {
+            "termo": "Squad",
+            "def": "Grupo nomeado com um líder, sempre agente, e zero ou mais membros, agentes ou pessoas. Determina para quem vai o trabalho; não funde agentes nem aumenta concorrência.",
+            "regra": "Atribuir ao squad enfileira run só para o líder. O líder lê, delega por menção, registra avaliação com multica squad activity e para; é reacionado quando um membro responde e move a issue para in_review quando o objetivo é atingido. A issue pai não vai para done sozinha. Mencionar o squad não muda o responsável. Arquivar é irreversível; as issues passam ao ex-líder."
+          },
+          {
+            "termo": "Roster, papéis e instruções do squad",
+            "def": "O que o líder recebe a cada turno: Squad Operating Protocol (fixo, do sistema), Squad Roster (uma linha por membro, com a menção exata) e Squad Instructions (regras de roteamento da equipe).",
+            "regra": "A descrição de papel é contexto para o líder; não concede permissão nem aciona ninguém. Comentário do próprio líder não o reaciona. Menção em texto simples, fora do markdown do roster, não dispara ninguém."
+          },
+          {
+            "termo": "Inbox e inscrição",
+            "def": "Central de notificações de cada pessoa: atribuições, menções, comentários e mudanças em issues inscritas, runs que falham, autopilots pausados.",
+            "regra": "Agentes não têm inbox: menção a agente é gatilho, não notificação. Criador, responsável, quem comenta e quem é mencionado ficam inscritos automaticamente. Ações próprias não geram notificação."
+          }
+        ]
+      },
+      {
+        "nome": "Automação e integrações",
+        "conceitos": [
+          {
+            "termo": "Autopilot",
+            "def": "Aciona runs por agenda, webhook ou manualmente (Run now). Campos: nome, runbook, responsável (agente ou squad), projeto opcional, modo de execução, inscritos e gatilhos.",
+            "regra": "Create issue (padrão): cada disparo cria uma issue, mesmo com runtime offline. Run only: executa sem issue, sem retry, e é marcado skipped se o runtime estiver offline. Agenda em cron de 5 campos com fuso IANA. Pausa automática com 90% de falha em ao menos 50 execuções nos últimos 7 dias. Excluir equivale a arquivar."
+          },
+          {
+            "termo": "Webhook",
+            "def": "URL única de um gatilho de autopilot que aceita POST com JSON (objeto ou array) de até 256 KiB. O payload chega ao agente e, em Create issue, entra na descrição da issue.",
+            "regra": "O token na URL é a credencial; Rotate URL invalida a anterior na hora. Idempotency-Key e X-GitHub-Delivery deduplicam. Filtros por evento e ação; evento filtrado retorna 200 ignored. Respostas: accepted, skipped, ignored, duplicate (200); 400, 401, 404, 413, 429, 500."
+          },
+          {
+            "termo": "Integração com GitHub",
+            "def": "Vincula pull requests a issues. O card do PR mostra repositório, número, título, autor, estado (Open, Draft, Merged, Closed), linhas e arquivos, CI e mergeabilidade.",
+            "regra": "Vínculo pelo identificador (MUL-1) no título ou na branch, ou no corpo logo após Closes, Fixes ou Resolves. Com todos os PRs vinculados mesclados, a issue vai para o status configurado (done por padrão). Só leitura: não faz push, não comenta, não cria checks. Conexão por owner ou admin."
+          },
+          {
+            "termo": "Canais de chat externos",
+            "def": "Bots que levam a conversa com agentes para Slack, Telegram, Feishu e DingTalk.",
+            "regra": "Arquivar a conversa no Multica quebra o vínculo com o canal; desarquivar não o restaura."
+          },
+          {
+            "termo": "Desktop, CLI e self-host",
+            "def": "O Multica Desktop registra o computador como runtime e inicia o daemon. A CLI multica cobre issues, projetos, agentes, skills, squads, autopilots, repositórios, daemon e runtimes. O servidor pode ser instalado em infraestrutura própria.",
+            "regra": "A divisão entre servidor e computador é a mesma na nuvem e no self-host. Diretório local como project resource só pelo Desktop."
+          }
+        ]
+      },
+      {
+        "nome": "Segurança",
+        "conceitos": [
+          {
+            "termo": "Fronteira de confiança",
+            "def": "O usuário do sistema operacional que roda o daemon. Cada run tem as permissões dele: arquivos, credenciais no HOME, rede sem restrição e as CLIs do host (gh, aws, kubectl, gcloud, glab).",
+            "regra": "Não há sandbox de sistema de arquivos, exceto Codex no Windows com sandbox nativo ativado. No caminho padrão, Codex roda com danger-full-access e Claude Code com bypassPermissions. Isolamento oferecido: diretório por run, CODEX_HOME por run e token com escopo de run — reduzem o impacto, não formam fronteira."
+          },
+          {
+            "termo": "Token de tarefa",
+            "def": "MULTICA_TOKEN (prefixo mat_) injetado pelo daemon em cada run, com escopo da run e do agente e validade de até 24 horas. Acompanham-no MULTICA_TASK_ID, MULTICA_AGENT_ID, MULTICA_WORKSPACE_ID e MULTICA_SERVER_URL.",
+            "regra": "Impede que uma run aja como outra pessoa ou outro agente na API do Multica. Processos filhos herdam o token; agentes não sobrescrevem variáveis MULTICA_."
+          }
+        ]
+      }
+    ],
+    "gatilhos": [
+      { "quero": "Que o agente seja dono do trabalho", "use": "Atribuição" },
+      { "quero": "Ajuda pontual sem trocar o responsável", "use": "@-menção" },
+      { "quero": "Repetir um pedido frequente", "use": "Quick action" },
+      { "quero": "Etapas fixas com passagem entre agentes", "use": "Workflow" },
+      { "quero": "Perguntar sem abrir issue", "use": "Chat" },
+      { "quero": "Trabalho recorrente por horário ou evento externo", "use": "Autopilot" }
+    ],
+    "estadosRun": [
+      { "estado": "deferred", "texto": "Agendada; entra na fila na hora marcada." },
+      { "estado": "queued", "texto": "Aguarda um runtime. Sem limite enquanto o runtime mandar heartbeat." },
+      { "estado": "dispatched", "texto": "Reivindicada; a ferramenta está iniciando. Falha após 5 minutos." },
+      { "estado": "waiting_local_directory", "texto": "Diretório local ocupado por outra run; aguarda o lock." },
+      { "estado": "running", "texto": "A ferramenta está executando. Sem duração máxima fixa." },
+      { "estado": "completed", "texto": "Terminou normalmente. Não implica issue concluída." },
+      { "estado": "failed", "texto": "Erro ou interrupção. Motivos: runtime_offline, timeout, iteration_limit, agent_blocked, agent_error.provider_quota_limit, agent_error.context_overflow, entre outros." },
+      { "estado": "cancelled", "texto": "Parada manual, ou arquivamento ou exclusão da issue." }
+    ],
+    "cli": [
+      { "comando": "multica setup", "texto": "Salva o servidor, faz login no navegador e inicia o daemon." },
+      { "comando": "multica login", "texto": "Refaz o login sem alterar a configuração. --token para máquinas sem navegador." },
+      { "comando": "multica daemon start | stop | restart", "texto": "Controla o daemon. restart redetecta as ferramentas de IA." },
+      { "comando": "multica daemon status", "texto": "Estado do daemon e da conexão." },
+      { "comando": "multica daemon logs -f", "texto": "Acompanha os logs do daemon." },
+      { "comando": "multica repo add", "texto": "Registra um repositório no workspace." },
+      { "comando": "multica agent update", "texto": "Altera um agente: instruções, modelo, skills." },
+      { "comando": "multica issue rerun <issue-id>", "texto": "Reexecuta a issue com o responsável atual, sessão e diretório novos." },
+      { "comando": "multica project resource add <project-id>", "texto": "Vincula github_repo ou local_directory a um projeto." },
+      { "comando": "multica squad create --name … --leader …", "texto": "Cria um squad com o líder." },
+      { "comando": "multica skill import --file <arquivo>", "texto": "Importa uma skill." },
+      { "comando": "multica autopilot trigger <id>", "texto": "Dispara um autopilot uma vez." },
+      { "comando": "multica config set workspaces_root <caminho>", "texto": "Define a raiz dos diretórios de trabalho." }
+    ]
+  },
+
+  "guias": [
+    {
+      "id": "isolar-daemon",
+      "titulo": "Como isolar o daemon da sua conta pessoal",
+      "quando": "Você vai conectar ao Multica um computador que também guarda suas chaves, seus tokens de nuvem ou seus documentos.",
+      "passos": [
+        { "texto": "Escolha o nível de isolamento: usuário Unix dedicado (mais leve), container (só os montes e segredos necessários) ou máquina virtual (isolamento completo). Para a disciplina, o usuário dedicado basta." },
+        { "texto": "Crie o usuário — no macOS, em Ajustes do Sistema → Usuários e Grupos; no Linux:", "comando": "sudo adduser multica" },
+        { "texto": "Entre como esse usuário e instale nele apenas as ferramentas de IA que os agentes vão usar, autenticadas com contas próprias para isso." },
+        { "texto": "Dê acesso só aos repositórios necessários. Se o agente precisa fazer push, use uma deploy key por repositório em vez da sua chave SSH pessoal." },
+        { "texto": "Gere tokens com o escopo mínimo — no GitHub, um fine-grained token limitado aos repositórios do projeto. Não deixe credencial de produção no HOME desse usuário." },
+        { "texto": "Instale e inicie o daemon como esse usuário.", "comando": "multica setup" },
+        { "texto": "Confira, ao iniciar uma run, o modo de sandbox efetivo nos logs:", "comando": "multica daemon logs --lines 200 | grep \"codex sandbox\"" },
+        { "texto": "Não ponha em variáveis de ambiente do agente nem em MCP segredo que não possa sair da máquina: essa configuração fica armazenada no servidor." },
+        { "texto": "Se for importar uma skill de terceiros, leia o SKILL.md e os scripts antes. Se for usar webhook de autopilot, não publique a URL; se ela vazar, use Rotate URL." }
+      ]
+    },
+    {
+      "id": "runtime-offline",
+      "titulo": "Como destravar um runtime offline",
+      "quando": "A issue foi atribuída, mas a run não sai de queued, ou o runtime aparece offline em Configure → Runtimes.",
+      "passos": [
+        { "texto": "Confirme que o daemon está ativo.", "comando": "multica daemon status" },
+        { "texto": "Se não estiver, inicie-o. No Desktop, basta reabrir o aplicativo.", "comando": "multica daemon start" },
+        { "texto": "Acompanhe os logs e procure erro de login, de rede ou de detecção de ferramenta.", "comando": "multica daemon logs -f" },
+        { "texto": "Se o log disser que nenhuma ferramenta foi encontrada, confirme que o comando existe no mesmo ambiente do daemon:", "comando": "command -v claude" },
+        { "texto": "Se você acabou de instalar ou fazer login numa ferramenta, ou mudou um caminho, reinicie o daemon.", "comando": "multica daemon restart" },
+        { "texto": "Volte a Configure → Runtimes. Com a máquina e a ferramenta online, a run em queued é reivindicada sozinha. Se ela já falhou com runtime_offline ou queued_expired, use o retry no Execution log." },
+        { "texto": "Se a run falhou com agent_error.provider_auth_or_access ou agent_error.provider_quota_limit, o problema não é o runtime: refaça o login na ferramenta ou verifique a cota da conta, e então repita a run à mão." }
+      ]
+    }
+  ]
+}

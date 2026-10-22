@@ -1,0 +1,104 @@
+---
+import Migalha from "../../components/Migalha.astro";
+import MulticaModos from "../../components/MulticaModos.astro";
+import Base from "../../layouts/Base.astro";
+import { rota } from "../../lib/url";
+import { estilo, ancora, termos } from "../../lib/multica";
+import dados from "../../content/multica.json";
+
+const t = dados.tutorial;
+const total = t.partes.reduce((n, p) => n + p.passos.length, 0);
+let passo = 0;
+---
+
+<Base
+  titulo="Primeiros passos com o Multica — Dev. de Software com IA"
+  descricao="Tutorial executado na Aula 11: três agentes que constroem, revisam e mantêm um site, um squad que recebe uma issue e entrega sozinho, duas skills e um autopilot semanal."
+>
+  <article>
+    <section class="om-pad" style="max-width: 1200px; margin: 0 auto; padding: 36px 32px 0">
+      <Migalha
+        trilha={[{ texto: "Início", href: "/" }, { texto: "Aula 11", href: "/aulas/11" }, { texto: "Multica", href: "/multica" }, { texto: "Tutorial" }]}
+      />
+      <div style={estilo.sobretitulo}>Tutorial · Executado em sala na Aula 11</div>
+      <h1 style={estilo.h1}>Primeiros passos: seu primeiro time de agentes</h1>
+      <p style="font-size: 18px; line-height: 1.6; max-width: 64ch; margin: 24px 0 0; text-wrap: pretty">{t.constroi}</p>
+      <p style="font-size: 16px; line-height: 1.6; max-width: 64ch; margin: 12px 0 0; opacity: 0.85">
+        {total} passos. {t.tempo}
+      </p>
+      <div style="border: 2px solid var(--color-text); padding: 20px 24px; margin: 28px 0 40px; max-width: 64ch">
+        <div style={estilo.rotulo}>Antes de começar</div>
+        <ul style="margin: 8px 0 0; padding-left: 18px; font-size: 15px; line-height: 1.55">
+          {t.prereqs.map((p) => <li style="margin-top: 4px">{p}</li>)}
+        </ul>
+        <p style="font-size: 14px; line-height: 1.55; margin: 12px 0 0; opacity: 0.8">
+          A seção sobre sandbox está em <a href={rota("/multica")}>Sobre o Multica</a>. Para isolar o daemon da
+          sua conta pessoal, siga o <a href={rota("/multica/guias#isolar-daemon")}>guia prático</a> antes do passo 2.
+        </p>
+      </div>
+    </section>
+
+    <MulticaModos atual="/multica/tutorial" />
+
+    {
+      t.partes.map((parte) => (
+        <section style="border-top: 2px solid var(--color-text)">
+          <div class="om-pad om-sec" style={estilo.secao}>
+            <h2 style={estilo.h2}>{parte.parte}</h2>
+            <div style="border-top: 2px solid var(--color-text); margin-top: 18px">
+              {parte.passos.map((p) => {
+                passo += 1;
+                return (
+                  <div class="om-roteiro" style="display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: 0 32px; padding: 24px 0; border-bottom: 2px solid var(--color-divider); align-items: start">
+                    <div style="font-family: var(--font-heading); font-weight: 900; font-size: 34px; letter-spacing: -0.03em; color: var(--color-accent); opacity: 0.5; line-height: 1">
+                      {String(passo).padStart(2, "0")}
+                    </div>
+                    <div>
+                      <h3 style="font-family: var(--font-heading); font-weight: 900; font-size: clamp(19px, 2.6vw, 24px); line-height: 1.15; letter-spacing: -0.02em; margin: 0">
+                        {p.titulo}
+                      </h3>
+                      <p style="font-size: 16px; line-height: 1.65; margin: 8px 0 0; max-width: 70ch; text-wrap: pretty">{p.texto}</p>
+                      {p.comando && (
+                        <pre class="om-scroll" style="margin: 12px 0 0; padding: 12px 14px; border: 2px solid var(--color-text); background: var(--color-neutral-100); overflow-x: auto">
+                          <code style={estilo.codigo}>{p.comando}</code>
+                        </pre>
+                      )}
+                      <p style="font-size: 15px; line-height: 1.6; margin: 12px 0 0; max-width: 70ch; padding-left: 14px; box-shadow: inset 2px 0 0 var(--color-accent); text-wrap: pretty">
+                        <strong style="font-family: var(--font-heading); font-weight: 800">Você deve ver:</strong> {p.verifica}
+                      </p>
+                      <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-top: 12px">
+                        {p.conceitos.map((c) =>
+                          termos.has(c) ? (
+                            <a href={rota(`/multica/referencia#${ancora(c)}`)} style={estilo.etiqueta}>{c}</a>
+                          ) : (
+                            <span style={estilo.etiqueta}>{c}</span>
+                          ),
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+      ))
+    }
+
+    <section style="border-top: 2px solid var(--color-text); background: var(--color-neutral-100)">
+      <div class="om-pad om-sec" style={estilo.secao}>
+        <h2 style={estilo.h2}>O que você construiu</h2>
+        <p style="font-size: 17px; line-height: 1.65; max-width: 66ch; margin: 0; text-wrap: pretty">{t.fim}</p>
+        <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 28px">
+          <a class="btn btn-primary" href={rota("/multica")}>Por que é assim: Sobre o Multica</a>
+          <a class="btn btn-secondary" href={rota("/aulas/11")}>Voltar para a Aula 11</a>
+        </div>
+        <p style="font-size: 13px; line-height: 1.6; max-width: 74ch; margin: 24px 0 0; opacity: 0.75; text-wrap: pretty">
+          Adaptado do <a href="https://multica.ai/docs/tutorial" target="_blank" rel="noopener">Complete tutorial</a>{" "}
+          da documentação oficial do Multica.
+        </p>
+      </div>
+    </section>
+    <MulticaModos atual="/multica/tutorial" fim />
+  </article>
+</Base>

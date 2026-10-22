@@ -1,0 +1,132 @@
+---
+import Migalha from "../../components/Migalha.astro";
+import MulticaModos from "../../components/MulticaModos.astro";
+import Base from "../../layouts/Base.astro";
+import { rota } from "../../lib/url";
+import { estilo } from "../../lib/multica";
+import dados from "../../content/multica.json";
+
+const { fronteira, caminho, porques, debate } = dados.sobre;
+---
+
+<Base
+  titulo="Sobre o Multica — Dev. de Software com IA"
+  descricao="Por que o Multica põe o agente no quadro de issues: a divisão entre quem guarda e quem executa, o caminho de uma execução e as decisões de desenho — do revisor em outro modelo à ausência de sandbox. Material da Aula 11."
+>
+  <article>
+    <section class="om-pad" style="max-width: 1200px; margin: 0 auto; padding: 36px 32px 0">
+      <Migalha trilha={[{ texto: "Início", href: "/" }, { texto: "Aula 11", href: "/aulas/11" }, { texto: "Sobre o Multica" }]} />
+      <div style={estilo.sobretitulo}>Explicação · Material da Aula 11</div>
+      <h1 style={estilo.h1}>Sobre o Multica</h1>
+      <p style="font-size: 18px; line-height: 1.6; max-width: 64ch; margin: 24px 0 0; text-wrap: pretty">
+        Até aqui, na disciplina, o agente morou numa janela de chat ou num terminal, com uma pessoa ao lado.
+        O <a href="https://multica.ai" target="_blank" rel="noopener">Multica</a> muda o endereço: o agente
+        vira membro do workspace, recebe issue atribuída, abre pull request, é revisado por outro agente e
+        responde a comentário — como um colega. Esta página é a primeira etapa do guia de leitura: trata
+        do que é o Multica e do porquê do seu desenho. Em seguida vêm os
+        <a href={rota("/multica/referencia")}>conceitos</a> e, por fim, o
+        <a href={rota("/multica/tutorial")}>tutorial</a>.
+      </p>
+      <div style="height: 40px"></div>
+    </section>
+
+    <MulticaModos atual="/multica" />
+
+    <section style="border-top: 2px solid var(--color-text)">
+      <div class="om-pad om-sec" style={estilo.secao}>
+        <h2 style={estilo.h2}>Quem guarda, quem executa</h2>
+        <p style={estilo.intro}>
+          A arquitetura cabe numa frase: <strong style="font-family: var(--font-heading); font-weight: 800">{fronteira.frase}</strong>{" "}
+          O servidor sabe o que precisa ser feito e o que já foi feito; quem tem as mãos — e as credenciais —
+          é a máquina de alguém.
+        </p>
+        <div class="om-aula-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px 48px">
+          <div style="border-top: 2px solid var(--color-text); padding-top: 12px">
+            <div style={estilo.rotulo}>Fica no Multica</div>
+            <ul style="margin: 8px 0 0; padding-left: 18px; font-size: 16px; line-height: 1.55">
+              {fronteira.noMultica.map((i) => <li style="margin-top: 6px">{i}</li>)}
+            </ul>
+          </div>
+          <div style="border-top: 2px solid var(--color-text); padding-top: 12px">
+            <div style={estilo.rotulo}>Fica no computador conectado</div>
+            <ul style="margin: 8px 0 0; padding-left: 18px; font-size: 16px; line-height: 1.55">
+              {fronteira.noComputador.map((i) => <li style="margin-top: 6px">{i}</li>)}
+            </ul>
+          </div>
+        </div>
+        <p style="font-size: 15px; line-height: 1.6; max-width: 70ch; margin: 24px 0 0; padding-left: 16px; box-shadow: inset 2px 0 0 var(--color-accent); text-wrap: pretty">
+          <strong style="font-family: var(--font-heading); font-weight: 800">A ressalva.</strong> {fronteira.ressalva}
+        </p>
+
+        <h3 style={estilo.h3 + "; margin-top: 44px"}>O caminho de uma execução</h3>
+        <p style={estilo.intro}>
+          Toda execução, venha de uma atribuição, de uma menção, do chat ou de uma agenda, percorre o mesmo
+          trajeto.
+        </p>
+        <div style="border-top: 2px solid var(--color-text)">
+          {
+            caminho.map((c, i) => (
+              <div class="om-roteiro" style="display: grid; grid-template-columns: 80px minmax(0, 1fr); gap: 0 24px; padding: 18px 0; border-bottom: 2px solid var(--color-divider); align-items: start">
+                <div style="font-family: var(--font-heading); font-weight: 900; font-size: 28px; color: var(--color-accent); opacity: 0.5; line-height: 1">
+                  {String(i + 1).padStart(2, "0")}
+                </div>
+                <div>
+                  <div style="font-family: var(--font-heading); font-weight: 800; font-size: 18px">{c.titulo}</div>
+                  <p style="font-size: 16px; line-height: 1.6; margin: 6px 0 0; max-width: 66ch; text-wrap: pretty">{c.texto}</p>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section style="border-top: 2px solid var(--color-text); background: var(--color-neutral-100)">
+      <div class="om-pad om-sec" style={estilo.secao}>
+        <h2 style={estilo.h2}>As decisões de desenho</h2>
+        <p style={estilo.intro}>
+          Sete escolhas que o tutorial faz sem parar para justificar. Cada uma tem um motivo, um custo e uma
+          consequência para quem pesquisa agentes de software.
+        </p>
+        <div style="border-top: 2px solid var(--color-text)">
+          {
+            porques.map((p) => (
+              <div style="padding: 24px 0; border-bottom: 2px solid var(--color-divider)">
+                <h3 style="font-family: var(--font-heading); font-weight: 900; font-size: clamp(19px, 2.6vw, 24px); line-height: 1.2; letter-spacing: -0.02em; margin: 0">
+                  {p.titulo}
+                </h3>
+                <p style="font-size: 17px; line-height: 1.7; margin: 10px 0 0; max-width: 70ch; text-wrap: pretty">{p.texto}</p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section style="border-top: 2px solid var(--color-text)">
+      <div class="om-pad om-sec" style={estilo.secao}>
+        <h2 style={estilo.h2}>Para o debate</h2>
+        <p style={estilo.intro}>Os últimos quinze minutos da Aula 11. Leve as respostas com evidência do seu Execution log.</p>
+        <ol style="margin: 0; padding: 0; list-style: none; border-top: 2px solid var(--color-text)">
+          {
+            debate.map((q, i) => (
+              <li style="display: grid; grid-template-columns: 48px minmax(0, 1fr); gap: 14px; padding: 16px 0; border-bottom: 2px solid var(--color-divider); font-size: 16px; line-height: 1.6">
+                <span style="font-family: var(--font-heading); font-weight: 900; color: var(--color-accent)">{String(i + 1).padStart(2, "0")}</span>
+                <span style="max-width: 70ch; text-wrap: pretty">{q}</span>
+              </li>
+            ))
+          }
+        </ol>
+        <p style="font-size: 13px; line-height: 1.6; max-width: 74ch; margin: 24px 0 0; opacity: 0.75; text-wrap: pretty">
+          Fonte: <a href="https://multica.ai/docs/how-multica-works" target="_blank" rel="noopener">How Multica works</a>,{" "}
+          <a href="https://multica.ai/docs/concepts" target="_blank" rel="noopener">Core concepts</a>,{" "}
+          <a href="https://multica.ai/docs/squads" target="_blank" rel="noopener">Squads</a> e{" "}
+          <a href="https://multica.ai/docs/security-model" target="_blank" rel="noopener">Security model</a>, na
+          documentação oficial. A comparação com o Spec Kit é da disciplina — veja{" "}
+          <a href={rota("/spec-kit")}>o fluxo do Spec Kit</a>.
+        </p>
+      </div>
+    </section>
+    <MulticaModos atual="/multica" fim />
+  </article>
+</Base>

@@ -1,0 +1,126 @@
+---
+import Migalha from "../../components/Migalha.astro";
+import MulticaModos from "../../components/MulticaModos.astro";
+import Base from "../../layouts/Base.astro";
+import { estilo, ancora, termos } from "../../lib/multica";
+import dados from "../../content/multica.json";
+
+const r = dados.referencia;
+---
+
+<Base
+  titulo="Referência dos conceitos do Multica — Dev. de Software com IA"
+  descricao="Os conceitos do Multica em formato de consulta: workspace, issue, status, project, workflow, agent, skill, runtime, daemon, run, squad, autopilot, webhook, integração com GitHub e segurança; estados de uma run e comandos da CLI."
+>
+  <article>
+    <section class="om-pad" style="max-width: 1200px; margin: 0 auto; padding: 36px 32px 0">
+      <Migalha
+        trilha={[{ texto: "Início", href: "/" }, { texto: "Aula 11", href: "/aulas/11" }, { texto: "Multica", href: "/multica" }, { texto: "Referência" }]}
+      />
+      <div style={estilo.sobretitulo}>Referência</div>
+      <h1 style={estilo.h1}>Referência dos conceitos</h1>
+      <p style="font-size: 17px; line-height: 1.6; max-width: 64ch; margin: 24px 0 0; text-wrap: pretty">
+        {termos.size} conceitos em {r.grupos.length} grupos, na ordem da documentação oficial. Cada entrada tem
+        a definição e as regras e limites. Seguem os gatilhos de execução, os estados de uma run e os comandos da
+        CLI.
+      </p>
+      <nav aria-label="Grupos" style="display: flex; gap: 8px; flex-wrap: wrap; margin: 24px 0 40px">
+        {r.grupos.map((g) => <a href={`#${ancora(g.nome)}`} style={estilo.etiqueta}>{g.nome}</a>)}
+        <a href="#gatilhos" style={estilo.etiqueta}>Gatilhos</a>
+        <a href="#estados" style={estilo.etiqueta}>Estados da run</a>
+        <a href="#cli" style={estilo.etiqueta}>CLI</a>
+      </nav>
+    </section>
+
+    <MulticaModos atual="/multica/referencia" />
+
+    {
+      r.grupos.map((g, i) => (
+        <section id={ancora(g.nome)} style={`border-top: 2px solid var(--color-text)${i % 2 ? "; background: var(--color-neutral-100)" : ""}`}>
+          <div class="om-pad om-sec" style={estilo.secao}>
+            <h2 style={estilo.h2}>{g.nome}</h2>
+            <div style="border-top: 2px solid var(--color-text); margin-top: 18px">
+              {g.conceitos.map((c) => (
+                <div
+                  id={ancora(c.termo)}
+                  class="om-aula-grid"
+                  style="display: grid; grid-template-columns: minmax(0, 0.5fr) minmax(0, 1.5fr); gap: 8px 32px; padding: 20px 0; border-bottom: 2px solid var(--color-divider); align-items: start; scroll-margin-top: 24px"
+                >
+                  <h3 style="font-family: var(--font-heading); font-weight: 900; font-size: 19px; line-height: 1.2; margin: 0">{c.termo}</h3>
+                  <dl style="margin: 0">
+                    <dt style={estilo.rotulo}>O que é</dt>
+                    <dd style="font-size: 16px; line-height: 1.6; margin: 4px 0 0; max-width: 70ch; text-wrap: pretty">{c.def}</dd>
+                    <dt style={estilo.rotulo + "; margin-top: 12px"}>Regras e limites</dt>
+                    <dd style="font-size: 15px; line-height: 1.6; margin: 4px 0 0; max-width: 70ch; opacity: 0.88; text-wrap: pretty">{c.regra}</dd>
+                  </dl>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      ))
+    }
+
+    <section style="border-top: 2px solid var(--color-text)">
+      <div class="om-pad om-sec" style={estilo.secao}>
+        <div class="om-aula-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 48px">
+          <div id="gatilhos">
+            <h2 style={estilo.h2}>Gatilhos de execução</h2>
+            <p style={estilo.intro}>As seis ações que criam uma run, por necessidade.</p>
+            <div style="border-top: 2px solid var(--color-text)">
+              {
+                r.gatilhos.map((g) => (
+                  <div style="padding: 14px 0; border-bottom: 2px solid var(--color-divider)">
+                    <div style="font-size: 15px; opacity: 0.75">{g.quero}</div>
+                    <a href={`#${ancora(g.use)}`} style="display: block; font-family: var(--font-heading); font-weight: 800; font-size: 17px; margin-top: 2px">
+                      {g.use}
+                    </a>
+                  </div>
+                ))
+              }
+            </div>
+          </div>
+          <div id="estados">
+            <h2 style={estilo.h2}>Estados de uma run</h2>
+            <p style={estilo.intro}>Visíveis no Execution log da issue.</p>
+            <div style="border-top: 2px solid var(--color-text)">
+              {
+                r.estadosRun.map((e) => (
+                  <div style="display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); gap: 16px; padding: 12px 0; border-bottom: 2px solid var(--color-divider); align-items: baseline">
+                    <code style={estilo.codigo + " color: var(--color-accent-700); word-break: break-word"}>{e.estado}</code>
+                    <span style="font-size: 15px; line-height: 1.5">{e.texto}</span>
+                  </div>
+                ))
+              }
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="cli" style="border-top: 2px solid var(--color-text); background: var(--color-neutral-100)">
+      <div class="om-pad om-sec" style={estilo.secao}>
+        <h2 style={estilo.h2}>Comandos da CLI</h2>
+        <p style={estilo.intro}>
+          Os comandos usados no tutorial e nos guias. Lista completa na{" "}
+          <a href="https://multica.ai/docs/cli" target="_blank" rel="noopener">referência oficial da CLI</a>.
+        </p>
+        <div style="border-top: 2px solid var(--color-text)">
+          {
+            r.cli.map((c) => (
+              <div class="om-aula-grid" style="display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr); gap: 8px 32px; padding: 12px 0; border-bottom: 2px solid var(--color-divider); align-items: baseline">
+                <code style={estilo.codigo + " word-break: break-word"}>{c.comando}</code>
+                <span style="font-size: 15px; line-height: 1.5">{c.texto}</span>
+              </div>
+            ))
+          }
+        </div>
+        <p style="font-size: 13px; line-height: 1.6; max-width: 74ch; margin: 24px 0 0; opacity: 0.75; text-wrap: pretty">
+          Fonte: <a href="https://multica.ai/docs" target="_blank" rel="noopener">documentação oficial do Multica</a>,
+          consultada em 21 de outubro de 2026.
+        </p>
+      </div>
+    </section>
+    <MulticaModos atual="/multica/referencia" fim />
+  </article>
+</Base>
